@@ -11,9 +11,7 @@ date: null
 {% include base_path %}
 
 <div>
-    <p>This session takes a deep dive into the hardware that drives the Cisco 8000 Series routing platform. There is discussion of the chipsets and     
-        platform design, as well as considerations for professionals looking to deploy the solution in their data center or service provider organization. 
-        Presented by <b>Lawrence Wobker</b>, Principal Engineer. Recorded at Tech Field Day Extra at Cisco Live Europe 2020 in Barcelona, Spain on January 29, 2020..</p>
+    <p>Cisco 8000 Series routers are cloud-enhanced systems powered by groundbreaking Cisco Silicon One™ ASICs and Cisco IOS XR7 software. Released late 2019, new hardware, software and innovations have been introduced since and will be covered in this section.</p>
 </div>
 
 <div class="feature_wrapper">
