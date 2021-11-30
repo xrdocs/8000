@@ -43,7 +43,7 @@ date: null
     </div>
 </div>
 
-<div class="feature_wrapper">
+<!-- <div class="feature_wrapper">
     <div class="feature__item--right">
         <div class="archive__item" style="margin-left: 2em;">
             <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
@@ -61,7 +61,7 @@ date: null
             <a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" target="_blank"  class="btn btn--large">Watch on Cisco</a>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="feature_wrapper">
     <div class="feature__item--left">
