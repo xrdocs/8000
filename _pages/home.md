@@ -18,7 +18,7 @@ date: null
     <div class="feature__item--right">
         <div class="archive__item" style="margin-left: 2em;">
             <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
-                <embed type="video" iframe width="560" height="315" src="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" frameborder="0"
+                <iframe width="560" height="315" src="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" frameborder="0"
                 allowfullscreen></iframe>
             </div>
         <div class="archive__item-body">
