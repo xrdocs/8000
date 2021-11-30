@@ -10,17 +10,26 @@ date: null
 
 {% include base_path %}
 
-<div>
-    <p>Cisco 8000 Series routers are cloud-enhanced systems powered by groundbreaking Cisco Silicon One™ ASICs and Cisco IOS XR7 software. Released late 2019, new hardware, software and innovations have been introduced since and will be covered in this section.</p>
+<div class="feature_wrapper">
+    <div class="feature__item--center">
+        <div class="archive__item" style="margin-left: 2em;">
+        <div class="archive__item-body">
+            Introduction</h2>
+            <div class="archive__item-excerpt" style="font-size: 0.65em;">
+            <p>Cisco 8000 Series routers are cloud-enhanced systems powered by groundbreaking Cisco Silicon One™ ASICs and Cisco IOS XR7 software. Released late 2019, new hardware, software and innovations have been introduced since and will be covered in this section.</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+<!-- <div>
+    <p>Cisco 8000 Series routers are cloud-enhanced systems powered by groundbreaking Cisco Silicon One™ ASICs and Cisco IOS XR7 software. Released late 2019, new hardware, software and innovations have been introduced since and will be covered in this section.</p>
+</div> -->
 
 <div class="feature_wrapper">
     <div class="feature__item--center">
         <div class="archive__item" style="margin-left: 2em;">
-            <!-- <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
-                <iframe width="560" height="315" src="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" frameborder="0"
-                allowfullscreen></iframe>
-            </div> -->
         <div class="archive__item-body">
             <h2 class="archive__item-title"><a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" target="_blank"></a>
             Cisco Live: 8000 Series Architecture - BRKSPG-2033</h2>
