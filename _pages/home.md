@@ -29,7 +29,7 @@ date: null
             2021 digital session builds on BRKSPG-2280 (available via CiscoLive recording) and starts with an update on recent advances in the platform, ASICs, and role in 
             the Routed Optical Networks solution. It then focuses on the forwarding path and highlights the evolution relative to previous architectures.</p>
             </div>
-            <a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" target="_blank"  class="btn btn--large">Watch on Youtube</a>
+            <a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" target="_blank"  class="btn btn--large">Watch on Cisco</a>
         </div>
     </div>
 </div>
