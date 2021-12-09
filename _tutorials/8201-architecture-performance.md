@@ -26,9 +26,13 @@ Cisco 8201 is the first Cisco 8000 fixed system built around a single NPU instan
 
 At the heart of Cisco 8201, there is Cisco Silicon One Q100 ASIC. This NPU is capable of forwarding 10.8Tbps at a rate of 6.6Bpps. It’s made of 216 x 56G SerDes, each can be configured independently to operate in 10G/25G/50G using NRZ or PAM4 modulation.  
 
-The NPU is built around 6 slices. All slices are interconnected by a Shared Memory Switch (SMS).  
+The NPU is built around 6 slices. All slices are interconnected by a Shared Memory Switch (SMS). 
+
+![Q100.png]({{site.baseurl}}/images/Q100.png)
 
 On a fixed system like Cisco 8201, the 6 slices are operating as ‘System on a Chip’ or ‘Router on a Chip’, meaning all slices interconnect network facing interfaces:  
+
+![router-on-chip.png]({{site.baseurl}}/images/router-on-chip.png)
 
 Each slice has:
 - Receive and Transmit Packet Processor (RxPP and TxPP)
@@ -44,7 +48,8 @@ Let’s recap and do the math:
 
 HBM, SRAM and TCAM memories are used for packet buffering and databases storage. A dedicated article will cover those different memories, how they are used and what sizes they are.
 
-Add a quad-core Intel CPU, 32GB of RAM and a 64GB SSD and you have a Cisco 8201:  
+Add a quad-core Intel CPU, 32GB of RAM and a 64GB SSD and you have a Cisco 8201: 
+![8201-architecture.png]({{site.baseurl}}/images/8201-architecture.png)
 
 The mapping of individual ports to slices/IFG can be checked with following command:  
 
@@ -105,9 +110,12 @@ RP/0/RP0/CPU0:8201#
 A Cisco 8201 has been staged in the lab with the latest IOS-XR version available when writing this article (7.3.2). This router is connected to 24x400G and 12x100G dedicated Spirent ports. Spirent is used to send traffic through the router at a specific packet size (200 bytes). It’s also used to measure total packet throughput (Gbps), frame rate (pps), packet loss and system latency.  
 
 Spirent configuration is attached for reference:  
+![spirent-config.png]({{site.baseurl}}/images/spirent-config.png)
 
 ## Results
 As shown in below video, Cisco 8201 is capable to forward 10.8Tbps of traffic composed of 200bytes IPv4 packets. It’s able to sustain a rate of 6Bpps full duplex:  
+
+![NDR-no-drop.png]({{site.baseurl}}/images/NDR-no-drop.png)
 
 This is achieved without any single packet loss, as shown in below screenshot:  
 
