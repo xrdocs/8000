@@ -32,7 +32,7 @@ The NPU is built around 6 slices. All slices are interconnected by a Shared Memo
 
 On a fixed system like Cisco 8201, the 6 slices are operating as ‘System on a Chip’ or ‘Router on a Chip’, meaning all slices interconnect network facing interfaces:  
 
-![router-on-chip.png]({{site.baseurl}}/images/router-on-chip.png)
+![router-on-chip.png]({{site.baseurl}}/images/router-on-chip.png =250x)
 
 Each slice has:
 - Receive and Transmit Packet Processor (RxPP and TxPP)
