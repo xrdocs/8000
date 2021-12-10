@@ -32,7 +32,7 @@ The NPU is built around 6 slices. All slices are interconnected by a Shared Memo
 
 On a fixed system like Cisco 8201, the 6 slices are operating as ‘System on a Chip’ or ‘Router on a Chip’, meaning all slices interconnect network facing interfaces:  
 
-![router-on-chip.png]({{site.baseurl}}/images/router-on-chip.png)
+<img class="centered" src="{{site.baseurl}}/images/router-on-chip.png" widt="50%"/>
 
 Each slice has:
 - Receive and Transmit Packet Processor (RxPP and TxPP)
@@ -123,5 +123,3 @@ Average system latency is 3.3us. Same NDR is observed for IPv6 and MPLS traffic.
 
 ## Conclusion
 This article covered Cisco 8201 high level architecture. A simple lab test demonstrated raw Cisco 8201 forwarding capacities. Current NDR for this platform is 200 bytes for IPv4, 200 bytes for MPLS and 200 bytes for IPv6. This test confirmed Cisco Q100 performance (10.8Tbps, 6Bpps) are conform with datasheet. Next articles will cover Cisco 8201 FIB scale and performance in real life conditions.
-
-
