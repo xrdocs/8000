@@ -124,4 +124,6 @@ This is achieved without any single packet loss, as shown in below screenshot:
 Average system latency is 3.3us. Same NDR is observed for IPv6 and MPLS traffic.
 
 ## Conclusion
-This article covered Cisco 8201 high level architecture. A simple lab test demonstrated raw Cisco 8201 forwarding capacities. Current NDR for this platform is 200 bytes for IPv4, 200 bytes for MPLS and 200 bytes for IPv6. This test also confirmed Cisco Q100 performance (10.8Tbps, 6Bpps). Next articles will cover Cisco 8201 FIB scale and performance in real life conditions.
+This article covered Cisco 8201 high level architecture. A simple lab test demonstrated raw Cisco 8201 forwarding capacities. Current NDR for this platform is 200 bytes for IPv4, 200 bytes for MPLS and 200 bytes for IPv6. This test also confirmed Cisco Q100 performance (10.8Tbps, 6Bpps).  
+Seeing is believing: Cisco 8000 CPOC lab is available on dcloud. Book the lab with your account team, repeat the tests yourself, too.  
+Next articles will cover Cisco 8201 FIB scale and performance in real life conditions.
