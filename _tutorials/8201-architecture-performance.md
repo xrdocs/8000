@@ -115,11 +115,12 @@ Spirent configuration is attached for reference:
 ## Results
 As shown in below video, Cisco 8201 is capable to forward 10.8Tbps of traffic composed of 200bytes IPv4 packets. It’s able to sustain a rate of 6Bpps full duplex:  
 
+[![Cisco 8201 NDR & raw performance](https://img.youtube.com/vi/TUKOQTx2GC8/0.jpg)](https://www.youtube.com/watch?v=TUKOQTx2GC8){: .align-center}
+
+This is achieved without any single packet loss, as shown in below screenshot:  
 <a href="{{site.baseurl}}/images/NDR-no-drop.png">
   <img class="centered" src="{{site.baseurl}}/images/NDR-no-drop.png"/>
 </a>  
-
-This is achieved without any single packet loss, as shown in below screenshot:  
 
 Average system latency is 3.3us. Same NDR is observed for IPv6 and MPLS traffic.
 
