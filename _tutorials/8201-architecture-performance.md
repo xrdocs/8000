@@ -12,6 +12,8 @@ position: hidden
 tags:
   - iosxr
   - Cisco 8000
+  - Performance
+  - Scale
 ---
 {% include toc icon="table" title="Cisco 8201 High Level Architecture and Performance" %} 
 
