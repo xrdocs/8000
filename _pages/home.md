@@ -44,7 +44,7 @@ date: null
 
 <!-- cisco live -->
 <div class="feature_wrapper">
-    <div class="feature__item--center">
+    <div class="feature__item--right">
         <div class="archive__item" style="margin-left: 2em;">
         <div class="archive__item-body">
             <h2 class="archive__item-title"><a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" target="_blank"></a>
@@ -61,7 +61,7 @@ date: null
 
 <!-- techfield -->
 <div class="feature_wrapper">
-    <div class="feature__item--right">
+    <div class="feature__item--left">
         <div class="archive__item" style="margin-left: 2em;">
             <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/KIGct1QOtdI" frameborder="0"
@@ -82,7 +82,7 @@ date: null
 
 <!-- techfield -->
 <div class="feature_wrapper">
-    <div class="feature__item--left">
+    <div class="feature__item--right">
         <div class="archive__item" style="margin-left: 2em;">
             <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/I4cF-VyzwpM" frameborder="0"
