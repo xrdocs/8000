@@ -104,7 +104,7 @@ date: null
 </div>
 
 <div class="feature_wrapper">
-    <div class="feature__item--right">
+    <div class="feature__item--left">
         <div class="archive__item" style="margin-left: 2em;">
             <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/qsWCNyPU_KQ" frameborder="0"
