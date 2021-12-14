@@ -19,16 +19,16 @@ tags:
 
 ## Introduction
 
-Released 2 years ago in late 2019, Cisco 8201 router has been widely adopted and deployed by service provider and cloud customers for core and peering roles. Based on Cisco Silicon One Q100, first generation of this new chip family, it provides both 400GE and 100GE port options.  
+Released 2 years ago in late 2019, Cisco 8201 router has been widely adopted and deployed by service provider and cloud customers for core and peering roles. Based on Cisco Silicon One Q100 NPU, the first generation of this new chip family, it provides both 400GE and 100GE port options which make it perfect for peering role in a small form factor.  
 
 This short article will first cover Cisco 8201 high level internal architecture. Then, a quick and simple lab test will demonstrate how it can achieve 10.8Tbps at target Non-Drop Rate (NDR). This test will address recent concerns raised about its forwarding performance.
 
 ## Cisco 8201 High Level Architecture
-Cisco 8201 is the first Cisco 8000 fixed system built around a single NPU instance. It has 24 x QSFP56-DD 400 GbE and 12 x QSFP28 100 GbE ports, all packed in a compact 1RU form factor. Datasheet is available on this [link](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html "Cisco 8201 datasheet").  
+Cisco 8201 is the first Cisco 8000 fixed system built around a single NPU. It has 24 x QSFP56-DD 400GE and 12 x QSFP28 100GE ports, all packed in a compact 1RU form factor. Datasheet is available [here](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html "Cisco 8201 datasheet").  
 
-At the heart of Cisco 8201, there is Cisco Silicon One Q100 ASIC. This NPU is capable of forwarding 10.8Tbps at a rate of 6.6Bpps. It’s made of 216 x 56G SerDes, each can be configured independently to operate in 10G/25G/50G using NRZ or PAM4 modulation.  
+At the heart of Cisco 8201 is the Cisco Silicon One Q100 ASIC. This NPU is capable of forwarding 10.8Tbps at a rate of 6.6Bpps. It’s made of 216 x 56G SerDes, which can be configured for differing port speeds of 10G/25G/50G using NRZ or PAM4 modulation.  
 
-The NPU is built around 6 slices. All slices are interconnected by a Shared Memory Switch (SMS). 
+The Q100 NPU architecture is built around 6 slices. Each slice handles the forwarding and feature processing for a set of physical interfaces.  All of the slices are in turn interconnected by a Shared Memory Switch (SMS).  
 
 ![8201-arch.png]({{site.baseurl}}/images/8201-arch.png){: .align-center}
 
@@ -37,18 +37,16 @@ On a fixed system like Cisco 8201, the 6 slices are operating as ‘System on a 
 <img class="centered" src="{{site.baseurl}}/images/router-on-chip.png" width="50%"/>{: .align-center}
 
 Each slice has:
-- Receive and Transmit Packet Processor (RxPP and TxPP)
+- Receive and Transmit Network Processing Engines (Rx NPE  and Tx NPE) 
 - 2 x Interface Group (IFG)  
 
-In addition, each IFG has 18 x 56G SerDes, providing 900Gbps per IFG.
-
-Last, each slice is clocked at 1.1GHz, meaning it can handle up to one packet per clock.
+On the Q100, each IFG has 18 x 56G SerDes, providing 900Gbps of interface bandwidth. Each slice can forward one packet per clock cycle, so a system build from one Q100 NPU can thus forward six packets per clock.  
 
 Let’s recap and do the math:
-- 6 slices x 2 x IFG x 900Gbps = up to 10.8Tbps total bandwidth IO
+- 6 slices x 2 x IFG x 900Gbps = 10.8Tbps of available interface bandwidth
 - 6 slices x 1.1Bpps = up to 6.6Bpps total switching rate.  
 
-HBM, SRAM and TCAM memories are used for packet buffering and databases storage. A dedicated article will cover those different memories, how they are used and what sizes they are.
+A combination of HBM, SRAM and TCAM memories are used for packet buffering and database storage.  
 
 Add a quad-core Intel CPU, 32GB of RAM and a 64GB SSD and you have a Cisco 8201.
 
@@ -112,7 +110,7 @@ Spirent configuration is attached for reference:
 ![spirent-config.png]({{site.baseurl}}/images/spirent-config.png){: .align-center}
 
 ## Results
-As shown in below [video](https://www.youtube.com/watch?v=TUKOQTx2GC8), Cisco 8201 is capable to forward 10.8Tbps of traffic composed of 200bytes IPv4 packets. It’s able to sustain a rate of 6Bpps full duplex:  
+As shown in the [video](https://www.youtube.com/watch?v=TUKOQTx2GC8), the Cisco 8201 is capable of forwarding the full 10.8Tbps of traffic composed of 200bytes IPv4 packets, at the sustained rate of 6Bpps.
 
 <iframe class="responsive" width="560" height="315" src="https://www.youtube.com/embed/TUKOQTx2GC8" frameborder="0" allowfullscreen></iframe>{: .align-center}
   
@@ -121,9 +119,9 @@ This is achieved without any single packet loss, as shown in below screenshot:
   <img class="centered" src="{{site.baseurl}}/images/NDR-no-drop.png"/>{: .align-center}
 </a>  
 
-Average system latency is 3.3us. Same NDR is observed for IPv6 and MPLS traffic.
+Average system latency is 3.3µs. Same NDR is observed for IPv6 and MPLS traffic.
 
 ## Conclusion
-This article covered Cisco 8201 high level architecture. A simple lab test demonstrated raw Cisco 8201 forwarding capacities. Current NDR for this platform is 200 bytes for IPv4, 200 bytes for MPLS and 200 bytes for IPv6. This test also confirmed Cisco Q100 performance (10.8Tbps, 6Bpps).  
+This article covered Cisco 8201 high level architecture. A simple lab test demonstrated raw Cisco 8201 forwarding capacities. Current NDR for this platform is 200 bytes for IPv4, 200 bytes for MPLS and 200 bytes for IPv6. This test confirmed Cisco Q100 performance (10.8Tbps, 6Bpps).  
 Seeing is believing: [Cisco 8000 CPOC lab](https://dcloud-docs.cisco.com/c/r/dcloud-docs/sites/en_us/explore/mig/8000-lab.html) is available on [dcloud](https://dcloud-docs.cisco.com/c/r/dcloud-docs/sites/en_us/explore/mig.html). Book the lab with your account team, repeat the tests yourself, too.  
-Next articles will cover Cisco 8201 FIB scale and performance in real life conditions.
+A next article will cover Cisco 8201 FIB scale and performance in real life conditions.
