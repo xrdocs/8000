@@ -44,7 +44,6 @@ On the Q100, each IFG has 18 x 56G SerDes, providing 900Gbps of interface bandwi
 
 ![Q100-HD.png]({{site.baseurl}}/images/Q100-HD.png){: .align-center}
 
-
 Let’s recap and do the math:
 - 6 slices x 2 x IFG x 900Gbps = 10.8Tbps of available interface bandwidth
 - 6 slices x 1.1Bpps = up to 6.6Bpps total switching rate.  
