@@ -10,6 +10,7 @@ date: null
 
 {% include base_path %}
 
+<!-- introduction -->
 <div class="feature_wrapper">
     <div class="feature__item--center">
         <div class="archive__item" style="margin-left: 2em;">
@@ -22,11 +23,26 @@ date: null
     </div>
 </div>
 
+<!-- techfield  -->
+<div class="feature_wrapper">
+    <div class="feature__item--left">
+        <div class="archive__item" style="margin-left: 2em;">
+            <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qsWCNyPU_KQ" frameborder="0"
+                allowfullscreen></iframe>
+            </div>
+        <div class="archive__item-body">
+            <h2 class="archive__item-title"><a href="https://www.youtube.com/embed/qsWCNyPU_KQ" target="_blank"></a>
+            Cisco 8000 Series Portfolio Update</h2>
+            <div class="archive__item-excerpt" style="font-size: 0.65em;">
+            <p>This session provides a high-level overview of the Cisco 8000 series routers and you'll see the entire Cisco 8000 series portfolio and its differentiated value proposition. Presented by <b>Mauricio Cruz Covarrubias</b>, Director of Product Management, Core & Edge, Ammar Khan, Engineering Product Manager, and Iqbal Syed, Senior Product Manager. Recorded on December 9, 2021 as part of Networking Field Day: Service Provider.</p>
+            </div>
+            <a href="https://www.youtube.com/embed/I4cF-VyzwpM" target="_blank"  class="btn btn--large">Watch on Youtube</a>
+        </div>
+    </div>
+</div>
 
-<!-- <div>
-    <p>Cisco 8000 Series routers are cloud-enhanced systems powered by groundbreaking Cisco Silicon One™ ASICs and Cisco IOS XR7 software. Released late 2019, new hardware, software and innovations have been introduced since and will be covered in this section.</p>
-</div> -->
-
+<!-- cisco live -->
 <div class="feature_wrapper">
     <div class="feature__item--center">
         <div class="archive__item" style="margin-left: 2em;">
@@ -43,28 +59,9 @@ date: null
     </div>
 </div>
 
-<!-- <div class="feature_wrapper">
-    <div class="feature__item--right">
-        <div class="archive__item" style="margin-left: 2em;">
-            <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
-                <iframe width="560" height="315" src="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" frameborder="0"
-                allowfullscreen></iframe>
-            </div>
-        <div class="archive__item-body">
-            <h2 class="archive__item-title"><a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" target="_blank"></a>
-            Cisco Live: 8000 Series Architecture - BRKSPG-2033</h2>
-            <div class="archive__item-excerpt" style="font-size: 0.65em;">
-            <p>The 8000 series is Cisco’s flagship high-end router and delivers market-leading capacity for core, peering, and data center interconnect. This CiscoLive 
-            2021 digital session builds on BRKSPG-2280 (available via CiscoLive recording) and starts with an update on recent advances in the platform, ASICs, and role in 
-            the Routed Optical Networks solution. It then focuses on the forwarding path and highlights the evolution relative to previous architectures.</p>
-            </div>
-            <a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" target="_blank"  class="btn btn--large">Watch on Cisco</a>
-        </div>
-    </div>
-</div> -->
-
+<!-- techfield -->
 <div class="feature_wrapper">
-    <div class="feature__item--left">
+    <div class="feature__item--right">
         <div class="archive__item" style="margin-left: 2em;">
             <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/KIGct1QOtdI" frameborder="0"
@@ -83,8 +80,9 @@ date: null
     </div>
 </div>
 
+<!-- techfield -->
 <div class="feature_wrapper">
-    <div class="feature__item--right">
+    <div class="feature__item--left">
         <div class="archive__item" style="margin-left: 2em;">
             <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/I4cF-VyzwpM" frameborder="0"
@@ -102,26 +100,3 @@ date: null
         </div>
     </div>
 </div>
-
-<div class="feature_wrapper">
-    <div class="feature__item--left">
-        <div class="archive__item" style="margin-left: 2em;">
-            <div class="archive__item-teaser center" style="display: block; margin-left: auto; margin-right: auto;">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/qsWCNyPU_KQ" frameborder="0"
-                allowfullscreen></iframe>
-            </div>
-        <div class="archive__item-body">
-            <h2 class="archive__item-title"><a href="https://www.youtube.com/embed/qsWCNyPU_KQ" target="_blank"></a>
-            Cisco 8000 Series Portfolio Update</h2>
-            <div class="archive__item-excerpt" style="font-size: 0.65em;">
-            <p>This session provides a high-level overview of the Cisco 8000 series routers and you'll see the entire Cisco 8000 series portfolio and its differentiated value proposition. Presented by Mauricio Cruz Covarrubias, Director of Product Management, Core & Edge, Ammar Khan, Engineering Product Manager, and Iqbal Syed, Senior Product Manager. Recorded on December 9, 2021 as part of Networking Field Day: Service Provider.</p>
-            </div>
-            <a href="https://www.youtube.com/embed/I4cF-VyzwpM" target="_blank"  class="btn btn--large">Watch on Youtube</a>
-        </div>
-    </div>
-</div>
-
-
-
-
-<!-- <iframe width="1280" height="720" src="https://www.youtube.com/embed/qsWCNyPU_KQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
