@@ -51,14 +51,17 @@ Let’s recap and do the math:
 HBM, SRAM and TCAM memories are used for packet buffering and databases storage. A dedicated article will cover those different memories, how they are used and what sizes they are.
 
 Add a quad-core Intel CPU, 32GB of RAM and a 64GB SSD and you have a Cisco 8201: 
+
+![8201-arch.png]({{site.baseurl}}/images/8201-arch.png){: .align-center}
+
+
 ![8201-architecture-HD.png]({{site.baseurl}}/images/8201-architecture-HD.png){: .align-center}
 
 The mapping of individual ports to slices/IFG can be checked with following command:  
 
 <div class="highlighter-rouge">
 <pre class="highlight">
-<code>
-RP/0/RP0/CPU0:8201#sh controllers npu voq-usage interface all instance 0 location 0/RP0/CPU0
+<code>RP/0/RP0/CPU0:8201#sh controllers npu voq-usage interface all instance 0 location 0/RP0/CPU0
 Tue Dec  7 09:50:16.205 PST
 
 -------------------------------------------------------------------
@@ -103,8 +106,7 @@ Hu0/0/0/28   f000238   0   1    0   116    768      0 local   100G
 Hu0/0/0/27   f000240   0   2    1   112    784      0 local   100G
 Hu0/0/0/26   f000248   0   2    0   108    800      0 local   100G
 Hu0/0/0/25   f000250   0   3    1   104    816      0 local   100G
-RP/0/RP0/CPU0:8201#
-</code>
+RP/0/RP0/CPU0:8201#</code>
 </pre>
 </div>
 
