@@ -30,7 +30,7 @@ At the heart of Cisco 8201, there is Cisco Silicon One Q100 ASIC. This NPU is ca
 
 The NPU is built around 6 slices. All slices are interconnected by a Shared Memory Switch (SMS). 
 
-![Q100.png]({{site.baseurl}}/images/Q100.png){: .align-center}
+![Q100-HD.png]({{site.baseurl}}/images/Q100-HD.png){: .align-center}
 
 On a fixed system like Cisco 8201, the 6 slices are operating as ‘System on a Chip’ or ‘Router on a Chip’, meaning all slices interconnect network facing interfaces:  
 
@@ -51,7 +51,7 @@ Let’s recap and do the math:
 HBM, SRAM and TCAM memories are used for packet buffering and databases storage. A dedicated article will cover those different memories, how they are used and what sizes they are.
 
 Add a quad-core Intel CPU, 32GB of RAM and a 64GB SSD and you have a Cisco 8201: 
-![8201-architecture.png]({{site.baseurl}}/images/8201-architecture.png){: .align-center}
+![8201-architecture-HD.png]({{site.baseurl}}/images/8201-architecture-HD.png){: .align-center}
 
 The mapping of individual ports to slices/IFG can be checked with following command:  
 
