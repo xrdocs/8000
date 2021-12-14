@@ -26,13 +26,11 @@ This short article will first cover Cisco 8201 high level internal architecture.
 ## Cisco 8201 High Level Architecture
 Cisco 8201 is the first Cisco 8000 fixed system built around a single NPU instance. It has 24 x QSFP56-DD 400 GbE and 12 x QSFP28 100 GbE ports, all packed in a compact 1RU form factor. Datasheet is available on this [link](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html "Cisco 8201 datasheet").  
 
-![8201-arch.png]({{site.baseurl}}/images/8201-arch.png){: .align-center}
-
 At the heart of Cisco 8201, there is Cisco Silicon One Q100 ASIC. This NPU is capable of forwarding 10.8Tbps at a rate of 6.6Bpps. It’s made of 216 x 56G SerDes, each can be configured independently to operate in 10G/25G/50G using NRZ or PAM4 modulation.  
 
 The NPU is built around 6 slices. All slices are interconnected by a Shared Memory Switch (SMS). 
 
-![Q100-HD.png]({{site.baseurl}}/images/Q100-HD.png){: .align-center}
+![8201-arch.png]({{site.baseurl}}/images/8201-arch.png){: .align-center}
 
 On a fixed system like Cisco 8201, the 6 slices are operating as ‘System on a Chip’ or ‘Router on a Chip’, meaning all slices interconnect network facing interfaces:  
 
