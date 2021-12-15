@@ -116,23 +116,21 @@ As shown in the [video](https://www.youtube.com/watch?v=TUKOQTx2GC8), the Cisco 
 
 <iframe class="responsive" width="560" height="315" src="https://www.youtube.com/embed/TUKOQTx2GC8" frameborder="0" allowfullscreen></iframe>{: .align-center}
   
-This is achieved without any single packet loss, as shown in below screenshots:  
+This is achieved without any single packet loss, as shown in below [screenshots]({{site.baseurl}}/images/NDR-no-drop.png).  
 
+Total frame rate:
 ![8201-pps.png]({{site.baseurl}}/images/8201-pps.png){: .align-center}
-
   
+Total throughput:  
 ![8201-bps.png]({{site.baseurl}}/images/8201-bps.png){: .align-center}
-
+  
+No packet loss:  
 ![8201-no-packet-loss.png]({{site.baseurl}}/images/8201-no-packet-loss.png){: .align-center}
-
-
-
-
-<a href="{{site.baseurl}}/images/NDR-no-drop.png">
-  <img class="centered" src="{{site.baseurl}}/images/NDR-no-drop.png"/>{: .align-center}
-</a>  
-
-Average system latency is 3.3µs. Same NDR is observed for IPv6 and MPLS traffic.
+  
+Average system latency is 3.3µs: 
+![8201-latency.png]({{site.baseurl}}/images/8201-latency.png){: .align-center}
+  
+Same NDR is observed for IPv6 and MPLS traffic.
 
 ## Conclusion
 This article covered Cisco 8201 high level architecture. A simple lab test demonstrated raw Cisco 8201 forwarding capacities. Current NDR for this platform is 200 bytes for IPv4, 200 bytes for MPLS and 200 bytes for IPv6. This test confirmed Cisco Q100 performance (10.8Tbps, 6Bpps).  
