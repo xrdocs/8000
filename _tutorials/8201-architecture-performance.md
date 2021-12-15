@@ -116,7 +116,18 @@ As shown in the [video](https://www.youtube.com/watch?v=TUKOQTx2GC8), the Cisco 
 
 <iframe class="responsive" width="560" height="315" src="https://www.youtube.com/embed/TUKOQTx2GC8" frameborder="0" allowfullscreen></iframe>{: .align-center}
   
-This is achieved without any single packet loss, as shown in below screenshot:  
+This is achieved without any single packet loss, as shown in below screenshots:  
+
+![8201-pps.png]({{site.baseurl}}/images/8201-pps.png){: .align-center}
+
+  
+![8201-bps.png]({{site.baseurl}}/images/8201-bps.png){: .align-center}
+
+![8201-no-packet-loss.png]({{site.baseurl}}/images/8201-no-packet-loss.png){: .align-center}
+
+
+
+
 <a href="{{site.baseurl}}/images/NDR-no-drop.png">
   <img class="centered" src="{{site.baseurl}}/images/NDR-no-drop.png"/>{: .align-center}
 </a>  
