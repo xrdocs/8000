@@ -8,7 +8,7 @@ excerpt: >-
   architecture. Then, a quick and simple lab test will demonstrate how it can
   achieve 10.8Tbps at target Non-Drop Rate (NDR). This test will address recent
   concerns raised about its forwarding performance.
-position: hidden
+position: top
 tags:
   - iosxr
   - Cisco 8000
