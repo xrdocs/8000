@@ -115,8 +115,8 @@ Spirent configuration is attached for reference:
 As shown in the [video](https://www.youtube.com/watch?v=TUKOQTx2GC8), the Cisco 8201 is capable of forwarding the full 10.8Tbps of traffic composed of 200bytes IPv4 packets, at the sustained rate of 6Bpps.
 
 <iframe class="responsive" width="560" height="315" src="https://www.youtube.com/embed/TUKOQTx2GC8" frameborder="0" allowfullscreen></iframe>{: .align-center}
-  
-This is achieved without any single packet loss, as shown in below [screenshots]({{site.baseurl}}/images/NDR-no-drop.png).  
+
+  This is achieved without any single packet loss, as shown in below [screenshots]({{site.baseurl}}/images/NDR-no-drop.png).  
 
 Total frame rate:
 ![8201-pps.png]({{site.baseurl}}/images/8201-pps.png){: .align-center}
