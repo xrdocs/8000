@@ -56,7 +56,8 @@ Hu0/0/0/19   f0001a8   0   2    0    80    640      0 local   100G
 </div>
 
 
-- NPU #: NPU number, should be 0 for 8100/8200  
+- NPU #: NPU number
+-- NPU number should be 0 for 8100/8200 (8000 fixed systems)
 -- NPU number should be 0, 1, or 2 for 88-LC0-36FH line card (not shown above).  
 -- NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown above)
 - NPU core: Slice number, should be between 0 and 5 for 8201/8202/8201-32FH
