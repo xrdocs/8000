@@ -56,7 +56,7 @@ Hu0/0/0/19   f0001a8   0   2    0    80    640      0 local   100G
 </div>
 
 
-- NPU #: NPU number, should be 0 for 8100/8200
+- NPU #: NPU number, should be 0 for 8100/8200  
 **Note** NPU number should be 0, 1, or 2 for 88-LC0-36FH line card (not shown above).  
 NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown above)
 {: .notice--primary}
@@ -66,3 +66,5 @@ NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown abov
 ## Port allocation
 ### Cisco 8201
 Cisco 8201 is made of a single Q100 NPU. 
+
+![8201-ports.png]({{site.baseurl}}/images/8201-ports.png)
