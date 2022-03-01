@@ -13,11 +13,6 @@ excerpt: >-
 ---
 {% include toc icon="table" title="Port Assignments on Cisco 8100/8200 and Cisco 8800 Platforms"%} 
 
-# This is H1
-## This is H2
-### This is H3
-#### This is H4
-
 ## Introduction 
 
 This memo will highlight how ports are allocated to IFG/Slice/NPU for each line card and system. Understanding port assignment will aid network design planning and, by enabling a deeper understanding of traffic flow, facilitate rapid, post-hoc system troubleshooting.  
@@ -61,7 +56,7 @@ Hu0/0/0/19   f0001a8   0   2    0    80    640      0 local   100G
 </div>
 
 
-- NPU #: NPU number
+- NPU #: NPU number  
 -- NPU number should be 0 for 8100/8200 (8000 fixed systems)
 -- NPU number should be 0, 1, or 2 for 88-LC0-36FH line card (not shown above).  
 -- NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown above)
