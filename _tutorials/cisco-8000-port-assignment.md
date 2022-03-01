@@ -11,6 +11,8 @@ excerpt: >-
   This article will highlight how ports are allocated to IFG/Slice/NPU for each
   Cisco 8000 line card and systems.
 ---
+{% include toc icon="table" title="Port Assignments on Cisco 8100/8200 and Cisco 8800 Platforms"%} 
+
 ## Introduction 
 
 This memo will highlight how ports are allocated to IFG/Slice/NPU for each line card and system. Understanding port assignment will aid network design planning and, by enabling a deeper understanding of traffic flow, facilitate rapid, post-hoc system troubleshooting.  
@@ -59,4 +61,8 @@ Hu0/0/0/19   f0001a8   0   2    0    80    640      0 local   100G
 NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown above)
 {: .notice--primary}
 - NPU core: Slice number, should be between 0 and 5 for 8201/8202/8201-32FH
-- PP port: IFG number, should be 0 or 1 within slice 
+- PP port: IFG number, should be 0 or 1 within slice
+
+## Port allocation
+### Cisco 8201
+Cisco 8201 is made of a single Q100 NPU. 
