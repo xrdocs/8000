@@ -108,3 +108,32 @@ The table below shows port assignment to different slices and IFG:
 | Hu0/0/0/33 | 0/5/10        |
 | Hu0/0/0/34 | 0/4/9         |
 | Hu0/0/0/35 | 0/4/8         |
+
+### Cisco 8202
+Cisco 8202 is made of a single Q100 NPU. 
+
+### Cisco 8201-32FH
+Cisco 8201-32FH is made of a single Q200 NPU.
+
+### Cisco 8201-24H8FH
+Cisco 8201-24H8FH is made of a single Q200 NPU. 
+
+### Cisco 8101-32FH
+Cisco 8101-32FH is made of a single Q200L NPU. 
+
+### Cisco 8101-32H
+Cisco 8101-32H is made of a single Q202L NPU. 
+
+### Cisco 8102-64H
+Cisco 8102-64H is made of a single Q201L NPU. 
+
+### 8800-LC-36FH
+There are four Q100 NPUs on these line cards 
+
+### 88-LC0-36FH-M and 88-LC0-36FH
+There are three Q200 NPUs on these line cards. 
+
+88-LC0-36FH-M and 88-LC0-36FH are identical in all ways except the former can support MACSec and the latter cannot.
+
+### 88-LC0-34H14FH
+There are two Q200 NPUs on these line cards.  
