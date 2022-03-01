@@ -13,10 +13,6 @@ excerpt: >-
 ---
 {% include toc icon="table" title="Port Assignments on Cisco 8100/8200 and Cisco 8800 Platforms"%} 
 
-# test1
-## test2
-### test3
-#### test4
 
 ## Introduction 
 
@@ -116,30 +112,49 @@ The table below shows port assignment to different slices and IFG:
 | Hu0/0/0/35 | 0/4/8         |
 
 ### Cisco 8202
-Cisco 8202 is made of a single Q100 NPU. 
+Cisco 8202 is made of a single Q100 NPU.  
+![8202.png]({{site.baseurl}}/images/8202.png)
+
 
 ### Cisco 8201-32FH
-Cisco 8201-32FH is made of a single Q200 NPU.
+Cisco 8201-32FH is made of a single Q200 NPU.  
+![8201-32FH.png]({{site.baseurl}}/images/8201-32FH.png)
+
 
 ### Cisco 8201-24H8FH
-Cisco 8201-24H8FH is made of a single Q200 NPU. 
+Cisco 8201-24H8FH is made of a single Q200 NPU.  
+![8201-24H8FH.png]({{site.baseurl}}/images/8201-24H8FH.png)
+
 
 ### Cisco 8101-32FH
 Cisco 8101-32FH is made of a single Q200L NPU. 
+![8101-32FH.png]({{site.baseurl}}/images/8101-32FH.png)
+
 
 ### Cisco 8101-32H
 Cisco 8101-32H is made of a single Q202L NPU. 
+![8101-32H.png]({{site.baseurl}}/images/8101-32H.png)
+
 
 ### Cisco 8102-64H
-Cisco 8102-64H is made of a single Q201L NPU. 
+Cisco 8102-64H is made of a single Q201L NPU.  
+![8102-64H.png]({{site.baseurl}}/images/8102-64H.png)
+
 
 ### 8800-LC-36FH
-There are four Q100 NPUs on these line cards 
+There are four Q100 NPUs on these line cards.  
+![8800-LC-36FH.png]({{site.baseurl}}/images/8800-LC-36FH.png)
+
 
 ### 88-LC0-36FH-M and 88-LC0-36FH
-There are three Q200 NPUs on these line cards. 
+There are three Q200 NPUs on these line cards.  
+![88-LC0-36FH-M.png]({{site.baseurl}}/images/88-LC0-36FH-M.png)
+
+![88-LC0-36FH.png]({{site.baseurl}}/images/88-LC0-36FH.png)
 
 88-LC0-36FH-M and 88-LC0-36FH are identical in all ways except the former can support MACSec and the latter cannot.
 
 ### 88-LC0-34H14FH
-There are two Q200 NPUs on these line cards.
+There are two Q200 NPUs on these line cards.  
+![88-LC0-34H14FH.png]({{site.baseurl}}/images/88-LC0-34H14FH.png)
+
