@@ -16,7 +16,7 @@ excerpt: >-
 
 ## Introduction 
 
-This article will highlight how ports are allocated to IFG/Slice/NPU for each line card and system. Understanding port assignment will aid network design planning and, by enabling a deeper understanding of traffic flow, facilitate rapid, post-hoc system troubleshooting.  
+This article will highlight how ports are allocated to IFG/Slice/NPU for each Cisco 8000 line card and system. Understanding Cisco 8000 port assignment will aid network design planning and, by enabling a deeper understanding of traffic flow, facilitate rapid, post-hoc system troubleshooting.  
 Let’s review how this allocation is done, platform by platform and line card by line card. The following CLI is used to identify the port/IFG/Slice/NPU assignment: 
 
 <div class="highlighter-rouge">
@@ -316,4 +316,3 @@ There are two Q200 NPUs on these line cards.
 | FH0/0/0/11 | 0/1/2         | Hu0/0/0/25 | 1/2/04        | Hu0/0/0/39 | 1/1/03        |            |               |
 | Hu0/0/0/12 | 0/1/3         | FH0/0/0/26 | 1/2/05        | Hu0/0/0/40 | 1/1/02        |            |               |
 | Hu0/0/0/13 | 0/1/2         | Hu0/0/0/27 | 1/2/05        | FH0/0/0/41 | 1/0/1         |            |               |
-
