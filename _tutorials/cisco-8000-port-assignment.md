@@ -311,7 +311,7 @@ There are two Q200 NPUs on these line cards.
 | Hu0/0/0/12 | 0/1/3         | FH0/0/0/26 | 1/2/05        | Hu0/0/0/40 | 1/1/02        |            |               |
 | Hu0/0/0/13 | 0/1/2         | Hu0/0/0/27 | 1/2/05        | FH0/0/0/41 | 1/0/1         |            |               |
 
-### 8800-LC-48H. 
+### 8800-LC-48H 
 There are two Q100 NPUs on these line cards.  
 ![8800-LC-48H.png]({{site.baseurl}}/images/8800-LC-48H.png)
 
