@@ -136,7 +136,6 @@ Cisco 8201-32FH is made of a single Q200 NPU.
 | FH0/0/0/14 | 0/3/6         | FH0/0/0/30 | 0/1/2         |
 | FH0/0/0/15 | 0/3/6         | FH0/0/0/31 | 0/1/2         |
 
-
 ### Cisco 8201-24H8FH
 Cisco 8201-24H8FH is made of a single Q200 NPU.  
 ![8201-24H8FH.png]({{site.baseurl}}/images/8201-24H8FH.png)
