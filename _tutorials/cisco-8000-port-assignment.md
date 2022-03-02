@@ -6,6 +6,7 @@ position: hidden
 tags:
   - iosxr
   - Cisco 8000
+  - Port
 author: Chang Soo Lee
 excerpt: >-
   This article will highlight how ports are allocated to IFG/Slice/NPU for each
