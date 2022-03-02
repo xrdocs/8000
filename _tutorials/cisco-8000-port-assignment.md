@@ -246,10 +246,12 @@ There are four Q100 NPUs on these line cards.
 ### 88-LC0-36FH-M and 88-LC0-36FH
 There are three Q200 NPUs on these line cards.  
 ![88-LC0-36FH-M.png]({{site.baseurl}}/images/88-LC0-36FH-M.png)
-                     88-LC0-36FH-M
+88-LC0-36FH-M  
+{: .text-center}
  
 ![88-LC0-36FH.png]({{site.baseurl}}/images/88-LC0-36FH.png)  
-                      88-LC0-36FH
+88-LC0-36FH
+{: .text-center}
 
 88-LC0-36FH-M and 88-LC0-36FH are identical in all ways except the former can support MACSec and the latter cannot.
 
