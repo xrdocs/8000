@@ -32,3 +32,15 @@ System power consumption is the key metric to focus on. Chip power is an interes
 
 The key components of the electrical data path power comprise PHYs, retimers, and forwarding ASICs. PHYs are small devices used for functions such as MACsec or as gearboxes which combine SerDes (Serializer/Deserializers are used for fast I/O through PCBs) or split them into different speeds. A common gearbox operation is to convert 2x 56G SerDes from the ASIC to 4x 28G SerDes connected to a QSFP28 100 GbE port. Retimers are used to extend electrical signals. Retimers are commonly used for long traces on larger PCBs (e.g., 8818 fabric card) and to connect optics to ASICs in the “back row” of a line card. 
 ![Linecard PHY]({{site.baseurl}}/images/linecard-phys.png)
+
+## Metrics for the Cisco 8000 Series 
+
+At the beginning of this paper, the metric of watts per 100G without optics was proposed. Let’s conclude by looking at those values for some specific configurations. The data below is tested at 22C with 768B packets, 15% bandwidth, and without optics. 
+
+| System              | Bandwidth  | Typical Power (W) | Watts / 100G |
+| ------------------- | ---------- | ----------------- | ------------ |
+| 8201-32FH           | 12.8 Tbps  | 265               | 2.1          |
+| 8804 (4x 14.4T LC)  | 43.2 Tbps  | 4200              | 7.2          |
+| 8808 (8x 14.4T LC)  | 86.4 Tbps  | 8100              | 7.0          |
+| 8812 (12x 14.4 LC)  | 172.8 Tbps | 13900             | 8.1          |
+| 8818 (18x 14.4T LC) | 259.2 Tbps | 18900             | 7.6          |
