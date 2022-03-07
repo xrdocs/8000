@@ -12,7 +12,7 @@ tags:
   - iosxr
   - Cisco 8000
   - Power
-position: hidden
+position: top
 ---
 {% include toc icon="table" title="Router Power Consumption (part 1)"%}
 
