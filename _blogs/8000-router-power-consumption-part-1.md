@@ -80,7 +80,7 @@ In the past, these factors could be ignored by users, but as power consumption b
 ## Metrics for the Cisco 8000 Series 
 
 At the beginning of this paper, the metric of watts per 100G without optics was proposed. Let’s conclude by looking at those values for some specific configurations. The data below is tested at 22C with 768B packets, 15% bandwidth, and without optics. 
-<center>
+
 
 | System              | Bandwidth  | Typical Power (W) | Watts / 100G |
 | ------------------- | ---------- | ----------------- | ------------ |
@@ -89,7 +89,7 @@ At the beginning of this paper, the metric of watts per 100G without optics was 
 | 8808 (8x 14.4T LC)  | 86.4 Tbps  | 8100              | 7.0          |
 | 8812 (12x 14.4 LC)  | 172.8 Tbps | 13900             | 8.1          |
 | 8818 (18x 14.4T LC) | 259.2 Tbps | 18900             | 7.6          |  
-</center>
+
 ## Conclusion 
 
 Much is made of chip-level power efficiency, but that is not the ultimate goal – merely a means to an end. Operators shouldn’t care if power is used to flip transistors or spin fans, they just want the system to be efficient. Evaluating systems should include benchmarks that can be standardized as well as network-specific configurations which may include multiple generations of hardware, a partially filled chassis, or different traffic loads.  
