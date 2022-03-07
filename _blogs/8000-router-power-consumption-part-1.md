@@ -33,6 +33,7 @@ System power consumption is the key metric to focus on. Chip power is an interes
 ## Electrical Data Path 
 
 The key components of the electrical data path power comprise PHYs, retimers, and forwarding ASICs. PHYs are small devices used for functions such as MACsec or as gearboxes which combine SerDes (Serializer/Deserializers are used for fast I/O through PCBs) or split them into different speeds. A common gearbox operation is to convert 2x 56G SerDes from the ASIC to 4x 28G SerDes connected to a QSFP28 100 GbE port. Retimers are used to extend electrical signals. Retimers are commonly used for long traces on larger PCBs (e.g., 8818 fabric card) and to connect optics to ASICs in the “back row” of a line card.  
+
 ![Linecard PHY]({{site.baseurl}}/images/linecard-phys.png)
 Fig 1. PHYs on a line card.
 {: .text-center}  
@@ -79,6 +80,7 @@ In the past, these factors could be ignored by users, but as power consumption b
 ## Metrics for the Cisco 8000 Series 
 
 At the beginning of this paper, the metric of watts per 100G without optics was proposed. Let’s conclude by looking at those values for some specific configurations. The data below is tested at 22C with 768B packets, 15% bandwidth, and without optics. 
+<center>
 
 | System              | Bandwidth  | Typical Power (W) | Watts / 100G |
 | ------------------- | ---------- | ----------------- | ------------ |
@@ -87,7 +89,7 @@ At the beginning of this paper, the metric of watts per 100G without optics was 
 | 8808 (8x 14.4T LC)  | 86.4 Tbps  | 8100              | 7.0          |
 | 8812 (12x 14.4 LC)  | 172.8 Tbps | 13900             | 8.1          |
 | 8818 (18x 14.4T LC) | 259.2 Tbps | 18900             | 7.6          |  
-
+</center>
 ## Conclusion 
 
 Much is made of chip-level power efficiency, but that is not the ultimate goal – merely a means to an end. Operators shouldn’t care if power is used to flip transistors or spin fans, they just want the system to be efficient. Evaluating systems should include benchmarks that can be standardized as well as network-specific configurations which may include multiple generations of hardware, a partially filled chassis, or different traffic loads.  
