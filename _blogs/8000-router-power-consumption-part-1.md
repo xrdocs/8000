@@ -35,7 +35,14 @@ System power consumption is the key metric to focus on. Chip power is an interes
 The key components of the electrical data path power comprise PHYs, retimers, and forwarding ASICs. PHYs are small devices used for functions such as MACsec or as gearboxes which combine SerDes (Serializer/Deserializers are used for fast I/O through PCBs) or split them into different speeds. A common gearbox operation is to convert 2x 56G SerDes from the ASIC to 4x 28G SerDes connected to a QSFP28 100 GbE port. Retimers are used to extend electrical signals. Retimers are commonly used for long traces on larger PCBs (e.g., 8818 fabric card) and to connect optics to ASICs in the “back row” of a line card.  
 ![Linecard PHY]({{site.baseurl}}/images/linecard-phys.png)
 Fig 1. PHYs on a line card.
-{: .text-center}
+{: .text-center}  
+Power-wise, ASICs are the stars of the show, so it’s understandable that they get most of the attention. They are the most complex components and are the key driver of system power for large, modular systems like the 8800. ASIC power can be broken into three main categories: SerDes, idle core power, and dynamic core power. In high-bandwidth chips like the Cisco Silicon One Q200, these are roughly equal. I’ll be focusing on this class of chips in this paper. It includes devices such as Broadcom’s Jericho 2, Jericho 2c+, and Tomahawk line as well as Juniper’s Triton and the recently preannounced Express 5. Edge-class chips such as Cisco’s Lightspeed Plus and Juniper’s Trio have similar characteristics but consume more power in complex per-packet operations (e.g., more counters) and less in SerDes due to lower bandwidth.  
+
+Each of these categories has different characteristics of power consumption. SerDes require constant power independent of traffic load, but they can be powered down to save power. On the 8000 Series, this occurs when ports are shut down or when a fabric or line card slot is empty. In the latter case, the corresponding SerDes on the connecting card are shut down (e.g., some Fabric Card (FC) SerDes are disabled when Line Card (LC) slots are empty).  
+
+ASIC idle power is exactly what it sounds like. It’s the power required to keep the chip’s internal blocks up and running with no traffic load. Dynamic power occurs when packets are forwarded. Some dynamic power is consumed for per-packet operations (pps load) and some is needed for moving the bandwidth along the forwarding path (bps load).  
+
+Core (non-SerDes) ASIC power will vary greatly among devices as networking ASICs serve many roles with a variety of requirements. Core ASIC power may vary based on several factors:  
 
 ## Metrics for the Cisco 8000 Series 
 
@@ -47,4 +54,6 @@ At the beginning of this paper, the metric of watts per 100G without optics was 
 | 8804 (4x 14.4T LC)  | 43.2 Tbps  | 4200              | 7.2          |
 | 8808 (8x 14.4T LC)  | 86.4 Tbps  | 8100              | 7.0          |
 | 8812 (12x 14.4 LC)  | 172.8 Tbps | 13900             | 8.1          |
-| 8818 (18x 14.4T LC) | 259.2 Tbps | 18900             | 7.6          |
+| 8818 (18x 14.4T LC) | 259.2 Tbps | 18900             | 7.6          |  
+
+
