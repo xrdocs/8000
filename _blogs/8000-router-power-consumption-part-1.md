@@ -44,12 +44,12 @@ Each of these categories has different characteristics of power consumption. Ser
 ASIC idle power is exactly what it sounds like. It’s the power required to keep the chip’s internal blocks up and running with no traffic load. Dynamic power occurs when packets are forwarded. Some dynamic power is consumed for per-packet operations (pps load) and some is needed for moving the bandwidth along the forwarding path (bps load).  
 
 Core (non-SerDes) ASIC power will vary greatly among devices as networking ASICs serve many roles with a variety of requirements. Core ASIC power may vary based on several factors:  
--Function – DC vs. SP Edge vs. SP Core perform different levels of per-packet operations  
--Network vs. fabric capacity – ASIC I/O that only can connect to a switch fabric are much simpler and may be lower power  
--Process node (7nm is the current generation, 16nm and 28nm were the previous TSMC nodes)  
--Design – Newer microarchitectures tend to have better efficiency than chips carrying legacy constraints. The skill of the design engineers is also significant and shows up in the power bottom line.  
--Device temperature – A hot ASIC has marginally higher power than a cooler one.  
--Load – The number of transistors flipping at a given time (mainly a function of pps and bandwidth, but also of the design’s ability to gate unused logic)  
+- Function – DC vs. SP Edge vs. SP Core perform different levels of per-packet operations  
+- Network vs. fabric capacity – ASIC I/O that only can connect to a switch fabric are much simpler and may be lower power  
+- Process node (7nm is the current generation, 16nm and 28nm were the previous TSMC nodes)  
+- Design – Newer microarchitectures tend to have better efficiency than chips carrying legacy constraints. The skill of the design engineers is also significant and shows up in the power bottom line.  
+- Device temperature – A hot ASIC has marginally higher power than a cooler one.  
+- Load – The number of transistors flipping at a given time (mainly a function of pps and bandwidth, but also of the design’s ability to gate unused logic)  
 
 Most legacy SP ASIC designs were optimized for large modular systems with switch fabrics. This approach resulted in some of the ASIC I/O (usually a bit more than 50% to account for overhead and provide speedup) being hard coded for fabric operations. This greatly simplifies the design relative chips that can dedicate their full bandwidth to the network. The logic for fabric lookups is dramatically simpler than network operations and, thus, requires less silicon real estate.  
 
@@ -100,6 +100,4 @@ Other Cisco IOS XR platforms use higher traffic levels for their typical case in
 
 This may not represent your network or RFP benchmark, so for the 8800 Series, we have developed models based on extensive lab testing that can provide accurate estimates for any combination of line cards, type and number of fabric cards, packet size, bandwidth, optics, and temperature. If you are considering the 8000 series for your network, ask your account team to help with power modeling.  
 
-In summary, the key metric for power consumption is system power in your typical conditions. When router shopping, ask vendors for system-level data that meets your real requirements and for details on how they were tested or calculated. Make sure to also look closely at timelines for qualification and ramp to deployment so that you evaluate systems available in the same generation and do not compare deployable hardware with press releases.  
-
-
+In summary, the key metric for power consumption is system power in your typical conditions. When router shopping, ask vendors for system-level data that meets your real requirements and for details on how they were tested or calculated. Make sure to also look closely at timelines for qualification and ramp to deployment so that you evaluate systems available in the same generation and do not compare deployable hardware with press releases.
