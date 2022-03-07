@@ -48,7 +48,22 @@ Core (non-SerDes) ASIC power will vary greatly among devices as networking ASICs
 -Process node (7nm is the current generation, 16nm and 28nm were the previous TSMC nodes)  
 -Design – Newer microarchitectures tend to have better efficiency than chips carrying legacy constraints. The skill of the design engineers is also significant and shows up in the power bottom line.  
 -Device temperature – A hot ASIC has marginally higher power.  
--Load – The number of transistors flipping at a given time (mainly a function of pps and bandwidth, but also of the design’s ability to gate unused logic)   
+-Load – The number of transistors flipping at a given time (mainly a function of pps and bandwidth, but also of the design’s ability to gate unused logic)  
+
+Most legacy SP ASIC designs were optimized for large modular systems with switch fabrics. This approach resulted in some of the ASIC I/O (fabric requires speedup so usually a bit more than 50% to account for overhead) being hard coded for fabric operations. This greatly simplifies the design relative chips that can dedicate their full bandwidth to the network. The logic for fabric lookups is dramatically simpler than network operations and, thus, requires less silicon real estate and power.  
+
+The downside of fabric-bound I/O shows up when used in single-chip systems. The fabric bandwidth is lost and cannot be redirected to the network. This can be offset by using two chips back-to-back with a point to point “fabric”, but that is still less efficient than a single chip that can connect all its bandwidth to the network. When two ASICs are required, the chip power is doubled. If more chips and a switch fabric are required for small (2-3 RU) systems, the power goes even higher.  
+
+##Optics 
+
+Optics are the divas of router hardware. They consume significant power, provide a small footprint for heat sinks, and their max temperature is 50C cooler than ASICs. The thermal management of optical modules was one of the most difficult challenges for the initial mechanical design of 400G-class systems – and then ZR+ modules doubled the requirement from 11W (DR4/FR4) to 22W (ZR+).  
+
+Optical module power is relatively consistent for each reach (e.g., LR8 or FR4) among vendors. The system power to cool the modules varies. For example, it may be more difficult to cool a QSFP-DD module in a traditional chassis with vertical airflow (i.e., each module preheats air for the one above it) than a newer orthogonal chassis (direct cold air to all modules). The QSFP-DD and OSFP designs also impact power required for cooling. Both can support high power optics, but the QSFP-DD design allows for ongoing heat sink innovation customized to the chassis. This results in less airflow needed to cool the modules and thus lower system power than OSFP which locked in a standardized heat sink design that limited innovation.  
+
+##Cooling 
+
+Routers are air-cooled; fans push or pull air through the chassis. The airflow path is important as each component heats the air for downstream devices within the chassis. Fan power is highly variable among systems and different operating conditions. On the 8800 Series’ largest chassis (the 8818) the 40 fans can consume from 600 to 6400W. This great range is due to the nature of fan power consumption. It is roughly cubic with the air moved. When fan speeds get into the 80-100% range, their power goes up dramatically so care should be taken to minimize the need for high-speed fan operation by only setting the fans to the maximum speed when absolutely required.  
+
 
 
 ## Metrics for the Cisco 8000 Series 
