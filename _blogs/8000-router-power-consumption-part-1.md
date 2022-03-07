@@ -43,6 +43,13 @@ Each of these categories has different characteristics of power consumption. Ser
 ASIC idle power is exactly what it sounds like. It’s the power required to keep the chip’s internal blocks up and running with no traffic load. Dynamic power occurs when packets are forwarded. Some dynamic power is consumed for per-packet operations (pps load) and some is needed for moving the bandwidth along the forwarding path (bps load).  
 
 Core (non-SerDes) ASIC power will vary greatly among devices as networking ASICs serve many roles with a variety of requirements. Core ASIC power may vary based on several factors:  
+-Function – DC vs. SP Edge vs. SP Core perform different levels of per-packet operations 
+-Network vs. fabric capacity – ASIC interfaces that only can connect to a switch fabric are much simpler and lower power 
+-Process node (7nm is the current generation, 16nm and 28nm were the previous TSMC nodes) 
+-Design – Newer microarchitectures tend to have better efficiency than chips carrying legacy constraints. The skill of the design engineers is also significant and shows up in the power bottom line. 
+-Device temperature – A hot ASIC has marginally higher power. 
+-Load – The number of transistors flipping at a given time (mainly a function of pps and bandwidth, but also of the design’s ability to gate unused logic)  
+
 
 ## Metrics for the Cisco 8000 Series 
 
