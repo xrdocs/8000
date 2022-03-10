@@ -1,7 +1,18 @@
 ---
-published: false
+published: true
 date: '2022-03-10 07:59 -0500'
 title: 8100 & 8200 Deployment Note
+position: hidden
+author: Lane Wigley
+excerpt: >-
+  While the 8100 and 8200 Series have similar hardware architectures and form
+  factors, there are key differences that impact the network roles they address.
+  This post will cover their positioning and differences. 
+tags:
+  - iosxr
+  - '8000'
+  - '8100'
+  - '8200'
 ---
 {% include toc icon="table" title="8100 & 8200 Deployment Note"%}
 
