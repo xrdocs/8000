@@ -22,7 +22,7 @@ While the 8100 and 8200 Series have similar hardware architectures and form fact
 
 ## Executive Summary 
 
-The Cisco Silicon One architecture enables the bandwidth and power efficiency of switching chips combined with SP-class buffering and forwarding table sale. The 8200 and 8800 Series take full advantage of these capabilities to address a wide range of network roles. The 8100 Series is streamlined for data center networks as it offers smaller buffers and moderate forwarding table scale. The 8100 and 8200 Series are available in different port configurations that reflect these target markets.  
+The Cisco Silicon One architecture enables the bandwidth and power efficiency of switching chips combined with SP-class buffering and forwarding table scale. The 8200 and 8800 Series take full advantage of these capabilities to address a wide range of network roles. The 8100 Series is streamlined for data center networks as it offers smaller buffers and moderate forwarding table scale. The 8100 and 8200 Series are available in different port configurations that reflect these target markets.  
 
 For forwarding table and buffers, the 8100 is most comparable to the NCS 5000 (Broadcom XGS Tomahawk and Trident). The 8200 and 8800 are comparable to the NCS 5500 (Broadcom DNX) with similar buffering and table scale in between the base and -SE (higher scale with TCAM) versions.  
 
@@ -38,11 +38,12 @@ For forwarding table and buffers, the 8100 is most comparable to the NCS 5000 (B
 The underlying hardware difference is High Bandwidth Memory (HBM). HBM is a stack of DRAM placed onto the ASIC package as shown in Figure 1. It provides high bandwidth with low power. This memory is used to expand the buffers and forwarding tables. The 8200 and 8800 use HBM. The 8100 does not.  
 They key message of this paper is where not to deploy the 8100. The paper does not address all the use cases for 8200 and 8800.  
 
-![HBM]({{site.baseurl}}/images/hbm-graphic.png)
+![HBM]({{site.baseurl}}/images/hbm-graphic2.png)
+
 
 ## Forwarding Table Size 
 
-The 8100 Series stores all forwarding tables in internal memory on the Silicon One die. This limits the FIB scale to around 400-500k IPv4 **or** 200-250k IPv6 entries. These are larger than other switching ASICs (e.g., Innovium and Broadcom XGS), but smaller than traditional service provider routers. The 8200 and 8800 Series store the active prefixes in internal memory and use the HBM to extend capacity. This allows for larger tables (around 2M IPv4 **and** 512k IPv6). In this model, the most active prefixes are stored internally, and less frequently used prefixes are kept in HBM until their traffic demands increase. As of early 2022, the Internet global tables are just above 900K IPv4 and 140K IPv6 prefixes so 8200 and 8800 routers deployed today will support growth for many years to come.  
+The 8100 Series stores all forwarding tables in internal memory on the Silicon One die. This limits the FIB scale to around 400-500k IPv4 **or** 200-250k IPv6 entries. These are larger than other switching ASICs (e.g., Innovium and Broadcom XGS), but smaller than traditional service provider routers. The 8200 and 8800 Series store the active prefixes in internal memory and use the HBM to extend capacity. This allows for larger tables (around 2M IPv4 **and** 512k IPv6). In this model, the most active prefixes are stored internally, and less frequently used prefixes are kept in HBM until their traffic demands increase. As of early 2022, the Internet global tables are just above 900K IPv4 and 140K IPv6 prefixes, so 8200 and 8800 routers deployed today will support growth for many years to come.  
 
 ## Buffering 
 
@@ -86,7 +87,7 @@ Routers supporting traffic that transits longer distances requires more bufferin
 | Duration of Latency  |                          Common Sources                           |
 |:--------------------:|:-----------------------------------------------------------------:|
 | 100s of nanoseconds  | Nominal latency of ultra-low-latency cut-through switches         |
-| microseconds         | 10G serialization delay, nominal latency of single-chip switches  |
+| 1s microseconds         | 10G serialization delay, nominal latency of single-chip switches  |
 | 10s of microseconds  | Data Center RTT, Modular routers, 1G serialization                |
 | 1s of milliseconds   | Campus or Metro RTT                                               |
 | 10s of milliseconds  | Cached CDN RTT, intra-country RTT                                 |
