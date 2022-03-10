@@ -2,7 +2,7 @@
 published: true
 date: '2022-03-10 07:59 -0500'
 title: 8100 & 8200 Deployment Note
-position: hidden
+position: top
 author: Lane Wigley
 excerpt: >-
   While the 8100 and 8200 Series have similar hardware architectures and form
