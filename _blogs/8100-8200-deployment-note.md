@@ -87,7 +87,7 @@ Routers supporting traffic that transits longer distances requires more bufferin
 | Duration of Latency  |                          Common Sources                           |
 |:--------------------:|:-----------------------------------------------------------------:|
 | 100s of nanoseconds  | Nominal latency of ultra-low-latency cut-through switches         |
-| 1s microseconds         | 10G serialization delay, nominal latency of single-chip switches  |
+| 1s microseconds      | 10G serialization delay, nominal latency of single-chip switches  |
 | 10s of microseconds  | Data Center RTT, Modular routers, 1G serialization                |
 | 1s of milliseconds   | Campus or Metro RTT                                               |
 | 10s of milliseconds  | Cached CDN RTT, intra-country RTT                                 |
