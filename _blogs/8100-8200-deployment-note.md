@@ -82,7 +82,7 @@ For a ToR, this isn’t the case. Many DC traffic flows are many-to-one (Incast)
 
 ## Core, Aggregation, Data Center Interconnect, and Peering HW requirements 
 
-Routers supporting traffic that transits longer distances requires more buffering due to the increased time for flow control signals between the sender and receiver. For example, the practical RTT from New York City to Los Angeles is approximately 60 milliseconds (60,000 microseconds). If a sender is transmitting as a high rate, a 8100 Series’ buffers can be overrun before packet loss is recognized and an updated window size is received from the other end. These requirements are described in more detail on “An Update on Router Buffering”.  
+Routers supporting traffic that transits longer distances requires more buffering due to the increased time for flow control signals between the sender and receiver. For example, the practical RTT from New York City to Los Angeles is approximately 60 milliseconds (60,000 microseconds). If a sender is transmitting as a high rate, a 8100 Series’ buffers can be overrun before packet loss is recognized and an updated window size is received from the other end. These requirements are described in more detail in [An Update on Router Buffering](https://xrdocs.io/8000/Buffering-WP_March_2022.pdf "An Update on Router Buffering").  
 
 | Duration of Latency  |                          Common Sources                           |
 |:--------------------:|:-----------------------------------------------------------------:|
