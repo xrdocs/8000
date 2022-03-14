@@ -43,7 +43,7 @@ They key message of this paper is where be cautious in deploying the 8100 Series
 
 ## Forwarding Table Size 
 
-The 8100 Series stores all forwarding tables in internal memory on the Silicon One die. This limits the FIB scale to around 400-500k IPv4 **or** 200-250k IPv6 entries. These are larger than other switching ASICs (e.g., Innovium and Broadcom XGS), but smaller than traditional service provider routers. The 8200 and 8800 Series store the active prefixes in internal memory and use the HBM to extend capacity. This allows for larger tables (around 2M IPv4 **and** 512k IPv6). In this model, the most active prefixes are stored internally, and less frequently used prefixes are kept in HBM until their traffic demands increase. As of early 2022, the Internet global tables are just above 900K IPv4 and 140K IPv6 prefixes, so 8200 and 8800 routers deployed today will support growth for many years to come.  
+The 8100 Series stores all forwarding tables in internal memory on the Silicon One die. This limits the FIB scale to around 400-500k IPv4 **or** 400-500k IPv6 entries. These are larger than other switching ASICs (e.g., Innovium and Broadcom XGS), but smaller than traditional service provider routers. The 8200 and 8800 Series store the active prefixes in internal memory and use the HBM to extend capacity. This allows for larger tables (around 2M IPv4 **and** 512k IPv6). In this model, the most active prefixes are stored internally, and less frequently used prefixes are kept in HBM until their traffic demands increase. As of early 2022, the Internet global tables are just above 900K IPv4 and 140K IPv6 prefixes, so 8200 and 8800 routers deployed today will support growth for many years to come.  
 
 ## Buffering 
 
