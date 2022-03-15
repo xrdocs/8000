@@ -32,7 +32,7 @@ System power consumption is the key metric to focus on. Chip power is an interes
 
 ## Electrical Data Path 
 
-The key components of the electrical data path power comprise PHYs, retimers, and forwarding ASICs. PHYs are small devices used for functions such as MACsec or as gearboxes which combine SerDes (Serializer/Deserializers are used for fast I/O through PCBs) or split them into different speeds. A common gearbox operation is to convert 2x 56G SerDes from the ASIC to 4x 28G SerDes connected to a QSFP28 100 GbE port. The 100G ports on the 8201 and 8202 use this design. Retimers are used to extend electrical signals. Retimers are commonly used for long traces on larger PCBs (e.g., 8818 fabric card) and to connect optics to ASICs in the “back row” of a line card.  
+The key components of the electrical data path power comprise PHYs, retimers, and forwarding ASICs. PHYs are small devices used for functions such as MACsec or as gearboxes which combine SerDes (Serializer/Deserializers are used for fast I/O through PCBs) or split them into different speeds. A common gearbox operation is to convert 2x 56G SerDes from the ASIC to 4x 28G SerDes connected to a QSFP28 100 GbE port. The 100G ports on the 8201 and 8202 use this design. Retimers are used to extend electrical signals. Retimers are commonly used for long traces such as connecting optics to ASICs in the “back row” of a line card.  
 
 ![Linecard PHY]({{site.baseurl}}/images/linecard-phys.png)
 Fig 1. PHYs on a line card.
