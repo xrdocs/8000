@@ -141,7 +141,7 @@ Cisco 8201-32FH is made of a single Q200 NPU.
 | FH0/0/0/15 | 0/3/6         | FH0/0/0/31 | 0/1/2         |
 
 ### Cisco 8201-24H8FH
-Cisco 8201-24H8FH is made of a single Q200 NPU. This system can support 24ports 100Gbe and 8ports 400GbE.  
+Cisco 8201-24H8FH is made of a single Q200 NPU. This system can support 24 ports 100 GbE and 8 ports 400 GbE.  
 ![8201-24H8FH_front.png]({{site.baseurl}}/images/8201-24H8FH_front.png)  
 
 ![8201-24H8FH.png]({{site.baseurl}}/images/8201-24H8FH.png)
