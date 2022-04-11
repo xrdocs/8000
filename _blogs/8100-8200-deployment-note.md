@@ -33,7 +33,8 @@ For forwarding table and buffers, the 8100 is most comparable to the NCS 5000 (B
 |    8101-32FH    |     32      |      0      | Small / Medium  |
 |      8201       |     24      |     12      |  Deep / Large   |
 |      8202       |     12      |     60      |  Deep / Large   |
-| 8202-32FH (-M)  |     32      |      0      |  Deep / Large   |
+| 8201-32FH       |     32      |      0      |  Deep / Large   |
+| 8202-32FH-M     |     32      |      0      |  Deep / Large   |
 
 The underlying hardware difference is High Bandwidth Memory (HBM). HBM is a stack of DRAM placed onto the ASIC package as shown in the figure below. It provides high bandwidth with low power. This memory is used to expand the buffers and forwarding tables. The 8200 and 8800 use HBM. The 8100 does not.     
 They key message of this paper is where be cautious in deploying the 8100 Series. The paper does not address all the use cases for 8200 and 8800 Series.  
