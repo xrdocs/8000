@@ -58,6 +58,7 @@ The difference in buffering capacity is more dramatic, and the suitability for v
 |            8201             |  8000  |   10800    |  5925  |  5.93  |
 |            8202             |  8000  |   10800    |  5925  |  5.93  |
 |       8202-32FH (-M)        |  8000  |   12800    |  5000  |  5.00  |
+|       8202-32FH-M           |  8000  |   12800    |  5000  |  5.00  |
 | 36x 400 Line Card  4x Q100  | 32000  |   14400    | 17778  | 17.78  |
 | 36x 400 Line Card  3x Q200  | 24000  |   14400    | 13333  | 13.33  |
 
