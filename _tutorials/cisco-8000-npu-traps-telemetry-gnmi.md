@@ -327,15 +327,14 @@ Here is the telegraf.conf configuration used for this demo:
 </div>
 
 If JSON IETF is used for encoding, some counters might show as strings, which could prevent their visualization later in Grafana. This behavior is compliant with RFC 7951 - JSON Encoding of Data Modeled with YANG , section 6.1 (Numeric Types):
-> “A value of the "int64", "uint64", or "decimal64" type is represented as a JSON string”.
-
+_“A value of the "int64", "uint64", or "decimal64" type is represented as a JSON string”._  
 In this case, it’s required to use a Telegraf processor to transform a field from string to integer. Extra telegraf.conf can be used to change packet-accepted and packet-dropped fields:
 ```
 [[processors.converter]]
   [processors.converter.fields]
     float = ["packet-*"]
 ```
-{: .notice--info}
+{: .notice--warning}
 
 Once Telegraf starts collection, following log can be seen from the router:
 ```
