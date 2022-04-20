@@ -18,7 +18,7 @@ excerpt: >-
 {% include toc icon="table" title="Cisco 8000 NPU traps collection with telemetry" %} 
 
 ## Introduction
-On Cisco 8000, Network Processing Unit (NPU) traps are raised in response to the type of packets received by the router. Monitoring those counters can be interesting to detect packet loss or to measure deviation from production baseline for example.  
+On Cisco 8000, Network Processing Unit (NPU) traps are raised in response to the type of packets received by the router. Monitoring those counters can be interesting to detect packet loss or to measure deviation from production baseline.  
 
 This post will describe how to retrieve Cisco 8000 NPU traps counters through telemetry using gNMI interface.
 
@@ -229,6 +229,50 @@ OAMP_PFC_LOOKUP_FAILED(D*)                    0    167  RPLC_CPU    200   1586  
 OAMP_PFC_DROP_INVALID_RX(D*)                  0    168  RPLC_CPU    200   1586  0    67         135        IFG     64      0                    0
 APP_SGACL_DROP(D*)                            0    170  RPLC_CPU    200   1586  0    67         135        IFG     64      0                    0
 APP_SGACL_LOG(D*)                             0    171  RPLC_CPU    200   1586  0    67         135        IFG     64      0                    0
+</code>
+</pre>
+</div>
+
+## Telemetry configuration
+For this article, dial-in Model-Driven Telemetry is used with gNMI.  
+
+gNMI is gRPC Network Management Interface developed by Google. It provides the mechanism to install, manipulate, and delete the configuration of network devices, but also to view operational data. The content provided through gNMI can be modeled using YANG.  
+
+gNMI supports a dial-in session where a client connects to the router via gRPC server with the gNMI specification. Cisco 8000 can act as a gRPC server with following minimal configuration:
+
+```
+grpc
+ no-tls
+ address-family ipv4
+```
+
+By default, gRPC listens on port 57400:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-1#sh grpc
+
+<mark>Address family              : ipv4
+Port                        : 57400</mark>
+DSCP                        : Default
+<mark>VRF                         : global-vrf
+Server                      : enabled
+TLS                         : disabled</mark>
+TLS mutual                  : disabled
+Trustpoint                  : none
+Maximum requests            : 128
+Maximum requests per user   : 10
+Maximum streams             : 32
+Maximum streams per user    : 32
+
+TLS cipher suites
+  Default                   : none
+  Enable                    : none
+  Disable                   : none
+
+  Operational enable        : none
+  Operational disable       : none
 </code>
 </pre>
 </div>
