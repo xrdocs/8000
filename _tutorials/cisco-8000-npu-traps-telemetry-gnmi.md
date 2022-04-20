@@ -233,7 +233,7 @@ APP_SGACL_LOG(D*)                             0    171  RPLC_CPU    200   1586  
 </pre>
 </div>
 
-## Telemetry configuration
+## Telemetry Configuration
 For this article, dial-in Model-Driven Telemetry is used with gNMI.  
 
 gNMI is gRPC Network Management Interface developed by Google. It provides the mechanism to install, manipulate, and delete the configuration of network devices, but also to view operational data. The content provided through gNMI can be modeled using YANG.  
@@ -367,6 +367,129 @@ RP/0/RP0/CPU0:8202-1#sh telemetry model-driven sensor-group
 </pre>
 </div>
 
+## Dashboard Creation
+An interesting dashboard would be to graph evolution of accepted and dropped packets over a period of time to get a packet-per-second rate.  
+
+Before creating the dashboard, verification must be done to ensure counters are properly stored in the TSDB. Influx client is used to interact directly with the database:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+# influx
+Connected to http://localhost:8086 version 1.8.3
+InfluxDB shell version: 1.8.3
+> connect 8000-jump.sp-tme-lab.com
+> use telemetry
+Using database telemetry
+> show MEASUREMENTS
+name: measurements
+name
+----
+Cisco-IOS-XR-fib-common-oper:fib/nodes/node/protocols/protocol/fib-summaries/fib-summary
+Cisco-IOS-XR-platforms-ofa-oper:ofa/stats/nodes/node/Cisco-IOS-XR-8000-platforms-npu-resources-oper:hw-resources-datas/hw-resources-data
+<mark>NPU-TRAPS</mark>
+>    show FIELD KEYS FROM "NPU-TRAPS"
+name: NPU-TRAPS
+fieldKey        fieldType
+--------        ---------
+avg_pkt_size    integer
+cfg_rate        integer
+cir_hw_rate     integer
+encap_id        integer
+fec_id          integer
+gport           integer
+id              integer
+mc_group        integer
+npu_id          integer
+offset          integer
+<mark>packet_accepted integer
+packet_dropped  integer</mark>
+policer_id      integer
+priority        integer
+punt_tc         integer
+punt_vlan       integer
+punt_vo_q       integer
+stats_id        integer
+trap_id_xr      integer
+trap_strength   integer
+trap_string     string
+</code>
+</pre>
+</div>
+
+Each NPU trap is uniquely defined within the system with a (Trap ID, NPU ID, Node Name) triplet. To get a packet-rate, Influx QL [derivative](https://docs.influxdata.com/influxdb/v1.8/query_language/functions/#derivative "derivative") function is used.  
+
+To achieve this, following InfluxDB query can be used:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+> SELECT derivative("packet_accepted", 1s) FROM "NPU-TRAPS" WHERE ("source" = '10.89.202.78' AND "node_name" = '0/RP0/CPU0' AND "npu_id" = 0) GROUP BY "trap_id"
+
+name: NPU-TRAPS
+tags: trap_id=0
+time                derivative
+----                ----------
+1650398267529000000 0
+1650398277529000000 0
+1650398287529000000 0
+-snip-
+</code>
+</pre>
+</div>
+  
+**Info:** Derivative function is also available with [Flux](https://docs.influxdata.com/flux/v0.x/stdlib/universe/derivative/ "Flux") language. This is out of this article scope.
+{: .notice--info}
+
+**Warning:*** npu_id filter doesn’t use double quotes marks. Reason is npu_id is stored as integer, not a string.
+{: .notice--warning}
+  
+On Grafana, a new dashboard can be created:
+  
+By default legend is automatically generated with the measurement name, the function applied and the NPU trap ID. To make it lighter, trap_id will be used instead and extra configuration must be added in the ‘Alias by’ box: [[tag_trap_id]]
+  
+**Info:** It’s possible to change this behavior leveraging the Grafana ‘alias by’ feature. Current implementation requires utilization of a tag. By default, the NPU trap string from the OFA model is not a tag:
+
+>    show TAG KEYS FROM "NPU-TRAPS"
+name: NPU-TRAPS
+tagKey
+------
+host
+node_name
+npu_id
+path
+source
+trap_id
+
+As of today, there is no equivalent of [[embedded_tag]] on telegraf for gNMI plugin. While gNMI dynamic tagging should provide this feature, ‘tag_only = true’ extra config doesn’t work for this model.
+{: .notice--info}
+  
+Another option is to use Grafana [Transformation](https://grafana.com/docs/grafana/latest/panels/transform-data/ "Grafana transformation") and provide a hard-mapping between trap-id and trap-string inside the dashboard. A sample JSON example is attached here.
+
+## NPU Traps Policing in Action
+To hit NPU traps and see policing in action, an IPv6 ACL dropping all traffic is configured on a lab router interface.  A traffic generator is used to send 1M pps of IPv6 traffic. This is what can be observed on the dashboard:
+
+Traffic hits L3_ACL_FORCE_PUNT NPU trap. Only 67pps of traffic is accepted. This is expected and aligned with what’s programmed on router:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:GW-3#sh controllers npu stats traps-all instance all location all | i "Type|pps|L3_ACL_FORCE_PUNT"
+Wed Apr 20 16:46:49.040 UTC
+"Configured Rate" is the rate configured by user (or default setting) in pps at the LC level
+        The per IFG meter is converted from the user configured/default rate (pps)
+Trap Type                                     NPU  Trap  Punt       Punt  Punt  Punt Configured Hardware   Policer Avg-Pkt Packets              Packets
+                                              ID   ID    Dest       VoQ   VLAN  TC   Rate(pps)  Rate(pps)  Level   Size    Accepted             Dropped
+L3_ACL_FORCE_PUNT                             0    119  RPLC_CPU    205   1538  5    67         135        IFG     64      58130                846169055
+-snip-
+</code>
+</pre>
+</div>
+
+### Conclusion and Acknowledgement
+This article covered how to collect Cisco 8000 NPU traps using telemetry. The post went through Telegraf gNMI configuration and Grafana dashboard connstruction. Last, a lab scenario demonstrated the telemetry solution and NPU traps mecanism in action.  
+
+I would like to thanks Chetan Francis Pinto, Jeffrey Liang, Nick Corra, Lokesh Khanna who provided support for this post and last but not least, Cristina Precup who spent precious time debugging with me.
 
 
 
