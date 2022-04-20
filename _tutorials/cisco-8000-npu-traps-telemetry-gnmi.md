@@ -18,7 +18,7 @@ excerpt: >-
 {% include toc icon="table" title="Cisco 8000 NPU Traps Collection with Telemetry" %} 
 
 ## Introduction
-On Cisco 8000, Network Processing Unit (NPU) traps are raised in response to the type of packets received by the router. Monitoring those counters can be interesting to detect packet loss or to measure deviation from production baseline.  
+On Cisco 8000 routers, Network Processing Unit (NPU) traps are raised in response to the type of packets received by the router. Monitoring those counters can be interesting to detect packet loss or to measure deviation from production baseline.  
 
 This post will describe how to retrieve Cisco 8000 NPU traps counters through telemetry using gNMI interface.
 
