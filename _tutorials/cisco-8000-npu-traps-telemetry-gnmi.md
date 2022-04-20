@@ -334,7 +334,7 @@ In this case, it’s required to use a Telegraf processor to transform a field f
 <code>
 [[processors.converter]]
   [processors.converter.fields]
-    float = ["packet-*"]
+    integer = ["packet-*"]
 </code>
 </pre>
 </div>
