@@ -477,7 +477,7 @@ To hit NPU traps and see policing in action, an IPv6 ACL dropping all traffic is
 
 ![8000-traps-dashboard.png]({{site.baseurl}}/images/8000-traps-dashboard.png)
 
-Traffic hits L3_ACL_FORCE_PUNT NPU trap. Only 67pps of traffic is accepted. This is expected and aligned with what’s programmed on router:
+Traffic hits L3_ACL_FORCE_PUNT NPU trap. Only 67pps of traffic is accepted and the rest is dropped. This is expected and aligned with what’s programmed on router:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
