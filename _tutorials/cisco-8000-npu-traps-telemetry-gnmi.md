@@ -449,10 +449,11 @@ On Grafana, a new dashboard can be created:
 By default legend is automatically generated with the measurement name, the function applied and the NPU trap ID. To make it lighter, trap_id will be used instead and extra configuration must be added in the ‘Alias by’ box: [[tag_trap_id]]
   
 **Info:** It’s possible to change this behavior leveraging the Grafana ‘alias by’ feature. Current implementation requires utilization of a tag. By default, the NPU trap string from the OFA model is not a tag:
+{: .notice--info}
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-\>    show TAG KEYS FROM "NPU-TRAPS"
+>    show TAG KEYS FROM "NPU-TRAPS"
 name: NPU-TRAPS
 tagKey
 ------
