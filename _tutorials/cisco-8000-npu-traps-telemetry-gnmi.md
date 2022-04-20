@@ -494,7 +494,7 @@ Trap Type                                     NPU  Trap  Punt       Punt  Punt  
 </div>
 
 ## Conclusion and Acknowledgement
-This article covered how to collect Cisco 8000 NPU traps using telemetry. The post went through Telegraf gNMI configuration and Grafana dashboard connstruction. Last, a lab scenario demonstrated the telemetry solution and NPU traps mecanism in action.  
+This article covered how to collect Cisco 8000 NPU traps using telemetry. The post went through Telegraf gNMI configuration and Grafana dashboard connstruction. Last, a lab scenario demonstrated the telemetry solution and NPU traps mechanism in action.  
 
 I would like to thanks Chetan Francis Pinto, Jeffrey Liang, Nick Corra, Lokesh Khanna who provided support for this post and last but not least, Cristina Precup who spent precious time debugging with me.
 
