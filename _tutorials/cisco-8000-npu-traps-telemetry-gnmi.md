@@ -277,7 +277,7 @@ TLS cipher suites
 </pre>
 </div>
 
-It’s possible to activate gRPC in a VRF, with TLS, enable IPv6 or change gRPC port. Please refer to the Cisco 8000 programmability [configuration guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/programmability/75x/b-programmability-cg-8000-75x/m-grpc-session.html "configuration guide").
+**Info:** It’s possible to activate gRPC in a VRF, with TLS, enable IPv6 or change gRPC port. Please refer to the Cisco 8000 programmability [configuration guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/programmability/75x/b-programmability-cg-8000-75x/m-grpc-session.html "configuration guide").
 {: .notice--info}
 
 As usual with telemetry, 3 pieces are needed:
