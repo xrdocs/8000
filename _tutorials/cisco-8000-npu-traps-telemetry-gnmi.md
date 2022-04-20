@@ -482,7 +482,7 @@ Wed Apr 20 16:46:49.040 UTC
         The per IFG meter is converted from the user configured/default rate (pps)
 Trap Type                                     NPU  Trap  Punt       Punt  Punt  Punt Configured Hardware   Policer Avg-Pkt Packets              Packets
                                               ID   ID    Dest       VoQ   VLAN  TC   Rate(pps)  Rate(pps)  Level   Size    Accepted             Dropped
-L3_ACL_FORCE_PUNT                             0    119  RPLC_CPU    205   1538  5    67         135        IFG     64      58130                846169055
+<mark>L3_ACL_FORCE_PUNT</mark>                             0    119  RPLC_CPU    205   1538  5    <mark>67</mark>         135        IFG     64      58130                846169055
 -snip-
 </code>
 </pre>
