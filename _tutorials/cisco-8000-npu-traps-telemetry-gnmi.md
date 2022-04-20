@@ -22,7 +22,7 @@ On Cisco 8000 routers, Network Processing Unit (NPU) traps are raised in respons
 
 This post will describe how to retrieve Cisco 8000 NPU traps counters through telemetry using gNMI interface.
 
-## Cisco 8000 NPU traps
+## Cisco 8000 NPU Traps
 There are 3 NPU traps categories:
 
 1. Exception packets. For example, glean adjacency traffic or packets with IPv4 options.
