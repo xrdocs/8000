@@ -292,7 +292,80 @@ This article will not describe telemetry stack installation, optimization, or ma
 {: .notice--info}
 
 Telegraf has a built-in gNMI input plugin with documentation available [here](https://github.com/influxdata/telegraf/blob/release-1.22/plugins/inputs/gnmi/README.md "telegraf documentation").
-Cisco 8000 NPU traps counters are exposed through the Open Forwarding Abstraction (OFA) operational YANG model: Cisco-IOS-XR-ofa-npu-stats-oper.
+Cisco 8000 NPU traps counters are exposed through the Open Forwarding Abstraction (OFA) operational YANG model: Cisco-IOS-XR-ofa-npu-stats-oper.  
+
+Here is the telegraf.conf configuration used for this demo:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+[[inputs.gnmi]]
+  ## Address and port of the gNMI GRPC server (Cisco 8000)
+  addresses = ["10.89.202.78:57400"]
+  ## define credentials
+  username = "cisco"
+  password = "lab123"
+  ## gNMI encoding requested (one of: "proto", "json", "json_ietf", "bytes")
+  encoding = "proto"
+  ## redial in case of failures after
+  redial = "10s"
+  ## enable client-side TLS and define CA to authenticate the device
+  enable_tls = false
+  insecure_skip_verify = true
+
+  [[inputs.gnmi.subscription]]
+    ## Name of the measurement that will be emitted
+    name = "NPU-TRAPS"
+    ## Origin and path of the subscription
+    origin = "Cisco-IOS-XR-ofa-npu-stats-oper"
+    path = "/ofa/stats/nodes/node/npu-numbers/npu-number/display/trap-ids/trap-id"
+    # Subscription mode (one of: "target_defined", "sample", "on_change") and interval
+    subscription_mode = "sample"
+    sample_interval = "10s"
+</code>
+</pre>
+</div>
+
+If JSON IETF is used for encoding, some counters might show as strings, which could prevent their visualization later in Grafana. This behavior is compliant with RFC 7951 - JSON Encoding of Data Modeled with YANG , section 6.1 (Numeric Types):
+> “A value of the "int64", "uint64", or "decimal64" type is represented as a JSON string”.
+
+In this case, it’s required to use a Telegraf processor to transform a field from string to integer. Extra telegraf.conf can be used to change packet-accepted and packet-dropped fields:
+```
+[[processors.converter]]
+  [processors.converter.fields]
+    float = ["packet-*"]
+```
+{: .notice--info}
+
+Once Telegraf starts collection, following log can be seen from the router:
+```
+RP/0/RP0/CPU0:Apr 19 06:56:26.915 UTC: emsd[1099]: %MGBL-EMS-6-TELEMETRY_SUBSCRIBE : gNMI: Start of request 1 from client 1.63.51.21:38332
+```
+
+Additional subscription details can be retrieved through CLI:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-1#sh telemetry model-driven subscription
+Subscription:  GNMI__16189630622979593403  State: ACTIVE
+-------------
+  Sensor groups:
+  Id                               Interval(ms)        State
+  GNMI__16189630622979593403_0     <mark>10000</mark>               Resolved
+
+  Destination Groups:
+  Id                 Encoding            Transport   State   Port    Vrf                               IP
+  GNMI_1001          <mark>gnmi-proto</mark>          <mark>dialin</mark>      <mark>Active</mark>  38332                                     1.63.51.21
+    TLS :             False
+
+RP/0/RP0/CPU0:8202-1#sh telemetry model-driven sensor-group
+  Sensor Group Id:GNMI__16189630622979593403_0
+    Sensor Path:        Cisco-IOS-XR-ofa-npu-stats-oper:ofa/stats/nodes/node/npu-numbers/npu-number/display/trap-ids/trap-id
+    Sensor Path State:  <mark>Resolved</mark>
+</code>
+</pre>
+</div>
 
 
 
