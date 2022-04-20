@@ -444,6 +444,8 @@ time                derivative
 {: .notice--warning}
   
 On Grafana, a new dashboard can be created. By default legend is automatically generated with the measurement name, the function applied and the NPU trap ID. To make it lighter, trap_id will be used instead and extra configuration must be added in the ‘Alias by’ box: [[tag_trap_id]].
+
+![creation]({{site.baseurl}}/images/8000-traps-dashboard-creation.png)
   
 **Info:** Grafana ‘alias by’ feature requires utilization of a tag. The NPU trap string from the OFA model is not a tag and cannot be used to generate the legend automatically with the trap name:
 {: .notice--info}
