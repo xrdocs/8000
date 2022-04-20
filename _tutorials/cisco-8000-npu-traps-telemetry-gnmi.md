@@ -15,7 +15,7 @@ excerpt: >-
   the type of packets received by the router. This post will describe how to
   retrieve Cisco 8000 NPU traps counters through telemetry using gNMI interface.
 ---
-{% include toc icon="table" title="Cisco 8000 NPU traps collection with telemetry" %} 
+{% include toc icon="table" title="Cisco 8000 NPU Traps Collection with Telemetry" %} 
 
 ## Introduction
 On Cisco 8000, Network Processing Unit (NPU) traps are raised in response to the type of packets received by the router. Monitoring those counters can be interesting to detect packet loss or to measure deviation from production baseline.  
@@ -36,7 +36,7 @@ NPU trap statistics can be retrieved with following CLI:
 show controllers npu stats traps-all instance NPU-Number|all location RP|LC
 ```
 
-It’s important to understand the system architecture to know which NPU instance should be checked, especially when dealing with linecards in Cisco 8800 distributed systems. [Following](https://xrdocs.io/8000/tutorials/cisco-8000-port-assignment/ "Port Assignments on Cisco 8100/8200 and Cisco 8800 Platforms") article written by CS Lee covers port assignment and will help identifying NPU instance for a given interface.
+It’s important to understand the system architecture to know which NPU instance should be checked, especially when dealing with linecards in Cisco 8800 distributed systems. [Following]({{site.baseurl}}/8000/tutorials/cisco-8000-port-assignment/ "Port Assignments on Cisco 8100/8200 and Cisco 8800 Platforms") article written by CS Lee covers port assignment and will help identifying NPU instance for a given interface.
 {: .notice--info}
 
 It’s possible to use _all_ keyword both for NPU instance and location to display all NPU traps statistics for every single NPU on every single linecard in the system:
@@ -468,6 +468,8 @@ Another option is to use Grafana [Transformation](https://grafana.com/docs/grafa
 
 ## NPU Traps Policing in Action
 To hit NPU traps and see policing in action, an IPv6 ACL dropping all traffic is configured on a lab router interface.  A traffic generator is used to send 1M pps of IPv6 traffic. This is what can be observed on the dashboard:
+
+![8000-traps-dashboard.png]({{site.baseurl}}/images/8000-traps-dashboard.png)
 
 Traffic hits L3_ACL_FORCE_PUNT NPU trap. Only 67pps of traffic is accepted. This is expected and aligned with what’s programmed on router:
 
