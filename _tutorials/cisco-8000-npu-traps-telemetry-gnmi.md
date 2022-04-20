@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2022-04-20 21:17 +0200'
-title: Cisco 8000 NPU traps collection with telemetry
+title: Cisco 8000 NPU Traps Collection with Telemetry
 position: hidden
 tags:
   - iosxr
@@ -488,7 +488,7 @@ Trap Type                                     NPU  Trap  Punt       Punt  Punt  
 </pre>
 </div>
 
-### Conclusion and Acknowledgement
+## Conclusion and Acknowledgement
 This article covered how to collect Cisco 8000 NPU traps using telemetry. The post went through Telegraf gNMI configuration and Grafana dashboard connstruction. Last, a lab scenario demonstrated the telemetry solution and NPU traps mecanism in action.  
 
 I would like to thanks Chetan Francis Pinto, Jeffrey Liang, Nick Corra, Lokesh Khanna who provided support for this post and last but not least, Cristina Precup who spent precious time debugging with me.
