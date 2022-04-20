@@ -288,8 +288,8 @@ As usual with telemetry, 3 pieces are needed:
 
 Those 3 tools are often referred as the TIG stack (Telegraf, InfluxDB, and Grafana).
 
-This article will not describe telemetry stack installation, optimization, or maintenance.
-{: .notice--info}
+**Warning:** This article will not describe telemetry stack installation, optimization, or maintenance.
+{: .notice--warning}
 
 Telegraf has a built-in gNMI input plugin with documentation available [here](https://github.com/influxdata/telegraf/blob/release-1.22/plugins/inputs/gnmi/README.md "telegraf documentation").
 Cisco 8000 NPU traps counters are exposed through the Open Forwarding Abstraction (OFA) operational YANG model: Cisco-IOS-XR-ofa-npu-stats-oper.  
