@@ -416,7 +416,7 @@ trap_string     string
 </pre>
 </div>
 
-Each NPU trap is uniquely defined within the system with a (Trap ID, NPU ID, Node Name) triplet. To get a packet-rate, Influx QL [derivative](https://docs.influxdata.com/influxdb/v1.8/query_language/functions/#derivative "derivative") function is used.  
+Each NPU trap is uniquely defined within the system with a (Trap ID, NPU ID, Node Name) triplet. To get a packet rate, Influx QL [derivative](https://docs.influxdata.com/influxdb/v1.8/query_language/functions/#derivative "derivative") function is used.  
 
 To achieve this, following InfluxDB query can be used:
 
