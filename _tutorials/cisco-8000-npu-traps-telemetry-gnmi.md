@@ -424,7 +424,7 @@ To achieve this, following InfluxDB query can be used:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-> SELECT derivative("packet_accepted", 1s) FROM "NPU-TRAPS" WHERE ("source" = '10.89.202.78' AND "node_name" = '0/RP0/CPU0' AND "npu_id" = 0) GROUP BY "trap_id"
+`>` SELECT derivative("packet_accepted", 1s) FROM "NPU-TRAPS" WHERE ("source" = '10.89.202.78' AND "node_name" = '0/RP0/CPU0' AND "npu_id" = 0) GROUP BY "trap_id"
 
 name: NPU-TRAPS
 tags: trap_id=0
@@ -441,7 +441,7 @@ time                derivative
 **Info:** Derivative function is also available with [Flux](https://docs.influxdata.com/flux/v0.x/stdlib/universe/derivative/ "Flux") language. This is out of this article scope.
 {: .notice--info}
 
-**Warning:*** npu_id filter doesn’t use double quotes marks. Reason is npu_id is stored as integer, not a string.
+**Warning:** npu_id filter doesn’t use double quotes marks. Reason is npu_id is stored as integer, not a string.
 {: .notice--warning}
   
 On Grafana, a new dashboard can be created:
