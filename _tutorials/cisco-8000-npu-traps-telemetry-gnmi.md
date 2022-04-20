@@ -443,12 +443,11 @@ time                derivative
 **Warning:** npu_id filter doesn’t use double quotes marks. Reason is npu_id is stored as integer, not a string.
 {: .notice--warning}
   
-On Grafana, a new dashboard can be created. By default legend is automatically generated with the measurement name, the function applied and the NPU trap ID. To make it lighter, trap_id will be used instead and extra configuration must be added in the ‘Alias by’ box: [[tag_trap_id]].
+On Grafana, a new dashboard can be created. By default legend is automatically generated with the measurement name, the function applied and the NPU trap ID. To make it shorter, trap_id will be used instead and extra configuration must be added in the ‘Alias by’ box: [[tag_trap_id]].
 
 ![creation]({{site.baseurl}}/images/8000-traps-dashboard-creation.png)
   
-**Info:** Grafana ‘alias by’ feature requires utilization of a tag. The NPU trap string from the OFA model is not a tag and cannot be used to generate the legend automatically with the trap name:
-{: .notice--info}
+Grafana ‘alias by’ feature requires utilization of a tag. Unfortunately the NPU trap string from the OFA model is not a tag and cannot be used to generate the legend automatically with the trap name:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
@@ -465,10 +464,10 @@ trap_id
 </code>
 </pre>
 </div>
-As of today, there is no equivalent of [[embedded_tag]] on Telegraf for gNMI plugin. While gNMI dynamic tagging should provide this feature, ‘tag_only = true’ extra config doesn’t work for this model. Issue #11007 was raised.
+As of today, there is no equivalent of [[embedded_tag]] on Telegraf for gNMI plugin. While gNMI dynamic tagging should provide similar feature, ‘tag_only = true’ extra config doesn’t work for this model. Issue #11007 was raised.
 {: .notice--info}
   
-Another option is to use Grafana [Transformation](https://grafana.com/docs/grafana/latest/panels/transform-data/ "Grafana transformation") and provide a hard-mapping between trap-id and trap-string inside the dashboard. A sample JSON example is attached here.
+To get NPU traps name in the legend, another option is to use Grafana [Transformation](https://grafana.com/docs/grafana/latest/panels/transform-data/ "Grafana transformation") and provide a hard-mapping between trap-id and trap-string inside the dashboard. A sample dashboard JSON example is attached here.
 
 ## NPU Traps Policing in Action
 To hit NPU traps and see policing in action, an IPv6 ACL dropping all traffic is configured on a lab router interface.  A traffic generator is used to send 1M pps of IPv6 traffic. This is what can be observed on the dashboard:
