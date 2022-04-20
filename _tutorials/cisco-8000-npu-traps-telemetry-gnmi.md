@@ -443,11 +443,9 @@ time                derivative
 **Warning:** npu_id filter doesn’t use double quotes marks. Reason is npu_id is stored as integer, not a string.
 {: .notice--warning}
   
-On Grafana, a new dashboard can be created:
+On Grafana, a new dashboard can be created. By default legend is automatically generated with the measurement name, the function applied and the NPU trap ID. To make it lighter, trap_id will be used instead and extra configuration must be added in the ‘Alias by’ box: [[tag_trap_id]].
   
-By default legend is automatically generated with the measurement name, the function applied and the NPU trap ID. To make it lighter, trap_id will be used instead and extra configuration must be added in the ‘Alias by’ box: [[tag_trap_id]]
-  
-**Info:** It’s possible to change this behavior leveraging the Grafana ‘alias by’ feature. Current implementation requires utilization of a tag. By default, the NPU trap string from the OFA model is not a tag:
+**Info:** Grafana ‘alias by’ feature requires utilization of a tag. The NPU trap string from the OFA model is not a tag and cannot be used to generate the legend automatically with the trap name:
 {: .notice--info}
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -465,7 +463,7 @@ trap_id
 </code>
 </pre>
 </div>
-As of today, there is no equivalent of [[embedded_tag]] on telegraf for gNMI plugin. While gNMI dynamic tagging should provide this feature, ‘tag_only = true’ extra config doesn’t work for this model.
+As of today, there is no equivalent of [[embedded_tag]] on Telegraf for gNMI plugin. While gNMI dynamic tagging should provide this feature, ‘tag_only = true’ extra config doesn’t work for this model. Issue #11007 was raised.
 {: .notice--info}
   
 Another option is to use Grafana [Transformation](https://grafana.com/docs/grafana/latest/panels/transform-data/ "Grafana transformation") and provide a hard-mapping between trap-id and trap-string inside the dashboard. A sample JSON example is attached here.
