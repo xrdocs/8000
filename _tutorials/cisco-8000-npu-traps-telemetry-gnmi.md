@@ -277,3 +277,23 @@ TLS cipher suites
 </pre>
 </div>
 
+It’s possible to activate gRPC in a VRF, with TLS, enable IPv6 or change gRPC port. Please refer to the Cisco 8000 programmability [configuration guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/programmability/75x/b-programmability-cg-8000-75x/m-grpc-session.html "configuration guide").
+{: .notice--info}
+
+As usual with telemetry, 3 pieces are needed:
+
+- Telegraf, an open-source agent, is used for this lab demonstration. Telegraf collects metrics from the Cisco 8000 and sends them to a Time Series Database (TSDB). 
+- InfluxDB is used here to store the counters.
+- Last, a visualization engine is required to display and analyze the metrics. Grafana is probably the most popular tool used for this role today.
+
+Those 3 tools are often referred as the TIG stack (Telegraf, InfluxDB, and Grafana).
+
+This article will not describe telemetry stack installation, optimization, or maintenance.
+{: .notice--info}
+
+Telegraf has a built-in gNMI input plugin with documentation available [here](https://github.com/influxdata/telegraf/blob/release-1.22/plugins/inputs/gnmi/README.md "telegraf documentation").
+Cisco 8000 NPU traps counters are exposed through the Open Forwarding Abstraction (OFA) operational YANG model: Cisco-IOS-XR-ofa-npu-stats-oper.
+
+
+
+
