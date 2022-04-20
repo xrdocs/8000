@@ -36,8 +36,8 @@ NPU trap statistics can be retrieved with following CLI:
 show controllers npu stats traps-all instance NPU-Number|all location RP|LC
 ```
 
-It’s important to understand the system architecture to know which NPU instance should be checked, especially when dealing with linecards in Cisco 8800 distributed systems. [Following]({{site.baseurl}}/tutorials/cisco-8000-port-assignment/ "Port Assignments on Cisco 8100/8200 and Cisco 8800 Platforms") article written by CS Lee covers port assignment and will help identifying NPU instance for a given interface.
-{: .notice--info}
+**Warning:** It’s important to understand the system architecture to know which NPU instance should be checked, especially when dealing with linecards in Cisco 8800 distributed systems. [Following]({{site.baseurl}}/tutorials/cisco-8000-port-assignment/ "Port Assignments on Cisco 8100/8200 and Cisco 8800 Platforms") article written by CS Lee covers port assignment and will help identifying NPU instance for a given interface.
+{: .notice--warninng}
 
 It’s possible to use _all_ keyword both for NPU instance and location to display all NPU traps statistics for every single NPU on every single linecard in the system:
 
