@@ -29,7 +29,7 @@ There are 3 NPU traps categories:
 2. Error packets. For example, IPv4 packet with bad checksum or IPv6 packets with a hop count of zero.
 3. non-LPTS control packets. For example, packets that do not get processed through LPTS (like LACP, LLDP and other L2 control packets).
 
-Each of the NPU traps are policed at a rate that is pre-programmed by the operating system. Packets are policed per NPU within the router and there can be several NPU per system. Some NPU trap packets allowed by NPU policers are sent to the CPU (Linecard or RP CPU for distributed systems, RP CPU for fixed and centralized systems) if they need additional processing. Others that exceed the NPU policer rate are simply dropped by the NPU.  
+Each of the NPU traps are policed at a rate that is pre-programmed by the operating system. Packets are policed per NPU within the router and there can be several NPUs per system. Some NPU trap packets allowed by NPU policers are sent to the CPU (Linecard or RP CPU for distributed systems, RP CPU for fixed and centralized systems) if they need additional processing. Others that exceed the NPU policer rate are simply dropped by the NPU.  
 
 NPU trap statistics can be retrieved with following CLI:
 ```
@@ -450,7 +450,7 @@ On Grafana, a new dashboard can be created. By default legend is automatically g
 
 ![creation]({{site.baseurl}}/images/8000-traps-dashboard-creation.png)
   
-Grafana ‘alias by’ feature requires utilization of a tag. Unfortunately the NPU trap string from the OFA model is not a tag and cannot be used to generate the legend automatically with the trap name:
+Grafana ‘[alias by](https://grafana.com/docs/grafana/latest/datasources/influxdb/#alias-patterns "alias by")’ feature requires utilization of a tag. Unfortunately the NPU trap string from the OFA model is not a tag and cannot be used to generate the legend automatically with the trap name:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
@@ -477,7 +477,7 @@ To hit NPU traps and see policing in action, an IPv6 ACL dropping all traffic is
 
 ![8000-traps-dashboard.png]({{site.baseurl}}/images/8000-traps-dashboard.png)
 
-Traffic hits L3_ACL_FORCE_PUNT NPU trap. Only 67pps of traffic is accepted and the rest is dropped. This is expected and aligned with what’s programmed on router:
+Traffic hits L3_ACL_FORCE_PUNT NPU trap. 67pps of traffic is accepted and punted to the CPU while the rest is dropped by the policer. This is expected and aligned with what’s programmed on router:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
