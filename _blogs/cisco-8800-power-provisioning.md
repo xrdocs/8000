@@ -13,7 +13,7 @@ excerpt: >-
   the amount of power that must be connected. This saves money and frees up
   facility resources for other uses.
 ---
-In an earlier [post](https://xrdocs.io/8000/blogs/8000-router-power-consumption-part-1/), I discussed the importance system power when assessing environmental impact and power costs. This article will explore another critical aspect – power provisioning. 
+In an earlier [post](https://xrdocs.io/8000/blogs/8000-router-power-consumption-part-1/), I discussed the importance of system power when assessing environmental impact and power costs. This article will explore another critical aspect – power provisioning. 
 
 Provisioned power can be viewed as the wattage the operating system requests for the installed hardware (software provisioning) or the number and capacity of power supplies that must be installed based on the OS requirements (facility provisioning).
 
@@ -25,7 +25,7 @@ Preventing brown outs is considered sacred. They are extremely rare because laye
 
 Normal operating conditions for most routers include temperatures below 30C, both power feeds operational, average port bandwidth below 30%, and packet sizes above 800B. This results in a large gap between typical and provisioned power. As systems like the Cisco 8000 Series make more and more optimizations to reduce power in normal operation, the difference becomes even greater. In the next section, we’ll discuss some of the things we’re doing to reduce the gap.  
 
-## Cisco 8808 Example
+## 8808 Example
 Let’s look at an example of typical vs. max power in the 8808 system. In the graphic below, the power required for the RPs is shown in purple, line cards in green, and optics power in orange. Each full block represents approximately 100W.  
 
 RP power is relatively consistent. For the line cards, light green boxes show typical power and darker green boxes represent the additional power for max performance. The optics power is not related to ambient temperature or traffic load, but different types of modules have a range of power draws from no power for copper cables up to over 20W for 400G ZR+ modules.
@@ -56,12 +56,12 @@ The 8800 Series provisioning takes the following factors into account.
 -	Max fan power
 -	Max route processor power
 -	Max switch fabric power
-o	Adjusted for number and speed of line cards present
+    - Adjusted for number and speed of line cards present
 -	Max line card power – unique for each card type
-o	Adjusted for number of fabric cards present
-o	Adjusted for optics with different values for each module type
-o	Adjusted for ports with MACsec enabled or disabled
-o	Adjusted for power/performance mode (LC0/Q200 generation and later)
+    -	Adjusted for number of fabric cards present
+    - Adjusted for optics with different values for each module type
+    - Adjusted for ports with MACsec enabled or disabled
+    - Adjusted for power/performance mode (LC0/Q200 generation and later)
 
 In addition to power for hardware present in the system, a small amount of power is allocated for hardware not yet installed.  
 
