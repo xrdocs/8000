@@ -3,8 +3,6 @@ published: false
 date: '2022-03-22 13:20 -0400'
 title: 8800 Power Provisioning
 ---
-## A New Post
-
 In an earlier [post](https://xrdocs.io/8000/blogs/8000-router-power-consumption-part-1/), I discussed the importance system power when assessing environmental impact and power costs. This article will explore another critical aspect – power provisioning. 
 
 Provisioned power can be viewed as the wattage the operating system requests for the installed hardware (software provisioning) or the number and capacity of power supplies that must be installed based on the OS requirements (facility provisioning).
@@ -27,7 +25,7 @@ Similarly, the power required for the switch fabric is shown below where the lig
 
 If we remove the chassis photo, the relative power for all major system components can be easily compared. The difference between typical and potential max power is highlighted.  
 
-## Motivation for a new approach
+## Motivation for a New Approach
 
 Our goal is to reduce the power allocation without creating a risk of brown out.
 Let’s use an analogy to illustrate what we’re trying to do. There is some “fat” that can be cut when we are certain that it will not be needed. An example of this this fat is allocation of power needed for a ZR+ optic when the port is empty or using a copper cable. There is also “muscle” that we might not be using at any given time, but it could be activated with little notice. Examples of muscle are the full fan power and the extra power required if a line card is hit with 100% bandwidth of the smallest packets it can support at line rate. The goal is to trim as much fat as possible without cutting into the muscle.  
