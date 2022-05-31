@@ -7,8 +7,7 @@ title: 8800 Power Provisioning
 
 In an earlier [post](https://xrdocs.io/8000/blogs/8000-router-power-consumption-part-1/), I discussed the importance system power when assessing environmental impact and power costs. This article will explore another critical aspect – power provisioning. 
 
-Provisioned power can be viewed as the wattage the operating system requests for the installed hardware (software provisioning) or the number and capacity of power supplies that must be installed based on the OS requirements (facility provisioning). We will discuss both in this post.
-Typically, the OS will request enough power to allow every component in the system to run at maximum load at the same time while operating at the highest supported temperature and experiencing partial power failures.  
+Provisioned power can be viewed as the wattage the operating system requests for the installed hardware (software provisioning) or the number and capacity of power supplies that must be installed based on the OS requirements (facility provisioning). Typically, the OS will request enough power to allow every component in the system to run at maximum load at the same time while operating at the highest supported temperature and experiencing partial power failures.  
 
 The goal of power provisioning software is to ensure that the system never runs out. This class of failure is called a brown out and is quite messy when it happens. When a router tries to pull more power than the PSUs can provide, some components will fall outside their operating conditions (the amps and volts required) and stop working properly. Unfortunately, there’s no way of knowing which component will fail first so this problem can manifest in a variety of ways and be confused with other types of failures.  
 
