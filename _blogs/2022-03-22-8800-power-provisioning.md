@@ -38,7 +38,7 @@ The 8000 Series was developed by the team that built the ASR 9000, CRS, NCS 5500
 
 With 400 GbE, the optical modules require much more power and have a wide range among different reaches. Copper cables (requiring no power) are common in data centers, especially with the 8100 and 8200 Series. Grey optics (100m to 10km) require about 12W, ZR and ZR+ modules require 20+W. With the traditional approach, each 8800 Series 36x 400 GbE line card would have to allocate almost 800W to provision for 36 coherent optics modules.  
 
-The 8000 Series addresses this challenge by provisioning optics power as modules are inserted. This change allows a system with copper cables and grey optics to use fewer power supplies than a system in a R[outed Optical Networking](https://www.cisco.com/c/en/us/solutions/service-provider/routed-optical-networking/index.html) design with many coherent ZR and ZR+ modules.  
+The 8000 Series addresses this challenge by provisioning optics power as modules are inserted. This change allows a system with copper cables and grey optics to use fewer power supplies than a system in a [Routed Optical Networking](https://www.cisco.com/c/en/us/solutions/service-provider/routed-optical-networking/index.html) design with many coherent ZR and ZR+ modules.  
 
 The 8000 Series takes a similar approach to optimize provisioning in other areas. If an 8800 system is configured with fewer than the maximum 8 fabric cards, some internal links are powered down and the provisioned (and actual) line card power is reduced.  
 
