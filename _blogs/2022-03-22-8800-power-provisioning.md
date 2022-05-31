@@ -9,7 +9,7 @@ In an earlier [post](https://xrdocs.io/8000/blogs/8000-router-power-consumption-
 
 Provisioned power can be viewed as the wattage the operating system requests for the installed hardware (software provisioning) or the number and capacity of power supplies that must be installed based on the OS requirements (facility provisioning).
 
-The goal of power provisioning software is to ensure that the system never runs out. This class of failure is called a brown out and is quite messy when it happens. When a router tries to pull more power than the PSUs can provide, some components will fall outside their electrial requirements and stop working properly. Unfortunately, there’s no way of knowing which component will fail first so it can easily be confused with other types of failures.  
+The goal of power provisioning software is to ensure that the system never runs out. This class of failure is called a brown out and is quite messy when it happens. When a router tries to pull more power than the PSUs can provide, some components will fall outside their electrial requirements and stop working properly.
 
 Spikes in power draw can happen quickly. If another router fails, load can increase and add to line card and fabric power. If facility cooling degrades, fan power may increase. Preventing brown outs is considered sacred. They are extremely rare because layer upon layer of protection against them is provided. Unfortunately, preventing brown outs requires connecting far more power than real-world systems are likely to consume.  
 
