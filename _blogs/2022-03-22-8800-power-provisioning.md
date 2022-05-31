@@ -5,8 +5,6 @@ title: 8800 Power Provisioning
 ---
 ## A New Post
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
-
 In an earlier post <https://xrdocs.io/8000/blogs/8000-router-power-consumption-part-1/>, I discussed the importance system power when assessing environmental impact and power costs. This article will explore another critical aspect – power provisioning. 
 
 Provisioned power can be viewed as the wattage the operating system requests for the installed hardware (software provisioning) or the number and capacity of power supplies that must be installed based on the OS requirements (facility provisioning). We will discuss both in this post.
