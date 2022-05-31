@@ -25,7 +25,7 @@ Preventing brown outs is considered sacred. They are extremely rare because laye
 
 Normal operating conditions for most routers include temperatures below 30C, both power feeds operational, average port bandwidth below 30%, and packet sizes above 800B. This results in a large gap between typical and provisioned power. As systems like the Cisco 8000 Series make more and more optimizations to reduce power in normal operation, the difference becomes even greater. In the next section, we’ll discuss some of the things we’re doing to reduce the gap.  
 
-## 8808 Example
+## Cisco 8808 Example
 Let’s look at an example of typical vs. max power in the 8808 system. In the graphic below, the power required for the RPs is shown in purple, line cards in green, and optics power in orange. Each full block represents approximately 100W.  
 
 RP power is relatively consistent. For the line cards, light green boxes show typical power and darker green boxes represent the additional power for max performance. The optics power is not related to ambient temperature or traffic load, but different types of modules have a range of power draws from no power for copper cables up to over 20W for 400G ZR+ modules.
@@ -40,7 +40,7 @@ If we remove the chassis photo, the relative power for all major system componen
 Our goal is to reduce the power allocation without creating a risk of brown out.
 Let’s use an analogy to illustrate what we’re trying to do. There is some “fat” that can be cut when we are certain that it will not be needed. An example of this this fat is allocation of power needed for a ZR+ optic when the port is empty or using a copper cable. There is also “muscle” that we might not be using at any given time, but it could be activated with little notice. Examples of muscle are the full fan power and the extra power required if a line card is hit with 100% bandwidth of the smallest packets it can support at line rate. The goal is to trim as much fat as possible without cutting into the muscle.  
 
-## 8000 Series Provisioning Innovation
+## Cisco 8000 Series Provisioning Innovation
 Recent 8000 Series innovation improves the estimates of worst-case power. This approach represents the exact hardware configuration of the chassis. This preserves brownout protection while reducing the required power requested relative to the older design.  
 
 The 8000 Series was developed by the team that built the ASR 9000, CRS, NCS 5500 and other systems that run IOS XR. The traditional approach to line card power provisioning is to bundle optics with the rest of the card. In the first IOS XR systems like the CRS-1, the Packet Over SONET interfaces (622 Mbps OC-3 to 40 Gbps OC-768) were part of the card, so modular optics weren’t even a consideration. When modular optics were introduced, their power was relatively consistent. In the SP space, a single form factor (10km LR4) was dominant, and most optics reaches consumed similar power.  
