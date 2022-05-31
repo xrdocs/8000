@@ -11,7 +11,9 @@ Provisioned power can be viewed as the wattage the operating system requests for
 
 The goal of power provisioning software is to ensure that the system never runs out. This class of failure is called a brown out and is quite messy when it happens. When a router tries to pull more power than the PSUs can provide, some components will fall outside their electrial requirements and stop working properly.
 
-Spikes in power draw can happen quickly. If another router fails, load can increase and add to line card and fabric power. If facility cooling degrades, fan power may increase. Preventing brown outs is considered sacred. They are extremely rare because layer upon layer of protection against them is provided. Unfortunately, preventing brown outs requires connecting far more power than real-world systems are likely to consume.  
+Spikes in power draw can happen quickly. If another router fails, load can increase and add to line card and fabric power. If facility cooling degrades, fan power may increase.  
+
+Preventing brown outs is considered sacred. They are extremely rare because layer upon layer of protection against them is provided. Unfortunately, preventing brown outs requires connecting far more power than real-world systems are likely to consume.  
 
 Normal operating conditions for most routers include temperatures below 30C, both power feeds operational, average port bandwidth below 30%, and packet sizes above 800B. This results in a large gap between typical and provisioned power. As systems like the Cisco 8000 Series make more and more optimizations to reduce power in normal operation, the difference becomes even greater. In the next section, we’ll discuss some of the things we’re doing to help reduce the gap.  
 
