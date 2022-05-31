@@ -15,7 +15,7 @@ Spikes in power draw can happen quickly. If another router fails, load can incre
 
 Preventing brown outs is considered sacred. They are extremely rare because layer upon layer of protection against them is provided. Unfortunately, this requires connecting far more power than real-world systems are likely to consume.  
 
-Normal operating conditions for most routers include temperatures below 30C, both power feeds operational, average port bandwidth below 30%, and packet sizes above 800B. This results in a large gap between typical and provisioned power. As systems like the Cisco 8000 Series make more and more optimizations to reduce power in normal operation, the difference becomes even greater. In the next section, we’ll discuss some of the things we’re doing to help reduce the gap.  
+Normal operating conditions for most routers include temperatures below 30C, both power feeds operational, average port bandwidth below 30%, and packet sizes above 800B. This results in a large gap between typical and provisioned power. As systems like the Cisco 8000 Series make more and more optimizations to reduce power in normal operation, the difference becomes even greater. In the next section, we’ll discuss some of the things we’re doing to reduce the gap.  
 
 ## 8808 Example
 Let’s look at an example of typical vs. max power in the 8808 system. In the graphic below, the power required for the RPs is shown in purple, line cards in green, and optics power in orange. Each full block represents approximately 100W.  
