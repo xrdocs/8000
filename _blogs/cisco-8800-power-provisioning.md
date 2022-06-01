@@ -3,7 +3,7 @@ published: true
 date: '2022-03-22 13:20 -0400'
 title: Cisco 8800 Power Provisioning
 author: Lane Wigley
-position: hidden
+position: top
 tags:
   - iosxr
   - Cisco 8000
