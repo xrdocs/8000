@@ -40,7 +40,7 @@ Similarly, the power required for the switch fabric is shown below where the lig
 
 If we remove the chassis photo, the relative power for all major system components can be easily compared. The difference between typical and potential max power is highlighted.  
 
-![blog-3.GIF]({{site.baseurl}}/images/blog-3.GIF)
+![blog-3-small.GIF]({{site.baseurl}}/images/blog-3-small.GIF)
 
 
 ## Motivation for a New Approach
