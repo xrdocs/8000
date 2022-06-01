@@ -35,9 +35,6 @@ Three different line card configurations are shown. From the bottom: 48-port 100
 
 ![blog-2b-small.GIF]({{site.baseurl}}/images/blog-2b-small.GIF)
 
-![blog-2.GIF]({{site.baseurl}}/images/blog-2.GIF)
-
-
 Similarly, the power required for the switch fabric is shown below where the lighter blocks are for a typical load. The fans have the greatest range of power. The small blue boxes on the left represent the draw for each fan tray under normal conditions. As cooling requirements increase, more fan power is needed. This extra power is shown in the boxes to the right.  
 
 If we remove the chassis photo, the relative power for all major system components can be easily compared. The difference between typical and potential max power is highlighted.  
