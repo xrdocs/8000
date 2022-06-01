@@ -28,6 +28,7 @@ Normal operating conditions for most routers include temperatures below 30C, bot
 ## 8808 Example
 Let’s look at an example of typical vs. max power in the 8808 system. In the graphic below, the power required for the RPs is shown in purple, line cards in green, and optics power in orange. Each full block represents approximately 100W.  
 
+PICTURE GOES HERE  
 
 
 RP power is relatively consistent. For the line cards, light green boxes show typical power and darker green boxes represent the additional power for max performance. The optics power is not related to ambient temperature or traffic load, but different types of modules have a range of power draws from no power for copper cables up to over 20W for 400G ZR+ modules.
