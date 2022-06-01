@@ -33,6 +33,8 @@ Let’s look at an example of typical vs. max power in the 8808 system. In the g
 RP power is relatively consistent. For the line cards, light green boxes show typical power and darker green boxes represent the additional power for max performance. The optics power is not related to ambient temperature or traffic load, but different types of modules have a range of power draws from no power for copper cables up to over 20W for 400G ZR+ modules.
 Three different line card configurations are shown. From the bottom: 48-port 100 GbE with 2km optics, 36-port 400 GbE with ZR+ optics, and 36-port 400GbE with 2km optics. The range from the highest to lowest optics power is dramatic.  
 
+![blog-2b-small.GIF]({{site.baseurl}}/images/blog-2b-small.GIF)
+
 ![blog-2.GIF]({{site.baseurl}}/images/blog-2.GIF)
 
 
