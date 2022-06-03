@@ -79,7 +79,7 @@ The visible components aren’t the only consumers of power. 5-10% of power is l
 In the past, these factors could be ignored by users, but as power consumption becomes more critical, they shouldn’t be any longer. The 8000 Series includes many “behind the scenes” optimizations in these areas such as new power supplies and more efficient internal power distribution.  
 ## Metrics for the Cisco 8000 Series 
 
-At the beginning of this paper, the metric of watts per 100G without optics was proposed. Let’s conclude by looking at those values for some specific configurations. The data below is tested at 22C with 768B packets, 15% bandwidth, and without optics. 
+At the beginning of this paper, the metric of watts per 100G without optics was proposed. Let’s conclude by looking at those values for some specific configurations.
 
 
 | System              | Bandwidth  | Typical Power (W) | Watts / 100G |
@@ -94,7 +94,7 @@ At the beginning of this paper, the metric of watts per 100G without optics was 
 
 Much is made of chip-level power efficiency, but that is not the ultimate goal – merely a means to an end. Operators shouldn’t care if power is used to flip transistors or spin fans, they just want the system to be efficient. Evaluating systems should include benchmarks that can be standardized as well as network-specific configurations which may include multiple generations of hardware, a partially filled chassis, or different traffic loads.  
 
-In the 8000 Series Data Sheets, the typical power is defined by a fully loaded system at 25C with 15% line rate and 768B packets without optics. For the 8800 Series, the Q200-based 8800-LC0-36FH is used as the line card along with the most recent switch fabric available for the chassis.  
+For the 8800 Series, the Q200-based 8800-LC0-36FH is used as the line card along with the most recent switch fabric available for the chassis.  
 
 Other Cisco IOS XR platforms use higher traffic levels for their typical case in Cisco Power Calculator and bundle LR4 optics on all ports. We made the changes for the 8000 Series to better reflect everyday traffic patterns reported by our customers and from data we collected in production networks.  
 
