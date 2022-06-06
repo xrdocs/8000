@@ -76,7 +76,7 @@ The visible components aren’t the only consumers of power. 5-10% of power is l
 In the past, these factors could be ignored by users, but as power consumption becomes more critical, they shouldn’t be any longer. The 8000 Series includes many “behind the scenes” optimizations in these areas such as new power supplies and more efficient internal power distribution.  
 ## Metrics for the Cisco 8000 Series 
 
-At the beginning of this paper, the metric of watts per 100G without optics was proposed. Let’s conclude by looking at those values for some specific configurations.
+At the beginning of this paper, the metric of watts per 100G without optics was proposed. Let’s conclude by looking at those values for some specific systems.
 
 
 | System              | Bandwidth  | Typical Power (W) | Watts / 100G |
