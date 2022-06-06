@@ -32,11 +32,8 @@ System power consumption is the key metric to focus on. Chip power is an interes
 
 ## Electrical Data Path 
 
-The key components of the electrical data path power comprise PHYs, retimers, and forwarding ASICs. PHYs are small devices used for functions such as MACsec or as gearboxes which combine SerDes (Serializer/Deserializers are used for fast I/O through PCBs) or split them into different speeds. A common gearbox operation is to convert 2x 56G SerDes from the ASIC to 4x 28G SerDes connected to a QSFP28 100 GbE port. The 100G ports on the 8201 and 8202 use this design. Retimers are used to extend electrical signals. Retimers are commonly used for long traces such as connecting optics to ASICs in the “back row” of a line card.  
+The key components of the electrical data path power comprise PHYs, retimers, and forwarding ASICs. PHYs are small devices such as gearboxes which combine SerDes (Serializer/Deserializers are used for fast I/O through PCBs) or split them into different speeds. A common gearbox operation is to convert 2x 56G SerDes from the ASIC to 4x 28G SerDes connected to a QSFP28 100 GbE port. The 100G ports on the 8201 and 8202 use this design. Retimers are used to extend electrical signals. Retimers are commonly used for long traces such as connecting optics to ASICs in the “back row” of a line card.  
 
-![Linecard PHY]({{site.baseurl}}/images/linecard-phys.png)
-Fig 1. PHYs on a line card.
-{: .text-center}  
 Power-wise, ASICs are the stars of the show, so it’s understandable that they get most of the attention. They are the most complex components and are the key driver of system power for large, modular systems like the 8800. ASIC power can be broken into three main categories: SerDes, idle core power, and dynamic core power. In high-bandwidth chips like the Cisco Silicon One Q200, these are roughly equal. I’ll be focusing on this class of chips in this paper. It includes devices such as Broadcom’s Jericho 2 (used in NCS 5500) and Trident/Tomahawk (NCS 5000). Edge-class chips such as Cisco’s Lightspeed Plus and have similar characteristics but consume more power in complex per-packet operations (e.g., more counters) and less in SerDes due to lower bandwidth.  
 
 Each of these categories has different characteristics of power consumption. SerDes require constant power independent of traffic load, but they can be powered down. On the 8000 Series, this occurs when ports are shut down or when a fabric or line card slot is empty. In the latter case, the corresponding SerDes on the connecting card are shut down (e.g., some Fabric Card (FC) SerDes are disabled when Line Card (LC) slots are empty).  
@@ -92,12 +89,6 @@ At the beginning of this paper, the metric of watts per 100G without optics was 
 
 ## Conclusion 
 
-Much is made of chip-level power efficiency, but that is not the ultimate goal – merely a means to an end. Operators shouldn’t care if power is used to flip transistors or spin fans, they just want the system to be efficient. Evaluating systems should include benchmarks that can be standardized as well as network-specific configurations which may include multiple generations of hardware, a partially filled chassis, or different traffic loads.  
-
-For the 8800 Series, the Q200-based 8800-LC0-36FH is used as the line card along with the most recent switch fabric available for the chassis.  
-
-Other Cisco IOS XR platforms use higher traffic levels for their typical case in Cisco Power Calculator and bundle LR4 optics on all ports. We made the changes for the 8000 Series to better reflect everyday traffic patterns reported by our customers and from data we collected in production networks.  
-
-This may not represent your network or RFP benchmark, so for the 8800 Series, we have developed models based on extensive lab testing that can provide accurate estimates for any combination of line cards, type and number of fabric cards, packet size, bandwidth, optics, and temperature. If you are considering the 8000 series for your network, ask your account team to help with power modeling.  
+Much is made of chip-level power efficiency, but that is not the ultimate goal – merely a means to an end. Operators shouldn’t care if power is used to flip transistors or spin fans, they just want the system to be efficient. Evaluating systems should include benchmarks that can be standardized as well as network-specific configurations which may include multiple generations of hardware, a partially filled chassis, or different traffic loads. For the 8800 Series, the Q200-based 8800-LC0-36FH is used as the line card along with the most recent switch fabric available for the chassis.  
 
 In summary, the key metric for power consumption is system power in your typical conditions. When router shopping, ask vendors for system-level data that meets your real requirements and for details on how they were tested or calculated. Make sure to also look closely at timelines for qualification and ramp to deployment so that you evaluate systems available in the same generation and do not compare deployable hardware with press releases.
