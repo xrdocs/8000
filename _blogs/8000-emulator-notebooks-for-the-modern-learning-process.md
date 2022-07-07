@@ -80,7 +80,7 @@ _Traffic Management_
 
 * [Filter Network Traffic Using ACL Yang ](https://github.com/ios-xr/network-notebooks/blob/main/Put-Technology-to-Work/ACL/ACLyang.ipynb)
 
-_Secure Network _
+_Secure Network_
 
 * [Type 6 Password Authentication For BGP](https://github.com/ios-xr/network-notebooks/blob/main/Put-Technology-to-Work/BGP-Type6-Password-Encryption/Type6-BGP-4-Routers.ipynb)
 
