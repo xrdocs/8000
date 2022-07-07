@@ -67,6 +67,7 @@ _2. Setting up a basic network_
 * [Configure a Small Core Network](https://github.com/ios-xr/network-notebooks/blob/main/Getting-Started/Setting-Up-Basic-Network/Small-Core/SmallCore.ipynb)
 
 * [Configure a Label Switched Network](https://github.com/ios-xr/network-notebooks/blob/main/Getting-Started/Setting-Up-Basic-Network/Ospf-Mpls/ospf-mpls.ipynb)
+
 ### Put Technology to Work
 Explore end-to-end use cases
 
