@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2022-07-07 07:47 -0700'
-title: 8000 Emulator Notebooks for the Modern Learning Process
+title: '8000 Emulator Notebooks: Documentation at Runtime'
 author: Annapoorani G
 excerpt: Cisco 8000 Emulator integrated with Jupyter Notebooks
 tags:
@@ -30,7 +30,7 @@ The Cisco 8000 Emulator Notebooks are live documents that combine narrative text
  
 These notebooks are created using Jupyter, an open source software.
 
-## How do these Notebooks work for me?
+## How do these Notebooks work?
 The Notebook communicates with the Cisco 8000 emulator running in the background and brings up multi-router topologies within minutes at the click of the play button. You can then execute commands and configurations on the emulated routers directly from the Notebook. 
 
 ![NBUI.png]({{site.baseurl}}/images/NBUI.png)
