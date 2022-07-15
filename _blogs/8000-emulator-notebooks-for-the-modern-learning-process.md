@@ -2,7 +2,7 @@
 published: true
 date: '2022-07-07 07:47 -0700'
 title: '8000 Emulator Notebooks: Documentation at Runtime'
-author: Annapoorani G
+author: Cisco MIG Notebooks Team
 excerpt: Cisco 8000 Emulator integrated with Jupyter Notebooks
 tags:
   - iosxr
