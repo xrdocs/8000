@@ -10,7 +10,6 @@ tags:
   - '8000'
   - Jupyter
   - Python
-position: hidden
 ---
 Are you looking for a programmatically accurate document to guide you through your specific configuration needs?
  
