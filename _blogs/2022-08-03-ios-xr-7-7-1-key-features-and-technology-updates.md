@@ -12,12 +12,24 @@ tags:
 
 # IOS-XR 7.7.1 Key Features
 
+Table of Contents: 
+1. Key Technology Areas
+2. Software Availability 
+3. Technology Updates 
+4. New Hardware Support 
+5. Software PIDs
 
 ## Key Technology Updates in 7.7.1: 
-Segment Routing, EVPN, BGP, Software Only, RON, Peering, and Security 
+- Segment Routing 
+- EVPN
+- BGP
+- RON 
+- Peering 
+- Security
+
 
 ## IOS-XR 7.7.1 Software Availability
-IOS-XR 7.7.1 is Generally Available (GA) for release. 8000, ASR9K 64-bit, NCS5500/NCS5700, NCS560, NCS540, XRv9K, and XRd are supported in this release. Whitebox (SW only) is supported in this release.  
+IOS-XR 7.7.1 is Generally Available (GA) for release. 8000, ASR9K 64-bit, NCS5500/NCS5700, NCS560, NCS540, XRv9K, and XRd are supported in this release. 
 
 ## Overview 
 - Feature updates among technologies 
