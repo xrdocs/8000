@@ -9,15 +9,8 @@ excerpt: >-
 tags:
   - iosxr
 ---
-
+{% include toc %}
 # IOS-XR 7.7.1 Key Features
-
-Table of Contents: 
-1. Key Technology Areas
-2. Software Availability 
-3. Technology Updates 
-4. New Hardware Support 
-5. Software PIDs
 
 ## Key Technology Updates in 7.7.1: 
 - Segment Routing 
