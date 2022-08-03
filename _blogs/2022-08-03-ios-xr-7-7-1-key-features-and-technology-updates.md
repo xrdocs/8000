@@ -12,7 +12,7 @@ tags:
 {% include toc %}
 # IOS-XR 7.7.1 Key Features
 
-## Key Technology Updates in 7.7.1: 
+## Key Technology Updates in XR 7.7.1: 
 - Segment Routing 
 - EVPN
 - BGP
