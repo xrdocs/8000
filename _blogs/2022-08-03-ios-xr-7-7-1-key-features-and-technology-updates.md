@@ -84,14 +84,14 @@ Supported client types:
 
 # New Hardware Support 
 #### NCS 5500:
-| PID  |  Description |
+| PID  				|  Description |
 |-------------------|---------------------------------------------------------------------------|
 | NC55-OIP-02   | Support for modular port adapter for PLE  |
 | QDD-4X100G-LR-S   | Cisco 400GBASE Quad Small Form-Factor Pluggable Double Density (QSFP-DD)   |
 
 
 #### NCS 560 New Optics Support:
-| PID  |  Description |
+| PID  					|  Description |
 |-------------------|---------------------------------------------------------------------------|
 | GLC-GE-DR-LX SFP  | Cisco 100/1000BASE-LX SFP   |
 | SFP-GE-Z  | Cisco 1000BASE-ZX SFP Transceiver Module  |
@@ -99,7 +99,7 @@ Supported client types:
 
 
 #### NCS 540 New Optics Support
-|  PID |  Description |
+|  PID 				|  Description |
 |-------------------|---------------------------------------------------------------------------|
 | SFP-10G-SR-I   |  Support for Cisco 10GBASE SFP+ Module |
 |SFP-10G-ZR-I| Support for Cisco 10GBASE SFP+ Module  |
