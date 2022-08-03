@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 date: '2022-08-03 11:43 -0700'
 title: IOS-XR 7.7.1 Key Features and Technology Updates
 author: Akhil Sehgal
