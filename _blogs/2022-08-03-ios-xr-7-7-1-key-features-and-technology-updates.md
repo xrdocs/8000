@@ -86,7 +86,6 @@ Supported client types:
 #### NCS 5500:
 
 | PID  				|  Description |
-
 |-------------------|---------------------------------------------------------------------------|
 | NC55-OIP-02   | Support for modular port adapter for PLE  |
 | QDD-4X100G-LR-S   | Cisco 400GBASE Quad Small Form-Factor Pluggable Double Density (QSFP-DD)   |
@@ -95,7 +94,6 @@ Supported client types:
 #### NCS 560 New Optics Support:
 
 | PID  					|  Description |
-
 |-------------------|---------------------------------------------------------------------------|
 | GLC-GE-DR-LX SFP  | Cisco 100/1000BASE-LX SFP   |
 | SFP-GE-Z  | Cisco 1000BASE-ZX SFP Transceiver Module  |
@@ -105,7 +103,6 @@ Supported client types:
 #### NCS 540 New Optics Support
 
 |  PID 				|  Description |
-
 |-------------------|---------------------------------------------------------------------------|
 | SFP-10G-SR-I   |  Support for Cisco 10GBASE SFP+ Module |
 |SFP-10G-ZR-I| Support for Cisco 10GBASE SFP+ Module  |
@@ -118,7 +115,7 @@ Supported client types:
 | PID               | Description                                                               |
 |-------------------|---------------------------------------------------------------------------|
 | QSFP-100G-LR-S    | Cisco 100GBASE Quad Small Form-Factor Pluggable (QSFP)                    |
-| QSFP-100G-PSM4-S  |      Cisco 100GBASE Quad Small Form-Factor Pluggable (QSFP)                                                                         |
+| QSFP-100G-PSM4-S  |      Cisco 100GBASE Quad Small Form-Factor Pluggable (QSFP)               |
 | QDD-4X100G-LR-S   | Cisco 400GBASE Quad Small Form-Factor Pluggable Double Density (QSFP-DD)  |
 | QDD-400G-LR4-S    |          Cisco 400GBASE Quad Small Form-Factor Pluggable Double Density (QSFP-DD)                                                                 |
 | SFP-10G-SR-S      | Cisco 10GBASE SFP+ Modules                                                |
@@ -131,7 +128,6 @@ Supported client types:
 
 |PID |Description|
 |-------------------|---------------------------------------------------------------------------|
-
 | XR-A9K-X64-07.7  |  Cisco IOS XR IP/MPLS Core Software - IOS-XR 64 Bit |
 | XR-A9K-X64K9-07.7  | Cisco IOS XR IP/MPLS Core Software 3DES - IOS-XR 64 Bit  |
 
@@ -139,7 +135,6 @@ Supported client types:
 
 | PID  |  Description |
 |-------------------|---------------------------------------------------------------------------|
-
 | XR-NC55-PK9-07.07  | Cisco IOS XR IP/MPLS Software 3DES   |
 | XR-NC55-P-07.07  | Cisco IOS XR IP/MPLS Software  |
 | XR-7.7-TRK  | IOS-XR Software Tracking PID 7.7  |
@@ -150,7 +145,6 @@ Supported client types:
 
 |PID |Description|
 |-------------------|---------------------------------------------------------------------------|
-
 | XR-N560-7.7-TRK  |  NCS 560 Series IOS-XR Software Tracking PID 7.7 |
 | XR-N560-7.7-K9-TRK  | NCS 560 Series IOS-XR Software K9 Tracking PID 7.7|
 
@@ -158,7 +152,6 @@ Supported client types:
 
 |PID |Description|
 |-------------------|---------------------------------------------------------------------------|
-
 | XR-N540-7.7-TRK  |  NCS 540 Series IOS-XR Software Tracking PID 7.7 |
 | XR-N540-7.7-K9-TRK  | NCS 540 Series IOS-XR Software K9 Tracking PID 7.7|
 
@@ -166,6 +159,5 @@ Supported client types:
 
 |PID |Description|
 |-------------------|---------------------------------------------------------------------------|
-
 | XR-N50-7.7-TRK  |  Cisco IOS XR IP/MPLS Software 3DES |
 | XR-N50-7.7-K9-TRK  | Cisco IOS XR IP/MPLS Software|
