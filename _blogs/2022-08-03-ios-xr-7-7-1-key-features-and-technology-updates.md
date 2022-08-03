@@ -84,6 +84,7 @@ Supported client types:
 
 # New Hardware Support 
 #### NCS 5500:
+
 | PID  				|  Description |
 
 |-------------------|---------------------------------------------------------------------------|
@@ -92,6 +93,7 @@ Supported client types:
 
 
 #### NCS 560 New Optics Support:
+
 | PID  					|  Description |
 
 |-------------------|---------------------------------------------------------------------------|
@@ -101,6 +103,7 @@ Supported client types:
 
 
 #### NCS 540 New Optics Support
+
 |  PID 				|  Description |
 
 |-------------------|---------------------------------------------------------------------------|
@@ -125,6 +128,7 @@ Supported client types:
 # IOS-XR 7.7.1 Software PIDs
 
 #### Ordering Information ASR 9000: 
+
 |PID |Description|
 |-------------------|---------------------------------------------------------------------------|
 
@@ -132,6 +136,7 @@ Supported client types:
 | XR-A9K-X64K9-07.7  | Cisco IOS XR IP/MPLS Core Software 3DES - IOS-XR 64 Bit  |
 
 #### Ordering Information NCS 5500:
+
 | PID  |  Description |
 |-------------------|---------------------------------------------------------------------------|
 
@@ -142,6 +147,7 @@ Supported client types:
 
 
 #### Ordering Information NCS 560:
+
 |PID |Description|
 |-------------------|---------------------------------------------------------------------------|
 
@@ -149,6 +155,7 @@ Supported client types:
 | XR-N560-7.7-K9-TRK  | NCS 560 Series IOS-XR Software K9 Tracking PID 7.7|
 
 #### Ordering Information NCS 540:
+
 |PID |Description|
 |-------------------|---------------------------------------------------------------------------|
 
@@ -156,6 +163,7 @@ Supported client types:
 | XR-N540-7.7-K9-TRK  | NCS 540 Series IOS-XR Software K9 Tracking PID 7.7|
 
 #### Ordering Information NCS 5000:
+
 |PID |Description|
 |-------------------|---------------------------------------------------------------------------|
 
