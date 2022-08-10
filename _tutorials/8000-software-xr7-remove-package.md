@@ -20,7 +20,7 @@ This blog post aims to describe IOS XR7 software operation details to remove opt
 
 ## History 
 
-Cisco IOS-XR is a modular Network Operating System created in 2004 for CRS. It was originally built using a 32-bit QNX based micro kernel architecture. It then evolved toward a 64-bit Linux-based kernel with IOS-XR 6. Those 2 versions are referenced as classic IOS-XR (cXR) and IOS-XR 64bit (or enhanced IOS-XR or eXR).  
+Cisco IOS-XR is a modular Network Operating System created in 2004 for CRS. It was originally built using a 32-bit QNX based micro kernel architecture. It then evolved toward a 64-bit Linux-based kernel with IOS-XR 6 introduced with NCS 5500. Those 2 versions are referenced as classic IOS-XR (cXR) and IOS-XR 64bit (or enhanced IOS-XR or eXR).  
 
 Both of those IOS-XR flavors rely on packages concept. There are 3 types of packages: 
 1. Cisco IOS XR Unicast Routing Core Bundle (also referred as mini.pie or mini.iso). It contains: 
