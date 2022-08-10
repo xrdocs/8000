@@ -98,4 +98,15 @@ Last type of package is optional package that is not included in the ISO. They c
 
 ![XR7-CCO.png]({{site.baseurl}}/images/XR7-CCO.png)
 
+For IOS-XR 7.3.15, those optional packages are:
+- cdp
+- telnet
+- healthcheck
+- k9 (crypto dataplane)
+
+**Info:** telnet is now optional because ssh is part of the default image. Starting IOS XR 7.0.1, k9sec package is no more required for ssh/sftp features.  This is applicable for XR 32bits, XR 64bits and XR7. Fore more information, please check "SSH and SFTP in Baseline Cisco IOS XR Software Image" section in [System Security Configuration Guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/security/70x/b-system-security-cg-cisco8000-70x/implementing-secure-shell.html#concept_url_rxk_m3b)
+k9 package is still required for dataplane features such MACsec.
+{: .notice--primary}
+
+
   
