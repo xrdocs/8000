@@ -107,7 +107,7 @@ For IOS-XR 7.3.15, those optional packages are:
 - k9 (crypto dataplane)
 
 **Info:** telnet is now optional because ssh is part of the default image. Starting IOS XR 7.0.1, k9sec package is no more required for ssh/sftp features.  This is applicable for XR 32bits, XR 64bits and XR7. Fore more information, please check "SSH and SFTP in Baseline Cisco IOS XR Software Image" section in [System Security Configuration Guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/security/70x/b-system-security-cg-cisco8000-70x/implementing-secure-shell.html#concept_url_rxk_m3b)
-k9 package is still required for dataplane features such MACsec.
+  k9 package is still required for dataplane features such MACsec.
 {: .notice--primary}
 
 ## Removing optional packages included in base image
@@ -206,6 +206,247 @@ xr-track                                                          7.3.15v1.0.0-1
 </pre>
 </div>
 
-The first step is to remove the package with install package remove command:
+The first step is to remove the package with *install package remove* command:
 
-  
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#install package ?
+  abort      Abort the specified packaging operation(s)
+  add        Add packages
+  downgrade  Downgrade packages
+  <mark>remove     Remove packages</mark>
+  rollback   Rollback to the software committed by the given transaction id
+  upgrade    Upgrade packages
+  replace    Replace currently installed software with that in a given ISO
+
+RP/0/RP0/CPU0:8201-32FH-1#install package remove xr-8000-mcast synchronous
+Tue Aug 24 19:42:11.147 UTC
+Starting:
+  install package remove xr-8000-mcast
+Packaging operation 1.1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing ...
+Current activity: Veto check
+Current activity: Package add or other package operation .
+
+Packaging operation 1.1.1: 'install package remove xr-8000-mcast' completed without error
+RP/0/RP0/CPU0:8201-32FH-1#
+</code>
+</pre>
+</div>
+
+After this step, package is still active:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh install active summary
+Tue Aug 24 19:43:40.569 UTC
+Active Packages:    XR: 178    All: 1274
+Label:              7.3.15
+Software Hash:      9149973e08793c3f44e84a4a5b385c8a
+
+Optional Packages                                                        Version
+---------------------------------------------------- ---------------------------
+<mark>xr-8000-mcast                                                     7.3.15v1.0.0-1</mark>
+xr-8000-netflow                                                   7.3.15v1.0.0-1
+xr-bgp                                                            7.3.15v1.0.0-1
+xr-ipsla                                                          7.3.15v1.0.0-1
+xr-is-is                                                          7.3.15v1.0.0-1
+xr-lldp                                                           7.3.15v1.0.0-1
+xr-mcast                                                          7.3.15v1.0.0-1
+xr-mpls-oam                                                       7.3.15v1.0.0-1
+xr-netflow                                                        7.3.15v1.0.0-1
+xr-ospf                                                           7.3.15v1.0.0-1
+xr-perfmgmt                                                       7.3.15v1.0.0-1
+xr-track                                                          7.3.15v1.0.0-1
+</code>
+</pre>
+</div>
+
+Note it’s still available in the repository:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh install available
+Tue Aug 24 19:44:22.618 UTC
+Trying to access repositories...
+
+Package                                              Architecture                         Version Repository                          Cached
+---------------------------------------------------- ---------------- --------------------------- ----------------------------------- ------
+xr-8000-mcast                                        x86_64                        7.3.15v1.0.0-1                                     Y
+xr-mcast                                             x86_64                        7.3.15v1.0.0-1                                     Y
+snip
+</code>
+</pre>
+</div>
+
+Second step is to apply the change. This is accomplished with *install apply* command:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#install ?
+  apply     Apply the latest atomic change
+  attach    Attach to a running install operation
+  commit    Commit the transaction
+  package   Package operations
+  rollback  Rollback to the software committed by the given transaction id and apply the change
+  source    Install or upgrade packages from the specified source and apply the change
+  replace   Replace currently installed software with that in a given ISO and apply the change
+
+RP/0/RP0/CPU0:8201-32FH-1#install apply synchronous
+Tue Aug 24 19:47:46.258 UTC
+Once the packaging dependencies have been determined, the install operation may have to reload the system.
+If you want more control of the operation, then explicitly use 'install apply restart' or 'install apply reload' as reported by 'show install request'.
+Continue? [yes/no]:[yes] yes
+Starting:
+  install apply restart
+Atomic change 1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+Current activity: Apply by restarting processes ......
+
+Atomic change 1.1: 'install apply restart' completed without error
+RP/0/RP0/CPU0:8201-32FH-1#
+</code>
+</pre>
+</div>
+
+After this operation, multicast package is not active anymore:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh install active summary
+Tue Aug 24 19:51:36.254 UTC
+Active Packages:    XR: 176    All: 1272
+Label:              7.3.15
+Software Hash:      d6032915312fb30abb94375a4720a133
+
+Optional Packages                                                        Version
+---------------------------------------------------- ---------------------------
+xr-8000-netflow                                                   7.3.15v1.0.0-1
+xr-bgp                                                            7.3.15v1.0.0-1
+xr-ipsla                                                          7.3.15v1.0.0-1
+xr-is-is                                                          7.3.15v1.0.0-1
+xr-lldp                                                           7.3.15v1.0.0-1
+xr-mpls-oam                                                       7.3.15v1.0.0-1
+xr-netflow                                                        7.3.15v1.0.0-1
+xr-ospf                                                           7.3.15v1.0.0-1
+xr-perfmgmt                                                       7.3.15v1.0.0-1
+xr-track                                                          7.3.15v1.0.0-1
+RP/0/RP0/CPU0:8201-32FH-1#
+</code>
+</pre>
+</div>
+
+This can be confirmed with mrib process absence:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh processes mrib
+Tue Aug 24 19:53:16.683 UTC
+<mark>No such process mrib</mark>
+RP/0/RP0/CPU0:8201-32FH-1#
+</code>
+</pre>
+</div>
+
+The last step is to save current software configuration with install commit command. Until this command is executed, package will remain in the committed software configuration and in the repository:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh install committed summary
+Tue Aug 24 19:52:19.470 UTC
+Committed Packages: XR: 178    All: 1274
+Label:              7.3.15
+Software Hash:      9149973e08793c3f44e84a4a5b385c8a
+
+Optional Packages                                                        Version
+---------------------------------------------------- ---------------------------
+<mark>xr-8000-mcast                                                     7.3.15v1.0.0-1</mark>
+xr-8000-netflow                                                   7.3.15v1.0.0-1
+xr-bgp                                                            7.3.15v1.0.0-1
+xr-ipsla                                                          7.3.15v1.0.0-1
+xr-is-is                                                          7.3.15v1.0.0-1
+xr-lldp                                                           7.3.15v1.0.0-1
+xr-mcast                                                          7.3.15v1.0.0-1
+xr-mpls-oam                                                       7.3.15v1.0.0-1
+xr-netflow                                                        7.3.15v1.0.0-1
+xr-ospf                                                           7.3.15v1.0.0-1
+xr-perfmgmt                                                       7.3.15v1.0.0-1
+xr-track                                                          7.3.15v1.0.0-1
+
+RP/0/RP0/CPU0:8201-32FH-1#sh install <mark>available</mark>
+Tue Aug 24 19:52:37.862 UTC
+Trying to access repositories...
+
+Package                                              Architecture                         Version Repository                          Cached
+---------------------------------------------------- ---------------- --------------------------- ----------------------------------- ------
+xr-8000-mcast                                        x86_64                        7.3.15v1.0.0-1                                     Y
+xr-mcast                                             x86_64                        7.3.15v1.0.0-1                                     
+</code>
+</pre>
+</div>
+
+After the commit, active and committed packages are the same and package is no longer present in the repository:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#<mark>install commit synchronous<mark>
+Tue Aug 24 19:54:22.029 UTC
+Starting:
+  install commit
+Transaction 1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+Current activity: Commit transaction .
+
+Transaction 1: 'install commit' completed without error
+RP/0/RP0/CPU0:8201-32FH-1#
+
+RP/0/RP0/CPU0:8201-32FH-1#sh install committed summary
+Tue Aug 24 19:55:12.740 UTC
+Committed Packages: XR: 176    All: 1272
+Label:              7.3.15
+Software Hash:      d6032915312fb30abb94375a4720a133
+
+Optional Packages                                                        Version
+---------------------------------------------------- ---------------------------
+xr-8000-netflow                                                   7.3.15v1.0.0-1
+xr-bgp                                                            7.3.15v1.0.0-1
+xr-ipsla                                                          7.3.15v1.0.0-1
+xr-is-is                                                          7.3.15v1.0.0-1
+xr-lldp                                                           7.3.15v1.0.0-1
+xr-mpls-oam                                                       7.3.15v1.0.0-1
+xr-netflow                                                        7.3.15v1.0.0-1
+xr-ospf                                                           7.3.15v1.0.0-1
+xr-perfmgmt                                                       7.3.15v1.0.0-1
+xr-track                                                          7.3.15v1.0.0-1
+
+RP/0/RP0/CPU0:8201-32FH-1#sh install available
+Tue Aug 24 19:55:49.929 UTC
+Trying to access repositories...
+<mark>No matching packages found.</mark>
+RP/0/RP0/CPU0:8201-32FH-1#
+</code>
+</pre>
+</div>
+
+Package has been fully deactivated and removed from the router.
+
+**Info:** Note as software configuration has been updated, Software Hash value has also changed.
+{: .notice--primary}
+
+## Conclusion
+This article covered how to remove a package from a Cisco 8000 running IOS XR7 architectuer. While philosophy remains identical between classic IOS-XR, IOS-XR64bit and IOS XR7 (modular Network Operating Systems, ability to add and remove packages or software patches), few operational differences exist to deactivate and remove a package.
+
