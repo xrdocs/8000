@@ -16,7 +16,7 @@ tags:
 
 ## Introduction 
 
-This blog post aims to describe IOS XR7 software operation details to remove optional packages.
+This blog post aims to describe IOS XR7 software operation details to remove optional packages from a Cisco 8000 router.
 
 ## History 
 
