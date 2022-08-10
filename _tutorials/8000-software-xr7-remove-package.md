@@ -364,7 +364,7 @@ RP/0/RP0/CPU0:8201-32FH-1#
 </pre>
 </div>
 
-The last step is to save current software configuration with install commit command. Until this command is executed, package will remain in the committed software configuration and in the repository:
+The last step is to save current software configuration with *install commit* command. Until this command is executed, package will remain in the committed software configuration and in the repository:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
