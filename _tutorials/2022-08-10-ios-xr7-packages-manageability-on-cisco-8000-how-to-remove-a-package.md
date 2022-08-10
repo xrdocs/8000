@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2022-08-10 11:47 +0200'
-title: 'IOS XR7 packages manageability on Cisco 8000: how to remove a package'
+title: 'Cisco 8000 software manageability: how to remove a package'
 position: hidden
 author: Frederic Cuiller
 excerpt: >-
@@ -12,7 +12,7 @@ tags:
   - XR7
   - Cisco 8000
 ---
-{% include toc icon="table" title="IOS XR7 packages manageability on Cisco 8000: how to remove a package" %}
+{% include toc icon="table" title="How to remove a software package from Cisco 8000" %}
 
 ## Introduction 
 
