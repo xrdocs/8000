@@ -41,32 +41,58 @@ Cisco IOS XR7 is composed of a base image (ISO) that provides the XR infrastruct
 
 - A mandatory package that is included in the ISO
 
-RP/0/RP0/CPU0:8201-32FH-1#sh install active all 
-
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh install active <mark>all</mark>
 Tue Aug 24 17:03:27.152 UTC 
-
- 
-
 Package                                                                  Version 
-
 ---------------------------------------------------- --------------------------- 
-
-8000-boot-scripts                                                7.3.15v1.0.0-r0 
-
+<mark>8000-boot-scripts                                                7.3.15v1.0.0-r0</mark>
 8000-cpa-setup-x86                                               7.3.15v1.0.0-r0 
-
 8101-32h-cpa-sb-x86                                              7.3.15v1.0.0-r0 
-
 8102-64h-cpa-sb-x86                                              7.3.15v1.0.0-r0 
-
 8201-32fh-cpa-sb-x86                                             7.3.15v1.0.0-r0 
-
 8201-cpa-sb-x86                                                  7.3.15v1.0.0-r0 
-
 8202-cpa-sb-x86                                                  7.3.15v1.0.0-r0 
-
 8804-fc-data-cpa-sb-x86                                          7.3.15v1.0.0-r0 
-
 acl                                                            2.2.52-r0.23.38.0 
+snip
+</code>
+</pre>
+</div>
+  
+ - An optional package that is included in the ISO
 
-<snip> 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh install active ? 
+all      Show all user-installable packages 
+<mark>summary  Show a summary of active packages - optional and bugfix packages only</mark> 
+
+RP/0/RP0/CPU0:8201-32FH-1#sh install active summary 
+Tue Aug 24 12:19:30.076 UTC 
+Active Packages:    XR: 178    All: 1274 
+Label:              7.3.15 
+Software Hash:      9149973e08793c3f44e84a4a5b385c8a 
+<mark>Optional Packages                                                        Version</mark>
+---------------------------------------------------- --------------------------- 
+xr-8000-mcast                                                     7.3.15v1.0.0-1 
+xr-8000-netflow                                                   7.3.15v1.0.0-1 
+xr-bgp                                                            7.3.15v1.0.0-1 
+xr-ipsla                                                          7.3.15v1.0.0-1 
+xr-is-is                                                          7.3.15v1.0.0-1 
+xr-lldp                                                           7.3.15v1.0.0-1 
+xr-mcast                                                          7.3.15v1.0.0-1 
+xr-mpls-oam                                                       7.3.15v1.0.0-1 
+xr-netflow                                                        7.3.15v1.0.0-1 
+xr-ospf                                                           7.3.15v1.0.0-1 
+xr-perfmgmt                                                       7.3.15v1.0.0-1 
+xr-track                                                          7.3.15v1.0.0-1 
+</code>
+</pre>
+</div>
+ 
+Last type of package is optional package that is not included in the ISO. They can be downloaded on cisco.com website. 
+  
