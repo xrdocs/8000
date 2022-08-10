@@ -454,5 +454,5 @@ Package has been fully deactivated and removed from the router.
 {: .notice--primary}
 
 ## Conclusion
-This article covered how to remove a package from a Cisco 8000 running IOS XR7 architectuer. While philosophy remains identical between classic IOS-XR, IOS-XR64bit and IOS XR7 (modular Network Operating Systems, ability to add and remove packages or software patches), few operational differences exist to deactivate and remove a package.
+This article covered how to remove a package from a Cisco 8000 running IOS XR7 architecture. While philosophy remains identical between classic IOS-XR, IOS-XR64bit and IOS XR7 (modular Network Operating Systems, ability to add and remove packages or software patches), few operational differences exist to deactivate and remove a package.
 
