@@ -42,7 +42,7 @@ Cisco 8000 runs IOS XR7 software. IOS XR7 is built on top of the WindRiver Linux
 ![XR7-architecture.png]({{site.baseurl}}/images/XR7-architecture.png)
 
 **Info:** IOS XR7 (also referred as Lindt) is a XR software architecture evolution. It's currently applicable to Cisco 8000, NCS 540 and NCS-57B1 series. A software release can contain the number 7 but still follows cXR or eXR software architecture (e.g ASR 9000 XR 7.5.2 release is **not** XR7 architecture) 
-See datasheet [here] for more information(https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/datasheet-c78-743014.html)
+See datasheet [here](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/datasheet-c78-743014.html) for more information.
 {: .notice--primary}
 
 Cisco IOS XR7 is composed of a base image (ISO) that provides the XR infrastructure. The ISO image is made up of a set of packages (also called RPMs). These packages are of two types:  
@@ -102,7 +102,7 @@ xr-track                                                          7.3.15v1.0.0-1
 </pre>
 </div>
  
-- Last type of package is optional package that is **not** included in the ISO. They can be downloaded on cisco.com website. 
+Last type of package is optional package that is **not** included in the ISO. They can be downloaded on cisco.com website. 
 
 ![XR7-CCO.png]({{site.baseurl}}/images/XR7-CCO.png)
 
