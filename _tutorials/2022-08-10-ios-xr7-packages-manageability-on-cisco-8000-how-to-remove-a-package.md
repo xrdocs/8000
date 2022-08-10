@@ -12,6 +12,8 @@ tags:
   - XR7
   - Cisco 8000
 ---
+{% include toc icon="table" title="IOS XR7 packages manageability on Cisco 8000: how to remove a package" %}
+
 ## Introduction 
 
 This blog post aims to describe IOS XR7 software operation details to remove optional packages.
@@ -108,5 +110,102 @@ For IOS-XR 7.3.15, those optional packages are:
 k9 package is still required for dataplane features such MACsec.
 {: .notice--primary}
 
+## Removing optional packages included in base image
+Following a USB boot, operator might want to disable some optional packages to limit attack surface or optimize memory footprint.  
+For instance, while multicast is not enabled in this example, mrib process is spawned and its associated threads are in Sleeping state:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh run multicast-routing
+Tue Aug 24 19:18:54.009 UTC
+% No such configuration item(s)
+
+RP/0/RP0/CPU0:8201-32FH-1#sh processes mrib
+Tue Aug 24 19:17:52.150 UTC
+                  Job Id: 1151
+                     PID: 6090
+            Process name: mrib
+         Executable path: /opt/cisco/install-iosxr/base/bin/mrib
+              Instance #: 1
+              Version ID: 00.00.0000
+                 Respawn: ON
+           Respawn count: 1
+            Last started: Thu Aug 19 21:38:42 2021
+           <mark>Process state: Run</mark>
+           Package state: Normal
+           Process group: mcast-routing
+                    core: MAINMEM
+               Max. core: 0
+                   Level: 170
+               Placement: Placeable
+            startup_path: /opt/cisco/install-iosxr/base/startup/mrib.startup
+                   Ready: 87.313s
+        Process cpu time: 73.510 user, 44.100 kernel, 117.610 total
+JID    TID  Stack  pri  <mark>state</mark>        NAME             rt_pri
+1151   6090    0K  20   <mark>Sleeping</mark>     mrib             0
+1151   6170    0K  20   Sleeping     lwm_service_thr  0
+1151   6176    0K  20   Sleeping     qsm_service_thr  0
+1151   6236    0K  20   Sleeping     mrib             0
+1151   6242    0K  20   Sleeping     evm_signal_thre  0
+1151   6514    0K  20   Sleeping     mrib             0
+1151   6516    0K  20   Sleeping     aipc-lrd_thread  0
+1151   6517    0K  20   Sleeping     chkpt_evm        0
+1151   6536    0K  20   Sleeping     mrib             0
+1151   6538    0K  20   Sleeping     mrib             0
+1151   6588    0K  20   Sleeping     sf_mrib_chkpt    0
+1151   6589    0K  20   Sleeping     mrib             0
+1151   7399    0K  20   Sleeping     mrib_infra_thre  0
+1151   7402    0K  20   Sleeping     amt-stats        0
+1151   7404    0K  20   Sleeping     mrib             0
+1151   7447    0K  20   Sleeping     mrib_infra_thre  0
+</code>
+</pre>
+</div>
+
+Even if insignificant, this process also consumes memory:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh processes memory 6090
+Tue Aug 24 19:18:13.993 UTC
+JID      Text(KB)   Data(KB)  Stack(KB) Dynamic(KB) Process
+------ ---------- ---------- ---------- ----------- ------------------------------
+1151         1516      26352        132        7996 mrib
+</code>
+</pre>
+</div>
+
+In order to get rid of unused processes, an operator could decide to remove an optional package. xr-mcast will be used in the next example:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh install active summary
+Tue Aug 24 19:41:42.810 UTC
+Active Packages:    XR: 178    All: 1274
+Label:              7.3.15
+Software Hash:      9149973e08793c3f44e84a4a5b385c8a
+
+Optional Packages                                                        Version
+---------------------------------------------------- ---------------------------
+<mark>xr-8000-mcast                                                     7.3.15v1.0.0-1</mark>
+xr-8000-netflow                                                   7.3.15v1.0.0-1
+xr-bgp                                                            7.3.15v1.0.0-1
+xr-ipsla                                                          7.3.15v1.0.0-1
+xr-is-is                                                          7.3.15v1.0.0-1
+xr-lldp                                                           7.3.15v1.0.0-1
+xr-mcast                                                          7.3.15v1.0.0-1
+xr-mpls-oam                                                       7.3.15v1.0.0-1
+xr-netflow                                                        7.3.15v1.0.0-1
+xr-ospf                                                           7.3.15v1.0.0-1
+xr-perfmgmt                                                       7.3.15v1.0.0-1
+xr-track                                                          7.3.15v1.0.0-1
+</code>
+</pre>
+</div>
+
+The first step is to remove the package with install package remove command:
 
   
