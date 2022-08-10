@@ -20,7 +20,7 @@ This blog post aims to describe IOS XR7 software operation details to remove opt
 
 ## History 
 
-Cisco IOS-XR is a modular Network Operating System created in 2004 for CRS. It was originally built using a 32-bit QNX based micro kernel architecture. It eventually evolved toward a 64-bit Linux-based kernel with IOS-XR 6. Those 2 versions are referenced as classic IOS-XR (cXR) and IOS-XR 64bit (or enhanced IOS-XR or eXR).  
+Cisco IOS-XR is a modular Network Operating System created in 2004 for CRS. It was originally built using a 32-bit QNX based micro kernel architecture. It then evolved toward a 64-bit Linux-based kernel with IOS-XR 6. Those 2 versions are referenced as classic IOS-XR (cXR) and IOS-XR 64bit (or enhanced IOS-XR or eXR).  
 
 Both of those IOS-XR flavors rely on packages concept. There are 3 types of packages: 
 1. Cisco IOS XR Unicast Routing Core Bundle (also referred as mini.pie or mini.iso). it contains: 
@@ -38,6 +38,12 @@ Both of those IOS-XR flavors rely on packages concept. There are 3 types of pack
 ## Cisco 8000 and IOS XR7 
 
 Cisco 8000 runs IOS XR7 software. IOS XR7 is built on top of the WindRiver Linux 9 distribution. One major change is the complete removal of the admin plane. In addition, IOS XR control plane processes now run natively on the host.  
+
+![XR7-architecture.png]({{site.baseurl}}/images/XR7-architecture.png)
+
+**Info:** IOS XR7 (also referred as Lindt) is a XR software architecture evolution. It's currently applicable to Cisco 8000, NCS 540 and NCS-57B1 series. A software release can contain the number 7 but still follows cXR or eXR software architecture (e.g ASR 9000 XR 7.5.2 release is **not** XR7 architecture) 
+See datasheet [here] for more information(https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/datasheet-c78-743014.html)
+{: .notice--primary}
 
 Cisco IOS XR7 is composed of a base image (ISO) that provides the XR infrastructure. The ISO image is made up of a set of packages (also called RPMs). These packages are of two types:  
 
