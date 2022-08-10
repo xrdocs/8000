@@ -102,7 +102,7 @@ xr-track                                                          7.3.15v1.0.0-1
 </pre>
 </div>
  
-- Last type of package is optional package that is not included in the ISO. They can be downloaded on cisco.com website. 
+- Last type of package is optional package that is **not** included in the ISO. They can be downloaded on cisco.com website. 
 
 ![XR7-CCO.png]({{site.baseurl}}/images/XR7-CCO.png)
 
@@ -112,7 +112,7 @@ For IOS-XR 7.3.15, those optional packages are:
 - healthcheck
 - k9 (crypto dataplane)
 
-**Info:** telnet is now optional because ssh is part of the default image. Starting IOS XR 7.0.1, k9sec package is no more required for ssh/sftp features.  This is applicable for XR 32bits, XR 64bits and XR7. Fore more information, please check "SSH and SFTP in Baseline Cisco IOS XR Software Image" section in [System Security Configuration Guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/security/70x/b-system-security-cg-cisco8000-70x/implementing-secure-shell.html#concept_url_rxk_m3b)
+**Info:** telnet is now optional because ssh is part of the default image. Starting IOS XR 7.0.1, k9sec package is no more required for ssh/sftp features.  This is applicable for XR 32bits, XR 64bits and XR7. Fore more information, please check "SSH and SFTP in Baseline Cisco IOS XR Software Image" section in [**System Security Configuration Guide**](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/security/70x/b-system-security-cg-cisco8000-70x/implementing-secure-shell.html#concept_url_rxk_m3b)
   k9 package is still required for dataplane features such MACsec.
 {: .notice--primary}
 
@@ -125,7 +125,7 @@ For instance, while multicast is not enabled in this example, mrib process is sp
 <code>
 RP/0/RP0/CPU0:8201-32FH-1#sh run multicast-routing
 Tue Aug 24 19:18:54.009 UTC
-% No such configuration item(s)
+<mark>% No such configuration item(s)</mark>
 
 RP/0/RP0/CPU0:8201-32FH-1#sh processes mrib
 Tue Aug 24 19:17:52.150 UTC
@@ -296,7 +296,7 @@ Second step is to apply the change. This is accomplished with *install apply* co
 <pre class="highlight">
 <code>
 RP/0/RP0/CPU0:8201-32FH-1#install ?
-  apply     Apply the latest atomic change
+  <mark>apply     Apply the latest atomic change</mark>
   attach    Attach to a running install operation
   commit    Commit the transaction
   package   Package operations
@@ -390,7 +390,7 @@ xr-ospf                                                           7.3.15v1.0.0-1
 xr-perfmgmt                                                       7.3.15v1.0.0-1
 xr-track                                                          7.3.15v1.0.0-1
 
-RP/0/RP0/CPU0:8201-32FH-1#sh install <mark>available</mark>
+RP/0/RP0/CPU0:8201-32FH-1#<mark>sh install available</mark>
 Tue Aug 24 19:52:37.862 UTC
 Trying to access repositories...
 
@@ -407,7 +407,7 @@ After the commit, active and committed packages are the same and package is no l
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:8201-32FH-1#<mark>install commit synchronous<mark>
+RP/0/RP0/CPU0:8201-32FH-1#<mark>install commit synchronous</mark>
 Tue Aug 24 19:54:22.029 UTC
 Starting:
   install commit
