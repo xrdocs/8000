@@ -102,7 +102,7 @@ xr-track                                                          7.3.15v1.0.0-1
 </pre>
 </div>
  
-Last type of package is optional package that is not included in the ISO. They can be downloaded on cisco.com website. 
+- Last type of package is optional package that is not included in the ISO. They can be downloaded on cisco.com website. 
 
 ![XR7-CCO.png]({{site.baseurl}}/images/XR7-CCO.png)
 
