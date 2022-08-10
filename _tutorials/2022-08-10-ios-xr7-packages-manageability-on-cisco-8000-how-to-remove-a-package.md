@@ -12,7 +12,7 @@ tags:
   - XR7
   - Cisco 8000
 ---
-{% include toc icon="table" title="How to remove a software package from Cisco 8000" %}
+{% include toc icon="table" title="Cisco 8000 software manageability: how to remove a package" %}
 
 ## Introduction 
 
