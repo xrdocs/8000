@@ -1,0 +1,110 @@
+---
+published: true
+date: '2022-08-16 14:50 +0200'
+title: 'Cisco 8000 software manageability: how to add a package'
+author: Frederic Cuiller
+position: hidden
+---
+{% include toc icon="table" title="Cisco 8000 software manageability: how to add a package" %}
+
+## Introduction 
+
+This blog post aims to describe IOS XR7 software operation details to add optional packages on a Cisco 8000 router.
+
+## History 
+
+Cisco IOS-XR is a modular Network Operating System created in 2004 for CRS. It was originally built using a 32-bit QNX based micro kernel architecture. It then evolved toward a 64-bit Linux-based kernel with IOS-XR 6 introduced with NCS 5500. Those 2 versions are referenced as classic IOS-XR (cXR) and IOS-XR 64bit (or enhanced IOS-XR or eXR).  
+
+Both of those IOS-XR flavors rely on packages concept. There are 3 types of packages: 
+1. Cisco IOS XR Unicast Routing Core Bundle (also referred as mini.pie or mini.iso). It contains: 
+- Operating system (OS) and minimum boot image (MBI)—Kernel, file system, memory management, and other slow changing core components.  
+- Base—Interface manager, system database, checkpoint services, configuration management, other slow-changing components.  
+- Infra—Resource management: rack, fabric. 
+- Routing - RIB, BGP, ISIS, OSPF, EIGRP, RIP, RPL, and other routing protocols. 
+- Forwarding - FIB, ARP, QoS, ACL, and other components. 
+- LC — Line card drivers.  
+
+2. Individually-Installable Optional Package. It contains software for specific features such multicast, MPLS or manageability. 
+
+3. Software Maintenance Upgrades (SMU). It contains fixes for a specific defect.
+
+## Cisco 8000 and IOS XR7 
+
+Cisco 8000 runs IOS XR7 software. IOS XR7 is built on top of the WindRiver Linux 9 distribution. One major change is the complete removal of the admin plane. In addition, IOS XR control plane processes now run natively on the host.  
+
+![XR7-architecture.png]({{site.baseurl}}/images/XR7-architecture.png)
+
+**Info:** IOS XR7 (also referred as Lindt) is a XR software architecture evolution. It's currently applicable to Cisco 8000, NCS 540 and NCS-57B1 series. A software release can contain the number 7 but still follows cXR or eXR software architecture (e.g ASR 9000 XR 7.5.2 release is **not** XR7 architecture) 
+See datasheet [here](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/datasheet-c78-743014.html) for more information.
+{: .notice--primary}
+
+Cisco IOS XR7 is composed of a base image (ISO) that provides the XR infrastructure. The ISO image is made up of a set of packages (also called RPMs). These packages are of two types:  
+
+- A mandatory package that is included in the ISO
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh install active <mark>all</mark>
+Tue Aug 24 17:03:27.152 UTC 
+Package                                                                  Version 
+---------------------------------------------------- --------------------------- 
+<mark>8000-boot-scripts                                                7.3.15v1.0.0-r0</mark>
+8000-cpa-setup-x86                                               7.3.15v1.0.0-r0 
+8101-32h-cpa-sb-x86                                              7.3.15v1.0.0-r0 
+8102-64h-cpa-sb-x86                                              7.3.15v1.0.0-r0 
+8201-32fh-cpa-sb-x86                                             7.3.15v1.0.0-r0 
+8201-cpa-sb-x86                                                  7.3.15v1.0.0-r0 
+8202-cpa-sb-x86                                                  7.3.15v1.0.0-r0 
+8804-fc-data-cpa-sb-x86                                          7.3.15v1.0.0-r0 
+acl                                                            2.2.52-r0.23.38.0 
+snip
+</code>
+</pre>
+</div>
+  
+ - An optional package that is included in the ISO
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH-1#sh install active ? 
+all      Show all user-installable packages 
+<mark>summary  Show a summary of active packages - optional and bugfix packages only</mark> 
+
+RP/0/RP0/CPU0:8201-32FH-1#sh install active summary 
+Tue Aug 24 12:19:30.076 UTC 
+Active Packages:    XR: 178    All: 1274 
+Label:              7.3.15 
+Software Hash:      9149973e08793c3f44e84a4a5b385c8a 
+<mark>Optional Packages                                                        Version</mark>
+---------------------------------------------------- --------------------------- 
+xr-8000-mcast                                                     7.3.15v1.0.0-1 
+xr-8000-netflow                                                   7.3.15v1.0.0-1 
+xr-bgp                                                            7.3.15v1.0.0-1 
+xr-ipsla                                                          7.3.15v1.0.0-1 
+xr-is-is                                                          7.3.15v1.0.0-1 
+xr-lldp                                                           7.3.15v1.0.0-1 
+xr-mcast                                                          7.3.15v1.0.0-1 
+xr-mpls-oam                                                       7.3.15v1.0.0-1 
+xr-netflow                                                        7.3.15v1.0.0-1 
+xr-ospf                                                           7.3.15v1.0.0-1 
+xr-perfmgmt                                                       7.3.15v1.0.0-1 
+xr-track                                                          7.3.15v1.0.0-1 
+</code>
+</pre>
+</div>
+ 
+Last type of package is optional package that is **not** included in the ISO. They can be downloaded on cisco.com website. 
+
+![XR7-CCO.png]({{site.baseurl}}/images/XR7-CCO.png)
+
+For IOS-XR 7.3.15, those optional packages are:
+- cdp
+- telnet
+- healthcheck
+- k9 (crypto dataplane)
+
+**Info:** telnet is now optional because ssh is part of the default image. Starting IOS XR 7.0.1, k9sec package is no more required for ssh/sftp features.  This is applicable for XR 32bits, XR 64bits and XR7. Fore more information, please check "SSH and SFTP in Baseline Cisco IOS XR Software Image" section in [**System Security Configuration Guide**](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/security/70x/b-system-security-cg-cisco8000-70x/implementing-secure-shell.html#concept_url_rxk_m3b)  
+k9 package is still required for crypto dataplane features such MACsec.
+{: .notice--primary}
