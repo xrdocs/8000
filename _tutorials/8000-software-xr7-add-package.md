@@ -3,7 +3,7 @@ published: true
 date: '2022-08-16 14:50 +0200'
 title: 'Cisco 8000 software manageability: how to add a package'
 author: Frederic Cuiller
-position: hidden
+position: top
 excerpt: >-
   This blog post aims to describe IOS XR7 software operation details to add
   optional packages on a Cisco 8000 router.
