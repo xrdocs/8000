@@ -127,7 +127,6 @@ After downloading and extracting 8000-optional-rpms.7.3.15.tar file from CCO, in
 <code>
 {25/08/21 14:51}dhcp-10-61-108-172:~/Downloads/IOS/8000 fcuiller% tree optional-rpms/
 optional-rpms
-├── 8000-telnet-rpms.7.3.15.tar
 ├── cdp
 │   ├── xr-cdp-3692251fac396a2d-7.3.15v1.0.0-1.x86_64.rpm
 │   ├── xr-cdp-7.3.15v1.0.0-1.x86_64.rpm
