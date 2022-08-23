@@ -3,7 +3,7 @@ published: true
 date: '2022-08-23 16:07 +0200'
 title: 'Cisco 8000 software manageability: USB boot'
 author: Frederic Cuiller
-position: hidden
+position: top
 tags:
   - iosxr
   - Cisco 8000
