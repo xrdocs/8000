@@ -27,7 +27,7 @@ Operation is a 2-part process:
 {: .notice--primary}
 
 ## USB Drive Preparation
-A bootable USB drive is created by copying a compressed boot file into a USB drive. The USB drive becomes bootable after the contents of the compressed file are extracted.
+A bootable USB drive is created by copying a compressed boot file into a USB drive. The USB drive becomes bootable once the content of the compressed file is extracted.
 
 The first step is to download the compressed USB boot image from CCO:
 ![boot-image.png]({{site.baseurl}}/images/boot-image.png)
