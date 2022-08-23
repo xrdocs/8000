@@ -80,6 +80,7 @@ For 8800 distributed systems, USB drive must be inserted on active RP in any of 
 There are two ways to invoke USB boot:
 - From Boot menu
 - From XR CLI
+
 Both techniques ultimately lead to the same end-result.
 
 ### From Boot menu
