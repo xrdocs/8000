@@ -102,6 +102,7 @@ After this operation, USB boot process starts:
 
 Depending on USB drive speed, operation can take up to 10min. once process is done, router reloads:
 ![usb-boot-end.png]({{site.baseurl}}/images/usb-boot-end.png)
+
 **Info:** There can be multiple router reboots depending source/target software version pair.
 {: .notice--primary}
 
