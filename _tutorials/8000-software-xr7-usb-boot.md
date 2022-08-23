@@ -23,7 +23,8 @@ Operation is a 2-part process:
 - Creation of a bootable USB drive
 - USB boot invocation
 
-Info: Configuration will be erased. Content of harddisk: partition will not be erased during this operation. USB boot is different than factory-reset operation. 
+**Info:** Configuration will be erased. Content of harddisk: partition will not be erased during this operation. USB boot is different than factory-reset operation.
+{: .notice--primary}
 
 ## USB Drive Preparation
 A bootable USB drive is created by copying a compressed boot file into a USB drive. The USB drive becomes bootable after the contents of the compressed file are extracted.
@@ -35,8 +36,14 @@ As prerequisite, storage capacity must be between 8GB (min) and 32 GB (max). USB
 
 The ZIP file must be copied to the USB drive. It’s recommended to check file integrity with MD5 checksum verification:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 {22-05-05 14:50}FCUILLER-M-X6F3:/Volumes/USB_8GB fcuiller% md5 8000-x64-usb-7.5.2.zip
-MD5 (8000-x64-usb-7.5.2.zip) = 5380c1dc23bd0484ac62338beabb5822
+MD5 (8000-x64-usb-7.5.2.zip) = <mark>5380c1dc23bd0484ac62338beabb5822</mark>
+</code>
+</pre>
+</div>
 
 File must then be extracted on the USB drive, into the root folder:
 
@@ -88,8 +95,10 @@ The whole process can be observed in this video (x2 speed).
 
 When invoking USB boot with *reload bootmedia usb* CLI, it’s assumed operator has XR prompt access. This technique avoids BIOS menu access and directly triggers USB boot process.
 
-```
-Router#reload bootmedia usb noprompt
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+Cisco-8000#reload bootmedia usb noprompt
 
 Welcome to GRUB!!
 Verifying (hd0,msdos1)/EFI/BOOT/grub.cfg...
@@ -99,7 +108,9 @@ Verifying (loop)/boot/bzImage...
 (loop)/boot/bzImage verified using attached signature.
 Loading initrd..
 Verifying (loop)/boot/initrd.img
-```
+</code>
+</pre>
+</div>
 
 ## Conclusion
 This article described how USB boot can be used to stage, re-image or recover a Cisco 8000 router. While 2 different invocations techniques exist, operation results in a fresh and clean software configuration state.
