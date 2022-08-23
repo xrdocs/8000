@@ -107,7 +107,7 @@ Depending on USB drive speed, operation can take up to 10min. Once process is do
 **Info:** There can be multiple router reboots depending source/target software version pair.
 {: .notice--primary}
 
-And reboots from local disk:
+Last, router reboots from local disk:
 ![boot-from-disk.png]({{site.baseurl}}/images/boot-from-disk.png)
 
 As a fresh IOS-XR installation, a local administrator account must be created:
