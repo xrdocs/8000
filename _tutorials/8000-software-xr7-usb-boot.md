@@ -59,7 +59,8 @@ Which gives following structure:
 
 After extraction, USB drive can be ejected and is now a bootable drive.
 
-Info: ZIP file is not required anymore after extraction on the USB drive. Keeping it or removing it will not alter the USB boot process described next.
+**Info:** ZIP file is not required anymore after extraction on the USB drive. Keeping it or removing it will not alter the USB boot process described next.
+{: .notice--primary}
 
 ## Plugging USB drive
 
