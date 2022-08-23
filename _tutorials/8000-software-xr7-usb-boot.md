@@ -101,7 +101,7 @@ Then select USB option and press enter:
 After this operation, USB boot process starts:
 ![usb-boot-start.png]({{site.baseurl}}/images/usb-boot-start.png)
 
-Depending on USB drive speed, operation can take up to 10min. once process is done, router reloads:
+Depending on USB drive speed, operation can take up to 10min. Once process is done, router reloads:
 ![usb-boot-end.png]({{site.baseurl}}/images/usb-boot-end.png)
 
 **Info:** There can be multiple router reboots depending source/target software version pair.
