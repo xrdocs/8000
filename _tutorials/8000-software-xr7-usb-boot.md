@@ -34,7 +34,7 @@ The first step is to download the compressed USB boot image from CCO:
 
 
 The second step is to prepare the USB media.  
-As prerequisite, storage capacity must be between 8GB (min) and 32 GB (max). USB 2.0 and USB 3.0 are supported. The disk must be formatted as FAT32 or MS-DOS file system using the Windows Operating System or Apple MAC Disk Utility. USB drive formatting is out of this article scope.
+As prerequisite, storage capacity must be between 8GB (min) and 32 GB (max). USB 2.0 and USB 3.0 are supported. The disk must be formatted as FAT32 or MS-DOS file system using the Windows Operating System or Apple MAC Disk Utility. USB drive formatting is out of this article scope.  
 ![drive-formatting.png]({{site.baseurl}}/images/drive-formatting.png)
 
 
