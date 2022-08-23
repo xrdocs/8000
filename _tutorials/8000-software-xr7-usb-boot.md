@@ -67,9 +67,9 @@ After extraction, USB drive can be ejected and is now a bootable drive.
 Bootable USB drive must be inserted into 8100 or 8200 USB port or 8800 RP.
 Those are located on front panel:  
 
-![8100-usb.jpg]({{site.baseurl}}/images/8100-usb.jpg){: .align-left} ![8200-usb.jpg]({{site.baseurl}}/images/8200-usb.jpg){: .align-right}
+![8100-usb.jpg]({{site.baseurl}}/images/8100-usb.jpg){: .align-left} ![8200-usb.jpg]({{site.baseurl}}/images/8200-usb.jpg){: .align-right}  
 
-with exception for 8201 and 8202 (rear panel):
+with exception for 8201 and 8202 (rear panel):  
 ![8200-q100-usb.jpg]({{site.baseurl}}/images/8200-q100-usb.jpg)
 
 For 8800 distributed systems, USB drive must be inserted on active RP in any of the two USB ports:
