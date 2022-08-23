@@ -72,6 +72,9 @@ Those are located on front panel:
 with exception for 8201 and 8202 (rear panel):  
 ![8200-q100-usb.jpg]({{site.baseurl}}/images/8200-q100-usb.jpg)
 
+| ![8100-usb.jpg]({{site.baseurl}}/images/8100-usb.jpg) | ![8200-usb.jpg]({{site.baseurl}}/images/8200-usb.jpg) |
+|---|---|
+
 For 8800 distributed systems, USB drive must be inserted on active RP in any of the two USB ports:
 ![8800-rp-usb.png]({{site.baseurl}}/images/8800-rp-usb.png)
 
