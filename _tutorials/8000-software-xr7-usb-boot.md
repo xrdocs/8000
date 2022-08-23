@@ -14,7 +14,7 @@ excerpt: >-
   This step-by-step procedure can be used to stage, re-image or recover a router
   from a boot failure.
 ---
-# Cisco 8000 software manageability: USB boot
+{% include toc icon="table" title="Cisco 8000 software manageability: USB boot" %}
 
 ## Introduction
 
