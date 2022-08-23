@@ -30,9 +30,13 @@ Operation is a 2-part process:
 A bootable USB drive is created by copying a compressed boot file into a USB drive. The USB drive becomes bootable after the contents of the compressed file are extracted.
 
 The first step is to download the compressed USB boot image from CCO:
+![boot-image.png]({{site.baseurl}}/images/boot-image.png)
+
 
 The second step is to prepare the USB media.  
 As prerequisite, storage capacity must be between 8GB (min) and 32 GB (max). USB 2.0 and USB 3.0 are supported. The disk must be formatted as FAT32 or MS-DOS file system using the Windows Operating System or Apple MAC Disk Utility. USB drive formatting is out of this article scope.
+![drive-formatting.png]({{site.baseurl}}/images/drive-formatting.png)
+
 
 The ZIP file must be copied to the USB drive. It’s recommended to check file integrity with MD5 checksum verification:
 
@@ -45,9 +49,13 @@ MD5 (8000-x64-usb-7.5.2.zip) = <mark>5380c1dc23bd0484ac62338beabb5822</mark>
 </pre>
 </div>
 
+![boot-md5.png]({{site.baseurl}}/images/boot-md5.png)
+
 File must then be extracted on the USB drive, into the root folder:
+![boot-extract.png]({{site.baseurl}}/images/boot-extract.png)
 
 Which gives following structure:
+![boot-structure.png]({{site.baseurl}}/images/boot-structure.png)
 
 After extraction, USB drive can be ejected and is now a bootable drive.
 
@@ -57,10 +65,14 @@ Info: ZIP file is not required anymore after extraction on the USB drive. Keepin
 
 Bootable USB drive must be inserted into 8100 or 8200 USB port or 8800 RP.
 Those are located on front panel:
+![8100-usb.jpg]({{site.baseurl}}/images/8100-usb.jpg)
+![8200-usb.jpg]({{site.baseurl}}/images/8200-usb.jpg)
 
 with exception for 8201 and 8202 (rear panel):
+![8200-q100-usb.jpg]({{site.baseurl}}/images/8200-q100-usb.jpg)
 
 For 8800 distributed systems, drive must be inserted on active RP in any of the two USB ports
+![8800-rp-usb.png]({{site.baseurl}}/images/8800-rp-usb.png)
 
 ## USB Boot Invocation
 There are two ways to invoke USB boot:
@@ -72,22 +84,31 @@ Both techniques ultimately lead to the same end-result.
 It’s assumed operator doesn’t have access to XR prompt (no management access or credentials unavailable) for this operation. A console access is required (115200 baud, 8 data bits, 1 stop bit, No parity).   
 
 Right after router’s power ON, ‘Esc’ key must be pressed in continue to pause the boot process and get access to the BIOS:
+![boot-menu.png]({{site.baseurl}}/images/boot-menu.png)
 
 If the GRUB menu shows instead, operation must be repeated to gain BIOS access:
+![grub-menu.png]({{site.baseurl}}/images/grub-menu.png)
 
 Once in BIOS menu, operator must navigate into Boot Manager section:
+![boot-manager.png]({{site.baseurl}}/images/boot-manager.png)
 
 Then select USB option and press enter:
+![usb-boot.png]({{site.baseurl}}/images/usb-boot.png)
 
 After this operation, USB boot process starts:
+![usb-boot-start.png]({{site.baseurl}}/images/usb-boot-start.png)
 
 Depending on USB drive speed, operation can take up to 10min. once process is done, router reloads:
+![usb-boot-end.png]({{site.baseurl}}/images/usb-boot-end.png)
 
-And reboots on local disk:
+And reboots from local disk:
+![boot-from-disk.png]({{site.baseurl}}/images/boot-from-disk.png)
 
 As a fresh IOS-XR installation, a local administrator account must be created:
+![local-account.png]({{site.baseurl}}/images/local-account.png)
 
 *Et voila*:
+![usb-boot-final.png]({{site.baseurl}}/images/usb-boot-final.png)
 
 The whole process can be observed in this video (x2 speed).
 
