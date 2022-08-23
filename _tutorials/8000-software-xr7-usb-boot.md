@@ -84,7 +84,7 @@ Both techniques ultimately lead to the same end-result.
 ### From Boot menu
 It’s assumed operator doesn’t have access to XR prompt (no management access or credentials unavailable) for this operation. A console access is required (115200 baud, 8 data bits, 1 stop bit, No parity).   
 
-Right after router’s power ON, ‘Esc’ key must be pressed in continue to pause the boot process and get access to the BIOS:
+Right after router’s power ON, ‘Esc’ key must be pressed mutliple times to pause the boot process and get access to the BIOS:
 ![boot-menu.png]({{site.baseurl}}/images/boot-menu.png)
 
 If the GRUB menu shows instead, operation must be repeated to gain BIOS access:
