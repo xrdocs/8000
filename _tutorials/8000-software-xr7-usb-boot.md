@@ -73,8 +73,6 @@ Those are located on front panel:
 with exception for 8201 and 8202 (rear panel):  
 ![8200-q100-usb.jpg]({{site.baseurl}}/images/8200-q100-usb.jpg)
 
-
-
 For 8800 distributed systems, USB drive must be inserted on active RP in any of the two USB ports:
 ![8800-rp-usb.png]({{site.baseurl}}/images/8800-rp-usb.png)
 
@@ -104,6 +102,8 @@ After this operation, USB boot process starts:
 
 Depending on USB drive speed, operation can take up to 10min. once process is done, router reloads:
 ![usb-boot-end.png]({{site.baseurl}}/images/usb-boot-end.png)
+**Info:** There can be multiple router reboots depending source/target software version pair.
+{: .notice--primary}
 
 And reboots from local disk:
 ![boot-from-disk.png]({{site.baseurl}}/images/boot-from-disk.png)
