@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2022-08-23 16:07 +0200'
-title: ''
+title: 'Cisco 8000 software manageability: USB boot'
 author: Frederic Cuiller
 position: hidden
 tags:
