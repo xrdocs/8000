@@ -116,7 +116,8 @@ As a fresh IOS-XR installation, a local administrator account must be created:
 *Et voila*:
 ![usb-boot-final.png]({{site.baseurl}}/images/usb-boot-final.png)
 
-The whole process can be observed in this video (x4 speed).
+The whole process can be observed in this soundless screencast video (x4 speed):
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rmJywG1XXSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### From CLI
 
