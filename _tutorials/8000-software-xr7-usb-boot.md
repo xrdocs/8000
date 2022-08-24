@@ -89,7 +89,7 @@ It’s assumed operator doesn’t have access to XR prompt (no management access
 Right after router’s power ON, ‘Esc’ key must be pressed mutliple times to pause the boot process and get access to the BIOS:
 ![boot-menu.png]({{site.baseurl}}/images/boot-menu.png)
 
-If the GRUB menu shows instead, operation must be repeated to gain BIOS access:
+If the GRUB menu appears instead (as shown below), whole operation must be repeated to gain BIOS access (power off, power on, break sequence):
 ![grub-menu.png]({{site.baseurl}}/images/grub-menu.png)
 
 Once in BIOS menu, operator must navigate into Boot Manager section:
