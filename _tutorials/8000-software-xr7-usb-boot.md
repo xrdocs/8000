@@ -140,5 +140,7 @@ Verifying (loop)/boot/initrd.img
 </pre>
 </div>
 
+The exact same process will be executed: image copy, software installation, router reboot.
+
 ## Conclusion
 This article described how USB boot can be used to stage, re-image or recover a Cisco 8000 router. While 2 different invocations techniques exist, operation results in a fresh and clean software configuration state.
