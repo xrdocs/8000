@@ -385,7 +385,7 @@ Bugfixes in this ISO:
 </pre>
 </div>
 
-**Info:** While 4 x SMUs have been downloaded from CCO website, CSCwb91492 supersedes CSCwb25421 (which was not downloaded). Which explains why a 5th fix shows in the list.
+**Info:** While 4 x SMUs have been downloaded from CCO website, CSCwb91492 supersedes CSCwb25421 (which was not downloaded), explaining why a 5th fix shows in the list.
 {: .notice--primary}
 
 
