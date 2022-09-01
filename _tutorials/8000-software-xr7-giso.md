@@ -304,7 +304,7 @@ total 16160
 </pre>
 </div>
 
-gisobuild help is available on github webpage and with *./gisobuild.py --help* command. The simplest command to generate a GISO is to indicate the base ISO location and the folder containing extra packages to install:
+gisobuild help is available on [GitHub webpage](https://github.com/ios-xr/gisobuild) and with *./gisobuild.py --help* command. The simplest command to generate a GISO is to indicate the base ISO location and the folder containing extra packages to install:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
