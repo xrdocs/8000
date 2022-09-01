@@ -240,8 +240,189 @@ The tool is common for IOS-XR 64bit (EXR) and IOS-XR7 (LNT) architectures. Remem
 
 ## GISO Creation
 
+For this tutorial, IOS-XR 7.5.2 base release is used (8000-x64-7.5.2.iso).
+
+**Info:** gisobuild.py can only be used to generate 7.5.1+ images. If a pre 7.5.1 image is needed, please get in touch with TAC to generate it for you.
+{: .notice--primary}
+
+In addition, 4 x SMUs (Software Maintenance Unit) and 2 x optional packages (telnet & cdp) are packaged in the GISO. No XR config nor ZTP config is provided for this example.
+While no optional packages are removed for this example (--remove-packages option), it’s technically possible to do. Refer to ['how to add'](https://xrdocs.io/8000/tutorials/8000-software-xr7-add-package/) and ['how to remove'](https://xrdocs.io/8000/tutorials/8000-software-xr7-remove-package/) articles for more information about optional packages.
+
+Extra packages are downloaded from Cisco website, TAR files are extracted and .rpm and .tgz files are all placed into the RPM directory:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+cisco@debian-template:~/RPM$ ls -l
+total 16160
+-rw-r--r-- 1 cisco cisco 13594531 Jul 15 14:22 8000-x86_64-7.5.2-CSCvy99756.tgz
+-rw-r--r-- 1 cisco cisco   133869 Aug 12 13:20 8000-x86_64-7.5.2-CSCwb65194.tgz
+-rw-r--r-- 1 cisco cisco  2104483 Jul 14 16:08 8000-x86_64-7.5.2-CSCwb74098.tgz
+-rw-r--r-- 1 cisco cisco   100946 Aug  9 11:32 8000-x86_64-7.5.2-CSCwb91492.tgz
+-rw-r--r-- 1 cisco cisco    77813 Aug 31 09:18 xr-cdp-21a020d8b6d1a0b5-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5892 Aug 31 09:18 xr-cdp-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco    10594 Aug 31 09:18 xr-cdp-748523fd2516d420-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5980 Aug 31 09:18 xr-cdp-8101-32h-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5980 Aug 31 09:18 xr-cdp-8102-64h-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5980 Aug 31 09:18 xr-cdp-8111-32eh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5980 Aug 31 09:18 xr-cdp-8201-32fh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5956 Aug 31 09:18 xr-cdp-8201-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5996 Aug 31 09:18 xr-cdp-8202-32fh-m-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5956 Aug 31 09:18 xr-cdp-8202-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     6012 Aug 31 09:18 xr-cdp-8203-88h16fh-m-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5956 Aug 31 09:18 xr-cdp-8212-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5980 Aug 31 09:18 xr-cdp-8608-rp1-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5972 Aug 31 09:18 xr-cdp-88-lc0-34h14fh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5956 Aug 31 09:18 xr-cdp-88-lc0-36fh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5964 Aug 31 09:18 xr-cdp-88-lc0-36fh-m-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5956 Aug 31 09:18 xr-cdp-88-lc1-36eh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5964 Aug 31 09:18 xr-cdp-8800-lc-36fh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5956 Aug 31 09:18 xr-cdp-8800-lc-48h-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5932 Aug 31 09:18 xr-cdp-8800-rp-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco    86327 Aug 31 09:18 xr-cdp-e67eaedb0a19ef6c-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco    11746 Aug 31 09:18 xr-telnet-21a020d8b6d1a0b5-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5916 Aug 31 09:18 xr-telnet-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5968 Aug 31 09:18 xr-telnet-8101-32h-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5968 Aug 31 09:18 xr-telnet-8102-64h-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5972 Aug 31 09:18 xr-telnet-8111-32eh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5972 Aug 31 09:18 xr-telnet-8201-32fh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5944 Aug 31 09:18 xr-telnet-8201-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5988 Aug 31 09:18 xr-telnet-8202-32fh-m-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5944 Aug 31 09:18 xr-telnet-8202-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     6004 Aug 31 09:18 xr-telnet-8203-88h16fh-m-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5944 Aug 31 09:18 xr-telnet-8212-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5968 Aug 31 09:18 xr-telnet-8608-rp1-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5960 Aug 31 09:18 xr-telnet-88-lc0-34h14fh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5944 Aug 31 09:18 xr-telnet-88-lc0-36fh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5956 Aug 31 09:18 xr-telnet-88-lc0-36fh-m-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5944 Aug 31 09:18 xr-telnet-88-lc1-36eh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5948 Aug 31 09:18 xr-telnet-8800-lc-36fh-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5944 Aug 31 09:18 xr-telnet-8800-lc-48h-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco     5964 Aug 31 09:18 xr-telnet-8800-rp-7.5.2v1.0.0-1.x86_64.rpm
+-rw-r--r-- 1 cisco cisco   102962 Aug 31 09:18 xr-telnet-e67eaedb0a19ef6c-7.5.2v1.0.0-1.x86_64.rpm
+</code>
+</pre>
+</div>
+
+gisobuild help is available on github webpage and with *./gisobuild.py --help* command. The simplest command to generate a GISO is to indicate the base ISO location and the folder containing extra packages to install:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+cisco@debian-template:~/gisobuild/src$ ./gisobuild.py --iso /home/cisco/8000-x64-7.5.2.iso --repo /home/cisco/RPM --pkglist xr- --clean
+Building GISO...
+^@^@^@^@gisobuild.py --iso /home/cisco/8000-x64-7.5.2.iso --repo /home/cisco/RPM --pkglist xr- --clean
+GISO build successful
+ISO: /home/cisco/gisobuild/src/output_gisobuild/giso/8000-golden-x86_64-7.5.2-iso.iso
+Size: 1.39 GB
+USB image: /home/cisco/gisobuild/src/output_gisobuild/giso/8000-golden-x86_64-usb_boot-7.5.2-iso.zip
+ISO label: iso
+Further logs at /home/cisco/gisobuild/src/output_gisobuild/logs/gisobuild.log
+</code>
+</pre>
+</div>
+
+**Info:** the --pkglist xr- arguments are used because some packages (telnet and cdp) are being added to the GISO (they were not included in the ISO previously), and this is indicating that any package that starts with “xr-” should be included in the list. If only telnet was required, but cdp was present, then --pkglist xr-telnet could be used to filter the packages. Or, --remove-packages xr-cdp can be used to remove any reference to xr-cdp packages from the GISO.
+{: .notice--primary}
+
+A label is automatically generated if not provided by the operator. You can use your own to differentiate GISOs (e.g to specify patch level like 752-SMUs-20220830).  
+A debug file is also available to check operation details.  
+
+By default, gisobuild.py generates 2 x files:
+
+- A golden ISO file. This can be used to patch, upgrade or PXE boot the Cisco 8000 router.
+- A compressed boot image. This can be used to USB boot the Cisco 8000 router. Refer Cisco 8000 USB boot procedure [article](https://xrdocs.io/8000/tutorials/8000-software-xr7-usb-boot/).  
+
+If not needed, bootable USB image creation can be skipped with --skip-usb-image argument.
+
 ## GISO Verification
 
+gisobuild also contains a suite of tools to check content of a GISO. This can be handy to check a GISO file integrity or content. This article will cover isols.py.  
+
+isols.py will list content of a GISO. Embedded help is provided:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+cisco@debian-template:~/gisobuild/src/lntmod$ ./isols.py --help
+usage: isols.py [-h] [--log-dir LOG_DIR] [--no-logs] [--json] -i ISO (--build-info | --dump-mdata | --rpms | --groups | --optional-packages | --fixes)
+
+Helper utility to query information about an ISO
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --log-dir LOG_DIR    Directory to put the log file.
+  --no-logs            Do not store the logs anywhere
+  --json               Output data in JSON format
+
+required options:
+  -i ISO, --iso ISO    Path to ISO to query
+
+isols options:
+  --build-info         Display ISO build information
+  --dump-mdata         Display ISO metadata information in JSON format
+  --rpms               List all non-bridging RPMs in the ISO
+  --groups             List all packages on a per-group basis.
+  --optional-packages  List optional packages in the ISO
+  --fixes              List bug fixes included in the ISO
+</code>
+</pre>
+</div>
+
+Amongst these options, --fixes option confirms the 4 x SMUs are available in this sample GISO:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+cisco@debian-template:~/gisobuild/src/lntmod$ ./isols.py -i /home/cisco/gisobuild/src/output_gisobuild/giso/8000-golden-x86_64-7.5.2-iso.iso --fixes
+Bugfixes in this ISO: {'<mark>cisco-CSCwb65194</mark>': ['xr-cds-7.5.2v1.0.1-1.x86_64'], '<mark>cisco-CSCvy99756</mark>': ['xr-python-7.5.2v1.0.1-1.x86_64', 'xr-security-7.5.2v1.0.1-1.x86_64'], 'cisco-CSCwb74098': ['xr-routing-7.5.2v1.0.1-1.x86_64'], '<mark>cisco-CSCwb91492</mark>': ['xr-8000-dsm-7.5.2v1.0.2-1.x86_64'], '<mark>cisco-CSCwb25421</mark>': ['xr-8000-dsm-7.5.2v1.0.2-1.x86_64']}
+</code>
+</pre>
+</div>
+
+The --optional-packages lists optional packages included in this GISO and confirms cdp and telnet packages are available:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+cisco@debian-template:~/gisobuild/src/lntmod$ ./isols.py -i /home/cisco/gisobuild/src/output_gisobuild/giso/8000-golden-x86_64-7.5.2-iso.iso --optional-packages
+Group: main
+  xr-8000-mcast
+  xr-8000-netflow
+  xr-bgp
+  <mark>xr-cdp</mark>
+  xr-ipsla
+  xr-is-is
+  xr-lldp
+  xr-mcast
+  xr-mpls-oam
+  xr-netflow
+  xr-ospf
+  xr-perf-meas
+  xr-perfmgmt
+  <mark>xr-telnet</mark>
+  xr-track
+</code>
+</pre>
+</div>
+
+Like any ISO file, Golden ISO can be mounted to explore its structure.
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+cisco@debian-template:~/gisobuild/src/lntmod$ sudo mkdir /mnt/giso
+[sudo] password for cisco:
+cisco@debian-template:~/gisobuild/src/lntmod$ sudo mount -o loop /home/cisco/gisobuild/src/output_gisobuild/giso/8000-golden-x86_64-7.5.2-iso.iso /mnt/giso
+</code>
+</pre>
+</div>
+
+Following files and folders are present:
+
 ## Conclusion
+This post covered Golden ISO concept for Cisco 8000. The tutorial went over gisobuild.py installation and utilization to create and verify GISO files. Those GISO files can ultimately be used to perform software staging, patching or upgrades.
 
 ## Acknowledgements
+I’d like to thanks Joseph Hare and Mark Sains from Ensoft team in UK for their support and review.
+
