@@ -74,7 +74,7 @@ For this article and at the time of writing, a Debian 11.3 server is used. It’
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-cisco@debian-template:/mnt/giso$ lsb_release -a
+cisco@debian-template:~$ lsb_release -a
 No LSB modules are available.
 Distributor ID:	Debian
 <mark>Description:	Debian GNU/Linux 11 (bullseye)</mark>
