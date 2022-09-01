@@ -26,6 +26,8 @@ This tutorial will describe and illustrate how to generate a Golden ISO (GISO) i
 
 ## Software Lifecycle in a Router
 
+![software-lifecycle.png]({{site.baseurl}}/images/software-lifecycle.png)
+
 It’s common to see different phases for production devices:
 
 - Software staging: initial router staging and deployment, first installation with qualified software.
