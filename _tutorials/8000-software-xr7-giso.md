@@ -325,7 +325,7 @@ Further logs at /home/cisco/gisobuild/src/output_gisobuild/logs/gisobuild.log
 **Info:** the '--pkglist xr-' argument is used because some packages (telnet and cdp) are being added to the GISO (they were not included in the ISO previously), and this is indicating that any package that starts with “xr-” regex should be included in the list. If only telnet was required, but cdp was present, then --pkglist xr-telnet could be used to filter the packages. Or, --remove-packages xr-cdp can be used to remove any reference to xr-cdp packages from the GISO.
 {: .notice--primary}
 
-A label is automatically generated if not provided by the operator. You can use your own to differentiate GISOs (e.g to specify patch level like 752-SMUs-20220830).  
+A label is automatically generated if not provided by the operator. Network operator can use its own to differentiate multiple GISOs (e.g to specify patch level like 752-SMUs-20220830).  
 A debug file is also available to check operation details.  
 
 By default, gisobuild.py generates 2 x files:
