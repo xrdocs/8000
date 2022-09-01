@@ -375,7 +375,11 @@ Amongst these options, --fixes option confirms the 4 x SMUs are available in thi
 <pre class="highlight">
 <code>
 cisco@debian-template:~/gisobuild/src/lntmod$ ./isols.py -i /home/cisco/gisobuild/src/output_gisobuild/giso/8000-golden-x86_64-7.5.2-iso.iso --fixes
-Bugfixes in this ISO: {'<mark>cisco-CSCwb65194</mark>': ['xr-cds-7.5.2v1.0.1-1.x86_64'], '<mark>cisco-CSCvy99756</mark>': ['xr-python-7.5.2v1.0.1-1.x86_64', 'xr-security-7.5.2v1.0.1-1.x86_64'], 'cisco-CSCwb74098': ['xr-routing-7.5.2v1.0.1-1.x86_64'], '<mark>cisco-CSCwb91492</mark>': ['xr-8000-dsm-7.5.2v1.0.2-1.x86_64'], '<mark>cisco-CSCwb25421</mark>': ['xr-8000-dsm-7.5.2v1.0.2-1.x86_64']}
+Bugfixes in this ISO: 
+{'<mark>cisco-CSCwb65194</mark>': ['xr-cds-7.5.2v1.0.1-1.x86_64'], 
+'<mark>cisco-CSCvy99756</mark>': ['xr-python-7.5.2v1.0.1-1.x86_64', 'xr-security-7.5.2v1.0.1-1.x86_64'], 'cisco-CSCwb74098': ['xr-routing-7.5.2v1.0.1-1.x86_64'], 
+'<mark>cisco-CSCwb91492</mark>': ['xr-8000-dsm-7.5.2v1.0.2-1.x86_64'], 
+'<mark>cisco-CSCwb25421</mark>': ['xr-8000-dsm-7.5.2v1.0.2-1.x86_64']}
 </code>
 </pre>
 </div>
