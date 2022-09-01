@@ -330,8 +330,8 @@ A debug file is also available to check operation details.
 
 By default, gisobuild.py generates 2 x files:
 
-- A golden ISO file. This can be used to patch, upgrade or PXE boot the Cisco 8000 router.
-- A compressed boot image. This can be used to USB boot the Cisco 8000 router. Refer Cisco 8000 USB boot procedure [article](https://xrdocs.io/8000/tutorials/8000-software-xr7-usb-boot/).  
+- A golden ISO file (.iso). This can be used to patch, upgrade or PXE boot the Cisco 8000 router.
+- A compressed boot image (.zip). This can be used to USB boot the Cisco 8000 router. Refer Cisco 8000 USB boot procedure [article](https://xrdocs.io/8000/tutorials/8000-software-xr7-usb-boot/).  
 
 If not needed, bootable USB image creation can be skipped with --skip-usb-image argument.
 
