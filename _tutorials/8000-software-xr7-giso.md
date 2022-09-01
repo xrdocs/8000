@@ -377,12 +377,17 @@ Amongst these options, --fixes option confirms the 4 x SMUs are available in thi
 cisco@debian-template:~/gisobuild/src/lntmod$ ./isols.py -i /home/cisco/gisobuild/src/output_gisobuild/giso/8000-golden-x86_64-7.5.2-iso.iso --fixes
 Bugfixes in this ISO: 
 {'<mark>cisco-CSCwb65194</mark>': ['xr-cds-7.5.2v1.0.1-1.x86_64'], 
-'<mark>cisco-CSCvy99756</mark>': ['xr-python-7.5.2v1.0.1-1.x86_64', 'xr-security-7.5.2v1.0.1-1.x86_64'], 'cisco-CSCwb74098': ['xr-routing-7.5.2v1.0.1-1.x86_64'], 
+'<mark>cisco-CSCvy99756</mark>': ['xr-python-7.5.2v1.0.1-1.x86_64', 'xr-security-7.5.2v1.0.1-1.x86_64'], 
+'<mark>cisco-CSCwb74098</mark>': ['xr-routing-7.5.2v1.0.1-1.x86_64'], 
 '<mark>cisco-CSCwb91492</mark>': ['xr-8000-dsm-7.5.2v1.0.2-1.x86_64'], 
-'<mark>cisco-CSCwb25421</mark>': ['xr-8000-dsm-7.5.2v1.0.2-1.x86_64']}
+'cisco-CSCwb25421': ['xr-8000-dsm-7.5.2v1.0.2-1.x86_64']}
 </code>
 </pre>
 </div>
+
+**Info:** While 4 x SMUs have been downloaded from CCO website, CSCwb91492 supersedes CSCwb25421 (which was not downloaded). Which explains why a 5th fix shows in the list.
+{: .notice--primary}
+
 
 The --optional-packages lists optional packages included in this GISO and confirms cdp and telnet packages are available:
 
