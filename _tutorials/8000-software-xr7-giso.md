@@ -26,7 +26,7 @@ This tutorial will describe and illustrate how to generate a Golden ISO (GISO) i
 
 ## Software Lifecycle in a Router
 
-![software-lifecycle.png]({{site.baseurl}}/images/software-lifecycle.png)
+![software-lifecycle.png]({{site.baseurl}}/images/software-lifecycle.png){: .align-center}
 
 It’s common to see different phases for production devices:
 
