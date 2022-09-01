@@ -3,7 +3,7 @@ published: true
 date: '2022-08-31 23:53 +0200'
 title: 'Cisco 8000 software manageability: Golden ISO (GISO)'
 author: Frederic Cuiller
-position: hidden
+position: top
 excerpt: >-
   This tutorial will describe and illustrate how to generate a Golden ISO (GISO)
   image for Cisco 8000 routers. GISO can be used to stage, re-image, patch or
