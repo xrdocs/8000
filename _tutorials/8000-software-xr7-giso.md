@@ -253,7 +253,7 @@ Extra packages are downloaded from Cisco website, TAR files are extracted and .r
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-cisco@debian-template:~/RPM$ ls -l
+cisco@debian-template:<mark>~/RPM</mark>$ ls -l
 total 16160
 -rw-r--r-- 1 cisco cisco 13594531 Jul 15 14:22 8000-x86_64-7.5.2-CSCvy99756.tgz
 -rw-r--r-- 1 cisco cisco   133869 Aug 12 13:20 8000-x86_64-7.5.2-CSCwb65194.tgz
