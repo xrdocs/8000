@@ -420,6 +420,8 @@ cisco@debian-template:~/gisobuild/src/lntmod$ sudo mount -o loop /home/cisco/gis
 
 Following files and folders are present:
 
+![giso-content.png]({{site.baseurl}}/images/giso-content.png){: .align-center}
+
 ## Conclusion
 This post covered Golden ISO concept for Cisco 8000. The tutorial went over gisobuild.py installation and utilization to create and verify GISO files. Those GISO files can ultimately be used to perform software staging, patching or upgrades.
 
