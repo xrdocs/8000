@@ -101,7 +101,7 @@ Resolving deltas: 100% (155/155), done.
 </pre>
 </div>
 
-Linux and Python dependencies are required to use the various tools. If the server has access to podman and the docker repositories, then the gisobuild tool can be run within a container using the --docker option. However, if the other tooling (isols & isodiff) is required, or the server does not have access to docker, then the additional dependencies now need to be set up. The *prep_dependency.sh* script located in the *setup* directory contains everything gisobuild.py needs:
+Linux and Python dependencies are required to use the various tools. If the server has access to podman and the docker repositories, then the gisobuild tool can be run within a container using the --docker option. However, if the other tooling (isols & isodiff) is required, or the server does not have access to docker, then the additional dependencies now need to be set up. The *prep_dependency.sh* script located in the *setup* directory contains everything gisobuild.py needs and is used here:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
