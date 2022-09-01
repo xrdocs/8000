@@ -430,5 +430,5 @@ Following files and folders are present:
 This post covered Golden ISO concept for Cisco 8000. The tutorial went over gisobuild.py installation and utilization to create and verify GISO files. Those GISO files can ultimately be used to perform software staging, patching or upgrades.
 
 ## Acknowledgements
-I’d like to thanks Joseph Hare and Mark Sains from Ensoft team in UK for their support and review.
+I’d like to thanks Joseph Hare and Mark Sains from Cisco Ensoft team in UK for their support and review.
 
