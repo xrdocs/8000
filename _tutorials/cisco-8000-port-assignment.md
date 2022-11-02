@@ -140,6 +140,30 @@ Cisco 8201-32FH is made of a single Q200 NPU.
 | FH0/0/0/14 | 0/3/6         | FH0/0/0/30 | 0/1/2         |
 | FH0/0/0/15 | 0/3/6         | FH0/0/0/31 | 0/1/2         |
 
+### Cisco 8202-32FH-M
+Cisco 8202-32FH-M is made of a single Q200 NPU. It supports MACSec on all ports.  
+![8202-32FH-M.png]({{site.baseurl}}/images/8202-32FH-M.png)
+
+| Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
+|------------|---------------|------------|---------------|
+| FH0/0/0/0  | 0/5/11        | FH0/0/0/16 | 0/1/3         |
+| FH0/0/0/1  | 0/5/11        | FH0/0/0/17 | 0/2/4         |
+| FH0/0/0/2  | 0/4/9         | FH0/0/0/18 | 0/1/3         |
+| FH0/0/0/3  | 0/4/9         | FH0/0/0/19 | 0/1/2         |
+| FH0/0/0/4  | 0/4/9         | FH0/0/0/20 | 0/1/2         |
+| FH0/0/0/5  | 0/4/8         | FH0/0/0/21 | 0/1/2         |
+| FH0/0/0/6  | 0/3/7         | FH0/0/0/22 | 0/0/0         |
+| FH0/0/0/7  | 0/4/8         | FH0/0/0/23 | 0/0/0         |
+| FH0/0/0/8  | 0/5/10        | FH0/0/0/24 | 0/3/6         |
+| FH0/0/0/9  | 0/5/10        | FH0/0/0/25 | 0/3/7         |
+| FH0/0/0/10 | 0/5/10        | FH0/0/0/26 | 0/3/6         |
+| FH0/0/0/11 | 0/5/11        | FH0/0/0/27 | 0/3/6         |
+| FH0/0/0/12 | 0/0/0         | FH0/0/0/28 | 0/2/5         |
+| FH0/0/0/13 | 0/0/1         | FH0/0/0/29 | 0/2/5         |
+| FH0/0/0/14 | 0/0/1         | FH0/0/0/30 | 0/2/5         |
+| FH0/0/0/15 | 0/0/1         | FH0/0/0/31 | 0/2/4         |
+
+
 ### Cisco 8201-24H8FH
 Cisco 8201-24H8FH is made of a single Q200 NPU. This system can support 24 ports 100 GbE and 8 ports 400 GbE.  
 ![8201-24H8FH_front.png]({{site.baseurl}}/images/8201-24H8FH_front.png)  
