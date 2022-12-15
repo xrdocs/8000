@@ -89,42 +89,44 @@ tunnel-te65 up to tunnel-te100 : configured with FC0, use it for FC0 traffic to 
 The recommendation is to have no more than 64 tunnel-te paths to a given destination, with 64 paths ECMP configured.
 
 - `Fallback mechanism` is available:
- - When any FC (except FC 0) paths are down, traffic will switch to default class FC 0 path unless fallback PBTS class is configured.
- - If the fallback PBTS class path itself is not available, default class path will be used.
- - If both fallback PBTS class and default class paths are not available, then traffic will be dropped.
+  - When any FC (except FC 0) paths are down, traffic will switch to default class FC 0 path unless fallback PBTS class is configured.
+  - If the fallback PBTS class path itself is not available, default class path will be used.
+  - If both fallback PBTS class and default class paths are not available, then traffic will be dropped.
 
 - All `TE related features` (such as TE-FRR etc.) will continue to work as is.
 
 
 ## Supported Software
 
-This feature is introduced in IOS XR 7.5.3.
+This feature is introduced in `IOS XR 7.5.3`.
 
 >
 Note:
-IOS XR 7.5.3 might not be a GA release, please check with your account team for feature availability.{: .notice}
+IOS XR 7.5.3 might not be a GA release, please check with your account team for feature availability.
+{: .notice}
 
 
-###################################################################################################
-#
-# Supported Hardware
-#
-###################################################################################################
+## Supported Hardware
 
-This feature is supported on Cisco 8000 platform using "Gibraltar" ASIC.
+This feature is supported on Cisco 8000 platform using `Gibraltar` ASIC.
 e.g.
 fixed router: C8201-32FH
 line cards for modular router: 88-LC0-36FH-M.
 
 
-###################################################################################################
-#
-# Supported Scale
-#
-###################################################################################################
+## Supported Scale
 
-Up to 1,000 TE tunnels per box and 64 path ECMP per destination.
-With "hw-module profile cef te-tunnel highscale-ldp-over-te-no-sr-over-srte" enabled, the scale of TE tunnels can be increased to 4K (applicable only when the router has all Gibraltar cards).
+Up to `1,000 TE tunnels` per box and `64 paths ECMP` per destination.
+
+Note:
+With the following config enabled,
+
+```
+hw-module profile cef te-tunnel highscale-ldp-over-te-no-sr-over-srte
+```
+
+We can increase the scale of TE tunnels from 1,000 to 4,000.  
+(applicable only when the router has all Gibraltar cards).
 
 
 ###################################################################################################
