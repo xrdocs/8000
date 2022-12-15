@@ -46,11 +46,11 @@ Traffic with IP prec_6 ➜ FC 3 ➜ tunnel-te1
 PBTS support on 8000 platform comes in **phases**.  
 The following constraints apply for phase 1 in IOS XR 7.5.3:
 
-- [Supported](#link){: .btn .btn--success} PBTS over TE tunnel and also LDP-over-TE tunnel.
+- [Supported]{: .btn .btn--success} PBTS over TE tunnel and also LDP-over-TE tunnel.
 
 - Supported: PBTS for IPv4, IPv6, MPLS traffic.
 
-- [NOT Supported](#link){: .btn .btn--danger} PBTS for services (L3VPN, 6VPE, 6PE, L2VPN) and overlays over this prefix over TE tunnel with PBTS enabled.
+- [NOT Supported]{: .btn .btn--danger} PBTS for services (L3VPN, 6VPE, 6PE, L2VPN) and overlays over this prefix over TE tunnel with PBTS enabled.
 
 - NOT Supported: Statically configured MPLS prefix over LDP-over-TE tunnel.
 
@@ -64,36 +64,36 @@ The "Not Supported" items will be addressed in future phase in later IOS XR rele
 
 Some important **notes**:
 
-- PBTS doesn't override routing decision.  
+- PBTS doesn't override `routing` decision.  
 Rather the use case is if routing have multiple TE tunnel paths toward destination,
 then with PBTS we will be able to pick which TE tunnels should carry the traffic based on traffic's MPLS EXP or IP prec/DSCP values.
 
-- 8 unique FC values are supported (class 0 to class 7).  
+- `8 unique FC values` are supported (class 0 to class 7).  
 Only one FC can be associated with a TE tunnel at any time.
 
-- FC 0 is treated as the default class and doesn’t need to be explicitly configured under a TE tunnel.
+- FC 0 is treated as the `default class` and doesn’t need to be explicitly configured under a TE tunnel.
 
 - If a TE tunnel is not configured with an explicit FC, it will be associated with a
 default FC 0.
 
-- PBTS is supported on both "named" tunnels and "numbered" tunnels. However, using "named" tunnels 
+- PBTS is supported on both `named` tunnels and `numbered` tunnels. However, using "named" tunnels 
 is recommended.
 
-- When many TE tunnels are equal best paths to same destination, they will be load balanced: up to 64 path ECMP TE tunnels can be used for a given destination.
-However, this can cause issue when we have more than 64 tunnels for a given PBTS destination.
-consider this config:
-tunnel-te1 up to tunnel-te64 : configured with FC3, use it for FC3 traffic to destination X.
-tunnel-te65 up to tunnel-te100 : configured with FC0, use it for FC0 traffic to destination X.
+- When many TE tunnels are equal best paths to same destination, they will be load balanced: up to 64 path `ECMP` TE tunnels can be used for a given destination.  
+However, this can cause issue when we have more than 64 tunnels for a given PBTS destination.  
+consider this config:  
+tunnel-te1 up to tunnel-te64 : configured with FC3, use it for FC3 traffic to destination X.  
+tunnel-te65 up to tunnel-te100 : configured with FC0, use it for FC0 traffic to destination X.  
 
  If we have the above config, it could happen that only FC3 paths will be programmed, causing traffic blackhole for FC0 traffic.  
 The recommendation is to have no more than 64 tunnel-te paths to a given destination, with 64 paths ECMP configured.
 
-- Fallback mechanism is available:
-When any FC (except FC 0) paths are down, traffic will switch to default class FC 0 path unless fallback PBTS class is configured.
-If the fallback PBTS class path itself is not available, default class path will be used.
-If both fallback PBTS class and default class paths are not available, then traffic will be dropped.
+- `Fallback mechanism` is available:
+ - When any FC (except FC 0) paths are down, traffic will switch to default class FC 0 path unless fallback PBTS class is configured.
+ - If the fallback PBTS class path itself is not available, default class path will be used.
+ - If both fallback PBTS class and default class paths are not available, then traffic will be dropped.
 
-- All TE related features (such as TE-FRR etc.) will continue to work as is.
+- All `TE related features` (such as TE-FRR etc.) will continue to work as is.
 
 
 ###################################################################################################
