@@ -669,12 +669,16 @@ The rest of traffic is sent using other tunnels as we have ECMP, recall that unc
 **Setup when PBTS is configured for MPLS traffic.**
 
 We can also run LDP over these TE tunnels so that LDP FEC can also take benefits of PBTS.
+
 Since LDP is using MPLS forwarding, we will deal with 2 types of incoming traffic for this use case:
-- MPLS encapsulated traffic: PBTS will classify based on MPLS EXP bits and then do label swap-push toward the matching TE tunnel. We don't classify MPLS traffic based on the inner payload.
-- plain IP traffic: PBTS will classify based on IP prec/DSCP bits and then do label-push toward the matching TE tunnel.
+- MPLS encapsulated traffic:  
+⋅⋅⋅PBTS will classify based on MPLS EXP bits and then do label swap-push toward the matching TE tunnel.  
+We don't classify MPLS traffic based on the inner payload.
+- plain IP traffic:  
+⋅⋅⋅PBTS will classify based on IP prec/DSCP bits and then do label-push toward the matching TE tunnel.
 
 Let's activate LDP now on router "Rean".
-
+```
 mpls ldp
  log
   neighbor
@@ -699,11 +703,14 @@ mpls ldp
  interface tunnel-te named_7
  !
 !
+```
 
+now sh cef shows `local label` and `labels imposed` (because LDP control plane is now in use).
 
-now sh cef shows "local label" and "labels imposed" (because LDP control plane is now in use).
-
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh cef 102.1.0.0/16
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh cef 102.1.0.0/16</span>
 Tue Oct 11 02:01:57.245 -07
 102.1.0.0/16, version 2283, internal 0x1000001 0x30 (ptr 0x940b61b0) [1], 0x600 (0x93145a18), 0xa20 (0xa9875588)
  Updated Oct 11 02:00:00.630
@@ -718,42 +725,42 @@ Tue Oct 11 02:01:57.245 -07
     path-idx 0 NHID 0x0 [0xa933e300 0x0]
     next hop 202.158.0.2/32
     local adjacency
-     local label 24014      labels imposed {ImplNull}
+     <mark>local label 24014      labels imposed {ImplNull}</mark>
    via 202.158.0.2/32, named_4, 5 dependencies, weight 0, forward class 4 [flags 0x0]
     path-idx 1 NHID 0x0 [0xa933e9f0 0x0]
     next hop 202.158.0.2/32
     local adjacency
-     local label 24014      labels imposed {ImplNull}
+     <mark>local label 24014      labels imposed {ImplNull}</mark>
    via 202.158.0.2/32, named_5, 7 dependencies, weight 0, class 0 [flags 0x0]
     path-idx 2 NHID 0x0 [0xa933ec40 0x0]
     next hop 202.158.0.2/32
     local adjacency
-     local label 24014      labels imposed {ImplNull}
+     <mark>local label 24014      labels imposed {ImplNull}</mark>
    via 202.158.0.2/32, named_6, 7 dependencies, weight 0, class 0 [flags 0x0]
     path-idx 3 NHID 0x0 [0xa933ee90 0x0]
     next hop 202.158.0.2/32
     local adjacency
-     local label 24014      labels imposed {ImplNull}
+     <mark>local label 24014      labels imposed {ImplNull}</mark>
    via 202.158.0.2/32, named_7, 7 dependencies, weight 0, class 0 [flags 0x0]
     path-idx 4 NHID 0x0 [0xa933f0e0 0x0]
     next hop 202.158.0.2/32
     local adjacency
-     local label 24014      labels imposed {ImplNull}
+     <mark>local label 24014      labels imposed {ImplNull}</mark>
    via 202.158.0.2/32, tunnel-te0, 5 dependencies, weight 0, class 0 [flags 0x0]
     path-idx 5 NHID 0x0 [0xa933e0b0 0x0]
     next hop 202.158.0.2/32
     local adjacency
-     local label 24014      labels imposed {ImplNull}
+     <mark>local label 24014      labels imposed {ImplNull}</mark>
    via 202.158.0.2/32, tunnel-te2, 7 dependencies, weight 0, class 0 [flags 0x0]
     path-idx 6 NHID 0x0 [0xa933e550 0x0]
     next hop 202.158.0.2/32
     local adjacency
-     local label 24014      labels imposed {ImplNull}
+     <mark>local label 24014      labels imposed {ImplNull}</mark>
    via 202.158.0.2/32, tunnel-te3, 7 dependencies, weight 0, class 0 [flags 0x0]
     path-idx 7 NHID 0x0 [0xa933e7a0 0x0]
     next hop 202.158.0.2/32
     local adjacency
-     local label 24014      labels imposed {ImplNull}
+     <mark>local label 24014      labels imposed {ImplNull}</mark>
 
     Weight distribution:
     slot 0, weight 0, normalized_weight 1, class 0
@@ -779,24 +786,35 @@ Tue Oct 11 02:01:57.245 -07
     5     Y   tunnel-te2                point2point    
     6     Y   tunnel-te3                point2point    
     7     Y   named_4                   point2point    
-RP/0/RP0/CPU0:Rean--C8201-32FH#
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
+</code>
+</pre>
+</div>
 
-also pay attention to this part from output above that shows when PBTS is in use:
+Also pay attention to this part from output above that shows when PBTS is in use:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
     PBTS class information:
-      class 0: 7 paths, offset 0                    <--- 7 TE tunnels for FC0 (hash 0 to hash 6)
-      forward class 4: 1 paths, offset 7            <--- 1 TE tunnel for FC4 (hash 7)
+      class 0: 7 paths, offset 0                    <mark>🠔 7 TE tunnels for FC0 (hash 0 to hash 6)</mark>
+      forward class 4: 1 paths, offset 7            <mark>🠔 1 TE tunnel for FC4 (hash 7)</mark>
     Load distribution: 0 1 2 3 4 5 6 7 (refcount 3)
 
     Hash  OK  Interface                 Address
-    0     Y   tunnel-te1                point2point <--- FC0 tunnel
-    1     Y   named_5                   point2point <--- FC0 tunnel
-    2     Y   named_6                   point2point <--- FC0 tunnel
-    3     Y   named_7                   point2point <--- FC0 tunnel
-    4     Y   tunnel-te0                point2point <--- FC0 tunnel
-    5     Y   tunnel-te2                point2point <--- FC0 tunnel
-    6     Y   tunnel-te3                point2point <--- FC0 tunnel
-    7     Y   named_4                   point2point <--- FC4 tunnel
+    0     Y   tunnel-te1                point2point <mark>🠔 FC0 tunnel</mark>
+    1     Y   named_5                   point2point <mark>🠔 FC0 tunnel</mark>
+    2     Y   named_6                   point2point <mark>🠔 FC0 tunnel</mark>
+    3     Y   named_7                   point2point <mark>🠔 FC0 tunnel</mark>
+    4     Y   tunnel-te0                point2point <mark>🠔 FC0 tunnel</mark>
+    5     Y   tunnel-te2                point2point <mark>🠔 FC0 tunnel</mark>
+    6     Y   tunnel-te3                point2point <mark>🠔 FC0 tunnel</mark>
+    7     Y   named_4                   point2point <mark>🠔 FC4 tunnel</mark>
+</code>
+</pre>
+</div>
+
+
     
 From sh cef output above, we also know that prefix 102.1.0.0/16 has local MPLS label 24014.
 
