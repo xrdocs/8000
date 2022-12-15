@@ -507,7 +507,6 @@ Tue Oct 11 00:53:08.180 -07
     5     Y   tunnel-te0                point2point    
     6     Y   tunnel-te2                point2point    
     7     Y   tunnel-te3                point2point    
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
 </code>
 </pre>
 </div>
@@ -562,7 +561,7 @@ Recall that by default all tunnels are assigned as FC0 where non-PBTS-classified
 
 This is behavior that we will see if PBTS is not configured.
 
-### **Setup when PBTS is configured for plain IP traffic.**
+### **Behavior when PBTS is configured for plain IP traffic.**
 
 Now let's configure following PBTS config:
 ```
@@ -666,7 +665,7 @@ tunnel-te3
 We're sending 58,410 packets with IP prec 7, it's forwarded using TE tunnel named_4.
 The rest of traffic is sent using other tunnels as we have ECMP, recall that unclassified traffic will simply take TE tunnels that have no FC explicitly configured (i.e. such tunnels will be assigned under default forward class FC 0).
 
-### **Setup when PBTS is configured for MPLS traffic.**
+### **Behavior when PBTS is configured for MPLS traffic.**
 
 We can also run LDP over these TE tunnels so that LDP FEC can also take benefits of PBTS.
 
@@ -786,7 +785,6 @@ Tue Oct 11 02:01:57.245 -07
     5     Y   tunnel-te2                point2point    
     6     Y   tunnel-te3                point2point    
     7     Y   named_4                   point2point    
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
 </code>
 </pre>
 </div>
@@ -898,7 +896,6 @@ Label/EOS 24014/1, Label-type LDP, version 2283, internal 0x1000001 0x30 (ptr 0x
     5     Y   tunnel-te2                point2point    
     6     Y   tunnel-te3                point2point    
     7     Y   named_4                   point2point   
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
 </code>
 </pre>
 </div>
@@ -965,7 +962,7 @@ We're sending 11,557 MPLS encapsulated packet with EXP bit 1, and it shows that 
 We're sending 29,479 plain IP packet with prec bit 7, and it shows that they're forwarded using tunnel named_4.
 
 
-### **Setup when default fallback is taking place.**
+### **Behavior when default fallback is taking place.**
 
 Now what happens if TE tunnel that is carrying PBTS steered traffic goes down?  
 Let's see the fallback mechanism that is available by default.
@@ -982,7 +979,6 @@ Also note that we have 8 TE tunnels, only 2 of which are configured with FC.
 <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh run formal | i forward-class</span>
 interface tunnel-te1 <mark>forward-class 1</mark>
 mpls traffic-eng named-tunnels tunnel-te named_4 <mark>forward-class 4</mark>
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
 </code>
 </pre>
 </div>
@@ -1107,7 +1103,7 @@ No TE tunnels are forwarding traffic now, traffic is actually being dropped as p
   - If the fallback PBTS class path itself is not available, default class path will be used.
   - If both fallback PBTS class and default class paths are not available, then traffic will be dropped.
 
-### **Setup when custom fallback is taking place.**
+### **Behavior when custom fallback is taking place.**
 
 We have discussed default fallback behavior above.  
 We can actually customize the fallback behavior using following CLI config:
@@ -1170,7 +1166,6 @@ Also recall that we have 8 TE tunnels, only 2 of which are configured with FC.
 <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh run formal | i forward-class</span>
 interface tunnel-te1 <mark>forward-class 1</mark>
 mpls traffic-eng named-tunnels tunnel-te named_4 <mark>forward-class 4</mark>
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
 </code>
 </pre>
 </div>
@@ -1257,7 +1252,6 @@ Label/EOS 24014/1, Label-type LDP, version 2340, internal 0x1000001 0x30 (ptr 0x
     4     Y   tunnel-te2                point2point    
     5     Y   tunnel-te3                point2point    
     <mark>6     Y   named_4                   point2point</mark> 
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
 </code>
 </pre>
 </div>
@@ -1293,87 +1287,111 @@ No accounting statistics available for tunnel-te3
 Now FC 1 traffic fell back to tunnel named_4 which is associated with FC4.  
 Remember that without custom config, FC1 traffic will fall back to FC0 tunnels by default.
 
-Similarly we can configure this kind of fallback for other FC.
+Similarly we can configure this kind of fallback for other FC.  
 For instance:
-
+```
 cef pbts class 0 fallback-to 4
 cef pbts class 1 fallback-to 4
 cef pbts class 2 fallback-to 4
 ...
 cef pbts class 7 fallback-to 4
+```
 
 or use this one line to cover all FCs:
-
+```
 cef pbts class any fallback-to 4
+```
 
-Now back to our example, what happens if FC4 TE tunnel goes down?
+Now back to our example, what happens if the fallback FC4 TE tunnel also goes down?
 
 Let's try that out, shut FC4 tunnel now:
-
+```
 mpls traffic-eng named-tunnels tunnel-te named_4 shut
+```
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh mpls traffic-eng tunnels tabular 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh mpls traffic-eng tunnels tabular</span>
 Tue Oct 18 09:21:45.884 -07
 
            Tunnel   LSP     Destination          Source    Tun    FRR  LSP  Path
              Name    ID         Address         Address  State  State Role  Prot
 ----------------- ----- --------------- --------------- ------ ------ ---- -----
        tunnel-te0     3     202.158.0.2     202.158.0.6     up  Inact Head Inact
-       tunnel-te1     0     202.158.0.2         0.0.0.0   down  Inact Head Inact
+       tunnel-te1     0     202.158.0.2         0.0.0.0   <mark>down</mark>  Inact Head Inact
        tunnel-te2     3     202.158.0.2     202.158.0.6     up  Inact Head Inact
        tunnel-te3     3     202.158.0.2     202.158.0.6     up  Inact Head Inact
-          named_4     0     202.158.0.2         0.0.0.0   down  Inact Head Inact
+          named_4     0     202.158.0.2         0.0.0.0   <mark>down</mark>  Inact Head Inact
           named_5     3     202.158.0.2     202.158.0.6     up  Inact Head Inact
           named_6     3     202.158.0.2     202.158.0.6     up  Inact Head Inact
           named_7     3     202.158.0.2     202.158.0.6     up  Inact Head Inact
+</code>
+</pre>
+</div>
 
-and send traffic again to FC1.
+
+And send traffic again to FC1.
 
 Here's the resulting traffic path for traffic with exp-1:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 No accounting statistics available for named_4
 
 named_5
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         1820           192920
+  MPLS                        0                0         <mark>1820</mark>           192920
 
 named_6
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         1906           202036
+  MPLS                        0                0         <mark>1906</mark>           202036
 
 named_7
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         1824           193344
+  MPLS                        0                0         <mark>1824</mark>           193344
 
 tunnel-te0
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         1734           183804
+  MPLS                        0                0         <mark>1734</mark>           183804
 
 tunnel-te2
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         2169           229914
+  MPLS                        0                0         <mark>2169</mark>           229914
 
 tunnel-te3
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         1651           175006
+  MPLS                        0                0         <mark>1651</mark>           175006
+</code>
+</pre>
+</div>
 
 Since tunnel-te1 is down, and the fallback path named_4 is also down, traffic will fall back again to FC0 TE tunnels.
 
 We also have option to specify a list of FCs to be used as fallback.
 Instead of this:
+```
 cef pbts class 1 fallback-to 4
+```
 
 We can have something like this:
+```
 cef pbts class 1 fallback-to 4 5
+```
 
 With the above configured, let's now assign FC5 to tunnel-te named_5.
-
+```
 mpls traffic-eng named-tunnels tunnel-te named_5 forward-class 5
+```
 
-Since tunnel-te1 is down, fallback path named_4 is down, traffic should now use FC5 TE tunnel as per configuration, which is tunnel-te named_5.
+Since tunnel-te1 is down, fallback path named_4 is down, traffic should now use FC5 TE tunnel as per configuration, which is tunnel-te named_5.  
 Let's see if that's really the path that the traffic would take:
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh cef mpls local-label 24014 eoS detail
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh cef mpls local-label 24014 eoS detail</span>
 Sun Dec 11 23:45:45.887 -07
 Label/EOS 24014/1, Label-type LDP, version 81, internal 0x1000001 0x30 (ptr 0x9a1e3550) [1], 0x600 (0x931b8378), 0xa20 (0xa9afb168)
  Updated Dec 11 23:26:14.199
@@ -1425,7 +1443,7 @@ Label/EOS 24014/1, Label-type LDP, version 81, internal 0x1000001 0x30 (ptr 0x9a
 
     PBTS class information:
       class 0: 5 paths, offset 0
-      forward class 1: 1 paths, offset 5, fallback-to forward class 5
+      <mark>forward class 1: 1 paths, offset 5, fallback-to forward class 5</mark>
       forward class 5: 1 paths, offset 5
     Load distribution: 0 1 2 3 4 5 (refcount 3)
 
@@ -1435,14 +1453,22 @@ Label/EOS 24014/1, Label-type LDP, version 81, internal 0x1000001 0x30 (ptr 0x9a
     2     Y   tunnel-te0                point2point    
     3     Y   tunnel-te2                point2point    
     4     Y   tunnel-te3                point2point    
-    5     Y   named_5                   point2point    
-RP/0/RP0/CPU0:Rean--C8201-32FH#
+    <mark>5     Y   named_5                   point2point</mark> 
+</code>
+</pre>
+</div>
 
+show interface accounting ...
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 No accounting statistics available for named_4
 
 named_5
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         4817           510602
+  MPLS                        0                0         <mark>4817</mark>           510602
 
 No accounting statistics available for named_6
 
@@ -1453,9 +1479,14 @@ No accounting statistics available for tunnel-te0
 No accounting statistics available for tunnel-te2
 
 No accounting statistics available for tunnel-te3
+</code>
+</pre>
+</div>
+
 
 Now traffic falls back to FC5 tunnel-te named_5 as expected.
 
+That is all for basic PBTS operation walkthru.  
 Read on to get full configuration example for both head-end router and tail-end router.
 
 ###################################################################################################
