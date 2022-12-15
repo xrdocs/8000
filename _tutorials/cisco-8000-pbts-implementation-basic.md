@@ -672,10 +672,10 @@ We can also run LDP over these TE tunnels so that LDP FEC can also take benefits
 
 Since LDP is using MPLS forwarding, we will deal with 2 types of incoming traffic for this use case:
 - MPLS encapsulated traffic:  
-⋅⋅⋅PBTS will classify based on MPLS EXP bits and then do label swap-push toward the matching TE tunnel.  
+PBTS will classify based on MPLS EXP bits and then do label swap-push toward the matching TE tunnel.  
 We don't classify MPLS traffic based on the inner payload.
 - plain IP traffic:  
-⋅⋅⋅PBTS will classify based on IP prec/DSCP bits and then do label-push toward the matching TE tunnel.
+PBTS will classify based on IP prec/DSCP bits and then do label-push toward the matching TE tunnel.
 
 Let's activate LDP now on router "Rean".
 ```
@@ -813,15 +813,16 @@ Also pay attention to this part from output above that shows when PBTS is in use
 </code>
 </pre>
 </div>
-
-
     
-From sh cef output above, we also know that prefix 102.1.0.0/16 has local MPLS label 24014.
-
+From sh cef output above, we also know that prefix 102.1.0.0/16 has local MPLS label 24014.  
 We can also get PBTS information based on MPLS label info by referencing that local label.
+
 This command will give same forwarding info as when we referenced the prefix instead of the label.
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh cef mpls local-label 24014 eoS detail
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">sh cef mpls local-label 24014 eoS detail</span>
 Tue Oct 11 02:16:23.976 -07
 Label/EOS 24014/1, Label-type LDP, version 2283, internal 0x1000001 0x30 (ptr 0x94d4b178) [1], 0x600 (0x93145a18), 0xa20 (0xa9875588)
  Updated Oct 11 02:00:00.629
@@ -896,12 +897,15 @@ Label/EOS 24014/1, Label-type LDP, version 2283, internal 0x1000001 0x30 (ptr 0x
     4     Y   tunnel-te0                point2point    
     5     Y   tunnel-te2                point2point    
     6     Y   tunnel-te3                point2point    
-    7     Y   named_4                   point2point    
-RP/0/RP0/CPU0:Rean--C8201-32FH#
+    7     Y   named_4                   point2point   
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
+</code>
+</pre>
+</div>
 
-Since now LDP control plane is active, let's try classify based on MPLS EXP in addition to the existing classification based on IP prec.
-We will have PBTS to steer traffic with MPLS EXP 1 to tunnel-te1.
-
+Since now LDP control plane is active, let's try classify based on MPLS EXP in addition to the existing classification based on IP prec.  
+We will configure PBTS to steer traffic with MPLS EXP 1 to tunnel-te1.
+```
 class-map match-any exp-1
  match mpls experimental topmost 1 
  end-class-map
@@ -925,22 +929,19 @@ interface tunnel-te1
  apply-group numbered_te
  forward-class 1
 !
+```
 
-commit that and send traffic flow with MPLS EXP 1 and another flow of plain IP with prec 7.
-
-RP/0/RP0/CPU0:Rean--C8201-32FH#clear counters
-Tue Oct 11 02:29:30.702 -07
-Clear "show interface" counters on all interfaces [confirm] 
-
-RP/0/RP0/CPU0:Oct 11 02:29:30.923 -07: statsd_manager_g[1148]: %MGBL-IFSTATS-6-CLEAR_COUNTERS : Clear counters on all interfaces 
+Commit that and send traffic flow with MPLS EXP 1 and another flow of plain IP with prec 7.
 
 
-sh interfaces accounting
+Following result will show in "show interface accounting":
 
-
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 named_4
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0        29479          3242690
+  MPLS                        0                0        <mark>29479</mark>          3242690
 
 No accounting statistics available for named_5
 
@@ -952,17 +953,20 @@ No accounting statistics available for tunnel-te0
 
 tunnel-te1
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0        11557          1225042
+  MPLS                        0                0        <mark>11557</mark>          1225042
 
 No accounting statistics available for tunnel-te2
 
 No accounting statistics available for tunnel-te3
+</code>
+</pre>
+</div>
 
 We're sending 11,557 MPLS encapsulated packet with EXP bit 1, and it shows that they're forwarded using tunnel-te1.
 We're sending 29,479 plain IP packet with prec bit 7, and it shows that they're forwarded using tunnel named_4.
 
 
-......... Setup when default fallback is taking place.
+**Setup when default fallback is taking place.**
 
 Now what happens if TE tunnel that is carrying PBTS steered traffic goes down?
 Let's see the fallback mechanism that is available by default.
