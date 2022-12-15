@@ -512,47 +512,54 @@ Tue Oct 11 00:53:08.180 -07
 </pre>
 </div>
 
-
-
 Now let's try sending traffic flows toward destinations that fall within this subnet 102.1.0.0/16.
 All flows have different /32 IP destination, but they all have same IP precedence field set with value 7.
 
-interface accounting:
+"show interface accounting" output:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 named_4
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         9389          1032790
+  MPLS                        0                0         <mark>9389</mark>          1032790
 
 named_5
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         4224           464640
+  MPLS                        0                0         <mark>4224</mark>           464640
 
 named_6
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         7981           877910
+  MPLS                        0                0         <mark>7981</mark>           877910
 
 named_7
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         8918           980980
+  MPLS                        0                0         <mark>8918</mark>           980980
 
 tunnel-te0
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         5633           619630
+  MPLS                        0                0         <mark>5633</mark>           619630
 
 tunnel-te1
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         7981           877910
+  MPLS                        0                0         <mark>7981</mark>           877910
 
 tunnel-te2
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         9854          1083940
+  MPLS                        0                0         <mark>9854</mark>          1083940
 
 tunnel-te3
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         6101           671110
+  MPLS                        0                0         <mark>6101</mark>           671110
+</code>
+</pre>
+</div>
 
-Note that all tunnels are being used. Recall that by default all tunnels are assigned as FC0 where non-PBTS-classified traffic are forwarded.
-And also all tunnels are utilized since we have ECMP configured.
+Note that:
+- All tunnels are currently being used.  
+Recall that by default all tunnels are assigned as FC0 where non-PBTS-classified traffic are forwarded.
+- All tunnels are being utilized since we have ECMP configured.
+
 This is behavior that we will see if PBTS is not configured.
 
 ......... Setup when PBTS is configured for plain IP traffic.
