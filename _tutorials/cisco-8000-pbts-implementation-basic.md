@@ -5,7 +5,7 @@ title: Cisco 8000 PBTS Implementation (Basic)
 author: Yosef Manasseh
 excerpt: >-
   This post aims to describe PBTS implementation on Cisco 8000 routers.   It
-  will cover feature operation, configuration, verification, and other notes
+  will go over feature operation, configuration, verification, and other notes
   like constraints and supported scale.
 tags:
   - iosxr
@@ -18,7 +18,7 @@ position: hidden
 
 ## Introduction
 This post aims to describe PBTS implementation on Cisco 8000 routers.  
-It will cover feature operation, configuration, verification, and other notes like constraints and supported scale.
+It will go over feature operation, configuration, verification, and other notes like constraints and supported scale.
 
 ## Feature Description
 PBTS (Policy Based Tunnel Selection) is a feature where operator can classify incoming network traffic and forward that traffic to destination via specific MPLS traffic engineering tunnels (TE tunnel).
