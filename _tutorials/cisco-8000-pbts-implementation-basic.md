@@ -46,19 +46,19 @@ Traffic with IP prec_6 ➜ FC 3 ➜ tunnel-te1
 PBTS support on 8000 platform comes in **phases**.  
 The following constraints apply for phase 1 in IOS XR 7.5.3:
 
-- [Supported]{: .btn .btn--success} PBTS over TE tunnel and also LDP-over-TE tunnel.
+- [Supported](#link){: .btn .btn--success} PBTS over TE tunnel and also LDP-over-TE tunnel.
 
-- Supported: PBTS for IPv4, IPv6, MPLS traffic.
+- [Supported](#link){: .btn .btn--success} PBTS for IPv4, IPv6, MPLS traffic.
 
-- [NOT Supported]{: .btn .btn--danger} PBTS for services (L3VPN, 6VPE, 6PE, L2VPN) and overlays over this prefix over TE tunnel with PBTS enabled.
+- [NOT Supported](#link){: .btn .btn--danger} PBTS for services (L3VPN, 6VPE, 6PE, L2VPN) and overlays over this prefix over TE tunnel with PBTS enabled.
 
-- NOT Supported: Statically configured MPLS prefix over LDP-over-TE tunnel.
+- [NOT Supported](#link){: .btn .btn--danger} Statically configured MPLS prefix over LDP-over-TE tunnel.
 
-- NOT Supported: Statically configured MPLS prefix over TE tunnel.
+- [NOT Supported](#link){: .btn .btn--danger} Statically configured MPLS prefix over TE tunnel.
 
-- NOT Supported: Labeled Unicast over TE tunnel.
+- [NOT Supported](#link){: .btn .btn--danger} Labeled Unicast over TE tunnel.
 
-The "Not Supported" items will be addressed in future phase in later IOS XR release.
+The [NOT Supported](#link){: .btn .btn--danger} items will be addressed in future phase in later IOS XR release.
 
 ---
 
@@ -96,16 +96,13 @@ The recommendation is to have no more than 64 tunnel-te paths to a given destina
 - All `TE related features` (such as TE-FRR etc.) will continue to work as is.
 
 
-###################################################################################################
-#
-# Supported Software
-#
-###################################################################################################
+## Supported Software
 
 This feature is introduced in IOS XR 7.5.3.
 
+>
 Note:
-IOS XR 7.5.3 might not be a GA release, please check with your account team for feature availability.
+IOS XR 7.5.3 might not be a GA release, please check with your account team for feature availability.{: .notice}
 
 
 ###################################################################################################
