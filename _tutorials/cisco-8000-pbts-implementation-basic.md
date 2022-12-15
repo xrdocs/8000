@@ -1109,28 +1109,38 @@ No TE tunnels are forwarding traffic now, traffic is actually being dropped as p
 
 ### **Setup when custom fallback is taking place.**
 
-We have discussed default fallback behavior above.
+We have discussed default fallback behavior above.  
 We can actually customize the fallback behavior using following CLI config:
-
+```
 cef pbts class <> fallback-to <>
+```
 
-    RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+    <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?</span>
       <0-7>  Forward Class number
       any    Any forward class
 
-    RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 ?
+    <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 ?</span>
       fallback-to  Fallback to configuration
 
-    RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 fallback-to ?
+    <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 fallback-to ?</span>
       <0-7>  Fallback Class number
       any    Fallback to any class
       drop   Fallback to drop
+</code>
+</pre>
+</div>
 
-Let's see how we can customize the fallback order.
+Let's try to customize fallback order in our setup.
 
 First, bring up all TE tunnels and start fresh.
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh mpls traffic-eng tunnels tabular 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh mpls traffic-eng tunnels tabular</span> 
 Wed Oct 12 02:36:01.791 -07
 
            Tunnel   LSP     Destination          Source    Tun    FRR  LSP  Path
@@ -1144,8 +1154,9 @@ Wed Oct 12 02:36:01.791 -07
           named_5     3     202.158.0.2     202.158.0.6     up  Inact Head Inact
           named_6     3     202.158.0.2     202.158.0.6     up  Inact Head Inact
           named_7     3     202.158.0.2     202.158.0.6     up  Inact Head Inact
-
-
+</code>
+</pre>
+</div>
 
 Recall again that we have the following configured:
 
