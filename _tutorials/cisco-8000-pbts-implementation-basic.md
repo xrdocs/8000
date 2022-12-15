@@ -335,7 +335,7 @@ will actually has same effect as configuring multiple config lines like these:
 
 ## Operation
 
-**Behavior when no PBTS is configured**
+### **Behavior when no PBTS is configured**
 
 Let's start from the basic : router's default behavior when no PBTS is configured.
 
@@ -968,59 +968,70 @@ We're sending 29,479 plain IP packet with prec bit 7, and it shows that they're 
 
 **Setup when default fallback is taking place.**
 
-Now what happens if TE tunnel that is carrying PBTS steered traffic goes down?
+Now what happens if TE tunnel that is carrying PBTS steered traffic goes down?  
 Let's see the fallback mechanism that is available by default.
 
 Recall from previous example that we configured MPLS encapsulated packet with EXP bit 1 to be forwarded using tunnel-te1.
 
-exp-1 traffic ---> explicit config within policy-map --> FC 1 --> tunnel-te1
+`exp-1 traffic` ➜ explicit config within policy-map ➜ FC 1 ➜ `tunnel-te1`
 
 Also note that we have 8 TE tunnels, only 2 of which are configured with FC.
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh run formal | i forward
-...
-interface tunnel-te1 forward-class 1
-mpls traffic-eng named-tunnels tunnel-te named_4 forward-class 4
-
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh run formal | i forward-class</span>
+interface tunnel-te1 <mark>forward-class 1</mark>
+mpls traffic-eng named-tunnels tunnel-te named_4 <mark>forward-class 4</mark>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
+</code>
+</pre>
+</div>
 
 Now let's shut down tunnel-te1.
-
+```
 interface tunnel-te1
  shutdown
 !
+```
 
-send related traffic and show interface accounting:
+And send related traffic and show interface accounting:
 
-No accounting statistics available for named_4
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<mark>No accounting statistics available for named_4</mark>
 
 named_5
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         2112           223872
+  MPLS                        0                0         <mark>2112</mark>           223872
 
 named_6
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         2209           234154
+  MPLS                        0                0         <mark>2209</mark>           234154
 
 named_7
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         1826           193556
+  MPLS                        0                0         <mark>1826</mark>           193556
 
 tunnel-te0
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         2113           223978
+  MPLS                        0                0         <mark>2113</mark>           223978
 
-No accounting statistics available for tunnel-te1
+<mark>No accounting statistics available for tunnel-te1</mark>
 
 tunnel-te2
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         1825           193450
+  MPLS                        0                0         <mark>1825</mark>           193450
 
 tunnel-te3
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         2210           234260
+  MPLS                        0                0         <mark>2210</mark>           234260
+</code>
+</pre>
+</div>
 
-
-Note that now exp-1 traffic is forwarded using all TE tunnels that are NOT configured with FC.
+Note that now exp-1 traffic is forwarded using all TE tunnels that are NOT configured with FC.  
 These tunnels that have no FC configured are associated with FC0 and we fallback PBTS steered traffic by default to these tunnels when the primary tunnel goes down.
 
 TE tunnel named_4, on the other hand, is not forwarding the fallback traffic since it's configured with FC4.
