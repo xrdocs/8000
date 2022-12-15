@@ -283,51 +283,22 @@ We can specify sequence of preferred fallback classes to revert to when TE tunne
 function filesize
 {
 
-    <b>RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?<b/>
+    <span style="background-color: #2B547E">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?</span>
       <0-7>  Forward Class number
       any    Any forward class
 
-    <b>RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 ?<b/>
+    <span style="background-color: #2B547E">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 ?</span>
       fallback-to  Fallback to configuration
 
-    <b>RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 fallback-to ?<b/>
+    <span style="background-color: #2B547E">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 fallback-to ?</span>
       <0-7>  Fallback Class number
       any    Fallback to any class
       drop   Fallback to drop
-      
-    local file=$1
-    <mark>size=`stat -c %s $file 2>/dev/null` # linux</mark>
-    if [[ $? -eq 0 ]]; then
-        echo $size
-        return 0
-    fi
-
-    <b>eval $(stat -s $file) # macos </b>
-    if [[ $? -eq 0 ]]; then
-        echo $st_size
-        return 0
-    fi
-
-    <span style="background-color: #FDD7E4">echo 0</span>
-    return -1
 }
 </code>
 </pre>
 </div>
 
-```
-    RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?
-      <0-7>  Forward Class number
-      any    Any forward class
-
-    RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 ?
-      fallback-to  Fallback to configuration
-
-    RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 fallback-to ?
-      <0-7>  Fallback Class number
-      any    Fallback to any class
-      drop   Fallback to drop
-```
 For example, an operator that is using FC 0,1,2,3,5 can configure these following fallback paths:
 ```
     cef pbts class 0 fallback-to 1 2 3 5
