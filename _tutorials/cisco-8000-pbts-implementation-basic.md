@@ -283,14 +283,14 @@ We can specify sequence of preferred fallback classes to revert to when TE tunne
 function filesize
 {
 
-    <span style="background-color: #2B547E">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?</span>
+    <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?</span>
       <0-7>  Forward Class number
       any    Any forward class
 
-    <span style="background-color: #2B547E">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 ?</span>
+    <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 ?</span>
       fallback-to  Fallback to configuration
 
-    <span style="background-color: #2B547E">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 fallback-to ?</span>
+    <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 fallback-to ?</span>
       <0-7>  Fallback Class number
       any    Fallback to any class
       drop   Fallback to drop
@@ -323,7 +323,7 @@ or even:
 
 When “cef pbts class any fallback-to any” is specified, then the lowest available forward class ascending order of 0-7, is chosen as fallback for when paths to any class go down.
     
-Note that following single line:
+Keeping the above in mind, note that the following single line:
 ```
     cef pbts class any fallback-to any
 ```
