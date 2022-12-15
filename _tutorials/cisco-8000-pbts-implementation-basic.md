@@ -1160,24 +1160,34 @@ Wed Oct 12 02:36:01.791 -07
 
 Recall again that we have the following configured:
 
-exp-1 traffic ---> explicit config within policy-map --> FC 1 --> tunnel-te1
+`exp-1 traffic` ➜ explicit config within policy-map ➜ FC 1 ➜ `tunnel-te1`
 
 Also recall that we have 8 TE tunnels, only 2 of which are configured with FC.
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh run formal | i forward
-...
-interface tunnel-te1 forward-class 1
-mpls traffic-eng named-tunnels tunnel-te named_4 forward-class 4
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh run formal | i forward-class</span>
+interface tunnel-te1 <mark>forward-class 1</mark>
+mpls traffic-eng named-tunnels tunnel-te named_4 <mark>forward-class 4</mark>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
+</code>
+</pre>
+</div>
 
 Now let's configure the custom fallback as follows:
-
+```
 cef pbts class 1 fallback-to 4
+```
 
 Then shut tunnel-te1 again and send traffic.
 
 You will get this output from show cef:
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh cef mpls local-label 24014 eoS detail
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh cef mpls local-label 24014 eoS detail</span>
 Wed Oct 12 02:46:58.227 -07
 Label/EOS 24014/1, Label-type LDP, version 2340, internal 0x1000001 0x30 (ptr 0x94d4b178) [1], 0x600 (0x93133808), 0xa20 (0xa9ae8170)
  Updated Oct 12 02:46:46.581
@@ -1235,7 +1245,7 @@ Label/EOS 24014/1, Label-type LDP, version 2340, internal 0x1000001 0x30 (ptr 0x
 
     PBTS class information:
       class 0: 6 paths, offset 0
-      forward class 1: 1 paths, offset 6, fallback-to forward class 4
+      <mark>forward class 1: 1 paths, offset 6, fallback-to forward class 4</mark>
       forward class 4: 1 paths, offset 6
     Load distribution: 0 1 2 3 4 5 6 (refcount 3)
 
@@ -1246,15 +1256,22 @@ Label/EOS 24014/1, Label-type LDP, version 2340, internal 0x1000001 0x30 (ptr 0x
     3     Y   tunnel-te0                point2point    
     4     Y   tunnel-te2                point2point    
     5     Y   tunnel-te3                point2point    
-    6     Y   named_4                   point2point    
+    <mark>6     Y   named_4                   point2point</mark> 
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
+</code>
+</pre>
+</div>
 
 Note that since we shut tunnel-te1, now forward class 1 points to fallback tunnel named_4 as configured.
 
 Traffic accounting result when we're sending FC 1 traffic:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 named_4
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         8683           920398
+  MPLS                        0                0         <mark>8683</mark>           920398
 
 No accounting statistics available for named_5
 
@@ -1269,8 +1286,11 @@ No accounting statistics available for tunnel-te1
 No accounting statistics available for tunnel-te2
 
 No accounting statistics available for tunnel-te3
+</code>
+</pre>
+</div>
 
-Now FC 1 traffic fell back to tunnel named_4 which is associated with FC4.
+Now FC 1 traffic fell back to tunnel named_4 which is associated with FC4.  
 Remember that without custom config, FC1 traffic will fall back to FC0 tunnels by default.
 
 Similarly we can configure this kind of fallback for other FC.
