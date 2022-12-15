@@ -280,9 +280,6 @@ We can specify sequence of preferred fallback classes to revert to when TE tunne
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-function filesize
-{
-
     <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?</span>
       <0-7>  Forward Class number
       any    Any forward class
@@ -294,7 +291,6 @@ function filesize
       <0-7>  Fallback Class number
       any    Fallback to any class
       drop   Fallback to drop
-}
 </code>
 </pre>
 </div>
@@ -353,7 +349,10 @@ We have 7 TE tunnels with router "Rean" as head end router (where we'll configur
 To allow for LDPoTE session to come up, 1 TE tunnel is also created on Musse as head end and Rean as tail end.  
 We then can configure these TE tunnels under LDP to bring up LDPoTE.
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh mpls traffic-eng tunnels tabular 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh mpls traffic-eng tunnels tabular</span>
 Tue Oct 11 00:34:34.162 -07
 
            Tunnel   LSP     Destination          Source    Tun    FRR  LSP  Path
@@ -367,9 +366,13 @@ Tue Oct 11 00:34:34.162 -07
           named_5     2     202.158.0.2     202.158.0.6     up  Inact Head Inact
           named_6     2     202.158.0.2     202.158.0.6     up  Inact Head Inact
           named_7     2     202.158.0.2     202.158.0.6     up  Inact Head Inact
+</code>
+</pre>
+</div>
           
 The LSP config:
 
+```
 group numbered_te
  interface 'tunnel-te.*'
   ipv4 unnumbered Loopback0
@@ -430,10 +433,11 @@ mpls traffic-eng
   !
  !
 !
+```
 
-Note that we have "autoroute announce" under all tunnels which means that these tunnels will be considered when forwarding traffic.
+Note that we have `autoroute announce` under all tunnels which means that these tunnels will be considered by IGP when forwarding traffic.
 We also have 64 paths ECMP configured to make sure all tunnels will be used.
-
+```
 router isis main
  address-family ipv4 unicast
   maximum-paths 64
@@ -441,10 +445,14 @@ router isis main
  address-family ipv6 unicast
   maximum-paths 64
  !
+ ```
  
 Here's CEF output for prefix "102.1.0.0/16" that is using the TE tunnels.
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh cef 102.1.0.0/16
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh cef 102.1.0.0/16</span>
 Tue Oct 11 00:53:08.180 -07
 102.1.0.0/16, version 2683, internal 0x1000001 0xf0 (ptr 0x940b61b0) [1], 0x400 (0x931456e8), 0x0 (0x0)
  Updated Oct 11 00:01:09.979
@@ -499,7 +507,12 @@ Tue Oct 11 00:53:08.180 -07
     5     Y   tunnel-te0                point2point    
     6     Y   tunnel-te2                point2point    
     7     Y   tunnel-te3                point2point    
-RP/0/RP0/CPU0:Rean--C8201-32FH#
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#</span>
+</code>
+</pre>
+</div>
+
+
 
 Now let's try sending traffic flows toward destinations that fall within this subnet 102.1.0.0/16.
 All flows have different /32 IP destination, but they all have same IP precedence field set with value 7.
