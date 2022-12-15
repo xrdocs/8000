@@ -1822,58 +1822,61 @@ mpls ldp
 </pre>
 </div>
 
+## Verification Commands
 
 
-
-###################################################################################################
-#
-# Verification Commands
-#
-###################################################################################################
-
-
-see PBTS path based on IP info:
+See PBTS path based on IP info:
+```
 	sh cef 102.1.0.0/16
+```
 
-see PBTS path based on MPLS LDP info:
-	sh mpls ldp forwarding 101.1.0.0/16 (grab "Label In")
+See PBTS path based on MPLS LDP info:
+```
+	sh mpls ldp forwarding 101.1.0.0/16 (grab `Label In`)
 	sh cef mpls local-label <label_in> eoS detail
-	
-check if PBTS policy map is in use:
+```
+
+Check if PBTS policy map is in use:
+```
 	sh qos interface <ingress interface> input
+```
 	
-check whether traffic is taking correct tunnel-te:
+Check whether traffic is taking correct tunnel-te:
+```
 	sh interface tunnel-te <> accounting
+```
 
 
-###################################################################################################
-#
-# logs to get in case of issues
-#
-###################################################################################################
-
-show ofa trace | inc forward_class | file harddisk:/0614a_show_ofa_trace.txt
-show cef 102.1.0.0/16 hardware egress loc 0/RP0/CPU0 | file harddisk:/0614a_show_cef_hw_egress_ipv4.txt
-show cef ipv6 102:1:1::2 hardware egress loc 0/RP0/CPU0 | file harddisk:/0614a_show_cef_hw_egress_ipv6.txt
-show tech platform-fwd file harddisk:/0614a_show_tech_platform_fwd
-sh tech ofa file harddisk:/0614a_show_tech_ofa
-sh tech fabric file harddisk:/0614a_show_tech_fabric
-sh tech-support mpls lsd file harddisk:/0614a_show_tech_mpls_lsd
-sh tech-support mpls traffic-eng  file harddisk:/0614a_show_tech_mpls_te
-sh tech-support cef  file harddisk:/0614a_show_tech_cef
-
-sdk chain:
-show controllers npu debugshell 0 "script print_prefix 0 102.1.0.0" loc 0/RP0/CPU0 | file harddisk:/0614a_show_sdk_chain_ipv4.txt
-show controllers npu debugshell 0 "script print_prefix 0 102:1:1::" loc 0/RP0/CPU0 | file harddisk:/0614a_show_sdk_chain_ipv6.txt
+## Logs to get in case of issues
 
 
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 
-###################################################################################################
-#
-# Glossary
-#
-###################################################################################################
+Basic info:
+
+<span style="background-color: #A0CFEC">show ofa trace</span> | inc forward_class | file harddisk:/0614a_show_ofa_trace.txt
+<span style="background-color: #A0CFEC">show cef</span> 102.1.0.0/16 hardware egress loc 0/RP0/CPU0 | file harddisk:/0614a_show_cef_hw_egress_ipv4.txt
+<span style="background-color: #A0CFEC">show cef ipv6</span> 102:1:1::2 hardware egress loc 0/RP0/CPU0 | file harddisk:/0614a_show_cef_hw_egress_ipv6.txt
+<span style="background-color: #A0CFEC">show tech platform-fwd</span> file harddisk:/0614a_show_tech_platform_fwd
+<span style="background-color: #A0CFEC">show tech ofa</span> file harddisk:/0614a_show_tech_ofa
+<span style="background-color: #A0CFEC">show tech fabric</span> file harddisk:/0614a_show_tech_fabric
+<span style="background-color: #A0CFEC">show tech mpls lsd</span> file harddisk:/0614a_show_tech_mpls_lsd
+<span style="background-color: #A0CFEC">show tech mpls traffic-eng</span> file harddisk:/0614a_show_tech_mpls_te
+<span style="background-color: #A0CFEC">show tech cef</span> file harddisk:/0614a_show_tech_cef
+
+SDK chain info:
+
+<span style="background-color: #A0CFEC">show controllers npu debugshell 0</span> "script print_prefix 0 102.1.0.0" loc 0/RP0/CPU0 | file harddisk:/0614a_show_sdk_chain_ipv4.txt
+<span style="background-color: #A0CFEC">show controllers npu debugshell 0</span> "script print_prefix 0 102:1:1::" loc 0/RP0/CPU0 | file harddisk:/0614a_show_sdk_chain_ipv6.txt
+</code>
+</pre>
+</div>
+
+
+## Glossary
 
 EXP : "Experimental" bits field on an MPLS header
 Prec : "Precedence" bits field on an IPv4 header
