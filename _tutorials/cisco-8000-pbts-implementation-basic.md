@@ -562,7 +562,7 @@ Recall that by default all tunnels are assigned as FC0 where non-PBTS-classified
 
 This is behavior that we will see if PBTS is not configured.
 
-**Setup when PBTS is configured for plain IP traffic.**
+### **Setup when PBTS is configured for plain IP traffic.**
 
 Now let's configure following PBTS config:
 ```
@@ -663,10 +663,10 @@ tunnel-te3
 </pre>
 </div>
 
-we're sending 58,410 packets with IP prec 7, it's forwarded using TE tunnel named_4.
+We're sending 58,410 packets with IP prec 7, it's forwarded using TE tunnel named_4.
 The rest of traffic is sent using other tunnels as we have ECMP, recall that unclassified traffic will simply take TE tunnels that have no FC explicitly configured (i.e. such tunnels will be assigned under default forward class FC 0).
 
-**Setup when PBTS is configured for MPLS traffic.**
+### **Setup when PBTS is configured for MPLS traffic.**
 
 We can also run LDP over these TE tunnels so that LDP FEC can also take benefits of PBTS.
 
@@ -933,7 +933,6 @@ interface tunnel-te1
 
 Commit that and send traffic flow with MPLS EXP 1 and another flow of plain IP with prec 7.
 
-
 Following result will show in "show interface accounting":
 
 <div class="highlighter-rouge">
@@ -966,7 +965,7 @@ We're sending 11,557 MPLS encapsulated packet with EXP bit 1, and it shows that 
 We're sending 29,479 plain IP packet with prec bit 7, and it shows that they're forwarded using tunnel named_4.
 
 
-**Setup when default fallback is taking place.**
+### **Setup when default fallback is taking place.**
 
 Now what happens if TE tunnel that is carrying PBTS steered traffic goes down?  
 Let's see the fallback mechanism that is available by default.
@@ -1036,8 +1035,9 @@ These tunnels that have no FC configured are associated with FC0 and we fallback
 
 TE tunnel named_4, on the other hand, is not forwarding the fallback traffic since it's configured with FC4.
 
-Now let's try to shut down all tunnels that have no FC configured. What happens with PBTS steered traffic if the fallback tunnels themselves are down?
-
+Now let's try to shut down all tunnels that have no FC configured.  
+What happens with PBTS steered traffic if the fallback tunnels themselves are down?
+```
 interface tunnel-te0
  shutdown
 !
@@ -1060,24 +1060,31 @@ mpls traffic-eng
   !
  !
 !
+```
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#sh mpls traffic-eng tunnels tabular 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Rean--C8201-32FH#sh mpls traffic-eng tunnels tabular</span>
 Wed Oct 12 02:28:14.189 -07
 
            Tunnel   LSP     Destination          Source    Tun    FRR  LSP  Path
              Name    ID         Address         Address  State  State Role  Prot
 ----------------- ----- --------------- --------------- ------ ------ ---- -----
-       tunnel-te0     0     202.158.0.2         0.0.0.0   down  Inact Head Inact
+       tunnel-te0     0     202.158.0.2         0.0.0.0   <mark>down</mark>  Inact Head Inact
        tunnel-te1     0     202.158.0.2         0.0.0.0   down  Inact Head Inact
-       tunnel-te2     0     202.158.0.2         0.0.0.0   down  Inact Head Inact
-       tunnel-te3     0     202.158.0.2         0.0.0.0   down  Inact Head Inact
+       tunnel-te2     0     202.158.0.2         0.0.0.0   <mark>down</mark>  Inact Head Inact
+       tunnel-te3     0     202.158.0.2         0.0.0.0   <mark>down</mark>  Inact Head Inact
           named_4     2     202.158.0.2     202.158.0.6     up  Inact Head Inact
-          named_5     0     202.158.0.2         0.0.0.0   down  Inact Head Inact
-          named_6     0     202.158.0.2         0.0.0.0   down  Inact Head Inact
-          named_7     0     202.158.0.2         0.0.0.0   down  Inact Head Inact
+          named_5     0     202.158.0.2         0.0.0.0   <mark>down</mark>  Inact Head Inact
+          named_6     0     202.158.0.2         0.0.0.0   <mark>down</mark>  Inact Head Inact
+          named_7     0     202.158.0.2         0.0.0.0   <mark>down</mark>  Inact Head Inact
+</code>
+</pre>
+</div>
 
-send traffic again, and check interface accounting:
-
+Send traffic again, and check interface accounting:
+```
 No accounting statistics available for named_4
 
 No accounting statistics available for named_5
@@ -1093,17 +1100,14 @@ No accounting statistics available for tunnel-te1
 No accounting statistics available for tunnel-te2
 
 No accounting statistics available for tunnel-te3
+```
 
-No TE tunnels are forwarding traffic now, traffic is actually being dropped as per the designed fallback behavior:
+No TE tunnels are forwarding traffic now, traffic is actually being dropped as per the designed fallback behavior: 
+  - When any FC (except FC 0) paths are down, traffic will switch to default class FC 0 path unless fallback PBTS class is configured.
+  - If the fallback PBTS class path itself is not available, default class path will be used.
+  - If both fallback PBTS class and default class paths are not available, then traffic will be dropped.
 
-When any FC (except FC 0) paths are down, traffic will switch to default class FC 0 unless fallback PBTS class is configured.
-If the fallback PBTS class itself is not available, default class will be used.
-If no fallback PBTS class present and no paths are available for default class, then traffic will be dropped.
-
-
-
-
-......... Setup when custom fallback is taking place.
+### **Setup when custom fallback is taking place.**
 
 We have discussed default fallback behavior above.
 We can actually customize the fallback behavior using following CLI config:
