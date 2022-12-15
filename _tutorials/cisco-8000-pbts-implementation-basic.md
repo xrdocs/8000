@@ -6,7 +6,7 @@ author: Yosef Manasseh
 excerpt: >-
   This post aims to describe PBTS implementation on Cisco 8000 routers.   It
   will cover feature operation, configuration, verification, and other notes
-  like constraints and scale supported.
+  like constraints and supported scale.
 tags:
   - iosxr
   - Cisco 8000
@@ -18,74 +18,82 @@ position: hidden
 
 ## Introduction
 This post aims to describe PBTS implementation on Cisco 8000 routers.  
-It will cover feature operation, configuration, verification, and other notes like constraints and scale supported.
+It will cover feature operation, configuration, verification, and other notes like constraints and supported scale.
 
-## Feature Description 
-PBTS (Policy Based Tunnel Selection) is a feature where operator can classify incoming network traffic and forward that traffic to destination via specific MPLS traffic engineering tunnels (TE tunnel).  
-PBTS implementation on Cisco 8000 described in this article classifies the incoming traffic on ingress interface based on EXP field (for MPLS traffic) or prec/DSCP field (for IP traffic). Thus it is possible, for instance, to forward traffic with specific EXP/Prec/DSCP value via a specific TE tunnel.
+## Feature Description
+PBTS (Policy Based Tunnel Selection) is a feature where operator can classify incoming network traffic and forward that traffic to destination via specific MPLS traffic engineering tunnels (TE tunnel).
 
-![01_overview.png]({{site.baseurl}}/images/01_overview.png)
+PBTS implementation on Cisco 8000 described in this article classifies the incoming traffic on ingress interface based on **EXP** field (for MPLS traffic) or **prec/DSCP** field (for IP traffic).  
+Thus it is possible, for instance, to forward traffic with specific EXP/Prec/DSCP value via a specific TE tunnel like shown in below picture.
+
+![01_overview.png]({{site.baseurl}}/images/01_overview.png)  
+
+---
 
 In Cisco 8000 platform, PBTS is implemented in following manner:
 
-1. Plain IPv4 / plain IPv6 / MPLS Traffic arrives on ingress interface.
+1. Plain IPv4 / plain IPv6 / MPLS **traffic arrives** on ingress interface.
 
-2. Using class-map inside policy-map set in inbound direction on ingress interface, traffic is classified based on MPLS EXP or IP prec/DSCP fields and assigned to specific forward-class (FC).
+2. Using `class-map` inside `policy-map` set in inbound direction on `ingress interface`, **traffic is classified** based on MPLS EXP or IP prec/DSCP fields and assigned to specific `forward-class (FC)`.
 
 3. Each TE tunnel is associated with a specific FC.  
-In this way, specific traffic flow can then be steered to TE tunnel with the matching FC.  
+In this way, specific traffic flow can then be **steered to TE tunnel** with the matching FC.  
 e.g.  
-Traffic with IP prec_6 ➜ FC 3 ➜ tunnel-te1
+Traffic with IP prec_6 ➜ FC 3 ➜ tunnel-te1  
 
-PBTS support on 8000 platform comes in phases.  
+---
+
+PBTS support on 8000 platform comes in **phases**.  
 The following constraints apply for phase 1 in IOS XR 7.5.3:
 
-1. Supported: PBTS over TE tunnel and also LDP-over-TE tunnel.
+- [Supported](#link){: .btn .btn--success} PBTS over TE tunnel and also LDP-over-TE tunnel.
 
-2. Supported: PBTS for IPv4, IPv6, MPLS traffic.
+- Supported: PBTS for IPv4, IPv6, MPLS traffic.
 
-3. NOT Supported: PBTS for services (L3VPN, 6VPE, 6PE, L2VPN) and overlays over this prefix over TE tunnel with PBTS enabled.
+- [NOT Supported](#link){: .btn .btn--danger} PBTS for services (L3VPN, 6VPE, 6PE, L2VPN) and overlays over this prefix over TE tunnel with PBTS enabled.
 
-4. NOT Supported: Statically configured MPLS prefix over LDP-over-TE tunnel.
+- NOT Supported: Statically configured MPLS prefix over LDP-over-TE tunnel.
 
-5. NOT Supported: Statically configured MPLS prefix over TE tunnel.
+- NOT Supported: Statically configured MPLS prefix over TE tunnel.
 
-6. NOT Supported: Labeled Unicast over TE tunnel.
+- NOT Supported: Labeled Unicast over TE tunnel.
 
 The "Not Supported" items will be addressed in future phase in later IOS XR release.
 
-Some important notes:
+---
 
-1. PBTS doesn't override routing decision.  
+Some important **notes**:
+
+- PBTS doesn't override routing decision.  
 Rather the use case is if routing have multiple TE tunnel paths toward destination,
 then with PBTS we will be able to pick which TE tunnels should carry the traffic based on traffic's MPLS EXP or IP prec/DSCP values.
 
-2. 8 unique FC values are supported (class 0 to class 7).  
+- 8 unique FC values are supported (class 0 to class 7).  
 Only one FC can be associated with a TE tunnel at any time.
 
-3. FC 0 is treated as the default class and doesn’t need to be explicitly configured for a TE tunnel.
+- FC 0 is treated as the default class and doesn’t need to be explicitly configured under a TE tunnel.
 
-4. If a TE tunnel is not associated with an explicit FC, it will be associated with a
+- If a TE tunnel is not configured with an explicit FC, it will be associated with a
 default FC 0.
 
-5. PBTS is supported on both "named" tunnels and "numbered" tunnels. However, using "named" tunnels 
+- PBTS is supported on both "named" tunnels and "numbered" tunnels. However, using "named" tunnels 
 is recommended.
 
-6. When many TE tunnels are associated to same destination, they will be load balanced: up to 64 path ECMP TE tunnels can be used for a given destination.
-this can cause issue when we have more than 64 tunnels for a given PBTS destination.
+- When many TE tunnels are equal best paths to same destination, they will be load balanced: up to 64 path ECMP TE tunnels can be used for a given destination.
+However, this can cause issue when we have more than 64 tunnels for a given PBTS destination.
 consider this config:
 tunnel-te1 up to tunnel-te64 : configured with FC3, use it for FC3 traffic to destination X.
 tunnel-te65 up to tunnel-te100 : configured with FC0, use it for FC0 traffic to destination X.
 
-If we have the above config, it could happen that only FC3 tunnels will be programmed, causing traffic blackhole for FC0 traffic.
+ If we have the above config, it could happen that only FC3 paths will be programmed, causing traffic blackhole for FC0 traffic.  
 The recommendation is to have no more than 64 tunnel-te paths to a given destination, with 64 paths ECMP configured.
 
-7.	Fallback mechanism is available:
-When any FC (except FC 0) paths are down, traffic will switch to default class FC 0 unless fallback PBTS class is configured.
-If the fallback PBTS class itself is not available, default class will be used.
-If no fallback PBTS class present and no paths are available for default class, then traffic will be dropped.
+- Fallback mechanism is available:
+When any FC (except FC 0) paths are down, traffic will switch to default class FC 0 path unless fallback PBTS class is configured.
+If the fallback PBTS class path itself is not available, default class path will be used.
+If both fallback PBTS class and default class paths are not available, then traffic will be dropped.
 
-8.	All TE related features (such as TE-FRR etc.) will continue to work as is.
+- All TE related features (such as TE-FRR etc.) will continue to work as is.
 
 
 ###################################################################################################
@@ -1780,3 +1788,4 @@ TE : Traffic engineering
 TE tunnel / tunnel-te : MPLS TE tunnel created by user to carry traffic via label switching
 FC : Forward-class
 LDPoTE : LDP-over-TE
+ECMP : Equal cost multi paths
