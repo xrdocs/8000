@@ -562,10 +562,10 @@ Recall that by default all tunnels are assigned as FC0 where non-PBTS-classified
 
 This is behavior that we will see if PBTS is not configured.
 
-......... Setup when PBTS is configured for plain IP traffic.
+**Setup when PBTS is configured for plain IP traffic.**
 
 Now let's configure following PBTS config:
-
+```
 class-map match-any prec_7
  match precedence 7 
  end-class-map
@@ -589,22 +589,19 @@ mpls traffic-eng
   !
  !
 !
+```
 
-Note that with the above, we're configuring PBTS such that traffic with IP prec 7 will be sent to destination via tunnel-te named_4.
+Note that with the above configured, we will have PBTS to match traffic with IP prec 7 and send it to destination via tunnel-te named_4.
 
-commit that config and send traffic again:
+Commit that config and send traffic again.
+Now you will see following result in "show interface accounting":
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#clear counters
-Tue Oct 11 01:21:33.660 -07
-Clear "show interface" counters on all interfaces [confirm] 
-
-RP/0/RP0/CPU0:Oct 11 01:21:33.899 -07: statsd_manager_g[1148]: %MGBL-IFSTATS-6-CLEAR_COUNTERS : Clear counters on all interfaces 
-
-sh interface accounting:
-
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 named_4
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0        87496          9624560
+  MPLS                        0                0        <mark>87496</mark>          9624560
 
 No accounting statistics available for named_5
 
@@ -619,55 +616,57 @@ No accounting statistics available for tunnel-te1
 No accounting statistics available for tunnel-te2
 
 No accounting statistics available for tunnel-te3
+</code>
+</pre>
+</div>
 
-now all traffic with IP prec 7 is sent via tunnel-te named_4 as configured.
+Now all traffic with IP prec 7 is sent via tunnel-te named_4 as configured.
 
-let's try sending other flows with IP prec 5, which TE tunnel it will take?
+let's try sending other flows with IP prec 5, which TE tunnel it will take?  
+Following result will show in "show interface accounting":
 
-RP/0/RP0/CPU0:Rean--C8201-32FH#clear counters
-Tue Oct 11 01:32:18.251 -07
-Clear "show interface" counters on all interfaces [confirm] 
-
-RP/0/RP0/CPU0:Oct 11 01:32:18.508 -07: statsd_manager_g[1148]: %MGBL-IFSTATS-6-CLEAR_COUNTERS : Clear counters on all interfaces 
-RP/0/RP0/CPU0:Rean--C8201-32FH#
-
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 named_4
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
   MPLS                        0                0        58410          6425100
 
 named_5
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         5941           653510
+  MPLS                        0                0         <mark>5941</mark>           653510
 
 named_6
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         4591           505010
+  MPLS                        0                0         <mark>4591</mark>           505010
 
 named_7
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         5941           653510
+  MPLS                        0                0         <mark>5941</mark>           653510
 
 tunnel-te0
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         5672           623920
+  MPLS                        0                0         <mark>5672</mark>           623920
 
 tunnel-te1
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         4864           535040
+  MPLS                        0                0         <mark>4864</mark>           535040
 
 tunnel-te2
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         2973           327030
+  MPLS                        0                0         <mark>2973</mark>           327030
 
 tunnel-te3
   Protocol              Pkts In         Chars In     Pkts Out        Chars Out
-  MPLS                        0                0         4593           505230
-
+  MPLS                        0                0         <mark>4593</mark>           505230
+</code>
+</pre>
+</div>
 
 we're sending 58,410 packets with IP prec 7, it's forwarded using TE tunnel named_4.
 The rest of traffic is sent using other tunnels as we have ECMP, recall that unclassified traffic will simply take TE tunnels that have no FC explicitly configured (i.e. such tunnels will be assigned under default forward class FC 0).
 
-......... Setup when PBTS is configured for MPLS traffic.
+**Setup when PBTS is configured for MPLS traffic.**
 
 We can also run LDP over these TE tunnels so that LDP FEC can also take benefits of PBTS.
 Since LDP is using MPLS forwarding, we will deal with 2 types of incoming traffic for this use case:
