@@ -1489,13 +1489,13 @@ Now traffic falls back to FC5 tunnel-te named_5 as expected.
 That is all for basic PBTS operation walkthru.  
 Read on to get full configuration example for both head-end router and tail-end router.
 
-###################################################################################################
-#
-# full configuration example
-# head-end / PBTS router "Rean"
-#
-###################################################################################################
+## Full Configuration Example  
 
+### Head-end / PBTS router
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 group named_te
  mpls traffic-eng
   named-tunnels
@@ -1658,8 +1658,7 @@ mpls ldp
  !
 !
 
-PBTS configuration
-==================
+<mark>PBTS configuration</mark>
 
 class-map match-any exp-0
    match mpls experimental topmost 0
@@ -1726,31 +1725,17 @@ end-policy-map
 interface Bundle-Ether1
 service-policy input MY_PBTS
 root
+</code>
+</pre>
+</div>
 
-....
+### Tail-end router
 
-when the above is configured, following PBTS path will be used:
+No special config is needed here, as PBTS is only configured on head-end router.
 
-exp-0 traffic ---> no explicit config within policy-map ; use default forward class --> forward-class 0 --> tunnel-te0
-exp-1 traffic ---> explicit config within policy-map --> forward-class 1 --> tunnel-te1
-prec_5 traffic ---> explicit config within policy-map --> forward-class 2 --> tunnel-te2
-prec_6 traffic ---> explicit config within policy-map --> forward-class 3 --> tunnel-te3
-prec_7 traffic ---> explicit config within policy-map --> forward-class 4 --> tunnel-te named_4
-low_lat_af21 traffic ---> explicit config within policy-map --> forward-class 5 --> tunnel-te named_5
-bcast_vid_cs3 traffic ---> explicit config within policy-map --> forward-class 6 --> tunnel-te named_6
-multimedia_conf_af41 traffic ---> explicit config within policy-map --> forward-class 7 --> tunnel-te named_7
-
-there are some optional PBTS config as well (like fallback, profile, etc), refer to SFS for these optional config.
-
-
-###################################################################################################
-#
-# configuration example
-# tail-end router "Musse"
-#
-###################################################################################################
-
-
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 explicit-path name to_rean
  index 1 next-address strict ipv4 unicast 200.4.0.1
  index 2 next-address strict ipv4 unicast 103.1.3.6
@@ -1833,6 +1818,11 @@ mpls ldp
  interface tunnel-te1
  !
 !
+</code>
+</pre>
+</div>
+
+
 
 
 ###################################################################################################
