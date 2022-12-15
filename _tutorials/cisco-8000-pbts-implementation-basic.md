@@ -1878,11 +1878,11 @@ SDK chain info:
 
 ## Glossary
 
-EXP : "Experimental" bits field on an MPLS header
-Prec : "Precedence" bits field on an IPv4 header
-DSCP : "Differentiated Service Code Point" bits field on an IPv4/IPv6 header
-TE : Traffic engineering
-TE tunnel / tunnel-te : MPLS TE tunnel created by user to carry traffic via label switching
-FC : Forward-class
-LDPoTE : LDP-over-TE
-ECMP : Equal cost multi paths
+EXP : "Experimental" bits field on an MPLS header  
+Prec : "Precedence" bits field on an IPv4 header  
+DSCP : "Differentiated Service Code Point" bits field on an IPv4/IPv6 header  
+TE : Traffic engineering  
+TE tunnel / tunnel-te : MPLS TE tunnel created by user to carry traffic via label switching  
+FC : Forward-class  
+LDPoTE : LDP-over-TE  
+ECMP : Equal cost multi paths  
