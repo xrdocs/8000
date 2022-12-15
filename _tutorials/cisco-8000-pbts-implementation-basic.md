@@ -269,12 +269,52 @@ i.e.
 hw-module profile cef cbf forward-class-list 0 1 2 3 4 5 6 7
 ```
 ---
+
 **Custom Fallback**
 
 When TE tunnels associated with an FC go down, traffic can be redirected to another FC, any FC or chosen to be dropped via fallback PBTS configuration.  
 This config will override the default behavior on the box when PBTS enabled TE tunnel goes down.
     
 We can specify sequence of preferred fallback classes to revert to when TE tunnel of an FC goes down:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+function filesize
+{
+
+    <b>RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?<b/>
+      <0-7>  Forward Class number
+      any    Any forward class
+
+    <b>RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 ?<b/>
+      fallback-to  Fallback to configuration
+
+    <b>RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class 7 fallback-to ?<b/>
+      <0-7>  Fallback Class number
+      any    Fallback to any class
+      drop   Fallback to drop
+      
+    local file=$1
+    <mark>size=`stat -c %s $file 2>/dev/null` # linux</mark>
+    if [[ $? -eq 0 ]]; then
+        echo $size
+        return 0
+    fi
+
+    <b>eval $(stat -s $file) # macos </b>
+    if [[ $? -eq 0 ]]; then
+        echo $st_size
+        return 0
+    fi
+
+    <span style="background-color: #FDD7E4">echo 0</span>
+    return -1
+}
+</code>
+</pre>
+</div>
+
 ```
     RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?
       <0-7>  Forward Class number
@@ -300,68 +340,46 @@ In this way, first FC 0 and its paths will be present as fallback class for all 
 If paths of FC 0 go down, then the next available FC in ascending order of 0-7 will be chosen as the fallback FC, i.e FC 1.  
 When paths in FC 1 go down, the next FC 2 will be chosen as fallback so on and so forth.
 
-    We can also use "any" as fallback instead of specifying FC number.
-    In this way, next available FC in ascending order of 0-7 will be chosen as the fallback FC.
-
+We can also use "any" as fallback instead of specifying FC number.
+In this way, next available FC in ascending order of 0-7 will be chosen as the fallback FC.
+```
     cef pbts class 1 fallback-to any
-
-    or even:
-
+```
+or even:
+```
     cef pbts class any fallback-to any
+```
 
-    When “cef pbts class any fallback-to any” is specified, then the lowest available forward class ascending order of 0-7, is chosen as fallback for when paths to any class go down.
+When “cef pbts class any fallback-to any” is specified, then the lowest available forward class ascending order of 0-7, is chosen as fallback for when paths to any class go down.
     
-    Note that “cef pbts class any fallback-to any” will actually has same effect as configuring multiple config lines in the above example.
+Note that following single line:
+```
+    cef pbts class any fallback-to any
+```
+will actually has same effect as configuring multiple config lines like these:
+```
+    cef pbts class 0 fallback-to 1 2 3 5
+    cef pbts class 1 fallback-to 0 2 3 5
+    cef pbts class 2 fallback-to 0 1 3 5
+    cef pbts class 3 fallback-to 0 1 2 5
+    cef pbts class 5 fallback-to 0 1 2 3
+```
 
 
+## Operation
 
-
-###################################################################################################
-#
-# operation
-#
-###################################################################################################
-
-......... Setup when no PBTS is configured
+**Behavior when no PBTS is configured**
 
 Let's start from the basic : router's default behavior when no PBTS is configured.
 
-
 We're going to use following topology:
-image:
-02_topo.png
+
+![02_topo.png]({{site.baseurl}}/images/02_topo.png)
 
 
-MPLS traffic (MPLS EXP)
-|
-|
-|
-\/
-|
-|
-|BE1
-router "Rean"  Te0/0/0/0/0 <----- IPv4/IPv6 traffic (IP prec / DSCP)
-|BE2
-|
-|
-|network cloud
-|
-|
-|Te0/0/0/0
-router "Musse"
-|Te0/0/0/32
-|
-\/
-traffic destination
-
-router "Rean" Lo0 202.158.0.6
-router "Musse" Lo0 202.158.0.2
-
-
-MPLS-TE cloud has ISIS for IGP, LDP for LDP-over-TE (LDPoTE), and MPLS TE tunnels.
-We have 7 TE tunnels with router "Rean" as head end router (where we'll configure PBTS) and router "Musse"
-as tail end.
-To allow for LDPoTE session to come up, 1 TE tunnel is also created on Musse as head end and Rean as tail end.
+MPLS-TE cloud has ISIS for IGP, LDP for LDP-over-TE (LDPoTE), and MPLS TE tunnels.  
+We have 7 TE tunnels with router "Rean" as head end router (where we'll configure PBTS) and router "Musse" as tail end.  
+To allow for LDPoTE session to come up, 1 TE tunnel is also created on Musse as head end and Rean as tail end.  
 We then can configure these TE tunnels under LDP to bring up LDPoTE.
 
 RP/0/RP0/CPU0:Rean--C8201-32FH#sh mpls traffic-eng tunnels tabular 
