@@ -108,9 +108,9 @@ IOS XR 7.5.3 might not be a GA release, please check with your account team for 
 
 ## Supported Hardware
 
-This feature is supported on Cisco 8000 platform using `Gibraltar` ASIC.
-e.g.
-fixed router: C8201-32FH
+This feature is supported on Cisco 8000 platform using `Gibraltar` ASIC.  
+e.g.  
+fixed router: C8201-32FH  
 line cards for modular router: 88-LC0-36FH-M.
 
 
@@ -129,14 +129,10 @@ We can increase the scale of TE tunnels from 1,000 to 4,000.
 (applicable only when the router has all Gibraltar cards).
 
 
-###################################################################################################
-#
-# Configuring PBTS : Basic Configuration
-#
-###################################################################################################
+## Configuring PBTS : Basic Configuration
 
-    Class-map configuration
-
+Class-map configuration.
+```
         class-map match-any exp-0
            match mpls experimental topmost 0
         end-class-map
@@ -170,9 +166,9 @@ We can increase the scale of TE tunnels from 1,000 to 4,000.
             match dscp af41
         end-class-map
         !
-
-    String class-map with forward-class using policy-map
-
+```
+String class-map with forward-class using policy-map.
+```
         policy-map MY_PBTS
         !
         class exp-1
@@ -199,16 +195,17 @@ We can increase the scale of TE tunnels from 1,000 to 4,000.
         class class-default
         !
         end-policy-map
+```
 
-    Assign the policy-map on ingress interface in inbound direction
-
+Assign the policy-map on ingress interface in inbound direction.
+```
         interface Bundle-Ether1
             service-policy input MY_PBTS
         root
+```
 
-
-    Assign forward-class to TE tunnels
-
+Assign forward-class to TE tunnels.
+```
         interface tunnel-te0
          forward-class 0
         !
@@ -237,48 +234,48 @@ We can increase the scale of TE tunnels from 1,000 to 4,000.
           !
          !
         !
+```
+
+When the above is configured, following PBTS path will be used:
+
+`exp-0 traffic` ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ `tunnel-te0`  
+`exp-1 traffic` ➜ explicit config within policy-map ➜ FC 1 ➜ `tunnel-te1`  
+`prec_5 traffic` ➜ explicit config within policy-map ➜ FC 2 ➜ `tunnel-te2`  
+`prec_6 traffic` ➜ explicit config within policy-map ➜ FC 3 ➜ `tunnel-te3`  
+`prec_7 traffic` ➜ explicit config within policy-map ➜ FC 4 ➜ `tunnel-te named_4`  
+`low_lat_af21 traffic` ➜ explicit config within policy-map ➜ FC 5 ➜ `tunnel-te named_5`  
+`bcast_vid_cs3 traffic` ➜ explicit config within policy-map ➜ FC 6 ➜ `tunnel-te named_6`  
+`multimedia_conf_af41 traffic` ➜ explicit config within policy-map ➜ FC 7 ➜ `tunnel-te named_7`
+
+`all other traffic` ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ `tunnel-te0`
 
 
-when the above is configured, following PBTS path will be used:
+## Configuring PBTS : Optional Configuration
 
-exp-0 traffic ---> no explicit config within policy-map ; use default forward class --> FC 0 --> tunnel-te0
-exp-1 traffic ---> explicit config within policy-map --> FC 1 --> tunnel-te1
-prec_5 traffic ---> explicit config within policy-map --> FC 2 --> tunnel-te2
-prec_6 traffic ---> explicit config within policy-map --> FC 3 --> tunnel-te3
-prec_7 traffic ---> explicit config within policy-map --> FC 4 --> tunnel-te named_4
-low_lat_af21 traffic ---> explicit config within policy-map --> FC 5 --> tunnel-te named_5
-bcast_vid_cs3 traffic ---> explicit config within policy-map --> FC 6 --> tunnel-te named_6
-multimedia_conf_af41 traffic ---> explicit config within policy-map --> FC 7 --> tunnel-te named_7
+**Optimizing hardware resource** usage for forward-classes.  
+If we know for sure which FCs that we will use, we can optimize the hardware resource usage for those FCs by using the following config:
+```
+hw-module profile cef cbf forward-class-list [a list consisting of 0-7 values]
+```
+e.g.  
+```
+hw-module profile cef cbf forward-class-list 0 1 2 3 5
+```
+Note:
+- Chassis needs to be reloaded for this config to go into effect.
+- There won't be optimization taking place if all FC is listed.  
+i.e.  
+```
+hw-module profile cef cbf forward-class-list 0 1 2 3 4 5 6 7
+```
+---
+**Custom Fallback**
 
-all other traffic ---> no explicit config within policy-map ; use default forward class --> FC 0 --> tunnel-te0
-
-
-
-###################################################################################################
-#
-# Configuring PBTS : Optional Configuration
-#
-###################################################################################################
-
-
-optimizing hardware resource usage for forward-classes.
-
-    If we know for sure which FCs that we will use, we can optimize the hardware resource usage for those FCs by using the following config.
-
-    hw-module profile cef cbf forward-class-list <a list consisting of 0-7 values>
-    e.g.
-    hw-module profile cef cbf forward-class-list 0 1 2 3 5
-
-    Note:
-    - chassis needs to be reloaded for this config to go into effect.
-    - there won't be optimization taking place if all FC is listed, i.e. "hw-module profile cef cbf forward-class-list 0 1 2 3 4 5 6 7"
-
-Custom Fallback
-
-    When TE tunnels associated with an FC go down, traffic can be redirected to another FC, any FC or chosen to be dropped via fallback PBTS configuration. This config will override the default behavior on the box when PBTS enabled TE tunnel goes down.
+When TE tunnels associated with an FC go down, traffic can be redirected to another FC, any FC or chosen to be dropped via fallback PBTS configuration.  
+This config will override the default behavior on the box when PBTS enabled TE tunnel goes down.
     
-    We can specify sequence of preferred fallback classes to revert to when TE tunnel of an FC goes down:
-    
+We can specify sequence of preferred fallback classes to revert to when TE tunnel of an FC goes down:
+```
     RP/0/RP0/CPU0:Rean--C8201-32FH(config)#cef pbts class ?
       <0-7>  Forward Class number
       any    Any forward class
@@ -290,17 +287,18 @@ Custom Fallback
       <0-7>  Fallback Class number
       any    Fallback to any class
       drop   Fallback to drop
-      
-    For example, an operator that is using FC 0,1,2,3,5 can configure these following fallback paths:
-
+```
+For example, an operator that is using FC 0,1,2,3,5 can configure these following fallback paths:
+```
     cef pbts class 0 fallback-to 1 2 3 5
     cef pbts class 1 fallback-to 0 2 3 5
     cef pbts class 2 fallback-to 0 1 3 5
     cef pbts class 3 fallback-to 0 1 2 5
     cef pbts class 5 fallback-to 0 1 2 3
-
-    In this way, first FC 0 and its paths will be present as fallback class for all other classes.
-    If paths of FC 0 go down, then the next available FC in ascending order of 0-7 will be chosen as the fallback FC, i.e FC 1. When paths in FC 1 go down, the next FC 2 will be chosen as fallback so on and so forth.
+```
+In this way, first FC 0 and its paths will be present as fallback class for all other classes.  
+If paths of FC 0 go down, then the next available FC in ascending order of 0-7 will be chosen as the fallback FC, i.e FC 1.  
+When paths in FC 1 go down, the next FC 2 will be chosen as fallback so on and so forth.
 
     We can also use "any" as fallback instead of specifying FC number.
     In this way, next available FC in ascending order of 0-7 will be chosen as the fallback FC.
