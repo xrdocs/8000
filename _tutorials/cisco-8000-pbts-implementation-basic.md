@@ -107,8 +107,10 @@ This feature is introduced in **IOS XR 7.5.3**.
 
 This feature is supported on Cisco **8000** platform using **Silicon One Q200** ASIC.  
 e.g.  
-- fixed systems: 8201-32FH, 8202-32FH-M, 8201-24H8FH
-- line cards for distributed systems: 88-LC0-36FH-M, 88-LC0-36FH, 88-LC0-34H14FH
+- fixed systems:  
+8201-32FH, 8202-32FH-M, 8201-24H8FH
+- line cards for distributed systems:  
+88-LC0-36FH-M, 88-LC0-36FH, 88-LC0-34H14FH
 
 ## Supported Scale
 
