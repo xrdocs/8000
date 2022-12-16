@@ -238,22 +238,16 @@ Assign **forward-class** to **TE tunnels**.
 
 When the above is configured, following PBTS path will be used:
 
-<div class="highlighter-rouge">
-<pre class="highlight">
-<code>
-<span style="background-color: #B5EAAA">exp-0 traffic</span> ➜ no explicit config within policy-map ; use default FC ➜ FC 0 ➜ <span style="background-color: #B5EAAA">tunnel-te0</span>
-<span style="background-color: #B5EAAA">exp-1 traffic</span> ➜ explicit config within policy-map ➜ FC 1 ➜ <span style="background-color: #B5EAAA">tunnel-te1</span>
-<span style="background-color: #B5EAAA">prec_5 traffic</span> ➜ explicit config within policy-map ➜ FC 2 ➜ <span style="background-color: #B5EAAA">tunnel-te2</span>
-<span style="background-color: #B5EAAA">prec_6 traffic</span> ➜ explicit config within policy-map ➜ FC 3 ➜ <span style="background-color: #B5EAAA">tunnel-te3</span>
-<span style="background-color: #B5EAAA">prec_7 traffic</span> ➜ explicit config within policy-map ➜ FC 4 ➜ <span style="background-color: #B5EAAA">tunnel-te named_4</span>
-<span style="background-color: #B5EAAA">low_lat_af21 traffic</span> ➜ explicit config within policy-map ➜ FC 5 ➜ <span style="background-color: #B5EAAA">tunnel-te named_5</span>
-<span style="background-color: #B5EAAA">bcast_vid_cs3 traffic</span> ➜ explicit config within policy-map ➜ FC 6 ➜ <span style="background-color: #B5EAAA">tunnel-te named_6</span> 
-<span style="background-color: #B5EAAA">multimedia_conf_af41 traffic</span> ➜ explicit config within policy-map ➜ FC 7 ➜ <span style="background-color: #B5EAAA">tunnel-te named_7</span>
+`exp-0 traffic` ---> no explicit config within policy-map ; use default FC --> FC 0 --> `tunnel-te0`  
+`exp-1 traffic` ---> explicit config within policy-map --> FC 1 --> `tunnel-te1`  
+`prec_5 traffic` ---> explicit config within policy-map --> FC 2 --> `tunnel-te2`  
+`prec_6 traffic` ---> explicit config within policy-map --> FC 3 --> `tunnel-te3`  
+`prec_7 traffic` ---> explicit config within policy-map --> FC 4 --> `tunnel-te named_4`  
+`low_lat_af21 traffic` ---> explicit config within policy-map --> FC 5 --> `tunnel-te named_5`  
+`bcast_vid_cs3 traffic` ---> explicit config within policy-map --> FC 6 --> `tunnel-te named_6`  
+`multimedia_conf_af41 traffic` ---> explicit config within policy-map --> FC 7 --> `tunnel-te named_7`  
 
-<span style="background-color: #B5EAAA">all other traffic</span> ➜ no explicit config within policy-map ; use default FC ➜ FC 0 ➜ <span style="background-color: #B5EAAA">tunnel-te0</span>
-</code>
-</pre>
-</div>
+`all other traffic` ---> no explicit config within policy-map ; use default FC --> FC 0 --> `tunnel-te0`  
 
 
 ## Configuring PBTS : Optional Configuration
@@ -1036,7 +1030,7 @@ tunnel-te3
 Note that now exp-1 traffic is forwarded using all TE tunnels that are NOT configured with FC.  
 These tunnels that have no FC configured are associated with FC0 and we fallback PBTS steered traffic by default to these tunnels when the primary tunnel goes down.
 
-TE tunnel named_4, on the other hand, is not forwarding the fallback traffic since it's configured with FC4.
+TE tunnel named_4, on the other hand, is not forwarding the fallback traffic since it's explicitly configured with FC4.
 
 Now let's try to shut down all tunnels that have no FC configured.  
 What happens with PBTS steered traffic if the fallback tunnels themselves are down?
