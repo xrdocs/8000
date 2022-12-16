@@ -1899,7 +1899,7 @@ The feature also comes with fallback feature by default which can be customized 
 
 The feature is simple to configure and should be part of any MPLS-TE engineers toolbox.
 
-Future:  
+**Future:**  
 PBTS phase 2 in IOS-XR 7.5.4 will add more capability to PBTS when it comes to steering overlay services to TE tunnels.  
 We will describe phase 2 feature in future document.
 
