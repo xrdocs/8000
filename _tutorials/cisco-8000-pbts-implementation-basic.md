@@ -596,7 +596,7 @@ mpls traffic-eng
 !
 ```
 
-Note that with the above configured, we will have PBTS to match traffic with IP prec 7 and send it to destination via tunnel-te named_4.
+Note that with the above configured, we will have PBTS to match traffic with `IP prec 7` and send it to destination via tunnel-te `named_4`.
 
 Commit that config and send traffic again.
 Now you will see following result in "show interface accounting":
@@ -627,7 +627,7 @@ No accounting statistics available for tunnel-te3
 
 Now all traffic with IP prec 7 is sent via tunnel-te named_4 as configured.
 
-let's try sending other flows with IP prec 5, which TE tunnel it will take?  
+Let's try sending other flows with `IP prec 5`, which TE tunnel it will take?  
 Following result will show in "show interface accounting":
 
 <div class="highlighter-rouge">
@@ -669,17 +669,18 @@ tunnel-te3
 </div>
 
 We're sending 58,410 packets with IP prec 7, it's forwarded using TE tunnel named_4.
-The rest of traffic is sent using other tunnels as we have ECMP, recall that unclassified traffic will simply take TE tunnels that have no FC explicitly configured (i.e. such tunnels will be assigned under default forward class FC 0).
+The rest of traffic is sent using other tunnels as we have ECMP.  
+Recall that unclassified traffic will simply take TE tunnels that have no FC explicitly configured (i.e. tunnels that are assigned by default to forward class FC 0).
 
 ### **Behavior when PBTS is configured for MPLS traffic.**
 
 We can also run LDP over these TE tunnels so that LDP FEC can also take benefits of PBTS.
 
 Since LDP is using MPLS forwarding, we will deal with 2 types of incoming traffic for this use case:
-- MPLS encapsulated traffic:  
+- **MPLS encapsulated traffic**  
 PBTS will classify based on MPLS EXP bits and then do label swap-push toward the matching TE tunnel.  
 We don't classify MPLS traffic based on the inner payload.
-- plain IP traffic:  
+- **Plain IP traffic**  
 PBTS will classify based on IP prec/DSCP bits and then do label-push toward the matching TE tunnel.
 
 Let's activate LDP now on router "Rean".
@@ -795,7 +796,7 @@ Tue Oct 11 02:01:57.245 -07
 </pre>
 </div>
 
-Also pay attention to this part from output above that shows when PBTS is in use:
+Also pay attention to this part from output above that only shows when PBTS is active:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -906,7 +907,7 @@ Label/EOS 24014/1, Label-type LDP, version 2283, internal 0x1000001 0x30 (ptr 0x
 </pre>
 </div>
 
-Since now LDP control plane is active, let's try classify based on MPLS EXP in addition to the existing classification based on IP prec.  
+Since now LDP control plane is active, let's try classify based on `MPLS EXP` in addition to the existing classification based on `IP prec`.  
 We will configure PBTS to steer traffic with MPLS EXP 1 to tunnel-te1.
 ```
 class-map match-any exp-1
@@ -964,7 +965,7 @@ No accounting statistics available for tunnel-te3
 </pre>
 </div>
 
-We're sending 11,557 MPLS encapsulated packet with EXP bit 1, and it shows that they're forwarded using tunnel-te1.
+We're sending 11,557 MPLS encapsulated packet with EXP bit 1, and it shows that they're forwarded using tunnel-te1.  
 We're sending 29,479 plain IP packet with prec bit 7, and it shows that they're forwarded using tunnel named_4.
 
 
