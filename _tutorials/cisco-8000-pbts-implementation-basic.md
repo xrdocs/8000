@@ -120,14 +120,13 @@ e.g.
 Up to **1,000 TE tunnels** per box and **64 paths ECMP** per destination.
 
 Note:
-With the following config enabled,
+With the following config enabled:
 
 ```
 hw-module profile cef te-tunnel highscale-ldp-over-te-no-sr-over-srte
 ```
 
-We can increase the scale of TE tunnels from 1,000 to 4,000.  
-(applicable only when the router has all Gibraltar cards).
+The scale of TE tunnels can be increased from 1,000 to 4,000. (only supported on Silicon One Q200 systems).
 
 
 ## Configuring PBTS : Basic Configuration
