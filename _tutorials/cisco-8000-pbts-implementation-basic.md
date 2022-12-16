@@ -21,9 +21,9 @@ This post aims to describe PBTS implementation on Cisco 8000 routers.
 It will go over feature operation, configuration, verification, and other notes like constraints and supported scale.
 
 ## Feature Description
-PBTS (Policy Based Tunnel Selection) is a feature where operator can classify incoming network traffic and forward that traffic to destination via specific MPLS traffic engineering tunnels (TE tunnel).
+**PBTS (Policy Based Tunnel Selection)** is a feature where operator can classify incoming network traffic and forward that traffic to destination via specific MPLS traffic engineering tunnels (TE tunnel).
 
-PBTS implementation on Cisco 8000 described in this article classifies the incoming traffic on ingress interface based on **EXP** field (for MPLS traffic) or **prec/DSCP** field (for IP traffic).  
+PBTS implementation on Cisco 8000 described in this article classifies the incoming traffic on ingress interface based on `EXP` field (for MPLS traffic) or `prec/DSCP` field (for IP traffic).  
 Thus it is possible, for instance, to forward traffic with specific EXP/Prec/DSCP value via a specific TE tunnel like shown in below picture.
 
 ![01_overview.png]({{site.baseurl}}/images/01_overview.png)  
@@ -76,16 +76,16 @@ Only one FC can be associated with a TE tunnel at any time.
 - If a TE tunnel is not configured with an explicit FC, it will be associated with a
 default FC 0.
 
-- PBTS is supported on both `named` tunnels and `numbered` tunnels. However, using "named" tunnels 
-is recommended.
+- PBTS is supported on both `named` tunnels and `numbered` tunnels.  
+However, using "named" tunnels is recommended.
 
 - When many TE tunnels are equal best paths to same destination, they will be load balanced: up to 64 path `ECMP` TE tunnels can be used for a given destination.  
 However, this can cause issue when we have more than 64 tunnels for a given PBTS destination.  
 consider this config:  
-tunnel-te1 up to tunnel-te64 : configured with FC3, use it for FC3 traffic to destination X.  
-tunnel-te65 up to tunnel-te100 : configured with FC0, use it for FC0 traffic to destination X.  
+  - tunnel-te1 up to tunnel-te64 : configured with FC3, use it for FC3 traffic to destination X.  
+  - tunnel-te65 up to tunnel-te100 : configured with FC0, use it for FC0 traffic to destination X.  
 
- If we have the above config, it could happen that only FC3 paths will be programmed, causing traffic blackhole for FC0 traffic.  
+If we have the above config, it could happen that only FC3 paths will be programmed, causing traffic blackhole for FC0 traffic.  
 The recommendation is to have no more than 64 tunnel-te paths to a given destination, with 64 paths ECMP configured.
 
 - `Fallback mechanism` is available:
@@ -1885,4 +1885,4 @@ TE : Traffic engineering
 TE tunnel / tunnel-te : MPLS TE tunnel created by user to carry traffic via label switching  
 FC : Forward-class  
 LDPoTE : LDP-over-TE  
-ECMP : Equal cost multi paths  
+ECMP : Equal cost multi paths
