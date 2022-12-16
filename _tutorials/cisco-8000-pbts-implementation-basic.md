@@ -266,7 +266,7 @@ When the above is configured, following PBTS path will be used:
 
 **Optimizing hardware resource usage for forward-classes**
 
-If we know for sure which FCs that we will use, we can optimize the hardware resource usage for those FCs by using the following config:
+If we know for sure which FCs that we will use, we can optimize the hardware resource usage used by ECMP for those FCs by using the following config:
 ```
 hw-module profile cef cbf forward-class-list <a list consisting of 0-7 values>
 ```
