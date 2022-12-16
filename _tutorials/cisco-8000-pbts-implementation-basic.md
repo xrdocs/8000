@@ -110,11 +110,10 @@ IOS XR 7.5.3 might not be a GA release, please check with your account team for 
 
 ## Supported Hardware
 
-This feature is supported on Cisco **8000** platform using **Gibraltar** ASIC.  
+This feature is supported on Cisco **8000** platform using **Silicon One Q200** ASIC.  
 e.g.  
-- fixed router: C8201-32FH  
-- line cards for modular router: 88-LC0-36FH-M.
-
+- fixed systems: 8201-32FH, 8202-32FH-M, 8201-24H8FH
+- line cards for distributed systems: 88-LC0-36FH-M, 88-LC0-36FH, 88-LC0-34H14FH
 
 ## Supported Scale
 
