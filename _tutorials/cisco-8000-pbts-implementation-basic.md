@@ -102,11 +102,6 @@ The recommendation is to have no more than 64 tunnel-te paths to a given destina
 
 This feature is introduced in **IOS XR 7.5.3**.
 
->
-Note:
-IOS XR 7.5.3 might not be a GA release, please check with your account team for feature availability.
-{: .notice}
-
 
 ## Supported Hardware
 
@@ -167,6 +162,23 @@ The scale of TE tunnels can be increased from 1,000 to 4,000. (only supported on
         end-class-map
         !
 ```
+
+Note:  
+PBTS classification only works with matching directly with Prec/DSCP or MPLS EXP field, not ACL.  
+For instance, following classification config will not work in PBTS use case:
+{: .notice--info}
+```
+        ipv4 access-list acl_prec_7
+         10 permit ipv4 any host 202.4.0.1 precedence network
+        !
+        !
+        class-map match-any acl_prec_7
+         match access-group ipv4 acl_prec_7
+         end-class-map
+        !
+```
+
+
 String **class-map** with **forward-class** using **policy-map**.
 ```
         policy-map MY_PBTS
@@ -1877,6 +1889,19 @@ SDK chain info:
 </code>
 </pre>
 </div>
+
+
+## Conclusion
+
+PBTS offers additional flexibility in utilizing MPLS-TE tunnels.  
+Instead of having to use all tunnels in an ECMP manner, users can now steer specific traffic streams to use only certain tunnels.  
+The feature also comes with fallback feature by default which can be optimized to offer even more flexibility. When there is failure affecting the primary tunnels, traffic can fall back to back up tunnels as configured.
+
+The feature is simple to configure and should be part of any MPLS-TE engineers toolbox.
+
+Future:  
+PBTS phase 2 in IOS-XR 7.5.4 will add more capability to PBTS when it comes to steering overlay services to TE tunnels.  
+We will describe phase 2 feature in future document.
 
 
 ## Glossary
