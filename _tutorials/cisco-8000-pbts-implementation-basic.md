@@ -241,7 +241,12 @@ When the above is configured, following PBTS path will be used:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-<span style="background-color: #B5EAAA>exp-0 traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA>tunnel-te0</span>
+<span style="background-color: #B5EAAA>exp-0 traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA>tunnel-te0</span>#B5EAAA>tunnel-te0</span>
+</code>
+</pre>
+</div>
+
+```
 <span style="background-color: #B5EAAA>exp-1 traffic</span> ➜ explicit config within policy-map ➜ FC 1 ➜ <span style="background-color: #B5EAAA>tunnel-te1</span>
 <span style="background-color: #B5EAAA>prec_5 traffic</span> ➜ explicit config within policy-map ➜ FC 2 ➜ <span style="background-color: #B5EAAA>tunnel-te2</span>
 <span style="background-color: #B5EAAA>prec_6 traffic</span> ➜ explicit config within policy-map ➜ FC 3 ➜ <span style="background-color: #B5EAAA>tunnel-te3</span>
@@ -250,11 +255,8 @@ When the above is configured, following PBTS path will be used:
 <span style="background-color: #B5EAAA>bcast_vid_cs3 traffic</span> ➜ explicit config within policy-map ➜ FC 6 ➜ <span style="background-color: #B5EAAA>tunnel-te named_6</span> 
 <span style="background-color: #B5EAAA>multimedia_conf_af41 traffic</span> ➜ explicit config within policy-map ➜ FC 7 ➜ <span style="background-color: #B5EAAA>tunnel-te named_7</span>
 
-<span style="background-color: #B5EAAA>all other traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA>tunnel-te0</span>
-</code>
-</pre>
-</div>
-
+<span style="background-color: #B5EAAA>all other traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: 
+```
 
 ## Configuring PBTS : Optional Configuration
 
