@@ -1370,7 +1370,7 @@ tunnel-te3
 
 Since tunnel-te1 is down, and the fallback path named_4 is also down, traffic will fall back again to FC0 TE tunnels.
 
-We also have option to specify a list of FCs to be used as fallback.
+We also have option to specify a list of FCs to be used as fallback.  
 Instead of this:
 ```
 cef pbts class 1 fallback-to 4
@@ -1487,7 +1487,8 @@ No accounting statistics available for tunnel-te3
 
 Now traffic falls back to FC5 tunnel-te named_5 as expected.
 
-That is all for basic PBTS operation walkthru.  
+That is all for basic PBTS operation overview.
+
 Read on to get full configuration example for both head-end router and tail-end router.
 
 ## Full Configuration Example  
@@ -1879,11 +1880,11 @@ SDK chain info:
 
 ## Glossary
 
-EXP : "Experimental" bits field on an MPLS header  
-Prec : "Precedence" bits field on an IPv4 header  
-DSCP : "Differentiated Service Code Point" bits field on an IPv4/IPv6 header  
-TE : Traffic engineering  
-TE tunnel / tunnel-te : MPLS TE tunnel created by user to carry traffic via label switching  
-FC : Forward-class  
-LDPoTE : LDP-over-TE  
-ECMP : Equal cost multi paths
+**EXP** : "Experimental" bits field on an MPLS header  
+**Prec** : "Precedence" bits field on an IPv4 header  
+**DSCP** : "Differentiated Service Code Point" bits field on an IPv4/IPv6 header  
+**TE** : Traffic engineering  
+**TE tunnel / tunnel-te** : MPLS TE tunnel created by user to carry traffic via label switching  
+**FC** : Forward-class  
+**LDPoTE** : LDP-over-TE  
+**ECMP** : Equal cost multi paths
