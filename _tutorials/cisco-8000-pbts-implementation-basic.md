@@ -1895,7 +1895,7 @@ SDK chain info:
 
 PBTS offers additional flexibility in utilizing MPLS-TE tunnels.  
 Instead of having to use all tunnels in an ECMP manner, users can now steer specific traffic streams to use only certain tunnels.  
-The feature also comes with fallback feature by default which can be optimized to offer even more flexibility. When there is failure affecting the primary tunnels, traffic can fall back to back up tunnels as configured.
+The feature also comes with fallback feature by default which can be customized to offer even more flexibility. When there is failure affecting the primary tunnels, traffic can fall back to back up tunnels as configured.
 
 The feature is simple to configure and should be part of any MPLS-TE engineers toolbox.
 
