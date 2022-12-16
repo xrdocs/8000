@@ -241,7 +241,7 @@ When the above is configured, following PBTS path will be used:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-<span style="background-color: #B5EAAA">exp-0 traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA">tunnel-te0</span>
+<span style="background-color: #B5EAAA">exp-0 traffic</span> ➜ no explicit config within policy-map ; use default FC ➜ FC 0 ➜ <span style="background-color: #B5EAAA">tunnel-te0</span>
 <span style="background-color: #B5EAAA">exp-1 traffic</span> ➜ explicit config within policy-map ➜ FC 1 ➜ <span style="background-color: #B5EAAA">tunnel-te1</span>
 <span style="background-color: #B5EAAA">prec_5 traffic</span> ➜ explicit config within policy-map ➜ FC 2 ➜ <span style="background-color: #B5EAAA">tunnel-te2</span>
 <span style="background-color: #B5EAAA">prec_6 traffic</span> ➜ explicit config within policy-map ➜ FC 3 ➜ <span style="background-color: #B5EAAA">tunnel-te3</span>
@@ -250,7 +250,7 @@ When the above is configured, following PBTS path will be used:
 <span style="background-color: #B5EAAA">bcast_vid_cs3 traffic</span> ➜ explicit config within policy-map ➜ FC 6 ➜ <span style="background-color: #B5EAAA">tunnel-te named_6</span> 
 <span style="background-color: #B5EAAA">multimedia_conf_af41 traffic</span> ➜ explicit config within policy-map ➜ FC 7 ➜ <span style="background-color: #B5EAAA">tunnel-te named_7</span>
 
-<span style="background-color: #B5EAAA">all other traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA">tunnel-te0</span>
+<span style="background-color: #B5EAAA">all other traffic</span> ➜ no explicit config within policy-map ; use default FC ➜ FC 0 ➜ <span style="background-color: #B5EAAA">tunnel-te0</span>
 </code>
 </pre>
 </div>
@@ -258,10 +258,10 @@ When the above is configured, following PBTS path will be used:
 
 ## Configuring PBTS : Optional Configuration
 
-**Optimizing hardware resource** usage for forward-classes.  
+**Optimizing hardware resource usage** for forward-classes.  
 If we know for sure which FCs that we will use, we can optimize the hardware resource usage for those FCs by using the following config:
 ```
-hw-module profile cef cbf forward-class-list [a list consisting of 0-7 values]
+hw-module profile cef cbf forward-class-list <a list consisting of 0-7 values>
 ```
 e.g.  
 ```
@@ -349,11 +349,11 @@ We're going to use following topology:
 
 ![02_topo.png]({{site.baseurl}}/images/02_topo.png)
 
-
-MPLS-TE cloud has ISIS for IGP, LDP for LDP-over-TE (LDPoTE), and MPLS TE tunnels.  
-We have 7 TE tunnels with router "Rean" as head end router (where we'll configure PBTS) and router "Musse" as tail end.  
-To allow for LDPoTE session to come up, 1 TE tunnel is also created on Musse as head end and Rean as tail end.  
-We then can configure these TE tunnels under LDP to bring up LDPoTE.
+Underlying network features:
+- MPLS-TE cloud has ISIS for IGP, LDP for LDP-over-TE (LDPoTE), and MPLS TE tunnels.  
+- 8 TE tunnels with router "Rean" as head end router (where we'll configure PBTS) and router "Musse" as tail end.  
+- To allow for LDPoTE session to come up, 1 TE tunnel is also created on Musse as head end and Rean as tail end.  
+- Configure these TE tunnels under LDP to bring up LDPoTE.
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -442,7 +442,7 @@ mpls traffic-eng
 ```
 
 Note that we have `autoroute announce` under all tunnels which means that these tunnels will be considered by IGP when forwarding traffic.
-We also have 64 paths ECMP configured to make sure all tunnels will be used.
+We also have `64 paths ECMP` configured to make sure all tunnels will be used.
 ```
 router isis main
  address-family ipv4 unicast
