@@ -68,7 +68,7 @@ Some important **notes**:
 Rather the use case is if routing have multiple TE tunnel paths toward destination,
 then with PBTS we will be able to pick which TE tunnels should carry the traffic based on traffic's MPLS EXP or IP prec/DSCP values.
 
-- **`8 unique FC values`** are supported (class 0 to class 7).  
+- **8 unique FC values** are supported (class 0 to class 7).  
 Only one FC can be associated with a TE tunnel at any time.
 
 - FC 0 is treated as the **default class** and doesn’t need to be explicitly configured under a TE tunnel.
@@ -82,9 +82,11 @@ However, using "named" tunnels is recommended.
 - When many TE tunnels are equal best paths to same destination, they will be load balanced: up to 64 path **ECMP** TE tunnels can be used for a given destination.  
 However, this can cause issue when we have more than 64 tunnels for a given PBTS destination.  
 consider this config:  
-  - tunnel-te1 up to tunnel-te64 : configured with FC3, use it for FC3 traffic to destination X.  
-  - tunnel-te65 up to tunnel-te100 : configured with FC0, use it for FC0 traffic to destination X.  
-
+  - tunnel-te1 up to tunnel-te64:  
+  configured with FC3, use it for FC3 traffic to destination X.  
+  - tunnel-te65 up to tunnel-te100:  
+  configured with FC0, use it for FC0 traffic to destination X.  
+  
 If we have the above config, it could happen that only FC3 paths will be programmed, causing traffic blackhole for FC0 traffic.  
 The recommendation is to have no more than 64 tunnel-te paths to a given destination, with 64 paths ECMP configured.
 
@@ -252,7 +254,8 @@ When the above is configured, following PBTS path will be used:
 
 ## Configuring PBTS : Optional Configuration
 
-**Optimizing hardware resource usage** for forward-classes.  
+**Optimizing hardware resource usage for forward-classes**
+
 If we know for sure which FCs that we will use, we can optimize the hardware resource usage for those FCs by using the following config:
 ```
 hw-module profile cef cbf forward-class-list <a list consisting of 0-7 values>
@@ -307,7 +310,7 @@ In this way, first FC 0 and its paths will be present as fallback class for all 
 If paths of FC 0 go down, then the next available FC in ascending order of 0-7 will be chosen as the fallback FC, i.e FC 1.  
 When paths in FC 1 go down, the next FC 2 will be chosen as fallback so on and so forth.
 
-We can also use "any" as fallback instead of specifying FC number.
+We can also use `any` as fallback instead of specifying FC number.
 In this way, next available FC in ascending order of 0-7 will be chosen as the fallback FC.
 ```
     cef pbts class 1 fallback-to any
