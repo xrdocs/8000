@@ -513,7 +513,7 @@ Tue Oct 11 00:53:08.180 -07
 </div>
 
 Now let's try sending traffic flows toward destinations that fall within this subnet 102.1.0.0/16.
-All flows have different /32 IP destination, but they all have same IP precedence field set with value 7.
+All flows have different /32 desination IPs, but they all have same IP precedence field set with value 7.
 
 "show interface accounting" output:
 
