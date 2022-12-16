@@ -34,7 +34,7 @@ In Cisco 8000 platform, PBTS is implemented in following manner:
 
 1. Plain IPv4 / plain IPv6 / MPLS **traffic arrives** on ingress interface.
 
-2. Using `class-map` inside `policy-map` set in inbound direction on `ingress interface`, **traffic is classified** based on MPLS EXP or IP prec/DSCP fields and assigned to specific `forward-class (FC)`.
+2. Using **class-map** inside **policy-map** set in inbound direction on **ingress interface**, **traffic is classified** based on MPLS EXP or IP prec/DSCP fields and assigned to specific **forward-class (FC)**.
 
 3. Each TE tunnel is associated with a specific FC.  
 In this way, specific traffic flow can then be **steered to TE tunnel** with the matching FC.  
@@ -64,22 +64,22 @@ The [NOT Supported](#link){: .btn .btn--danger} items will be addressed in futur
 
 Some important **notes**:
 
-- PBTS doesn't override `routing` decision.  
+- PBTS doesn't override **routing** decision.  
 Rather the use case is if routing have multiple TE tunnel paths toward destination,
 then with PBTS we will be able to pick which TE tunnels should carry the traffic based on traffic's MPLS EXP or IP prec/DSCP values.
 
-- `8 unique FC values` are supported (class 0 to class 7).  
+- **`8 unique FC values`** are supported (class 0 to class 7).  
 Only one FC can be associated with a TE tunnel at any time.
 
-- FC 0 is treated as the `default class` and doesn’t need to be explicitly configured under a TE tunnel.
+- FC 0 is treated as the **default class** and doesn’t need to be explicitly configured under a TE tunnel.
 
 - If a TE tunnel is not configured with an explicit FC, it will be associated with a
 default FC 0.
 
-- PBTS is supported on both `named` tunnels and `numbered` tunnels.  
+- PBTS is supported on both **named** tunnels and **numbered** tunnels.  
 However, using "named" tunnels is recommended.
 
-- When many TE tunnels are equal best paths to same destination, they will be load balanced: up to 64 path `ECMP` TE tunnels can be used for a given destination.  
+- When many TE tunnels are equal best paths to same destination, they will be load balanced: up to 64 path **ECMP** TE tunnels can be used for a given destination.  
 However, this can cause issue when we have more than 64 tunnels for a given PBTS destination.  
 consider this config:  
   - tunnel-te1 up to tunnel-te64 : configured with FC3, use it for FC3 traffic to destination X.  
@@ -88,17 +88,17 @@ consider this config:
 If we have the above config, it could happen that only FC3 paths will be programmed, causing traffic blackhole for FC0 traffic.  
 The recommendation is to have no more than 64 tunnel-te paths to a given destination, with 64 paths ECMP configured.
 
-- `Fallback mechanism` is available:
+- **Fallback mechanism** is available:
   - When any FC (except FC 0) paths are down, traffic will switch to default class FC 0 path unless fallback PBTS class is configured.
   - If the fallback PBTS class path itself is not available, default class path will be used.
   - If both fallback PBTS class and default class paths are not available, then traffic will be dropped.
 
-- All `TE related features` (such as TE-FRR etc.) will continue to work as is.
+- All **TE related features** (such as TE-FRR etc.) will continue to work as is.
 
 
 ## Supported Software
 
-This feature is introduced in `IOS XR 7.5.3`.
+This feature is introduced in **IOS XR 7.5.3**.
 
 >
 Note:
@@ -108,7 +108,7 @@ IOS XR 7.5.3 might not be a GA release, please check with your account team for 
 
 ## Supported Hardware
 
-This feature is supported on Cisco 8000 platform using `Gibraltar` ASIC.  
+This feature is supported on Cisco **8000** platform using **Gibraltar** ASIC.  
 e.g.  
 - fixed router: C8201-32FH  
 - line cards for modular router: 88-LC0-36FH-M.
@@ -116,7 +116,7 @@ e.g.
 
 ## Supported Scale
 
-Up to `1,000 TE tunnels` per box and `64 paths ECMP` per destination.
+Up to **1,000 TE tunnels** per box and **64 paths ECMP** per destination.
 
 Note:
 With the following config enabled,
@@ -131,7 +131,7 @@ We can increase the scale of TE tunnels from 1,000 to 4,000.
 
 ## Configuring PBTS : Basic Configuration
 
-`Class-map` configuration.
+**Class-map** configuration.
 ```
         class-map match-any exp-0
            match mpls experimental topmost 0
@@ -167,7 +167,7 @@ We can increase the scale of TE tunnels from 1,000 to 4,000.
         end-class-map
         !
 ```
-String `class-map` with `forward-class` using `policy-map`.
+String **class-map** with **forward-class** using **policy-map**.
 ```
         policy-map MY_PBTS
         !
@@ -197,14 +197,14 @@ String `class-map` with `forward-class` using `policy-map`.
         end-policy-map
 ```
 
-Assign the `policy-map` on `ingress interface` in inbound direction.
+Assign the **policy-map** on **ingress interface** in inbound direction.
 ```
         interface Bundle-Ether1
             service-policy input MY_PBTS
         root
 ```
 
-Assign `forward-class` to `TE tunnels`.
+Assign **forward-class** to **TE tunnels**.
 ```
         interface tunnel-te0
          forward-class 0
@@ -241,22 +241,20 @@ When the above is configured, following PBTS path will be used:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-<span style="background-color: #B5EAAA>exp-0 traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA>tunnel-te0</span>#B5EAAA>tunnel-te0</span>
+<span style="background-color: #B5EAAA">exp-0 traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA">tunnel-te0</span>
+<span style="background-color: #B5EAAA">exp-1 traffic</span> ➜ explicit config within policy-map ➜ FC 1 ➜ <span style="background-color: #B5EAAA">tunnel-te1</span>
+<span style="background-color: #B5EAAA">prec_5 traffic</span> ➜ explicit config within policy-map ➜ FC 2 ➜ <span style="background-color: #B5EAAA">tunnel-te2</span>
+<span style="background-color: #B5EAAA">prec_6 traffic</span> ➜ explicit config within policy-map ➜ FC 3 ➜ <span style="background-color: #B5EAAA">tunnel-te3</span>
+<span style="background-color: #B5EAAA">prec_7 traffic</span> ➜ explicit config within policy-map ➜ FC 4 ➜ <span style="background-color: #B5EAAA">tunnel-te named_4</span>
+<span style="background-color: #B5EAAA">low_lat_af21 traffic</span> ➜ explicit config within policy-map ➜ FC 5 ➜ <span style="background-color: #B5EAAA">tunnel-te named_5</span>
+<span style="background-color: #B5EAAA">bcast_vid_cs3 traffic</span> ➜ explicit config within policy-map ➜ FC 6 ➜ <span style="background-color: #B5EAAA">tunnel-te named_6</span> 
+<span style="background-color: #B5EAAA">multimedia_conf_af41 traffic</span> ➜ explicit config within policy-map ➜ FC 7 ➜ <span style="background-color: #B5EAAA">tunnel-te named_7</span>
+
+<span style="background-color: #B5EAAA">all other traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA">tunnel-te0</span>
 </code>
 </pre>
 </div>
 
-```
-<span style="background-color: #B5EAAA>exp-1 traffic</span> ➜ explicit config within policy-map ➜ FC 1 ➜ <span style="background-color: #B5EAAA>tunnel-te1</span>
-<span style="background-color: #B5EAAA>prec_5 traffic</span> ➜ explicit config within policy-map ➜ FC 2 ➜ <span style="background-color: #B5EAAA>tunnel-te2</span>
-<span style="background-color: #B5EAAA>prec_6 traffic</span> ➜ explicit config within policy-map ➜ FC 3 ➜ <span style="background-color: #B5EAAA>tunnel-te3</span>
-<span style="background-color: #B5EAAA>prec_7 traffic</span> ➜ explicit config within policy-map ➜ FC 4 ➜ <span style="background-color: #B5EAAA>tunnel-te named_4</span>
-<span style="background-color: #B5EAAA>low_lat_af21 traffic</span> ➜ explicit config within policy-map ➜ FC 5 ➜ `tunnel-te named_5</span>
-<span style="background-color: #B5EAAA>bcast_vid_cs3 traffic</span> ➜ explicit config within policy-map ➜ FC 6 ➜ <span style="background-color: #B5EAAA>tunnel-te named_6</span> 
-<span style="background-color: #B5EAAA>multimedia_conf_af41 traffic</span> ➜ explicit config within policy-map ➜ FC 7 ➜ <span style="background-color: #B5EAAA>tunnel-te named_7</span>
-
-<span style="background-color: #B5EAAA>all other traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: 
-```
 
 ## Configuring PBTS : Optional Configuration
 
