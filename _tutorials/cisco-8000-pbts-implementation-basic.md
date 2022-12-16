@@ -110,8 +110,8 @@ IOS XR 7.5.3 might not be a GA release, please check with your account team for 
 
 This feature is supported on Cisco 8000 platform using `Gibraltar` ASIC.  
 e.g.  
-fixed router: C8201-32FH  
-line cards for modular router: 88-LC0-36FH-M.
+- fixed router: C8201-32FH  
+- line cards for modular router: 88-LC0-36FH-M.
 
 
 ## Supported Scale
@@ -131,7 +131,7 @@ We can increase the scale of TE tunnels from 1,000 to 4,000.
 
 ## Configuring PBTS : Basic Configuration
 
-Class-map configuration.
+`Class-map` configuration.
 ```
         class-map match-any exp-0
            match mpls experimental topmost 0
@@ -167,7 +167,7 @@ Class-map configuration.
         end-class-map
         !
 ```
-String class-map with forward-class using policy-map.
+String `class-map` with `forward-class` using `policy-map`.
 ```
         policy-map MY_PBTS
         !
@@ -197,14 +197,14 @@ String class-map with forward-class using policy-map.
         end-policy-map
 ```
 
-Assign the policy-map on ingress interface in inbound direction.
+Assign the `policy-map` on `ingress interface` in inbound direction.
 ```
         interface Bundle-Ether1
             service-policy input MY_PBTS
         root
 ```
 
-Assign forward-class to TE tunnels.
+Assign `forward-class` to `TE tunnels`.
 ```
         interface tunnel-te0
          forward-class 0
@@ -238,16 +238,22 @@ Assign forward-class to TE tunnels.
 
 When the above is configured, following PBTS path will be used:
 
-`exp-0 traffic` ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ `tunnel-te0`  
-`exp-1 traffic` ➜ explicit config within policy-map ➜ FC 1 ➜ `tunnel-te1`  
-`prec_5 traffic` ➜ explicit config within policy-map ➜ FC 2 ➜ `tunnel-te2`  
-`prec_6 traffic` ➜ explicit config within policy-map ➜ FC 3 ➜ `tunnel-te3`  
-`prec_7 traffic` ➜ explicit config within policy-map ➜ FC 4 ➜ `tunnel-te named_4`  
-`low_lat_af21 traffic` ➜ explicit config within policy-map ➜ FC 5 ➜ `tunnel-te named_5`  
-`bcast_vid_cs3 traffic` ➜ explicit config within policy-map ➜ FC 6 ➜ `tunnel-te named_6`  
-`multimedia_conf_af41 traffic` ➜ explicit config within policy-map ➜ FC 7 ➜ `tunnel-te named_7`
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<span style="background-color: #B5EAAA>exp-0 traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA>tunnel-te0</span>
+<span style="background-color: #B5EAAA>exp-1 traffic</span> ➜ explicit config within policy-map ➜ FC 1 ➜ <span style="background-color: #B5EAAA>tunnel-te1</span>
+<span style="background-color: #B5EAAA>prec_5 traffic</span> ➜ explicit config within policy-map ➜ FC 2 ➜ <span style="background-color: #B5EAAA>tunnel-te2</span>
+<span style="background-color: #B5EAAA>prec_6 traffic</span> ➜ explicit config within policy-map ➜ FC 3 ➜ <span style="background-color: #B5EAAA>tunnel-te3</span>
+<span style="background-color: #B5EAAA>prec_7 traffic</span> ➜ explicit config within policy-map ➜ FC 4 ➜ <span style="background-color: #B5EAAA>tunnel-te named_4</span>
+<span style="background-color: #B5EAAA>low_lat_af21 traffic</span> ➜ explicit config within policy-map ➜ FC 5 ➜ `tunnel-te named_5</span>
+<span style="background-color: #B5EAAA>bcast_vid_cs3 traffic</span> ➜ explicit config within policy-map ➜ FC 6 ➜ <span style="background-color: #B5EAAA>tunnel-te named_6</span> 
+<span style="background-color: #B5EAAA>multimedia_conf_af41 traffic</span> ➜ explicit config within policy-map ➜ FC 7 ➜ <span style="background-color: #B5EAAA>tunnel-te named_7</span>
 
-`all other traffic` ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ `tunnel-te0`
+<span style="background-color: #B5EAAA>all other traffic</span> ➜ no explicit config within policy-map ; use default forward class ➜ FC 0 ➜ <span style="background-color: #B5EAAA>tunnel-te0</span>
+</code>
+</pre>
+</div>
 
 
 ## Configuring PBTS : Optional Configuration
