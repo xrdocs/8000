@@ -12,7 +12,7 @@ tags:
   - Cisco 8000
   - PBTS
   - MPLS-TE
-position: hidden
+position: top
 ---
 {% include toc icon="table" title="Cisco 8000 PBTS Implementation (Basic)" %}
 
