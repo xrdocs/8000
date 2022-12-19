@@ -811,19 +811,19 @@ Also pay attention to this part from output above that only shows when PBTS is a
 <pre class="highlight">
 <code>
     PBTS class information:
-      class 0: 7 paths, offset 0                    <mark>🠔 7 TE tunnels for FC0 (hash 0 to hash 6)</mark>
-      forward class 4: 1 paths, offset 7            <mark>🠔 1 TE tunnel for FC4 (hash 7)</mark>
+      class 0: 7 paths, offset 0                    <mark> 7 TE tunnels for FC0 (hash 0 to hash 6)</mark>
+      forward class 4: 1 paths, offset 7            <mark> 1 TE tunnel for FC4 (hash 7)</mark>
     Load distribution: 0 1 2 3 4 5 6 7 (refcount 3)
 
     Hash  OK  Interface                 Address
-    0     Y   tunnel-te1                point2point <mark>🠔 FC0 tunnel</mark>
-    1     Y   named_5                   point2point <mark>🠔 FC0 tunnel</mark>
-    2     Y   named_6                   point2point <mark>🠔 FC0 tunnel</mark>
-    3     Y   named_7                   point2point <mark>🠔 FC0 tunnel</mark>
-    4     Y   tunnel-te0                point2point <mark>🠔 FC0 tunnel</mark>
-    5     Y   tunnel-te2                point2point <mark>🠔 FC0 tunnel</mark>
-    6     Y   tunnel-te3                point2point <mark>🠔 FC0 tunnel</mark>
-    7     Y   named_4                   point2point <mark>🠔 FC4 tunnel</mark>
+    0     Y   tunnel-te1                point2point <mark> FC0 tunnel</mark>
+    1     Y   named_5                   point2point <mark> FC0 tunnel</mark>
+    2     Y   named_6                   point2point <mark> FC0 tunnel</mark>
+    3     Y   named_7                   point2point <mark> FC0 tunnel</mark>
+    4     Y   tunnel-te0                point2point <mark> FC0 tunnel</mark>
+    5     Y   tunnel-te2                point2point <mark> FC0 tunnel</mark>
+    6     Y   tunnel-te3                point2point <mark> FC0 tunnel</mark>
+    7     Y   named_4                   point2point <mark> FC4 tunnel</mark>
 </code>
 </pre>
 </div>
