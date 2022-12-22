@@ -252,16 +252,16 @@ Assign **forward-class** to **TE tunnels**.
 
 When the above is configured, following PBTS path will be used:
 
-`exp-0 traffic` ---> no explicit config within policy-map ; use default FC --> FC 0 --> `tunnel-te0`  
-`exp-1 traffic` ---> explicit config within policy-map --> FC 1 --> `tunnel-te1`  
-`prec_5 traffic` ---> explicit config within policy-map --> FC 2 --> `tunnel-te2`  
-`prec_6 traffic` ---> explicit config within policy-map --> FC 3 --> `tunnel-te3`  
-`prec_7 traffic` ---> explicit config within policy-map --> FC 4 --> `tunnel-te named_4`  
-`low_lat_af21 traffic` ---> explicit config within policy-map --> FC 5 --> `tunnel-te named_5`  
-`bcast_vid_cs3 traffic` ---> explicit config within policy-map --> FC 6 --> `tunnel-te named_6`  
-`multimedia_conf_af41 traffic` ---> explicit config within policy-map --> FC 7 --> `tunnel-te named_7`  
+`exp-0 traffic` ➜ no explicit config within policy-map ; use default FC ➜ FC 0 ➜ `tunnel-te0`  
+`exp-1 traffic` ➜ explicit config within policy-map ➜ FC 1 ➜ `tunnel-te1`  
+`prec_5 traffic` ➜ explicit config within policy-map ➜ FC 2 ➜ `tunnel-te2`  
+`prec_6 traffic` ➜ explicit config within policy-map ➜ FC 3 ➜ `tunnel-te3`  
+`prec_7 traffic` ➜ explicit config within policy-map ➜ FC 4 ➜ `tunnel-te named_4`  
+`low_lat_af21 traffic` ➜ explicit config within policy-map ➜ FC 5 ➜ `tunnel-te named_5`  
+`bcast_vid_cs3 traffic` ➜ explicit config within policy-map ➜ FC 6 ➜ `tunnel-te named_6`  
+`multimedia_conf_af41 traffic` ➜ explicit config within policy-map ➜ FC 7 ➜ `tunnel-te named_7`  
 
-`all other traffic` ---> no explicit config within policy-map ; use default FC --> FC 0 --> `tunnel-te0`  
+`all other traffic` ➜ no explicit config within policy-map ; use default FC ➜ FC 0 ➜ `tunnel-te0`  
 
 
 ## Configuring PBTS : Optional Configuration
