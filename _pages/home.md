@@ -50,7 +50,7 @@ date: null
             <h2 class="archive__item-title"><a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=cisco%208000#/session/1610554628039001Tso9" target="_blank"></a>
             Cisco Live: Cisco 8000 Technical Update: Powered by Silicon One and IOS XR7 - BRKSPG-2944</h2>
             <div class="archive__item-excerpt" style="font-size: 0.65em;">
-            <p> Cisco Live EMEA 2023 BRKSPG-2944 technical breakout (available via CiscoLive recording), presented by Fred Cuiller. This presentation introduces latest Cisco 8000 portfolio including 8800 distributed systems, 8200 and 8100 fixed systems. Technical material also details ASIC and hardware architecture, design, capabilities, forwarding, life of a packet and troubleshooting. IOS XR7 software architecture and operations is covered. 400G technologies including ZR and ZR+ is also addressed in this presentation.</p>
+            <p> Cisco Live EMEA 2023 BRKSPG-2944 technical breakout (available via CiscoLive recording), presented by <b>Fred Cuiller</b>. This presentation introduces latest Cisco 8000 portfolio including 8800 distributed systems, 8200 and 8100 fixed systems. Technical material also details ASIC and hardware architecture, design, capabilities, forwarding, life of a packet and troubleshooting. IOS XR7 software architecture and operations is covered. 400G technologies including ZR and ZR+ is also addressed in this presentation.</p>
             </div>
             <a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=BRKSPG-2944#/session/1675722398519001tQ7h" target="_blank"  class="btn btn--large">Watch on Cisco</a>
         </div>
