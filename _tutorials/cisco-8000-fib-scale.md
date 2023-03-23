@@ -349,8 +349,8 @@ Current Hardware Usage
            Total In-Use                : 210156
 ```
 
-**Note:** On a distributed system, LPM is programmed across all linecards NPUs.
-{: .notice--primary}
+**Info:** On a distributed system, LPM is programmed across all linecards NPUs.
+{: .notice--info}
 
 ## Future BGP Growth Support
 
