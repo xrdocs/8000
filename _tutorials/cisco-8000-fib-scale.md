@@ -352,13 +352,85 @@ Current Hardware Usage
 **Note:** On a distributed system, LPM is programmed across all linecards NPUs.
 {: .notice--primary}
 
-
 ## Future BGP Growth Support
+
+Now resources utilization has been checked against a current production deployment for both Q100 and Q200 ASICs, it’s time to simulate 5-year growth, mainly driven by the BGP table.
+
+APNIC provides BGP table forecasts in its [yearly BGP table report](https://blog.apnic.net/2023/01/06/bgp-in-2022-the-routing-table/). Additional data from [BGP4](https://twitter.com/bgp4_table) and [BGP6](https://twitter.com/bgp6_table) table twitter accounts is also used for prefixes distribution analysis.  
+
+For IPv4, data shows future growth follows a linear model with 150 additional prefixes daily. It’s expected to have ~ 1.2M IPv4 routes in 2028. This is the value which will be tested.
+
+IPv4 BGP table predictions (courtesy Geoff Huston, APNIC)
+{: .text-center}
+
+For IPv6, things are more complex: linear and exponential models give between 400k and 1.2M IPv6 routes in January 2028, which is a huge difference. An average value of 800k will be tested.
+
+Projections of IPv6 BGP table size (courtesy Geoff Huston, APNIC)
+{: .text-center}
+
+To make the future FIB is realistic enough, current prefixes distribution will be applied for additional prefixes, meaning most additional IPv4 prefixes will be driven by /24 which are deallocated from bigger blocks, and most additional IPv6 will be driven by recently allocated /48, /32 and /36.
+
+### Q100
+### Q200
+
 
 ## 8000 FIB Scale Increase
 
+Starting IOS-XR 7.9.1, a new hw-module profile has been introduced to increase Cisco 8000 FIB scale up to 3M IPv4 and 1M IPv6 prefixes: '''hw-module profile route scale lpm tcam-banks'''  
+
+This mode is only supported on Q200 ASIC. System must be reloaded after activation:
+
+```
+RP/0/RP0/CPU0:8201-32FH(config)#hw-module profile route scale lpm tcam-banks
+Mon Mar 20 22:05:53.261 UTC
+In order to activate/deactivate this Scale LPM TCAM Banks profile, you must manually reload the chassis/all line cards
+RP/0/RP0/CPU0:8201-1(config)#commit
+Mon Mar 20 22:05:56.956 UTC
+RP/0/RP0/CPU0:Mar 20 22:05:56.994 UTC: npu_drvr[316]: %FABRIC-NPU_DRVR-3-HW_MODULE_PROFILE_CHASSIS_CFG_CHANGED : Hw-module profile config changed for "route scale lpm high", do chassis reload to get the most recent config updated
+```
+
+Once activated, some TCAM banks previously allocated for classification ACL will be used to store prefixes. Consequence is ACL scale is reduced (from 9.5k IPv4 entries to 7.5k entries, or from 5k IPv6 entries to 4k entries).
+
+This is what LPM utilization looks like for the same 5-year growth projection:
+
+This gives even more room for growth for 2030 and beyond.
+
+
 ## FIB Telemetry
+
+CEF prefixes distribution can be collected with following CEF sensor-group:
+
+```
+sensor-group CEF
+  sensor-path Cisco-IOS-XR-fib-common-oper:fib/nodes/node/protocols/protocol/fib-summaries/fib-summary/prefix-masklen-distribution/unicast-prefixes
+```
+
+When using telegraf, additional configuration must be used to treat mask length as a tag:
+
+```
+embedded_tags = ["Cisco-IOS-XR-fib-common-oper:fib/nodes/node/protocols/protocol/fib-summaries/fib-summary/prefix-masklen-distribution/unicast-prefixe/mask-length"]
+```
+
+Here is sample Grafana visualization:
+
+Cisco 8000 LPM TCAM and other NPU resources can be monitored with Open Forwarding Agent (OFA) sensor-group:
+
+```
+sensor-group OFA
+  sensor-path Cisco-IOS-XR-platforms-ofa-oper:ofa
+```
+
+As CEF, an extra configuration must be added to create tags when using telegraf:
+
+```
+embedded_tags = [
+"Cisco-IOS-XR-platforms-ofa-oper:ofa/stats/nodes/node/Cisco-IOS-XR-8000-platforms-npu-resources-oper:hw-resources-datas/hw-resources-data/npu-hwr/bank/bank-name",
+"Cisco-IOS-XR-platforms-ofa-oper:ofa/stats/nodes/node/Cisco-IOS-XR-8000-platforms-npu-resources-oper:hw-resources-datas/hw-resources-data/npu-hwr/bank/lt-hwr/name"
+]
+```
+
+Here is sample Grafana visualization:
 
 ## Conclusion
 
-These tests assessed Cisco 8000 current and future FIB scale. Resources monitoring and visualization was done using both traditional CLI and streaming telemetry techniques. The new FIB scale increase, introduced with IOS-XR 7.9.1 and supported on Silicon One Q200, was also demonstrated. This ultimately confirms 8000 routers can deal with peering and core FIB profiles.
+These tests measured Cisco 8000 current and future FIB scale. Resources monitoring and visualization was done using both traditional CLI and streaming telemetry techniques. The new FIB scale increase, introduced with IOS-XR 7.9.1 and supported on Silicon One Q200, was also demonstrated to support even higher scale. This ultimately confirms 8000 routers can deal with peering and core FIB requirements.
