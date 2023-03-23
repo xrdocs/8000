@@ -119,8 +119,8 @@ The testbed is configured with Cisco 8000 routers running latest IOS-XR version 
 Let’s have a look at prefixes distribution first.  
 IPv4 distribution is the following:
 
+```
 RP/0/RP0/CPU0:8202-1#sh cef summary
-
 Router ID is 192.0.2.37
 
 IP CEF with switching (Table Version 0) for node0_RP0_CPU0
@@ -138,13 +138,13 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
                  17 /8 , 1 /0
       broadcast: 4 /32
       multicast: 1 /24, 1 /4
+```
 
 While IPv6 distribution is the following:
 
+```
 RP/0/RP0/CPU0:8202-1#sh cef ipv6 summary
-
 Router ID is 192.0.2.37
-
 IP CEF with switching (Table Version 0) for node0_RP0_CPU0
 
   Load balancing: L4
@@ -165,14 +165,193 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
       multicast: 1 /128, 1 /104, 3 /16                 15 /26 , 8 /25 , 27 /24 , 7 /23 , 6 /22 , 3 /21
                  14 /20 , 1 /19 , 1 /16 , 1 /10 , 1 /0
       multicast: 1 /128, 1 /104, 3 /16
+```
       
 This is a visual representation of the FIB:
 
 This corresponds with [@bgp4_table](https://twitter.com/bgp4_table) and [@bgp6_table](https://twitter.com/bgp6_table) daily tweets:
 
-
 ### Q100
+
+On Silicon One Q100 based systems (8202 fixed system is used here), current LPM utilization is 52%:
+
+```
+RP/0/RP0/CPU0:8202-1#sh controllers npu resources lpmtcam location 0/RP0/CPU0
+HW Resource Information
+    Name                            : lpm_tcam
+    Asic Type                       : Q100
+
+NPU-0
+OOR Summary
+        Estimated Max Entries       : 100
+        Red Threshold               : 95 %
+        Yellow Threshold            : 80 %
+        OOR State                   : Green
+        OOR State Change Time       : 2023.Mar.20 16:03:51 UTC
+
+
+OFA Table Information
+(May not match HW usage)
+        iprte                       : 1107561
+        ip6rte                      : 210022
+        ip6mcrte                    : 0
+        ipmcrte                     : 0
+
+Current Hardware Usage
+    Name: lpm_tcam
+        Estimated Max Entries       : 100
+        Total In-Use                : 52       (52 %)
+        OOR State                   : Green
+        OOR State Change Time       : 2023.Mar.20 16:03:51 UTC
+
+
+       Name: v4_lpm
+           Total In-Use                : 1107581
+
+
+       Name: v6_lpm
+           Total In-Use                : 210025
+```
+
+It's expected to have marginal CEM occupancy as number of /128 prefixes is low:
+
+```
+RP/0/RP0/CPU0:8202-1#sh controllers npu resources centralem location 0/RP0/CPU0
+HW Resource Information
+    Name                            : central_em
+    Asic Type                       : Q100
+
+NPU-0
+OOR Summary
+        Estimated Max Entries       : 100
+        Red Threshold               : 95 %
+        Yellow Threshold            : 80 %
+        OOR State                   : Green
+
+
+OFA Table Information
+(May not match HW usage)
+        brmac                       : 0
+        iprte                       : 17
+        ip6rte                      : 4610
+        mplsrte                     : 5
+        puntlptspolicer             : 92
+        ipmcrte                     : 0
+        ip6mcrte                    : 0
+        aclpolicer                  : 0
+
+Current Hardware Usage
+    Name: central_em
+        Estimated Max Entries       : 100
+        Total In-Use                : 3        (3 %)
+        OOR State                   : Green
+```
+
 ### Q200
+
+For this test, a 88-LC0-36FH linecard powered by Silicon One Q200 is used.  LPM utilization is slightly lower with 41% resources consumed:
+
+```
+RP/0/RP1/CPU0:8812-1#sh controllers npu resources lpmtcam location 0/1/CPU0
+HW Resource Information
+    Name                            : lpm_tcam
+    Asic Type                       : Q200
+
+NPU-0
+OOR Summary
+        Estimated Max Entries       : 100
+        Red Threshold               : 95 %
+        Yellow Threshold            : 80 %
+        OOR State                   : Green
+
+
+OFA Table Information
+(May not match HW usage)
+        iprte                       : 1107694
+        ip6rte                      : 210110
+        ip6mcrte                    : 0
+        ipmcrte                     : 0
+
+Current Hardware Usage
+    Name: lpm_tcam
+        Estimated Max Entries       : 100
+        Total In-Use                : 41       (41 %)
+        OOR State                   : Green
+
+
+       Name: v4_lpm
+           Total In-Use                : 1107748
+
+
+       Name: v6_lpm
+           Total In-Use                : 210156
+
+
+
+NPU-1
+OOR Summary
+        Estimated Max Entries       : 100
+        Red Threshold               : 95 %
+        Yellow Threshold            : 80 %
+        OOR State                   : Green
+
+
+OFA Table Information
+(May not match HW usage)
+        iprte                       : 1107694
+        ip6rte                      : 210110
+        ip6mcrte                    : 0
+        ipmcrte                     : 0
+
+Current Hardware Usage
+    Name: lpm_tcam
+        Estimated Max Entries       : 100
+        Total In-Use                : 41       (41 %)
+        OOR State                   : Green
+
+
+       Name: v4_lpm
+           Total In-Use                : 1107748
+
+
+       Name: v6_lpm
+           Total In-Use                : 210156
+
+
+
+NPU-2
+OOR Summary
+        Estimated Max Entries       : 100
+        Red Threshold               : 95 %
+        Yellow Threshold            : 80 %
+        OOR State                   : Green
+
+
+OFA Table Information
+(May not match HW usage)
+        iprte                       : 1107694
+        ip6rte                      : 210110
+        ip6mcrte                    : 0
+        ipmcrte                     : 0
+
+Current Hardware Usage
+    Name: lpm_tcam
+        Estimated Max Entries       : 100
+        Total In-Use                : 41       (41 %)
+        OOR State                   : Green
+
+
+       Name: v4_lpm
+           Total In-Use                : 1107748
+
+
+       Name: v6_lpm
+           Total In-Use                : 210156
+```
+
+**Note:** On a distributed system, LPM is programmed across all linecards NPUs.
+{: .notice--primary}
+
 
 ## Future BGP Growth Support
 
