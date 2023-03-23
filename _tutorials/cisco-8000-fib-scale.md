@@ -178,7 +178,9 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
 </pre>
 </div>
       
-This is a visual representation of the FIB:
+This is a visual representation of the FIB distribution using telemetry:
+
+![fib-distribution.png]({{site.baseurl}}/images/fib-distribution.png)
 
 This corresponds with [@bgp4_table](https://twitter.com/bgp4_table) and [@bgp6_table](https://twitter.com/bgp6_table) daily tweets:
 
