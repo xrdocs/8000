@@ -263,6 +263,8 @@ Current Hardware Usage
 </pre>
 </div>
 
+Rest of this article will focus on LPM only.
+
 ### Q200
 
 For this test, a 88-LC0-36FH linecard powered by Silicon One Q200 is used.  LPM utilization is slightly lower with 41% resources consumed:
@@ -392,7 +394,98 @@ To make the future FIB is realistic enough, current prefixes distribution will b
 
 ### Q100
 
+With this 2028 profile, Q100 LPM utilization reaches 94% while not  going into Out of Resource state:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-1#sh controllers npu resources lpmtcam location 0/RP0/CPU0
+HW Resource Information
+    Name                            : lpm_tcam
+    <mark>Asic Type                       : Q100</mark>
+
+NPU-0
+OOR Summary
+        Estimated Max Entries       : 100
+        Red Threshold               : 95 %
+        Yellow Threshold            : 80 %
+        OOR State                   : Yellow
+        OOR State Change Time       : 2023.Mar.23 07:28:01 UTC
+
+
+OFA Table Information
+(May not match HW usage)
+        iprte                       : 1398110
+        ip6rte                      : 865460
+        ip6mcrte                    : 0
+        ipmcrte                     : 0
+
+Current Hardware Usage
+    Name: lpm_tcam
+        Estimated Max Entries       : 100
+        <mark>Total In-Use                : 94       (94 %)</mark>
+        OOR State                   : Yellow
+        OOR State Change Time       : 2023.Mar.23 07:28:01 UTC
+
+
+<mark>       Name: v4_lpm
+           Total In-Use                : 1398131
+
+
+       Name: v6_lpm
+           Total In-Use                : 865455</mark>
+</code>
+</pre>
+</div>
+
+Introduced late 2019, it is future proof for the next years to come.
+
 ### Q200
+
+With the 2028 profile, Q200 has more room for margin with 84% LPM utilization:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP1/CPU0:8812-1#sh controllers npu resources lpmtcam location 0/1/CPU0
+HW Resource Information
+    Name                            : lpm_tcam
+    <mark>Asic Type                       : Q200</mark>
+
+NPU-0
+OOR Summary
+        Estimated Max Entries       : 100
+        Red Threshold               : 95 %
+        Yellow Threshold            : 80 %
+        OOR State                   : Yellow
+        OOR State Change Time       : 2023.Mar.23 14:13:53 UTC
+
+
+OFA Table Information
+(May not match HW usage)
+        iprte                       : 1398243
+        ip6rte                      : 865548
+        ip6mcrte                    : 0
+        ipmcrte                     : 0
+
+Current Hardware Usage
+    Name: lpm_tcam
+        Estimated Max Entries       : 100
+        <mark>Total In-Use                : 84       (84 %)</mark>
+        OOR State                   : Yellow
+        OOR State Change Time       : 2023.Mar.23 14:13:53 UTC
+
+
+       Name: v4_lpm
+           <mark>Total In-Use                : 1398297</mark>
+
+
+       Name: v6_lpm
+           <mark>Total In-Use                : 865594</mark>
+snip
+</code>
+</pre>
+</div>
 
 
 ## 8000 FIB Scale Increase
@@ -418,7 +511,48 @@ Once activated, some TCAM banks previously allocated for classification ACL will
 
 This is what LPM utilization looks like for the same 5-year growth projection:
 
-This gives even more room for growth for 2030 and beyond.
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH#sh controllers npu resources lpmtcam location 0/RP0/CPU0
+Thu Mar 23 14:14:56.905 UTC
+HW Resource Information
+    Name                            : lpm_tcam
+    <mark>Asic Type                       : Q200</mark>
+
+NPU-0
+OOR Summary
+        Estimated Max Entries       : 100
+        Red Threshold               : 95 %
+        Yellow Threshold            : 80 %
+        OOR State                   : Green
+
+
+OFA Table Information
+(May not match HW usage)
+        iprte                       : 1398116
+        ip6rte                      : 865463
+        ip6mcrte                    : 0
+        ipmcrte                     : 0
+
+Current Hardware Usage
+    Name: lpm_tcam
+        Estimated Max Entries       : 100
+        <mark>Total In-Use                : 42       (42 %)</mark>
+        OOR State                   : Green
+
+
+       Name: v4_lpm
+           Total In-Use                : 1398141
+
+
+       Name: v6_lpm
+           Total In-Use                : 865467
+</code>
+</pre>
+</div>
+
+With only 42% utilization, this gives even more room for growth for 2030 and beyond.
 
 
 ## FIB Telemetry
@@ -458,4 +592,6 @@ Here is sample Grafana visualization:
 
 ## Conclusion
 
-These tests measured Cisco 8000 current and future FIB scale. Resources monitoring and visualization was done using both traditional CLI and streaming telemetry techniques. The new FIB scale increase, introduced with IOS-XR 7.9.1 and supported on Silicon One Q200, was also demonstrated to support even higher scale. This ultimately confirms 8000 routers can deal with peering and core FIB requirements.
+These tests measured Cisco 8000 current and future FIB scale. Resources monitoring and visualization was done using both traditional CLI and streaming telemetry techniques.  
+While there is no immediate need for both Q100 and Q200 based systems, the new FIB scale increase feature introduced with IOS-XR 7.9.1 and supported on Silicon One Q200, was demonstrated to support even higher scale. 
+This ultimately confirms 8000 routers can deal with peering and core FIB requirements.
