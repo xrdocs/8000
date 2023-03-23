@@ -409,7 +409,7 @@ To make the future FIB realistic enough, current prefixes distribution will be a
 
 ### Q100
 
-With this 2028 profile, Q100 LPM utilization reaches 94%. It's interesting to note system does not enter into Out of Resource state and there are still free entries:
+With this 2028 profile, Q100 LPM utilization reaches 94%. It's interesting to note system does not enter into Out of Resource state and there are still free LPM entries:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -507,7 +507,7 @@ snip
 
 Starting IOS-XR 7.9.1, a new hw-module profile has been introduced to increase Cisco 8000 FIB scale up to 3M IPv4 and 1M IPv6 prefixes: <code>hw-module profile route scale lpm tcam-banks</code> 
 
-This profile is only supported on Q200 ASIC. System must be reloaded after activation:
+This profile is only supported on Q200 ASICs. System must be reloaded after activation:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
