@@ -587,6 +587,8 @@ embedded_tags = ["Cisco-IOS-XR-fib-common-oper:fib/nodes/node/protocols/protocol
 
 Here is sample Grafana visualization:
 
+![fib-distribution.png]({{site.baseurl}}/images/fib-distribution.png)
+
 Cisco 8000 LPM TCAM and other NPU resources can be monitored with Open Forwarding Agent (OFA) sensor-group:
 
 ```
