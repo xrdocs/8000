@@ -379,7 +379,7 @@ Current Hardware Usage
 </pre>
 </div>
 
-**Info:** On a distributed system, LPM is programmed across all linecards NPUs.
+**Info:** Inside a 8800 distributed system, LPM is programmed across all linecards NPUs.
 {: .notice--info}
 
 ## Future BGP Growth Support
