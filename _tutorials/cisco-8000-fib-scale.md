@@ -582,7 +582,7 @@ sensor-group CEF
 When using telegraf, additional configuration must be used to treat mask length as a tag:
 
 ```
-embedded_tags = ["Cisco-IOS-XR-fib-common-oper:fib/nodes/node/protocols/protocol/fib-summaries/fib-summary/prefix-masklen-distribution/unicast-prefixe/mask-length"]
+embedded_tags = ["Cisco-IOS-XR-fib-common-oper:fib/nodes/node/protocols/protocol/fib-summaries/fib-summary/prefix-masklen-distribution/unicast-prefix/mask-length"]
 ```
 
 Here is sample Grafana visualization:
