@@ -101,7 +101,7 @@ Additional customer’s internal routes are carried over iBGP for both address f
 
 Table below summarizes prefixes origin, volume, and distribution:
 
-| _    Prefixes   _                                              | _    Current Scale IPv4   _ | _    Current Scale IPv6   _ |
+| _Prefixes_                                              | _Current Scale IPv4_ | _Current Scale IPv6_ |
 |----------------------------------------------------------------|-----------------------------|-----------------------------|
 |     ISIS loopbacks                                             |     18k                     |     1.5k                    |
 |     ISIS P2P & LAN                                             |     10k                     |     1k                      |
