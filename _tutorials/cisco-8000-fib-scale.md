@@ -603,6 +603,8 @@ embedded_tags = [
 ```
 
 Here is sample Grafana visualization:
+![fib-ofa-telemetry.png]({{site.baseurl}}/images/fib-ofa-telemetry.png)
+
 
 ## Conclusion
 
