@@ -20,8 +20,7 @@ position: hidden
 ## Introduction
 Cisco 8000 routers have been widely adopted and deployed by service provider and cloud customers for core and peering roles. For those positions, FIB scale matters. 
 
-This article will document how Silicon One Q100 and Q200 based systems can support current and future BGP scale. Based on projected growth, tests will demonstrate they are also future proof.  
-Last, a new feature introduced to increase FIB scale on Q200 will be demonstrated. Telemetry data will also be used to illustrate system capabilities.
+This article will document how Silicon One Q100 and Q200 based systems can support current and future BGP scale. Based on projected growth, tests will demonstrate they are also future proof. Last, a new feature introduced to increase FIB scale on Q200 will be demonstrated. Telemetry data will also be used to illustrate system capabilities.
 
 ## What’s The FIB Scale
 
