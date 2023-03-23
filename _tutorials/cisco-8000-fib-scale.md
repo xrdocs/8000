@@ -17,7 +17,7 @@ position: hidden
 ---
 {% include toc icon="table" title="Cisco 8000 FIB Scale" %}
 
-# Introduction
+## Introduction
 Released 3 years ago in late 2019, Cisco 8000 routers have been widely adopted and deployed by service provider and cloud customers for core and peering roles.  
 
 This article will document how Silicon One Q100 and Q200 based systems can support current and future BGP scale for peering and core roles. Based on projected growth, we will check they are future proof for the next years to come.  
