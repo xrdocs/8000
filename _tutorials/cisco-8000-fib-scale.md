@@ -89,6 +89,29 @@ LPM and CEM are physically located amongst different Q100 and Q200 ASIC memories
 
 ## FIB Scale Testing Methodology
 
+FIB scale could have been tested artificially injecting millions of consecutive prefixes. However, this does not match the field reality.  
+
+Instead, for the different tests performed in this article, a real customer production profile was used. A major Service Provider FIB was extracted from their live network and has been used to illustrate current resource utilization and validate target future growth. 
+
+Those production devices process a full BGP routing view. As of March 2023, this represents 935k IPv4 and 174k IPv6 prefixes.  
+
+On top of Internet routes, there is also an additional high number of internal routes. 
+This customer runs a large-scale ISIS IGP with 28k IPv4 ISIS routes. In details, this IGP contains 18k loopbacks (/32) and 9k P2P links (/30 and /31). This backbone is dual stack and ISIS also carries 2.5k IPv6 prefixes distributed as 1.5k loopbacks (/128) and 1k P2P links (/126). 
+Additional customer’s internal routes are carried over iBGP for both address families. 
+
+Table below summarizes prefixes origin, volume, and distribution:
+
+| _    Prefixes   _                                              | _    Current Scale IPv4   _ | _    Current Scale IPv6   _ |
+|----------------------------------------------------------------|-----------------------------|-----------------------------|
+|     ISIS loopbacks                                             |     18k                     |     1.5k                    |
+|     ISIS P2P & LAN                                             |     10k                     |     1k                      |
+|     Total ISIS                                                 |     28k                     |     2.5k                    |
+|     BGP internal,     including P2P (/30, /31, 126,   /127)    |     80.5k     40k           |     34.5k     1.6k          |
+|     BGP Internet                                               |     935k                    |     174k                    |
+| **    Total FIB   **                                           | **    1.1M   **             | **    214k   **             |
+
+
+
 ## Current Resources utilization 
 ### Q100
 ### Q200
