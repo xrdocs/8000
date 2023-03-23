@@ -91,7 +91,7 @@ LPM and CEM are physically located amongst different Q100 and Q200 ASIC memories
 
 ## FIB Scale Testing Methodology
 
-FIB scale could have been tested artificially injecting millions of consecutive prefixes. However, this does not match the field reality.  
+FIB scale could have been tested artificially by injecting millions of consecutive prefixes. However, this does not match the field reality.  
 
 Instead, for the different tests performed in this article, a real customer production profile was used. A major Service Provider FIB was extracted from their live network and has been used to illustrate current resource utilization and validate target future growth. 
 
