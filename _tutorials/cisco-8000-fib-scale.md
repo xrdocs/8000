@@ -15,6 +15,9 @@ tags:
   - Silicon One
 position: hidden
 ---
+{% include toc icon="table" title="Cisco 8000 FIB Scale" %}
+
+
 ## Cisco 8000 FIB Scale
 # Introduction
 Released 3 years ago in late 2019, Cisco 8000 routers have been widely adopted and deployed by service provider and cloud customers for core and peering roles.  
@@ -42,4 +45,3 @@ Telemetry data will also be used to illustrate system capabilities.
 ## Conclusion
 
 These tests assessed Cisco 8000 current and future FIB scale. Resources monitoring and visualization was done using both traditional CLI and streaming telemetry techniques. The new FIB scale increase, introduced with IOS-XR 7.9.1 and supported on Silicon One Q200, was also demonstrated. This ultimately confirms 8000 routers can deal with peering and core FIB profiles.
-
