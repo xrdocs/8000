@@ -106,9 +106,9 @@ Table below summarizes prefixes origin, volume, and distribution:
 |     ISIS loopbacks                                             |     18k                     |     1.5k                    |
 |     ISIS P2P & LAN                                             |     10k                     |     1k                      |
 |     Total ISIS                                                 |     28k                     |     2.5k                    |
-|     BGP internal,     including P2P (/30, /31, 126,   /127)    |     80.5k     40k           |     34.5k     1.6k          |
+|     BGP internal, including P2P (/30, /31, 126,   /127)    |     80.5k, 40k           |     34.5k, 1.6k          |
 |     BGP Internet                                               |     935k                    |     174k                    |
-| **    Total FIB   **                                           | **    1.1M   **             | **    214k   **             |
+| **Total FIB**                                           | **1.1M**             | **214k**             |
 
 This FIB was compared to additional ones collected over the last few months from Cloud Providers and Service Provider deployments across Europe, North America and Asia. It’s representative enough of a typical deployment.
 
