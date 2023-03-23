@@ -54,16 +54,16 @@ Forwarding Information Base Size
       information base, the longer it could take to find the longest
       matching network prefix within the forwarding information base.
 >
-   Measurement units:
+   Measurement units:  
       Number of routes
 >
-   Issues:
+   Issues:  
 >
-   See Also:
-      forwarding information base (5.3)
-      forwarding information base entry (5.4)
-      forwarding information base prefix distribution (5.7)
-      maximum forwarding information base size (6.1)
+   See Also:  
+      forwarding information base (5.3)  
+      forwarding information base entry (5.4)  
+      forwarding information base prefix distribution (5.7)  
+      maximum forwarding information base size (6.1)  
 >
 {: .notice}
 
