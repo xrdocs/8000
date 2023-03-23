@@ -395,7 +395,7 @@ For IPv6, things are more complex: linear and exponential models give between 40
 Projections of IPv6 BGP table size (courtesy Geoff Huston, APNIC)
 {: .text-center}
 
-To make the future FIB is realistic enough, current prefixes distribution will be applied for additional prefixes, meaning most additional IPv4 prefixes will be driven by /24 which are deallocated from bigger blocks, and most additional IPv6 will be driven by recently allocated /48, /32 and /36.
+To make the future FIB is realistic enough, current prefixes distribution will be applied for additional prefixes, meaning most additional IPv4 prefixes will be driven by /24 which are deallocated from bigger blocks, and most additional IPv6 will be driven by recently allocated and advertised /48, /32, /44 etc.
 
 ### Q100
 
