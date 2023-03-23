@@ -110,9 +110,67 @@ Table below summarizes prefixes origin, volume, and distribution:
 |     BGP Internet                                               |     935k                    |     174k                    |
 | **    Total FIB   **                                           | **    1.1M   **             | **    214k   **             |
 
+This FIB was compared to additional ones collected over the last few months from Cloud Providers and Service Provider deployments across Europe, North America and Asia. It’s representative enough of a typical deployment.
 
+The testbed is configured with Cisco 8000 routers running latest IOS-XR version available (7.9.1) and a Cisco’s inhouse tool to generate routes (routem). Customer’s FIB is replayed in the lab and all prefixes are injected through BGP protocol.
 
 ## Current Resources utilization 
+
+Let’s have a look at prefixes distribution first.  
+IPv4 distribution is the following:
+
+RP/0/RP0/CPU0:8202-1#sh cef summary
+
+Router ID is 192.0.2.37
+
+IP CEF with switching (Table Version 0) for node0_RP0_CPU0
+
+  Load balancing: L4
+  Tableid 0xe0000000 (0x921fb410), Vrfid 0x60000000, Vrid 0x20000000, Flags 0x1019
+  Vrfname default, Refcount 1107623
+  1107580 routes, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 239237280 bytes
+    1107560 rib, 1 lsd, 15 aib, 0 internal, 2 interface, 4 special, 1 default routes
+    Prefix masklen distribution:
+        unicast: 61609 /32, 11224 /31, 38289 /30, 12009 /29, 3964 /28, 817 /27
+                 1058 /26, 4128 /25, 614055 /24, 94219 /23, 108732 /22, 51033 /21
+                 41683 /20, 24931 /19, 13801 /18, 8218 /17, 13499 /16, 2037 /15
+                 1203 /14, 589 /13, 304 /12, 101 /11, 40 /10, 13 /9
+                 17 /8 , 1 /0
+      broadcast: 4 /32
+      multicast: 1 /24, 1 /4
+
+While IPv6 distribution is the following:
+
+RP/0/RP0/CPU0:8202-1#sh cef ipv6 summary
+
+Router ID is 192.0.2.37
+
+IP CEF with switching (Table Version 0) for node0_RP0_CPU0
+
+  Load balancing: L4
+  Tableid 0xe0800000 (0x928b0778), Vrfid 0x60000000, Vrid 0x20000000, Flags 0x1019
+  Vrfname default, Refcount 214659
+  214637 routes, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 46361592 bytes
+    214624 rib, 0 lsd, 7 aib, 0 internal, 0 interface, 6 special, 1 default routes
+    Prefix masklen distribution:
+        unicast: 4610 /128, 144 /127, 2514 /126, 47 /125, 1042 /124, 2 /120
+                 148 /112, 183 /96 , 5367 /64 , 20673 /62 , 24 /61 , 6 /60
+                 1 /59 , 22 /58 , 5 /57 , 314 /56 , 2 /53 , 2 /52
+                 2 /51 , 1 /49 , 105403 /48 , 1979 /47 , 2345 /46 , 1120 /45
+                 11066 /44 , 2617 /43 , 4549 /42 , 1312 /41 , 9970 /40 , 960 /39
+                 1527 /38 , 873 /37 , 4778 /36 , 759 /35 , 2054 /34 , 2432 /33
+                 20941 /32 , 206 /31 , 519 /30 , 3887 /29 , 122 /28 , 20 /27
+                 15 /26 , 8 /25 , 27 /24 , 7 /23 , 6 /22 , 3 /21
+                 14 /20 , 1 /19 , 1 /16 , 1 /10 , 1 /0
+      multicast: 1 /128, 1 /104, 3 /16                 15 /26 , 8 /25 , 27 /24 , 7 /23 , 6 /22 , 3 /21
+                 14 /20 , 1 /19 , 1 /16 , 1 /10 , 1 /0
+      multicast: 1 /128, 1 /104, 3 /16
+      
+This is a visual representation of the FIB:
+
+This corresponds with [@bgp4_table](https://twitter.com/bgp4_table) and [@bgp6_table](https://twitter.com/bgp6_table) daily tweets:
+
+
 ### Q100
 ### Q200
 
