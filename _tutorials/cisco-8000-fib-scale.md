@@ -181,6 +181,7 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
 This is a visual representation of the FIB:
 
 This corresponds with [@bgp4_table](https://twitter.com/bgp4_table) and [@bgp6_table](https://twitter.com/bgp6_table) daily tweets:
+
 ![bgp-prefixes-distribution.png]({{site.baseurl}}/images/bgp-prefixes-distribution.png){: .align-center}
 BGP prefixes distribution as seen by @bgp4_table and @bgp6_table (courtesy Darren O'Connor)
 {: .text-center}
