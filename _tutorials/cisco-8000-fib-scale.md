@@ -85,7 +85,7 @@ Q100 and Q200 Default LPM and CEM allocation (courtesy CS Lee, Cisco)
 
 LPM and CEM are physically located amongst different Q100 and Q200 ASIC memories, which can be on-chip and off-chip (e.g TCAM, SRAM, HBM). This is out of this article scope.
 
-**Did you know? :bulb:** Cisco 8100 systems use Silicon One ASICs which do not have HBM memory (Q200L, G100). This restricts buffering capacities but also FIB scale and is the reason why they are used for DC applications. Please refer to this [deployment note](/blogs/8100-8200-deployment-note/) for 8100 systems positioning. 
+**Did you know? :bulb:** Cisco 8100 systems use Silicon One ASICs which do not have HBM memory (Q200L, G100). This restricts buffering capacities but also FIB scale and is the reason why they are used for DC applications. Please refer to this [deployment note](/8000/blogs/8100-8200-deployment-note/) for 8100 systems positioning. 
 {: .notice--primary}
 
 
