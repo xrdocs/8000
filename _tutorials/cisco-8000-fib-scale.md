@@ -119,7 +119,9 @@ The testbed is configured with Cisco 8000 routers running latest IOS-XR version 
 Let’s have a look at prefixes distribution first.  
 IPv4 distribution is the following:
 
-```
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8202-1#sh cef summary
 Router ID is 192.0.2.37
 
@@ -128,9 +130,9 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
   Load balancing: L4
   Tableid 0xe0000000 (0x921fb410), Vrfid 0x60000000, Vrid 0x20000000, Flags 0x1019
   Vrfname default, Refcount 1107623
-  1107580 routes, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 239237280 bytes
+  <mark>1107580 routes</mark>, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 239237280 bytes
     1107560 rib, 1 lsd, 15 aib, 0 internal, 2 interface, 4 special, 1 default routes
-    Prefix masklen distribution:
+    <mark>Prefix masklen distribution:</mark>
         unicast: 61609 /32, 11224 /31, 38289 /30, 12009 /29, 3964 /28, 817 /27
                  1058 /26, 4128 /25, 614055 /24, 94219 /23, 108732 /22, 51033 /21
                  41683 /20, 24931 /19, 13801 /18, 8218 /17, 13499 /16, 2037 /15
@@ -138,11 +140,15 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
                  17 /8 , 1 /0
       broadcast: 4 /32
       multicast: 1 /24, 1 /4
-```
+</code>
+</pre>
+</div>
 
 While IPv6 distribution is the following:
 
-```
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8202-1#sh cef ipv6 summary
 Router ID is 192.0.2.37
 IP CEF with switching (Table Version 0) for node0_RP0_CPU0
@@ -150,9 +156,9 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
   Load balancing: L4
   Tableid 0xe0800000 (0x928b0778), Vrfid 0x60000000, Vrid 0x20000000, Flags 0x1019
   Vrfname default, Refcount 214659
-  214637 routes, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 46361592 bytes
+  <mark>214637 routes</mark>, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 46361592 bytes
     214624 rib, 0 lsd, 7 aib, 0 internal, 0 interface, 6 special, 1 default routes
-    Prefix masklen distribution:
+    <mark>Prefix masklen distribution</mark>:
         unicast: 4610 /128, 144 /127, 2514 /126, 47 /125, 1042 /124, 2 /120
                  148 /112, 183 /96 , 5367 /64 , 20673 /62 , 24 /61 , 6 /60
                  1 /59 , 22 /58 , 5 /57 , 314 /56 , 2 /53 , 2 /52
@@ -165,7 +171,9 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
       multicast: 1 /128, 1 /104, 3 /16                 15 /26 , 8 /25 , 27 /24 , 7 /23 , 6 /22 , 3 /21
                  14 /20 , 1 /19 , 1 /16 , 1 /10 , 1 /0
       multicast: 1 /128, 1 /104, 3 /16
-```
+</code>
+</pre>
+</div>
       
 This is a visual representation of the FIB:
 
@@ -175,11 +183,13 @@ This corresponds with [@bgp4_table](https://twitter.com/bgp4_table) and [@bgp6_t
 
 On Silicon One Q100 based systems (8202 fixed system is used here), current LPM utilization is 52%:
 
-```
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8202-1#sh controllers npu resources lpmtcam location 0/RP0/CPU0
 HW Resource Information
     Name                            : lpm_tcam
-    Asic Type                       : Q100
+    <mark>Asic Type                       : Q100</mark>
 
 NPU-0
 OOR Summary
@@ -200,7 +210,7 @@ OFA Table Information
 Current Hardware Usage
     Name: lpm_tcam
         Estimated Max Entries       : 100
-        Total In-Use                : 52       (52 %)
+        <mark>Total In-Use                : 52       (52 %)</mark>
         OOR State                   : Green
         OOR State Change Time       : 2023.Mar.20 16:03:51 UTC
 
@@ -211,14 +221,18 @@ Current Hardware Usage
 
        Name: v6_lpm
            Total In-Use                : 210025
-```
+</code>
+</pre>
+</div>
 
 It's expected to have marginal CEM occupancy as number of /128 prefixes is low:
 
-```
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8202-1#sh controllers npu resources centralem location 0/RP0/CPU0
 HW Resource Information
-    Name                            : central_em
+    <mark>Name                            : central_em</mark>
     Asic Type                       : Q100
 
 NPU-0
@@ -233,7 +247,7 @@ OFA Table Information
 (May not match HW usage)
         brmac                       : 0
         iprte                       : 17
-        ip6rte                      : 4610
+        <mark>ip6rte                      : 4610</mark>
         mplsrte                     : 5
         puntlptspolicer             : 92
         ipmcrte                     : 0
@@ -243,19 +257,23 @@ OFA Table Information
 Current Hardware Usage
     Name: central_em
         Estimated Max Entries       : 100
-        Total In-Use                : 3        (3 %)
+        <mark>Total In-Use                : 3        (3 %)</mark>
         OOR State                   : Green
-```
+</code>
+</pre>
+</div>
 
 ### Q200
 
 For this test, a 88-LC0-36FH linecard powered by Silicon One Q200 is used.  LPM utilization is slightly lower with 41% resources consumed:
 
-```
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP1/CPU0:8812-1#sh controllers npu resources lpmtcam location 0/1/CPU0
 HW Resource Information
     Name                            : lpm_tcam
-    Asic Type                       : Q200
+    <mark>Asic Type                       : Q200</mark>
 
 NPU-0
 OOR Summary
@@ -275,7 +293,7 @@ OFA Table Information
 Current Hardware Usage
     Name: lpm_tcam
         Estimated Max Entries       : 100
-        Total In-Use                : 41       (41 %)
+        <mark>Total In-Use                : 41       (41 %)</mark>
         OOR State                   : Green
 
 
@@ -347,7 +365,9 @@ Current Hardware Usage
 
        Name: v6_lpm
            Total In-Use                : 210156
-```
+</code>
+</pre>
+</div>
 
 **Info:** On a distributed system, LPM is programmed across all linecards NPUs.
 {: .notice--info}
@@ -371,23 +391,28 @@ Projections of IPv6 BGP table size (courtesy Geoff Huston, APNIC)
 To make the future FIB is realistic enough, current prefixes distribution will be applied for additional prefixes, meaning most additional IPv4 prefixes will be driven by /24 which are deallocated from bigger blocks, and most additional IPv6 will be driven by recently allocated /48, /32 and /36.
 
 ### Q100
+
 ### Q200
 
 
 ## 8000 FIB Scale Increase
 
-Starting IOS-XR 7.9.1, a new hw-module profile has been introduced to increase Cisco 8000 FIB scale up to 3M IPv4 and 1M IPv6 prefixes: '''hw-module profile route scale lpm tcam-banks'''  
+Starting IOS-XR 7.9.1, a new hw-module profile has been introduced to increase Cisco 8000 FIB scale up to 3M IPv4 and 1M IPv6 prefixes: <code>hw-module profile route scale lpm tcam-banks</code> 
 
 This mode is only supported on Q200 ASIC. System must be reloaded after activation:
 
-```
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH(config)#hw-module profile route scale lpm tcam-banks
 Mon Mar 20 22:05:53.261 UTC
-In order to activate/deactivate this Scale LPM TCAM Banks profile, you must manually reload the chassis/all line cards
+<mark>In order to activate/deactivate this Scale LPM TCAM Banks profile, you must manually reload the chassis/all line cards</mark>
 RP/0/RP0/CPU0:8201-1(config)#commit
 Mon Mar 20 22:05:56.956 UTC
 RP/0/RP0/CPU0:Mar 20 22:05:56.994 UTC: npu_drvr[316]: %FABRIC-NPU_DRVR-3-HW_MODULE_PROFILE_CHASSIS_CFG_CHANGED : Hw-module profile config changed for "route scale lpm high", do chassis reload to get the most recent config updated
-```
+</code>
+</pre>
+</div>
 
 Once activated, some TCAM banks previously allocated for classification ACL will be used to store prefixes. Consequence is ACL scale is reduced (from 9.5k IPv4 entries to 7.5k entries, or from 5k IPv6 entries to 4k entries).
 
