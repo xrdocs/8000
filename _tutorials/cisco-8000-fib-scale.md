@@ -520,7 +520,7 @@ RP/0/RP0/CPU0:Mar 20 22:05:56.994 UTC: npu_drvr[316]: %FABRIC-NPU_DRVR-3-HW_MODU
 </pre>
 </div>
 
-Once activated, some TCAM banks previously allocated for classification ACL will be used to store prefixes. Consequence is ACL scale is reduced (from 9.5k IPv4 entries to 7.5k entries, or from 5k IPv6 entries to 4k entries).
+ASIC resources are finite: once the profile is activated, some TCAM banks previously allocated for classification ACL will be used to store prefixes. Consequence is ACL scale is reduced (from 9.5k IPv4 entries to 7.5k entries, or from 5k IPv6 entries to 4k entries).   
 
 This is what LPM utilization looks like for the same 5-year growth projection:
 
