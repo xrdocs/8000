@@ -81,6 +81,7 @@ On 8000 and Cisco Silicon One, the unicast FIB is stored into two major tables:
 - Longest Prefix Match (LPM) database: stores IPv4 and IPv6 routes
 - Central Exact Match (CEM) database: stores IPv6 host routes (/128)
 
+![q100-lpm.png]({{site.baseurl}}/images/q100-lpm.png){: .align-center} ![q200-lpm.png]({{site.baseurl}}/images/q200-lpm.png){: .align-center}
 
 LPM and CEM are physically located amongst different Q100 and Q200 ASIC memories, which can be on-chip and off-chip (e.g TCAM, SRAM, HBM) . This is out of this article scope.
 
