@@ -179,7 +179,7 @@ This is a visual representation of the FIB distribution using telemetry:
 
 ![fib-distribution.png]({{site.baseurl}}/images/fib-distribution.png)
 
-This corresponds with [@bgp4_table](https://twitter.com/bgp4_table) and [@bgp6_table](https://twitter.com/bgp6_table) daily tweets:
+This corresponds to [@bgp4_table](https://twitter.com/bgp4_table) and [@bgp6_table](https://twitter.com/bgp6_table) daily tweets:
 
 ![bgp-prefixes-distribution.png]({{site.baseurl}}/images/bgp-prefixes-distribution.png){: .align-center}
 BGP prefixes distribution as seen by @bgp4_table and @bgp6_table (courtesy Darren O'Connor)
