@@ -147,7 +147,7 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
 </pre>
 </div>
 
-While IPv6 distribution is as follow:
+While IPv6 distribution as follows:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -389,11 +389,11 @@ Current Hardware Usage
 
 ## Future BGP Growth Support
 
-Now resources utilization has been checked against a current production deployment for both Q100 and Q200 ASICs, it’s time to simulate 5-year growth. This will be mainly driven by the BGP table growth.
+Now that resources utilization has been checked against a current production deployment for both Q100 and Q200 ASICs, it’s time to simulate 5-year growth. This will be mainly driven by the BGP table growth.
 
 APNIC provides BGP table forecasts in its [yearly BGP table report](https://blog.apnic.net/2023/01/06/bgp-in-2022-the-routing-table/).  
 
-For IPv4, data shows future growth follows a linear model with 150 additional prefixes daily. It’s expected to have ~ 1.2M IPv4 routes in 2028. This is the value which will be tested.
+For IPv4, data have shown future growth follows a linear model with 150 additional prefixes daily. It’s expected to have ~ 1.2M IPv4 routes in 2028. This is the value which will be tested.
 
 ![ipv4-bgp-2028.png]({{site.baseurl}}/images/ipv4-bgp-2028.png){: .align-center}
 
@@ -410,7 +410,7 @@ To make the future FIB realistic enough, current prefixes distribution will be a
 
 ### Q100
 
-With this 2028 profile, Q100 LPM utilization reaches 94%. It's interesting to note system does not enter into Out of Resource state and there are still free LPM entries:
+With this 2028 profile, Q100 LPM utilization reaches 94%. It's interesting to note system does not enter into RED Out of Resource state and there are still free LPM entries:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -454,7 +454,7 @@ Current Hardware Usage
 </pre>
 </div>
 
-Introduced late 2019, Q100 based systems are future proof for the next years to come.
+10 years after FCS, Q100 based systems will still be able to handle the BGP full view and extra prefixes.
 
 ### Q200
 
