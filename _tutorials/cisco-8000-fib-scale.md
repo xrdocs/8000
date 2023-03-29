@@ -567,6 +567,8 @@ Current Hardware Usage
 
 With only 42% LPM utilization, this profile gives even more room for growth for 2030 and beyond.
 
+Current (2023) utilization is illustrated in next section.
+
 
 ## FIB Telemetry
 
