@@ -410,7 +410,7 @@ To make the future FIB realistic enough, current prefixes distribution will be a
 
 ### Q100
 
-With this 2028 profile, Q100 LPM utilization reaches 94%. It's interesting to note system does not enter into RED Out of Resource state and there are still free LPM entries:
+With this 2028 profile, Q100 LPM utilization reaches 94%. It's interesting to note system does not enter into Red Out of Resource state (95% utilization) and there are still free LPM entries:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -503,6 +503,7 @@ snip
 </pre>
 </div>
 
+With 84% utilization, it's also expected to hit Yellow threshold (default is 80%).
 
 ## 8000 FIB Scale Increase
 
