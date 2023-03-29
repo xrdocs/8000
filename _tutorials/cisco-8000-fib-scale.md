@@ -6,8 +6,9 @@ author: Frederic Cuiller
 excerpt: >-
   This article will document how Silicon One Q100 and Q200 based systems can
   support current and future BGP scale for peering and core roles. Based on
-  projected growth, we will check they are future proof for the next years to
-  come.
+  projected growth, tests will demonstrate they are also future proof. Last, a
+  new feature introduced to increase FIB scale on Q200 will be demonstrated.
+  Telemetry data will also be used to illustrate system capabilities.
 tags:
   - Cisco 8000
   - FIB
