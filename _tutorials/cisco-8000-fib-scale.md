@@ -568,7 +568,7 @@ Current Hardware Usage
 
 With only 42% LPM utilization, this profile gives even more room for growth for 2030 and beyond.
 
-Current (2023) utilization is illustrated in next section.
+Current (2023) utilization is illustrated in next section with telemetry.
 
 
 ## FIB Telemetry
@@ -605,7 +605,7 @@ embedded_tags = [
 ]
 ```
 
-Here is sample Grafana visualization:
+Here is sample Grafana visualization of the current 2023 profile on a Q200 system:
 ![fib-ofa-telemetry.png]({{site.baseurl}}/images/fib-ofa-telemetry.png)
 
 
