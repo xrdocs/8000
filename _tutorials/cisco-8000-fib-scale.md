@@ -65,7 +65,7 @@ Forwarding Information Base Size
 >
 {: .notice}
 
-20 years later, those points still matter when it comes to validate FIB scale on a modern router. Not only the number of prefixes is important, but it’s also key to consider prefixes distribution during validation phase. Ideally, a real FIB should be replayed and certification should not rely on artificial lab scenario (e.g: consecutive and well organized prefixes or pathological prefixes patterns).  
+20 years later, those points still matter when it comes to validate FIB scale on a modern router. Not only the number of prefixes is important, but it’s also key to consider prefixes distribution during validation phase. Ideally, a real FIB should be replayed and certification should not rely on artificial lab scenario.  
 
 Until now, Cisco 8000 officially supports up to 2M IPv4 and 512k IPv6 prefixes in FIB. This is a multi-dimensional number meaning both address families can be programmed to these maximum values. Released in March 2023, IOS-XR 7.9.1 brings FIB scale increase enhancement and raises this number to 3M IPv4 and 1M IPv6 prefixes. This new feature is covered later in this article.
 
