@@ -612,3 +612,10 @@ Here is sample Grafana visualization of the current 2023 profile on a Q200 syste
 ## Conclusion
 
 These tests measured Cisco 8000 current and future FIB scale. While there is no immediate need, the new FIB scale increase feature was demonstrated to support even higher scale. Resources monitoring and visualization was done using both traditional CLI and streaming telemetry techniques. This ultimately confirms 8000 routers can deal with peering and core FIB requirements.
+
+## Acknowledgement
+
+Special thanks to Pamela Krishnamachary, Uzair Rehman and Selvam Ramanathan.
+
+
+
