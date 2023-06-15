@@ -12,6 +12,16 @@ tags:
   - Centralized System
   - Silicon One
 ---
+{% include toc icon="table" title="Cisco 8608 Architecture" %}
+
 ## Introduction
+
+## RP
+
+## Switching Card
+
+## MPA
+
+## Redundancy
 
 ## Conclusion
