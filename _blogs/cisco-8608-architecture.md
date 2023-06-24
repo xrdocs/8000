@@ -59,7 +59,8 @@ As shown in Figure 3, user needs to insert the followings:
 •	Midplane provides the control path connectivity and power distribution for the chassis
 
 
-![]({{site.baseurl}}/images/figure4.png)![figure4.png]({{site.baseurl}}/images/figure4.png){: .align-center}  
+
+![figure4.png]({{site.baseurl}}/images/figure4.png){: .full}  
 
   Figure 4. Back view of Cisco 8608 chassis with 8 FMs and 4 PMs  
   {: .text-center}  
