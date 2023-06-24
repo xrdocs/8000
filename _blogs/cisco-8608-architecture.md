@@ -66,8 +66,7 @@ As shown in Figure 3, user needs to insert the followings:
   {: .text-center}  
   In Figure 4, there are 2 Fan Trays with eight Fan Modules and four Power Modules  
   
-  ![figure5.png]({{site.baseurl}}/images/figure5.png){: .align-center}  
-
+  ![figure5.png]({{site.baseurl}}/images/figure5.png){: .full}    
   Figure 5. Side view of Cisco 8608 chassis  
   {: .text-center}  
   
@@ -93,8 +92,7 @@ The first MPA is the 86-MPA-14H2FH-M. This MPA can be inserted into any slot (sl
 When port 0 has a 400G QSFP-DD, then the other three ports (2, 3, 4) cannot be used. Similarly, when port 1 has a 400G QSFP-DD, then the other three ports (5, 6, 7) cannot be used  
 Note: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+  
 
-![figure7.png]({{site.baseurl}}/images/figure7.png){: .align-center}  
-
+![figure7.png]({{site.baseurl}}/images/figure7.png){: .full}    
 Figure 7. 86-MPA-14H2FH-M  
 {: .text-center}  
 
@@ -102,8 +100,7 @@ The second MPA is the 86-MPA-4FH-M. This MPA can be inserted into any slot(slot 
 •	4 ports of QSFP-DD 400 GbE modules  
 Note: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+  
 
-![figure8.png]({{site.baseurl}}/images/figure8.png){: .align-center}  
-
+![figure8.png]({{site.baseurl}}/images/figure8.png){: .full}   
 Figure 8. 86-MPA-4FH-M  
 {: .text-center}  
 
@@ -111,8 +108,7 @@ And third MPA is 86-MPA-24Z-M. This MPA can be inserted into any slot(slot 0 to 
 •	24 ports of SFP 10/25/50 GbE modules
 
 
-![figure9.png]({{site.baseurl}}/images/figure9.png){: .align-center}  
-
+![figure9.png]({{site.baseurl}}/images/figure9.png){: .full}    
 Figure 9. 86-MPA-24Z-M  
 {: .text-center}  
 
