@@ -187,8 +187,15 @@ On this router, there are two Power Modules in Cisco 8608 chassis.
 
 ![show_envir_fan.png]({{site.baseurl}}/images/show_envir_fan.png){: .full} 
 
+Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs), eight Modular Port Adapters (MPAs), 4 Power Modules (PMs), 8 Fan Modules (FMs) – all these entities are field replaceable units (FRUs).  
 
+### IOS XR Software  
+Cisco IOS XR 7.10.1 introduces the Cisco 8608 router support.  
+![show_version.png]({{site.baseurl}}/images/show_version.png){: .full}  
 
+Detailed information on XR7 can be found here: [IOS XR Data Sheet](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/datasheet-c78-743014.html).
+For a complete list of supported features, refer to the Cisco Feature Navigator.
+Cisco Software Download page to download the Cisco IOS XR software images.
 
 
 
