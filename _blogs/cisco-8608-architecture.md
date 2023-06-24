@@ -65,6 +65,57 @@ As shown in Figure 3, user needs to insert the followings:
   {: .text-center}  
   In Figure 4, there are 2 Fan Trays with eight Fan Modules and four Power Modules  
   
+  ![figure5.png]({{site.baseurl}}/images/figure5.png){: .align-center}  
+
+  Figure 5. Side view of Cisco 8608 chassis  
+  {: .text-center}  
+  
+  The Route Processors(RPs) are vertically inserted into the front right hand side of the Cisco 8608 chassis.
+The Module Port Adapters(MPAs) are vertically inserted into the front side of the Cisco 8608 chassis too.
+The Switch Cards(SC0 and SC1) that include the packet processing and forwarding engine using Q200 Cisco Silicon One are horizontally inserted into the back of the chassis.  There are 2 switch cards per system.  The Switch Cards contain the four removable Fan Modules can be inserted into each Switch Card.  
+
+
+### MPA(Modular Port Adapter) Overview  
+The Cisco 8608 Series centralized platform supports three different Redundant Modular Port Adaptors (MPAs) to insert into slot 0 to slot 7. 
+This MPAs is CPU-less and have the PHY and Optics components for network connectivity to other devices in the network. Each Redundant MPA connects to both Switch Cards (SC0, SC1).  
+
+![figure6.png]({{site.baseurl}}/images/figure6.png){: .align-center}  
+
+Figure 6. two SCs and three Redundant MPAs connection of Cisco 8608 chassis  
+{: .text-center}  
+ 
+The Q200 on the SC has up to 32x 50Gbps SerDes to each MPA slot regardless of slot number.
+There are three different Redundant MPAs in Cisco 8608.
+The first MPA is the 86-MPA-14H2FH-M. This MPA can be inserted into any slot (slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 16 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:
+•	16 ports of QSFP 100 GbE modules (Default), or
+•	2 ports of QSFP-DD 400 GbE modules and 14 ports of QSFP
+When port 0 has a 400G QSFP-DD, then the other three ports (2, 3, 4) cannot be used. Similarly, when port 1 has a 400G QSFP-DD, then the other three ports (5, 6, 7) cannot be used  
+Note: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+  
+
+![figure7.png]({{site.baseurl}}/images/figure7.png){: .align-center}  
+
+Figure 7. 86-MPA-14H2FH-M  
+{: .text-center}  
+
+The second MPA is the 86-MPA-4FH-M. This MPA can be inserted into any slot(slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 4 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:  
+•	4 ports of QSFP-DD 400 GbE modules  
+Note: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+  
+
+![figure8.png]({{site.baseurl}}/images/figure8.png){: .align-center}  
+
+Figure 8. 86-MPA-4FH-M  
+{: .text-center}  
+
+And third MPA is 86-MPA-24Z-M. This MPA can be inserted into any slot(slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 24 interface ports for a maximum total bandwidth of 1.2 Tbps that can support up to:
+•	24 ports of SFP 10/25/50 GbE modules
+
+
+![figure9.png]({{site.baseurl}}/images/figure9.png){: .align-center}  
+
+Figure 9. 86-MPA-24Z-M  
+{: .text-center}  
+
+  
   
 
 ## RP
