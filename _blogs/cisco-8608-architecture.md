@@ -45,7 +45,7 @@ o	Pluggable 3.2KW DC
 ### Chassis  
 
 
-![]({{site.baseurl}}/images/figure3.png)![figure3.png]({{site.baseurl}}/images/figure3.png){: .align-center}  
+![]({{site.baseurl}}/images/figure3.png)![figure3.png]){: .full}  
 
 Figure 3. Front view of an empty Cisco 8608 chassis  
 {: .text-center}  
