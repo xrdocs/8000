@@ -179,7 +179,37 @@ The following table lists the amount of power available for Cisco 8600 series ro
 
 ![powersupply.png]({{site.baseurl}}/images/powersupply.png){: .full} 
 
-![show_plat.png]({{site.baseurl}}/images/show_plat.png){: .text-center}
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+
+RP/0/RP0/CPU0:Cisco8608#sh plat
+0/RP0/CPU0        8608-RP(Active)          IOS XR RUN               NSHUT
+0/RP1/CPU0        8608-RP(Standby)         IOS XR RUN               NSHUT
+0/SC0             8608-SC0-128             OPERATIONAL              NSHUT
+0/SC1             8608-SC0-128             OPERATIONAL              NSHUT
+0/FB0             8608-SC0-128[FB]         OPERATIONAL              NSHUT
+0/FB1             8608-SC0-128[FB]         OPERATIONAL              NSHUT
+0/0               86-MPA-4FH-M             OPERATIONAL              NSHUT
+0/4               86-MPA-14H2FH-M          OPERATIONAL              NSHUT
+0/5               86-MPA-24Z-M             OPERATIONAL              NSHUT
+0/6               86-MPA-14H2FH-M          OPERATIONAL              NSHUT
+0/7               86-MPA-14H2FH-M          OPERATIONAL              NSHUT
+0/FT0             8608-FAN                 OPERATIONAL              NSHUT
+0/FT1             8608-FAN                 OPERATIONAL              NSHUT
+0/FT2             8608-FAN                 OPERATIONAL              NSHUT
+0/FT3             8608-FAN                 OPERATIONAL              NSHUT
+0/FT4             8608-FAN                 OPERATIONAL              NSHUT
+0/FT5             8608-FAN                 OPERATIONAL              NSHUT
+0/FT6             8608-FAN                 OPERATIONAL              NSHUT
+0/FT7             8608-FAN                 OPERATIONAL              NSHUT
+0/PM0             PSU3.2KW-ACPI            OPERATIONAL              NSHUT
+0/PM1             PSU3.2KW-ACPI            OPERATIONAL              NSHUT  
+
+</code>
+</pre>
+</div>  
 
 On this router, there are two Power Modules in Cisco 8608 chassis.  
 
