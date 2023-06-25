@@ -213,6 +213,58 @@ RP/0/RP0/CPU0:Cisco8608#sh plat
 
 On this router, there are two Power Modules in Cisco 8608 chassis.  
 
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+
+RP/0/RP0/CPU0:Cisco8608#sh environment power
+================================================================================
+CHASSIS LEVEL POWER INFO: 0
+================================================================================
+   Total output power capacity (N + 1)             :    6400W +        0W
+   Total output power required                     :    4465W
+   Total power input                               :    1122W
+   Total power output                              :    1028W
+================================================================================
+   Power       Supply         ------Input----   ------Output---     Status
+   Module      Type            Volts     Amps    Volts     Amps    
+================================================================================
+   0/PM0       PSU3.2KW-ACPI   207.9     2.8     54.7      9.8      OK
+   0/PM1       PSU3.2KW-ACPI   207.9     2.6     54.7      9.0      OK
+Total of Power Modules:       1122W/5.4A              1028W/18.8A
+================================================================================
+   Location     Card Type               Power       Power        Status
+                                        Allocated   Used
+                                        Watts       Watts
+================================================================================
+   0/RP0/CPU0   8608-RP                 200         53           ON
+   0/RP1/CPU0   8608-RP                 200         52           ON
+   0/SC0        8608-SC0-128            542         164          ON
+   0/SC1        8608-SC0-128            542         165          ON
+   0/FB0        8608-SC0-128[FB]        10          -            ON
+   0/FB1        8608-SC0-128[FB]        10          -            ON
+   0/0          86-MPA-4FH-M            209         115          ON
+   0/1          -                       32          -            RESERVED
+   0/2          -                       32          -            RESERVED
+   0/3          -                       32          -            RESERVED
+   0/4          86-MPA-14H2FH-M         290         156          ON
+   0/5          86-MPA-24Z-M            198         77           ON
+   0/6          86-MPA-14H2FH-M         284         149          ON
+   0/7          86-MPA-14H2FH-M         284         147          ON
+   0/FT0        8608-FAN                200         12           ON
+   0/FT1        8608-FAN                200         12           ON
+   0/FT2        8608-FAN                200         12           ON
+   0/FT3        8608-FAN                200         12           ON
+   0/FT4        8608-FAN                200         15           ON
+   0/FT5        8608-FAN                200         15           ON
+   0/FT6        8608-FAN                200         15           ON
+   0/FT7        8608-FAN                200         15           ON  
+   
+</code>
+</pre>
+</div>  
+
 ![show_envi_power.png]({{site.baseurl}}/images/show_envi_power.png){: .full} 
 
 ![show_envir_fan.png]({{site.baseurl}}/images/show_envir_fan.png){: .full} 
