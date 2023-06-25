@@ -194,8 +194,8 @@ Cisco IOS XR 7.10.1 introduces the Cisco 8608 router support.
 ![show_version.png]({{site.baseurl}}/images/show_version.png){: .full}  
 
 Detailed information on XR7 can be found here: [IOS XR Data Sheet](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/datasheet-c78-743014.html).
-For a complete list of supported features, refer to the [Cisco Feature Navigator](https://tools.cisco.com/ITDIT/CFN/jsp/index.jsp "Cisco Feature Navigator").
-Cisco Software Download page to download the Cisco IOS XR software images.
+For a complete list of supported features, refer to the [Cisco Feature Navigator](https://tools.cisco.com/ITDIT/CFN/jsp/index.jsp).
+[Cisco Software Download](https://software.cisco.com/download/home/286325065/type/280805694/release/7.3.1) page to download the Cisco IOS XR software images.
 
 
 
