@@ -183,7 +183,6 @@ The following table lists the amount of power available for Cisco 8600 series ro
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-
 RP/0/RP0/CPU0:Cisco8608#sh plat
 0/RP0/CPU0        8608-RP(Active)          IOS XR RUN               NSHUT
 0/RP1/CPU0        8608-RP(Standby)         IOS XR RUN               NSHUT
@@ -206,7 +205,6 @@ RP/0/RP0/CPU0:Cisco8608#sh plat
 0/FT7             8608-FAN                 OPERATIONAL              NSHUT
 0/PM0             PSU3.2KW-ACPI            OPERATIONAL              NSHUT
 0/PM1             PSU3.2KW-ACPI            OPERATIONAL              NSHUT  
-
 </code>
 </pre>
 </div>  
@@ -217,7 +215,6 @@ On this router, there are two Power Modules in Cisco 8608 chassis.
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-
 RP/0/RP0/CPU0:Cisco8608#sh environment power
 ================================================================================
 CHASSIS LEVEL POWER INFO: 0
@@ -260,7 +257,6 @@ Total of Power Modules:       1122W/5.4A              1028W/18.8A
    0/FT5        8608-FAN                200         15           ON
    0/FT6        8608-FAN                200         15           ON
    0/FT7        8608-FAN                200         15           ON  
-   
 </code>
 </pre>
 </div>  
@@ -286,7 +282,6 @@ Location      FRU Type                        FAN_0    FAN_1
 0/FT7        8608-FAN                           3870    3900   
 0/PM0        PSU3.2KW-ACPI                      5225    5247   
 0/PM1        PSU3.2KW-ACPI                      5204    5247  
-
 </code>
 </pre>
 </div>  
@@ -299,7 +294,6 @@ Cisco IOS XR 7.10.1 introduces the Cisco 8608 router support.
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-
 RP/0/RP0/CPU0:Cisco8608#sh version
 
 Cisco IOS XR Software, Version 7.10.1.25I LNT
@@ -317,7 +311,6 @@ cisco 8000 (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz)
 cisco 8608-SYS (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz) processor with 64GB of memory
 ios uptime is 2 days, 20 hours, 30 minutes
 Cisco 8600 - 8 Slot Centralized Chassis  
-
 </code>
 </pre>
 </div>  
