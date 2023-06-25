@@ -138,14 +138,12 @@ Cisco 8608 can operate with up to 2 Switch Cards(SCs) between MPA and Fan Trays.
 
 ![figure12.png]({{site.baseurl}}/images/figure12.png){: .full} 
 Figure 12. Redundant SCs in the back of the Cisco 8608  
-{: .text-center}  
 
 The RP & SC operate in pairs RP0-SC0 and RP1-SC1 to deliver redundancy without loss of any chassis front face plate.
 The two SCs are CPU-less connected to both the RPs via PCIE, P2PM, EOBC links and each SC has one Cisco Silicon One Q200 NPU providing the data path for packet processing and forwarding.  
 
 ![figure13.png]({{site.baseurl}}/images/figure13.png){: .full} 
 Figure 13. Redundant System  
-{: .text-center}  
 
 The SC is installed in the rear of the chassis. The 8 fan trays are installed into the SCs. If you need to remove or replace the SC, we recommend that you remove the Fan Trays.
 To avoid over-heating the system, the service time between when a switch card is removed and re-inserted must be under 5 minutes at 30C. Individual Fan Module may be removed with no time limit.
