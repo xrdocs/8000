@@ -265,9 +265,31 @@ Total of Power Modules:       1122W/5.4A              1028W/18.8A
 </pre>
 </div>  
 
-![show_envi_power.png]({{site.baseurl}}/images/show_envi_power.png){: .full} 
 
-![show_envir_fan.png]({{site.baseurl}}/images/show_envir_fan.png){: .full} 
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+RP/0/RP0/CPU0:Cisco8608#sh environment fan
+=============================================================
+                                              Fan speed (rpm)
+Location      FRU Type                        FAN_0    FAN_1   
+-------------------------------------------------------------
+0/FT0        8608-FAN                           3840    3840   
+0/FT1        8608-FAN                           3840    3840   
+0/FT2        8608-FAN                           3840    3810   
+0/FT3        8608-FAN                           3870    3810   
+0/FT4        8608-FAN                           3930    3870   
+0/FT5        8608-FAN                           3870    3930   
+0/FT6        8608-FAN                           3900    3870   
+0/FT7        8608-FAN                           3870    3900   
+0/PM0        PSU3.2KW-ACPI                      5225    5247   
+0/PM1        PSU3.2KW-ACPI                      5204    5247  
+
+</code>
+</pre>
+</div>  
 
 Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs), eight Modular Port Adapters (MPAs), 4 Power Modules (PMs), 8 Fan Modules (FMs) – all these entities are field replaceable units (FRUs).  
 
