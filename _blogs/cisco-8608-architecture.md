@@ -295,7 +295,32 @@ Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs)
 
 ### IOS XR Software  
 Cisco IOS XR 7.10.1 introduces the Cisco 8608 router support.  
-![show_version.png]({{site.baseurl}}/images/show_version.png){: .full}  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+
+RP/0/RP0/CPU0:Cisco8608#sh version
+
+Cisco IOS XR Software, Version 7.10.1.25I LNT
+Copyright (c) 2013-2023 by Cisco Systems, Inc.
+
+Build Information:
+ Built By     : ingunawa
+ Built On     : Thu May 11 23:47:35 UTC 2023
+ Build Host   : iox-ucs-058
+ Workspace    : /auto/iox-ucs-058-san2/prod/7.10.1.25I.SIT_IMAGE/8000/ws/
+ Version      : 7.10.1.25I
+ Label        : 7.10.1.25I
+
+cisco 8000 (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz)
+cisco 8608-SYS (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz) processor with 64GB of memory
+ios uptime is 2 days, 20 hours, 30 minutes
+Cisco 8600 - 8 Slot Centralized Chassis  
+
+</code>
+</pre>
+</div>  
 
 Detailed information on XR7 can be found here: [IOS XR Data Sheet](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/datasheet-c78-743014.html).
 For a complete list of supported features, refer to the [Cisco Feature Navigator](https://tools.cisco.com/ITDIT/CFN/jsp/index.jsp).
