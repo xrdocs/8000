@@ -304,7 +304,7 @@ Build Information:
  Built On     : Thu May 11 23:47:35 UTC 2023
  Build Host   : iox-ucs-058
  Workspace    : /auto/iox-ucs-058-san2/prod/7.10.1.25I.SIT_IMAGE/8000/ws/
- Version      : 7.10.1.25I
+ Version      : <mark>7.10.1.25I</mark>
  Label        : 7.10.1.25I
 
 cisco 8000 (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz)
