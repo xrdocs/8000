@@ -328,6 +328,21 @@ For a complete list of supported features, refer to the [Cisco Feature Navigator
 
 ## MPA
 
-## Redundancy
+## Redundancy Details  
+
+
+## Packet flow under redundancy system  
+
+![figure21.png]({{site.baseurl}}/images/figure21.png){: .full}  
+Figure 21. Data path flow with Redundant System  
+{: .text-center}  
+
+1.	Ingress traffic coming from the network into the MPA  
+2.	PHY is bi-casted towards Q200 on both Active and Standby Pairs  
+3.	Q200 on both active and standby process the received packets  
+4.	Both Q200s forward packets towards the MPA that has the destination port  
+5.	In the egress path, PHY will forward the packets from active SC  
+6.	PHY will drop packets coming from standby SC1  
+
 
 ## Conclusion
