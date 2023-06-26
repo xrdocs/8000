@@ -326,7 +326,153 @@ For a complete list of supported features, refer to the [Cisco Feature Navigator
 
 
 
-## MPA
+### Cisco 8608 Slot and Ethernet ports  
+Slots and ports numbering are here:  
+<b>Slots numbering</b>  
+On front view of the Cisco 8608 chassis, left to right direction is MPA0 to MPA7, RP0 to RP1.  
+
+![figure15.png]({{site.baseurl}}/images/figure15.png){: .full}  
+
+Figure 15. Cisco 8608 Slot numbering  
+{: .text-center}  
+
+<b>Ports numbering</b>  
+
+![figure16.png]({{site.baseurl}}/images/figure16.png){: .full}  
+
+Figure 16. Cisco 8608 MPA Port numbering  
+{: .text-center}  
+
+Cisco 8608 ports numbering convention follows that of physical interfaces as {Type}{R/S/I/P} or {Type}{R/S/I/P/B}  
+![RSIPB.png]({{site.baseurl}}/images/RSIPB.png){: .full}  
+
+Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE and port 3 & 4 with native 400 GbE on slot 0.  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>    
+RP/0/RP0/CPU0:Cisco8608#sh interfaces brief 
+
+               Intf       Intf        LineP              Encap  MTU        BW
+               Name       State       State               Type (byte)    (Kbps)
+--------------------------------------------------------------------------------       
+         Hu0/0/0/0          up          up               ARPA  9000  100000000
+         Hu0/0/0/1          up          up               ARPA  9000  100000000
+       Hu0/0/0/1.1          up          up             802.1Q  9004  100000000
+       Hu0/0/0/1.2          up          up             802.1Q  9004  100000000
+       Hu0/0/0/1.3          up          up             802.1Q  9004  100000000
+       Hu0/0/0/1.4          up          up             802.1Q  9004  100000000
+       Hu0/0/0/1.5          up          up             802.1Q  9004  100000000
+       Hu0/0/0/1.6          up          up             802.1Q  9004  100000000
+       Hu0/0/0/1.7          up          up             802.1Q  9004  100000000
+       Hu0/0/0/1.8          up          up             802.1Q  9004  100000000
+       Hu0/0/0/1.9          up          up             802.1Q  9004  100000000
+         FH0/0/0/2          up          up               ARPA  9000  100000000
+         FH0/0/0/3          up          up               ARPA  9000  100000000
+</code>
+</pre>
+</div>  
+
+Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slot 7  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+RP/0/RP0/CPU0:Cisco8608#sh interfaces brief 
+
+               Intf       Intf        LineP              Encap  MTU        BW
+               Name       State       State               Type (byte)    (Kbps)
+--------------------------------------------------------------------------------       
+       Te0/7/0/14/0          up          up               ARPA  1514   10000000
+       Te0/7/0/14/1          up          up               ARPA  1514   10000000
+       Te0/7/0/14/2          up          up               ARPA  1514   10000000
+       Te0/7/0/14/3          up          up               ARPA  1514   10000000
+</code>
+</pre>
+</div>  
+
+
+<b>MPA-IFG mapping</b>  
+Cisco 8608 doesn’t have any MPA slot position restriction in the chassis.  
+There is one Q200 NPU in each Switch Card.  
+
+![figure17.jpg]({{site.baseurl}}/images/figure17.jpg){: .full}  
+
+Figure 17. Cisco 8608 MPA- IFG Mapping  
+{: .text-center}  
+
+Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to IFG(Interface Group)s is 1.6 Tbps. And so total 12.8 Tbps duplex per Cisco 8608 system.  
+
+### MPA Details  
+
+<b>86-MPA-14H2FH-M</b>  
+
+This Combo MPA is a Redundant MPA with a front panel has 2x QSFPDDs and 14x QSFP28 ports.  
+This MPA is a redundant MPA because it can work with two SC cards with one being active and the other in standby mode.  
+This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G breakout cables are also supported.  
+
+![figure18.jpg]({{site.baseurl}}/images/figure18.jpg){: .full}  
+
+Figure 18. 86-MPA-14H2FH-M Datapath block diagram  
+{: .text-center}  
+
+This MPA does not have a CPU and is managed by the RP. This PHY is a single chip, the multi-rate Ethernet PHY that provides the capacity and feature integration required to enable MACsec functionality.  
+86-MPA-14H2FH-M can support several interface combinations.  
+
+The first of the combo configurations is 16x100 GbE QSFP, in this configuration the QSFPDD ports are populated with 100G optics not 400G, the QSFP28 ports are populated with 100G optics. This is the default mode(without manual configuration).  
+![combo1.jpg]({{site.baseurl}}/images/combo1.jpg){: .full}  
+
+the second of the combo configuration is 2x 400G QSFPDD + 8x 100G QSFP, in this configuration the QSFPDD ports are populated with 400G optics.  
+
+When Port 0 or Port 1 individually changed to 400G mode, disable Port 2/3/4 or Port 5/6/7 automatically.  
+
+The ports that are available in the 2x 400G QSFPDD + 8x 100G QSFP Combo mode are Ports 0/1/8~15 as shown in the figures below. The faceplate will have markings to reflect this.  
+![combo2.jpg]({{site.baseurl}}/images/combo2.jpg){: .full}  
+
+The third of the combo configuration is 10/25G breakout solution.  
+4x 10G or 4x 25G breakout will not be supported on Port 0 to 9 (PHY 0 & 1). Only on PHY 2’s port 10, 12, and 14 and disabled Port 11, 13, and 15.  
+![combo3.jpg]({{site.baseurl}}/images/combo3.jpg){: .full}  
+
+
+<b>86-MPA-4FH-M</b>  
+This MPA is a Redundant MPA with a front panel consisting of 4x QSFPDD ports.  This is a redundant MPA because it can work with to two SCs with one being active and the other in standby mode.  
+This MPA provides a per slot bandwidth of 1.6Tbps. The QSFPDD ports can support 40/100/400G optics and support fully Breakout solutions without any port restriction.  
+
+![figure19.jpg]({{site.baseurl}}/images/figure19.jpg){: .full}  
+
+Figure 19. 86-MPA-4FH-M Datapath block diagram  
+{: .text-center}  
+
+
+<b>86-MPA-24Z-M</b>  
+This MPA is a Redundant MPA with a front panel consisting of 24x SFP56 ports.  This MPA is a redundant MPA because it can work with to two SC with one being active and the other in standby mode.  
+This MPA provides a per slot bandwidth of 1.2 Tbps. The QSFP56 ports can support 10/25/50G optics and can’t support any Breakout solution.  
+
+
+![figure20.jpg]({{site.baseurl}}/images/figure20.jpg){: .full}  
+
+Figure 20. 86-MPA-24Z-M Datapath block diagram  
+{: .text-center}  
+
+
+To verify optics supported, please use the [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/):  
+
+
+<b>Maximum ports density supported on Cisco 8608</b>  
+
+
+
+
+N/A: Not applicable – N/S: Not supported  
+
+Math is the following:
+-10 GbE  
+-- Use with 86-MPA-24Z-M as native with SFP+, fully populated with this MPA into 8 MPAs slots. 8x MPAs and 24x SFP+ on each MPA: 192x 10 GbE total    
+-- Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 10 GbE) x 8 MPAs: 128x 10 GbE total  
+
+
+
+
 
 ## Redundancy Details  
 
