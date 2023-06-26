@@ -531,10 +531,7 @@ Standby RP immediately gains mastership via HW arbitration mechanism. MPAs switc
 Figure 23. SC0 failure scenario in Cisco 8608  
 {: .text-center}  
 
-
-
-
-
+Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
 
 
 
