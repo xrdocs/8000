@@ -144,7 +144,8 @@ Figure 12. Redundant SCs in the back of the Cisco 8608
 The RP & SC operate in pairs RP0-SC0 and RP1-SC1 to deliver redundancy without loss of any chassis front face plate.
 The two SCs are CPU-less connected to both the RPs via PCIE, P2PM, EOBC links and each SC has one Cisco Silicon One Q200 NPU providing the data path for packet processing and forwarding.  
 
-![figure13.png]({{site.baseurl}}/images/figure13.png){: .full} 
+![figure13.png]({{site.baseurl}}/images/figure13.png){: .full}  
+
 Figure 13. Redundant System  
 {: .text-center}  
 
@@ -152,7 +153,8 @@ The SC is installed in the rear of the chassis. The 8 fan trays are installed in
 To avoid over-heating the system, the service time between when a switch card is removed and re-inserted must be under 5 minutes at 30C. Individual Fan Module may be removed with no time limit.
 If there is only one SC card plugged in, a Fan Spinner card will be required which is essentially a SC blank slot with a Fan Controller and Fan Modules.
 
-![figure14.png]({{site.baseurl}}/images/figure14.png){: .full} 
+![figure14.png]({{site.baseurl}}/images/figure14.png){: .full}  
+
 Figure 14. Non-Redundant System  
 {: .text-center}  
 
