@@ -489,6 +489,20 @@ o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs s
 o	Use with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 100 GbE total  
 
 ## Redundancy Details  
+Within the system even though RP0, RP1, SC0, SC1 are 4 different cards, from redundancy standpoint system software would consider RP0-SC0 together as Active Pair and RP1-SC1 as Backup Pair.  
+
+There’s supported and unsupported configuration in Cisco 8608.  
+| System Type   | Supported configuration | Unsupported configuration |
+|---------------|-------------------------|---------------------------|
+| Redundant     | RP0-SC0, RP1-SC1        | RP0-SC1                   |
+|               |                         | RP1-SC0                   |
+|               |                         | RP0-SC0, RP1 without SC1  |
+|               |                         | RP1-SC1, RP0 without SC0  |
+| Non-Redundant | RP0-SC0                 | RP1-SC1                   |
+|               | FS1 without RP1         | RP1-SC0                   |
+|               |                         | RP0-SC1                   |  
+
+
 
 
 ## Packet flow under redundancy system  
