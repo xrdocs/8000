@@ -460,9 +460,11 @@ To verify optics supported, please use the [Cisco Optics-to-Device Compatibility
 
 <b>Maximum ports density supported on Cisco 8608</b>  
 
-
-
-
+|          | 10 GbE | 25 GbE | 40 GbE | 50 GbE | 100 GbE | 400 GbE |
+|----------|--------|--------|--------|--------|---------|---------|
+| Native   | 192    | 192    | 128    | 192    | 128     | 32      |
+| Breakout | 128    | 128    | N/A    | N/S    | 128     | N/A     |  
+  
 N/A: Not applicable – N/S: Not supported  
 
 Math is the following:
