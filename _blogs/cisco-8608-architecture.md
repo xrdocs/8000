@@ -499,6 +499,7 @@ There’s supported and unsupported configuration in Cisco 8608.
 |               |                         | RP1-SC0                   |
 |               |                         | RP0-SC0, RP1 without SC1  |
 |               |                         | RP1-SC1, RP0 without SC0  |
+|---------------|-------------------------|---------------------------|
 | Non-Redundant | RP0-SC0                 | RP1-SC1                   |
 |               | FS1 without RP1         | RP1-SC0                   |
 |               |                         | RP0-SC1                   |  
