@@ -509,6 +509,9 @@ For Non-Redundant 8608 configuration, user can use “<b>8608-SYS-NR</b>” PID 
  8608 system is shipped with only one RP, one SC, one FS.    
 For Redundant 8608, user can use “<b>8608-SYS-R</b>” PID in the order tool. System is shipped with two RPs, two SCs.  
 
+![redundancy-1.png]({{site.baseurl}}/images/redundancy-1.png){: .full}  
+
+
 
 
 
