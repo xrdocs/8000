@@ -492,6 +492,7 @@ o	Use with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA int
 Within the system even though RP0, RP1, SC0, SC1 are 4 different cards, from redundancy standpoint system software would consider RP0-SC0 together as Active Pair and RP1-SC1 as Backup Pair.  
 
 There’s supported and unsupported configuration in Cisco 8608.  
+
 | System Type   | Supported configuration | Unsupported configuration |
 |---------------|-------------------------|---------------------------|
 | Redundant     | RP0-SC0, RP1-SC1        | RP0-SC1                   |
@@ -501,6 +502,7 @@ There’s supported and unsupported configuration in Cisco 8608.
 | Non-Redundant | RP0-SC0                 | RP1-SC1                   |
 |               | FS1 without RP1         | RP1-SC0                   |
 |               |                         | RP0-SC1                   |  
+
 
 For Non-Redundant 8608 configuration, user can use “<b>8608-SYS-NR</b>” PID in the order tool.
  8608 system is shipped with only one RP, one SC, one FS.    
