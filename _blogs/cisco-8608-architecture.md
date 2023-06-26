@@ -472,19 +472,19 @@ N/A: Not applicable – N/S: Not supported
 
 Math is the following:  
 - 10 GbE  
--- Use with 86-MPA-24Z-M as native with SFP+, fully populated with this MPA into 8 MPAs slots. 8x MPAs and 24x SFP+ on each MPA: 192x 10 GbE total    
--- Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 10 GbE) x 8 MPAs: 128x 10 GbE total  
-•	25 GbE  
+o	Use with 86-MPA-24Z-M as native with SFP+, fully populated with this MPA into 8 MPAs slots. 8x MPAs and 24x SFP+ on each MPA: 192x 10 GbE total    
+o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 10 GbE) x 8 MPAs: 128x 10 GbE total  
+- 25 GbE  
 o	Use with 86-MPA-24Z-M as native with SFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 24x SFP28 on each: 192x 25 GbE total  
 o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 25 GbE) x 8 MPAs: 128x 25 GbE total  
-•	40 GbE  
+- 40 GbE  
 o	Use with 86-MPA-14H2FH-M as native with QSFP+, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 16x QSFP+ on each: 128x 40 GbE total  
-•	50 GbE  
+- 50 GbE  
 o	Use with 86-MPA-24Z-M as native with SFP56, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 24x SFP56 on each: 192x 50 GbE total  
 •	100 GbE  
 o	Use with 86-MPA-14H2FH-M as native with QSFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 16x QSFP+ on each: 128x 100 GbE total  
 o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x (4x 100 GbE) on each: 128x 100 GbE total  
-•	400 GbE  
+- 400 GbE  
 o	Use with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 100 GbE total  
 
 
