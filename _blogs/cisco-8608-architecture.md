@@ -114,19 +114,19 @@ Figure 9. 86-MPA-24Z-M
 {: .text-center}  
 
 ### RP Overview  
-The RPs will vertically fit in the chassis from the front panel. There will be up to two redundant RPs in the system and will work in Active-standby mode. The RP is not connected to the Switch Card.
+The RPs will vertically fit in the chassis from the front panel. There will be up to two redundant RPs in the system and will work in Active-standby mode. The RP is not connected to the Switch Card.  
 RPs manages all routing operations on the Cisco 8600 Routers.  
 ![figure10.png]({{site.baseurl}}/images/figure10.png){: .full}  
 Figure 10. 8608-RP  
 {: .text-center}  
 
-Front panel ports include management and Timing interfaces:
-•	RJ45 console port directly connected to CPU
-•	10/100/1000 Mbps Management Ethernet Port
-•	USB 3.0 (Type A)
-•	Timing ports: 1588 PTP SFP, SyncE, BITS, GNSS PRTC-A, and GPS(ToD with RJ45 port, 1PPS and 10MHz coax input)
+Front panel ports include management and Timing interfaces:  
+•	RJ45 console port directly connected to CPU  
+•	10/100/1000 Mbps Management Ethernet Port  
+•	USB 3.0 (Type A)  
+•	Timing ports: 1588 PTP SFP, SyncE, BITS, GNSS PRTC-A, and GPS(ToD with RJ45 port, 1PPS and 10MHz coax input)  
 RP contains an Intel 6-core @ 2.5 GHz, 64GB DDR4 DRAM, and 240 GB M.2 SSD Flash Drive
-This RPs are connected to midplane and communicate with their devices via PCIE, EOBC, P2PM, and I2C Interfaces.
+This RPs are connected to midplane and communicate with their devices via PCIE, EOBC, P2PM, and I2C Interfaces.  
 
 ### Switch Card Overview  
 The Cisco 8608 Series Switch Card sits behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with total eight Fan Modules. The Cisco Silicon One Q200 NPU sits within the Switch Card and all the packet process and forwarding decisions are driven by the Switch Card.  
@@ -166,20 +166,20 @@ You can install up to four 3200W AC or 3200W DC power supplies in the chassis. E
 Note: The Cisco 8608 chassis doesn't support a mix of AC and DC Power Supply Units (PSUs)  
 {: .notice}  
 
-AC Power Module (86-3.2KW-AC)
-• The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.
-• AC power modules are rated at 3200KW maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.
-• AC nominal range: 100—1230VAC and 2002—40VAC
-• AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC
+AC Power Module (86-3.2KW-AC)  
+• The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.  
+• AC power modules are rated at 3200KW maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.  
+• AC nominal range: 100—1230VAC and 2002—40VAC  
+• AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC  
 
-DC Power Module (86-3.2KW-DC)
-• The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.
-• AC power modules are rated at 3200KW maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.
-• AC nominal range: 100—1230VAC and 2002—40VAC
-• AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC
-The airflow direction through the Fan Trays and Power Modules on the Cisco 8608 routers are from front to back (port side intake).
-The maximum power available for operations depends on the input power from your power source, the number and output capabilities of power supplies, and the power redundancy mode that you use. 
-The following table lists the amount of power available for Cisco 8600 series routers from all available power trays. 
+DC Power Module (86-3.2KW-DC)  
+• The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.  
+• AC power modules are rated at 3200KW maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.  
+• AC nominal range: 100—1230VAC and 2002—40VAC  
+• AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC  
+The airflow direction through the Fan Trays and Power Modules on the Cisco 8608 routers are from front to back (port side intake).  
+The maximum power available for operations depends on the input power from your power source, the number and output capabilities of power supplies, and the power redundancy mode that you use.   
+The following table lists the amount of power available for Cisco 8600 series routers from all available power trays.   
 
 ![powersupply.png]({{site.baseurl}}/images/powersupply.png){: .full} 
 
