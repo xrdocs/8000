@@ -461,7 +461,6 @@ Figure 20. 86-MPA-24Z-M Datapath block diagram
 
 To verify optics supported, please use the [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/).   
 
-
 <b>Maximum ports density supported on Cisco 8608</b>  
 
 |          | 10 GbE | 25 GbE | 40 GbE | 50 GbE | 100 GbE | 400 GbE |
