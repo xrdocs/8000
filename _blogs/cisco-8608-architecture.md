@@ -472,7 +472,7 @@ To verify optics supported, please use the [Cisco Optics-to-Device Compatibility
 N/A: Not applicable – N/S: Not supported  
 
 Math is the following:  
--10 GbE  
+- 10 GbE  
 -- Use with 86-MPA-24Z-M as native with SFP+, fully populated with this MPA into 8 MPAs slots. 8x MPAs and 24x SFP+ on each MPA: 192x 10 GbE total    
 -- Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 10 GbE) x 8 MPAs: 128x 10 GbE total  
 
