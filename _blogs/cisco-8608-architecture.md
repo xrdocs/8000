@@ -488,14 +488,6 @@ o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs s
 - 400 GbE  
 o	Use with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 100 GbE total  
 
-
-
-
-
-
-
-
-
 ## Redundancy Details  
 
 
