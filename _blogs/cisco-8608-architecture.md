@@ -183,7 +183,13 @@ The airflow direction through the Fan Trays and Power Modules on the Cisco 8608 
 The maximum power available for operations depends on the input power from your power source, the number and output capabilities of power supplies, and the power redundancy mode that you use.   
 The following table lists the amount of power available for Cisco 8600 series routers from all available power trays.   
 
-![powersupply.png]({{site.baseurl}}/images/powersupply.png){: .full} 
+| Total Power Supply | Combined Mode in Watts | N+1 Redundancy Mode in Watts (with Single Supply Loss) |
+|--------------------|------------------------|--------------------------------------------------------|
+|                    | (No redundancy)        |                                                        |
+| 1                  | 3,200                  | -                                                      |
+| 2                  | 6,400                  | 3,200                                                  |
+| 3                  | 9,600                  | 6,400                                                  |
+| 4                  | 12,800                 | 9,600                                                  |  
 
 
 <div class="highlighter-rouge">
@@ -322,8 +328,6 @@ Cisco 8600 - 8 Slot Centralized Chassis
 Detailed information on XR7 can be found here: [IOS XR Data Sheet](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xr-software/datasheet-c78-743014.html).
 For a complete list of supported features, refer to the [Cisco Feature Navigator](https://tools.cisco.com/ITDIT/CFN/jsp/index.jsp).
 [Cisco Software Download](https://software.cisco.com/download/home/286325065/type/280805694/release/7.3.1) page to download the Cisco IOS XR software images.
-
-
 
 
 ### Cisco 8608 Slot and Ethernet ports  
