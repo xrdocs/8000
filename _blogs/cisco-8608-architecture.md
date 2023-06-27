@@ -386,7 +386,7 @@ RP/0/RP0/CPU0:Cisco8608#sh interfaces brief
                Intf       Intf        LineP              Encap  MTU        BW
                Name       State       State               Type (byte)    (Kbps)
 --------------------------------------------------------------------------------       
-       Te0/7/0/14/0          up          up               ARPA  1514   10000000
+       <mark>Te0/7/0/14/0</mark>          up          up               ARPA  1514   10000000
        Te0/7/0/14/1          up          up               ARPA  1514   10000000
        Te0/7/0/14/2          up          up               ARPA  1514   10000000
        Te0/7/0/14/3          up          up               ARPA  1514   10000000
