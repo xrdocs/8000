@@ -170,16 +170,16 @@ Note: The Cisco 8608 chassis doesn't support a mix of AC and DC Power Supply Uni
 {: .notice}  
 
 AC Power Module (86-3.2KW-AC)  
-• The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.  
-• AC power modules are rated at 3200KW maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.  
-• AC nominal range: 100—1230VAC and 2002—40VAC  
-• AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC  
+- The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.  
+- AC power modules are rated at 3200KW maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.  
+- AC nominal range: 100—1230VAC and 2002—40VAC  
+- AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC  
 
 DC Power Module (86-3.2KW-DC)  
-• The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.  
-• AC power modules are rated at 3200KW maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.  
-• AC nominal range: 100—1230VAC and 2002—40VAC  
-• AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC  
+- The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.  
+- AC power modules are rated at 3200KW maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.  
+- AC nominal range: 100—1230VAC and 2002—40VAC  
+- AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC  
 The airflow direction through the Fan Trays and Power Modules on the Cisco 8608 routers are from front to back (port side intake).  
 The maximum power available for operations depends on the input power from your power source, the number and output capabilities of power supplies, and the power redundancy mode that you use.   
 The following table lists the amount of power available for Cisco 8600 series routers from all available power trays.   
@@ -549,7 +549,7 @@ Figure 21. Data path flow with Redundant System
 6.	PHY will drop packets coming from standby SC1  
 
 ![figure22.jpg]({{site.baseurl}}/images/figure22.jpg){: .full}  
-Figure 22. Data path flow with Non-redundant System  
+Figure 22. Data path flow after Active Pair failover  
 {: .text-center}  
 
 ## Conclusion
