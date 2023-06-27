@@ -557,7 +557,7 @@ No traffic drop is expected during RP/SC Failover.
 
 
 
-## Packet flow under redundancy system  
+## Packet flow in the redundancy system  
 
 ![figure21.jpg]({{site.baseurl}}/images/figure21.jpg){: .full}  
 Figure 25. Data path flow with Redundant System  
