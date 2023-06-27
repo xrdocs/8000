@@ -184,14 +184,12 @@ The airflow direction through the Fan Trays and Power Modules on the Cisco 8608 
 The maximum power available for operations depends on the input power from your power source, the number and output capabilities of power supplies, and the power redundancy mode that you use.   
 The following table lists the amount of power available for Cisco 8600 series routers from all available power trays.   
 
-| Total Power Supply | Combined Mode in Watts | N+1 Redundancy Mode in Watts (with Single Supply Loss) |
-|--------------------|------------------------|--------------------------------------------------------|
-|                    | (No redundancy)        |                                                        |
-| 1                  | 3,200                  | -                                                      |
-| 2                  | 6,400                  | 3,200                                                  |
-| 3                  | 9,600                  | 6,400                                                  |
-| 4                  | 12,800                 | 9,600                                                  |  
-
+| Total Power Supply | Combined Mode in Watts(No redundancy) | N+1 Redundancy Mode in Watts (with Single Supply Loss) |
+|--------------------|---------------------------------------|--------------------------------------------------------|
+| 1                  | 3,200                                 | -                                                      |
+| 2                  | 6,400                                 | 3,200                                                  |
+| 3                  | 9,600                                 | 6,400                                                  |
+| 4                  | 12,800                                | 9,600                                                  |  
 
 <div class="highlighter-rouge">
 <pre class="highlight">
