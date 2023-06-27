@@ -359,7 +359,7 @@ RP/0/RP0/CPU0:Cisco8608#sh interfaces brief
                Intf       Intf        LineP              Encap  MTU        BW
                Name       State       State               Type (byte)    (Kbps)
 --------------------------------------------------------------------------------       
-         <span style="background-color: #FDD7E4">Hu0/0/0/0</span>          up          up               ARPA  9000  100000000
+         <mark>Hu0/0/0/0</mark>          up          up               ARPA  9000  100000000
          Hu0/0/0/1          up          up               ARPA  9000  100000000
        Hu0/0/0/1.1          up          up             802.1Q  9004  100000000
        Hu0/0/0/1.2          up          up             802.1Q  9004  100000000
@@ -370,7 +370,7 @@ RP/0/RP0/CPU0:Cisco8608#sh interfaces brief
        Hu0/0/0/1.7          up          up             802.1Q  9004  100000000
        Hu0/0/0/1.8          up          up             802.1Q  9004  100000000
        Hu0/0/0/1.9          up          up             802.1Q  9004  100000000
-         FH0/0/0/2          up          up               ARPA  9000  100000000
+         <mark>FH0/0/0/2</mark>          up          up               ARPA  9000  100000000
          FH0/0/0/3          up          up               ARPA  9000  100000000
 </code>
 </pre>
