@@ -494,6 +494,18 @@ Switch Card has a 12.8T bandwidth using the Cisco Silicon One Q200 NPU at an ope
 Figure 21. Cisco 8608 block diagram  
 {: .text-center}  
 
+Cisco Silicon One Q200’s brief features are following:    
+- 12.8 Tbps full-duplex and 8.1 Bpps Forwarding Capacity NPU  
+- 256 56G SerDes with each capable of operating at 10G/25G/50G using NRZ or PAM4 modulation   
+- Flexible port configuration supporting 10/25/40/50/100/200/400 Gbps   
+- 108 MB fully shared on-die packet buffer   
+- Expandable in-package packet buffer using 8 GB HBM  
+- On-chip, high-performance, P4-programmable host NPU for high-bandwidth offline packet processing  
+- Multiple embedded processors for CPU offloading  
+- 56K VoQ(Virtual Output Queue)   
+- Dedicated 108 Counters banks (860K counters)   
+
+For more understanding on Cisco Silicon One Q200 refer to [Cisco Silicon One Q200-Info](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/datasheet-c78-744312.html).  
 
 
 ## Redundancy Details  
