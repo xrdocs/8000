@@ -554,5 +554,10 @@ Figure 21. Data path flow with Redundant System
 Figure 22. Data path flow with Non-redundant System  
 {: .text-center} 
 
+1.	Ingress traffic coming from the network into the MPA  
+2.	PHY is bi-casted towards Q200s on both Active and Standby Pairs  
+3.	Q200 on new active SC1 process the received packets  
+4.	A Q200 forward packets towards the MPA that has the destination port    
+5.	In the egress path, PHY will forward the packets from new active SC1  
 
 ## Conclusion
