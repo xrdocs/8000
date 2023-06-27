@@ -39,7 +39,7 @@ Cisco 8608 is comprised of the following components:
 •	Power Supplies: Cisco 8608 has 4 power supplies that can provide N+N redundant power to the system. The available options are:  
 o	Pluggable 3.2KW AC   
 o	Pluggable 3.2KW DC   
-•	Fans: There are 8 fans in the system with each fan individually removable / replaceable. These provide N+1 fan redundancy to the system. The entire fan tray can be removed in case of SC insertion or removal.  
+•	Fan Modules: There are 8 Fan Modules in the system with each Fan Module individually removable / replaceable. These provide N+1 fan redundancy to the system. The entire Fan Tray can be removed in case of SC insertion or removal.  
  
 
 ## Hardware Description  
@@ -532,7 +532,7 @@ Figure 23. SC0 failure scenario in Cisco 8608
 
 Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
 
-
+No traffic drop is expected during RP/SC Failover.  
 
 
 
