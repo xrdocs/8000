@@ -179,7 +179,9 @@ DC Power Module (86-3.2KW-DC)
 - The DC power modules are dual feed with 3200W capacity at any specified input voltage. DC power modules with single feed at any specified input voltage provide up to 1600W maximum capacity.  
 - DC nominal range: -48 to -60VDC  
 - DC full range: -40 to -75VDC      
-  
+
+The airflow direction through the Fan Trays and Power Modules on the Cisco 8608 routers are from front to back (port side intake).  
+
 The maximum power available for operations depends on the input power from your power source, the number and output capabilities of power supplies, and the power redundancy mode that you use.   
 The following table lists the amount of power available for Cisco 8600 series routers from all available power trays.   
 
