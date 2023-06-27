@@ -537,16 +537,22 @@ Another scenario is the failure of the SC0 within Active pair, Active RP’s she
 
 ## Packet flow under redundancy system  
 
-![figure21.png]({{site.baseurl}}/images/figure21.png){: .full}  
+![figure21.jpg]({{site.baseurl}}/images/figure21.jpg){: .full}  
 Figure 21. Data path flow with Redundant System  
 {: .text-center}  
 
 1.	Ingress traffic coming from the network into the MPA  
 2.	PHY is bi-casted towards Q200s on both Active and Standby Pairs  
 3.	Q200s on both active and standby process the received packets  
-4.	Both Q200s forward packets towards the MPA that has the destination port  
+4.	Both Q200s forward packets towards the MPA that has the destination port    
 5.	In the egress path, PHY will forward the packets from active SC0  
 6.	PHY will drop packets coming from standby SC1  
+
+
+
+![figure22.jpg]({{site.baseurl}}/images/figure22.jpg){: .full}  
+Figure 22. Data path flow with Non-redundant System  
+{: .text-center} 
 
 
 ## Conclusion
