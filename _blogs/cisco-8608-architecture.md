@@ -487,6 +487,15 @@ o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs s
 - 400 GbE  
 o	Use with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 100 GbE total  
 
+## Switch Card (SC) Details   
+Switch Card has a 12.8T bandwidth using the Cisco Silicon One Q200 NPU at an operating data rate of 56 Gbps per lane. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provides full data plane redundancy in an active-standby mode.  
+
+![8608 block.jpg]({{site.baseurl}}/images/8608 block.jpg){: .full}  
+Figure 21. Cisco 8608 block diagram  
+{: .text-center}  
+
+
+
 ## Redundancy Details  
 Within the system even though RP0, RP1, SC0, SC1 are 4 different cards, from redundancy standpoint system software would consider RP0-SC0 together as Active Pair and RP1-SC1 as Backup Pair.  
 
@@ -512,7 +521,7 @@ Let’s start with the default state when system boot up under redundant system.
  RP0-SC0 together as one Domain 0(Active Pair) and RP1-SC1 as the other Domain 1(Standby Pair).  
  
 ![redundancy-1.png]({{site.baseurl}}/images/redundancy-1.png){: .full}  
-Figure 21. Default Redundant state in Cisco 8608  
+Figure 22. Default Redundant state in Cisco 8608  
 {: .text-center}  
 
 In this default scenario, RP0 gains mastership and RP1 is in Backup state.
@@ -521,13 +530,13 @@ Both SC0 and SC1 are packet processing and forwarding capability.
 If the RP0 fatal faults or removal,  
 
 ![RP0-Fail.jpg]({{site.baseurl}}/images/RP0-Fail.jpg){: .full}  
-Figure 22. RP0 failure scenario in Cisco 8608  
+Figure 23. RP0 failure scenario in Cisco 8608  
 {: .text-center}  
 
 Standby RP immediately gains mastership via HW arbitration mechanism. MPAs switchover data path to RP1-SC1.  
 
 ![SC0_Fail.jpg]({{site.baseurl}}/images/SC0_Fail.jpg){: .full}  
-Figure 23. SC0 failure scenario in Cisco 8608  
+Figure 24. SC0 failure scenario in Cisco 8608  
 {: .text-center}  
 
 Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
@@ -539,7 +548,7 @@ No traffic drop is expected during RP/SC Failover.
 ## Packet flow under redundancy system  
 
 ![figure21.jpg]({{site.baseurl}}/images/figure21.jpg){: .full}  
-Figure 21. Data path flow with Redundant System  
+Figure 25. Data path flow with Redundant System  
 {: .text-center}  
 
 1.	Ingress traffic coming from the network into the MPA  
@@ -550,7 +559,7 @@ Figure 21. Data path flow with Redundant System
 6.	PHY will drop packets coming from standby SC1  
 
 ![figure22.jpg]({{site.baseurl}}/images/figure22.jpg){: .full}  
-Figure 22. Data path flow after Active Pair failover  
+Figure 26. Data path flow after Active Pair failover  
 {: .text-center}  
 
 ## Conclusion
