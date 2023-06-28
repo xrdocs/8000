@@ -72,10 +72,10 @@ Figure 3. Front view of an empty Cisco 8608 chassis
 Cisco 8608 chassis utilizes a state-of-the-art orthogonal design with advanced cooling via front to back airflow, high power capacity and new power supplies. The chassis and all data path components.  
 
 As shown in Figure 3, user needs to insert the followings:  
-•	Modular Port Adapter(MPA) sits vertically in the front of the chassis
-•	Route Processor(RP) sits vertically in the front of the chassis
-•	Switch Card(SC) sits horizontally behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with four Fan Modules on each Fan Tray
-•	Midplane provides the control path connectivity and power distribution for the chassis
+- Modular Port Adapter(MPA) sits vertically in the front of the chassis
+- Route Processor(RP) sits vertically in the front of the chassis
+- Switch Card(SC) sits horizontally behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with four Fan Modules on each Fan Tray
+- Midplane provides the control path connectivity and power distribution for the chassis
 
 
 
@@ -104,8 +104,8 @@ Figure 6. two SCs and three Redundant MPAs connection of Cisco 8608 chassis
 The Q200 on the SC has up to 32x 50Gbps SerDes to each MPA slot regardless of slot number.
 There are three different Redundant MPAs in Cisco 8608.
 The first MPA is the 86-MPA-14H2FH-M. This MPA can be inserted into any slot (slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 16 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:
-•	16 ports of QSFP 100 GbE modules (Default), or
-•	2 ports of QSFP-DD 400 GbE modules and 14 ports of QSFP
+- 16 ports of QSFP 100 GbE modules (Default), or
+- 2 ports of QSFP-DD 400 GbE modules and 14 ports of QSFP
 When port 0 has a 400G QSFP-DD, then the other three ports (2, 3, 4) cannot be used. Similarly, when port 1 has a 400G QSFP-DD, then the other three ports (5, 6, 7) cannot be used.  
 
 Note: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
@@ -116,7 +116,7 @@ Figure 7. 86-MPA-14H2FH-M
 {: .text-center}  
 
 The second MPA is the 86-MPA-4FH-M. This MPA can be inserted into any slot(slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 4 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:  
-•	4 ports of QSFP-DD 400 GbE modules  
+- 4 ports of QSFP-DD 400 GbE modules  
 
 Note: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
 {: .notice}  
@@ -126,7 +126,7 @@ Figure 8. 86-MPA-4FH-M
 {: .text-center}  
 
 And third MPA is 86-MPA-24Z-M. This MPA can be inserted into any slot(slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 24 interface ports for a maximum total bandwidth of 1.2 Tbps that can support up to:
-•	24 ports of SFP 10/25/50 GbE modules
+- 24 ports of SFP 10/25/50 GbE modules
 
 
 ![figure9.png]({{site.baseurl}}/images/figure9.png){: .full}    
@@ -141,10 +141,10 @@ Figure 10. 8608-RP
 {: .text-center}  
 
 Front panel ports include management and Timing interfaces:  
-•	RJ45 console port directly connected to CPU  
-•	10/100/1000 Mbps Management Ethernet Port  
-•	USB 3.0 (Type A)  
-•	Timing ports: 1588 PTP SFP, SyncE, BITS, GNSS PRTC-A, and GPS(ToD with RJ45 port, 1PPS and 10MHz coax input)  
+- RJ45 console port directly connected to CPU  
+- 10/100/1000 Mbps Management Ethernet Port  
+- USB 3.0 (Type A)  
+- Timing ports: 1588 PTP SFP, SyncE, BITS, GNSS PRTC-A, and GPS(ToD with RJ45 port, 1PPS and 10MHz coax input)  
 RP contains an Intel 6-core @ 2.5 GHz, 64GB DDR4 DRAM, and 240 GB M.2 SSD Flash Drive
 This RPs are connected to midplane and communicate with their devices via PCIE, EOBC, P2PM, and I2C Interfaces.  
 
@@ -491,20 +491,20 @@ N/A: Not applicable – N/S: Not supported
 
 Math is the following:  
 - 10 GbE  
-o	Use with 86-MPA-24Z-M as native with SFP+, fully populated with this MPA into 8 MPAs slots. 8x MPAs and 24x SFP+ on each MPA: 192x 10 GbE total    
-o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 10 GbE) x 8 MPAs: 128x 10 GbE total  
+  o	Use with 86-MPA-24Z-M as native with SFP+, fully populated with this MPA into 8 MPAs slots. 8x MPAs and 24x SFP+ on each MPA: 192x 10 GbE total    
+  o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 10 GbE) x 8 MPAs: 128x 10 GbE total  
 - 25 GbE  
-o	Use with 86-MPA-24Z-M as native with SFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 24x SFP28 on each: 192x 25 GbE total  
-o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 25 GbE) x 8 MPAs: 128x 25 GbE total  
+  o	Use with 86-MPA-24Z-M as native with SFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 24x SFP28 on each: 192x 25 GbE total  
+  o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 25 GbE) x 8 MPAs: 128x 25 GbE total  
 - 40 GbE  
-o	Use with 86-MPA-14H2FH-M as native with QSFP+, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 16x QSFP+ on each: 128x 40 GbE total  
+  o	Use with 86-MPA-14H2FH-M as native with QSFP+, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 16x QSFP+ on each: 128x 40 GbE total  
 - 50 GbE  
-o	Use with 86-MPA-24Z-M as native with SFP56, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 24x SFP56 on each: 192x 50 GbE total  
+  o	Use with 86-MPA-24Z-M as native with SFP56, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 24x SFP56 on each: 192x 50 GbE total  
 - 100 GbE  
-o	Use with 86-MPA-14H2FH-M as native with QSFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 16x QSFP+ on each: 128x 100 GbE total  
-o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x (4x 100 GbE) on each: 128x 100 GbE total  
+  o	Use with 86-MPA-14H2FH-M as native with QSFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 16x QSFP+ on each: 128x 100 GbE total  
+  o	Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x (4x 100 GbE) on each: 128x 100 GbE total  
 - 400 GbE  
-o	Use with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 100 GbE total  
+  o	Use with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 100 GbE total  
 
 ## Switch Card (SC) Details   
 Switch Card has a 12.8T bandwidth using the Cisco Silicon One Q200 NPU at an operating data rate of 56 Gbps per lane. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provides full data plane redundancy in an active-standby mode.  
@@ -573,8 +573,6 @@ Figure 24. SC0 failure scenario in Cisco 8608
 Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
 
 No traffic drop is expected during RP/SC Failover.  
-
-
 
 ## Packet flow in the redundancy system  
 
