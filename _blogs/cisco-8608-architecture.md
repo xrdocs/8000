@@ -321,14 +321,14 @@ Location      FRU Type                        FAN_0    FAN_1
 Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs), eight Modular Port Adapters (MPAs), 4 Power Modules (PMs), 8 Fan Modules (FMs) – all these entities are field replaceable units (FRUs).  
 
 ### IOS XR Software  
-Cisco IOS XR 7.10.1 introduces the Cisco 8608 router support.  
+The Cisco 8608 is launched with IOS XR 7.10.1.    
 
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
 RP/0/RP0/CPU0:Cisco8608#sh version
 
-Cisco IOS XR Software, Version 7.10.1.25I LNT
+Cisco IOS XR Software, <mark>Version 7.10.1.25I LNT</mark>
 Copyright (c) 2013-2023 by Cisco Systems, Inc.
 
 Build Information:
@@ -336,7 +336,7 @@ Build Information:
  Built On     : Thu May 11 23:47:35 UTC 2023
  Build Host   : iox-ucs-058
  Workspace    : /auto/iox-ucs-058-san2/prod/7.10.1.25I.SIT_IMAGE/8000/ws/
- Version      : <mark>7.10.1.25I</mark>
+ Version      : 7.10.1.25I
  Label        : 7.10.1.25I
 
 cisco 8000 (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz)
