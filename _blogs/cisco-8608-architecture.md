@@ -371,7 +371,6 @@ Figure 16. Cisco 8608 MPA Port numbering
 {: .text-center}  
 
 Cisco 8608 ports numbering convention follows that of physical interfaces as {Type}{R/S/I/P} or {Type}{R/S/I/P/B}  
-![RSIPB.png]({{site.baseurl}}/images/RSIPB.png){: .full}  
 
 ![Screenshot 2023-06-28 at 12.14.39 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.14.39 PM.png)  
 
