@@ -574,4 +574,12 @@ Figure 25. Data path flow with Redundant System
 Figure 26. Data path flow after Active Pair failover  
 {: .text-center}  
 
-## Conclusion
+## Conclusion  
+This article covered Cisco 8608 deep-dive level architecture.  
+
+
+
+If you want to reach out for comments, feedback or questions, send us a mail at:
+ask-sp-routing@cisco.com and 8000-tme@cisco.com  
+
+
