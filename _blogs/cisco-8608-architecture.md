@@ -71,7 +71,7 @@ Table 1. Cisco 8608 PID and description
 ## Hardware Description  
 ### Chassis  
 
-![figure3.png]({{site.baseurl}}/images/figure3.png){: .full}      
+![figure3.png]({{site.baseurl}}/images/figure3.png){: .align-center}{:height="260%" width="260%"}  
 Figure 3. Front view of an empty Cisco 8608 chassis  
 {: .text-center}  
 
