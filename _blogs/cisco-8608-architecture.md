@@ -66,6 +66,7 @@ Let us have a quick refresher of the Cisco 8608 PIDs and description.
 | Combo MPA            | 86-MPA-14H2FH-M | Cisco 8600 14 x 100G and 2 x 400G Combo Redundant MPA                                     |
 | 400G Redundant  MPA  | 86-MPA-4FH-M    | Cisco 8600 4 x 400G Redundant MPA                                                         |
 | 10G Redundant MPA    | 86-MPA-24Z-M    | Cisco 8600 24 x 10G/25G/50G Redundant MPA                                                 |  
+
 Table 1. Cisco 8608 PID and description  
 {: .text-center}  
  
