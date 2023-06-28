@@ -50,14 +50,14 @@ Before deep-diving into the Cisco 8608, let us have a quick refresher of the Cis
 | SC                  | 8608-SC0-128    | Cisco 8608 12.8T Switch Card                                           |
 | AC PSU              | 86-3.2KW-AC     | Cisco 8600 3.2KW AC Power Supply Unit                                  |
 | DC PSU              | 86-3.2KW-DC     | Cisco 8600 3.2KW DC Power Supply Unit                                  |
-| HV PSU              | 86-4.3KW-HV     | Cisco 8600 HV AC/DC Power Supply Unit                                  |
-| Fan Module                | 8608-FAN        | Cisco 8608 Fan Module                                                         |
+| Fan Module          | 8608-FAN        | Cisco 8608 Fan Module                                                  |
 | Fan Spinner         | 8608-FS         | Cisco 8608 Fan Spinner (Needed in a chassis with one Switch Card only) |
 | RP Blank            | 8608-RP-BLANK   | Cisco 8608 RP Blank                                                    |
 | MPA Blank           | 8608-MPA-BLANK  | Cisco 8608 MPA Blank                                                   |
 | Combo MPA           | 86-MPA-14H2FH-M | Cisco 8600 14 x 100G and 2 x 400G Combo Redundant MPA                  |
 | 400G Redundant  MPA | 86-MPA-4FH-M    | Cisco 8600 4 x 400G Redundant MPA                                      |
 | 10G Redundant MPA   | 86-MPA-24Z-M    | Cisco 8600 24 x 10G/25G/50G Redundant MPA                              |  
+
 Table 1. Cisco 8608 PID and description  
 {: .text-center}  
  
