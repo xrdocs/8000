@@ -217,7 +217,7 @@ The following table lists the amount of power available for Cisco 8600 series ro
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:Cisco8608#sh plat
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh plat</span>
 0/RP0/CPU0        8608-RP(Active)          IOS XR RUN               NSHUT
 0/RP1/CPU0        8608-RP(Standby)         IOS XR RUN               NSHUT
 0/SC0             8608-SC0-128             OPERATIONAL              NSHUT
