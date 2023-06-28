@@ -425,8 +425,8 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 <b>MPA-IFG mapping</b>  
 Cisco 8608 doesn’t have any MPA slot position restriction in the chassis.  
 There is one Q200 NPU in each Switch Card.  
- 
-![]({{site.baseurl}}/images/Screenshot%202023-06-28%20at%2012.16.45%20PM.png){: .full}    
+
+
 Figure 17. Cisco 8608 MPA- IFG Mapping  
 {: .text-center}  
 
