@@ -376,6 +376,8 @@ Figure 16. Cisco 8608 MPA Port numbering
 Cisco 8608 ports numbering convention follows that of physical interfaces as {Type}{R/S/I/P} or {Type}{R/S/I/P/B}  
 ![RSIPB.png]({{site.baseurl}}/images/RSIPB.png){: .full}  
 
+![Screenshot 2023-06-28 at 12.14.39 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.14.39 PM.png)  
+
 Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE and port 3 & 4 with native 400 GbE on slot 0.  
 
 <div class="highlighter-rouge">
@@ -609,7 +611,4 @@ This article covered Cisco 8608 deep-dive level architecture.
 - Cisco Optics-to-Device Compatibility Matrix tool: https://tmgmatrix.cisco.com/  
 
 If you want to reach out for comments, feedback or questions, send us a mail at:
-[ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com) and [8000-tme@cisco.com](mailto:8000-tme@cisco.com)  
-
-
-
+[ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com) and [8000-tme@cisco.com](mailto:8000-tme@cisco.com)
