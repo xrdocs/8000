@@ -40,7 +40,23 @@ Cisco 8608 is comprised of the following components:
 o	Pluggable 3.2KW AC   
 o	Pluggable 3.2KW DC   
 •	Fan Modules: There are 8 Fan Modules in the system with each Fan Module individually removable / replaceable. These provide N+1 fan redundancy to the system. The entire Fan Tray can be removed in case of SC insertion or removal.  
- 
+
+Before deep-diving into the Cisco 8608, let us have a quick refresher of the Cisco 8608.  
+| Item                | PIDs            | Description                                                            |
+|---------------------|-----------------|------------------------------------------------------------------------|
+| Chassis             | 8608            | Cisco 8600 - 8 Slot Centralized Chassis                                |
+| RP                  | 8608-RP         | Cisco 8608 Route Processor                                             |
+| SC                  | 8608-SC0-128    | Cisco 8608 12.8T Switch Card                                           |
+| AC PSU              | 86-3.2KW-AC     | Cisco 8600 3.2KW AC Power Supply Unit                                  |
+| DC PSU              | 86-3.2KW-DC     | Cisco 8600 3.2KW DC Power Supply Unit                                  |
+| HV PSU              | 86-4.3KW-HV     | Cisco 8600 HV AC/DC Power Supply Unit                                  |
+| Fans                | 8608-FAN        | Cisco 8608 Fan                                                         |
+| Fan Spinner         | 8608-FS         | Cisco 8608 Fan Spinner (Needed in a chassis with one Switch Card only) |
+| RP Blank            | 8608-RP-BLANK   | Cisco 8608 RP Blank                                                    |
+| MPA Blank           | 8608-MPA-BLANK  | Cisco 8608 MPA Blank                                                   |
+| Combo MPA           | 86-MPA-14H2FH-M | Cisco 8600 14 x 100G and 2 x 400G Combo Redundant MPA                  |
+| 400G Redundant  MPA | 86-MPA-4FH-M    | Cisco 8600 4 x 400G Redundant MPA                                      |
+| 10G Redundant MPA   | 86-MPA-24Z-M    | Cisco 8600 24 x 10G/25G/50G Redundant MPA                              |  
 
 ## Hardware Description  
 ### Chassis  
