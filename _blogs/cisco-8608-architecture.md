@@ -481,6 +481,7 @@ Figure 20. 86-MPA-24Z-M Datapath block diagram
 {: .text-center}  
 
 To identify the optic types supported on the Cisco 8608, please check [[the TMG matrix](https://tmgmatrix.cisco.com/)]      
+It contains details on the connector types, the reach, the minimum release required, etc.  
 
 <b>Maximum ports density supported on Cisco 8608</b>  
 
