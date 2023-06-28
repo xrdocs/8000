@@ -47,8 +47,6 @@ Cisco 8608 is comprised of the following components:
 ![naming-2.png]({{site.baseurl}}/images/naming-2.png){: .full}  
 
 Let us have a quick refresher of the Cisco 8608 PIDs and description.  
-
-![Screenshot 2023-06-28 at 12.04.56 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.04.56 PM.png){: .full}     
   
 | Item                 | PIDs            | Description                                                                               |
 |----------------------|-----------------|-------------------------------------------------------------------------------------------|
@@ -418,7 +416,8 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
        <mark>Te0/7/0/14/0</mark>          up          up               ARPA  1514   10000000
        Te0/7/0/14/1          up          up               ARPA  1514   10000000
        Te0/7/0/14/2          up          up               ARPA  1514   10000000
-       Te0/7/0/14/3          up          up               ARPA  1514   10000000
+       Te0/7/0/14/3      ![Screenshot 2023-06-28 at 12.16.45 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.16.45 PM.png)
+    up          up               ARPA  1514   10000000
 </code>
 </pre>
 </div>  
