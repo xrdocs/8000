@@ -72,7 +72,7 @@ Table 1. Cisco 8608 PID and description
 ### Chassis  
 
 
-![]({{site.baseurl}}/images/figure3.png){: .full}  
+![]({{site.baseurl}}/images/front%20empty.png){: .full}   
 Figure 3. Front view of an empty Cisco 8608 chassis  
 {: .text-center}  
 
