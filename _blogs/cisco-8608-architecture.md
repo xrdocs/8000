@@ -249,7 +249,7 @@ On this router, there are two Power Modules in Cisco 8608 chassis.
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-RP/0/RP0/CPU0:Cisco8608#sh environment power
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh environment power</span>
 ================================================================================
 CHASSIS LEVEL POWER INFO: 0
 ================================================================================
@@ -299,7 +299,7 @@ Total of Power Modules:       1122W/5.4A              1028W/18.8A
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-RP/0/RP0/CPU0:Cisco8608#sh environment fan
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh environment fan</span>
 =============================================================
                                               Fan speed (rpm)
 Location      FRU Type                        FAN_0    FAN_1   
@@ -326,7 +326,7 @@ The Cisco 8608 is launched with IOS XR 7.10.1.
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-RP/0/RP0/CPU0:Cisco8608#sh version
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh version</span>
 
 Cisco IOS XR Software, <mark>Version 7.10.1.25I LNT</mark>
 Copyright (c) 2013-2023 by Cisco Systems, Inc.
@@ -377,7 +377,7 @@ Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE an
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>    
-RP/0/RP0/CPU0:Cisco8608#sh interfaces brief 
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh interfaces brief</span> 
 
                Intf       Intf        LineP              Encap  MTU        BW
                Name       State       State               Type (byte)    (Kbps)
@@ -404,7 +404,7 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-RP/0/RP0/CPU0:Cisco8608#sh interfaces brief 
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh interfaces brief</span> 
 
                Intf       Intf        LineP              Encap  MTU        BW
                Name       State       State               Type (byte)    (Kbps)
