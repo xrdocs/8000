@@ -506,7 +506,7 @@ Math is the following:
 - 400 GbE  
   o	Use with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 100 GbE total  
 
-## Switch Card (SC) Details   
+### Switch Card (SC) Details   
 Switch Card has a 12.8T bandwidth using the Cisco Silicon One Q200 NPU at an operating data rate of 56 Gbps per lane. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provides full data plane redundancy in an active-standby mode.  
 
 ![8608 block.jpg]({{site.baseurl}}/images/8608 block.jpg){: .full}  
@@ -574,7 +574,7 @@ Another scenario is the failure of the SC0 within Active pair, Active RP’s she
 
 No traffic drop is expected during RP/SC Failover.  
 
-## Packet flow in the redundancy system  
+### Packet flow in the redundancy system  
 
 ![figure21.jpg]({{site.baseurl}}/images/figure21.jpg){: .full}  
 Figure 25. Data path flow with Redundant System  
