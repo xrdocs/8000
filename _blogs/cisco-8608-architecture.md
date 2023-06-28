@@ -49,9 +49,7 @@ Cisco 8608 is comprised of the following components:
 Let us have a quick refresher of the Cisco 8608 PIDs and description.  
 
 ![PID.jpg]({{site.baseurl}}/images/PID.jpg){: .full}{:height="160%" width="160%"}  
-
-![Screenshot 2023-06-27 at 9.58.23 AM.png]({{site.baseurl}}/images/Screenshot 2023-06-27 at 9.58.23 AM.png)  
-
+ 
   
 | Item                 | PIDs            | Description                                                                               |
 |----------------------|-----------------|-------------------------------------------------------------------------------------------|
