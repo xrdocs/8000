@@ -21,7 +21,7 @@ The Cisco 8608 series is a part of Cisco’s Centralized Architecture based chas
 Figure 1. Front view of the Cisco 8608  
 {: .text-center}  
 
-![rear view.png]({{site.baseurl}}/images/rear view.png){: .full}  
+![front door.png]({{site.baseurl}}/images/front door.png){: .full}  
 Figure 2. Front view of the Cisco 8608 with Door kit  
 {: .text-center}  
 
