@@ -118,7 +118,7 @@ The first MPA is the 86-MPA-14H2FH-M. This MPA can be inserted into any slot (sl
 - 2 ports of QSFP-DD 400 GbE modules and 14 ports of QSFP
 When port 0 has a 400G QSFP-DD, then the other three ports (2, 3, 4) cannot be used. Similarly, when port 1 has a 400G QSFP-DD, then the other three ports (5, 6, 7) cannot be used.  
 
-Note: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
+**Note**: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
 {: .notice}  
 
 ![figure7.png]({{site.baseurl}}/images/figure7.png){: .full}    
@@ -128,7 +128,7 @@ Figure 7. 86-MPA-14H2FH-M
 The second MPA is the 86-MPA-4FH-M. This MPA can be inserted into any slot(slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 4 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:  
 - 4 ports of QSFP-DD 400 GbE modules  
 
-Note: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
+**Note**: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
 {: .notice}  
 
 ![figure8.png]({{site.baseurl}}/images/figure8.png){: .full}   
@@ -184,10 +184,8 @@ To avoid over-heating the system, the service time between when a switch card is
 If there is only one SC card plugged in, a Fan Spinner card will be required which is essentially a SC blank slot with a Fan Controller and Fan Modules.
 
 ![figure14.png]({{site.baseurl}}/images/figure14.png){: .full}  
-
 Figure 14. Non-Redundant System  
 {: .text-center}  
-
 
 Fan Spinner does not provide any data or control plane functionality.  It is a passive card used to connect the midplane to the Fans.  
 
@@ -195,7 +193,7 @@ Fan Spinner does not provide any data or control plane functionality.  It is a p
 
 You can install up to four 3200W AC or 3200W DC power supplies in the chassis. Ensure that all power connection wiring conforms that to the rules and regulations in the National Electrical Code (NEC) and in local codes.  
 
-Note: The Cisco 8608 chassis doesn't support a mix of AC and DC Power Supply Units (PSUs)  
+**Note**: The Cisco 8608 chassis doesn't support a mix of AC and DC Power Supply Units (PSUs)  
 {: .notice}  
 
 AC Power Module (86-3.2KW-AC)  
