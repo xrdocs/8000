@@ -601,6 +601,7 @@ This article covered Cisco 8608 deep-dive level architecture.
 - Power calculator: Need to add  
 - Cisco 8000 Configuration guide: https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html   
 - Cisco Optics-to-Device Compatibility Matrix tool: https://tmgmatrix.cisco.com/  
+- Ordering tool: https://cisco.sharepoint.com/:p:/r/sites/MIGRoutingPMTMECommunications/_layouts/15/Doc.aspx?sourcedoc=%7B11FE4519-D569-4AA4-8437-D7D5E7B5739F%7D&file=Cisco%208000%20Ordering%20Guide_v8.pptx&action=edit&mobileredirect=true  
 
 If you want to reach out for comments, feedback or questions, send us a mail at:
 [ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com) and [8000-tme@cisco.com](mailto:8000-tme@cisco.com)
