@@ -37,8 +37,8 @@ Cisco 8608 is comprised of the following components:
 - Route Processor (RP): Cisco 8608 RP hosts the CPU and the I/O ports on it. RPs fit vertical in the chassis and are inserted from the front panel. There will be up to two redundant RPs in the system and the RPs will operate in Active-Standby mode for a redundant system.  
 - Switch Card (SC): Switch cards sit behind the MPAs and have connections to all MPAs. Switch cards host the NPUs on them. There are up to two switch cards in the system and the SCs work in Active-Standby mode thus delivering data plane redundancy.  
 - Power Supplies: Cisco 8608 has 4 power supplies that can provide N+N redundant power to the system. The available options are:  
-  o	Pluggable 3.2KW AC   
-  o	Pluggable 3.2KW DC   
+  - Pluggable 3.2KW AC   
+  - Pluggable 3.2KW DC   
 - Fan Modules: There are 8 Fan Modules in the system with each Fan Module individually removable / replaceable. These provide N+1 fan redundancy to the system. The entire Fan Tray can be removed in case of SC insertion or removal.  
 
 ## 8608 Naming Logic     
