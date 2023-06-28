@@ -596,7 +596,12 @@ Figure 26. Data path flow after Active Pair failover
 ## Conclusion  
 This article covered Cisco 8608 deep-dive level architecture.  
 
-
+## Reference   
+- Datasheet: https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html 
+- Hardware Installation Guide: Need to add  
+- Power calculator: Need to add  
+- Cisco 8000 Configuration guide: https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html   
+- Cisco Optics-to-Device Compatibility Matrix tool: https://tmgmatrix.cisco.com/  
 
 If you want to reach out for comments, feedback or questions, send us a mail at:
 [ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com) and [8000-tme@cisco.com](mailto:8000-tme@cisco.com)  
