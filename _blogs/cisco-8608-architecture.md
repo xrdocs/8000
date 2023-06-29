@@ -472,8 +472,7 @@ This MPA is a Redundant MPA with a front panel consisting of 24x SFP56 ports.  T
 This MPA provides a per slot bandwidth of 1.2 Tbps. The QSFP56 ports can support 10/25/50G optics and can’t support any Breakout solution.  
 
 
-![figure20.jpg]({{site.baseurl}}/images/figure20.jpg){: .full}  
-
+![LowMPA.png]({{site.baseurl}}/images/LowMPA.png){: .full}    
 Figure 20. 86-MPA-24Z-M Datapath block diagram  
 {: .text-center}  
 
