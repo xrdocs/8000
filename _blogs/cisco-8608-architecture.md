@@ -169,7 +169,6 @@ The RP & SC operate in pairs RP0-SC0 and RP1-SC1 to deliver redundancy without l
 The two SCs are CPU-less connected to both the RPs via PCIE, P2PM, EOBC links and each SC has one Cisco Silicon One Q200 NPU providing the data path for packet processing and forwarding.  
 
 ![figure13.png]({{site.baseurl}}/images/figure13.png){: .full}  
-
 Figure 13. Redundant System  
 {: .text-center}  
 
