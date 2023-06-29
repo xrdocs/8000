@@ -43,7 +43,7 @@ Cisco 8608 is comprised of the following components:
 
 ## 8608 Naming Logic     
 
-![name.png]({{site.baseurl}}/images/name.png){: .full}  
+![name.png]({{site.baseurl}}/images/name.png)    
 
 ![Screenshot 2023-06-28 at 12.36.09 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.36.09 PM.png){: .full}    
 
