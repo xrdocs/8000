@@ -88,7 +88,7 @@ Figure 4. Back view of Cisco 8608 chassis with 8 FMs and 4 PMs
 {: .text-center}  
 In Figure 4, there are 2 Fan Trays with eight Fan Modules and four Power Modules  
   
-![figure5.png]({{site.baseurl}}/images/figure5.png){: .full}    
+![figure5.png]({{site.baseurl}}/images/figure5.png){: .align-center}  
 Figure 5. Side view of Cisco 8608 chassis  
 {: .text-center}  
   
