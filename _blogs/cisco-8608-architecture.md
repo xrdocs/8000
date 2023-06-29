@@ -43,7 +43,9 @@ Cisco 8608 is comprised of the following components:
 
 ## 8608 Naming Logic     
 ![Screenshot 2023-06-28 at 12.36.09 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.36.09 PM.png){: .full}  
-   
+
+
+
 ![Screenshot 2023-06-28 at 12.37.14 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.37.14 PM.png){: .full}  
 
 Let us have a quick refresher of the Cisco 8608 PIDs and description.  
