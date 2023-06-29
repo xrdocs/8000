@@ -83,13 +83,13 @@ As shown in Figure 3, user needs to insert the followings:
 - Switch Card(SC) sits horizontally behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with four Fan Modules on each Fan Tray
 - Midplane provides the control path connectivity and power distribution for the chassis  
 
-![figure4.png]({{site.baseurl}}/images/figure4.png){: .full}      
-Figure 4. Back view of Cisco 8608 chassis with 8 FMs and 4 PMs  
+![figure4.png]({{site.baseurl}}/images/figure4.png){: .full}        
+Figure 4. Back view of Cisco 8608 chassis with 8 FMs and 4 PMs    
 {: .text-center}  
 In Figure 4, there are 2 Fan Trays with eight Fan Modules and four Power Modules  
   
-![figure5.png]({{site.baseurl}}/images/figure5.png){: .full}      
-Figure 5. Side view of Cisco 8608 chassis  
+![New side view.png]({{site.baseurl}}/images/New side view.png){: .full}  
+Figure 5. Side view of Cisco 8608 chassis    
 {: .text-center}  
   
 The Route Processors(RPs) are vertically inserted into the front right hand side of the Cisco 8608 chassis.  
