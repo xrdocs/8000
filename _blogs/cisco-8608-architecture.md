@@ -50,22 +50,29 @@ Cisco 8608 is comprised of the following components:
 
 Let us have a quick refresher of the Cisco 8608 PIDs and description.  
   
-| Item                 | PIDs            | Description                                                                               |
-|----------------------|-----------------|-------------------------------------------------------------------------------------------|
-| Chassis              | 8608            | Cisco 8600 - 8 Slot Centralized Chassis                                                   |
-| RP                   | 8608-RP         | Cisco 8608 Route Processor                                                                |
-| SC                   | 8608-SC0-128    | Cisco 8608 12.8T Switch Card                                                              |
-| AC PSU               | 86-3.2KW-AC     | Cisco 8600 3.2KW AC Power Supply Unit                                                     |
-| DC PSU               | 86-3.2KW-DC     | Cisco 8600 3.2KW DC Power Supply Unit                                                     |
-| Fan Module           | 8608-FAN        | Cisco 8608 Fan Module                                                                     |
-| Fan Spinner          | 8608-FS         | Cisco 8608 Fan Spinner (Needed in a chassis with one Switch Card only)                    |
-| Redundant Bundle     | 8608-SYS-R      | 2x 8608-RP & 2x 8608-SC0-128 & 8x 8608-FAN & 1x 8608-INSTKT & 1x 8608-RMBRKT              |
-| Non-redundant Bundle | 8608-SYS-NR     | 1x 8608-RP & 1x 8608-SC0-128 & 8x 8608-FAN & 1x 8608-FS & 1x 8608-INSTKT & 1x 8608-RMBRKT |
-| RP Blank             | 8608-RP-BLANK   | Cisco 8608 RP Blank                                                                       |
-| MPA Blank            | 8608-MPA-BLANK  | Cisco 8608 MPA Blank                                                                      |
-| Combo MPA            | 86-MPA-14H2FH-M | Cisco 8600 14 x 100G and 2 x 400G Combo Redundant MPA                                     |
-| 400G Redundant  MPA  | 86-MPA-4FH-M    | Cisco 8600 4 x 400G Redundant MPA                                                         |
-| 10G Redundant MPA    | 86-MPA-24Z-M    | Cisco 8600 24 x 10G/25G/50G Redundant MPA                                                 |  
+| Item                      | PIDs             | Description                                                  |
+|---------------------------|------------------|--------------------------------------------------------------|
+| RP                        | 8608-RP          | Cisco 8608 Route Processor                                   |
+| SC                        | 8608-SC0-128     | Cisco 8608 12.8T Switch Card                                 |
+| AC PSU                    | PSU3.2KW-ACPI    | Cisco 3.2KW AC Power Supply Unit                             |
+| DC PSU                    | PSU3.2KW-DCPI    | Cisco 3.2KW DC Power Supply Unit                             |
+| HV PSU                    | PSU4.3KW-HVPI    | Cisco 4.3KW AC Power Supply Unit                             |
+| Fans                      | 8608-FAN         | Cisco 8608 Fan                                               |
+| Fan Spinner               | 8608-FS          | Cisco 8608 Fan Spinner                                       |
+| RP Blank                  | 8608-RP-BLANK    | Cisco 8608 Route Processor Blank                             |
+| MPA Blank                 | 8608-MPA-BLANK   | Cisco 8608 MPA Blank                                         |
+| PSU Blank                 | 8608-PSU-BLANK   | Cisco 8608 PSU Blank                                         |
+| Door Kit                  | 8608-DRKT        | Cisco 8608 Door Kit                                          |
+| Cable Mgmt kit            | 8608-CBLMGMT     | Cisco 8608 Cable Management                                  |
+| Install Kit               | 8608-INSTKT      | Cisco 8608 Install Kit                                       |
+| Rack Mount Kit            | 8608-RMBRKT      | Cisco 8608 Rack Mounting Bracket Kit                         |
+| Combo MPA                 | 86-MPA-14H2FH-M  | Cisco 8608 14 x 100G and 2 x 400G Combo MPA                  |
+| 400G R MPA                | 86-MPA-4FH-M     | Cisco 8600 4 x 400G MPA                                      |
+| 10G R MPA                 | 86-MPA-24Z-M     | Cisco 8608 24 x 10G/25G/50G MPA                              |
+| Dust CAPS                 | 8000E-QSFP-DCAP  | QSFP Dust CAP                                                |
+| Dust CAPS                 | 8000E-QSFP-DCAP= | QSFP Dust CAP                                                |
+| Non-Redundant System  ATO | 8608-SYS-NR      | Cisco 8608 - 8 Slot Non Redundant Centralized Chassis Bundle |
+| Redundant System  ATO     | 8608-SYS-R       | Cisco 8608 - 8 Slot  Redundant Centralized Chassis Bundle    |  
 
 Table 1. Cisco 8608 PID and description  
 {: .text-center}  
