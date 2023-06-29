@@ -176,7 +176,7 @@ The SC is installed in the rear of the chassis. The 8 fan trays are installed in
 To avoid over-heating the system, the service time between when a switch card is removed and re-inserted must be under 5 minutes at 30C. Individual Fan Module may be removed with no time limit.
 If there is only one SC card plugged in, a Fan Spinner card will be required which is essentially a SC blank slot with a Fan Controller and Fan Modules.
 
-![figure14.png]({{site.baseurl}}/images/figure14.png){: .full}  
+![non-red system.png]({{site.baseurl}}/images/non-red system.png){: .full}    
 Figure 14. Non-Redundant System  
 {: .text-center}  
 
