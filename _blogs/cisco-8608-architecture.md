@@ -575,7 +575,7 @@ No traffic drop is expected during RP/SC Failover.
 
 ### Packet flow in the redundancy system  
 
-![figure21.jpg]({{site.baseurl}}/images/figure21.jpg){: .full}  
+![PKT_Redun.png]({{site.baseurl}}/images/PKT_Redun.png){: .full}   
 Figure 25. Data path flow with Redundant System  
 {: .text-center}  
 
@@ -586,7 +586,7 @@ Figure 25. Data path flow with Redundant System
 5.	In the egress path, PHY will forward the packets from active SC0  
 6.	PHY will drop packets coming from standby SC1  
 
-![figure22.jpg]({{site.baseurl}}/images/figure22.jpg){: .full}  
+![PKT_Non-Redun.png]({{site.baseurl}}/images/PKT_Non-Redun.png){: .full}   
 Figure 26. Data path flow after Active Pair failover  
 {: .text-center}  
 
