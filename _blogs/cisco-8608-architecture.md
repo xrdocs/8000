@@ -168,7 +168,7 @@ Figure 12. Redundant SCs in the back of the Cisco 8608
 The RP & SC operate in pairs RP0-SC0 and RP1-SC1 to deliver redundancy without loss of any chassis front face plate.
 The two SCs are CPU-less connected to both the RPs via PCIE, P2PM, EOBC links and each SC has one Cisco Silicon One Q200 NPU providing the data path for packet processing and forwarding.  
 
-![figure13.png]({{site.baseurl}}/images/figure13.png){: .full}  
+![redun system.png]({{site.baseurl}}/images/redun system.png){: .full}   
 Figure 13. Redundant System  
 {: .text-center}  
 
