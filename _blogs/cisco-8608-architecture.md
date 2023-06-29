@@ -422,6 +422,11 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 Cisco 8608 doesn’t have any MPA slot position restriction in the chassis.  
 There is one Q200 NPU in each Switch Card.  
 
+
+
+Figure 17. Cisco 8608 MPA- IFG Mapping  
+{: .text-center}  
+
 Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to IFG(Interface Group)s is 1.6 Tbps. And so total 12.8 Tbps duplex per Cisco 8608 system.  
 
 ### MPA Details  
