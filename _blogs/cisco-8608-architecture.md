@@ -422,7 +422,7 @@ Cisco 8608 doesn’t have any MPA slot position restriction in the chassis.
 There is one Q200 NPU in each Switch Card.  
 
 
-
+![New IFG.png]({{site.baseurl}}/images/New IFG.png){: .full}    
 Figure 17. Cisco 8608 MPA- IFG Mapping  
 {: .text-center}  
 
