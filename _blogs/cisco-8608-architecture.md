@@ -461,9 +461,8 @@ The third of the combo configuration is 10/25G breakout solution.
 <b>86-MPA-4FH-M</b>  
 This MPA is a Redundant MPA with a front panel consisting of 4x QSFPDD ports.  This is a redundant MPA because it can work with to two SCs with one being active and the other in standby mode.  
 This MPA provides a per slot bandwidth of 1.6Tbps. The QSFPDD ports can support 40/100/400G optics and support fully Breakout solutions without any port restriction.  
-
-![figure19.jpg]({{site.baseurl}}/images/figure19.jpg){: .full}  
-
+ 
+![400GMPA.png]({{site.baseurl}}/images/400GMPA.png){: .full}  
 Figure 19. 86-MPA-4FH-M Datapath block diagram  
 {: .text-center}  
 
