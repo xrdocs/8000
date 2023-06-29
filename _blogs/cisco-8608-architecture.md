@@ -372,7 +372,7 @@ Cisco 8608 ports numbering convention follows that of physical interfaces as {Ty
 
 ![Screenshot 2023-06-28 at 12.14.39 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.14.39 PM.png)  
 
-Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE and port 3 & 4 with native 400 GbE on slot 0.  
+Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE and port 2 & 3 with native 400 GbE on slot 0.  
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -383,7 +383,7 @@ Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE an
                Name       State       State               Type (byte)    (Kbps)
 --------------------------------------------------------------------------------       
          <mark>Hu0/0/0/0</mark>          up          up               ARPA  9000  100000000
-         Hu0/0/0/1          up          up               ARPA  9000  100000000
+         <mark>Hu0/0/0/1</mark>          up          up               ARPA  9000  100000000
        Hu0/0/0/1.1          up          up             802.1Q  9004  100000000
        Hu0/0/0/1.2          up          up             802.1Q  9004  100000000
        Hu0/0/0/1.3          up          up             802.1Q  9004  100000000
@@ -394,7 +394,7 @@ Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE an
        Hu0/0/0/1.8          up          up             802.1Q  9004  100000000
        Hu0/0/0/1.9          up          up             802.1Q  9004  100000000
          <mark>FH0/0/0/2</mark>          up          up               ARPA  9000  100000000
-         FH0/0/0/3          up          up               ARPA  9000  100000000
+         <mark>FH0/0/0/3</mark>          up          up               ARPA  9000  100000000
 </code>
 </pre>
 </div>  
@@ -410,9 +410,9 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
                Name       State       State               Type (byte)    (Kbps)
 --------------------------------------------------------------------------------       
        <mark>Te0/7/0/14/0</mark>          up          up               ARPA  1514   10000000
-       Te0/7/0/14/1          up          up               ARPA  1514   10000000
-       Te0/7/0/14/2          up          up               ARPA  1514   10000000
-       Te0/7/0/14/3          up          up               ARPA  1514   10000000
+       <mark>Te0/7/0/14/1</mark>          up          up               ARPA  1514   10000000
+       <mark>Te0/7/0/14/2</mark>          up          up               ARPA  1514   10000000
+       <mark>Te0/7/0/14/3</mark>          up          up               ARPA  1514   10000000
 </code>
 </pre>
 </div>  
