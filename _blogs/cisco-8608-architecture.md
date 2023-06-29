@@ -451,18 +451,18 @@ This MPA does not have a CPU and is managed by the RP. This PHY is a single chip
 86-MPA-14H2FH-M can support several interface combinations.  
 
 The first of the combo configurations is 16x100 GbE QSFP, in this configuration the QSFPDD ports are populated with 100G optics not 400G, the QSFP28 ports are populated with 100G optics. This is the default mode(without manual configuration).  
-![combo1.jpg]({{site.baseurl}}/images/combo1.jpg){: .full}  
+![combo1.png]({{site.baseurl}}/images/combo1.png){: .full}    
 
 the second of the combo configuration is 2x 400G QSFPDD + 8x 100G QSFP, in this configuration the QSFPDD ports are populated with 400G optics.  
 
 When Port 0 or Port 1 individually changed to 400G mode, disable Port 2/3/4 or Port 5/6/7 automatically.  
 
 The ports that are available in the 2x 400G QSFPDD + 8x 100G QSFP Combo mode are Ports 0/1/8~15 as shown in the figures below. The faceplate will have markings to reflect this.  
-![combo2.jpg]({{site.baseurl}}/images/combo2.jpg){: .full}  
+![combo2.png]({{site.baseurl}}/images/combo2.png){: .full}   
 
 The third of the combo configuration is 10/25G breakout solution.  
 4x 10G or 4x 25G breakout will not be supported on Port 0 to 9 (PHY 0 & 1). Only on PHY 2’s port 10, 12, and 14 and disabled Port 11, 13, and 15.  
-![combo3.jpg]({{site.baseurl}}/images/combo3.jpg){: .full}  
+![combo3.png]({{site.baseurl}}/images/combo3.png){: .full}   
 
 
 <b>86-MPA-4FH-M</b>  
