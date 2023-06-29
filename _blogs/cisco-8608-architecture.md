@@ -557,7 +557,7 @@ For Redundant 8608, user can use “<b>8608-SYS-R</b>” PID in the order tool. 
 Let’s start with the default state when system boot up under redundant system.  
  RP0-SC0 together as one Domain 0(Active Pair) and RP1-SC1 as the other Domain 1(Standby Pair).  
  
-![redundancy-1.png]({{site.baseurl}}/images/redundancy-1.png){: .full}  
+![redundancy.png]({{site.baseurl}}/images/redundancy.png){: .full}  
 Figure 22. Default Redundant state in Cisco 8608  
 {: .text-center}  
 
@@ -566,13 +566,13 @@ Both SC0 and SC1 are packet processing and forwarding capability.
 
 If the RP0 fatal faults or removal,  
 
-![RP0-Fail.jpg]({{site.baseurl}}/images/RP0-Fail.jpg){: .full}  
+![RP Failure.png]({{site.baseurl}}/images/RP Failure.png){: .full}   
 Figure 23. RP0 failure scenario in Cisco 8608  
 {: .text-center}  
 
 Standby RP immediately gains mastership via HW arbitration mechanism. MPAs switchover data path to RP1-SC1.  
 
-![SC0_Fail.jpg]({{site.baseurl}}/images/SC0_Fail.jpg){: .full}  
+![SC Failure.png]({{site.baseurl}}/images/SC Failure.png){: .full}    
 Figure 24. SC0 failure scenario in Cisco 8608  
 {: .text-center}  
 
