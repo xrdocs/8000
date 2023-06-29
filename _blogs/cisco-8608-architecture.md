@@ -74,7 +74,7 @@ Let us have a quick refresher of the Cisco 8608 PIDs and description.
 | Non-Redundant System  ATO | 8608-SYS-NR      | Cisco 8608 - 8 Slot Non Redundant Centralized Chassis Bundle |
 | Redundant System  ATO     | 8608-SYS-R       | Cisco 8608 - 8 Slot  Redundant Centralized Chassis Bundle    |  
 
-Table 1. Cisco 8608 PID and description  
+Table 1. Cisco 8608 Non-Spare PID and description  
 {: .text-center}  
  
 ## Hardware Description  
