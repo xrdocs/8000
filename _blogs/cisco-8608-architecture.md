@@ -161,7 +161,7 @@ Figure 11. 8608-SC0-128
 
 Cisco 8608 can operate with up to 2 Switch Cards(SCs) between MPA and Fan Trays.  
 
-![figure12.png]({{site.baseurl}}/images/figure12.png){: .full}  
+![2 SC rear.png]({{site.baseurl}}/images/2 SC rear.png){: .full}    
 Figure 12. Redundant SCs in the back of the Cisco 8608  
 {: .text-center}  
 
