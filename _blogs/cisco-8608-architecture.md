@@ -101,7 +101,7 @@ The Switch Cards(SC0 and SC1) that include the packet processing and forwarding 
 The Cisco 8608 Series centralized platform supports three different Redundant Modular Port Adaptors (MPAs) to insert into slot 0 to slot 7. 
 This MPAs is CPU-less and have the PHY and Optics components for network connectivity to other devices in the network. Each Redundant MPA connects to both Switch Cards (SC0, SC1).  
 
-![figure6.png]({{site.baseurl}}/images/figure6.png){: .align-center}  
+![figure6.png]({{site.baseurl}}/images/figure6.png){: .align-center}    
 Figure 6. two SCs and three Redundant MPAs connection of Cisco 8608 chassis  
 {: .text-center}  
  
