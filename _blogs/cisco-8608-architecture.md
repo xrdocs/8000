@@ -371,7 +371,6 @@ Figure 15. Cisco 8608 Slot numbering
 <b>Ports numbering</b>  
 
 ![figure16.png]({{site.baseurl}}/images/figure16.png){: .full}  
-
 Figure 16. Cisco 8608 MPA Port numbering  
 {: .text-center}  
 
