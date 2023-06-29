@@ -155,7 +155,7 @@ This RPs are connected to midplane and communicate with their devices via PCIE, 
 ### Switch Card Overview  
 The Cisco 8608 Series Switch Card sits behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with total eight Fan Modules. The Cisco Silicon One Q200 NPU sits within the Switch Card and all the packet process and forwarding decisions are driven by the Switch Card.  
 
-![figure11.png]({{site.baseurl}}/images/figure11.png){: .full}  
+![SC front rear.png]({{site.baseurl}}/images/SC front rear.png){: .full}   
 Figure 11. 8608-SC0-128  
 {: .text-center}  
 
