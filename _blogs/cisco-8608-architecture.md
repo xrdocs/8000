@@ -17,11 +17,11 @@ tags:
 ## Introduction
 The Cisco 8608 series is a part of Cisco’s Centralized Architecture based chassis design. Centralized systems have redundant Route Processors (RP w/CPU), redundant Switch cards (SCs w/Cisco Silicon One Q200 NPU) and in-service replaceable modular port adapters (MPA). Unlike distributed architecture, the forwarding decisions on Centralized platforms are centrally performed at the RP/SC and runs Cisco IOS XR software.  
   
-![Screenshot 2023-06-28 at 5.33.35 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 5.33.35 PM.png){: .full}    
+![Screenshot 2023-06-28 at 5.33.35 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 5.33.35 PM.png){: .align-center}      
 Figure 1. Front view of the Cisco 8608  
 {: .text-center}     
 
-![Screenshot 2023-06-28 at 7.08.58 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 7.08.58 PM.png){: .full}  
+![Screenshot 2023-06-28 at 7.08.58 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 7.08.58 PM.png){: .align-center}    
 Figure 2. Front view of the Cisco 8608 with Door kit  
 {: .text-center}  
 
