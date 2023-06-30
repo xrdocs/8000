@@ -443,7 +443,7 @@ This MPA is a redundant MPA because it can work with two SC cards with one being
 This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G breakout cables are also supported.  
 
 ![ComboMPA_diagram.png]({{site.baseurl}}/images/ComboMPA_diagram.png){: .full}  
-Figure 18. 86-MPA-14H2FH-M Datapath block diagram  
+Figure 18. 86-MPA-14H2FH-M Datapath block diagram    
 {: .text-center}  
 
 This MPA does not have a CPU and is managed by the RP. This PHY is a single chip, the multi-rate Ethernet PHY that provides the capacity and feature integration required to enable MACsec functionality.  
