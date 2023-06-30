@@ -443,6 +443,8 @@ This MPA is a redundant MPA because it can work with two SC cards with one being
 This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G breakout cables are also supported.  
 
 ![comboMPA.png]({{site.baseurl}}/images/comboMPA.png){: .full}  
+
+![ComboMPA_diagram.png]({{site.baseurl}}/images/ComboMPA_diagram.png){: .full}  
 Figure 18. 86-MPA-14H2FH-M Datapath block diagram  
 {: .text-center}  
 
