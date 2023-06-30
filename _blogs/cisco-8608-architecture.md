@@ -471,6 +471,8 @@ This MPA is a Redundant MPA with a front panel consisting of 4x QSFPDD ports.  T
 This MPA provides a per slot bandwidth of 1.6Tbps. The QSFPDD ports can support 40/100/400G optics and support fully Breakout solutions without any port restriction.  
  
 ![400GMPA.png]({{site.baseurl}}/images/400GMPA.png){: .full}  
+
+![400GMPA_diagram.png]({{site.baseurl}}/images/400GMPA_diagram.png){: .full}   
 Figure 19. 86-MPA-4FH-M Datapath block diagram  
 {: .text-center}  
 
@@ -480,7 +482,9 @@ This MPA is a Redundant MPA with a front panel consisting of 24x SFP56 ports.  T
 This MPA provides a per slot bandwidth of 1.2 Tbps. The QSFP56 ports can support 10/25/50G optics and can’t support any Breakout solution.  
 
 
-![LowMPA.png]({{site.baseurl}}/images/LowMPA.png){: .full}    
+![LowMPA.png]({{site.baseurl}}/images/LowMPA.png){: .full} 
+
+![10GMPA_diagram.png]({{site.baseurl}}/images/10GMPA_diagram.png){: .full}  
 Figure 20. 86-MPA-24Z-M Datapath block diagram  
 {: .text-center}  
 
@@ -611,4 +615,4 @@ This article covered Cisco 8608 deep-dive level architecture.
 - [Ordering Guide](https://cisco.sharepoint.com/:p:/r/sites/MIGRoutingPMTMECommunications/_layouts/15/Doc.aspx?sourcedoc=%7B11FE4519-D569-4AA4-8437-D7D5E7B5739F%7D&file=Cisco%208000%20Ordering%20Guide_v8.pptx&action=edit&mobileredirect=true)      
 
 If you want to reach out for comments, feedback or questions, send us a mail at:
-[ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com) and [8000-tme@cisco.com](mailto:8000-tme@cisco.com)  
+[ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com) and [8000-tme@cisco.com](mailto:8000-tme@cisco.com)
