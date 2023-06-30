@@ -486,6 +486,7 @@ To identify the optic types supported on the Cisco 8608, please check [[the TMG 
 It contains details on the connector types, the reach, the minimum release required, etc.  
 
 <b>Maximum ports density supported on Cisco 8608</b>  
+The following table represents the maximum ports number of Cisco 8608 router can offer.  
 
 |          | 10 GbE | 25 GbE | 40 GbE | 50 GbE | 100 GbE | 400 GbE |
 |----------|--------|--------|--------|--------|---------|---------|
