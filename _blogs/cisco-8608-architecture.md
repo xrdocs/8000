@@ -442,8 +442,6 @@ This Combo MPA is a Redundant MPA with a front panel has 2x QSFPDDs and 14x QSFP
 This MPA is a redundant MPA because it can work with two SC cards with one being active and the other in standby mode.  
 This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G breakout cables are also supported.  
 
-![comboMPA.png]({{site.baseurl}}/images/comboMPA.png){: .full}  
-
 ![ComboMPA_diagram.png]({{site.baseurl}}/images/ComboMPA_diagram.png){: .full}  
 Figure 18. 86-MPA-14H2FH-M Datapath block diagram  
 {: .text-center}  
@@ -469,8 +467,6 @@ The third of the combo configuration is 10/25G breakout solution.
 <b>86-MPA-4FH-M</b>  
 This MPA is a Redundant MPA with a front panel consisting of 4x QSFPDD ports.  This is a redundant MPA because it can work with to two SCs with one being active and the other in standby mode.  
 This MPA provides a per slot bandwidth of 1.6Tbps. The QSFPDD ports can support 40/100/400G optics and support fully Breakout solutions without any port restriction.  
- 
-![400GMPA.png]({{site.baseurl}}/images/400GMPA.png){: .full}  
 
 ![400GMPA_diagram.png]({{site.baseurl}}/images/400GMPA_diagram.png){: .full}   
 Figure 19. 86-MPA-4FH-M Datapath block diagram  
@@ -481,10 +477,7 @@ Figure 19. 86-MPA-4FH-M Datapath block diagram
 This MPA is a Redundant MPA with a front panel consisting of 24x SFP56 ports.  This MPA is a redundant MPA because it can work with to two SC with one being active and the other in standby mode.  
 This MPA provides a per slot bandwidth of 1.2 Tbps. The QSFP56 ports can support 10/25/50G optics and can’t support any Breakout solution.  
 
-
-![LowMPA.png]({{site.baseurl}}/images/LowMPA.png){: .full} 
-
-![10GMPA_diagram.png]({{site.baseurl}}/images/10GMPA_diagram.png){: .full}  
+![10GMPA_diagram.png]({{site.baseurl}}/images/10GMPA_diagram.png){: .full}    
 Figure 20. 86-MPA-24Z-M Datapath block diagram  
 {: .text-center}  
 
