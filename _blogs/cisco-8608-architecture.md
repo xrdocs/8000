@@ -536,17 +536,16 @@ Within the system even though RP0, RP1, SC0, SC1 are 4 different cards, from red
 
 There’s supported and unsupported configuration in Cisco 8608.  
 
-| System Type   | Supported configuration | Unsupported configuration |
-|---------------|-------------------------|---------------------------|
-| Redundant     | RP0-SC0, RP1-SC1        | RP0-SC1                   |
-|               |                         | RP1-SC0                   |
-|               |                         | RP0-SC0, RP1 without SC1  |
-|               |                         | RP1-SC1, RP0 without SC0  |
-|---------------|-------------------------|---------------------------|
-| Non-Redundant | RP0-SC0                 | RP1-SC1                   |
-|               | FS1 without RP1         | RP1-SC0                   |
-|               |                         | RP0-SC1                   |  
-
+| System Type   | Supported System configuration | Unsupported System configuration |
+|---------------|--------------------------------|----------------------------------|
+| Redundant     | RP0-SC0, RP1-SC1               | RP0-SC1                          |
+|               |                                | RP1-SC0                          |
+|               |                                | RP0-SC0, RP1 without SC1         |
+|               |                                | RP1-SC1, RP0 without SC0         |
+|---------------|--------------------------------|----------------------------------|
+| Non-Redundant | RP0-SC0                        | RP1-SC1                          |
+|               | FS1 without RP1                | RP1-SC0                          |
+|               |                                | RP0-SC1                          |  
 
 For Redundant 8608, user can use “**8608-SYS-R**” PID in the order tool. System is shipped with two RPs, two SCs and generally orderable on CCW.    
 For Non-Redundant 8608 configuration, user can use “8608-SYS-NR” PID on CCW. 8608 system is shipped with only one RP, one SC, one FS.   
