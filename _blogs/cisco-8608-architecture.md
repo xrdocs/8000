@@ -549,7 +549,7 @@ There’s supported and unsupported configuration in Cisco 8608.
 |               |                         | RP0-SC1                   |  
 
 
-For Redundant 8608, user can use “8608-SYS-R” PID in the order tool. System is shipped with two RPs, two SCs and generally orderable on CCW.    
+For Redundant 8608, user can use “**8608-SYS-R**” PID in the order tool. System is shipped with two RPs, two SCs and generally orderable on CCW.    
 For Non-Redundant 8608 configuration, user can use “8608-SYS-NR” PID on CCW.  
  8608 system is shipped with only one RP, one SC, one FS. Please reach out to [ask-xr-sw-pm@cisco.com](ask-xr-sw-pm@cisco.com).      
 
