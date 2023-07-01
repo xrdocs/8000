@@ -435,7 +435,7 @@ Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to Q200 NPU is 1.6
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-RP/0/RP0/CPU0:Cisco8608#show controllers npu voq-usage interface all instance all loc 0/rp0/cpu0
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#show controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span> 
 ---------------------------------------------------------------------------
 Node ID: 0/RP0/CPU0
 Intf         Intf     NPU Slice IFG  Sys   VOQ   Flow       VOQ      Port 
@@ -461,7 +461,7 @@ Hu0/1/0/0    f0000d4   0   4    1   200    512      0        local    100G
 FH0/2/0/3    f00017c   0   4    1   416    672      0        local    400G
 FH0/2/0/2    f000184   0   4    0   408    664      0        local    400G
 FH0/2/0/1    f00018c   0   4    0   400    656      0        local    400G
-FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G  
+FH0/2/0/0    f000174   0   <mark>3    1</mark>   392    640      0        local    400G  
 </code>
 </pre>
 </div>  
