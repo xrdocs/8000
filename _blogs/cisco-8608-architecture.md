@@ -432,6 +432,40 @@ Figure 17. Cisco 8608 MPA- IFG Mapping
 
 Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to Q200 NPU is 1.6 Tbps. And so total 12.8 Tbps full-duplex per Cisco 8608 system.  
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+RP/0/RP0/CPU0:Cisco8608#show controllers npu voq-usage interface all instance all loc 0/rp0/cpu0
+---------------------------------------------------------------------------
+Node ID: 0/RP0/CPU0
+Intf         Intf     NPU Slice IFG  Sys   VOQ   Flow       VOQ      Port 
+name         handle    #    #    #   Port  base  base       port     speed
+             (hex)                                          type          
+---------------------------------------------------------------------------
+Hu0/1/0/15   f0000dc   0   5    0   320    632      0        local    100G
+Hu0/1/0/14   f0000e4   0   5    0   312    624      0        local    100G
+Hu0/1/0/13   f0000ec   0   5    0   304    616      0        local    100G
+Hu0/1/0/12   f0000f4   0   5    0   296    608      0        local    100G
+Hu0/1/0/11   f0000fc   0   5    0   288    600      0        local    100G
+Hu0/1/0/10   f000104   0   5    0   280    592      0        local    100G
+Hu0/1/0/9    f00010c   0   5    0   272    584      0        local    100G
+Hu0/1/0/8    f000114   0   5    0   264    576      0        local    100G
+Hu0/1/0/7    f00011c   0   4    1   256    568      0        local    100G
+Hu0/1/0/6    f000124   0   4    1   248    560      0        local    100G
+Hu0/1/0/5    f00012c   0   4    1   240    552      0        local    100G
+Hu0/1/0/4    f000134   0   4    1   232    544      0        local    100G
+Hu0/1/0/3    f00013c   0   4    1   224    536      0        local    100G
+Hu0/1/0/2    f000144   0   4    1   216    528      0        local    100G
+Hu0/1/0/1    f00014c   0   4    1   208    520      0        local    100G
+Hu0/1/0/0    f0000d4   0   4    1   200    512      0        local    100G
+FH0/2/0/3    f00017c   0   4    1   416    672      0        local    400G
+FH0/2/0/2    f000184   0   4    0   408    664      0        local    400G
+FH0/2/0/1    f00018c   0   4    0   400    656      0        local    400G
+FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G  
+</code>
+</pre>
+</div>  
+
 ### MPA Details  
 
 <b>86-MPA-14H2FH-M</b>  
