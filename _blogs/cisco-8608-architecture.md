@@ -462,8 +462,8 @@ Hu0/1/0/2    f000144   0   4    1   216    528      0        local    100G
 Hu0/1/0/1    f00014c   0   4    1   208    520      0        local    100G
 Hu0/1/0/0    f0000d4   0   4    1   200    512      0        local    100G
 FH0/2/0/3    f00017c   0   <span style="background-color: #00FF00">4    1</span>   416    672      0        local    400G
-FH0/2/0/2    f000184   0   <span style="background-color: #0000FF">4    0</span>   408    664      0        local    400G
-FH0/2/0/1    f00018c   0   <span style="background-color: #0000FF">4    0</span>   400    656      0        local    400G
+FH0/2/0/2    f000184   0   <span style="background-color: #FFA500">4    0</span>   408    664      0        local    400G
+FH0/2/0/1    f00018c   0   <span style="background-color: #FFA500">4    0</span>   400    656      0        local    400G
 FH0/2/0/0    f000174   0   <mark>3    1</mark>   392    640      0        local    400G  
 </code>
 </pre>
