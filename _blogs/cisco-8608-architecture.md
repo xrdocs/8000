@@ -103,7 +103,7 @@ The Module Port Adapters(MPAs) are vertically inserted into the front side of th
 The Switch Cards(SC0, SC1) that include the packet processing and forwarding engine using Cisco Silicon One Q200 are horizontally inserted into the back of the chassis.  There are 2 switch cards per system.  The Switch Cards contain the four removable Fan Modules can be inserted into each Switch Card.  
 
 
-### MPA(Modular Port Adapter) Overview  
+### MPA(Modular Port Adapter)    
 The Cisco 8608 router supports three different Redundant Modular Port Adaptors (MPAs) to insert into slot 0 to slot 7. 
 This MPAs is CPU-less and have the PHY and Optics components for network connectivity to other devices in the network. Each Redundant MPA connects to both Switch Cards (SC0, SC1).  
 
@@ -143,7 +143,7 @@ And third MPA is 86-MPA-24Z-M. This MPA can be inserted into any slot(slot 0 to 
 Figure 9. 86-MPA-24Z-M  
 {: .text-center}  
 
-### RP Overview  
+### RP(Route Processor)     
 The RPs will vertically fit in the chassis from the front panel. There will be up to two redundant RPs in the system and will work in Active-standby mode. The RP is not connected to the Switch Card.  
 RPs manages all routing operations on the Cisco 8600 Routers.  
 ![figure10.png]({{site.baseurl}}/images/figure10.png){: .full}  
@@ -158,7 +158,7 @@ Front panel ports include management and Timing interfaces:
 RP contains an Intel 6-core @ 2.5 GHz, 64GB DDR4 DRAM, and 240 GB M.2 SSD Flash Drive
 This RPs are connected to midplane and communicate with their devices via PCIE, EOBC, P2PM, and I2C Interfaces.  
 
-### Switch Card Overview  
+### SC (Switch Card)    
 The Cisco 8608 Series Switch Card sits behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with total eight Fan Modules. The Cisco Silicon One Q200 NPU sits within the Switch Card and all the packet process and forwarding decisions are driven by the Switch Card.  
 
 ![SC front rear.png]({{site.baseurl}}/images/SC front rear.png){: .full}   
@@ -188,7 +188,7 @@ Figure 14. Non-Redundant System
 
 Fan Spinner does not provide any data or control plane functionality.  It is a passive card used to connect the midplane to the Fans.  
 
-### Power Modules Overview  
+### Power Modules    
 
 You can install up to four 3200W AC or 3200W DC power supplies in the chassis. Ensure that all power connection wiring conforms that to the rules and regulations in the National Electrical Code (NEC) and in local codes.  
 
