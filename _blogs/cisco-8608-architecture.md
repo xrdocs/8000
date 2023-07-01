@@ -76,7 +76,7 @@ Let us have a quick refresher of the Cisco 8608 PIDs and description.
 Table 1. Cisco 8608 Non-Spare PID and description  
 {: .text-center}  
  
-## Hardware Description  
+## Platform Description  
 ### Chassis  
 
 ![figure3-2.png]({{site.baseurl}}/images/figure3-2.png){: .full}         
