@@ -432,6 +432,9 @@ Figure 17. Cisco 8608 MPA- IFG Mapping
 
 Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to Q200 NPU is 1.6 Tbps. And so total 12.8 Tbps full-duplex per Cisco 8608 system.  
 
+
+We have a Cico 8608 with the MPA in slot 1(86-MPA-14H2FH-M) and slot 2(86-MPA-4FH-M). We will concentrate on slot 2 for this example.  
+
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
