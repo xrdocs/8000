@@ -15,7 +15,7 @@ tags:
 {% include toc icon="table" title="Cisco 8608 Architecture" %}
 
 ## Introduction
-The Cisco 8608 series is a part of Cisco’s Centralized Architecture based chassis design. Centralized systems have redundant Route Processors (RP w/CPU), redundant Switch cards (SCs w/Cisco Silicon One Q200 NPU) and in-service replaceable modular port adapters (MPA). Unlike distributed architecture, the forwarding decisions on Centralized platforms are centrally performed at the RP/SC and runs Cisco IOS XR software.  
+The Cisco 8608 router is a part of Cisco’s Centralized Architecture based chassis design. Centralized systems have redundant Route Processors (RP w/CPU), redundant Switch cards (SCs w/Cisco Silicon One Q200 NPU) and in-service replaceable modular port adapters (MPA). Unlike distributed architecture, the forwarding decisions on Centralized platforms are centrally performed at the RP/SC and runs Cisco IOS XR software.  
   
 ![Screenshot 2023-06-28 at 5.33.35 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 5.33.35 PM.png){: .align-center}      
 Figure 1. Front view of the Cisco 8608  
@@ -27,9 +27,9 @@ Figure 2. Front view of the Cisco 8608 with Door kit
 
 The Cisco 8608 chassis is 7RU in height and less than 600mm in sheet metal depth with 8 slot for three types of MPAs(Modular Port Adapter).  
 
-Supporting the Cisco 8608 Series capabilities demanded a wide range of new approaches to platform design. By leveraging over decades of high-performance system design, Cisco has delivered unprecedented capacity without compromising forwarding performance or requiring oversubscription. This required new power supplies, a redesigned cooling architecture, and future-proof connectors.  
+Supporting the Cisco 8608 router capabilities demanded a wide range of new approaches to platform design. By leveraging over decades of high-performance system design, Cisco has delivered unprecedented capacity without compromising forwarding performance or requiring oversubscription. This required new power supplies, a redesigned cooling architecture, and future-proof connectors.  
 The Cisco 8608 router required extensive innovation and consolidation of capabilities of multiple ASICs into a single ASIC to greatly increase the power efficiency of the solution. As with all modern networking devices the power density of the ASIC creates a challenging thermal situation. These challenges are addressed via advanced system design, including futuristic fans and heat sinks in Cisco 8608.  
-The 8608 chassis utilizes a state-of-the-art orthogonal design with advanced cooling via front to back airflow, high power capacity and new power supplies. The chassis and all data path components for the 8608 Series benefit from a clean sheet design that allows the systems to take full advantage of the latest technologies and Cisco’s design expertise. This design connects all forwarding path components directly without a backplane or midplane. In the Cisco 8608 Series, the eight Modular Port Adaptors (MPAs) along with the two Route Processors are vertically oriented. Every major component of the Cisco 8608 Series was developed with a clean sheet approach – representing unprecedented investment and commitment to a long lifecycle for the Cisco 8608 Series. 
+The 8608 router utilizes a state-of-the-art orthogonal design with advanced cooling via front to back airflow, high power capacity and new power supplies. The chassis and all data path components for the 8608 Series benefit from a clean sheet design that allows the systems to take full advantage of the latest technologies and Cisco’s design expertise. This design connects all forwarding path components directly without a backplane or midplane. In the Cisco 8608 Series, the eight Modular Port Adaptors (MPAs) along with the two Route Processors are vertically oriented. Every major component of the Cisco 8608 Series was developed with a clean sheet approach – representing unprecedented investment and commitment to a long lifecycle for the Cisco 8608 router. 
 Investment Protection – The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor & Modular Port Adaptors). Cisco is investing in the future of the platform for the customers to be able to upgrade to next generation.  
 
 The Cisco 8608 is comprised of the following components:  
@@ -100,11 +100,11 @@ Figure 5. Side view of Cisco 8608 chassis
   
 The Route Processors(RPs) are vertically inserted into the front right hand side of the Cisco 8608 chassis.  
 The Module Port Adapters(MPAs) are vertically inserted into the front side of the Cisco 8608 chassis too.  
-The Switch Cards(SC0 and SC1) that include the packet processing and forwarding engine using Q200 Cisco Silicon One are horizontally inserted into the back of the chassis.  There are 2 switch cards per system.  The Switch Cards contain the four removable Fan Modules can be inserted into each Switch Card.  
+The Switch Cards(SC0, SC1) that include the packet processing and forwarding engine using Cisco Silicon One Q200 are horizontally inserted into the back of the chassis.  There are 2 switch cards per system.  The Switch Cards contain the four removable Fan Modules can be inserted into each Switch Card.  
 
 
 ### MPA(Modular Port Adapter) Overview  
-The Cisco 8608 Series centralized platform supports three different Redundant Modular Port Adaptors (MPAs) to insert into slot 0 to slot 7. 
+The Cisco 8608 router supports three different Redundant Modular Port Adaptors (MPAs) to insert into slot 0 to slot 7. 
 This MPAs is CPU-less and have the PHY and Optics components for network connectivity to other devices in the network. Each Redundant MPA connects to both Switch Cards (SC0, SC1).  
 
 ![figure6.png]({{site.baseurl}}/images/figure6.png){: .align-center}    
