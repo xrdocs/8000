@@ -521,7 +521,7 @@ Figure 21. Cisco 8608 block diagram
 Cisco Silicon One Q200’s brief features are following:    
 - 12.8 Tbps full-duplex and 8.1 Bpps Forwarding Capacity NPU  
 - 256 56G SerDes with each capable of operating at 10G/25G/50G using NRZ or PAM4 modulation   
-- Flexible port configuration supporting 10/25/40/50/100/200/400 Gbps   
+- Flexible port configuration supporting 10/25/40/50/100/400 Gbps   
 - 108 MB fully shared on-die packet buffer   
 - Expandable in-package packet buffer using 8 GB HBM  
 - On-chip, high-performance, P4-programmable host NPU for high-bandwidth offline packet processing  
