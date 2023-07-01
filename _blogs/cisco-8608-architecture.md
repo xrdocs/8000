@@ -83,8 +83,6 @@ Table 1. Cisco 8608 Non-Spare PID and description
 Figure 3. Front view of an empty Cisco 8608 chassis  
 {: .text-center}  
 
-Cisco 8608 chassis utilizes a state-of-the-art orthogonal design with advanced cooling via front to back airflow, high power capacity and new power supplies. The chassis and all data path components.  
-
 As shown in Figure 3, user needs to insert the followings:  
 - Modular Port Adapter(MPA) sits vertically in the front of the chassis
 - Route Processor(RP) sits vertically in the front of the chassis
