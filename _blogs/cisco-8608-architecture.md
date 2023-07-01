@@ -432,7 +432,7 @@ There is one Q200 NPU in each Switch Card.
 Figure 17. Cisco 8608 MPA- IFG Mapping  
 {: .text-center}  
 
-Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to IFG(Interface Group)s is 1.6 Tbps. And so total 12.8 Tbps duplex per Cisco 8608 system.  
+Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to Q200 NPU is 1.6 Tbps. And so total 12.8 Tbps full-duplex per Cisco 8608 system.  
 
 ### MPA Details  
 
