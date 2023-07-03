@@ -41,7 +41,7 @@ The Cisco 8608 is comprised of the following components:
   - Pluggable 3.2KW DC   
 - Fan Modules: There are 8 Fan Modules in the system with each Fan Module individually removable / replaceable. These provide N+1 Fan Module redundancy to the system. The entire Fan Tray can be removed in case of SC insertion or removal.  
 
-## 8608 Naming Logic     
+## Understanding the 8608 Naming Logic     
 
 ![name-small.png]({{site.baseurl}}/images/name-small.png){: .align-center}    
 
