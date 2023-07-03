@@ -544,7 +544,7 @@ This MPA provides a per slot bandwidth of 1.2 Tbps. The QSFP56 ports can support
 Figure 22. 86-MPA-24Z-M Datapath block diagram  
 {: .text-center}  
 
-To identify the optic types supported on the Cisco 8608, please check [[the TMG matrix](https://tmgmatrix.cisco.com/)]      
+To identify the optic types supported on the Cisco 8608, please check [the TMG matrix](https://tmgmatrix.cisco.com/) 
 It contains details on the connector types, the reach, the minimum release required, etc.  
 
 ### Maximum ports scale and support on Cisco 8608    
