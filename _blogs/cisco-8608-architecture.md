@@ -431,7 +431,7 @@ Figure 17. Cisco 8608 Block Diagram
 {: .text-center}  
 
 ### Switch Card (SC) Details   
-Switch Card has a 12.8T bandwidth using the Cisco Silicon One Q200 NPU at an operating data rate of 56 Gbps per lane. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provides full data plane redundancy in an active-standby mode.  
+Switch Card has a 12.8 Tbps bandwidth using the Cisco Silicon One Q200 NPU at an operating data rate of 56 Gbps per lane. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provides full data plane redundancy in an active-standby mode.  
 
 Cisco Silicon One Q200’s brief features are following:    
 - 12.8 Tbps full-duplex and 8.1 Bpps Forwarding Capacity NPU  
