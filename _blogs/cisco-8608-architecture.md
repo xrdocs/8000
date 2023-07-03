@@ -544,7 +544,7 @@ Math is the following:
   - Used with 86-MPA-14H2FH-M as native with QSFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 16x QSFP+ on each: 128x 100 GbE total  
   - Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x (4x 100 GbE) on each: 128x 100 GbE total  
 - 400 GbE  
-  - Used with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 100 GbE total  
+  - Used with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 400 GbE total  
 
 ### Switch Card (SC) Details   
 Switch Card has a 12.8T bandwidth using the Cisco Silicon One Q200 NPU at an operating data rate of 56 Gbps per lane. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provides full data plane redundancy in an active-standby mode.  
