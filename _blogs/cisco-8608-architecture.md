@@ -420,14 +420,41 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 </pre>
 </div>  
 
+## System Details. 
 
-<b>MPA-IFG mapping</b>  
+### System Block Diagram 
+The system block diagram for the different cards and their mechanics of operation in hardware is covered.  
+
+![8608 diagram.png]({{site.baseurl}}/images/8608 diagram.png){: .full}  
+Figure 17. Cisco 8608 block diagram    
+{: .text-center}  
+
+### Switch Card (SC) Details   
+Switch Card has a 12.8T bandwidth using the Cisco Silicon One Q200 NPU at an operating data rate of 56 Gbps per lane. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provides full data plane redundancy in an active-standby mode.  
+
+Cisco Silicon One Q200’s brief features are following:    
+- 12.8 Tbps full-duplex and 8.1 Bpps Forwarding Capacity NPU  
+- 256 56G SerDes with each capable of operating at 10G/25G/50G using NRZ or PAM4 modulation   
+- Flexible port configuration supporting 10/25/40/50/100/400 Gbps   
+- 108 MB fully shared on-die packet buffer   
+- Expandable in-package packet buffer using 8 GB HBM  
+- On-chip, high-performance, P4-programmable host NPU for high-bandwidth offline packet processing  
+- Multiple embedded processors for CPU offloading  
+- 56K VoQ(Virtual Output Queue)   
+- Dedicated 108 Counters banks (860K counters)   
+
+![Q200 NPU2.png]({{site.baseurl}}/images/Q200 NPU2.png){: .full}  
+Figure 18. Cisco Silicon One Q200      
+{: .text-center}   
+
+For more understanding on Cisco Silicon One Q200 refer to [Cisco Silicon One Q200-Info](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/datasheet-c78-744312.html).  
+
+<b>MPA assignment to Cisco Silicon One Q200 in SC</b>  
 Cisco 8608 doesn’t have any MPA slot position restriction in the chassis.  
 There is one Q200 NPU in each Switch Card.  
 
-
 ![New IFG.png]({{site.baseurl}}/images/New IFG.png){: .full}    
-Figure 17. Cisco 8608 MPA- Slice/IFG Mapping  
+Figure 19. Cisco 8608 MPA- Slice/IFG Mapping  
 {: .text-center}  
 
 Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to Q200 NPU is 1.6 Tbps. And so total 12.8 Tbps full-duplex per Cisco 8608 system.  
@@ -478,7 +505,7 @@ This MPA is a redundant MPA because it can work with two SC cards with one being
 This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G breakout cables are also supported.  
 
 ![ComboMPA_diagram.png]({{site.baseurl}}/images/ComboMPA_diagram.png){: .full}    
-Figure 18. 86-MPA-14H2FH-M Datapath block diagram    
+Figure 20. 86-MPA-14H2FH-M Datapath block diagram    
 {: .text-center}  
 
 This MPA does not have a CPU and is managed by the RP. This PHY is a single chip, the multi-rate Ethernet PHY that provides the capacity and feature integration required to enable MACsec functionality.  
@@ -504,7 +531,7 @@ This MPA is a Redundant MPA with a front panel consisting of 4x QSFPDD ports.  T
 This MPA provides a per slot bandwidth of 1.6Tbps. The QSFPDD ports can support 40/100/400G optics and support fully Breakout solutions without any port restriction.  
 
 ![400GMPA_diagram.png]({{site.baseurl}}/images/400GMPA_diagram.png){: .full}     
-Figure 19. 86-MPA-4FH-M Datapath block diagram  
+Figure 21. 86-MPA-4FH-M Datapath block diagram  
 {: .text-center}  
 
 
@@ -513,13 +540,13 @@ This MPA is a Redundant MPA with a front panel consisting of 24x SFP56 ports.  T
 This MPA provides a per slot bandwidth of 1.2 Tbps. The QSFP56 ports can support 10/25/50G optics and can’t support any Breakout solution.  
 
 ![10GMPA_diagram.png]({{site.baseurl}}/images/10GMPA_diagram.png){: .full}      
-Figure 20. 86-MPA-24Z-M Datapath block diagram  
+Figure 22. 86-MPA-24Z-M Datapath block diagram  
 {: .text-center}  
 
 To identify the optic types supported on the Cisco 8608, please check [[the TMG matrix](https://tmgmatrix.cisco.com/)]      
 It contains details on the connector types, the reach, the minimum release required, etc.  
 
-## Maximum ports scale and support on Cisco 8608    
+### Maximum ports scale and support on Cisco 8608    
 The following table represents the maximum ports number of Cisco 8608 router can offer.  
 
 |          | 10 GbE | 25 GbE | 40 GbE | 50 GbE | 100 GbE | 400 GbE |
@@ -545,30 +572,6 @@ Math is the following:
   - Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x (4x 100 GbE) on each: 128x 100 GbE total  
 - 400 GbE  
   - Used with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 400 GbE total  
-
-### Switch Card (SC) Details   
-Switch Card has a 12.8T bandwidth using the Cisco Silicon One Q200 NPU at an operating data rate of 56 Gbps per lane. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provides full data plane redundancy in an active-standby mode.  
-
-![8608 diagram.png]({{site.baseurl}}/images/8608 diagram.png){: .full}  
-Figure 21. Cisco 8608 block diagram    
-{: .text-center}    
-
-Cisco Silicon One Q200’s brief features are following:    
-- 12.8 Tbps full-duplex and 8.1 Bpps Forwarding Capacity NPU  
-- 256 56G SerDes with each capable of operating at 10G/25G/50G using NRZ or PAM4 modulation   
-- Flexible port configuration supporting 10/25/40/50/100/400 Gbps   
-- 108 MB fully shared on-die packet buffer   
-- Expandable in-package packet buffer using 8 GB HBM  
-- On-chip, high-performance, P4-programmable host NPU for high-bandwidth offline packet processing  
-- Multiple embedded processors for CPU offloading  
-- 56K VoQ(Virtual Output Queue)   
-- Dedicated 108 Counters banks (860K counters)   
-
-![Q200 NPU2.png]({{site.baseurl}}/images/Q200 NPU2.png){: .full}  
-Figure 22. Cisco Silicon One Q200      
-{: .text-center}   
-
-For more understanding on Cisco Silicon One Q200 refer to [Cisco Silicon One Q200-Info](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/datasheet-c78-744312.html).  
 
 ## Redundancy Details  
 Within the system even though RP0, RP1, SC0, SC1 are 4 different cards, from redundancy standpoint system software would consider RP0-SC0 together as Active Pair and RP1-SC1 as Backup Pair.  
