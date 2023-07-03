@@ -455,7 +455,7 @@ Cisco 8608 doesn’t have any MPA slot position restriction in the chassis.
 There is one Q200 NPU in each Switch Card.  
 
 ![New IFG.png]({{site.baseurl}}/images/New IFG.png){: .full}    
-Figure 19. Cisco 8608 MPA assignment to Q200    
+Figure 19. Cisco 8608 MPA assignment to Q200 in Switch Card       
 {: .text-center}  
 
 Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to Q200 NPU is 1.6 Tbps. And so total 12.8 Tbps full-duplex per Cisco 8608 system.  
