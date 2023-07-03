@@ -420,9 +420,9 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 </pre>
 </div>  
 
-## System Details. 
+## System Details   
 
-### System Block Diagram 
+### System Block Diagram  
 The system block diagram for the different cards and their mechanics of operation in hardware is covered.  
 
 ![8608 diagram.png]({{site.baseurl}}/images/8608 diagram.png){: .full}  
@@ -444,7 +444,7 @@ Cisco Silicon One Q200’s brief features are following:
 - Dedicated 108 Counters banks (860K counters)   
 
 ![Q200 NPU2.png]({{site.baseurl}}/images/Q200 NPU2.png){: .full}  
-Figure 18. Cisco Silicon One Q200      
+Figure 18. Cisco Silicon One Q200 Diagram        
 {: .text-center}   
 
 For more understanding on Cisco Silicon One Q200 refer to [Cisco Silicon One Q200-Info](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/datasheet-c78-744312.html).  
@@ -454,7 +454,7 @@ Cisco 8608 doesn’t have any MPA slot position restriction in the chassis.
 There is one Q200 NPU in each Switch Card.  
 
 ![New IFG.png]({{site.baseurl}}/images/New IFG.png){: .full}    
-Figure 19. Cisco 8608 MPA- Slice/IFG Mapping  
+Figure 19. Cisco 8608 MPA assignment to Q200    
 {: .text-center}  
 
 Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to Q200 NPU is 1.6 Tbps. And so total 12.8 Tbps full-duplex per Cisco 8608 system.  
