@@ -356,7 +356,7 @@ For a complete list of supported features, refer to the [Cisco Feature Navigator
 [Cisco Software Download](https://software.cisco.com/download/home/286325065/type/280805694/release/7.3.1) page to download the Cisco IOS XR software images.
 
 
-## Cisco 8608 Slot and Ethernet ports  
+## Cisco 8608 Slots and Ports identification    
 Slots and ports numbering are here:  
 <b>Slots numbering</b>  
 On front view of the Cisco 8608 chassis, left to right direction is MPA0 to MPA7, RP0 to RP1.  
@@ -519,7 +519,7 @@ Figure 20. 86-MPA-24Z-M Datapath block diagram
 To identify the optic types supported on the Cisco 8608, please check [[the TMG matrix](https://tmgmatrix.cisco.com/)]      
 It contains details on the connector types, the reach, the minimum release required, etc.  
 
-### Maximum ports density supported on Cisco 8608    
+### Maximum ports scale supported on Cisco 8608    
 The following table represents the maximum ports number of Cisco 8608 router can offer.  
 
 |          | 10 GbE | 25 GbE | 40 GbE | 50 GbE | 100 GbE | 400 GbE |
