@@ -103,7 +103,7 @@ The Module Port Adapters(MPAs) are vertically inserted into the front side of th
 The Switch Cards(SC0, SC1) that include the packet processing and forwarding engine using Cisco Silicon One Q200 are horizontally inserted into the back of the chassis.  There are 2 switch cards per system.  The Switch Cards contain the four removable Fan Modules can be inserted into each Switch Card.  
 
 
-### MPA(Modular Port Adapter)    
+### MPA (Modular Port Adapter)    
 The Cisco 8608 router supports three different Redundant Modular Port Adaptors (MPAs) to insert into slot 0 to slot 7. 
 This MPAs is CPU-less and have the PHY and Optics components for network connectivity to other devices in the network. Each Redundant MPA connects to both Switch Cards (SC0, SC1).  
 
@@ -143,7 +143,7 @@ And third MPA is 86-MPA-24Z-M. This MPA can be inserted into any slot(slot 0 to 
 Figure 9. 86-MPA-24Z-M  
 {: .text-center}  
 
-### RP(Route Processor)     
+### RP (Route Processor)     
 The RPs will vertically fit in the chassis from the front panel. There will be up to two redundant RPs in the system and will work in Active-standby mode. The RP is not connected to the Switch Card.  
 RPs manages all routing operations on the Cisco 8600 Routers.  
 ![figure10.png]({{site.baseurl}}/images/figure10.png){: .full}  
