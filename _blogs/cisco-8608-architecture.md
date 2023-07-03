@@ -519,7 +519,7 @@ Figure 20. 86-MPA-24Z-M Datapath block diagram
 To identify the optic types supported on the Cisco 8608, please check [[the TMG matrix](https://tmgmatrix.cisco.com/)]      
 It contains details on the connector types, the reach, the minimum release required, etc.  
 
-## Maximum ports scale supported on Cisco 8608    
+## Maximum ports scale and support on Cisco 8608    
 The following table represents the maximum ports number of Cisco 8608 router can offer.  
 
 |          | 10 GbE | 25 GbE | 40 GbE | 50 GbE | 100 GbE | 400 GbE |
