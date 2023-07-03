@@ -564,6 +564,10 @@ Cisco Silicon One Q200’s brief features are following:
 - 56K VoQ(Virtual Output Queue)   
 - Dedicated 108 Counters banks (860K counters)   
 
+![Q200 NPU.png]({{site.baseurl}}/images/Q200 NPU.png){: .full}  
+Figure 22. Cisco Silicon One Q200      
+{: .text-center}   
+
 For more understanding on Cisco Silicon One Q200 refer to [Cisco Silicon One Q200-Info](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/datasheet-c78-744312.html).  
 
 
@@ -592,7 +596,7 @@ Let’s start with the default state when system boot up under redundant system.
  RP0-SC0 together as one Domain 0(Active Pair) and RP1-SC1 as the other Domain 1(Standby Pair).  
  
 ![redundancy.png]({{site.baseurl}}/images/redundancy.png){: .full}  
-Figure 22. Default Redundant state in Cisco 8608  
+Figure 23. Default Redundant state in Cisco 8608  
 {: .text-center}  
 
 In this default scenario, RP0 gains mastership and RP1 is in Backup state.
@@ -601,13 +605,13 @@ Both SC0 and SC1 are packet processing and forwarding capability.
 If the RP0 fatal faults or removal,  
 
 ![RP Failure.png]({{site.baseurl}}/images/RP Failure.png){: .full}   
-Figure 23. RP0 failure scenario in Cisco 8608  
+Figure 24. RP0 failure scenario in Cisco 8608  
 {: .text-center}  
 
 Standby RP immediately gains mastership via HW arbitration mechanism. MPAs switchover data path to RP1-SC1.  
 
 ![SC Failure.png]({{site.baseurl}}/images/SC Failure.png){: .full}    
-Figure 24. SC0 failure scenario in Cisco 8608  
+Figure 25. SC0 failure scenario in Cisco 8608  
 {: .text-center}  
 
 Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
@@ -617,7 +621,7 @@ No traffic drop is expected during RP/SC Failover.
 ### Packet flow in the redundancy system  
 
 ![PKT_Redun.png]({{site.baseurl}}/images/PKT_Redun.png){: .full}   
-Figure 25. Data path flow with Redundant System  
+Figure 26. Data path flow with Redundant System  
 {: .text-center}  
 
 1.	Ingress traffic coming from the network into the MPA  
@@ -628,7 +632,7 @@ Figure 25. Data path flow with Redundant System
 6.	PHY will drop packets coming from standby SC1  
 
 ![PKT_Non-Redun.png]({{site.baseurl}}/images/PKT_Non-Redun.png){: .full}   
-Figure 26. Data path flow after Active Pair failover  
+Figure 27. Data path flow after Active Pair failover  
 {: .text-center}  
 
 ## Conclusion  
