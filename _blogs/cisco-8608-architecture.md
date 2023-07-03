@@ -570,7 +570,6 @@ Figure 22. Cisco Silicon One Q200
 
 For more understanding on Cisco Silicon One Q200 refer to [Cisco Silicon One Q200-Info](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/datasheet-c78-744312.html).  
 
-
 ### Redundancy Details  
 Within the system even though RP0, RP1, SC0, SC1 are 4 different cards, from redundancy standpoint system software would consider RP0-SC0 together as Active Pair and RP1-SC1 as Backup Pair.  
 
