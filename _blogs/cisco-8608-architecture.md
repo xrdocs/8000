@@ -428,11 +428,6 @@ The system block diagram for the different cards and their mechanics of operatio
 
 ![sys-diagram.png]({{site.baseurl}}/images/sys-diagram.png){: .full}  
 
-
-![system_diag.png]({{site.baseurl}}/images/system_diag.png){: .full}  
-
-
-
 ![8608 diagram.png]({{site.baseurl}}/images/8608 diagram.png){: .full}  
 Figure 17. Cisco 8608 Block Diagram    
 {: .text-center}  
