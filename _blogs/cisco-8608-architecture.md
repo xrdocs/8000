@@ -426,6 +426,9 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 ### System Block Diagram  
 The system block diagram for the different cards and their mechanics of operation in hardware is covered.  
 
+![sys-diagram.png]({{site.baseurl}}/images/sys-diagram.png){: .full}  
+
+
 ![system_diag.png]({{site.baseurl}}/images/system_diag.png){: .full}  
 
 
