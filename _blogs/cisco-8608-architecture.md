@@ -426,6 +426,10 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 ### System Block Diagram  
 The system block diagram for the different cards and their mechanics of operation in hardware is covered.  
 
+![system_diag.png]({{site.baseurl}}/images/system_diag.png){: .full}  
+
+
+
 ![8608 diagram.png]({{site.baseurl}}/images/8608 diagram.png){: .full}  
 Figure 17. Cisco 8608 Block Diagram    
 {: .text-center}  
