@@ -323,8 +323,6 @@ Location      FRU Type                        FAN_0    FAN_1
 </pre>
 </div>  
 
-Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs), eight Modular Port Adapters (MPAs), 4 Power Modules (PMs), 8 Fan Modules (FMs) – all these entities are field replaceable units (FRUs).  
-
 ### IOS XR Software  
 The Cisco 8608 is launched with IOS XR 7.10.1.    
 
@@ -425,6 +423,8 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 
 ### System Block Diagram  
 The system block diagram for the different cards and their mechanics of operation in hardware is covered.  
+
+Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs), eight Modular Port Adapters (MPAs), 4 Power Modules (PMs), 8 Fan Modules (FMs) – all these entities are field replaceable units (FRUs).  
 
 ![sys-diagram.png]({{site.baseurl}}/images/sys-diagram.png){: .full}  
 Figure 17. Cisco 8608 Block Diagram    
