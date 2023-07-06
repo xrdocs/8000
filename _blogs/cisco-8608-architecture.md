@@ -556,7 +556,7 @@ The following table represents the maximum ports number of Cisco 8608 router can
 | Breakout | 128    | 128    | N/A    | N/S    | 128     | N/A     |  
 
 N/A: Not applicable – N/S: Not supported  
-* Post-FCS (XR 7.10.1)  
+** Post-FCS (XR 7.10.1)  
 
 Math is the following:  
 - 10 GbE  
