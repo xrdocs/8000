@@ -553,11 +553,10 @@ The following table represents the maximum ports number of Cisco 8608 router can
 
 |          | 10 GbE | 25 GbE | 40 GbE | 50 GbE | 100 GbE | 400 GbE |
 |----------|--------|--------|--------|--------|---------|---------|
-| Native   | 192    | 192    | 128    | N/S**    | 128     | 32      |
+| Native   | 192    | 192    | 128    | N/S    | 128     | 32      |
 | Breakout | 128    | 128    | N/A    | N/S    | 128     | N/A     |  
 
-N/A: Not applicable – N/S: Not supported  
-** Post-FCS (XR 7.10.1)  
+N/A: Not applicable – N/S: Not supported   
 
 Math is the following:  
 - 10 GbE  
@@ -567,9 +566,12 @@ Math is the following:
   - Used with 86-MPA-24Z-M as native with SFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 24x SFP28 on each: 192x 25 GbE total  
   - Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 25 GbE) x 8 MPAs: 128x 25 GbE total  
 - 40 GbE  
-  - Used with 86-MPA-14H2FH-M as native with QSFP+, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 16x QSFP+ on each: 128x 40 GbE total   
+  - Used with 86-MPA-14H2FH-M as native with QSFP+, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 16x QSFP+ on each: 128x 40 GbE total  
+- 50 GbE   
+  - Not supported at FCS(XR 7.10.1), in the roadmap   
+  - Used with 86-MPA-24Z-M as native with SFP56, fully populated with this MPA into 8 MPAs slots. 8 MPA x 24x SFP56 on each: 192x 50 GbE total  
 - 100 GbE  
-  - Used with 86-MPA-14H2FH-M as native with QSFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 16x QSFP+ on each: 128x 100 GbE total  
+  - Used with 86-MPA-14H2FH-M as native with QSFP28, fully populated with this MPA into 8 MPAs slots. 8 MPA x 16x QSFP+ on each: 128x 100 GbE total   
   - Use with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x (4x 100 GbE) on each: 128x 100 GbE total  
 - 400 GbE  
   - Used with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 400 GbE total  
