@@ -427,7 +427,7 @@ The system block diagram for the different cards and their mechanics of operatio
 
 Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs), eight Modular Port Adapters (MPAs), 4 Power Modules (PMs), 8 Fan Modules (FMs) – all these entities are field replaceable units (FRUs).  
 
-![8608-diag-3.png]({{site.baseurl}}/images/8608-diag-3.png){: .full}  
+![8608-diag-4.png]({{site.baseurl}}/images/8608-diag-4.png){: .full}  
 
 ![8608-diag-2.png]({{site.baseurl}}/images/8608-diag-2.png){: .full}  
 
