@@ -367,7 +367,9 @@ There are three Q200 NPUs on these line cards.
 | FH0/0/0/13 | 1/2/05        | FH0/0/0/27 | 2/2/04        |            |               |
 
 ### 8800-LC-48H 
-There are two Q100 NPUs on these line cards.  
+There are two Q100 NPUs on these line cards.
+
+
 ![8800-LC-48H.png]({{site.baseurl}}/images/8800-LC-48H.png)
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
@@ -389,7 +391,7 @@ There are two Q100 NPUs on these line cards.
 
 ### 88-LC0-34H14FH
 There are two Q200 NPUs on these line cards.  
-![88-LC0-34H14FH.png]({{site.baseurl}}/images/88-LC0-34H14FH.png)
+![LC48-Combo-Q200.png]({{site.baseurl}}/images/LC48-Combo-Q200.png){: .full}  
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
 |------------|---------------|------------|---------------|------------|---------------|------------|---------------|
