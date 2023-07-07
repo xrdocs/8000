@@ -427,6 +427,23 @@ The system block diagram for the different cards and their mechanics of operatio
 
 Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs), eight Modular Port Adapters (MPAs), 4 Power Modules (PMs), 8 Fan Modules (FMs) – all these entities are field replaceable units (FRUs).  
 
+- Route Processor (2 for redundancy mode, 1 for non-redundancy mode)  
+  - Intel 6-core @ 2.5 GHz with DDR4 DRAM and SSD Flash  
+  - PCIE, P2PM, 10 GbE for control   
+  - Trusted Anchor Module (TAM) for secure boot  
+- Switch Card (2 for redundancy mode, 1 for non-redundancy mode)  
+  - One Cisco Silicon One Q200 with 8 GB HBM  
+  - PCIE switch to interconnect the key components  
+  - Fan Controller Board  
+  - Orthogonal Connector to all inter-connectivity with the MPAs  
+- Modular Port Adapter   
+  - No CPU and managed by RP via PCIE, P2PM  
+  - PHY that support hitless 2:1 Mux mode, MACsec, Reverse Gear Box, Class C PTP   
+  - PHY provides a interface to front panel ports and connect to the Q200 on SC  
+  - Orthogonal SC connector  
+  - FPGA for control signals  
+  - Front panel ports  
+
 ![8608-diag-4.png]({{site.baseurl}}/images/8608-diag-4.png){: .full}  
 Figure 17. Cisco 8608 Block Diagram    
 {: .text-center}  
