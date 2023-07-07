@@ -345,9 +345,9 @@ There are three Q200 NPUs on these line cards.
 <b>88-LC0-36FH-M</b>  
 {: .text-center}  
  
-![88-LC0-36FH.png]({{site.baseurl}}/images/88-LC0-36FH.png)  
+![Lancer.png]({{site.baseurl}}/images/Lancer.png){: .full}  
 <b>88-LC0-36FH</b>  
-{: .text-center}
+{: .text-center}  
 
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
