@@ -389,7 +389,7 @@ There are two Q100 NPUs on these line cards.
 
 ### 88-LC0-34H14FH
 There are two Q200 NPUs on these line cards.  
-![LC48-Combo-Q200.png]({{site.baseurl}}/images/LC48-Combo-Q200.png){: .full}  
+![LC48Q200.png]({{site.baseurl}}/images/LC48Q200.png){: .full}  
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
 |------------|---------------|------------|---------------|------------|---------------|------------|---------------|
