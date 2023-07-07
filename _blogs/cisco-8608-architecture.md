@@ -546,29 +546,30 @@ The third of the combo configuration is 10/25G breakout solution.
 
 The following summary is the all scenarios for Native and Breakout on 86-MPA-14H2FH-M MPA  
 
-| Port | Breakout supported | Port Type                                                                                         |
-|------|--------------------|---------------------------------------------------------------------------------------------------|
-| 0    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE (Disable Port 2, 3, 4)
-                              1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA |
-| 1    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE (Disable Port 5, 6, 7)
-                              1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA |
-| 2    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 3    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 4    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 5    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 6    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 7    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 8    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 9    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 10   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA
-                            4x 25 GbE, 4x 10 GbE (Disable port 11)                  |
-| 11   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 12   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA
-                              4x 25 GbE, 4x 10 GbE (Disable port 13)                  |
-| 13   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |
-| 14   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA
-                              4x 25 GbE, 4x 10 GbE (Disable port 15)                  |
-| 15   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA                                                        |  
+| Port | Breakout supported | Port Type                                                |
+|------|--------------------|----------------------------------------------------------|
+| 0    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE (Disable Port 2, 3, 4) |
+|      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
+| 1    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE (Disable Port 5, 6, 7) |
+|      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
+| 2    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 3    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 4    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 5    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 6    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 7    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 8    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 9    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 10   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+|      |                    | 4x 25 GbE, 4x 10 GbE (Disable port 11)                   |
+| 11   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 12   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+|      |                    | 4x 25 GbE, 4x 10 GbE (Disable port 13)                   |
+| 13   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+| 14   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
+|      |                    | 4x 25 GbE, 4x 10 GbE (Disable port 15)                   |
+| 15   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |  
+
 
 <b>86-MPA-4FH-M</b>  
 This MPA is a Redundant MPA with a front panel consisting of 4x QSFPDD ports.  This is a redundant MPA because it can work with to two SCs with one being active and the other in standby mode.  
