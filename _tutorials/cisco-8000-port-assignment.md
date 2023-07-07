@@ -66,8 +66,8 @@ Hu0/0/0/19   f0001a8   0   2    0    80    640      0 local   100G
 RP/0/RP0/CPU0:Cisco8608#show controllers npu voq-usage interface all instance all loc 0/rp0/cpu0
 ---------------------------------------------------------------------------
 Node ID: 0/RP0/CPU0
-Intf         Intf     NPU Slice IFG  Sys   VOQ   Flow       VOQ      Port 
-name         handle    #    #    #   Port  base  base       port     speed
+Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port 
+name         handle    <mark>#    #    #</mark>   Port  base  base       port     speed
              (hex)                                          type          
 ---------------------------------------------------------------------------
 Hu0/1/0/15   f0000dc   0   5    0   320    632      0        local    100G
