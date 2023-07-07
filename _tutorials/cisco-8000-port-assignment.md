@@ -152,7 +152,7 @@ Cisco 8202 is made of a single Q100 NPU.
 
 ### Cisco 8201-32FH
 Cisco 8201-32FH is made of a single Q200 NPU.  
-![8201-32FH.png]({{site.baseurl}}/images/8201-32FH.png)  
+![8201-32FH.png]({{site.baseurl}}/images/8201-32FH.png){: .full}  
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
 |------------|---------------|------------|---------------|
