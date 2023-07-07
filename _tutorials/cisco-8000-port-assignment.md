@@ -107,8 +107,7 @@ FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G
 ## Port allocation
 ### Cisco 8201
 Cisco 8201 is made of a single Q100 NPU. 
-
-![8201-ports.png]({{site.baseurl}}/images/8201-ports.png)
+![8201.png]({{site.baseurl}}/images/8201.png){: .full}  
 
 The table below shows port assignment to different slices and IFG:
 
