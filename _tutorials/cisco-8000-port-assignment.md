@@ -272,6 +272,22 @@ Cisco 8111-32EH is made of a single G100 NPU.
 | FH0/0/0/12/0, FH0/0/0/12/1, FH0/0/0/13/0, FH0/0/0/13/1 | 0/2/4         | FH0/0/0/28/0, FH0/0/0/28/1, FH0/0/0/29/0, FH0/0/0/29/1 | 0/7/15        |
 | FH0/0/0/14/0, FH0/0/0/14/1, FH0/0/0/15/0, FH0/0/0/15/1 | 0/2/5         | FH0/0/0/30/0, FH0/0/0/30/1, FH0/0/0/31/0, FH0/0/0/31/1 | 0/7/14        |  
 
+### Cisco 8608  
+The Cisco 8608 router is a part of Cisco’s Centralized Architecture based chassis design. Centralized systems have redundant Route Processors (RP w/CPU), redundant Switch cards (SCs w/Cisco Silicon One Q200 NPU) and in-service replaceable modular port adapters (MPA).  
+
+![port assignment-wasp.png]({{site.baseurl}}/images/port assignment-wasp.png){: .full}  
+
+| MPA                    | NPU/Slice/IFG | MPA                    | NPU/Slice/IFG |
+|------------------------|---------------|------------------------|---------------|
+| MPA 0 (Up to 1.6 Tbps) | 0/5/10        | MPA 4 (Up to 1.6 Tbps) | 0/2/4         |
+|                        | 0/5/11        |                        | 0/2/5         |
+| MPA 1 (Up to 1.6 Tbps) | 0/4/9         | MPA 5 (Up to 1.6 Tbps) | 0/1/2         |
+|                        | 0/5/10        |                        | 0/1/3         |
+| MPA 2 (Up to 1.6 Tbps) | 0/3/7         |                        | 0/2/4         |
+|                        | 0/4/8         | MPA 6 (Up to 1.6 Tbps) | 0/0/1         |
+|                        | 0/4/9         |                        | 0/1/2         |
+| MPA 3 (Up to 1.6 Tbps) | 0/3/6         | MPA 7 (Up to 1.6 Tbps) | 0/0/0         |
+|                        | 0/3/7         |                        | 0/0/1         |  
 
 ### 8800-LC-36FH
 There are four Q100 NPUs on these line cards.  
