@@ -317,7 +317,7 @@ The Cisco 8608 router is a part of Cisco’s Centralized Architecture based chas
 
 ### 8800-LC-36FH
 There are four Q100 NPUs on these line cards.  
-![8800-LC-36FH.png]({{site.baseurl}}/images/8800-LC-36FH.png)
+![LC36-Q100.png]({{site.baseurl}}/images/LC36-Q100.png){: .full}  
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
 |------------|---------------|------------|---------------|------------|---------------|
