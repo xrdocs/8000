@@ -277,18 +277,12 @@ The Cisco 8608 router is a part of Cisco’s Centralized Architecture based chas
 
 ![port assignment-wasp.png]({{site.baseurl}}/images/port assignment-wasp.png){: .full}  
 
-| MPA                    | NPU/Slice/IFG | MPA                    | NPU/Slice/IFG |
-|------------------------|---------------|------------------------|---------------|
-| MPA 0 (Up to 1.6 Tbps) | 0/5/10        | MPA 4 (Up to 1.6 Tbps) | 0/2/4         |
-|                        | 0/5/11        |                        | 0/2/5         |
-| MPA 1 (Up to 1.6 Tbps) | 0/4/9         | MPA 5 (Up to 1.6 Tbps) | 0/1/2         |
-|                        | 0/5/10        |                        | 0/1/3         |
-| MPA 2 (Up to 1.6 Tbps) | 0/3/7         |                        | 0/2/4         |
-|                        | 0/4/8         | MPA 6 (Up to 1.6 Tbps) | 0/0/1         |
-|                        | 0/4/9         |                        | 0/1/2         |
-| MPA 3 (Up to 1.6 Tbps) | 0/3/6         | MPA 7 (Up to 1.6 Tbps) | 0/0/0         |
-|                        | 0/3/7         |                        | 0/0/1         |  
-
+| MPA                    | NPU/Slice/IFG       | MPA                    | NPU/Slice/IFG       |
+|------------------------|---------------------|------------------------|---------------------|
+| MPA 0 (Up to 1.6 Tbps) | 0/5/10, 0/5/11      | MPA 4 (Up to 1.6 Tbps) | 0/2/4, 0/2/5        |
+| MPA 1 (Up to 1.6 Tbps) | 0/4/9, 0/5/10       | MPA 5 (Up to 1.6 Tbps) | 0/1/2, 0/1/3, 0/2/4 |
+| MPA 2 (Up to 1.6 Tbps) | 0/3/7, 0/4/8, 0/4/9 | MPA 6 (Up to 1.6 Tbps) | 0/0/1, 0/1/2        |
+| MPA 3 (Up to 1.6 Tbps) | 0/3/6, 0/3/7        | MPA 7 (Up to 1.6 Tbps) | 0/0/0, 0/0/1        |  
 ### 8800-LC-36FH
 There are four Q100 NPUs on these line cards.  
 ![8800-LC-36FH.png]({{site.baseurl}}/images/8800-LC-36FH.png)
