@@ -269,7 +269,7 @@ Cisco 8101-32H is made of a single Q202L NPU.
 
 ### Cisco 8102-64H
 Cisco 8102-64H is made of a single Q201L NPU.  
-![8102-64H.png]({{site.baseurl}}/images/8102-64H.png)
+![8102-64H.png]({{site.baseurl}}/images/8102-64H.png){: .full}  
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
 |------------|---------------|------------|---------------|------------|---------------|------------|---------------|------------|---------------|
