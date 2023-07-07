@@ -175,7 +175,7 @@ Cisco 8201-32FH is made of a single Q200 NPU.
 
 ### Cisco 8202-32FH-M
 Cisco 8202-32FH-M is made of a single Q200 NPU. It supports MACSec on all ports.  
-![8202-32FH-M.png]({{site.baseurl}}/images/8202-32FH-M.png)
+![8202-32FH-M.png]({{site.baseurl}}/images/8202-32FH-M.png){: .full}  
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
 |------------|---------------|------------|---------------|
