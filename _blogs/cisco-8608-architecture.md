@@ -438,7 +438,7 @@ Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs)
   - Orthogonal Connector to all inter-connectivity with the MPAs  
 - Modular Port Adapter   
   - No CPU and managed by RP via PCIE, P2PM  
-  - PHY that support hitless 2:1 Mux mode, MACsec, Reverse Gear Box, Class C PTP   
+  - PHY that support hitless 2:1 Mux mode, MACsec, Reverse Gearbox, Class C PTP   
   - PHY provides a interface to front panel ports and connect to the Q200 on SC  
   - Orthogonal SC connector  
   - FPGA for control signals  
