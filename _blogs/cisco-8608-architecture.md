@@ -548,9 +548,9 @@ The following summary is the all scenarios for Native and Breakout on 86-MPA-14H
 
 | Port | Breakout supported | Port Type                                                |
 |------|--------------------|----------------------------------------------------------|
-| 0    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE (Disable Port 2, 3, 4) |
+| 0    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE <span style="background-color: #FF0000">(Disable Port 2, 3, 4)</span> |
 |      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
-| 1    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE (Disable Port 5, 6, 7) |
+| 1    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE <span style="background-color: #FF0000">(Disable Port 5, 6, 7)</span> |
 |      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
 | 2    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 3    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
@@ -561,13 +561,13 @@ The following summary is the all scenarios for Native and Breakout on 86-MPA-14H
 | 8    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 9    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 10   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-|      |                    | 4x 25 GbE, 4x 10 GbE (Disable port 11)                   |
+|      |                    | 4x 25 GbE, 4x 10 GbE <span style="background-color: #FF0000">(Disable port 11)</span>                   |
 | 11   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 12   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-|      |                    | 4x 25 GbE, 4x 10 GbE (Disable port 13)                   |
+|      |                    | 4x 25 GbE, 4x 10 GbE <span style="background-color: #FF0000">(Disable port 13)</span>                   |
 | 13   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 14   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-|      |                    | 4x 25 GbE, 4x 10 GbE (Disable port 15)                   |
+|      |                    | 4x 25 GbE, 4x 10 GbE <span style="background-color: #FF0000">(Disable port 15)</span>                   |
 | 15   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |  
 
 
