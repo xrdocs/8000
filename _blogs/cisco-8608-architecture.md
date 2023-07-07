@@ -29,7 +29,7 @@ The Cisco 8608 chassis is 7RU in height and less than 600mm in sheet metal depth
 
 Supporting the Cisco 8608 router capabilities demanded a wide range of new approaches to platform design. By leveraging over decades of high-performance system design, Cisco has delivered unprecedented capacity without compromising forwarding performance or requiring oversubscription. This required new power supplies, a redesigned cooling architecture, and future-proof connectors.  
 The Cisco 8608 router required extensive innovation and consolidation of capabilities of multiple ASICs into a single ASIC to greatly increase the power efficiency of the solution. As with all modern networking devices the power density of the ASIC creates a challenging thermal situation. These challenges are addressed via advanced system design, including futuristic fans and heat sinks in Cisco 8608.  
-The 8608 router utilizes a state-of-the-art orthogonal design with advanced cooling via front to back airflow, high power capacity and new power supplies. The chassis and all data path components for the 8608 Series benefit from a clean sheet design that allows the systems to take full advantage of the latest technologies and Cisco’s design expertise. This design connects all forwarding path components directly without a backplane or midplane. In the Cisco 8608 Series, the eight Modular Port Adaptors (MPAs) along with the two Route Processors are vertically oriented. Every major component of the Cisco 8608 Series was developed with a clean sheet approach – representing unprecedented investment and commitment to a long lifecycle for the Cisco 8608 router. 
+The 8608 router utilizes a state-of-the-art orthogonal design with advanced cooling via front to back airflow, high power capacity and new power supplies. The chassis and all data path components for the 8608 Series benefit from a clean sheet design that allows the systems to take full advantage of the latest technologies and Cisco’s design expertise. This design connects all forwarding path components directly without a backplane or midplane. In the Cisco 8608 router, the eight Modular Port Adaptors (MPAs) along with the two Route Processors are vertically oriented. Every major component of the Cisco 8608 router was developed with a clean sheet approach – representing unprecedented investment and commitment to a long lifecycle for the Cisco 8608 router. 
 Investment Protection – The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor & Modular Port Adaptors). Cisco is investing in the future of the platform for the customers to be able to upgrade to next generation.  
 
 The Cisco 8608 is comprised of the following components:  
@@ -37,8 +37,8 @@ The Cisco 8608 is comprised of the following components:
 - Route Processor (RP): Cisco 8608 RP hosts the CPU and the I/O ports on it. RPs fit vertical in the chassis and are inserted from the front panel. There will be up to two redundant RPs in the system and the RPs will operate in Active-Standby mode for a redundant system.  
 - Switch Card (SC): Switch cards sit behind the MPAs and have connections to all MPAs. Switch cards host the NPUs on them. There are up to two switch cards in the system and the SCs work in Active-Standby mode thus delivering data plane redundancy.  
 - Power Supplies: Cisco 8608 has 4 power supplies that can provide N+N redundant power to the system. The available options are:  
-  - Pluggable 3.2KW AC   
-  - Pluggable 3.2KW DC   
+  - Pluggable 3.2 kW AC   
+  - Pluggable 3.2 kW DC   
 - Fan Modules: There are 8 Fan Modules in the system with each Fan Module individually removable / replaceable. These provide N+1 Fan Module redundancy to the system. The entire Fan Tray can be removed in case of SC insertion or removal.  
 
 ## Understanding the Cisco 8608 Naming Logic     
@@ -199,7 +199,7 @@ You can install up to four 3200W AC or 3200W DC power supplies in the chassis. E
 
 AC Power Module (86-3.2KW-AC)  
 - The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.  
-- AC power modules are rated at 3200KW maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.  
+- AC power modules are rated at 3200W maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.  
 - AC nominal range: 100—1230VAC and 2002—40VAC  
 - AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC  
 
