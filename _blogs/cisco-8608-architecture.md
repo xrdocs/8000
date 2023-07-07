@@ -544,6 +544,8 @@ The third of the combo configuration is 10/25G breakout solution.
 4x 10G or 4x 25G breakout will not be supported on Port 0 to 9 (PHY 0 & 1). Only on PHY 2’s port 10, 12, and 14 and disabled Port 11, 13, and 15.  
 ![combo3.png]({{site.baseurl}}/images/combo3.png){: .full}   
 
+The following summary is the all scenarios for Native and Breakout on 86-MPA-14H2FH-M MPA  
+
 | Port | Breakout supported | Port Type                                                                                         |
 |------|--------------------|---------------------------------------------------------------------------------------------------|
 | 0    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE (Disable Port 2, 3, 4)
