@@ -245,8 +245,8 @@ Cisco 8101-32FH is made of a single Q200L NPU.
 | FH0/0/0/15 | 0/3/6         | FH0/0/0/31 | 0/1/2         |
 
 ### Cisco 8101-32H
-Cisco 8101-32H is made of a single Q202L NPU. 
-![8101-32H.png]({{site.baseurl}}/images/8101-32H.png)
+Cisco 8101-32H is made of a single Q202L NPU.  
+![8101-32H.png]({{site.baseurl}}/images/8101-32H.png){: .full}  
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
 |------------|---------------|------------|---------------|
