@@ -570,8 +570,8 @@ The following summary is the all scenarios for Native and Breakout solutions on 
 | 14   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 |      |                    | 4x 25 GbE, 4x 10 GbE <span style="background-color: #FF0000">(Disable port 15)</span>                   |
 | 15   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |  
-
-
+  
+  
 <b>86-MPA-4FH-M</b>  
 This MPA is a Redundant MPA with a front panel consisting of 4x QSFPDD ports.  This is a redundant MPA because it can work with to two SCs with one being active and the other in standby mode.  
 This MPA provides a per slot bandwidth of 1.6Tbps. The QSFPDD ports can support 40/100/400G optics and support fully Breakout solutions without any port restriction.  
@@ -665,7 +665,7 @@ Figure 25. SC0 failure scenario in Cisco 8608
 
 Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
 
-**No/50ms(?)** traffic drop is expected during RP/SC Failover.  
+**50ms** traffic drop is expected during RP/SC Failover.  
 
 ### Packet flow in the redundancy system  
 
