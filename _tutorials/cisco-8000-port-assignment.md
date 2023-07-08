@@ -289,8 +289,8 @@ Cisco 8102-64H is made of a single Q201L NPU.
 | Hu0/0/0/13 | 0/5/10        | Hu0/0/0/27 | 0/3/7         | Hu0/0/0/41 | 0/0/1         | Hu0/0/0/55 | 0/1/3         |            |               |
 
 ### Cisco 8111-32EH
-Cisco 8111-32EH is made of a single G100 NPU.
-![8111-32EH.png]({{site.baseurl}}/images/8111-32EH.png){: .full}  
+Cisco 8111-32EH is made of a single G100 NPU.  
+![8111-32EH-New.png]({{site.baseurl}}/images/8111-32EH-New.png){: .full}  
 
 | Interface                                              | NPU/Slice/IFG | Interface                                              | NPU/Slice/IFG |
 |--------------------------------------------------------|---------------|--------------------------------------------------------|---------------|
