@@ -289,7 +289,7 @@ Cisco 8102-64H is made of a single Q201L NPU.
 | Hu0/0/0/13 | 0/5/10        | Hu0/0/0/27 | 0/3/7         | Hu0/0/0/41 | 0/0/1         | Hu0/0/0/55 | 0/1/3         |            |               |
 
 ### Cisco 8111-32EH
-Cisco 8111-32EH is made of a single G100 NPU.  
+Cisco 8111-32EH is made of a single G100 NPU.      
 ![8111-32EH new.png]({{site.baseurl}}/images/8111-32EH new.png){: .full}  
 
 | Interface                                              | NPU/Slice/IFG | Interface                                              | NPU/Slice/IFG |
@@ -305,7 +305,6 @@ Cisco 8111-32EH is made of a single G100 NPU.
 
 ### Cisco 8608  
 The Cisco 8608 router is a part of Cisco’s Centralized Architecture based chassis design. Centralized systems have redundant Route Processors (RP w/CPU), redundant Switch cards (SCs w/Cisco Silicon One Q200 NPU) and in-service replaceable modular port adapters (MPA).  
-
 ![Screenshot 2023-07-06 at 6.49.23 PM.png]({{site.baseurl}}/images/Screenshot 2023-07-06 at 6.49.23 PM.png){: .full}  
 
 | MPA                    | NPU/Slice/IFG       | MPA                    | NPU/Slice/IFG       |
