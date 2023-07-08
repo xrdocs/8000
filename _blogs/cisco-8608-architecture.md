@@ -519,7 +519,6 @@ Hu0/1/0/0    f0000d4   0   4    1   200    512      0        local    100G
 ### MPA Details  
 
 <b>86-MPA-14H2FH-M</b>  
-
 This Combo MPA is a Redundant MPA with a front panel has 2x QSFPDDs and 14x QSFP28 ports.  
 This MPA is a redundant MPA because it can work with two SC cards with one being active and the other in standby mode.  
 This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G breakout cables are also supported.  
