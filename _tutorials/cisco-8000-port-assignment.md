@@ -130,7 +130,7 @@ The table below shows port assignment to different slices and IFG:
 
 ### Cisco 8202
 Cisco 8202 is made of a single Q100 NPU.  
-![8202.png]({{site.baseurl}}/images/8202.png){: .full}  
+![8202.png]({{site.baseurl}}/images/8202.png)  
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
 |------------|---------------|------------|---------------|------------|---------------|------------|---------------|------------|---------------|
