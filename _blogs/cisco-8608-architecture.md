@@ -664,7 +664,7 @@ Figure 25. SC0 failure scenario in Cisco 8608
 
 Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
 
-**50ms** traffic drop is expected during RP/SC Failover.  
+**50ms** traffic drop is expected during active RP/SC Failover.  
 
 ### Packet flow in the redundancy system  
 
