@@ -405,3 +405,13 @@ There are two Q200 NPUs on these line cards.
 | FH0/0/0/11 | 0/1/2         | Hu0/0/0/25 | 1/2/04        | Hu0/0/0/39 | 1/1/03        |            |               |
 | Hu0/0/0/12 | 0/1/3         | FH0/0/0/26 | 1/2/05        | Hu0/0/0/40 | 1/1/02        |            |               |
 | Hu0/0/0/13 | 0/1/2         | Hu0/0/0/27 | 1/2/05        | FH0/0/0/41 | 1/0/1         |            |               |
+
+## Modification History  
+
+| Version | Data     | Author(s)     | Comments            |
+|---------|----------|---------------|---------------------|
+| 1       | March-22 | Chang Soo Lee | Initial Publication |
+| 2       | April-22 | Chang Soo Lee | Added 8202-32FH-M   |
+| 3       | July-22  | Chang Soo Lee | Added 8201-24H8FH   |
+| 4       | April-23 | Chang Soo Lee | Added 8111-32EH     |
+| 5       | July-23  | Chang Soo Lee | Added 8608          |  
