@@ -157,10 +157,10 @@ RP/0/RP0/CPU0:8800#
 
 Line cards on 8800 chassis are available in two variants with respect to the ejector functionality. 
 
-- LC Type1: Ejector Levers with Buttons
-- LC Type2: Ejector Levers with Latches
+- LC Type 1: Ejector Levers with Buttons
+- LC Type 2: Ejector Levers with Latches
 
-
+![lc-ejectors.png]({{site.baseurl}}/images/lc-ejectors.png)
 
 Line cards have two ejector levers to release the card from the router. Use these levers to remove the line card and to seat the line card firmly in the router when line card is installed. The ejector levers align and seat the card connectors in the router. To avoid damaging card mechanical components, never carry a line card by the captive installation screws or ejector levers. Doing so can damage these components and cause card insertion problems.  
 
