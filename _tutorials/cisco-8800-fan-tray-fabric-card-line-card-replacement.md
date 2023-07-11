@@ -98,19 +98,12 @@ Node              Type                     State                    Config state
 </div>
 
 3. Verify Fabric Card LED is turned Off.
-
 4.	Unscrew FAN tray
-
 5.	Remove Fan Tray corresponding to the fabric card which needs to be replaced.
- 
 6.	Insert Fabric card rail extension.
-
 7.	Loosen both the ejector handles on fabric card. 
-
 8.	Pull the FC out of the chassis using both ejector handles.
-
 9.	Insert replacement fabric card.
-
 10.	Tighten both the ejector handles on the new fabric card.
 11.	Remove fabric card rail extension.
 12.	Install Fan tray.
@@ -188,8 +181,8 @@ Opening the ejector levers of an installed line card causes the line card to shu
 2. Verify that the Line Card LED for the slot that you specified turns off. Also, you can use the show platform command to verify that the status of the card is SHUT DOWN.
 3.	Loosen the two captive screws.
 4.	Ejectors
-  1. LC Type1:  Press the ejector buttons to open two ejector levers.
-  2. LC Type2: Slide the ejector lever latches outward and pull the two ejector levers. 
+  - LC Type1:  Press the ejector buttons to open two ejector levers.
+  - LC Type2: Slide the ejector lever latches outward and pull the two ejector levers. 
 5.	Use the ejector levers to pull the line card a couple of inches (about 5 cm) from the chassis.
 6.	Close the ejector levers. Use one hand to hold the front of the line card, place your other hand under the line card to support its weight, pull it out of the chassis, and set it on an antistatic surface or inside an antistatic bag.
 
