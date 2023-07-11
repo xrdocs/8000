@@ -208,7 +208,7 @@ LC/0/1/CPU0:Jul 11 13:27:29.814 UTC: esd[151]: %INFRA-ESD-6-SIGNAL_RCV : ESD rec
 LC/0/1/CPU0:Jul 11 13:27:29.814 UTC: esd[151]: %INFRA-ESD-6-PROCESS_EXIT : ESD process is exiting, reason 0x1, normal shutdown
 RP/0/RP1/CPU0:Jul 11 13:27:30.449 UTC: esdma[127]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :ESDMA-ESD-CONN-ERR :DECLARE :0/LC1/LC_SW:
 RP/0/RP0/CPU0:Jul 11 13:27:30.449 UTC: esdma[265]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :ESDMA-ESD-CONN-ERR :DECLARE :0/LC1/LC_SW:
-RP/0/RP0/CPU0:8812-1#RP/0/RP1/CPU0:Jul 11 13:27:35.238 UTC: esd[174]: %INFRA-ESD-6-PORT_STATE_CHANGE_LINK_DOWN : The physical link state of the control ethernet switch port 0 has changed. New Link state DOWN, Admin state: UP
+RP/0/RP1/CPU0:Jul 11 13:27:35.238 UTC: esd[174]: %INFRA-ESD-6-PORT_STATE_CHANGE_LINK_DOWN : The physical link state of the control ethernet switch port 0 has changed. New Link state DOWN, Admin state: UP
 RP/0/RP0/CPU0:Jul 11 13:27:35.238 UTC: esd[294]: %INFRA-ESD-6-PORT_STATE_CHANGE_LINK_DOWN : The physical link state of the control ethernet switch port 0 has changed. New Link state DOWN, Admin state: UP
 RP/0/RP0/CPU0:Jul 11 13:27:35.338 UTC: shelfmgr[212]: %PLATFORM-SHELFMGR-4-CARD_SHUTDOWN : Shutting down 0/1/CPU0: User initiated card shutdown
 RP/0/RP0/CPU0:Jul 11 13:27:35.339 UTC: shelfmgr[212]: %PLATFORM-SHELFMGR-6-INFO_LOG : 0/1/CPU0 is shutdown
