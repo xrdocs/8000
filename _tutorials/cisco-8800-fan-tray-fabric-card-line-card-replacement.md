@@ -187,9 +187,9 @@ Opening the ejector levers of an installed line card causes the line card to shu
 1. Run the <code>shutdown location 0/linecard-slot/CPU0</code> command, which gracefully shuts down the line card.
 2. Verify that the Line Card LED for the slot that you specified turns off. Also, you can use the show platform command to verify that the status of the card is SHUT DOWN.
 3.	Loosen the two captive screws.
-4.	
-a)	LC Type1 - Press the ejector buttons to open two ejector levers.
-b)	LC Type2 - Slide the ejector lever latches outward and pull the two ejector levers. 
+4.	Ejectors
+  1. LC Type1 - Press the ejector buttons to open two ejector levers.
+  2. LC Type2 - Slide the ejector lever latches outward and pull the two ejector levers. 
 5.	Use the ejector levers to pull the line card a couple of inches (about 5 cm) from the chassis.
 6.	Close the ejector levers. Use one hand to hold the front of the line card, place your other hand under the line card to support its weight, pull it out of the chassis, and set it on an antistatic surface or inside an antistatic bag.
 
