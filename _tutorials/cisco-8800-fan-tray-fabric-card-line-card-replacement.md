@@ -39,7 +39,7 @@ Fabric cards mount vertically into the chassis connecting orthogonally to the ho
 
 ### Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=sQtI-uAkUGQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sQtI-uAkUGQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Step-by-step Procedure
 
@@ -171,7 +171,7 @@ Opening the ejector levers of an installed line card causes the line card to shu
 
 ### Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=t9Ly9re5g3s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/t9Ly9re5g3s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Line Card Removal
 
