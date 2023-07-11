@@ -33,7 +33,7 @@ Verify the following:
 <code>show hw-module fpd</code> (should be “CURRENT”)
 
 
-## Fan Tray/Fabric Card Replacement
+## Fabric Card Replacement
 
 Fabric cards mount vertically into the chassis connecting orthogonally to the horizontally placed line cards in the system. Fabric cards utilize ejectors on them to gracefully handle card insertion and removal from the chassis. Ejector handles should be operated properly as directed in this article/video for smooth and uninterrupted functioning of the card in the system.
 
