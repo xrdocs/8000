@@ -73,11 +73,7 @@ RP/0/RP0/CPU0:8800#
 </code>
 </pre>
 </div>
-
-
-
 2. Shutdown fabric card associated to fabric plane.
-
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
@@ -96,7 +92,6 @@ Node              Type                     State                    Config state
 </code>
 </pre>
 </div>
-
 3. Verify Fabric Card LED is turned Off.
 ![8800-fabric-led.png]({{site.baseurl}}/images/8800-fabric-led.png)
 4.	Unscrew FAN tray
@@ -115,7 +110,6 @@ Node              Type                     State                    Config state
 11.	Remove fabric card rail extension.
 12.	Install Fan tray.
 13.	Unshut fabric card.
-
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
@@ -134,9 +128,7 @@ Node              Type                     State                    Config state
 </code>
 </pre>
 </div>
-
 14.	Unshut fabric plane. 
-
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
@@ -144,7 +136,6 @@ RP/0/RP0/CPU0:8800(config)#no controller fabric plane 0 shutdown
 RP/0/RP0/CPU0:8800(config)#commit
 RP/0/RP0/CPU0:May 23 22:47:09.904 UTC: fsdbagg[225]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [5117] : Plane 0 state changed to UP 
 RP/0/RP0/CPU0:ios#show controllers fabric plane all 
-
 Plane Admin Plane    up->dn  up->mcast
 Id    State State    counter   counter
 --------------------------------------
