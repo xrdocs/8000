@@ -47,6 +47,9 @@ Summary of steps required to replace a FC are as below –
 
 1. Shutdown fabric plane.
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:ios(config)#controller fabric plane 0 shutdown    
 RP/0/RP0/CPU0:ios(config)#commit
 
@@ -67,17 +70,21 @@ Id    State State    counter   counter
 6     UP    UP             0         0 
 7     UP    UP             0         0 
 RP/0/RP0/CPU0:8800#
+</code>
+</pre>
+</div>
 
 
 
 2. Shutdown fabric card.
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8800(config)#hw-module shutdown location 0/FC0
 RP/0/RP0/CPU0:8800(config)#commit
-
 RP/0/RP0/CPU0:May 23 22:42:13.698 UTC: shelfmgr[240]: %PLATFORM-SHELFMGR-4-CARD_SHUTDOWN : Shutting down 0/FC0: User initiated shutdown from config 
 RP/0/RP0/CPU0:May 23 22:42:13.698 UTC: shelfmgr[240]: %PLATFORM-SHELFMGR-6-INFO_LOG : 0/FC0 is shutdown 
-	
 RP/0/RP0/CPU0:8800#show platform 
 Node              Type                     State                    Config state
 --------------------------------------------------------------------------------
@@ -86,7 +93,9 @@ Node              Type                     State                    Config state
 0/0/CPU0          8800-LC-48H              IOS XR RUN               NSHUT
 0/FC0             8808-FC                  SHUT DOWN                SHUT
 0/FC1             8808-FC                  OPERATIONAL              NSHUT
-
+</code>
+</pre>
+</div>
 
 3. Verify Fabric Card LED is turned Off.
 
@@ -107,12 +116,13 @@ Node              Type                     State                    Config state
 12.	Install Fan tray.
 13.	Unshut fabric card.
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8800(config)#no hw-module shutdown location 0/FC0
 RP/0/RP0/CPU0:8800(config)#commit
-
 RP/0/RP0/CPU0:May 23 22:45:02.113 UTC: shelfmgr[240]: %PLATFORM-SHELFMGR-4-CARD_RELOAD : Reloading 0/FC0: User initiated no-shutdown from config 
 RP/0/RP0/CPU0:ios#RP/0/RP0/CPU0:May 23 22:45:34.435 UTC: shelfmgr[240]: %PLATFORM-SHELFMGR-6-INFO_LOG : 0/FC0 is operational 
-
 RP/0/RP0/CPU0:ios#show platform
 Node              Type                     State                    Config state
 --------------------------------------------------------------------------------
@@ -121,12 +131,17 @@ Node              Type                     State                    Config state
 0/0/CPU0          8800-LC-48H              IOS XR RUN               NSHUT
 0/FC0             8808-FC                  OPERATIONAL              NSHUT
 0/FC1             8808-FC                  OPERATIONAL              NSHUT
+</code>
+</pre>
+</div>
 
 14.	Unshut fabric plane. 
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8800(config)#no controller fabric plane 0 shutdown 
 RP/0/RP0/CPU0:8800(config)#commit
-
 RP/0/RP0/CPU0:May 23 22:47:09.904 UTC: fsdbagg[225]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [5117] : Plane 0 state changed to UP 
 RP/0/RP0/CPU0:ios#show controllers fabric plane all 
 
@@ -142,7 +157,9 @@ Id    State State    counter   counter
 6     UP    UP             0         0 
 7     UP    UP             0         0 
 RP/0/RP0/CPU0:8800#
-
+</code>
+</pre>
+</div>
 
 **Note:** Too ensure proper airflow and prevent overheating, do not operate the router with three fan trays for more than 10 minutes. 8800 routers can work with 3 FTs and operates in N+1 redundancy model. If the replacement fan tray is not ready, faulty FT must remain in the chassis.
 {: .notice}
@@ -167,7 +184,7 @@ Opening the ejector levers of an installed line card causes the line card to shu
 
 ### Line Card Removal
 
-1. Run the <code>shutdown location 0/linecard-slot/CPU0<code> command, which gracefully shuts down the line card.
+1. Run the <code>shutdown location 0/linecard-slot/CPU0</code> command, which gracefully shuts down the line card.
 2. Verify that the Line Card LED for the slot that you specified turns off. Also, you can use the show platform command to verify that the status of the card is SHUT DOWN.
 3.	Loosen the two captive screws.
 4.	
