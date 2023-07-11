@@ -21,7 +21,19 @@ This blog post details the steps required to replace a FT, FC and LC on a Cisco 
 
 ## Before Getting Started
 
+Verify the following –
+- Line card inserted
+'show platform'
+- IOS XR version
+'show install active summary'
+'show install committed summary'
+- FPD status of the cards
+'show hw-module fpd' (should be “CURRENT”)
+
+
 ## Fan Tray/Fabric Card Replacement
+
+Fabric cards mount vertically into the chassis connecting orthogonally to the horizontally placed line cards in the system. Fabric cards utilize ejectors on them to gracefully handle card insertion and removal from the chassis. Ejector handles should be operated properly as directed in this article/video for smooth and uninterrupted functioning of the card in the system.
 
 ## Line Card Replacement
 ### Line Card Removal
