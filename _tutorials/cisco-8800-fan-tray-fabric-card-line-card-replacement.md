@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2023-07-11 11:46 +0200'
-title: 'Cisco 8800 Fan Tray, Fabric Card & Line Card Replacement Procedure'
+title: 'Cisco 8800 Fan Tray, Fabric Card & Line Card Replacement'
 excerpt: >-
   This blog post details the steps required to replace a FT, FC and LC on a
   Cisco 8800 router. 
