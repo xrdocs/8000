@@ -97,7 +97,8 @@ Node              Type                     State                    Config state
 ![ft-removal.png]({{site.baseurl}}/images/ft-removal.png)
 6.	Insert Fabric card rail extension.
 ![fc-rail.png]({{site.baseurl}}/images/fc-rail.png)  
-    **Note:** At the time of publishing this video, the fabric card rail extension is only available on 8818 routers. 8804, 8808 and 8812 chassis do not need fabric card rail extension.{: .notice}
+    **Note:** At the time of publishing this video, the fabric card rail extension is only available on 8818 routers. 8804, 8808 and 8812 chassis do not need fabric card rail extension.
+    {: .notice}
 7.	Loosen both the ejector handles on fabric card.  
 ![fc-ejector-1.png]({{site.baseurl}}/images/fc-ejector-1.png)
 8.	Pull the FC out of the chassis using both ejector handles.  
