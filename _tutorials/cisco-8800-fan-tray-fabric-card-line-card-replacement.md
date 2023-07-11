@@ -23,13 +23,13 @@ This blog post details the steps required to replace a FT, FC and LC on a Cisco 
 
 ## Before Getting Started
 
-Verify the following –
-- Line card inserted
+Verify the following:
+- Line card inserted  
 <code>show platform</code>
-- IOS XR version
-<code>show install active summary</code>
+- IOS XR version  
+<code>show install active summary</code>  
 <code>show install committed summary</code>
-- FPD status of the cards
+- FPD status of the cards  
 <code>show hw-module fpd</code> (should be “CURRENT”)
 
 
