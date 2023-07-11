@@ -43,21 +43,17 @@ Fabric cards mount vertically into the chassis connecting orthogonally to the ho
 
 ### Step-by-step Procedure
 
-Summary of steps required to replace a FC are as below – 
+Summary of steps required to replace a FC are as below
 
 1. Shutdown fabric plane.
-
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
 RP/0/RP0/CPU0:8800(config)#controller fabric plane 0 shutdown    
 RP/0/RP0/CPU0:8800(config)#commit
-
 RP/0/RP0/CPU0:May 23 22:39:28.824 UTC: fsdbagg[225]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-0 :DECLARE :: Fabric Plane-0 DOWN 
 RP/0/RP0/CPU0:May 23 22:39:28.824 UTC: fsdbagg[225]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [5117] : Plane 0 state changed to DOWN 
-
 RP/0/RP0/CPU0:8800#show controllers fabric plane all 
-
 Plane Admin Plane    up->dn  up->mcast
 Id    State State    counter   counter
 --------------------------------------
