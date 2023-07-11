@@ -267,12 +267,13 @@ Node              Type                     State                    Config state
 5. Tighten the two captive screws. (Fully tighten both captive installation screws to ensure that the card is correctly seated in the router. A card that is only partially seated in the router might not operate properly, even if it boots.)
 6. Attach each interface cable to the appropriate port on the line card. Use the label on each cable to determine which port each cable attaches to. 
 7. Run the <code>reload location 0/linecard-slot/CPU0</code> command, which gracefully reboots the line card.
+
     <div class="highlighter-rouge">
     <pre class="highlight">
     <code>
 RP/0/RP0/CPU0:8812-1#reload location 0/1/CPU0
 Proceed with reload? [confirm]
-RP/0/RP0/CPU0:Jul 11 13:51:52.464 UTC: shelfmgr_exec_cli[67628]: %PLATFORM-SHELFMGR-6-USER_OP : User root requested 'graceful card reload' of 0/1/CPU0
+RP/0/RP0/CPU0:Jul 11 13:51:52.464 UTC: shelfmgr_exec_cli[67628]: %PLATFORM-SHELFMGR-6-USER_OP : User root requested graceful card reload of 0/1/CPU0
 RP/0/RP0/CPU0:8812-1#RP/0/RP0/CPU0:Jul 11 13:51:52.475 UTC: shelfmgr[212]: %PLATFORM-SHELFMGR-4-CARD_RELOAD : Reloading 0/1/CPU0: User initiated card reload
  - snip -
 <mark>RP/0/RP0/CPU0:Jul 11 13:55:52.040 UTC: shelfmgr[212]: %PLATFORM-SHELFMGR-6-INFO_LOG : 0/1/CPU0 is operational</mark>
