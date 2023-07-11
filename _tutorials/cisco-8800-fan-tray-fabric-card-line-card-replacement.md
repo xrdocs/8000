@@ -45,7 +45,7 @@ Fabric cards mount vertically into the chassis connecting orthogonally to the ho
 
 Summary of steps required to replace a FC are as below:
 
-1. Shutdown fabric plane.  
+1. Shutdown fabric plane.
     <div class="highlighter-rouge">
     <pre class="highlight">
     <code>
