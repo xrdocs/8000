@@ -157,8 +157,8 @@ RP/0/RP0/CPU0:8800#
 
 Line cards on 8800 chassis are available in two variants with respect to the ejector functionality. 
 
-- LC Type 1: Ejector Levers with Buttons
-- LC Type 2: Ejector Levers with Latches
+- LC Type 1: Ejector Levers with Buttons. 8800-LC-48H, 8800-LC-36FH
+- LC Type 2: Ejector Levers with Latches. 88-LC0-34H14FH, 88-LC0-36FH, 88-LC0-36FH-M, 88-LC1-36EH
 
 ![lc-ejectors.png]({{site.baseurl}}/images/lc-ejectors.png)
 
