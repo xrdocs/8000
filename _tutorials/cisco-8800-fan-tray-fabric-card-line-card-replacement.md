@@ -186,7 +186,7 @@ RP/0/RP0/CPU0:8812-1#shutdown location 0/1
 RP/0/RP0/CPU0:8812-1#shutdown location 0/1/CPU0
 Proceed with shutdown? [confirm]
 RP/0/RP0/CPU0:Jul 11 13:27:26.611 UTC: shelfmgr_exec_cli[66474]: %PLATFORM-SHELFMGR-6-USER_OP : User root requested 'graceful card shutdown' of 0/1/CPU0
-RP/0/RP0/CPU0:8812-1#RP/0/RP0/CPU0:Jul 11 13:27:26.619 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-0 :DECLARE :: Fabric Plane-0 DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.619 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-0 :DECLARE :: Fabric Plane-0 DOWN
 RP/0/RP0/CPU0:Jul 11 13:27:26.619 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 0 state changed to DOWN
 RP/0/RP0/CPU0:Jul 11 13:27:26.623 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-1 :DECLARE :: Fabric Plane-1 DOWN
 RP/0/RP0/CPU0:Jul 11 13:27:26.623 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 1 state changed to DOWN
