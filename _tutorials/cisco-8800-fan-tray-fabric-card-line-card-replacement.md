@@ -160,6 +160,8 @@ Line cards on 8800 chassis are available in two variants with respect to the eje
 - LC Type1: Ejector Levers with Buttons
 - LC Type2: Ejector Levers with Latches
 
+
+
 Line cards have two ejector levers to release the card from the router. Use these levers to remove the line card and to seat the line card firmly in the router when line card is installed. The ejector levers align and seat the card connectors in the router. To avoid damaging card mechanical components, never carry a line card by the captive installation screws or ejector levers. Doing so can damage these components and cause card insertion problems.  
 
 Opening the ejector levers of an installed line card causes the line card to shut down even when the captive screws are screwed in. To reboot the line card, users must do one of the following:
@@ -174,6 +176,7 @@ Opening the ejector levers of an installed line card causes the line card to shu
 ### Line Card Removal
 
 1. Run the <code>shutdown location 0/linecard-slot/CPU0</code> command, which gracefully shuts down the line card.
+
     <div class="highlighter-rouge">
     <pre class="highlight">
     <code>
@@ -253,15 +256,49 @@ Node              Type                     State                    Config state
 
 ### Line Card Insertion
   
-1.	Align the back of the line card to the guides in the open line card slot and slide the line card all the way into the slot.
-2.	The line card stops when its front is about 0.25 inches (0.6 cm) outside the front of the chassis. 
+1. Align the back of the line card to the guides in the open line card slot and slide the line card all the way into the slot.
+2. The line card stops when its front is about 0.25 inches (0.6 cm) outside the front of the chassis. 
 3. Ejectors
   - LC Type1: Press the ejector buttons, and the two levers move partway from the center of the line card.
   - LC Type2: Slide the ejector lever latches to unlock the ejector levers and open the ejector levers outward.
-4.	Close the ejectors by rotating the ends of the two levers toward the center of the chassis. 
-5.	Tighten the two captive screws. (Fully tighten both captive installation screws to ensure that the card is correctly seated in the router. A card that is only partially seated in the router might not operate properly, even if it boots.)
-6.	Attach each interface cable to the appropriate port on the line card. Use the label on each cable to determine which port each cable attaches to. 
-7.	Verify that the line card LEDs turn on and appear green.
+4. Close the ejectors by rotating the ends of the two levers toward the center of the chassis. 
+5. Tighten the two captive screws. (Fully tighten both captive installation screws to ensure that the card is correctly seated in the router. A card that is only partially seated in the router might not operate properly, even if it boots.)
+6. Attach each interface cable to the appropriate port on the line card. Use the label on each cable to determine which port each cable attaches to. 
+7. Run the <code>reload location 0/linecard-slot/CPU0</code> command, which gracefully reboots the line card.
+    <div class="highlighter-rouge">
+    <pre class="highlight">
+    <code>
+RP/0/RP0/CPU0:8812-1#reload location 0/1/CPU0
+Proceed with reload? [confirm]
+RP/0/RP0/CPU0:Jul 11 13:51:52.464 UTC: shelfmgr_exec_cli[67628]: %PLATFORM-SHELFMGR-6-USER_OP : User root requested 'graceful card reload' of 0/1/CPU0
+RP/0/RP0/CPU0:8812-1#RP/0/RP0/CPU0:Jul 11 13:51:52.475 UTC: shelfmgr[212]: %PLATFORM-SHELFMGR-4-CARD_RELOAD : Reloading 0/1/CPU0: User initiated card reload
+ - snip -
+<mark>RP/0/RP0/CPU0:Jul 11 13:55:52.040 UTC: shelfmgr[212]: %PLATFORM-SHELFMGR-6-INFO_LOG : 0/1/CPU0 is operational</mark>
+RP/0/RP0/CPU0:8812-1#show platform
+Node              Type                     State                    Config state
+--------------------------------------------------------------------------------
+0/RP0/CPU0        8800-RP(Active)          IOS XR RUN               NSHUT
+0/RP1/CPU0        8800-RP(Standby)         IOS XR RUN               NSHUT
+<mark>0/1/CPU0          88-LC0-36FH              IOS XR RUN               NSHUT</mark>
+0/FC0             8812-FC                  OPERATIONAL              NSHUT
+0/FC1             8812-FC                  OPERATIONAL              NSHUT
+0/FC2             8812-FC                  OPERATIONAL              NSHUT
+0/FC3             8812-FC                  OPERATIONAL              NSHUT
+0/FC4             8812-FC                  OPERATIONAL              NSHUT
+0/FC5             8812-FC                  OPERATIONAL              NSHUT
+0/FC6             8812-FC                  OPERATIONAL              NSHUT
+0/FC7             8812-FC                  OPERATIONAL              NSHUT
+0/FT0             8812-FAN                 OPERATIONAL              NSHUT
+0/FT1             8812-FAN                 OPERATIONAL              NSHUT
+0/FT2             8812-FAN                 OPERATIONAL              NSHUT
+0/FT3             8812-FAN                 OPERATIONAL              NSHUT
+0/PT0             8800-HV-TRAY             OPERATIONAL              NSHUT
+0/PT1             8800-HV-TRAY             OPERATIONAL              NSHUT
+0/PT2             8800-HV-TRAY             OPERATIONAL              NSHUT
+    </code>
+    </pre>
+    </div>
+8. Verify that the line card LEDs turn on and appear green.
 
 ## General Verification
 
