@@ -12,7 +12,7 @@ tags:
   - Cisco 8000
 author: Manish Chandra Pandey
 ---
-{% include toc title="Cisco 8800 Fan Tray, Fabric Card & Line Card Replacement Procedure" %}
+{% include toc title="Cisco 8800 Fan Tray, Fabric Card & Line Card Replacement" %}
 
 ## Introduction
 
