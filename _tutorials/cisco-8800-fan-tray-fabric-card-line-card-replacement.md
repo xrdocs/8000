@@ -61,7 +61,7 @@ RP/0/RP0/CPU0:8800#show controllers fabric plane all
 Plane Admin Plane    up->dn  up->mcast
 Id    State State    counter   counter
 --------------------------------------
-0     DN    DN             1         0 
+<mark>0     DN    DN             1         0 </mark>
 1     UP    UP             0         0 
 2     UP    UP             0         0 
 3     UP    UP             0         0 
@@ -76,7 +76,7 @@ RP/0/RP0/CPU0:8800#
 
 
 
-2. Shutdown fabric card.
+2. Shutdown fabric card associated to fabric plane.
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -91,7 +91,7 @@ Node              Type                     State                    Config state
 0/RP0/CPU0        8800-RP(Active)          IOS XR RUN               NSHUT
 0/RP0/BMC0        8800-RP                  OPERATIONAL              NSHUT
 0/0/CPU0          8800-LC-48H              IOS XR RUN               NSHUT
-0/FC0             8808-FC                  SHUT DOWN                SHUT
+<mark>0/FC0             8808-FC                  SHUT DOWN                SHUT</mark>
 0/FC1             8808-FC                  OPERATIONAL              NSHUT
 </code>
 </pre>
@@ -129,7 +129,7 @@ Node              Type                     State                    Config state
 0/RP0/CPU0        8800-RP(Active)          IOS XR RUN               NSHUT
 0/RP0/BMC0        8800-RP                  OPERATIONAL              NSHUT
 0/0/CPU0          8800-LC-48H              IOS XR RUN               NSHUT
-0/FC0             8808-FC                  OPERATIONAL              NSHUT
+<mark>0/FC0             8808-FC                  OPERATIONAL              NSHUT</mark>
 0/FC1             8808-FC                  OPERATIONAL              NSHUT
 </code>
 </pre>
@@ -148,7 +148,7 @@ RP/0/RP0/CPU0:ios#show controllers fabric plane all
 Plane Admin Plane    up->dn  up->mcast
 Id    State State    counter   counter
 --------------------------------------
-0     UP    UP             1         0 
+<mark>0     UP    UP             1         0</mark>
 1     UP    UP             0         0 
 2     UP    UP             0         0 
 3     UP    UP             0         0 
@@ -168,8 +168,8 @@ RP/0/RP0/CPU0:8800#
 
 Line cards on 8800 chassis are available in two variants with respect to the ejector functionality. 
 
-1.	LC Type1 - Ejector Levers with Buttons
-2.	LC Type2 - Ejector Levers with Latches
+- LC Type1: Ejector Levers with Buttons
+- LC Type2: Ejector Levers with Latches
 
 Line cards have two ejector levers to release the card from the router. Use these levers to remove the line card and to seat the line card firmly in the router when line card is installed. The ejector levers align and seat the card connectors in the router. To avoid damaging card mechanical components, never carry a line card by the captive installation screws or ejector levers. Doing so can damage these components and cause card insertion problems.  
 
@@ -188,8 +188,8 @@ Opening the ejector levers of an installed line card causes the line card to shu
 2. Verify that the Line Card LED for the slot that you specified turns off. Also, you can use the show platform command to verify that the status of the card is SHUT DOWN.
 3.	Loosen the two captive screws.
 4.	Ejectors
-  1. LC Type1 - Press the ejector buttons to open two ejector levers.
-  2. LC Type2 - Slide the ejector lever latches outward and pull the two ejector levers. 
+  1. LC Type1:  Press the ejector buttons to open two ejector levers.
+  2. LC Type2: Slide the ejector lever latches outward and pull the two ejector levers. 
 5.	Use the ejector levers to pull the line card a couple of inches (about 5 cm) from the chassis.
 6.	Close the ejector levers. Use one hand to hold the front of the line card, place your other hand under the line card to support its weight, pull it out of the chassis, and set it on an antistatic surface or inside an antistatic bag.
 
@@ -197,9 +197,9 @@ Opening the ejector levers of an installed line card causes the line card to shu
   
 1.	Align the back of the line card to the guides in the open line card slot and slide the line card all the way into the slot.
 2.	The line card stops when its front is about 0.25 inches (0.6 cm) outside the front of the chassis. 
-3.	
-a)	LC Type1 - Press the ejector buttons, and the two levers move partway from the center of the line card.
-b)	LC Type2 - Slide the ejector lever latches to unlock the ejector levers and open the ejector levers outward.
+3. Ejectors
+  - LC Type1: Press the ejector buttons, and the two levers move partway from the center of the line card.
+  - LC Type2: Slide the ejector lever latches to unlock the ejector levers and open the ejector levers outward.
 4.	Close the ejectors by rotating the ends of the two levers toward the center of the chassis. 
 5.	Tighten the two captive screws. (Fully tighten both captive installation screws to ensure that the card is correctly seated in the router. A card that is only partially seated in the router might not operate properly, even if it boots.)
 6.	Attach each interface cable to the appropriate port on the line card. Use the label on each cable to determine which port each cable attaches to. 
