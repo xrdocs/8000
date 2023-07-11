@@ -163,24 +163,50 @@ Opening the ejector levers of an installed line card causes the line card to shu
 
 ### Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=t9Ly9re5g3s?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>{: .align-center}
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=t9Ly9re5g3s?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{: .align-center}
 
 ### Line Card Removal
 
-1. Run the shutdown location 0/<location>/CPU0 command, which gracefully shuts down the line card.
-
+1. Run the <code>shutdown location 0/linecard-slot/CPU0<code> command, which gracefully shuts down the line card.
 2. Verify that the Line Card LED for the slot that you specified turns off. Also, you can use the show platform command to verify that the status of the card is SHUT DOWN.
 3.	Loosen the two captive screws.
 4.	
 a)	LC Type1 - Press the ejector buttons to open two ejector levers.
 b)	LC Type2 - Slide the ejector lever latches outward and pull the two ejector levers. 
-
 5.	Use the ejector levers to pull the line card a couple of inches (about 5 cm) from the chassis.
 6.	Close the ejector levers. Use one hand to hold the front of the line card, place your other hand under the line card to support its weight, pull it out of the chassis, and set it on an antistatic surface or inside an antistatic bag.
 
 ### Line Card Insertion
+  
+1.	Align the back of the line card to the guides in the open line card slot and slide the line card all the way into the slot.
+2.	The line card stops when its front is about 0.25 inches (0.6 cm) outside the front of the chassis. 
+3.	
+a)	LC Type1 - Press the ejector buttons, and the two levers move partway from the center of the line card.
+b)	LC Type2 - Slide the ejector lever latches to unlock the ejector levers and open the ejector levers outward.
+4.	Close the ejectors by rotating the ends of the two levers toward the center of the chassis. 
+5.	Tighten the two captive screws. (Fully tighten both captive installation screws to ensure that the card is correctly seated in the router. A card that is only partially seated in the router might not operate properly, even if it boots.)
+6.	Attach each interface cable to the appropriate port on the line card. Use the label on each cable to determine which port each cable attaches to. 
+7.	Verify that the line card LEDs turn on and appear green.
 
 ## General Verification
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+show shelfmgr history oir
+show inventory
+show proc cpu
+show environment all
+show led
+show alarms
+show controller fabric health
+show controllers fabric plane all statistics
+show hw-module fpd
+</code>
+</pre>
+</div>
+
 
 ## Conclusion
 
