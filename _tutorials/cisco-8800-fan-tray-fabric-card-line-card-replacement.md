@@ -174,7 +174,76 @@ Opening the ejector levers of an installed line card causes the line card to shu
 ### Line Card Removal
 
 1. Run the <code>shutdown location 0/linecard-slot/CPU0</code> command, which gracefully shuts down the line card.
+    <div class="highlighter-rouge">
+    <pre class="highlight">
+    <code>
+RP/0/RP0/CPU0:8812-1#shutdown location 0/1
+0/1/CPU0  0/1
+RP/0/RP0/CPU0:8812-1#shutdown location 0/1/CPU0
+Proceed with shutdown? [confirm]
+
+RP/0/RP0/CPU0:Jul 11 13:27:26.611 UTC: shelfmgr_exec_cli[66474]: %PLATFORM-SHELFMGR-6-USER_OP : User root requested 'graceful card shutdown' of 0/1/CPU0
+RP/0/RP0/CPU0:8812-1#RP/0/RP0/CPU0:Jul 11 13:27:26.619 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-0 :DECLARE :: Fabric Plane-0 DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.619 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 0 state changed to DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.623 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-1 :DECLARE :: Fabric Plane-1 DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.623 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 1 state changed to DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.625 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-2 :DECLARE :: Fabric Plane-2 DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.625 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 2 state changed to DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.628 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-3 :DECLARE :: Fabric Plane-3 DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.628 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 3 state changed to DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.629 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-4 :DECLARE :: Fabric Plane-4 DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.629 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 4 state changed to DOWN
+LC/0/1/CPU0:Jul 11 13:27:26.629 UTC: npu_drvr[227]: %PLATFORM-VETH_PD-2-RX_FAULT : Interface FourHundredGigE0_1_0_9, Detected Local Fault
+RP/0/RP0/CPU0:Jul 11 13:27:26.630 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-5 :DECLARE :: Fabric Plane-5 DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.630 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 5 state changed to DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.631 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-6 :DECLARE :: Fabric Plane-6 DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.631 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 6 state changed to DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.632 UTC: fsdbagg[157]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :FABRIC-PLANE-7 :DECLARE :: Fabric Plane-7 DOWN
+RP/0/RP0/CPU0:Jul 11 13:27:26.632 UTC: fsdbagg[157]: %FABRIC-FSDB_AGG-5-PLANE_UPDOWN : [6260] : Plane 7 state changed to DOWN
+LC/0/1/CPU0:Jul 11 13:27:28.552 UTC: obflmgr[172]: %PLATFORM-OBFL-6-INFO : Unmounted OBFL directory for 0/1/CPU0
+LC/0/1/CPU0:Jul 11 13:27:29.814 UTC: esd[151]: %INFRA-ESD-6-SIGNAL_RCV : ESD received signal 1
+LC/0/1/CPU0:Jul 11 13:27:29.814 UTC: esd[151]: %INFRA-ESD-6-PROCESS_EXIT : ESD process is exiting, reason 0x1, normal shutdown
+RP/0/RP1/CPU0:Jul 11 13:27:30.449 UTC: esdma[127]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :ESDMA-ESD-CONN-ERR :DECLARE :0/LC1/LC_SW:
+RP/0/RP0/CPU0:Jul 11 13:27:30.449 UTC: esdma[265]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :ESDMA-ESD-CONN-ERR :DECLARE :0/LC1/LC_SW:
+
+RP/0/RP0/CPU0:8812-1#RP/0/RP1/CPU0:Jul 11 13:27:35.238 UTC: esd[174]: %INFRA-ESD-6-PORT_STATE_CHANGE_LINK_DOWN : The physical link state of the control ethernet switch port 0 has changed. New Link state DOWN, Admin state: UP
+RP/0/RP0/CPU0:Jul 11 13:27:35.238 UTC: esd[294]: %INFRA-ESD-6-PORT_STATE_CHANGE_LINK_DOWN : The physical link state of the control ethernet switch port 0 has changed. New Link state DOWN, Admin state: UP
+RP/0/RP0/CPU0:Jul 11 13:27:35.338 UTC: shelfmgr[212]: %PLATFORM-SHELFMGR-4-CARD_SHUTDOWN : Shutting down 0/1/CPU0: User initiated card shutdown
+RP/0/RP0/CPU0:Jul 11 13:27:35.339 UTC: shelfmgr[212]: %PLATFORM-SHELFMGR-6-INFO_LOG : 0/1/CPU0 is shutdown
+RP/0/RP0/CPU0:Jul 11 13:27:35.343 UTC: envmon[397]: %PKT_INFRA-FM-3-FAULT_MAJOR : ALARM_MAJOR :Power reservation exceeds available power :CLEAR :0:
+    </code>
+    </pre>
+    </div>
+
 2. Verify that the Line Card LED for the slot that you specified turns off. Also, you can use the show platform command to verify that the status of the card is SHUT DOWN.
+
+    <div class="highlighter-rouge">
+    <pre class="highlight">
+    <code>
+RP/0/RP0/CPU0:8812-1#show platform
+Node              Type                     State                    Config state
+--------------------------------------------------------------------------------
+0/RP0/CPU0        8800-RP(Active)          IOS XR RUN               NSHUT
+0/RP1/CPU0        8800-RP(Standby)         IOS XR RUN               NSHUT
+<mark>0/1/CPU0          88-LC0-36FH              SHUT DOWN                NSHUT</mark>
+0/FC0             8812-FC                  OPERATIONAL              NSHUT
+0/FC1             8812-FC                  OPERATIONAL              NSHUT
+0/FC2             8812-FC                  OPERATIONAL              NSHUT
+0/FC3             8812-FC                  OPERATIONAL              NSHUT
+0/FC4             8812-FC                  OPERATIONAL              NSHUT
+0/FC5             8812-FC                  OPERATIONAL              NSHUT
+0/FC6             8812-FC                  OPERATIONAL              NSHUT
+0/FC7             8812-FC                  OPERATIONAL              NSHUT
+0/FT0             8812-FAN                 OPERATIONAL              NSHUT
+0/FT1             8812-FAN                 OPERATIONAL              NSHUT
+0/FT2             8812-FAN                 OPERATIONAL              NSHUT
+0/FT3             8812-FAN                 OPERATIONAL              NSHUT
+0/PT0             8800-HV-TRAY             OPERATIONAL              NSHUT
+0/PT1             8800-HV-TRAY             OPERATIONAL              NSHUT
+0/PT2             8800-HV-TRAY             OPERATIONAL              NSHUT
+    </code>
+    </pre>
+    </div>
 3.	Loosen the two captive screws.
 4.	Ejectors
   - LC Type1:  Press the ejector buttons to open two ejector levers.
