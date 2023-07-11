@@ -35,6 +35,12 @@ Verify the following –
 
 Fabric cards mount vertically into the chassis connecting orthogonally to the horizontally placed line cards in the system. Fabric cards utilize ejectors on them to gracefully handle card insertion and removal from the chassis. Ejector handles should be operated properly as directed in this article/video for smooth and uninterrupted functioning of the card in the system.
 
+### Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=sQtI-uAkUGQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>{: .align-center}
+
+### Step-by-step Procedure
+
 ## Line Card Replacement
 ### Line Card Removal
 ### Line Card Insertion
@@ -44,6 +50,3 @@ Fabric cards mount vertically into the chassis connecting orthogonally to the ho
 ## Conclusion
 
 This concludes the steps required for replacement of FT, FC and LC on 8800 system. Following meticulously to the outlined steps provided in this document will result in smooth operations.
-
-
-
