@@ -92,19 +92,19 @@ Node              Type                     State                    Config state
 </code>
 </pre>
 </div>
-3. Verify Fabric Card LED is turned Off.
+3. Verify Fabric Card LED is turned Off.  
 ![8800-fabric-led.png]({{site.baseurl}}/images/8800-fabric-led.png)
-4.	Unscrew FAN tray
+4.	Unscrew FAN tray  
 ![fabric-unscrew.png]({{site.baseurl}}/images/fabric-unscrew.png)
-5.	Remove Fan Tray corresponding to the fabric card which needs to be replaced.
+5.	Remove Fan Tray corresponding to the fabric card which needs to be replaced.  
 ![ft-removal.png]({{site.baseurl}}/images/ft-removal.png)
-6.	Insert Fabric card rail extension. (note: specific to 8818 chassis)
+6.	Insert Fabric card rail extension. (note: specific to 8818 chassis)  
 ![fc-rail.png]({{site.baseurl}}/images/fc-rail.png)
-7.	Loosen both the ejector handles on fabric card. 
+7.	Loosen both the ejector handles on fabric card.  
 ![fc-ejector-1.png]({{site.baseurl}}/images/fc-ejector-1.png)
-8.	Pull the FC out of the chassis using both ejector handles.
+8.	Pull the FC out of the chassis using both ejector handles.  
 ![fc-ejector-2.png]({{site.baseurl}}/images/fc-ejector-2.png)
-9.	Insert replacement fabric card.
+9.	Insert replacement fabric card.  
 ![fc-insertion.png]({{site.baseurl}}/images/fc-insertion.png)
 10.	Tighten both the ejector handles on the new fabric card.
 11.	Remove fabric card rail extension.
