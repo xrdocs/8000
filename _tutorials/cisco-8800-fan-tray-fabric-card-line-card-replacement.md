@@ -42,6 +42,11 @@ Fabric cards mount vertically into the chassis connecting orthogonally to the ho
 ### Step-by-step Procedure
 
 ## Line Card Replacement
+
+### Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=t9Ly9re5g3s?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>{: .align-center}
+
 ### Line Card Removal
 ### Line Card Insertion
 
