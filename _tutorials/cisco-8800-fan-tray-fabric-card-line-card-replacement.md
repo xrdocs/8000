@@ -95,7 +95,7 @@ Node              Type                     State                    Config state
 ![fabric-unscrew.png]({{site.baseurl}}/images/fabric-unscrew.png)
 5.	Remove Fan Tray corresponding to the fabric card which needs to be replaced.  
 ![ft-removal.png]({{site.baseurl}}/images/ft-removal.png)
-6.	Insert Fabric card rail extension.
+6.	Insert Fabric card rail extension.  
 ![fc-rail.png]({{site.baseurl}}/images/fc-rail.png)  
     **Note:** At the time of publishing this video, the fabric card rail extension is only available on 8818 routers. 8804, 8808 and 8812 chassis do not need fabric card rail extension.
     {: .notice}
