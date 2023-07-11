@@ -7,9 +7,9 @@ excerpt: >-
   Cisco 8800 router. 
 position: hidden
 tags:
-  - cisco 8000
   - Hardware
   - Method of Procedure
+  - Cisco 8000
 author: Manish Chandra Pandey
 ---
 ## Introduction
