@@ -301,12 +301,11 @@ Node              Type                     State                    Config state
     </pre>
     </div>
 8. Verify that the line card LEDs turn on and appear green.
-9. Check line card Field Programmble Devices (FPD) version. While FPD auto-upgrade is enabled by default (<code>fpd auto-upgrade enable</code>), line card must be manually reloaded to make it effective unless <code>fpd auto-reload enable</code> feature is enabled. For more information, please refer to [Cisco 8000 Documentation](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/b-setup-and-upgrade-cisco8k/upgrade-software.html)
+9. Check line card Field Programmble Devices (FPD) version. While FPD auto-upgrade is enabled by default, line card must be manually reloaded to make it effective unless <code>fpd auto-reload enable</code> feature is used. For more information, please refer to [Cisco 8000 FPD Documentation](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/b-setup-and-upgrade-cisco8k/upgrade-software.html)
     <div class="highlighter-rouge">
     <pre class="highlight">
     <code>
 RP/0/RP0/CPU0:8812-1#sh hw-module fpd
-
 Auto-upgrade:Enabled
 Attribute codes: B golden, P protect, S secure
                                                                          FPD Versions
