@@ -220,6 +220,7 @@ RP/0/RP0/CPU0:Jul 11 13:27:35.343 UTC: envmon[397]: %PKT_INFRA-FM-3-FAULT_MAJOR 
     </pre>
     </div> 
     ** Note:** It's also possible to shutdown a line card using following XR config <code>shutdown location 0/linecard-slot/CPU0</code>. To boot the linecard, use the <code>no shutdown location 0/linecard-slot/CPU0</code> configuration.
+    {: .notice}
 2. Verify that the Line Card LED for the slot that you specified turns off. Also, you can use the show platform command to verify that the status of the card is SHUT DOWN.
     <div class="highlighter-rouge">
     <pre class="highlight">
@@ -313,12 +314,12 @@ Attribute codes: B golden, P protect, S secure
 Location   Card type             HWver FPD device       ATR Status   Running Programd  Reload Loc
 -------------------------------------------------------------------------------------------------
 0/1/CPU0   88-LC0-36FH           0.34  Bios              S  CURRENT    1.03    1.03      0/1/CPU0
-<mark>0/1/CPU0   88-LC0-36FH           0.34  BiosGolden       BS  NEED UPGD          0.09</mark>      0/1/CPU0
+0/1/CPU0   88-LC0-36FH           0.34  BiosGolden       BS  NEED UPGD          0.09      0/1/CPU0
 0/1/CPU0   88-LC0-36FH           0.34  EthSwitch            CURRENT    1.04    1.04           0/1
 0/1/CPU0   88-LC0-36FH           0.34  EthSwitchGolden  B P CURRENT            1.02           0/1
 0/1/CPU0   88-LC0-36FH           0.34  IoFpga               NOT READY  0.128   0.128          N/A
-<mark>0/1/CPU0   88-LC0-36FH           0.34  IoFpgaGolden     B   NEED UPGD          0.128          0/1</mark>   
-0/1/CPU0   88-LC0-36FH           0.34  SsdIntelS4510     S  CURRENT   11.32   11.32           0/1
+0/1/CPU0   88-LC0-36FH           0.34  IoFpgaGolden     B   NEED UPGD          0.128          0/1
+<mark>0/1/CPU0   88-LC0-36FH           0.34  SsdIntelS4510     S  NEED UPGD  11.32   11.32           0/1</mark>
 0/1/CPU0   88-LC0-36FH           0.34  x86Fpga           S  CURRENT    1.15    1.15           0/1
 0/1/CPU0   88-LC0-36FH           0.34  x86FpgaGolden    BS  CURRENT            1.04           0/1
 0/1/CPU0   88-LC0-36FH           0.34  x86TamFw          S  CURRENT    6.05    6.05           0/1
