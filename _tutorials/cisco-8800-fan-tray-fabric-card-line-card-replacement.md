@@ -69,6 +69,9 @@ RP/0/RP0/CPU0:8800#
     </code>
     </pre>
     </div>
+
+      **Note:** Fabric Plane is the term used to describe connection between a line card and a fabric card. There are 8 planes in total into 8800 series routers. 
+    
 2. Shutdown fabric card associated to fabric plane.  
 
     <div class="highlighter-rouge">
