@@ -5,7 +5,7 @@ title: 'Cisco 8800 Fan Tray, Fabric Card & Line Card Replacement'
 excerpt: >-
   This blog post details the steps required to replace a FT, FC and LC on a
   Cisco 8800 router. 
-position: hidden
+position: top
 tags:
   - Hardware
   - Method of Procedure
