@@ -303,6 +303,34 @@ Node              Type                     State                    Config state
     </pre>
     </div>
 8. Verify that the line card LEDs turn on and appear green.
+9. Check line card Field Programmble Devices (FPD) version. While FPD auto-upgrade is enabled by default (<code>fpd auto-upgrade enable</code>), line card must be manually reloaded to make it effective unless <code>fpd auto-reload enable</code> feature is enabled. For more information, please refer to [Cisco 8000 Documentation](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/b-setup-and-upgrade-cisco8k/upgrade-software.html)
+    <div class="highlighter-rouge">
+    <pre class="highlight">
+    <code>
+RP/0/RP0/CPU0:8812-1#sh hw-module fpd
+
+Auto-upgrade:Enabled
+Attribute codes: B golden, P protect, S secure
+                                                                         FPD Versions
+                                                                        ==============
+Location   Card type             HWver FPD device       ATR Status   Running Programd  Reload Loc
+-------------------------------------------------------------------------------------------------
+0/1/CPU0   88-LC0-36FH           0.34  Bios              S  CURRENT    1.03    1.03      0/1/CPU0
+<mark>0/1/CPU0   88-LC0-36FH           0.34  BiosGolden       BS  NEED UPGD          0.09</mark>      0/1/CPU0
+0/1/CPU0   88-LC0-36FH           0.34  EthSwitch            CURRENT    1.04    1.04           0/1
+0/1/CPU0   88-LC0-36FH           0.34  EthSwitchGolden  B P CURRENT            1.02           0/1
+0/1/CPU0   88-LC0-36FH           0.34  IoFpga               NOT READY  0.128   0.128          N/A
+<mark>0/1/CPU0   88-LC0-36FH           0.34  IoFpgaGolden     B   NEED UPGD          0.128          0/1</mark>   
+0/1/CPU0   88-LC0-36FH           0.34  SsdIntelS4510     S  CURRENT   11.32   11.32           0/1
+0/1/CPU0   88-LC0-36FH           0.34  x86Fpga           S  CURRENT    1.15    1.15           0/1
+0/1/CPU0   88-LC0-36FH           0.34  x86FpgaGolden    BS  CURRENT            1.04           0/1
+0/1/CPU0   88-LC0-36FH           0.34  x86TamFw          S  CURRENT    6.05    6.05           0/1
+0/1/CPU0   88-LC0-36FH           0.34  x86TamFwGolden   BS  CURRENT            6.05           0/1 
+    </code>
+    </pre>
+    </div>    
+
+10. To manually upgrade a line card FPDs, use following command: <code>upgrade hw-module location 0/linecard-location/CPU0 fpd all</code>
 
 ## General Verification
 
