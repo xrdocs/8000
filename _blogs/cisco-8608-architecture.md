@@ -180,8 +180,11 @@ The two SCs are CPU-less connected to both the RPs via PCIE, P2PM, EOBC links an
 Figure 13. Redundant System  
 {: .text-center}  
 
-The SC is installed in the rear of the chassis. The 8 Fan Modules are installed into the two SCs. If you need to remove or replace the SC, we recommend that you remove the Fan Trays.
-To avoid over-heating the system, the service time between when a switch card is removed and re-inserted must be under 5 minutes and do not operate the router with seven fan modules for more than 10 minutes.
+The SC is installed in the rear of the chassis. The 8 Fan Modules are installed into the two SCs. If you need to remove or replace the SC, we recommend that you remove the Fan Trays.  
+
+**Note**: To avoid over-heating the system, the service time between when a Switch Card or Fan Spinner  is removed and re-inserted must be under 3 minutes.  
+{: .notice}  
+
 If there is only one SC card plugged in, a Fan Spinner card will be required which is essentially a SC blank slot with a Fan Controller and Fan Modules.
 
 ![nonRedund.png]({{site.baseurl}}/images/nonRedund.png){: .full}  
