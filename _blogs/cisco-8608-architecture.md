@@ -197,13 +197,13 @@ You can install up to four 3200W AC or 3200W DC power supplies in the chassis. E
 **Note**: The Cisco 8608 chassis doesn't support a mix of AC and DC Power Supply Units (PSUs)  
 {: .notice}  
 
-AC Power Module (86-3.2KW-AC)  
+AC Power Module (PSU3.2KW-ACPI)  
 - The AC power modules are single feed with 3200W capacity at 220V. They also support operation at 110V with half the capacity.  
 - AC power modules are rated at 3200W maximum at 230VAC high line input, and 1570W maximum at 115VAC low line input.  
 - AC nominal range: 100—1230VAC and 2002—40VAC  
 - AC full range: 85—132 VAC and 180—264VAC; with extended range to 300VAC  
 
-DC Power Module (86-3.2KW-DC)  
+DC Power Module (PSU3.2KW-DCPI)  
 - The DC power modules are dual feed with 3200W capacity at any specified input voltage. DC power modules with single feed at any specified input voltage provide up to 1600W maximum capacity.  
 - DC nominal range: -48 to -60VDC  
 - DC full range: -40 to -75VDC      
