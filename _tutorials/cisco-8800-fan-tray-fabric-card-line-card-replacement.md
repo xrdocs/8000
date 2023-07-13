@@ -155,8 +155,8 @@ RP/0/RP0/CPU0:8800#
     </code>
     </pre>
     </div>
-**Note:** Too ensure proper airflow and prevent overheating, do not operate the router with three fan trays for more than 10 minutes. 8800 routers can work with 3 FTs and operates in N+1 redundancy model. If the replacement fan tray is not ready, faulty FT must remain in the chassis.
-{: .notice}
+    **Note:** Too ensure proper airflow and prevent overheating, do not operate the router with three fan trays for more than 10 minutes. 8800 routers can work with 3 FTs and operates in N+1 redundancy model. If the replacement fan tray is not ready, faulty FT must remain in the chassis.
+    {: .notice}
 
 ## Line Card Replacement
 
