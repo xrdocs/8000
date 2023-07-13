@@ -220,7 +220,7 @@ RP/0/RP0/CPU0:Jul 11 13:27:35.343 UTC: envmon[397]: %PKT_INFRA-FM-3-FAULT_MAJOR 
     </code>
     </pre>
     </div> 
-    ** Note:** It's also possible to shutdown a line card using following XR config <code>shutdown location 0/linecard-slot/CPU0</code>. To boot the linecard, use the <code>no shutdown location 0/linecard-slot/CPU0</code> configuration.
+    **Note:** It's also possible to shutdown a line card using following XR config <code>shutdown location 0/linecard-slot/CPU0</code>. To boot the linecard, use the <code>no shutdown location 0/linecard-slot/CPU0</code> configuration.
     {: .notice}
 2. Verify that the Line Card LED for the slot that you specified turns off. Also, you can use the show platform command to verify that the status of the card is SHUT DOWN.
     <div class="highlighter-rouge">
