@@ -71,7 +71,8 @@ RP/0/RP0/CPU0:8800#
     </pre>
     </div>
 
-      **Note:** Fabric Plane is the term used to describe connection between a line card and a fabric card. There are 8 planes in total into 8800 series routers. 
+    **Note:** Fabric Plane is the term used to describe connection between a line card and a fabric card. There are 8 planes in total into 8800 series routers. 
+    {: .notice}
     
 2. Shutdown fabric card associated to fabric plane.  
 
@@ -154,7 +155,6 @@ RP/0/RP0/CPU0:8800#
     </code>
     </pre>
     </div>
-
 **Note:** Too ensure proper airflow and prevent overheating, do not operate the router with three fan trays for more than 10 minutes. 8800 routers can work with 3 FTs and operates in N+1 redundancy model. If the replacement fan tray is not ready, faulty FT must remain in the chassis.
 {: .notice}
 
