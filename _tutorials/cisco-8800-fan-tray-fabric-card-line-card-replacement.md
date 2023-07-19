@@ -17,7 +17,7 @@ author: Manish Chandra Pandey
 ## Introduction
 
 On a Cisco 8800 router, Fan Tray (FT), Fabric Cards (FC) and Line Cards (LC) are Field Replaceable Units (FRU).  
-This blog post details the steps required to replace a FT, FC and LC on a Cisco 8800 router. A video with detailed steps for FT and FC replacement is also linked in this post below and takes  8818 chassis as an example.
+This blog post details the steps required to replace a FT, FC and LC on a Cisco 8800 router. Videos with detailed instructions for FT, FC and LC replacement is also linked in this post below and takes  8818 chassis as an example.
 
 ## Before Getting Started
 
