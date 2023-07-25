@@ -522,15 +522,14 @@ Hu0/1/0/0    f0000d4   0   4    1   200    512      0        local    100G
 ### MPA Details  
 
 <b>86-MPA-14H2FH-M</b>  
-This Combo MPA is a Redundant MPA with a front panel has 2x QSFPDDs and 14x QSFP28 ports.  
-This MPA is a redundant MPA because it can work with two SC cards with one being active and the other in standby mode.  
-This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G breakout cables are also supported.  
+This redundant Combo MPA is a Redundant MPA with a front panel hassupports 2x QSFPDDs and 14x QSFP28 ports.
+This redundant MPA is a redundant MPA because it can work with two SC cards with one being active and the other in standby mode. This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G via breakout cables are also supported.  
 
 ![ComboMPA_diagram.png]({{site.baseurl}}/images/ComboMPA_diagram.png){: .full}    
 Figure 20. 86-MPA-14H2FH-M Datapath block diagram    
 {: .text-center}  
 
-This MPA does not have a CPU and is managed by the RP. This PHY is a single chip, the multi-rate Ethernet PHY that provides the capacity and feature integration required to enable MACsec functionality.  
+This MPA does not have a CPU and is managed by the RP. This each PHY can support the multi-rate Ethernet PHY that provides the capacity and feature integration required to enable MACsec functionality.    
 86-MPA-14H2FH-M can support several interface combinations.  
 
 The first of the combo configurations is 16x100 GbE QSFP, in this configuration the QSFPDD ports are populated with 100G optics not 400G, the QSFP28 ports are populated with 100G optics. This is the default mode(without manual configuration).  
@@ -538,7 +537,7 @@ The first of the combo configurations is 16x100 GbE QSFP, in this configuration 
 
 The second of the combo configuration is 2x 400G QSFPDD + 8x 100G QSFP, in this configuration the QSFPDD ports are populated with 400G optics.  
 
-When port 0 or port 1 individually changed to 400G mode, disable Port 2/3/4 or Port 5/6/7 automatically.  
+Changing Port 0 or Port 1 individually to 400G mode automatically disables Port 2/3/4 or Port 5/6/7.    
 
 The ports that are available in the 2x 400G QSFPDD + 8x 100G QSFP Combo mode are Ports 0/1/8~15 as shown in the figures below. The faceplate will have markings to reflect this.  
 ![combo2.png]({{site.baseurl}}/images/combo2.png){: .full}   
