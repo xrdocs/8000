@@ -643,7 +643,7 @@ For Non-Redundant 8608 configuration, user can use “8608-SYS-NR” PID on CCW.
 **Note**: To Order Non-Redundant 8608, Please send us an email at [ask-xr-sw-pm@cisco.com](mailto:ask-xr-sw-pm@cisco.com).  
 {: .notice--success}  
 
-Let’s start with the default state when system boot up under redundant system.  
+Let’s discuss with the default state when system boots up under redundant system.    
  RP0-SC0 together as one Domain 0(Active Pair) and RP1-SC1 as the other Domain 1(Standby Pair).  
  
 ![redundancy.png]({{site.baseurl}}/images/redundancy.png){: .full}  
@@ -653,19 +653,44 @@ Figure 23. Default Redundant state in Cisco 8608
 In this default scenario, RP0 gains mastership and RP1 is in Backup state.
 Both SC0 and SC1 are packet processing and forwarding capability.  
 
-If the RP0 fatal faults or removal,  
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>   
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh platform domain  detail</span>  
+--------------------------------------------------------------------------------
+ID   Attribute       Value
+--------------------------------------------------------------------------------
+1    Name            DOMAIN_RP0_SC0
+     Description     Redundancy domain formed together by RP0 and SC0
+     State           READY
+     HA Role         ACTIVE
+     Lead            0/RP0/CPU0
+     Member Count    1
+     Member          1 : 0/SC0
+
+2    Name            DOMAIN_RP1_SC1
+     Description     Redundancy domain formed together by RP1 and SC1
+     State           READY
+     HA Role         STANDBY
+     Lead            0/RP1/CPU0
+     Member Count    1
+     Member          1 : 0/SC1  
+</code>
+</pre>
+</div>  
+
+
+If the RP0 fatal faults or removal, Standby RP immediately gains mastership via HW arbitration mechanism. MPAs switchover data path to RP1-SC1.    
 
 ![RP Failure.png]({{site.baseurl}}/images/RP Failure.png){: .full}   
 Figure 24. RP0 failure scenario in Cisco 8608  
 {: .text-center}  
 
-Standby RP immediately gains mastership via HW arbitration mechanism. MPAs switchover data path to RP1-SC1.  
+Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
 
 ![SC Failure.png]({{site.baseurl}}/images/SC Failure.png){: .full}    
 Figure 25. SC0 failure scenario in Cisco 8608  
-{: .text-center}  
-
-Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
+{: .text-center}    
 
 Up to 10ms traffic drop is expected during active RP/SC Failover. No traffic loss during standby RP/SC reload.  
 
