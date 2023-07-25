@@ -663,7 +663,7 @@ ID   Attribute       Value
 1    Name            DOMAIN_RP0_SC0
      Description     Redundancy domain formed together by RP0 and SC0
      State           READY
-     HA Role         ACTIVE
+     HA Role         <mark>ACTIVE</mark>
      Lead            0/RP0/CPU0
      Member Count    1
      Member          1 : 0/SC0
@@ -671,7 +671,7 @@ ID   Attribute       Value
 2    Name            DOMAIN_RP1_SC1
      Description     Redundancy domain formed together by RP1 and SC1
      State           READY
-     HA Role         STANDBY
+     HA Role         <mark>STANDBY</mark>
      Lead            0/RP1/CPU0
      Member Count    1
      Member          1 : 0/SC1  
