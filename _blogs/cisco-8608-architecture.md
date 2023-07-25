@@ -683,14 +683,14 @@ Figure 26. Data path flow with Redundant System
 6.	PHY will drop packets coming from standby SC1  
 
 ![PKT_Non-Redun.png]({{site.baseurl}}/images/PKT_Non-Redun.png){: .full}   
-Figure 27. Data path flow after Aold active pair (RP0/SC0) shutdown    
+Figure 27. Data path flow after old active pair (RP0/SC0) shutdown       
 {: .text-center}  
 
-1.	Ingress traffic coming from the network into the MPA  
-2.	PHY is uni-casted towards Q200 on new Active Pairs (RP1-SC1)  
-3.	Q200 on active process the received packets  
-4.	Q200 on SC1 forwards packets towards the MPA that has the destination port  
-5.	In the egress path, PHY will forward the packets from active SC1  
+1.	Ingress traffic coming from the network into the MPA   
+2.	PHY is unicasted towards Q200 on new Active Pairs (RP1-SC1)    
+3.	Q200 on active SC1 processes the received packets    
+4.	Q200 on SC1 forwards packets towards the MPA that has the destination port    
+5.	In the egress path, PHY will forward the packets from active SC1    
 
 
 ## Conclusion  
