@@ -661,8 +661,8 @@ Both SC0 and SC1 are packet processing and forwarding capability.
 --------------------------------------------------------------------------------
 ID   Attribute       Value
 --------------------------------------------------------------------------------
-1    Name            DOMAIN_RP0_SC0
-     Description     Redundancy domain formed together by RP0 and SC0
+1    Name            <mark>DOMAIN_RP0_SC0</mark>
+     Description     <mark>Redundancy domain formed together by RP0 and SC0</mark>
      State           READY
      HA Role         <mark>ACTIVE</mark>
      Lead            0/RP0/CPU0
