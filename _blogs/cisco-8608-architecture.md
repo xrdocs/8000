@@ -594,7 +594,7 @@ Figure 22. 86-MPA-24Z-M Datapath block diagram
 To identify the optic types supported on the Cisco 8608, please check [the TMG matrix](https://tmgmatrix.cisco.com/)  
 It contains details on the connector types, the reach, the minimum release required, etc.  
 
-### Maximum ports scale and support on Cisco 8608      
+### Maximum port scale and support on Cisco 8608      
 The following table represents the maximum number of ports s number of the Cisco 8608 router can support.    
 
 |          | 10 GbE | 25 GbE | 40 GbE | 50 GbE | 100 GbE | 400 GbE |
@@ -640,7 +640,7 @@ There’s supported and unsupported configuration in Cisco 8608.
 
 For Redundant 8608, user can use “**8608-SYS-R**” PID in the order tool. System is shipped with two RPs, two SCs and generally orderable on CCW.    
 For Non-Redundant 8608 configuration, user can use “8608-SYS-NR” PID on CCW. 8608 system is shipped with only one RP, one SC, one FS.  
-**Note**: To Order Non-Redundant 8608, Please reach out to [ask-xr-sw-pm@cisco.com](mailto:ask-xr-sw-pm@cisco.com).  
+**Note**: To Order Non-Redundant 8608, Please send us an email at [ask-xr-sw-pm@cisco.com](mailto:ask-xr-sw-pm@cisco.com).  
 {: .notice--success}  
 
 Let’s start with the default state when system boot up under redundant system.  
