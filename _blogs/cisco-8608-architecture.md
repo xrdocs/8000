@@ -694,9 +694,9 @@ Figure 27. Data path flow after Aold active pair (RP0/SC0) shutdown
 
 
 ## Conclusion  
-This article covered Cisco 8608 deep-dive level architecture.  
-Cisco 8608 is a unique platform that combines Flexibility & Reliability while offering Investment Protection. Customers can achieve unmatched reliability with redundant control and data plane via redundant Route Processors and redundant Switch cards. Cisco 8608 Switch Cards are based on Cisco Silicon One™ Q200.  A wide variety of Modular Port Adapters (MPAs) allow for high interface  diversity.  
-
+This document discussed the Cisco 8608 architecture.  
+The Cisco 8608 is a unique platform that combines flexibility & reliability while offering investment protection. Customers can achieve unmatched reliability with redundant control and data plane via redundant Route Processors and Switch cards. Cisco 8608 Switch Cards are based on Cisco Silicon One™ Q200. A wide variety of Modular Port Adapters (MPAs) allow for high interface diversity.    
+  
 ## Reference   
 - [Datasheet](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html)    
 - [Hardware Installation Guide](https://www.cisco.com/content/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized.html)    
