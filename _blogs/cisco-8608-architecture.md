@@ -79,7 +79,7 @@ Table 1. Cisco 8608 Non-Spare PID and description
 ## Platform Description  
 ### Chassis  
 
-![figure3-2.png]({{site.baseurl}}/images/figure3-2.png){: .full}         
+![Screenshot 2023-07-25 at 11.31.45 AM.png]({{site.baseurl}}/images/Screenshot 2023-07-25 at 11.31.45 AM.png){: .full}          
 Figure 3. Front view of an empty Cisco 8608 chassis  
 {: .text-center}  
 
@@ -706,4 +706,4 @@ The Cisco 8608 is a unique platform that combines flexibility & reliability whil
 - [Ordering Guide](https://cisco.sharepoint.com/:p:/r/sites/MIGRoutingPMTMECommunications/_layouts/15/Doc.aspx?sourcedoc=%7B11FE4519-D569-4AA4-8437-D7D5E7B5739F%7D&file=Cisco%208000%20Ordering%20Guide_v8.pptx&action=edit&mobileredirect=true)      
 
 If you want to reach out for comments, feedback or questions, send us an email at:
-[ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com)  
+[ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com)
