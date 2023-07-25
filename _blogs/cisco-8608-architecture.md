@@ -692,7 +692,7 @@ Another scenario is the failure of the SC0 within Active pair, Active RP’s she
 Figure 25. SC0 failure scenario in Cisco 8608  
 {: .text-center}    
 
-Up to 10ms traffic drop is expected during active RP/SC Failover. No traffic loss during standby RP/SC reload.  
+Up to 10 ms traffic drop is expected during active RP/SC Failover. No traffic loss during standby RP/SC reload.  
 
 ### Packet flow in the redundancy system  
 
