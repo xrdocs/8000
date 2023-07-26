@@ -86,8 +86,7 @@ Figure 3. Front view of an empty Cisco 8608 chassis
 As shown in Figure 3, user needs to insert the followings:  
 - Modular Port Adapter(MPA) sits vertically in the front of the chassis
 - Route Processor(RP) sits vertically in the front of the chassis
-- Switch Card(SC) sits horizontally behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with four Fan Modules on each Fan Tray
-- Midplane provides the control path connectivity and power distribution for the chassis  
+- Switch Card(SC) sits horizontally behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with four Fan Modules on each Fan Tray  
 
 ![figure4.png]({{site.baseurl}}/images/figure4.png){: .full}        
 Figure 4. Back view of Cisco 8608 chassis with 8 FMs and 4 PMs    
