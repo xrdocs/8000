@@ -765,10 +765,10 @@ ID   Attribute       Value
      Member Count    1
      Member          1 : 0/SC0
 
-2    Name            DOMAIN_RP1_SC1
+2    Name            <mark>DOMAIN_RP1_SC1</mark>
      Description     Redundancy domain formed together by RP1 and SC1
      State           READY
-     <mark>HA Role         ACTIVE</mark>
+     HA Role         <mark>ACTIVE</mark>
      Lead            0/RP1/CPU0
      Member Count    1
      Member          1 : 0/SC1  
