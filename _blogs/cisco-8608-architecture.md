@@ -711,6 +711,72 @@ Another scenario is the failure of the SC0 within Active pair, Active RP’s she
 Figure 25. SC0 failure scenario in Cisco 8608  
 {: .text-center}    
 
+
+The show platform CLI output will display the Domain states.  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code> 
+<span style="background-color: #A0CFEC">RP/0/RP1/CPU0:Cisco8608#sh platform</span>   
+
+Node              Type                     State                    Config state
+--------------------------------------------------------------------------------
+0/RP0/CPU0        8608-RP                  SHUT DOWN                NSHUT
+<mark>0/RP1/CPU0        8608-RP(Active)          IOS XR RUN               NSHUT</mark>
+0/SC0             8608-SC0-128             SHUT DOWN                NSHUT
+<mark>0/SC1             8608-SC0-128             OPERATIONAL              NSHUT</mark>
+0/FB0             8608-SC0-128[FB]         OPERATIONAL              NSHUT
+0/FB1             8608-SC0-128[FB]         OPERATIONAL              NSHUT
+~ SNIP ~ 
+</code>
+</pre>
+</div>  
+
+Active/Standby Domain pair can be verified using “show platform domain” CLI.  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+<span style="background-color: #A0CFEC">RP/0/RP1/CPU0:Cisco8608#sh platform domain</span> 
+
+ID  Name                Lead           HA Role        State
+ --------------------------------------------------------------------------------
+1   DOMAIN_RP0_SC0      0/RP0/CPU0     STANDBY        NOT_READY 
+2   <mark>DOMAIN_RP1_SC1      0/RP1/CPU0     ACTIVE         READY</mark>   
+</code>
+</pre>
+</div>  
+
+
+Active/Standby Domain pair can be also verified using “show platform domain details” CLI.  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh platform domain  detail</span>    
+--------------------------------------------------------------------------------
+ID   Attribute       Value
+--------------------------------------------------------------------------------
+1    Name            DOMAIN_RP0_SC0
+     Description     Redundancy domain formed together by RP0 and SC0
+     State           NOT_READY
+     HA Role         STANDBY
+     Lead            0/RP0/CPU0
+     Member Count    1
+     Member          1 : 0/SC0
+
+2    Name            DOMAIN_RP1_SC1
+     Description     Redundancy domain formed together by RP1 and SC1
+     State           READY
+     <mark>HA Role         ACTIVE</mark>
+     Lead            0/RP1/CPU0
+     Member Count    1
+     Member          1 : 0/SC1  
+</code>
+</pre>
+</div>   
+
+
 Up to 10 ms traffic drop is expected during active RP/SC Failover. No traffic loss during standby RP/SC reload.  
 
 ### Packet flow in the redundancy system  
