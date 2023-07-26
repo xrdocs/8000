@@ -766,7 +766,7 @@ ID   Attribute       Value
      Member          1 : 0/SC0
 
 2    Name            <mark>DOMAIN_RP1_SC1</mark>
-     Description     Redundancy domain formed together by RP1 and SC1
+     Description     <mark>Redundancy domain formed together by RP1 and SC1</mark>
      State           READY
      HA Role         <mark>ACTIVE</mark>
      Lead            0/RP1/CPU0
