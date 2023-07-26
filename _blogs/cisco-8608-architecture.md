@@ -721,9 +721,9 @@ The show platform CLI output will display the Domain states.
 
 Node              Type                     State                    Config state
 --------------------------------------------------------------------------------
-0/RP0/CPU0        8608-RP                  SHUT DOWN                NSHUT
+<span style="background-color: #FF0000">0/RP0/CPU0        8608-RP                  SHUT DOWN                NSHUT</span>
 <mark>0/RP1/CPU0        8608-RP(Active)          IOS XR RUN               NSHUT</mark>
-0/SC0             8608-SC0-128             SHUT DOWN                NSHUT
+<span style="background-color: #FF0000">0/SC0             8608-SC0-128             SHUT DOWN                NSHUT</span>
 <mark>0/SC1             8608-SC0-128             OPERATIONAL              NSHUT</mark>
 0/FB0             8608-SC0-128[FB]         OPERATIONAL              NSHUT
 0/FB1             8608-SC0-128[FB]         OPERATIONAL              NSHUT
