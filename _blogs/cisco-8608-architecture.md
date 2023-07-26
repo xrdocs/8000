@@ -572,7 +572,11 @@ The following summary is the all scenarios for Native and Breakout solutions on 
 | 14   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 |      |                    | 4x 25 GbE, 4x 10 GbE <span style="background-color: #FF0000">(Disable port 15)</span>                   |
 | 15   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |  
-  
+
+
+**Note**: On 86-MPA-14H2FH-M, Port 2 or greater does not support 400G mode CLI.    
+{: .notice}  
+
   
 <b>86-MPA-4FH-M</b>  
 This MPA is a Redundant MPA with a front panel consisting of 4x QSFPDD ports.  This is a redundant MPA because it can work with to two SCs with one being active and the other in standby mode.  
