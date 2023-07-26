@@ -518,7 +518,7 @@ Hu0/1/0/0    f0000d4   0   4    1   200    512      0        local    100G
 </pre>
 </div>  
 
-From the above output, we can see FH0/2/0/0 is connected to slice 3 and FH0/2/0/1, FH0/2/0/2, FH0/2/0/3 are connected to slice 4.  
+From the above output, we can verify FH0/2/0/0 is connected to slice 3 and FH0/2/0/1, FH0/2/0/2, FH0/2/0/3 are connected to slice 4.  
 
 
 ### MPA Details  
