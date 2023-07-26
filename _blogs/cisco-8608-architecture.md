@@ -654,7 +654,6 @@ Figure 23. Default Redundant state in Cisco 8608
 In this default scenario, RP0 gains mastership and RP1 is in Backup state.
 Both SC0 and SC1 are packet processing and forwarding capability.  
 
-
 Active/Backup Domain pair can be verified using “show platform domain” CLI.  
 
 <div class="highlighter-rouge">
