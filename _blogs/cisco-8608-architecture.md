@@ -245,8 +245,8 @@ The following table lists the amount of power available for Cisco 8600 series ro
 0/FT5             8608-FAN                 OPERATIONAL              NSHUT
 0/FT6             8608-FAN                 OPERATIONAL              NSHUT
 0/FT7             8608-FAN                 OPERATIONAL              NSHUT
-0/PM0             PSU3.2KW-ACPI            OPERATIONAL              NSHUT
-0/PM1             PSU3.2KW-ACPI            OPERATIONAL              NSHUT  
+<mark>0/PM0             PSU3.2KW-ACPI            OPERATIONAL              NSHUT</mark>
+<mark>0/PM1             PSU3.2KW-ACPI            OPERATIONAL              NSHUT</mark>   
 </code>
 </pre>
 </div>  
@@ -269,8 +269,8 @@ CHASSIS LEVEL POWER INFO: 0
    Power       Supply         ------Input----   ------Output---     Status
    Module      Type            Volts     Amps    Volts     Amps    
 ================================================================================
-   0/PM0       PSU3.2KW-ACPI   207.9     2.8     54.7      9.8      OK
-   0/PM1       PSU3.2KW-ACPI   207.9     2.6     54.7      9.0      OK
+   0/PM0       <mark>PSU3.2KW-ACPI</mark>   207.9     2.8     54.7      9.8      OK
+   0/PM1       <mark>PSU3.2KW-ACPI</mark>   207.9     2.6     54.7      9.0      OK
 Total of Power Modules:       1122W/5.4A              1028W/18.8A
 ================================================================================
    Location     Card Type               Power       Power        Status
@@ -320,8 +320,8 @@ Location      FRU Type                        FAN_0    FAN_1
 0/FT5        8608-FAN                           3870    3930   
 0/FT6        8608-FAN                           3900    3870   
 0/FT7        8608-FAN                           3870    3900   
-0/PM0        PSU3.2KW-ACPI                      5225    5247   
-0/PM1        PSU3.2KW-ACPI                      5204    5247  
+0/PM0        <mark>PSU3.2KW-ACPI</mark>                      5225    5247   
+0/PM1        <mark>PSU3.2KW-ACPI</mark>                      5204    5247  
 </code>
 </pre>
 </div>  
