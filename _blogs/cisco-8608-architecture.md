@@ -591,7 +591,8 @@ This MPA provides a per slot bandwidth of 1.2 Tbps. The QSFP56 ports can support
 Figure 22. 86-MPA-24Z-M Datapath block diagram  
 {: .text-center}  
 
-Note: All even and odd port pair (port 0/1, 2/3, 4/5 … etc) must run at the same speed(both at 10G or both at 25G).  
+**Note**: All even and odd port pair (port 0/1, 2/3, 4/5 … etc) must run at the same speed(both at 10G or both at 25G).  
+{: .notice}  
 
 
 To identify the optic types supported on the Cisco 8608, please check [the TMG matrix](https://tmgmatrix.cisco.com/)  
