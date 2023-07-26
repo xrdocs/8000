@@ -654,10 +654,29 @@ Figure 23. Default Redundant state in Cisco 8608
 In this default scenario, RP0 gains mastership and RP1 is in Backup state.
 Both SC0 and SC1 are packet processing and forwarding capability.  
 
+
+Active/Backup Domain pair can be verified using “show platform domain” CLI.  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh platform domain</span> 
+ID  Name                Lead           HA Role        State
+ --------------------------------------------------------------------------------
+1   <mark>DOMAIN_RP0_SC0      0/RP0/CPU0     ACTIVE         READY</mark> 
+2   DOMAIN_RP1_SC1      0/RP1/CPU0     STANDBY        READY   
+</code>
+</pre>
+</div>   
+
+
+Active/Backup Domain pair can be also verified using “show platform domain details” CLI.  
+
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>   
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh platform domain  detail</span>  
+<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh platform domain  detail</span>   
 --------------------------------------------------------------------------------
 ID   Attribute       Value
 --------------------------------------------------------------------------------
