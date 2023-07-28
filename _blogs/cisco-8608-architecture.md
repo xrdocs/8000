@@ -15,6 +15,10 @@ tags:
 {% include toc icon="table" title="Cisco 8608 Architecture" %}
 
 ## Introduction
+Large, distributed chassis have traditionally been designed to cater to the market requirement for total system bandwidth, port diversity, and redundancy. The requirements far exceeded what could be accomplished with a single NPU. The fabrics that weave together multi-NPU systems had to be provisioned to the highest bandwidth use case and deployed 100% upfront, consuming power and capital regardless of the number of installed line cards. That wisdom held true for multiple generations of core, edge, and aggregation distributed systems.    
+
+Now with the advent of dense Cisco Silicon One ASICs, we can address these roles with a new breed of centralized architectures that combine the best aspects of distributed and fixed systems. Cisco 8608 has combined the redundancy and I/O diversity of distributed systems with the economics and simple elegance of fixed platforms. As a result, Cisco 8608 delivers redundancy at an optimized cost while enabling flexibility and expandability through generational continuity.    
+
 The Cisco 8608 router is a part of Cisco’s Centralized Architecture based chassis design. Centralized systems have redundant Route Processors (RP w/CPU), redundant Switch cards (SCs w/Cisco Silicon One Q200 NPU) and in-service replaceable modular port adapters (MPA). Unlike distributed architecture, the forwarding decisions on Centralized platforms are centrally performed at the RP/SC and runs Cisco IOS XR software.  
   
 ![Screenshot 2023-06-28 at 5.33.35 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 5.33.35 PM.png){: .align-center}      
