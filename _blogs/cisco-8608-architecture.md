@@ -29,21 +29,21 @@ Figure 1. Front view of the Cisco 8608
 Figure 2. Front view of the Cisco 8608 with Door kit  
 {: .text-center}  
 
-The Cisco 8608 chassis is 7RU in height and less than 600mm in sheet metal depth with 8 slot for three types of MPAs(Modular Port Adapter).  
+The Cisco 8608 router is 7 RU in height and less than 600mm in sheet metal depth with 8 slots for three types of MPAs (Modular Port Adapters).  
 
-Supporting the Cisco 8608 router capabilities demanded a wide range of new approaches to platform design. By leveraging over decades of high-performance system design, Cisco has delivered unprecedented capacity without compromising forwarding performance or requiring oversubscription. This required new power supplies, a redesigned cooling architecture, and future-proof connectors.  
-The Cisco 8608 router required extensive innovation and consolidation of capabilities of multiple ASICs into a single ASIC to greatly increase the power efficiency of the solution. As with all modern networking devices the power density of the ASIC creates a challenging thermal situation. These challenges are addressed via advanced system design, including futuristic fans and heat sinks in Cisco 8608.  
-The 8608 router utilizes a state-of-the-art orthogonal design with advanced cooling via front to back airflow, high power capacity and new power supplies. The chassis and all data path components for the 8608 Series benefit from a clean sheet design that allows the systems to take full advantage of the latest technologies and Cisco’s design expertise. This design connects all forwarding path components directly without a backplane or midplane. In the Cisco 8608 router, the eight Modular Port Adaptors (MPAs) along with the two Route Processors are vertically oriented. Every major component of the Cisco 8608 router was developed with a clean sheet approach – representing unprecedented investment and commitment to a long lifecycle for the Cisco 8608 router. 
-Investment Protection – The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor & Modular Port Adaptors). Cisco is investing in the future of the platform for the customers to be able to upgrade to next generation.  
+Supporting the Cisco 8608 router capabilities demanded a wide range of new approaches to platform design. By leveraging decades of high-performance system design, Cisco has delivered unprecedented capacity without compromising forwarding performance. This required new power supplies, a redesigned cooling architecture, and future-proof connectors.  
 
-The Cisco 8608 is comprised of the following components:  
-- Chassis: 7RU modular chassis which hosts commons (fans, power supplies), Route Processors (RP), Switch Cards (SC) and Modular Port Adapters (MPAs).  
-- Route Processor (RP): Cisco 8608 RP hosts the CPU and the I/O ports on it. RPs fit vertical in the chassis and are inserted from the front panel. There will be up to two redundant RPs in the system and the RPs will operate in Active-Standby mode for a redundant system.  
-- Switch Card (SC): Switch cards sit behind the MPAs and have connections to all MPAs. Switch cards host the NPUs on them. There are up to two switch cards in the system and the SCs work in Active-Standby mode thus delivering data plane redundancy.  
-- Power Supplies: Cisco 8608 has 4 power supplies that can provide N+N redundant power to the system. The available options are:  
-  - Pluggable 3.2 kW AC   
-  - Pluggable 3.2 kW DC   
-- Fan Modules: There are 8 Fan Modules in the system with each Fan Module individually removable / replaceable. These provide N+1 Fan Module redundancy to the system. The entire Fan Tray can be removed in case of SC insertion or removal.  
+The Cisco 8608 router required extensive innovation and consolidation of capabilities to greatly increase the power efficiency of the solution. As with all modern networking devices the power density of the ASIC creates challenging thermal conditions. These challenges are addressed via advanced system design, including optimized fans and heat sinks.  
+
+The Cisco 8608 router utilizes a state-of-the-art orthogonal design with advanced cooling via front to back airflow, high power capacity and new power supplies. The chassis and all data path components for the Cisco 8608 router benefit from a clean sheet design that allows the systems to take full advantage of the latest technologies and Cisco’s design expertise. This design connects all forwarding path components directly without a backplane or midplane. In the Cisco 8608 router, the eight Modular Port Adaptors (MPAs) along with the two Route Processors are vertically oriented. Every major component of the Cisco 8608 router was developed with a clean sheet approach – representing unprecedented investment and commitment to a long lifecycle for the Cisco 8608 router.  
+
+Investment Protection – The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor and Modular Port Adaptors). Cisco is investing in the future of the platform for customers to be able to upgrade to the next generation.    
+
+The key chassis components and their overview is captured in the table below:    
+
+
+
+
 
 ## Understanding the Cisco 8608 Naming Logic     
 
@@ -53,29 +53,24 @@ The Cisco 8608 is comprised of the following components:
 
 Let us have a quick refresher of the Cisco 8608 PIDs and description.  
   
-| Item                      | PIDs             | Description                                                  |
-|---------------------------|------------------|--------------------------------------------------------------|
-| RP                        | 8608-RP          | Cisco 8608 Route Processor                                   |
-| SC                        | 8608-SC0-128     | Cisco 8608 12.8T Switch Card                                 |
-| AC PSU                    | PSU3.2KW-ACPI    | Cisco 3.2KW AC Power Supply Unit                             |
-| DC PSU                    | PSU3.2KW-DCPI    | Cisco 3.2KW DC Power Supply Unit                             |
-| HV PSU                    | PSU4.3KW-HVPI    | Cisco 4.3KW AC Power Supply Unit                             |
-| Fans                      | 8608-FAN         | Cisco 8608 Fan                                               |
-| Fan Spinner               | 8608-FS          | Cisco 8608 Fan Spinner                                       |
-| RP Blank                  | 8608-RP-BLANK    | Cisco 8608 Route Processor Blank                             |
-| MPA Blank                 | 8608-MPA-BLANK   | Cisco 8608 MPA Blank                                         |
-| PSU Blank                 | 8608-PSU-BLANK   | Cisco 8608 PSU Blank                                         |
-| Door Kit                  | 8608-DRKT        | Cisco 8608 Door Kit                                          |
-| Cable Mgmt kit            | 8608-CBLMGMT     | Cisco 8608 Cable Management                                  |
-| Install Kit               | 8608-INSTKT      | Cisco 8608 Install Kit                                       |
-| Rack Mount Kit            | 8608-RMBRKT      | Cisco 8608 Rack Mounting Bracket Kit                         |
-| Combo MPA                 | 86-MPA-14H2FH-M  | Cisco 8608 14 x 100G and 2 x 400G Combo MPA                  |
-| 400G R MPA                | 86-MPA-4FH-M     | Cisco 8600 4 x 400G MPA                                      |
-| 10G R MPA                 | 86-MPA-24Z-M     | Cisco 8608 24 x 10G/25G/50G MPA                              |
-| Dust CAPS                 | 8000E-QSFP-DCAP  | QSFP Dust CAP                                                |
-| Dust CAPS                 | 8000E-QSFP-DCAP= | QSFP Dust CAP                                                |
-| Non-Redundant System  ATO | 8608-SYS-NR      | Cisco 8608 - 8 Slot Non Redundant Centralized Chassis Bundle |
-| Redundant System  ATO     | 8608-SYS-R       | Cisco 8608 - 8 Slot  Redundant Centralized Chassis Bundle    |  
+| Item                 | HW Product ID   | Description                                                              |
+|----------------------|-----------------|--------------------------------------------------------------------------|
+| Redundant system     | 8608-SYS-R      | Cisco 8608 – 8-Slot Redundant Centralized Chassis Bundle                 |
+| Non-redundant system | 8608-SYS-NR     | Cisco 8608 – 8-Slot Nonredundant Centralized Chassis Bundle              |
+| 8608 Chassis only    | 8608-SYS        | Cisco 8608 – 8-Slot Centralized Chassis                                  |
+| RP                   | 8608-RP         | Cisco 8608 Route Processor                                               |
+| SC                   | 8608-SC0-128    | Cisco 8608 12.8T Switch Card                                             |
+| Fan Spinner          | 8608-FS         | Cisco 8608 Fan Spinner                                                   |
+| Fan                  | 8608-FAN        | Cisco 8608 Fan                                                           |
+| AC PSU               | PSU3.2KW-ACPI   | Cisco 3.2-kW AC Power Supply Unit                                        |
+| DC PSU               | PSU3.2KW-DCPI   | Cisco 3.2-kW DC Power Supply Unit                                        |
+| Combo MPA            | 86-MPA-14H2FH-M | Cisco 8608 16x100 GbE or 12x100 GbE+1x400 GbE or 8x100 GbE+2x400 GbE MPA |
+| 400G MPA             | 86-MPA-4FH-M    | Cisco 8608 4 x 400 GbE MPA                                               |
+| 10/25/50G MPA        | 86-MPA-24Z-M    | Cisco 8608 24 x 10 GbE/25 GbE/50 GbE MPA                                 |
+| Door Kit             | 8608-DRKT       | Cisco 8608 Door Kit                                                      |
+| Cable Mgmt Kit       | 8608-CBLMGMT    | Cisco 8608 Cable Management                                              |
+| Install Kit          | 8608-INSTKT     | Cisco 8608 Install Kit                                                   |
+| Rack Mount Kit       | 8608-RMBRKT     | Cisco 8608 Rack Mounting Bracket Kit                                     |    
 
 Table 1. Cisco 8608 Non-Spare PID and description  
 {: .text-center}  
