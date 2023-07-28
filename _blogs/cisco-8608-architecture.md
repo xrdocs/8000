@@ -41,8 +41,15 @@ Investment Protection – The design of the system keeps in mind the ability to 
 
 The key chassis components and their overview is captured in the table below:    
 
-
-
+| Items                        | Details                                                                                                                                                                                                                                                                                     |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Maximum Bandwidth & SC ASIC  | ·       12.8 Tbps, Cisco Silicon One Q200; maximum of 8 MPAs at 1.6 Tbps per MPA                                                                                                                                                                                                            |
+| Chassis                      | ·       7 RU in height with a sheet metal depth of 580 mm·       Chassis hosts the commons such as fans & power supplies, RPs, SCs, and MPAs                                                                                                                                                |
+| Route Processor (RP)         | ·       RPs hosts the CPU and the I/O ports; RPs fit vertically in the front of the chassis·       Up to two RPs; RPs work in active-standby mode enabling control plane redundancy·       6 core Intel Broadwell CPU·       64 GB DRAM & 256 GB SSD                                        |
+| Switch Card (SC)             | ·       Cisco 8608 switch cards host the ASIC and sit within the fan trays behind the fans ·       Up to two SCs work in hot standby mode enabling data plane redundancy                                                                                                                    |
+| Power Supply Unit            | ·       4 power supplies that can provide N+N redundant power to the system·       Available options are 3.2 kW AC & 3.2 kW DC                                                                                                                                                              |
+| Fans & Fan Spinner           | ·       Each fan tray has four fan modules integrated with Switch Card.·       8 removable fans; N+1 fan redundancy.·       In non-redundant 8608, second switch card slot needs to be occupied by a fan spinner that contains the fans only without the switch card module behind the fans |
+| Modular Port Adapters (MPAs) | ·       4x400 GbE·       24x10/25/50 GbE·       16x100 GbE or 12x100 GbE+1x400 GbE or 8x100 GbE+2x400 GbE                                                                                                                                                                                   |  
 Table 1. Cisco 8608 key components      
 {: .text-center}
 
