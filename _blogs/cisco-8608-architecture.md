@@ -257,7 +257,6 @@ The following table lists the amount of power available for Cisco 8600 series ro
 
 On this router, there are two Power Modules in Cisco 8608 chassis.  
 
-
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
