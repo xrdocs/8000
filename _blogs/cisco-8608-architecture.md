@@ -41,7 +41,7 @@ Investment Protection – The design of the system keeps in mind the ability to 
 
 The key chassis components and their overview is captured in the table below:    
 
-![key.png]({{site.baseurl}}/images/key.png){: .full} 
+![new_key.png]({{site.baseurl}}/images/new_key.png){: .full}   
 Table 2. Cisco 8608 PID and description    
 {: .text-center}  
  
