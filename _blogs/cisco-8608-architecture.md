@@ -72,7 +72,7 @@ Let us have a quick refresher of the Cisco 8608 PIDs and description.
 | Install Kit          | 8608-INSTKT     | Cisco 8608 Install Kit                                                   |
 | Rack Mount Kit       | 8608-RMBRKT     | Cisco 8608 Rack Mounting Bracket Kit                                     |    
 
-Table 1. Cisco 8608 Non-Spare PID and description  
+Table 2. Cisco 8608 PID and description    
 {: .text-center}  
  
 ## Platform Description  
