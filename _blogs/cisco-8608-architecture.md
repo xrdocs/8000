@@ -251,7 +251,7 @@ The following table lists the amount of power available for Cisco 8600 series ro
 </pre>
 </div>  
 
-**Note**: FB0/FB1 are not externally visible. Separate card mounted on SC      
+**Note**: FB0/FB1 are not externally visible.        
 {: .notice}    
 
 
