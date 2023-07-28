@@ -251,6 +251,10 @@ The following table lists the amount of power available for Cisco 8600 series ro
 </pre>
 </div>  
 
+**Note**: FB0/FB1 are not externally visible. Separate card mounted on SC      
+{: .notice}    
+
+
 On this router, there are two Power Modules in Cisco 8608 chassis.  
 
 
