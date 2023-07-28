@@ -41,45 +41,7 @@ Investment Protection – The design of the system keeps in mind the ability to 
 
 The key chassis components and their overview is captured in the table below:    
 
-| Items                        | Details                                                                                                                                                                                                                                                                                     |
-|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Maximum Bandwidth & SC ASIC  | ·       12.8 Tbps, Cisco Silicon One Q200; maximum of 8 MPAs at 1.6 Tbps per MPA                                                                                                                                                                                                            |
-| Chassis                      | ·       7 RU in height with a sheet metal depth of 580 mm·       Chassis hosts the commons such as fans & power supplies, RPs, SCs, and MPAs                                                                                                                                                |
-| Route Processor (RP)         | ·       RPs hosts the CPU and the I/O ports; RPs fit vertically in the front of the chassis·       Up to two RPs; RPs work in active-standby mode enabling control plane redundancy·       6 core Intel Broadwell CPU·       64 GB DRAM & 256 GB SSD                                        |
-| Switch Card (SC)             | ·       Cisco 8608 switch cards host the ASIC and sit within the fan trays behind the fans ·       Up to two SCs work in hot standby mode enabling data plane redundancy                                                                                                                    |
-| Power Supply Unit            | ·       4 power supplies that can provide N+N redundant power to the system·       Available options are 3.2 kW AC & 3.2 kW DC                                                                                                                                                              |
-| Fans & Fan Spinner           | ·       Each fan tray has four fan modules integrated with Switch Card.·       8 removable fans; N+1 fan redundancy.·       In non-redundant 8608, second switch card slot needs to be occupied by a fan spinner that contains the fans only without the switch card module behind the fans |
-| Modular Port Adapters (MPAs) | ·       4x400 GbE·       24x10/25/50 GbE·       16x100 GbE or 12x100 GbE+1x400 GbE or 8x100 GbE+2x400 GbE                                                                                                                                                                                   |  
-Table 1. Cisco 8608 key components      
-{: .text-center}
-
-## Understanding the Cisco 8608 Naming Logic     
-
-![name small 2.png]({{site.baseurl}}/images/name small 2.png){: .align-center}  
-
-![Screenshot 2023-06-28 at 12.37.14 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.37.14 PM.png){: .full}    
-
-Let us have a quick refresher of the Cisco 8608 PIDs and description.  
-  
-| Item                 | HW Product ID   | Description                                                              |
-|----------------------|-----------------|--------------------------------------------------------------------------|
-| Redundant system     | 8608-SYS-R      | Cisco 8608 – 8-Slot Redundant Centralized Chassis Bundle                 |
-| Non-redundant system | 8608-SYS-NR     | Cisco 8608 – 8-Slot Nonredundant Centralized Chassis Bundle              |
-| 8608 Chassis only    | 8608-SYS        | Cisco 8608 – 8-Slot Centralized Chassis                                  |
-| RP                   | 8608-RP         | Cisco 8608 Route Processor                                               |
-| SC                   | 8608-SC0-128    | Cisco 8608 12.8T Switch Card                                             |
-| Fan Spinner          | 8608-FS         | Cisco 8608 Fan Spinner                                                   |
-| Fan                  | 8608-FAN        | Cisco 8608 Fan                                                           |
-| AC PSU               | PSU3.2KW-ACPI   | Cisco 3.2-kW AC Power Supply Unit                                        |
-| DC PSU               | PSU3.2KW-DCPI   | Cisco 3.2-kW DC Power Supply Unit                                        |
-| Combo MPA            | 86-MPA-14H2FH-M | Cisco 8608 16x100 GbE or 12x100 GbE+1x400 GbE or 8x100 GbE+2x400 GbE MPA |
-| 400G MPA             | 86-MPA-4FH-M    | Cisco 8608 4 x 400 GbE MPA                                               |
-| 10/25/50G MPA        | 86-MPA-24Z-M    | Cisco 8608 24 x 10 GbE/25 GbE/50 GbE MPA                                 |
-| Door Kit             | 8608-DRKT       | Cisco 8608 Door Kit                                                      |
-| Cable Mgmt Kit       | 8608-CBLMGMT    | Cisco 8608 Cable Management                                              |
-| Install Kit          | 8608-INSTKT     | Cisco 8608 Install Kit                                                   |
-| Rack Mount Kit       | 8608-RMBRKT     | Cisco 8608 Rack Mounting Bracket Kit                                     |    
-
+![key.png]({{site.baseurl}}/images/key.png){: .full} 
 Table 2. Cisco 8608 PID and description    
 {: .text-center}  
  
