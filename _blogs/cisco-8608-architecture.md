@@ -43,7 +43,8 @@ The key chassis components and their overview is captured in the table below:
 
 
 
-
+Table 1. Cisco 8608 key components      
+{: .text-center}
 
 ## Understanding the Cisco 8608 Naming Logic     
 
