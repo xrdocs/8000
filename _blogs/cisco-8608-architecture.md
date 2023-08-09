@@ -176,7 +176,7 @@ RP contains an Intel 6-core @ 2.5 GHz, 64GB DDR4 DRAM, and 256 GB M.2 SSD Flash 
 This RPs are connected to the midplane and communicate with their devices via PCIE, EOBC, P2PM, and I2C Interfaces.  
   
 ### SC (Switch Card)    
-The Cisco 8608 router Switch Card sits behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with total eight Fan Modules. The Cisco Silicon One Q200 NPU sits within the Switch Card and all the packet process and forwarding decisions are driven by the Switch Card.  
+The Cisco 8608 router Switch Card sits behind the Fan Trays. Cisco 8608 router has two Fan Trays with a total of eight Fan Modules. The Cisco Silicon One Q200 sits within the Switch Card and all the packet process and forwarding decisions are driven by the Switch Card.    
 
 ![SC front rear.png]({{site.baseurl}}/images/SC front rear.png){: .full}   
 Figure 11. 8608-SC0-128  
@@ -188,14 +188,14 @@ Cisco 8608 can operate with up to 2 Switch Cards(SCs) between MPA and Fan Trays.
 Figure 12. Redundant SCs in the back of the Cisco 8608  
 {: .text-center}  
 
-The RP & SC operate in pairs RP0-SC0 and RP1-SC1 to deliver redundancy without loss of any chassis front face plate.
-The two SCs are CPU-less connected to both the RPs via PCIE, P2PM, EOBC links and each SC has one Cisco Silicon One Q200 NPU providing the data path for packet processing and forwarding.  
+The RP & SC operate in pairs RP0-SC0 and RP1-SC1 to deliver redundancy without loss of any chassis front face plate.  
+The two SCs are CPU-less connected to both the RPs via PCIE, P2PM, EOBC links and each SC has one Cisco Silicon One Q200 providing the data path for packet processing and forwarding.    
 
 ![redun system.png]({{site.baseurl}}/images/redun system.png){: .full}   
 Figure 13. Redundant System  
 {: .text-center}  
 
-The SC is installed in the rear of the chassis. The 8 Fan Modules are installed into the two SCs. If you need to remove or replace the SC, we recommend that you remove the Fan Trays.  
+The SC is installed in the rear of the chassis. The 8 Fan Modules are installed into the SCs. If you need to remove or replace the SC, we recommend that you remove the Fan Modules.    
 
 **Note**: To avoid over-heating the system, the service time between when a Switch Card or Fan Spinner  is removed and re-inserted must be under 3 minutes.  
 {: .notice}  
