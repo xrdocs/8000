@@ -212,7 +212,7 @@ Fan Spinner does not provide any data or control plane functionality.  It is a p
 
 ### Power Modules    
 
-You can install up to four 3200W AC or 3200W DC power supplies in the chassis. Ensure that all power connection wiring conforms that to the rules and regulations in the National Electrical Code (NEC) and in local codes.  
+Cisco 8608 can be installed with up to four 3200W AC or 3200W DC power supplies in the chassis. Ensure that all power connection wiring conforms to the rules and regulations in the National Electrical Code (NEC) and local codes.    
 
 **Note**: The Cisco 8608 chassis doesn't support a mix of AC and DC Power Supply Units (PSUs)  
 {: .notice}  
@@ -230,7 +230,8 @@ DC Power Module (PSU3.2KW-DCPI)
 
 The airflow direction through the Fan Trays and Power Modules on the Cisco 8608 routers are from front to back (port side intake).  
 
-The maximum power available for operations depends on the input power from your power source, the number and output capabilities of power supplies, and the power redundancy mode that you use.   
+The maximum power available for operations depends on the input power from your power source, the number and output capabilities of power supplies, and the power redundancy mode that you use.     
+
 The following table lists the amount of power available for Cisco 8600 series routers from all available power trays.   
 
 | Total Power Supply | Combined Mode in Watts(No redundancy) | N+1 Redundancy Mode in Watts (with Single Supply Loss) |
