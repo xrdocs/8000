@@ -116,6 +116,7 @@ Figure 6. two SCs and three Redundant MPAs connection of Cisco 8608 chassis
  
 The Q200 on the SC has up to 32x 50Gbps SerDes to each MPA slot regardless of slot number.  
 
+**Cisco 8608 modular port adapters**  
 The Cisco 8608 supports three different modular port adapters (MPAs). The details are captured in table below:  
 
 
