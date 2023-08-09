@@ -121,9 +121,9 @@ The Cisco 8608 supports three different modular port adapters (MPAs). The detail
 
 
 
+**86-MPA-14H2FH-M**   
+86-MPA-14H2FH-M can be inserted into any slot (slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 16 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:  
 
-There are three different Redundant MPAs in Cisco 8608.
-The first MPA is the 86-MPA-14H2FH-M. This MPA can be inserted into any slot (slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 16 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:
 - 16 ports of QSFP 100 GbE modules (Default), or
 - 2 ports of QSFP-DD 400 GbE modules and 14 ports of QSFP
 When port 0 has a 400G QSFP-DD, then the other three ports (2, 3, 4) cannot be used. Similarly, when port 1 has a 400G QSFP-DD, then the other three ports (5, 6, 7) cannot be used.  
@@ -135,7 +135,8 @@ When port 0 has a 400G QSFP-DD, then the other three ports (2, 3, 4) cannot be u
 Figure 7. 86-MPA-14H2FH-M  
 {: .text-center}  
 
-The second MPA is the 86-MPA-4FH-M. This MPA can be inserted into any slot(slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 4 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:  
+**86-MPA-4FH-M**  
+86-MPA-4FH-M can be inserted into any slot (slots 0 to7) of the chassis without any restriction. This MPA is a pluggable card that provides 4 interface ports for a maximum total bandwidth of 1.6 Tbps and can support up to:    
 - 4 ports of QSFP-DD 400 GbE modules  
 
 **Note**: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
@@ -145,17 +146,24 @@ The second MPA is the 86-MPA-4FH-M. This MPA can be inserted into any slot(slot 
 Figure 8. 86-MPA-4FH-M  
 {: .text-center}  
 
-And third MPA is 86-MPA-24Z-M. This MPA can be inserted into any slot(slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 24 interface ports for a maximum total bandwidth of 1.2 Tbps that can support up to:
+**86-MPA-24Z-M**  
+86-MPA-24Z-M can be inserted into any slot (slot 0 to 7) of the chassis without any restriction. This MPA is a pluggable card that provides 24 interface ports for a maximum total bandwidth of 1.2 Tbps and can support up to:  
 - 24 ports of SFP 10/25/50 GbE modules
-
 
 ![figure9.png]({{site.baseurl}}/images/figure9.png){: .full}    
 Figure 9. 86-MPA-24Z-M  
 {: .text-center}  
 
 ### RP (Route Processor)     
-The RPs will vertically fit in the chassis from the front panel. There will be up to two redundant RPs in the system and will work in Active-standby mode. The RP is not connected to the Switch Card.  
-RPs manages all routing operations on the Cisco 8600 Routers.  
+The Cisco 8608 route processor (RP) sits vertically in the front of the chassis handling control plane operations. In addition to other ports, the RP has the timing ports on it.  The RP is not SerDes connected to the Switch Card.    
+
+  - Redundant 8608 : There will be two RPs in the system which work in Active-standby mode.   
+  - Non-Redundant 8608 : There will be a single RP in the system . This kind of a system does not offer any control plane redundancy.   
+
+
+
+RPs manage all routing operations on the Cisco 8608 Routers.  
+
 ![figure10.png]({{site.baseurl}}/images/figure10.png){: .full}  
 Figure 10. 8608-RP  
 {: .text-center}  
