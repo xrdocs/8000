@@ -55,7 +55,7 @@ Table 1. Cisco 8608 key components
 {: .text-center}  
 
 
-## Cisco 8608 value proposition  
+### Cisco 8608 value proposition  
 
 **Redundancy** – Cisco 8608 introduces a new forwarding paradigm via a redundant control plane (route processor [RP] redundancy) and redundant data plane (switch card [SC] redundancy). A redundant 8608 requires two RPs and two SCs, while a nonredundant 8608 is comprised of a single RP & SC.  
 
