@@ -53,7 +53,19 @@ The key chassis components and their overview is captured in the table below:
 ![new_key.png]({{site.baseurl}}/images/new_key.png){: .align-center}     
 Table 1. Cisco 8608 key components      
 {: .text-center}  
- 
+
+
+## Cisco 8608 value proposition  
+
+**Redundancy** – Cisco 8608 introduces a new forwarding paradigm via a redundant control plane (route processor [RP] redundancy) and redundant data plane (switch card [SC] redundancy). A redundant 8608 requires two RPs and two SCs, while a nonredundant 8608 is comprised of a single RP & SC.  
+
+**Investment Protection** – The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor and Modular Port Adaptors). Cisco is investing in the future of the platform for customers to be able to upgrade to the next generation.  
+
+**Flexibility** – Flexibility via MPA modularity and interface diversity. Native port speed support from 10GbE upto 400GbE. Wide variety of optics support for multiple customer use cases.
+
+
+
+
 ## Platform Description  
 ### Chassis  
 
