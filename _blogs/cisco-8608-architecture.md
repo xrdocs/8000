@@ -71,9 +71,7 @@ Table 2. Cisco 8608 Field Replaceable Units
 
 ![8608name.png]({{site.baseurl}}/images/8608name.png){: .align-center}  
 
-
-
-
+![8600-MPA name.png]({{site.baseurl}}/images/8600-MPA name.png){: .align-center}  
 
 
 
