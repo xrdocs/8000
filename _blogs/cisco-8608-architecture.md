@@ -89,7 +89,7 @@ Figure 3. Front view of an empty Cisco 8608 chassis
 As shown in Figure 3, user needs to insert the followings:  
 - Modular Port Adapter(MPA) sits vertically in the front of the chassis
 - Route Processor(RP) sits vertically in the front of the chassis
-- Switch Card(SC) sits horizontally behind the Fan Trays. Cisco 8608 chassis has two Fan Trays with four Fan Modules on each Fan Tray  
+- Switch Card(SC) sits horizontally behind the Fan Trays. Cisco 8608 router has two Fan Trays with four Fan Modules on each Fan Tray  
 
 ![figure4.png]({{site.baseurl}}/images/figure4.png){: .full}        
 Figure 4. Back view of Cisco 8608 chassis with 8 FMs and 4 PMs    
@@ -101,9 +101,8 @@ Figure 5. Side view of Cisco 8608 chassis
 {: .text-center}  
   
 The Route Processors(RPs) are vertically inserted into the front right hand side of the Cisco 8608 chassis.  
-The Module Port Adapters(MPAs) are vertically inserted into the front side of the Cisco 8608 chassis too.  
-The Switch Cards(SC0, SC1) that include the packet processing and forwarding engine using Cisco Silicon One Q200 are horizontally inserted into the back of the chassis.  There are 2 switch cards per system.  The Switch Cards contain the four removable Fan Modules can be inserted into each Switch Card.  
-
+The Module Port Adapters(MPAs) are vertically inserted into the front side of the Cisco 8608 chassis, to the left of the MPAs.    
+The Switch Cards(SC0, SC1) that include the packet processing and forwarding engine using Cisco Silicon One Q200 are horizontally inserted into the back of the chassis.  There are 2 switch cards per system.  The Switch Cards contain the four removable Fan Modules.      
 
 ### MPA (Modular Port Adapter)    
 The Cisco 8608 router supports three different Redundant Modular Port Adaptors (MPAs) to insert into slot 0 to slot 7. 
