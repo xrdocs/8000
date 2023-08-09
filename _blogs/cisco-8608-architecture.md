@@ -61,7 +61,7 @@ Table 1. Cisco 8608 key components
 
 **Investment Protection** – The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor and Modular Port Adaptors). Cisco is investing in the future of the platform for customers to be able to upgrade to the next generation.  
 
-**Flexibility** – Flexibility via MPA modularity and interface diversity. Native port speed support from 10GbE upto 400GbE. Wide variety of optics support for multiple customer use cases.
+**Flexibility** – Flexibility via MPA modularity and interface diversity. Native port speed support from 10 GbE upto 400 GbE. Wide variety of optics support for multiple customer use cases.
 
 ![Screenshot 2023-08-09 at 1.12.00 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-09 at 1.12.00 PM.png){: .align-center}    
 Table 2. Cisco 8608 Field Replaceable Units        
