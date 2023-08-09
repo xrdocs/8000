@@ -14,7 +14,7 @@ tags:
 ---
 {% include toc icon="table" title="Cisco 8608 Architecture White Paper" %}
 
-## Cisco 8000 Overview. 
+## Cisco 8000 Overview   
 The Cisco® 8000 Series combines the revolutionary Cisco Silicon One™, IOS XR® software, and clean sheet chassis design to deliver a breakthrough in high-performance routers. The 8000 Series comprises a full range of feature-rich and highly scalable and reliable routers. Cisco 8608 is a part of a new complimentary portfolio built on Centralized Architecture based chassis design.  
 
 The Cisco 8608 is a unique platform that combines flexibility and reliability while offering investment protection. Customers can achieve unmatched reliability with redundant control and data plane via redundant route processors and redundant switch cards. Unlike distributed architecture, the forwarding decisions on centralized platforms are centrally performed. Cisco 8608 can also be operated in a non-redundant mode as per the appropriate customer required use case. Cisco 8608 first generation switch cards are powered by Cisco Silicon One™ Q200 ASIC . A wide variety of modular port adapters allow for high interface diversity.  
@@ -25,7 +25,7 @@ This data sheet is specifically for the Cisco 8608 router. In addition to the ce
   
 Learn more about Cisco 8000 distributed and fixed portfolio in the Cisco 8000 data sheet.  
 
-## Cisco 8608 Overview. 
+## Cisco 8608 Overview   
 Large, distributed chassis have traditionally been designed to cater to the market requirement for total system bandwidth, port diversity, and redundancy. The requirements far exceeded what could be accomplished with a single NPU. The fabrics that weave together multi-NPU systems had to be provisioned to the highest bandwidth use case and deployed 100% upfront, consuming power and capital regardless of the number of installed line cards. That wisdom held true for multiple generations of core, edge, and aggregation distributed systems.  
 
 Now with the advent of dense Cisco Silicon One ASICs, we can address these roles with a new breed of centralized architectures that combine the best aspects of distributed and fixed systems.  Cisco 8608 has combined the redundancy and I/O diversity of distributed systems with the economics and simple elegance of fixed platforms. As a result, Cisco 8608 delivers redundancy at an optimized cost while enabling flexibility and expandability through generational continuity.  
