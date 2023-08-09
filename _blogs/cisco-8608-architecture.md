@@ -105,15 +105,23 @@ The Module Port Adapters(MPAs) are vertically inserted into the front side of th
 The Switch Cards(SC0, SC1) that include the packet processing and forwarding engine using Cisco Silicon One Q200 are horizontally inserted into the back of the chassis.  There are 2 switch cards per system.  The Switch Cards contain the four removable Fan Modules.      
 
 ### MPA (Modular Port Adapter)    
-The Cisco 8608 router supports three different Redundant Modular Port Adaptors (MPAs) to insert into slot 0 to slot 7. 
-This MPAs is CPU-less and have the PHY and Optics components for network connectivity to other devices in the network. Each Redundant MPA connects to both Switch Cards (SC0, SC1).  
-All MPAs support MACsec, regardless of the slot of insertion.  
+The Cisco 8608 router centralized platform supports three different Redundant Modular Port Adapters(MPAs) to insert into slots 0 to 7.     
+
+  - All MPAs support MACsec, regardless of the slot of insertion.     
+  - These MPAs are CPU-less and have the PHY and Optics components for network connectivity to other devices in the network. Each MPA connects to both Switch Cards (SC0, SC1).    
 
 ![figure6.png]({{site.baseurl}}/images/figure6.png){: .align-center}    
 Figure 6. two SCs and three Redundant MPAs connection of Cisco 8608 chassis  
 {: .text-center}  
  
-The Q200 on the SC has up to 32x 50Gbps SerDes to each MPA slot regardless of slot number.
+The Q200 on the SC has up to 32x 50Gbps SerDes to each MPA slot regardless of slot number.  
+
+The Cisco 8608 supports three different modular port adapters (MPAs). The details are captured in table below:  
+
+
+
+
+
 There are three different Redundant MPAs in Cisco 8608.
 The first MPA is the 86-MPA-14H2FH-M. This MPA can be inserted into any slot (slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 16 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:
 - 16 ports of QSFP 100 GbE modules (Default), or
