@@ -360,16 +360,16 @@ The Cisco 8608 is launched with IOS XR 7.10.1.
 <code>  
 <span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh version</span>
 
-Cisco IOS XR Software, <mark>Version 7.10.1.25I LNT</mark>
+Cisco IOS XR Software, <mark>Version 7.10.1 LNT</mark>
 Copyright (c) 2013-2023 by Cisco Systems, Inc.
 
 Build Information:
  Built By     : ingunawa
  Built On     : Thu May 11 23:47:35 UTC 2023
  Build Host   : iox-ucs-058
- Workspace    : /auto/iox-ucs-058-san2/prod/7.10.1.25I.SIT_IMAGE/8000/ws/
- Version      : 7.10.1.25I
- Label        : 7.10.1.25I
+ Workspace    : /auto/iox-ucs-058-san2/prod/7.10.1/8000/ws/
+ Version      : 7.10.1
+ Label        : 7.10.1
 
 cisco 8000 (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz)
 cisco 8608-SYS (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz) processor with 64GB of memory
