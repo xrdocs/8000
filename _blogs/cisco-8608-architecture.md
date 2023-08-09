@@ -840,11 +840,9 @@ The Cisco 8608 is a unique platform that combines flexibility & reliability whil
   
 ## Reference   
 - [Datasheet](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html)    
-- [Hardware Installation Guide](https://www.cisco.com/content/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized.html)    
-- Power calculator: Need to add  
+- [Hardware Installation Guide](https://www.cisco.com/content/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized.html)      
 - [Cisco 8000 Configuration guide](https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html)       
-- [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/)      
-- [Ordering Guide](https://cisco.sharepoint.com/:p:/r/sites/MIGRoutingPMTMECommunications/_layouts/15/Doc.aspx?sourcedoc=%7B11FE4519-D569-4AA4-8437-D7D5E7B5739F%7D&file=Cisco%208000%20Ordering%20Guide_v8.pptx&action=edit&mobileredirect=true)      
+- [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/)        
 
 If you want to reach out for comments, feedback or questions, send us an email at:
 [ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com)
