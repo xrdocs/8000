@@ -63,7 +63,7 @@ Table 1. Cisco 8608 key components
 
 **Flexibility** – Flexibility via MPA modularity and interface diversity. Native port speed support from 10GbE upto 400GbE. Wide variety of optics support for multiple customer use cases.
 
-
+![Screenshot 2023-08-09 at 1.12.00 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-09 at 1.12.00 PM.png){: .align-center}    
 Table 2. Cisco 8608 Field Replaceable Units        
 {: .text-center}  
 
