@@ -384,8 +384,9 @@ For a complete list of supported features, refer to the [Cisco Feature Navigator
 [[Cisco Software Download]](https://software.cisco.com/download/home/286324878) page to download the Cisco IOS XR software images.
 
 
-## Cisco 8608 Slots and Ports identification    
-Slots and ports numbering are here:  
+## Cisco 8608 Slot and Port identification    
+Slots numberingSlot numbering on the Cisco 8608 from the front goes On front view of the Cisco 8608 chassis, left to right direction is MPA0 to MPA7 and, RP0 to RP1.  
+
 <b>Slots numbering</b>  
 On front view of the Cisco 8608 chassis, left to right direction is MPA0 to MPA7, RP0 to RP1.  
 
@@ -393,17 +394,17 @@ On front view of the Cisco 8608 chassis, left to right direction is MPA0 to MPA7
 Figure 15. Cisco 8608 Slot numbering  
 {: .text-center}  
 
-<b>Ports numbering</b>  
+<b>Port numbering</b>  
 
 ![figure16.png]({{site.baseurl}}/images/figure16.png){: .full}  
 Figure 16. Cisco 8608 MPA Port numbering  
 {: .text-center}  
 
-Cisco 8608 ports numbering convention follows that of physical interfaces as {Type}{R/S/I/P} or {Type}{R/S/I/P/B}  
+Cisco 8608 port numbering follows that of physical interfaces as {Type}{R/S/I/P} or {Type}{R/S/I/P/B}  
 
 ![Screenshot 2023-06-28 at 12.14.39 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.14.39 PM.png)  
 
-Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE and port 2 & 3 with native 400 GbE on slot 0.  
+Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE and port 2 & 3 with native 400 GbE on slot 0  
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -430,7 +431,7 @@ Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE an
 </pre>
 </div>  
 
-Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slot 7  
+Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slot 7     
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -451,23 +452,21 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 ## System Details   
 
 ### System Block Diagram  
-The system block diagram for the different cards and their mechanics of operation in hardware is covered.  
 
 Inside the chassis, there are two Route Processors (RPs), two Switch Cards (SCs), eight Modular Port Adapters (MPAs), 4 Power Modules (PMs), 8 Fan Modules (FMs) – all these entities are field replaceable units (FRUs).  
 
-- Route Processor (2 for redundancy mode, 1 for non-redundancy mode)  
+- Route Processor (2 for redundant mode, 1 for non-redundant mode)  
   - Intel 6-core @ 2.5 GHz with DDR4 DRAM and SSD Flash  
   - PCIE, P2PM, 10 GbE for control   
   - Trusted Anchor Module (TAM) for secure boot  
-- Switch Card (2 for redundancy mode, 1 for non-redundancy mode)  
-  - One Cisco Silicon One Q200 with 8 GB HBM  
+- Switch Card (2 for redundant mode, 1 for non-redundant mode)  
+  - Each SC has one Cisco Silicon One Q200 ASIC with 8 GB HBM    
   - PCIE switch to interconnect the key components  
   - Fan Controller Board  
   - Orthogonal Connector to all inter-connectivity with the MPAs  
-- Modular Port Adapter   
-  - No CPU and managed by RP via PCIE, P2PM  
-  - PHY that support hitless 2:1 Mux mode, MACsec, Reverse Gearbox, Class C PTP   
-  - PHY provides a interface to front panel ports and connect to the Q200 on SC  
+- Modular Port Adapter     
+  - PHY supports hitless 2:1 Mux mode, MACsec, Reverse Gearbox, Class C PTP     
+  - PHY provides an interface to front panel ports and connects to the Q200 on SC  
   - Orthogonal SC connector  
   - FPGA for control signals  
   - Front panel ports  
@@ -477,13 +476,13 @@ Figure 17. Cisco 8608 Block Diagram
 {: .text-center}  
 
 ### Switch Card (SC) Details   
-Switch Card has a 12.8 Tbps bandwidth using the Cisco Silicon One Q200 NPU at an operating data rate of 56 Gbps per lane. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provides full data plane redundancy in an active-standby mode.  
+Switch Card has 12.8T bandwidth using the Cisco Silicon One Q200  at an operating data rate of 50 Gbps SerDes. It supports 8 pluggable modular port adapter (MPA) cards each supporting up to 1.6 Tbps. There can be two SCs in a system that provide full data plane redundancy in an active-standby mode.    
 
-Cisco Silicon One Q200’s brief features are following:    
+Cisco Silicon One Q200 features:      
 - 12.8 Tbps full-duplex and 8.1 Bpps Forwarding Capacity NPU  
-- 256 56G SerDes with each capable of operating at 10G/25G/50G using NRZ or PAM4 modulation   
-- Flexible port configuration supporting 10/25/40/50/100/400 Gbps   
-- 108 MB fully shared on-die packet buffer   
+  - 256x 50G SerDes with each capable of operating at 10G/25G/50G using NRZ or PAM4 modulation  
+  - Flexible port configuration supporting 10/25/40/50/100/400 Gbps   
+  - 108 MB fully shared on-die packet buffer   
 - Expandable in-package packet buffer using 8 GB HBM  
 - On-chip, high-performance, P4-programmable host NPU for high-bandwidth offline packet processing  
 - Multiple embedded processors for CPU offloading  
@@ -491,23 +490,23 @@ Cisco Silicon One Q200’s brief features are following:
 - Dedicated 108 Counters banks (860K counters)   
 
 ![Q200 NPU2.png]({{site.baseurl}}/images/Q200 NPU2.png){: .align-center}{:height="60%" width="60%"}  
-Figure 18. Cisco Silicon One Q200 Diagram        
+Figure 18. Cisco Silicon One Q200          
 {: .text-center}   
 
 For more understanding on Cisco Silicon One Q200 refer to [Cisco Silicon One Q200-Info](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/datasheet-c78-744312.html).  
 
 <b>MPA assignment to Cisco Silicon One Q200 in SC</b>  
-Cisco 8608 doesn’t have any MPA slot position restriction in the chassis.  
-There is one Q200 NPU in each Switch Card.  
+Cisco 8608 is straightforward in terms of MPA slot positioning where any of the 7 MPA slots can accommodate any MPA variants. No MPA slot position restrictions in the chassis due to a “clean SerDes design”.  
+
+There is one Q200 in each Switch Card.    
 
 ![New IFG.png]({{site.baseurl}}/images/New IFG.png){: .full}    
-Figure 19. Cisco 8608 MPA assignment to Q200 in Switch Card       
+Figure 19. Cisco 8608 MPA assignment to Q200         
 {: .text-center}  
 
-Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to Q200 NPU is 1.6 Tbps. And so total 12.8 Tbps full-duplex per Cisco 8608 system.  
+Each SC is connected to MPA 0 to MPA 7. Maximum MPA bandwidth to Q200 is 1.6 Tbps. And so a total of 12.8 Tbps duplex per Cisco 8608 system.  
 
-
-We have a Cico 8608 with the MPA in slot 1(86-MPA-14H2FH-M) and slot 2(86-MPA-4FH-M). We will concentrate on slot 2 for this example.  
+There is a Cisco 8608 with the MPA in slot 1(86-MPA-14H2FH-M) and slot 2(86-MPA-4FH-M). Let’s concentrate on slot 2 for this example.    
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -543,43 +542,42 @@ Hu0/1/0/0    f0000d4   0   4    1   200    512      0        local    100G
 </pre>
 </div>  
 
-From the above output, we can verify FH0/2/0/0 is connected to slice 3 and FH0/2/0/1, FH0/2/0/2, FH0/2/0/3 are connected to slice 4.  
-
+From the above output, we can see FH0/2/0/0 is connected to slice 3 and FH0/2/0/1, FH0/2/0/2, FH0/2/0/3 are connected to slice 4.    
 
 ### MPA Details  
 
 <b>86-MPA-14H2FH-M</b>  
-This redundant Combo MPA is a Redundant MPA with a front panel hassupports 2x QSFPDDs and 14x QSFP28 ports.
-This redundant MPA is a redundant MPA because it can work with two SC cards with one being active and the other in standby mode. This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G via breakout cables are also supported.  
+This redundant Combo MPA supports 2x QSFPDDs and 14x QSFP28 ports.  
+This redundant MPA can work with two SC cards with one being active and the other in standby mode. This MPA provides a per slot bandwidth of 1.6 Tbps. The QSFPDD ports can support 40/100/400G optics, the QSFP28 ports can support 40/100G optics. 25G and 10G via breakout cables are also supported.  
 
 ![ComboMPA_diagram.png]({{site.baseurl}}/images/ComboMPA_diagram.png){: .full}    
 Figure 20. 86-MPA-14H2FH-M Datapath block diagram    
 {: .text-center}  
 
-This MPA does not have a CPU and is managed by the RP. This each PHY can support the multi-rate Ethernet PHY that provides the capacity and feature integration required to enable MACsec functionality.    
-86-MPA-14H2FH-M can support several interface combinations.  
+This MPA does not have a CPU and is managed by the RP. This each PHY can support the multi-rate Ethernet PHY that provides the capacity and feature integration required to enable MACsec functionality.  
+86-MPA-14H2FH-M can support several interface combinations.    
 
 The first of the combo configurations is 16x100 GbE QSFP, in this configuration the QSFPDD ports are populated with 100G optics not 400G, the QSFP28 ports are populated with 100G optics. This is the default mode(without manual configuration).  
 ![combo1.png]({{site.baseurl}}/images/combo1.png){: .full}    
 
-The second of the combo configuration is 2x 400G QSFPDD + 8x 100G QSFP, in this configuration the QSFPDD ports are populated with 400G optics.  
+The second of the combo configuration is 2x 400G QSFPDD + 8x 100G QSFP, in this configuration the QSFPDD ports are populated with 400G optics.    
 
-Changing Port 0 or Port 1 individually to 400G mode automatically disables Port 2/3/4 or Port 5/6/7.    
+Changing Port 0 or Port 1 individually to 400G mode automatically disables Port 2/3/4 or Port 5/6/7.      
 
-The ports that are available in the 2x 400G QSFPDD + 8x 100G QSFP Combo mode are Ports 0/1/8~15 as shown in the figures below. The faceplate will have markings to reflect this.  
+The ports that are available in the 2x 400G QSFPDD + 8x 100G QSFP Combo mode are Ports 0/1/8~15 as shown in the figures below. The faceplate will have markings to reflect this.    
 ![combo2.png]({{site.baseurl}}/images/combo2.png){: .full}   
 
-The third of the combo configuration is 10/25G breakout solution.  
-4x 10G or 4x 25G breakout will not be supported on Port 0 to 9 (PHY 0 & 1). Only on PHY 2’s port 10, 12, and 14 and disabled Port 11, 13, and 15.  
+The third of the combo configuration is 10/25G breakout solution.
+4x 10G or 4x 25G breakout will not be supported on Port 0 to 9 (PHY 0 & 1). Only on PHY 2’s port 10, 12, and 14 and disabled Port 11, 13, and 15.    
 ![combo3.png]({{site.baseurl}}/images/combo3.png){: .full}   
 
 The following summary is the all scenarios for Native and Breakout solutions on 86-MPA-14H2FH-M MPA  
 
 | Port | Breakout supported | Port Type                                                |
 |------|--------------------|----------------------------------------------------------|
-| 0    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE <span style="background-color: #FF0000">(Disable Port 2, 3, 4)</span> |
+| 0    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE(400G Mode) <span style="background-color: #FF0000">(Disable Port 2, 3, 4)</span> |
 |      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
-| 1    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE <span style="background-color: #FF0000">(Disable Port 5, 6, 7)</span> |
+| 1    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE(400G Mode) <span style="background-color: #FF0000">(Disable Port 5, 6, 7)</span> |
 |      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
 | 2    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 3    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
@@ -605,8 +603,8 @@ The following summary is the all scenarios for Native and Breakout solutions on 
 
   
 <b>86-MPA-4FH-M</b>  
-This MPA is a Redundant MPA with a front panel consisting of 4x QSFPDD ports.  This is a redundant MPA because it can work with to two SCs with one being active and the other in standby mode.  
-This MPA provides a per slot bandwidth of 1.6Tbps. The QSFPDD ports can support 40/100/400G optics and support fully Breakout solutions without any port restriction.  
+This redundant MPA supports 4x QSFPDD ports. This is a redundant MPA because it can work with two SCs with one being active and the other in standby mode.  
+This MPA provides a per slot bandwidth of 1.6Tbps. The QSFPDD ports can support 40/100/400G optics and support fully Breakout solutions without any port restriction.    
 
 ![400GMPA_diagram.png]({{site.baseurl}}/images/400GMPA_diagram.png){: .full}     
 Figure 21. 86-MPA-4FH-M Datapath block diagram  
@@ -614,8 +612,8 @@ Figure 21. 86-MPA-4FH-M Datapath block diagram
 
 
 <b>86-MPA-24Z-M</b>  
-This MPA is a Redundant MPA with a front panel consisting of 24x SFP56 ports.  This MPA is a redundant MPA because it can work with to two SC with one being active and the other in standby mode.  
-This MPA provides a per slot bandwidth of 1.2 Tbps. The QSFP56 ports can support 10/25/50G optics and can’t support any Breakout solution.  
+This redundant MPA supports 24x SFP56 ports. This MPA is a redundant MPA because it can work with to two SC with one being active and the other in standby mode.  
+This MPA provides a per slot bandwidth of 1.2 Tbps. The QSFP56 ports can support 10/25G optics and can’t support any Breakout solution.      
 
 ![10GMPA_diagram.png]({{site.baseurl}}/images/10GMPA_diagram.png){: .full}      
 Figure 22. 86-MPA-24Z-M Datapath block diagram  
@@ -624,12 +622,12 @@ Figure 22. 86-MPA-24Z-M Datapath block diagram
 **Note**: All even and odd port pair (port 0/1, 2/3, 4/5 … etc) must run at the same speed(both at 10G or both at 25G).  
 {: .notice}  
 
-
-To identify the optic types supported on the Cisco 8608, please check [the TMG matrix](https://tmgmatrix.cisco.com/)  
+To verify optics supported, please use the Cisco Optics-to-Device Compatibility Matrix tool:  
+[the TMG matrix](https://tmgmatrix.cisco.com/)    
 It contains details on the connector types, the reach, the minimum release required, etc.  
 
 ### Maximum port scale and support on Cisco 8608      
-The following table represents the maximum number of ports s number of the Cisco 8608 router can support.    
+The following table represents the maximum number of ports the Cisco 8608 router can support.     
 
 |          | 10 GbE | 25 GbE | 40 GbE | 50 GbE | 100 GbE | 400 GbE |
 |----------|--------|--------|--------|--------|---------|---------|
@@ -637,8 +635,7 @@ The following table represents the maximum number of ports s number of the Cisco
 | Breakout | 128    | 128    | N/A    | N/S    | 128     | N/A     |  
 
 N/A: Not applicable – N/S: Not supported   
-
-Math is the following:  
+  
 - 10 GbE  
   - Used with 86-MPA-24Z-M as native with SFP+, fully populated with this MPA into 8 MPAs slots. 8x MPAs and 24x SFP+ on each MPA: 192x 10 GbE total    
   - Used with 86-MPA-4FH-M as breakout, fully populated with this MPA into 8 MPAs slots. 4x (4x 10 GbE) x 8 MPAs: 128x 10 GbE total  
@@ -672,12 +669,11 @@ There’s supported and unsupported configuration in Cisco 8608.
 |               |                                | RP1-SC0                          |
 |               |                                | RP0-SC1                          |  
 
-For Redundant 8608, user can use “**8608-SYS-R**” PID in the order tool. System is shipped with two RPs, two SCs and generally orderable on CCW.    
+For Redundant 8608, user can use “8608-SYS-R” PID in the order tool. System is shipped with two RPs, two SCs and generally orderable on CCW.    
 For Non-Redundant 8608 configuration, user can use “8608-SYS-NR” PID on CCW. 8608 system is shipped with only one RP, one SC, one FS.  
-
-Let’s discuss with the default state when system boots up under redundant system.    
- RP0-SC0 together as one Domain 0(Active Pair) and RP1-SC1 as the other Domain 1(Standby Pair).  
  
+Let’s discuss with the default state when system boots up under redundant system.  
+ RP0-SC0 together as one Domain 0(Active Pair) and RP1-SC1 as the other Domain 1(Standby Pair).  
 ![redundancy.png]({{site.baseurl}}/images/redundancy.png){: .full}  
 Figure 23. Default Redundant state in Cisco 8608  
 {: .text-center}  
@@ -736,7 +732,7 @@ If the RP0 fatal faults or removal, Standby RP immediately gains mastership via 
 Figure 24. RP0 failure scenario in Cisco 8608  
 {: .text-center}  
 
-Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.  
+Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.    
 
 ![SC Failure.png]({{site.baseurl}}/images/SC Failure.png){: .full}    
 Figure 25. SC0 failure scenario in Cisco 8608  
@@ -808,7 +804,7 @@ ID   Attribute       Value
 </div>   
 
 
-Up to 10 ms traffic drop is expected during active RP/SC Failover. No traffic loss during standby RP/SC reload.  
+Up to 10 ms traffic drop is expected during active RP/SC Failover. No traffic loss during standby RP/SC reload.    
 
 ### Packet flow in the redundancy system  
 
@@ -835,9 +831,9 @@ Figure 27. Data path flow after old active pair (RP0/SC0) shutdown
 
 
 ## Conclusion  
-This document discussed the Cisco 8608 architecture.  
-The Cisco 8608 is a unique platform that combines flexibility & reliability while offering investment protection. Customers can achieve unmatched reliability with redundant control and data plane via redundant Route Processors and Switch cards. Cisco 8608 Switch Cards are based on Cisco Silicon One™ Q200. A wide variety of Modular Port Adapters (MPAs) allow for high interface diversity.    
-  
+This document discussed the Cisco 8608 architecture.   
+The Cisco 8608 is a unique platform that combines flexibility & reliability while offering investment protection. Customers can achieve unmatched reliability with redundant control and data plane via redundant Route Processors and Switch cards. Cisco 8608 Switch Cards are based on Cisco Silicon One™ Q200. A wide variety of Modular Port Adapters (MPAs) allow for high interface diversity.  
+    
 ## Reference   
 - [Datasheet](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html)    
 - [Hardware Installation Guide](https://www.cisco.com/content/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized.html)      
