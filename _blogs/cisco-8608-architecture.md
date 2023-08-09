@@ -75,7 +75,7 @@ Table 1. Cisco 8608 Field Replaceable Units
 
 Let us have a quick refresher of the Cisco 8608’s PIDs and description.  
 
-
+![PID.png]({{site.baseurl}}/images/PID.png){: .align-center}  
 Table 2. Cisco 8608 PID and description  
 {: .text-center} 
 
