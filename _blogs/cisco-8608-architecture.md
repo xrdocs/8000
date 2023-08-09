@@ -575,9 +575,9 @@ The following summary is the all scenarios for Native and Breakout solutions on 
 
 | Port | Breakout supported | Port Type                                                |
 |------|--------------------|----------------------------------------------------------|
-| 0    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE(400G Mode) <span style="background-color: #FF0000">(Disable Port 2, 3, 4)</span> |
+| 0    | Yes                | 400G Mode: 1x 400 GbE, 4x 100GbE, 2x 100 GbE <span style="background-color: #FF0000">(Disable Port 2, 3, 4)</span> |
 |      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
-| 1    | Yes                | 1x 400 GbE, 4x 100GbE, 2x 100 GbE(400G Mode) <span style="background-color: #FF0000">(Disable Port 5, 6, 7)</span> |
+| 1    | Yes                | 400G Mode: 1x 400 GbE, 4x 100GbE, 2x 100 GbE <span style="background-color: #FF0000">(Disable Port 5, 6, 7)</span> |
 |      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
 | 2    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 3    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
