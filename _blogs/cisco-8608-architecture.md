@@ -154,7 +154,8 @@ Figure 8. 86-MPA-4FH-M
 Figure 9. 86-MPA-24Z-M  
 {: .text-center}  
 
-### RP (Route Processor)     
+### RP (Route Processor)  
+
 The Cisco 8608 route processor (RP) sits vertically in the front of the chassis handling control plane operations. In addition to other ports, the RP has the timing ports on it.  The RP is not SerDes connected to the Switch Card.    
 
 - Redundant 8608 : There will be two RPs in the system which work in Active-standby mode.   
@@ -175,7 +176,8 @@ Front panel ports include management and Timing interfaces:
 RP contains an Intel 6-core @ 2.5 GHz, 64GB DDR4 DRAM, and 256 GB M.2 SSD Flash Drive.  
 This RPs are connected to the midplane and communicate with their devices via PCIE, EOBC, P2PM, and I2C Interfaces.  
   
-### SC (Switch Card)    
+### SC (Switch Card)  
+
 The Cisco 8608 router Switch Card sits behind the Fan Trays. Cisco 8608 router has two Fan Trays with a total of eight Fan Modules. The Cisco Silicon One Q200 sits within the Switch Card and all the packet process and forwarding decisions are driven by the Switch Card.    
 
 ![SC front rear.png]({{site.baseurl}}/images/SC front rear.png){: .full}   
