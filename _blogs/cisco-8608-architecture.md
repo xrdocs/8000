@@ -397,14 +397,14 @@ Figure 15. Cisco 8608 Slot numbering
 
 <b>Port numbering</b>  
 
-![new figure16.png]({{site.baseurl}}/images/new figure16.png){: .full}   
+![figure16.png]({{site.baseurl}}/images/figure16.png){: .full}  
 Figure 16. Cisco 8608 MPA Port numbering  
 {: .text-center}  
 
 Cisco 8608 port numbering follows that of physical interfaces as {Type}{R/S/I/P} or {Type}{R/S/I/P/B}  
 
-![Screenshot 2023-06-28 at 12.14.39 PM.png]({{site.baseurl}}/images/Screenshot 2023-06-28 at 12.14.39 PM.png)  
-
+![new figure16.png]({{site.baseurl}}/images/new figure16.png){: .full}     
+ 
 Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE and port 2 & 3 with native 400 GbE on slot 0  
 
 <div class="highlighter-rouge">
