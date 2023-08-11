@@ -15,7 +15,7 @@ tags:
 {% include toc icon="table" title="Cisco 8608 Architecture White Paper" %}
 
 ## Cisco 8000 Overview   
-The Cisco® 8000 Series combines the revolutionary Cisco Silicon One™, IOS XR® software, and clean sheet chassis design to deliver a breakthrough in high-performance routers. The 8000 Series comprises a full range of feature-rich and highly scalable and reliable routers. Cisco 8608 is a part of a new complimentary portfolio built on Centralized Architecture based chassis design.  
+The Cisco® 8000 Series combines the revolutionary Cisco Silicon One™, IOS XR® software, and clean sheet chassis design to deliver a breakthrough in high-performance routers. The 8000 Series comprises a full range of feature-rich and highly scalable and reliable routers. Cisco 8608 is a part of a new complementary portfolio built on Centralized Architecture based chassis design.  
 
 The Cisco 8608 is a unique platform that combines flexibility and reliability while offering investment protection. Customers can achieve unmatched reliability with redundant control and data plane via redundant route processors and redundant switch cards. Unlike distributed architecture, the forwarding decisions on centralized platforms are centrally performed. Cisco 8608 can also be operated in a non-redundant mode as per the appropriate customer required use case. Cisco 8608 first generation switch cards are powered by [[Cisco Silicon One™ Q200 ASIC]](https://www.cisco.com/c/dam/en/us/solutions/collateral/silicon-one/white-paper-sp-fixed-box-router.pdf). A wide variety of modular port adapters allow for high interface diversity.  
 
