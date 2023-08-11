@@ -160,7 +160,7 @@ Figure 9. 86-MPA-24Z-M
 
 ### RP (Route Processor)  
 
-The Cisco 8608 route processor (RP) sits vertically in the front of the chassis handling control plane operations. In addition to other ports, the RP has the timing ports on it.  The RP is not SerDes connected to the Switch Card.    
+The Cisco 8608 route processor (RP) sits vertically in the front of the chassis handling control plane and management plane operations. In addition to other ports, the RP has the timing ports on it.  The RP is not SerDes connected to the Switch Card.    
 
 - Redundant 8608 : There will be two RPs in the system which work in Active-standby mode.   
 - Non-Redundant 8608 : There will be a single RP in the system . This kind of a system does not offer any control plane redundancy.   
