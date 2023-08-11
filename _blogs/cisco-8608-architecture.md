@@ -490,7 +490,7 @@ Cisco Silicon One Q200 features:
 - 56K VoQ(Virtual Output Queue)   
 - Dedicated 108 Counters banks (860K counters)   
 
-![Screenshot 2023-08-11 at 11.00.12 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-11 at 11.00.12 AM.png){: .align-center}{:height="60%" width="60%"}   
+![Screenshot 2023-08-11 at 11.10.46 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-11 at 11.10.46 AM.png){: .align-center}{:height="60%" width="60%"}    
 Figure 18. Cisco Silicon One Q200          
 {: .text-center}   
 
