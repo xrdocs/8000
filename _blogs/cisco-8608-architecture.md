@@ -167,9 +167,10 @@ The Cisco 8608 route processor (RP) sits vertically in the front of the chassis 
 
 RPs manage all routing operations on the Cisco 8608 Routers.  
 
-![figure10.png]({{site.baseurl}}/images/figure10.png){: .full}  
+![new RP.png]({{site.baseurl}}/images/new RP.png){: .full}    
 Figure 10. 8608-RP  
 {: .text-center}  
+
 
 Front panel ports include management and Timing interfaces:  
 - RJ45 console port directly connected to CPU  
