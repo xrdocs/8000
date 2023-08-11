@@ -497,7 +497,7 @@ Figure 18. Cisco Silicon One Q200
 For more understanding on Cisco Silicon One Q200 refer to [Cisco Silicon One Q200-Info](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/datasheet-c78-744312.html).  
 
 <b>MPA assignment to Cisco Silicon One Q200 in SC</b>  
-Cisco 8608 is straightforward in terms of MPA slot positioning where any of the 7 MPA slots can accommodate any MPA variants. No MPA slot position restrictions in the chassis due to a “clean SerDes design”.  
+Cisco 8608 is straightforward in terms of MPA slot positioning where any of the 8 MPA slots can accommodate any MPA variants. There is no MPA slot restrictions in the chassis.    
 
 There is one Q200 in each Switch Card.    
 
