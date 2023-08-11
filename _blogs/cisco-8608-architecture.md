@@ -195,7 +195,7 @@ Cisco 8608 can operate with up to 2 Switch Cards(SCs) between MPA and Fan Trays.
 Figure 12. Redundant SCs in the back of the Cisco 8608  
 {: .text-center}  
 
-The RP & SC operate in pairs RP0-SC0 and RP1-SC1 to deliver redundancy without loss of any chassis front face plate.  
+The RP & SC operate in pairs RP0-SC0 and RP1-SC1 to deliver redundancy without bandwidth loss.    
 The two SCs are CPU-less connected to both the RPs via PCIE, P2PM, EOBC links and each SC has one Cisco Silicon One Q200 providing the data path for packet processing and forwarding.    
 
 ![redun system.png]({{site.baseurl}}/images/redun system.png){: .full}   
@@ -397,7 +397,8 @@ Figure 15. Cisco 8608 Slot numbering
 
 <b>Port numbering</b>  
 
-![figure16.png]({{site.baseurl}}/images/figure16.png){: .full}  
+![new figure16.png]({{site.baseurl}}/images/new figure16.png){: .full}   
+
 Figure 16. Cisco 8608 MPA Port numbering  
 {: .text-center}  
 
