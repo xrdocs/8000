@@ -835,10 +835,10 @@ This document discussed the Cisco 8608 architecture.
 The Cisco 8608 is a unique platform that combines flexibility & reliability while offering investment protection. Customers can achieve unmatched reliability with redundant control and data plane via redundant Route Processors and Switch cards. Cisco 8608 Switch Cards are based on Cisco Silicon One™ Q200. A wide variety of Modular Port Adapters (MPAs) allow for high interface diversity.  
     
 ## Reference   
-- [Datasheet](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html)    
-- [[Hardware Installation Guide]](https://www-author3.cisco.com/content/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized/leds.html#id_71371)        
-- [Cisco 8000 Configuration guide](https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html)       
-- [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/)        
+- [Datasheet](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html) [WIP]   
+- [[Hardware Installation Guide]](https://www-author3.cisco.com/content/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized/leds.html#id_71371) [WIP]       
+- [Cisco 8000 Configuration guide](https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html) [WIP]      
+- [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/) [WIP]       
 
 If you want to reach out for comments, feedback or questions, send us an email at:
 [ask-sp-routing@cisco.com](mailto:ask-sp-routing@cisco.com)
