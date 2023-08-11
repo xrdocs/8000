@@ -21,7 +21,7 @@ The Cisco 8608 is a unique platform that combines flexibility and reliability wh
 
 This data sheet is specifically for the Cisco 8608 router. In addition to the centralized router architecture in the Cisco 8608, the Cisco 8000 Series includes two other distinct router architectures that utilize the Cisco Silicon One ASICs:  
   - Distributed: The Cisco 8800 Series provides the highest bandwidth via distributed chassis with a redundant control plane and switch fabric. The 8800 Series includes the Cisco 8804, 8808, 8812, and 8818. These chassis deliver up to 28.8 Tbps per line card via 100, 400, and 800G ports.  
-  - Fixed: The Cisco 8100 and 8200 utilize Cisco’s standalone architecture to deliver full routing functionality with a single ASIC per router. Both support the full routing feature set. The 8200 has deep buffers and expanded forwarding tables, while the 8100 is targeted for data center applications with lower buffering and forwarding table scale requirements.  
+  - Fixed: The Cisco 8100 and 8200 utilize Cisco’s standalone architecture to deliver full routing functionality with a single ASIC per router. Both support the full routing feature set. The 8200 has deep buffers and expanded forwarding tables, while the 8100 is targeted for routed data center applications with lower buffering and forwarding table scale requirements.  
   
 Learn more about Cisco 8000 distributed and fixed portfolio in the [Cisco 8000 data sheet](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html).  
 
