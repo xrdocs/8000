@@ -179,7 +179,7 @@ Front panel ports include management and Timing interfaces:
 - Timing ports: 1588 PTP SFP, SyncE, BITS, GNSS PRTC-A, and GPS(ToD with RJ45 port, 1PPS and 10MHz coax input)  
 
 RP contains an Intel 6-core @ 2.5 GHz, 64GB DDR4 DRAM, and 256 GB M.2 SSD Flash Drive.  
-This RPs are connected to the midplane and communicate with their devices via PCIE, EOBC, P2PM, and I2C Interfaces.  
+This RPs are connected to the midplane and communicate with their devices via PCIE etc.  
   
 ### SC (Switch Card)  
 
