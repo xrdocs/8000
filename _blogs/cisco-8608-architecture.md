@@ -101,7 +101,7 @@ Figure 5. Side view of Cisco 8608 chassis
 {: .text-center}  
   
 The Route Processors(RPs) are vertically inserted into the front right hand side of the Cisco 8608 chassis.  
-The Module Port Adapters(MPAs) are vertically inserted into the front side of the Cisco 8608 chassis, to the left of the MPAs.    
+The Module Port Adapters(MPAs) are vertically inserted into the front side of the Cisco 8608 chassis, to the left of the RPs.    
 The Switch Cards(SC0, SC1) that include the packet processing and forwarding engine using Cisco Silicon One Q200 are horizontally inserted into the back of the chassis.  There are 2 switch cards per system.  The Switch Cards contain the four removable Fan Modules.      
 
 ### MPA (Modular Port Adapter)    
