@@ -655,7 +655,7 @@ N/A: Not applicable – N/S: Not supported
   - Used with 86-MPA-4FH-M as native with QSFPDD, fully populated with this MPA into 8 MPAs slots. 8 MPAs x 4x QSFPDD on each: 32x 400 GbE total  
 
 ## Redundancy Details  
-Within the system even though RP0, RP1, SC0, SC1 are 4 different cards, from redundancy standpoint system software would consider RP0-SC0 together as Active Pair and RP1-SC1 as Backup Pair.  
+Within the system even though RP0, RP1, SC0, SC1 are 4 different cards, from redundancy standpoint system software would consider RP0-SC0 together as Active Pair and RP1-SC1 as Standby Pair.  
 
 There’s supported and unsupported configuration in Cisco 8608.  
 
