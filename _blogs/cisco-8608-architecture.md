@@ -837,7 +837,7 @@ The Cisco 8608 is a unique platform that combines flexibility & reliability whil
     
 ## Reference   
 - [Datasheet](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html) [WIP]   
-- [[Hardware Installation Guide]](https://www-author3.cisco.com/content/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized/leds.html#id_71371) [WIP]       
+- [Hardware Installation Guide](https://www-author3.cisco.com/content/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized/leds.html#id_71371) [WIP]       
 - [Cisco 8000 Configuration guide](https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html) [WIP]      
 - [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/)  
 
