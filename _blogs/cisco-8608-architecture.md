@@ -365,12 +365,12 @@ Cisco IOS XR Software, <mark>Version 7.10.1 LNT</mark>
 Copyright (c) 2013-2023 by Cisco Systems, Inc.
 
 Build Information:
- Built By     : ingunawa
- Built On     : Thu May 11 23:47:35 UTC 2023
- Build Host   : iox-ucs-058
- Workspace    : /auto/iox-ucs-058-san2/prod/7.10.1/8000/ws/
+ Built By     : sajshah
+ Built On     : Mon Aug 14 17:39:41 UTC 2023
+ Build Host   : iox-ucs-075
+ Workspace    : /auto/ioxdepot6/GISO/giso_build_lindt/giso_release_create/cslee_2023-08-15_00-37-27_UTC  
  Version      : 7.10.1
- Label        : 7.10.1
+ Label        : 
 
 cisco 8000 (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz)
 cisco 8608-SYS (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz) processor with 64GB of memory
