@@ -841,3 +841,7 @@ The Cisco 8608 is a unique platform that combines flexibility & reliability whil
 - [Cisco 8000 Configuration guide](https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html) [WIP]      
 - [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/)  
 
+| Version | Data     | Author(s)     | Comments            |
+|---------|----------|---------------|---------------------|
+| 1       | August-22 | Chang Soo Lee | Initial Publication |
+|         |          |               |                     |  
