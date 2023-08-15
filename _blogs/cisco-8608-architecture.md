@@ -727,7 +727,7 @@ ID   Attribute       Value
 </div>  
 
 
-If the RP0 fatal faults or removal, Standby RP immediately gains mastership via HW arbitration mechanism. MPAs switchover data path to RP1-SC1.    
+If Active RP0 encounters a fatal fault or is removed, Standby RP immediately gains mastership via HW arbitration mechanism. MPAs switchover data path to RP1-SC1.   
 
 ![RP Failure.png]({{site.baseurl}}/images/RP Failure.png){: .full}   
 Figure 24. RP0 failure scenario in Cisco 8608  
