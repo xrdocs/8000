@@ -365,10 +365,10 @@ Cisco IOS XR Software, <mark>Version 7.10.1 LNT</mark>
 Copyright (c) 2013-2023 by Cisco Systems, Inc.
 
 Build Information:
- Built By     : sajshah
- Built On     : Mon Aug 14 18:21:03 UTC 2023
- Build Host   : iox-ucs-077
- Workspace    : /auto/ioxdepot6/GISO/giso_build_lindt/giso_release_create/cslee_2023-08-15_00-37-27_UTC
+ Built By     : deenayak
+ Built On     : Sat Aug 12 14:21:35 UTC 2023
+ Build Host   : iox-ucs-058
+ Workspace    : /auto/srcarchive16/prod/7.10.1/8000/ws/
  Version      : 7.10.1
  Label        : 7.10.1
 
