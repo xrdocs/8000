@@ -374,7 +374,7 @@ Build Information:
 
 cisco 8000 (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz)
 cisco 8608-SYS (Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz) processor with 64GB of memory
-ios uptime is 2 days, 20 hours, 30 minutes
+Cisco8608 uptime is 7 minutes
 Cisco 8600 - 8 Slot Centralized Chassis  
 </code>
 </pre>
