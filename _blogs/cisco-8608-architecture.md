@@ -54,6 +54,10 @@ The key chassis components and their overview is captured in the table below:
 Table 1. Cisco 8608 key components      
 {: .text-center}  
 
+![new-tabel1.png]({{site.baseurl}}/images/new-tabel1.png){: .align-center}   \
+Table 1. Cisco 8608 key components      
+{: .text-center}  
+
 
 ### Cisco 8608 value proposition  
 
