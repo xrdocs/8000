@@ -1,9 +1,7 @@
 ---
 published: true
 date: '2023-08-18 14:54 +0200'
-title: >-
-  Router performance testing for modern high end routers: Revisiting RFC 2544
-  (Part 1)
+title: 'Performance testing for modern high end routers: Revisiting RFC 2544 (Part 1)'
 author: Lane Wigley
 tags:
   - iosxr
