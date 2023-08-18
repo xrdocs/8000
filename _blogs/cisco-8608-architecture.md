@@ -751,6 +751,10 @@ Figure 24. RP0 failure scenario in Cisco 8608
 
 Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.    
 
+![new-figure25.png]({{site.baseurl}}/images/new-figure25.png){: .full}  
+Figure 25. SC0 failure scenario in Cisco 8608    
+{: .text-center}   
+
 ![SC Failure.png]({{site.baseurl}}/images/SC Failure.png){: .full}    
 Figure 25. SC0 failure scenario in Cisco 8608  
 {: .text-center}    
