@@ -844,6 +844,10 @@ Figure 26. Data path flow with Redundant System
 5.	In the egress path, PHY will forward the packets from active SC0  
 6.	PHY will drop packets coming from standby SC1  
 
+![new-figure27.png]({{site.baseurl}}/images/new-figure27.png){: .full}  
+Figure 27. Data path flow after old active pair (RP0/SC0) shutdown       
+{: .text-center}  
+
 ![PKT_Non-Redun.png]({{site.baseurl}}/images/PKT_Non-Redun.png){: .full}   
 Figure 27. Data path flow after old active pair (RP0/SC0) shutdown       
 {: .text-center}  
