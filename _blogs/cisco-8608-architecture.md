@@ -48,13 +48,9 @@ The Cisco 8608 router utilizes a state-of-the-art orthogonal design with advance
 
 Investment Protection – The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor &and Modular Port Adaptors). Cisco is investing in the future of the platform for the customers to be able to upgrade to the next generation.  
 
-The key chassis components and their overview is captured in the table below:    
+The key chassis components and their overview is captured in the table below:     
 
-![new_key.png]({{site.baseurl}}/images/new_key.png){: .align-center}     
-Table 1. Cisco 8608 key components      
-{: .text-center}  
-
-![new-tabel1.png]({{site.baseurl}}/images/new-tabel1.png){: .align-center}   \
+![new-tabel1.png]({{site.baseurl}}/images/new-tabel1.png){: .align-center}   
 Table 1. Cisco 8608 key components      
 {: .text-center}  
 
@@ -67,10 +63,6 @@ Table 1. Cisco 8608 key components
 
 **Flexibility** – Flexibility via MPA modularity and interface diversity. Native port speed support from 10 GbE upto 400 GbE. Wide variety of optics support for multiple customer use cases.
 
-![Screenshot 2023-08-09 at 1.12.00 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-09 at 1.12.00 PM.png){: .align-center}    
-Table 2. Cisco 8608 Field Replaceable Units        
-{: .text-center}  
-
 ![new-table2.png]({{site.baseurl}}/images/new-table2.png){: .align-center}   
 Table 2. Cisco 8608 Field Replaceable Units          
 {: .text-center}  
@@ -82,10 +74,6 @@ Table 2. Cisco 8608 Field Replaceable Units
 ![8600-MPA name.png]({{site.baseurl}}/images/8600-MPA name.png){: .align-center}  
 
 Let us have a quick refresher of the Cisco 8608’s PIDs and description.  
-
-![Screenshot 2023-08-11 at 12.02.52 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-11 at 12.02.52 PM.png){: .align-center}  
-Table 3. Cisco 8608 PID and description  
-{: .text-center} 
 
 ![new-table3.png]({{site.baseurl}}/images/new-table3.png){: .align-center}  
 Table 3. Cisco 8608 PID and description  
