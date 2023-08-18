@@ -681,7 +681,12 @@ For Redundant 8608, user can use “8608-SYS-R” PID in the order tool. System 
 For Non-Redundant 8608 configuration, user can use “8608-SYS-NR” PID. 8608 system is shipped with only one RP, one SC, one FS.  
  
 Let’s discuss with the default state when system boots up under redundant system.  
- RP0-SC0 together as one Domain 0(Active Pair) and RP1-SC1 as the other Domain 1(Standby Pair).  
+ RP0-SC0 together as one Domain 0(Active Pair) and RP1-SC1 as the other Domain 1(Standby Pair). 
+ 
+![new-active-standby.png]({{site.baseurl}}/images/new-active-standby.png){: .full}  
+Figure 23. Default Redundant state in Cisco 8608  
+{: .text-center}  
+ 
 ![redundancy.png]({{site.baseurl}}/images/redundancy.png){: .full}  
 Figure 23. Default Redundant state in Cisco 8608  
 {: .text-center}  
