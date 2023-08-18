@@ -281,8 +281,8 @@ The following table lists the amount of power available for Cisco 8600 series ro
 0/FT5             8608-FAN                 OPERATIONAL              NSHUT
 0/FT6             8608-FAN                 OPERATIONAL              NSHUT
 0/FT7             8608-FAN                 OPERATIONAL              NSHUT
-<mark>0/PM0             PSU3.2KW-ACPI            OPERATIONAL              NSHUT</mark>
-<mark>0/PM1             PSU3.2KW-ACPI            OPERATIONAL              NSHUT</mark>   
+0/PM0             <mark>PSU3.2KW-ACPI</mark>            OPERATIONAL              NSHUT
+0/PM1             <mark>PSU3.2KW-ACPI</mark>            OPERATIONAL              NSHUT   
 </code>
 </pre>
 </div>  
@@ -588,9 +588,9 @@ The following summary is the all scenarios for Native and Breakout solutions on 
 
 | Port | Breakout supported | Port Type                                                |
 |------|--------------------|----------------------------------------------------------|
-| 0    | Yes                | (400G Mode) 1x 400 GbE, 4x 100GbE, 2x 100 GbE <span style="background-color: #FF0000">(Disable Port 2, 3, 4)</span> |
+| 0    | Yes                | (400G Mode) 1x 400 GbE, 4x 100GbE, 2x 100 GbE **Disable Port 2, 3, 4)** |
 |      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
-| 1    | Yes                | (400G Mode) 1x 400 GbE, 4x 100GbE, 2x 100 GbE <span style="background-color: #FF0000">(Disable Port 5, 6, 7)</span> |
+| 1    | Yes                | (400G Mode) 1x 400 GbE, 4x 100GbE, 2x 100 GbE **(Disable Port 5, 6, 7)** |
 |      |                    | 1x 100 GbE, 1x 40 GbE, 1x 10 GbE with QSA                |
 | 2    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 3    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
@@ -601,13 +601,13 @@ The following summary is the all scenarios for Native and Breakout solutions on 
 | 8    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 9    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 10   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-|      |                    | 4x 25 GbE, 4x 10 GbE <span style="background-color: #FF0000">(Disable port 11)</span>                   |
+|      |                    | 4x 25 GbE, 4x 10 GbE **(Disable port 11)**                   |
 | 11   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 12   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-|      |                    | 4x 25 GbE, 4x 10 GbE <span style="background-color: #FF0000">(Disable port 13)</span>                   |
+|      |                    | 4x 25 GbE, 4x 10 GbE **(Disable port 13)**                   |
 | 13   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 14   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-|      |                    | 4x 25 GbE, 4x 10 GbE <span style="background-color: #FF0000">(Disable port 15)</span>                   |
+|      |                    | 4x 25 GbE, 4x 10 GbE **(Disable port 15)**                   |
 | 15   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |  
 
 
@@ -857,4 +857,4 @@ The Cisco 8608 is a unique platform that combines flexibility & reliability whil
 
 | Version | Data     | Author(s)     | Comments            |
 |---------|----------|---------------|---------------------|
-| 1       | August-22 | Chang Soo Lee | Initial Publication |  
+| 1       | August-22 | Chang Soo Lee | Initial Publication |
