@@ -9,7 +9,7 @@ tags:
   - iosxr
   - Cisco 8000
   - Performance
-position: hidden
+position: top
 excerpt: >-
   This video introduces RFC 2544 methodology and discusses if it's still valid
   to assess modern high end routers performance.
