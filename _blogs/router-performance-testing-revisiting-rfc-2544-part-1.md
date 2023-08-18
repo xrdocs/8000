@@ -19,5 +19,5 @@ excerpt: >-
 ---
 # Introduction
 
-RFC 2544 has been there for a while and has been the main technique used to benchmark router's performance.
-This first video introduces RFC 2544 methodology. It then covers the gaps between this lab measurement and the production networks reality. Last, factors determining ASICs packets-per-second are discussed.
+RFC 2544 was published in 1999 and has been the main technique used to benchmark router's performance.
+This first video introduces RFC 2544 methodology. It then covers the gaps between this lab measurement and the production networks reality. Last, factors determining ASICs packets-per-second and new modern high end routers requirements are discussed.
