@@ -67,6 +67,13 @@ Table 1. Cisco 8608 key components
 Table 2. Cisco 8608 Field Replaceable Units          
 {: .text-center}  
 
+
+
+
+
+
+
+
 **Understanding the Cisco 8608 Naming Logic** 
 
 ![8608name.png]({{site.baseurl}}/images/8608name.png){: .align-center}  
