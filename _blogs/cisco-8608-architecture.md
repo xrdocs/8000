@@ -743,22 +743,13 @@ If Active RP0 encounters a fatal fault or is removed, Standby RP immediately gai
 
 ![new figure24.png]({{site.baseurl}}/images/new figure24.png){: .full}  
 Figure 24. RP0 failure scenario in Cisco 8608    
-{: .text-center}  
-
-![RP Failure.png]({{site.baseurl}}/images/RP Failure.png){: .full}   
-Figure 24. RP0 failure scenario in Cisco 8608  
-{: .text-center}  
+{: .text-center}   
 
 Another scenario is the failure of the SC0 within Active pair, Active RP’s shelfmgr relinquish mastership if standby RP present and ready. Trigger SC reload regardless.    
 
 ![new-figure25.png]({{site.baseurl}}/images/new-figure25.png){: .full}  
 Figure 25. SC0 failure scenario in Cisco 8608    
 {: .text-center}   
-
-![SC Failure.png]({{site.baseurl}}/images/SC Failure.png){: .full}    
-Figure 25. SC0 failure scenario in Cisco 8608  
-{: .text-center}    
-
 
 The show platform CLI output will display the Domain states.  
 
