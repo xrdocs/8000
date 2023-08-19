@@ -685,11 +685,7 @@ Let’s discuss with the default state when system boots up under redundant syst
  
 ![new-active-standby.png]({{site.baseurl}}/images/new-active-standby.png){: .full}  
 Figure 23. Default Redundant state in Cisco 8608  
-{: .text-center}  
- 
-![redundancy.png]({{site.baseurl}}/images/redundancy.png){: .full}  
-Figure 23. Default Redundant state in Cisco 8608  
-{: .text-center}  
+{: .text-center}   
 
 In this default scenario, RP0 gains mastership and RP1 is in Backup state.
 Both SC0 and SC1 are packet processing and forwarding capability.  
