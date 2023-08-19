@@ -829,13 +829,8 @@ Up to 10 ms traffic drop is expected during active RP/SC Failover. No traffic lo
 
 ### Packet flow in the redundancy system  
 
-
 ![new-figure26.png]({{site.baseurl}}/images/new-figure26.png){: .full}   
-Figure 26. Data path flow with Redundant System  
-{: .text-center}  
-
-![PKT_Redun.png]({{site.baseurl}}/images/PKT_Redun.png){: .full}   
-Figure 26. Data path flow with Redundant System  
+Figure 26. Data path flow with Redundant System.   
 {: .text-center}  
 
 1.	Ingress traffic coming from the network into the MPA  
@@ -846,10 +841,6 @@ Figure 26. Data path flow with Redundant System
 6.	PHY will drop packets coming from standby SC1  
 
 ![new-figure27.png]({{site.baseurl}}/images/new-figure27.png){: .full}  
-Figure 27. Data path flow after old active pair (RP0/SC0) shutdown       
-{: .text-center}  
-
-![PKT_Non-Redun.png]({{site.baseurl}}/images/PKT_Non-Redun.png){: .full}   
 Figure 27. Data path flow after old active pair (RP0/SC0) shutdown       
 {: .text-center}  
 
