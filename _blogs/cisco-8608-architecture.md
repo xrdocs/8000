@@ -829,7 +829,8 @@ Up to 10 ms traffic drop is expected during active RP/SC Failover. No traffic lo
 
 ### Packet flow in the redundancy system  
 
-![new-figure26.png]({{site.baseurl}}/images/new-figure26.png){: .full} 
+
+![new-figure26.png]({{site.baseurl}}/images/new-figure26.png){: .full}   
 Figure 26. Data path flow with Redundant System  
 {: .text-center}  
 
