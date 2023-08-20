@@ -256,7 +256,7 @@ The following table lists the amount of power available for Cisco 8600 series ro
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh plat</span>
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh plat</span>
 0/RP0/CPU0        8608-RP(Active)          IOS XR RUN               NSHUT
 0/RP1/CPU0        8608-RP(Standby)         IOS XR RUN               NSHUT
 0/SC0             8608-SC0-128             OPERATIONAL              NSHUT
@@ -291,7 +291,7 @@ On this router, there are two Power Modules in Cisco 8608 chassis.
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh environment power</span>
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh environment power</span>
 ================================================================================
 CHASSIS LEVEL POWER INFO: 0
 ================================================================================
@@ -341,7 +341,7 @@ Total of Power Modules:       1122W/5.4A              1028W/18.8A
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh environment fan</span>
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh environment fan</span>
 =============================================================
                                               Fan speed (rpm)
 Location      FRU Type                        FAN_0    FAN_1   
@@ -366,7 +366,7 @@ The Cisco 8608 is launched with IOS XR 7.10.1.
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh version</span>
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh version</span>
 
 Cisco IOS XR Software, <mark>Version 7.10.1 LNT</mark>
 Copyright (c) 2013-2023 by Cisco Systems, Inc.
@@ -417,7 +417,7 @@ Native Interface Use-case: 86-MPA-4FH-M MPA at port 0 & 1 with native 100 GbE an
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>    
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh interfaces brief</span> 
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh interfaces brief</span> 
 
                Intf       Intf        LineP              Encap  MTU        BW
                Name       State       State               Type (byte)    (Kbps)
@@ -444,7 +444,7 @@ Breakout Interface Use-case: 86-MPA-14H2FH-M MPA at port 14 with 4x10 GbE on slo
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh interfaces brief</span> 
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh interfaces brief</span> 
 
                Intf       Intf        LineP              Encap  MTU        BW
                Name       State       State               Type (byte)    (Kbps)
@@ -519,7 +519,7 @@ There is a Cisco 8608 with the MPA in slot 1(86-MPA-14H2FH-M) and slot 2(86-MPA-
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#show controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span> 
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span> 
 ---------------------------------------------------------------------------
 Node ID: 0/RP0/CPU0
 Intf         Intf     NPU Slice IFG  Sys   VOQ   Flow       VOQ      Port 
@@ -696,7 +696,7 @@ Active/Standby Domain pair can be verified using “show platform domain” CLI.
 <pre class="highlight">
 <code>  
 
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh platform domain</span> 
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh platform domain</span> 
 ID  Name                Lead           HA Role        State
  --------------------------------------------------------------------------------
 1   <mark>DOMAIN_RP0_SC0      0/RP0/CPU0     ACTIVE         READY</mark> 
@@ -711,7 +711,7 @@ Active/Standby Domain pair can be also verified using “show platform domain de
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>   
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh platform domain  detail</span>   
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh platform domain  detail</span>   
 --------------------------------------------------------------------------------
 ID   Attribute       Value
 --------------------------------------------------------------------------------
@@ -752,7 +752,7 @@ The show platform CLI output will display the Domain states.
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code> 
-<span style="background-color: #A0CFEC">RP/0/RP1/CPU0:Cisco8608#sh platform</span>   
+RP/0/RP1/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh platform</span>   
 
 Node              Type                     State                    Config state
 --------------------------------------------------------------------------------
@@ -772,7 +772,7 @@ Active/Standby Domain pair can be verified using “show platform domain” CLI.
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-<span style="background-color: #A0CFEC">RP/0/RP1/CPU0:Cisco8608#sh platform domain</span> 
+RP/0/RP1/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh platform domain</span> 
 
 ID  Name                Lead           HA Role        State
  --------------------------------------------------------------------------------
@@ -788,7 +788,7 @@ Active/Standby Domain pair can be also verified using “show platform domain de
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-<span style="background-color: #A0CFEC">RP/0/RP0/CPU0:Cisco8608#sh platform domain  detail</span>    
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">sh platform domain  detail</span>    
 --------------------------------------------------------------------------------
 ID   Attribute       Value
 --------------------------------------------------------------------------------
