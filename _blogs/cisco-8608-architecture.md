@@ -593,14 +593,11 @@ The following summary is the all scenarios for Native and Breakout solutions on 
 | 7    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 8    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
 | 9    | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-| 10   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-|      |                    | 4x 25 GbE, 4x 10 GbE **(Disable port 11)**                   |
+| 10   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA<br>4x 25 GbE, 4x 10 GbE **(Disable port 11)**                   |
 | 11   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-| 12   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-|      |                    | 4x 25 GbE, 4x 10 GbE **(Disable port 13)**                   |
+| 12   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA<br>4x 25 GbE, 4x 10 GbE **(Disable port 13)**                   |
 | 13   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-| 14   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |
-|      |                    | 4x 25 GbE, 4x 10 GbE **(Disable port 15)**                   |
+| 14   | Yes                | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA<br>4x 25 GbE, 4x 10 GbE **(Disable port 15)**                   |
 | 15   | No                 | 1x 100 GbE, 1 x 40 GbE, 1x 10 GbE with QSA               |  
 
 
