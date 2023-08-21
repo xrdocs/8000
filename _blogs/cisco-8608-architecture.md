@@ -82,6 +82,28 @@ Table 2. Cisco 8608 Field Replaceable Units
 
 Let us have a quick refresher of the Cisco 8608’s PIDs and description.  
 
+| Item                 | HW Product ID   | Description                                                              |
+|----------------------|-----------------|--------------------------------------------------------------------------|
+| Redundant system     | 8608-SYS-R      | Cisco 8608 – 8-Slot Redundant Centralized Chassis Bundle                 |
+| Non-redundant system | 8608-SYS-NR     | Cisco 8608 – 8-Slot Nonredundant Centralized Chassis Bundle              |
+| 8608 Chassis only    | 8608-SYS        | Cisco 8608 – 8-Slot Centralized Chassis                                  |
+| RP                   | 8608-RP         | Cisco 8608 Route Processor                                               |
+| SC                   | 8608-SC0-128    | Cisco 8608 12.8T Switch Card                                             |
+| Fan Spinner          | 8608-FS         | Cisco 8608 Fan Spinner                                                   |
+| Fan                  | 8608-FAN        | Cisco 8608 Fan                                                           |
+| AC PSU               | PSU3.2KW-ACPI   | Cisco 3.2-kW AC Power Supply Unit                                        |
+| DC PSU               | PSU3.2KW-DCPI   | Cisco 3.2-kW DC Power Supply Unit                                        |
+| Combo MPA            | 86-MPA-14H2FH-M | Cisco 8608 16x100 GbE or 12x100 GbE+1x400 GbE or 8x100 GbE+2x400 GbE MPA |
+| 400G MPA             | 86-MPA-4FH-M    | Cisco 8608 4 x 400 GbE MPA                                               |
+| 10/25/50G MPA        | 86-MPA-24Z-M    | Cisco 8608 24 x 10 GbE/25 GbE/50 GbE MPA                                 |
+| Door Kit             | 8608-DRKT       | Cisco 8608 Door Kit                                                      |
+| Cable Mgmt Kit       | 8608-CBLMGMT    | Cisco 8608 Cable Management                                              |
+| Install Kit          | 8608-INSTKT     | Cisco 8608 Install Kit                                                   |
+| Rack Mount Kit       | 8608-RMBRKT     | Cisco 8608 Rack Mounting Bracket Kit                                     |  
+Table 3. Cisco 8608 PID and description    
+{: .text-center} 
+
+
 ![new-table3.png]({{site.baseurl}}/images/new-table3.png){: .align-center}  
 Table 3. Cisco 8608 PID and description  
 {: .text-center} 
