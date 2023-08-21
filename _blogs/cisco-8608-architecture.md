@@ -61,25 +61,7 @@ Table 1. Cisco 8608 key components
 
 **Investment Protection** – The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor and Modular Port Adaptors). Cisco is investing in the future of the platform for customers to be able to upgrade to the next generation.  
 
-**Flexibility** – Flexibility via MPA modularity and interface diversity. Native port speed support from 10 GbE upto 400 GbE. Wide variety of optics support for multiple customer use cases.
-
-
-| Items                        | Details                                                                                                                                                                             |                                                                                                                                   |
-|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| Route Processor (RP)         | "With 8608-SYS-R (Redundant system)                                                                                                                                                 | RPs are Field Replaceable (graceful OIR supported) with nil impact on routing or forwarding."                                     |
-|                              | With 8608-SYS-NR (Non-Redundant system) RP is essential for the system to be operational. Removing RP will shut down the system.                                                    |                                                                                                                                   |
-| Switch Card (SC)             | "With 8608-SYS-R (Redundant system)                                                                                                                                                 | SCs are Field Replaceable (graceful OIR supported) with almost nil to minimal impact (inflight packets only) on data forwarding." |
-|                              | With 8608-SYS-NR (Non-Redundant system) SC is essential for the system to be operationally forwarding traffic and not advisable to be removed when system is carrying live traffic. |                                                                                                                                   |
-| Power Supply Unit            | Power supplies are Field Replaceable (graceful OIR supported). Operates with N+N redundancy                                                                                         |                                                                                                                                   |
-| Fans                         | Fans are Field Replaceable (graceful OIR supported). Operates with N+1 redundancy                                                                                                   |                                                                                                                                   |
-| Fan Spinner                  | Fan spinners are Field Replaceable. Mandatory for 8608-SYS-NR (Non-Redundant system)                                                                                                |                                                                                                                                   |
-| Modular Port Adapters (MPAs) | MPAs are Field Replaceable (OIR supported).                                                                                                                                         |                                                                                                                                   |  
-
-Table 2. Cisco 8608 Field Replaceable Units          
-{: .text-center}  
-
-
-
+**Flexibility** – Flexibility via MPA modularity and interface diversity. Native port speed support from 10 GbE upto 400 GbE. Wide variety of optics support for multiple customer use cases.   
 ![new-table2.png]({{site.baseurl}}/images/new-table2.png){: .align-center}   
 Table 2. Cisco 8608 Field Replaceable Units          
 {: .text-center}  
@@ -97,12 +79,7 @@ Table 2. Cisco 8608 Field Replaceable Units
 
 ![8600-MPA name.png]({{site.baseurl}}/images/8600-MPA name.png){: .align-center}  
 
-Let us have a quick refresher of the Cisco 8608’s PIDs and description.  
-
-
-Table 3. Cisco 8608 PID and description     
-{: .text-center}  
-
+Let us have a quick refresher of the Cisco 8608’s PIDs and description.    
 
 ![new-table3.png]({{site.baseurl}}/images/new-table3.png){: .align-center}  
 Table 3. Cisco 8608 PID and description  
