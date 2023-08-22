@@ -3,9 +3,15 @@ published: false
 date: '2023-08-21 12:47 +0530'
 title: MPLS QoS on Cisco 8200/8800 routing Platforms
 author: Ram Mohan A. M.
-excerpt: This writeup explains the MPLS-QOS applications on Cisco 8000 router
+excerpt: >-
+  This writeup explains the MPLS-QOS applications on Cisco 8200/8800 routing
+  platforms
 tags:
   - iosxr
+  - Cisco 8800
+  - Cisco 8000
+  - Cisco 8200
+  - Silicon One
 ---
 
 ## Introduction
