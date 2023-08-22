@@ -10,9 +10,7 @@ tags:
 position: top
 excerpt: >-
   This second article about RFC 2544 explores performance in high performance
-  ASICs. It introduces the concept of sawtooth and speedup. It also explains why
-  performance can degrade for certain fixed packet sizes. Last, it also analyzes
-  the different tradeoffs chip designers have to solve.
+  ASICs.
 ---
 # Introduction
 
