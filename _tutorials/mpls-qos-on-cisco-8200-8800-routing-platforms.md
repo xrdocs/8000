@@ -55,7 +55,7 @@ Below scenarios explains the default DiffServ marking behaviours in Cisco 8000 s
 
 
 
--	MPLS-EXP is derived from the 3 MSBs of IP DSCP value in case of IPv4/IPv6  packet OR 3 bits of CoS value in case of VLAN tagged L2 packet at ingress-PE and this marking get applied to all the labels which are getting pushed from the ingress-PE node.
+-	MPLS-EXP is derived from the 3 MSBs of IP DSCP value in case of IPv4/IPv6  packet OR 3 bits of CoS value in case of VLAN tagged L2 packet at ingress PE and this marking applies to all the labels which are getting pushed on the ingress PE node (both service and transport labels)
 
 ![Screenshot 2023-08-22 at 10.50.14 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.50.14 AM.png)
 
