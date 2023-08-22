@@ -50,8 +50,8 @@ Below scenarios explains the default DiffServ marking behaviours in Cisco 8000 s
 ![Screenshot 2023-08-22 at 10.48.07 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.48.07 AM.png)
 
   
-**Note**:- _if TCAM based (ACL) classification is applied at ingress on the ingress-PE then MPLS-EXP does not get derived from IP DSCP and it always get zero. So in such deployment its must to have MPLS-EXP marking present  in either ingress or egress policy on that node._
-
+**Note**:- If TCAM based (ACL) classification is applied at ingress on the ingress PE then MPLS EXP does not get derived from IP DSCP and it always gets zero. In such deployment, it's required  to have MPLS-EXP marking present in either ingress or egress policy.
+{: .notice--info}
 
 
 
