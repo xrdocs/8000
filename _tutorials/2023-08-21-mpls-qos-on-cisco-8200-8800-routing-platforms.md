@@ -139,7 +139,8 @@ There is an enhancement in remarking behaviour for IP to MPLS flows recently and
 ### Pre 7.5.4/7.9.1 behaviour:
 
 
-![Screenshot 2023-08-22 at 11.12.51 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 11.12.51 AM.png)
+
+![Screenshot 2023-08-22 at 11.59.47 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 11.59.47 AM.png)
 
 
 As seen in above picture, remarked precedence value is not reflected in outgoing packet. But same time MPLS-EXP value got derived from the remarked precedence value at ingress.
@@ -147,8 +148,7 @@ As seen in above picture, remarked precedence value is not reflected in outgoing
 This behaviour is enhanced in 7.5.4/7.9.1 release and the behaviour is below,
 Outgoing labelled packet will have MPLS-EXP derived from the remarked precedence value and same time remarked precedence value is updated in IP header of the outgoing packet
 
-
-![Screenshot 2023-08-22 at 11.13.33 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 11.13.33 AM.png)
+![Screenshot 2023-08-22 at 11.59.58 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 11.59.58 AM.png)
 
 
 **Notes** :-
