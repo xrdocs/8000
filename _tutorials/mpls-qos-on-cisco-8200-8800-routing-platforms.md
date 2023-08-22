@@ -88,8 +88,8 @@ DiffServ Tunneling Pipe Mode uses two layers of QoS:
   - A per-core QoS, which is separate from that of the underlying IP packets. This per-core QoS PHB remains transparent to end users.
   - And EXPLICIT-NULL labelling is used here to provision the egress QoS based on provider’s DiffServ
 
-Any changes to label markings that occur within the SP’s cloud do not get propagated to the IP DSCP byte when the packet leaves the MPLS network.
-Pipe Mode differs from short-pipe mode in provisioning QOS at egress-PE node which is provisioned according to the SP’s explicit markings and remarking and not according to the customer’s IP Diffserv info although those are preserved.
+Any changes to label markings occuring within the SP’s cloud do not get propagated to the IP DSCP field when the packet leaves the MPLS network.
+Pipe Mode differs from short-pipe mode in provisioning QoS at egress-PE node which is provisioned according to the SP’s explicit marking and remarking; not to customer’s IP DiffServ info although those are preserved.
  
 ### Pipe mode on Cisco 8000 with policy application:
 
