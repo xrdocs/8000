@@ -18,7 +18,7 @@ position: hidden
 {% include toc icon="table" title="MPLS QoS on Cisco 8200 & 8800 series" %}
 
 ## Introduction
-Diffserv Tunnelling Modes introduces a new Per-Hop-Behaviour (PHB), which allows differentiated QoS in a provider’s network. The tunnelling mode is defined at the edge of the network, normally in the PE Label Edge Router (LER) (both ingress and egress). You may need to make changes in the P routers; you must also consider what occurs when the topmost label is removed from a packet due to Penultimate-Hop-Popping (PHP). It may be necessary to copy the MPLS EXP value from the top label that is being popped to the newly exposed label; this does not always apply to all tunnelling modes.
+DiffServ Tunnelling Modes introduces a new Per-Hop-Behaviour (PHB), which allows differentiated QoS in a provider’s network. The tunnelling mode is defined at the edge of the network, normally in the PE Label Edge Router (LER) (both ingress and egress). You may need to make changes in the P routers; you must also consider what occurs when the topmost label is removed from a packet due to Penultimate-Hop-Popping (PHP). It may be necessary to copy the MPLS EXP value from the top label that is being popped to the newly exposed label; this does not always apply to all tunnelling modes.
 
 ## PHP vs Diffserv
 In some cases (for example, a plain non-VPN MPLS network), the PHP action on the final P router can expose a plain IP packet when a packet with only one label is received. When this IP packet is received by the egress PE, it is not possible to classify the packet based on the MPLS EXP bits because there is no label anymore. In these situations, you must configure the egress PE router to advertise an explicit-null label. When the PHP action is performed on the P router, a label with a value of zero is sent, and with this special label you can mark the EXP bits as normally labelled packets, allowing the correct classification on the egress PE router.
@@ -69,14 +69,14 @@ Below scenarios explains the default DiffServ marking behaviours in Cisco 8000 s
 
 ![Screenshot 2023-08-22 at 10.54.00 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.54.00 AM.png)
 
-## Understand Uniform Mode
+## Understanding Uniform Mode
 
 Uniform Mode is generally used when the customer and SP share the same DiffServ domain, as in the case of an enterprise deploying its own MPLS VPN core.
-In Uniform Mode, which is the default mode, the first 3 bits of the IP ToS field (IP Precedence bits) automatically are mapped to the MPLS EXP bits on the ingress PE as labels are pushed onto the packets.
-If policers or any other mechanisms re-mark the MPLS EXP values within the MPLS core, these marking changes are propagated to lower-level labels and eventually are propagated to the IP DSCP field. (MPLS EXP bits are mapped to IP DSCP values at the egress PE).
+In Uniform Mode, which is the default mode, the first 3 bits of the IP ToS field (IP Precedence bits) are automatically mapped to the MPLS EXP bits on the ingress PE as labels are pushed onto the packets.
+If policers or any other mechanisms remark the MPLS EXP values within the MPLS core, these marking changes are propagated to lower-level labels and eventually are propagated to the IP DSCP field. (MPLS EXP bits are mapped to IP DSCP values at the egress PE).
  
-### Uniform mode on Cisco 8000 with policy applications:
-If any remarking operation is executed within the MPLS core then remarked MPLS-EXP in top label wont propagate to lower-level labels and corresponding bits to IP DSCP field in SF platforms. So below QOS operations are needed to achieve uniform mode in SF platforms,
+### Uniform mode with policy applications
+If any remarking operation is executed within the MPLS core then remarked MPLS EXP in top label wont propagate to lower-level labels and corresponding bits to IP DSCP field. So below QoS operations are needed to achieve uniform mode on Cisco 8000:
 
 ![Screenshot 2023-08-22 at 10.56.23 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.56.23 AM.png)
 
