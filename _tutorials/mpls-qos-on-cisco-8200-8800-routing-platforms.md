@@ -60,11 +60,11 @@ Below scenarios explains the default DiffServ marking behaviours in Cisco 8000 s
 ![Screenshot 2023-08-22 at 10.50.14 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.50.14 AM.png)
 
 
--	And same applies to swap labels on P-nodes
+-	And same applies to swap labels on P nodes
 
 ![Screenshot 2023-08-22 at 10.53.03 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.53.03 AM.png)
 
--	Egress PE/PHP node does not copy EXP bits correspondingly to IP DSCP bits or CoS bits while popping labels and it just pop out the label without altering IP dscp or L2 CoS bits  inside.
+-	Egress PE/PHP node does not copy EXP bits correspondingly to IP DSCP bits or CoS bits while popping labels and it just pop out the label without altering inner IP DSCP or L2 CoS bits.
 
 
 ![Screenshot 2023-08-22 at 10.54.00 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.54.00 AM.png)
