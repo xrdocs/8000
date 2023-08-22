@@ -7,7 +7,7 @@ tags:
   - iosxr
   - Cisco 8000
   - Performance
-position: hidden
+position: top
 excerpt: >-
   This second article about RFC 2544 explores performance in high performance
   ASICs. It introduces the concept of sawtooth and speedup. It also explains why
