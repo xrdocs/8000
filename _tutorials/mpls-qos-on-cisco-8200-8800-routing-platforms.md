@@ -81,12 +81,12 @@ If any remarking operation is executed within the MPLS core then remarked MPLS E
 ![Screenshot 2023-08-22 at 10.56.23 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.56.23 AM.png)
 
 
-## Understand Pipe Mode
+## Understanding Pipe Mode
 
-Diffserv Tunneling Pipe Mode uses two layers of QoS:
+DiffServ Tunneling Pipe Mode uses two layers of QoS:
   - An underlying QoS for the data, which remains unchanged when traversing the core.
   - A per-core QoS, which is separate from that of the underlying IP packets. This per-core QoS PHB remains transparent to end users.
-  - And EXPLICIT-NULL labelling is used here to provision the egress QOS based on provider’s Diffserv
+  - And EXPLICIT-NULL labelling is used here to provision the egress QoS based on provider’s DiffServ
 
 Any changes to label markings that occur within the SP’s cloud do not get propagated to the IP DSCP byte when the packet leaves the MPLS network.
 Pipe Mode differs from short-pipe mode in provisioning QOS at egress-PE node which is provisioned according to the SP’s explicit markings and remarking and not according to the customer’s IP Diffserv info although those are preserved.
