@@ -107,8 +107,55 @@ Remote labels are managed in egress encapsulation (EM) databases and local label
   - On *fixed system* , this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 64K . And total per NPU is 192K per NPU
   - On *distributed systems*, this table size can go up to 128K per NPU (1.5 slice-pairs).
   
-**Following illustrations explains how Egress Large encap programming varies for different topologies:*
+**Following illustrations explains how Egress Large encap programming varies for different topologies:**
 
+
+
+
+![Screenshot 2023-08-22 at 12.48.15 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.48.15 PM.png)
+
+
+-	In Topo-1, the egress interface facing the MPLS cloud is hosted on slice2 (slice-pair1)
+-	System has received 10k labelled prefixes.
+-	10K prefixes get programmed in LPM database.
+-	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pair, which is hosting the egress interface, here slice-pair1
+-	Local labels associated with each remote labels get programmed in CEM.
+
+
+
+
+![Screenshot 2023-08-22 at 12.49.28 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.49.28 PM.png)
+
+-	In Topo-2, System has received 10k labelled prefixes over 2 ECMP links where both links are hosted on same slice-pair (slice-pair1)
+-	10K prefixes get programmed in LPM database.
+-	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pair which is hosting the egress interfaces. So 20k encap entries get programmed on slice-pair1 since there are 2 ECMPs links on that slice-pair.
+-	Local labels associated with each remote labels get programmed in CEM.
+
+
+
+![Screenshot 2023-08-22 at 12.50.17 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.50.17 PM.png)
+
+-	In Topo-3, System has received 10k labelled prefixes over 2 ECMP links which are spread across 2 different slice-pairs (slice-pair0 & slice-pair2)
+-	10K prefixes get programmed in LPM database.
+-	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pairs which are hosting the egress interfaces. Here there is 1 link each on slice-pair0 & 2. So 10K encap entries get programmed on slice-pair0 & slice-pair2
+-	Local labels associated with each remote labels get programmed in CEM
+
+
+![Screenshot 2023-08-22 at 12.50.47 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.50.47 PM.png)
+
+-	In Topo-4, System has received 10k labelled prefixes over a bundle interface which has 2 member links distributed across 2 slice-pairs (slice-pair0 & 1)
+-	10K prefixes get programmed in LPM database.
+-	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pairs which is hosting the bundle member links. So 10k encap entries get programmed on each slice-pair0 & 1 . 
+-	Local labels associated with each remote labels get programmed in CEM
+
+
+![Screenshot 2023-08-22 at 12.51.23 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.51.23 PM.png)
+
+
+-	In Topo-5, System has received 10k labelled prefixes over a bundle interface which has 2 member links hosted on same slice-pair (slice-pair1)
+-	10K prefixes get programmed in LPM database.
+-	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pair which is hosting the bundle member links. So only 10k encap entries get programmed on slice-pair1. Member links from same slice-pair consume single encap entry for each labelled prefix.
+-	Local labels associated with each remote labels get programmed in CEM
 
 
 
