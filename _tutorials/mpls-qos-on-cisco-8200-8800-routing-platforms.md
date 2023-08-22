@@ -50,7 +50,7 @@ Below scenarios explains the default DiffServ marking behaviours in Cisco 8000 s
 ![Screenshot 2023-08-22 at 10.48.07 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.48.07 AM.png)
 
   
-**Note**:- If TCAM based (ACL) classification is applied at ingress on the ingress PE then MPLS EXP does not get derived from IP DSCP and it always gets zero. In such deployment, it's required  to have MPLS-EXP marking present in either ingress or egress policy.
+**Note**: If TCAM based (ACL) classification is applied at ingress on the ingress PE then MPLS EXP does not get derived from IP DSCP and it always gets zero. In such deployment, it's required  to have MPLS-EXP marking present in either ingress or egress policy.
 {: .notice--info}
 
 
@@ -95,21 +95,21 @@ Pipe Mode differs from short-pipe mode in provisioning QoS at egress-PE node whi
 
 ![Screenshot 2023-08-22 at 11.09.57 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 11.09.57 AM.png)
 
--	Since provider is maintaining its own diffserv , ingress remarking can be present at ingress-PE if provider want to serve based on different EXP value different from default derived value
--	And egress QOS policy application achieves traffic treatments based on provider’s diffserv on egress-PE
+-	Since provider is maintaining its own DiffServ , ingress remarking can be present at ingress PE if provider wants to serve based on different EXP values which are different from default derived value
+-	And egress QoS policy application achieves traffic treatment based on provider’s DiffServ on egress PE
 
 
 ## IP -> MPLS Flow: Understanding Behavioural change in remarking IP DSCP/Prec & MPLS-EXP
 There is an enhancement in remarking behaviour for IP to MPLS flows recently and the details are below,
 
-### Pre 7.5.4/7.9.1 behaviour:
+### Pre IOS XR 7.5.4/7.9.1 behaviour:
 
 
 
 ![Screenshot 2023-08-22 at 11.59.47 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 11.59.47 AM.png)
 
 
-As seen in above picture, remarked precedence value is not reflected in outgoing packet. But same time MPLS-EXP value got derived from the remarked precedence value at ingress.
+As seen in above picture, remarked precedence value is not reflected in outgoing packet. But at same time, MPLS-EXP value got derived from the remarked precedence value at ingress.
 
 This behaviour is enhanced in 7.5.4/7.9.1 release and the behaviour is below,
 Outgoing labelled packet will have MPLS-EXP derived from the remarked precedence value and same time remarked precedence value is updated in IP header of the outgoing packet
