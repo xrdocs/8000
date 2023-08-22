@@ -36,14 +36,14 @@ The MPLS network support of Diffserv specification defines these tunnelling mode
 ![Screenshot 2023-08-22 at 10.43.37 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.43.37 AM.png)
 
 
-3 MSB bits of IP ToS bits maps correspondingly to the MPLS-EXP bits. And same applied for L2 VLAN CoS bits to MPLS-EXP bits . And mapping for IP DSCP/Precedence values to MPLS EXP values are given below,
+3 most significant bits (MSB) of IP ToS bits maps correspondingly to the MPLS-EXP bits. And same applied for L2 VLAN CoS bits to MPLS-EXP bits . And mapping for IP DSCP/Precedence values to MPLS EXP values are given below:
 
 ![Screenshot 2023-08-22 at 10.42.33 AM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 10.42.33 AM.png)
 
 
-## Default Diffserv transition behaviour in Cisco 8000 platforms:
+## Default Diffserv transition behaviour in Cisco 8000 platforms
 
-Below scenarios explains the default diffserv marking behaviours in SF platforms for packet paths like IP->MPLS, L2->MPLS, MPLS->MPLS, MPLS->IP and MPLS->L2 transitions without any marking policy applied on the device,
+Below scenarios explains the default DiffServ marking behaviours in Cisco 8000 serues for packet paths like IP->MPLS, L2->MPLS, MPLS->MPLS, MPLS->IP and MPLS->L2 transitions without any marking policy applied on the device:
  
 -	MPLS-EXP is derived from the 3 MSBs of IP DSCP value in case of IPv4/IPv6  packet OR 3 bits of CoS value in case of VLAN tagged L2 packet while imposing label at the ingress PE node.  
 
