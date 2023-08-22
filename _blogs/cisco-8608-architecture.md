@@ -69,6 +69,8 @@ Table 2. Cisco 8608 Field Replaceable Units
 
 ## Cisco 8608 PIN(Place In Network) Use cases  
 
+### Core and Peering  
+
 ![PIN.png]({{site.baseurl}}/images/PIN.png){: .full}  
 
  As the user applications are becoming more dynamic, requiring differentiated user experiences network resources needs to be optimized in terms of power and real estate. Cisco 8608 has been designed to cater the market requirement for total system bandwidth, port diversity, and full redundancy. The requirements far exceeded what could be accomplished with a single NPU.  Cisco 8608 supports 12.8 Tbps of forwarding capacity. It provides 32 ports of high speed 400G including 400G Bright ZR+ or 128 ports of 100G or 192 ports of low speed 10G/25G in the system.  
