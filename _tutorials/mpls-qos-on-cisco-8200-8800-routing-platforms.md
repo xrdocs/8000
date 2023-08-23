@@ -33,14 +33,14 @@ The MPLS network support of DiffServ specification defines these tunnelling mode
 
 ## IP Precedence/DSCP to MPLS-EXP mapping
 
-![mpls-qos-tosBits.png]({{site.baseurl}}/images/mpls-qos-tosBits.png){: .align-center}
 
-
+![tos-bits.png]({{site.baseurl}}/images/tos-bits.png){: .align-center}
 
 3 most significant bits (MSB) of IP ToS bits maps correspondingly to the MPLS-EXP bits. And same applied for L2 VLAN CoS bits to MPLS-EXP bits . And mapping for IP DSCP/Precedence values to MPLS EXP values are given below:
 
-![mpls-qos-tos-exp-mapping.png]({{site.baseurl}}/images/mpls-qos-tos-exp-mapping.png){: .align-center}
 
+
+![tos-exp-mapping.png]({{site.baseurl}}/images/tos-exp-mapping.png){: .align-center}
 
 ## Default DiffServ transition behaviour in Cisco 8000 platforms
 
