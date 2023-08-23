@@ -15,7 +15,7 @@ excerpt: >-
   This blog details Cisco’s TE++ Auto-bandwidth Capacity feature using a Cisco
   8000 environment.
 ---
-{% include toc title="Demonstrating MPLS-TE Auto-Bandwidth TE++ on Cisco 8000" %}
+{% include toc title="MPLS-TE Auto-Bandwidth TE++ on Cisco 8000" %}
 
 # Introduction
 
