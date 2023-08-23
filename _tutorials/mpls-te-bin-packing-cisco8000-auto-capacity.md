@@ -40,9 +40,9 @@ Should another 800Mbps be requested on the network, we will not be able to turn 
 
 We do this with a feature called “auto-capacity”.  You will find references to Container LSP or TE++ in other vendors’ documents, but the concept is the same. As traffic demands grow and shrink, we will use LSP splitting functionality to efficiently fill our total reservable bandwidth, i.e bin-packing the links.  
 
-We run this customer demo on Cisco 8000 series routers which are powered by Silicon One. The topology is the following:
+For this article, we run a customer demo using Cisco 8000 series routers which are powered by Silicon One ASICs. The topology is the following:
 
-
+![mpls-te-lab-topology.png]({{site.baseurl}}/images/mpls-te-lab-topology.png)
 
 Here is the relevant part of R1’s configuration where all the magic (dynamic tunnels) happens:
 
@@ -310,7 +310,7 @@ If you are interested in running these tests yourself, compare it to an example 
 
 # Conclusion
 
-Cisco auto-capacity features handles bin-backing automatically without operator intervention. This article covered a practical example which was used for a customer demonstration.  Experiment with the timers that work for your network traffic demands.
+Cisco auto-capacity features handles bin-backing automatically without operator intervention. This article covered a practical example which was used for a customer demonstration.  Experiment with the timers that work for your network traffic demands. The configuration guide, available on cisco.com covers additional references: [Configuring Auto-Bandwidth TE++ on Cisco 8000](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/mpls/710x/b-mpls-cg-cisco8000-710x/implementing-mpls-traffic-engineering.html#concept_jgv_qld_sxb)
 
 # Acknowledgement
 
