@@ -33,13 +33,13 @@ The MPLS network support of DiffServ specification defines these tunnelling mode
 
 ## IP Precedence/DSCP to MPLS-EXP mapping
 
-![mpls-qos-tosBits.png]({{site.baseurl}}/images/mpls-qos-tosBits.png)
+![mpls-qos-tosBits.png]({{site.baseurl}}/images/mpls-qos-tosBits.png){: .align-center}
 
 
 
 3 most significant bits (MSB) of IP ToS bits maps correspondingly to the MPLS-EXP bits. And same applied for L2 VLAN CoS bits to MPLS-EXP bits . And mapping for IP DSCP/Precedence values to MPLS EXP values are given below:
 
-![mpls-qos-tos-exp-mapping.png]({{site.baseurl}}/images/mpls-qos-tos-exp-mapping.png)
+![mpls-qos-tos-exp-mapping.png]({{site.baseurl}}/images/mpls-qos-tos-exp-mapping.png){: .align-center}
 
 
 ## Default DiffServ transition behaviour in Cisco 8000 platforms
@@ -48,7 +48,7 @@ Below scenarios explains the default DiffServ marking behaviours in Cisco 8000 s
  
 -	MPLS-EXP is derived from the 3 MSBs of IP DSCP value in case of IPv4/IPv6  packet OR 3 bits of CoS value in case of VLAN tagged L2 packet while imposing label at the ingress PE node.  
 
-![mpls-qos-1.1.png]({{site.baseurl}}/images/mpls-qos-1.1.png)
+![mpls-qos-1.1.png]({{site.baseurl}}/images/mpls-qos-1.1.png){: .align-center}
 
 
   
@@ -59,19 +59,19 @@ Below scenarios explains the default DiffServ marking behaviours in Cisco 8000 s
 
 -	MPLS-EXP is derived from the 3 MSBs of IP DSCP value in case of IPv4/IPv6  packet OR 3 bits of CoS value in case of VLAN tagged L2 packet at ingress PE and this marking applies to all the labels which are getting pushed on the ingress PE node (both service and transport labels)
 
-![mpls-qos-1.2.png]({{site.baseurl}}/images/mpls-qos-1.2.png)
+![mpls-qos-1.2.png]({{site.baseurl}}/images/mpls-qos-1.2.png){: .align-center}
 
 
 
 -	And same applies to swap labels on P nodes
 
-![mpls-qos-1.3.png]({{site.baseurl}}/images/mpls-qos-1.3.png)
+![mpls-qos-1.3.png]({{site.baseurl}}/images/mpls-qos-1.3.png){: .align-center}
 
 
 -	Egress PE/PHP node does not copy EXP bits correspondingly to IP DSCP bits or CoS bits while popping labels and it just pop out the label without altering inner IP DSCP or L2 CoS bits.
 
 
-![mpls-qos-1.4.png]({{site.baseurl}}/images/mpls-qos-1.4.png)
+![mpls-qos-1.4.png]({{site.baseurl}}/images/mpls-qos-1.4.png){: .align-center}
 
 
 ## Understanding Uniform Mode
@@ -99,7 +99,7 @@ Pipe Mode differs from short-pipe mode in provisioning QoS at egress-PE node whi
  
 ### Pipe mode on Cisco 8000 with policy application:
 
-![mpls-qos-pipe-mode.png]({{site.baseurl}}/images/mpls-qos-pipe-mode.png)
+![mpls-qos-pipe-mode.png]({{site.baseurl}}/images/mpls-qos-pipe-mode.png){: .align-center}
 
 
 -	Since provider is maintaining its own DiffServ , ingress remarking can be present at ingress PE if provider wants to serve based on different EXP values which are different from default derived value
@@ -111,7 +111,7 @@ There is an enhancement in remarking behaviour for IP to MPLS flows recently and
 
 ### Pre IOS XR 7.5.4/7.9.1 behaviour
 
-![mpls-qos-enhance-1.png]({{site.baseurl}}/images/mpls-qos-enhance-1.png)
+![mpls-qos-enhance-1.png]({{site.baseurl}}/images/mpls-qos-enhance-1.png){: .align-center}
 
 
 
@@ -119,7 +119,7 @@ As seen in above picture, remarked precedence value is not reflected in outgoing
 
 This behaviour is enhanced in IOS XR 7.5.4 and 7.9.1 releases and the behaviour is now the following: Outgoing labelled packet will have MPLS-EXP derived from the remarked precedence value and at same time remarked precedence value is updated in IP header of the outgoing packet
 
-![mpls-qos-enhance-2.png]({{site.baseurl}}/images/mpls-qos-enhance-2.png)
+![mpls-qos-enhance-2.png]({{site.baseurl}}/images/mpls-qos-enhance-2.png){: .align-center}
 
 
 **Notes** :
