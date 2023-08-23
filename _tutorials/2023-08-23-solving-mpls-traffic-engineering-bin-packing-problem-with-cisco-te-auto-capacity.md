@@ -21,5 +21,16 @@ Building point-to-point Traffic Engineering LSPs can lead to inefficient total n
 
 This blog details Cisco’s TE++ Auto-bandwidth Capacity feature using a Cisco 8000 environment.
 
+# Problem Description
 
+In MPLS Traffic Engineering, a Bin-Packing problem is the inability to efficiently allocate the total reserved bandwidth. Observe the following:
+
+![mpls-te-topology.png]({{site.baseurl}}/images/mpls-te-topology.png)
+
+Router A sends a 300Mbps RSVP reservation into the network destined somewhere beyond R4. Router R1 has three paths to pick from:
+1. Path-1: R1-R4, with 1Gbps of reservable bandwidth
+2. Path-2: R1-R2-R4, with 1.5Gbps of reservable bandwidth
+3. Path-3: R1-R3-R4, with 1.5Gbps of reservable bandwidth
+
+Let’s say the network is setup that Path-1 is chosen.  700Mbps of reservable bandwidth remains on Path-1. Now Router B sends an 800Mbps RSVP reservation into the network.  Since Path-1 is out of reservable capacity (300Mbps + 800Mbps > 1Gbps), Path-2 (could be Path-3, but it does not matter) is chosen and 700Mbps remain.  When an additional 800Mbps flow is requested, we face a similar problem on Path-2 (800Mbps + 800Mbps > 1.5Gbps), Path-3 will be the only remaining choice.  Given our demands we have booked 1.9Gbps of reservations on a 3.5Gbps of available capacity. 
 
