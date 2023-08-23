@@ -34,7 +34,7 @@ The MPLS network support of DiffServ specification defines these tunnelling mode
 ## IP Precedence/DSCP to MPLS-EXP mapping
 
 
-![tos-bits.png]({{site.baseurl}}/images/tos-bits.png){: .align-center}
+![tos-bits-1.png]({{site.baseurl}}/images/tos-bits-1.png){: .align-center}
 
 3 most significant bits (MSB) of IP ToS bits maps correspondingly to the MPLS-EXP bits. And same applied for L2 VLAN CoS bits to MPLS-EXP bits . And mapping for IP DSCP/Precedence values to MPLS EXP values are given below:
 
