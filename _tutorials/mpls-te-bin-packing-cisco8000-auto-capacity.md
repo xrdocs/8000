@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 date: '2023-08-23 10:13 +0200'
 title: >-
   Solving MPLS Traffic Engineering Bin-Packing problem with Cisco TE++
