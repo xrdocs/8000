@@ -98,8 +98,221 @@ What are we doing here?  We replaced routers A and B with a traffic generator.  
 5. As traffic demands diminish, start merging tunnels together
 6. Evaluate this every 5 minutes
 
-Let us see this in action: 
+Let us see it in action:
 Sending ~200Mbps (on the interface and into tunnel Cisco) into the network:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:Cisco-8000#monitor interface for0/3/0/3 tunnel-te Cisco
+Fri Aug 19 04:00:42.780 UTC
+Cisco-8000                  Monitor Time: 00:00:24          SysUptime: 481:46:44
+Protocol:General
+Interface             In(bps)      Out(bps)     InBytes/Delta  OutBytes/Delta
+Fo0/3/0/3              1000/  0%   196.0M/  0%   231.4M/176        7.5T/49.0M 
+Cisco                     0/ --%   189.5M/ --%        0/0         30.2G/48.1M 
+Quit='q',     Clear='c',    Freeze='f', Thaw='t',
+Next set='n', Prev set='p', Bytes='y',  Packets='k'
+(General='g', IPv4 Uni='4u', IPv4 Multi='4m', IPv6 Uni='6u', IPv6 Multi='6m')
+</code>
+</pre>
+</div>
 
+We do have a RVSP LSP built:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:Cisco-8000#sh rsvp reservation                         
+Fri Aug 19 04:03:55.778 UTC
+Destination Add DPort      Source Add SPort Pro   Input IF Sty Serv   Rate Burst
+--------------- ----- --------------- ----- --- ---------- --- ---- ------ -----
+   10.100.100.4 33231    10.100.100.1     9   0  Fo0/3/0/3  SE LOAD   169M    1K
+RP/0/RP0/CPU0:Cisco-8000#
+RP/0/RP0/CPU0:Cisco-8000#sh rsvp reservation detail                  
+Fri Aug 19 04:06:14.844 UTC
+RESV: IPv4-LSP Session addr: 10.100.100.4. TunID: 33231. LSPId: 9.
+ Source addr: 10.100.100.1. ExtID: 10.100.100.1.
+ Input adjusted interface: Fo0/3/0/3. Input physical interface: Fo0/3/0/3.
+ Next hop: 10.100.14.4 (lih: 0x9).
+ Style: Shared-Explicit. Service: Controlled-Load.
+ Rate: 169110000 bits/sec. Burst: 1K bytes. Peak: 169110K bits/sec.
+ MTU min: 40, max: 1500 bytes. 
+ Flags: None.
+ State expires in 359.188 sec.
+ Policy:  Accepted. Policy source(s): Default.
+ Header info: RSVP TTL=254. IP TTL=254. Flags: 0x1. TOS=0xc0.
+ Resource: 
+  Labels: Outgoing downstream: 3.
+RP/0/RP0/CPU0:Cisco-8000#
+</code>
+</pre>
+</div>
+
+Let us look at the how many tunnels (should be one, i.e. <200Mbps of nominal/starting bandwidth).  Notice it is using the 1Gbps interface in the middle of our topology – Fo0/3/0/3:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:ios#sh mpls traffic-eng tunnels signame 
+Fri Aug 19 04:07:15.537 UTC
+TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name         
+----------- ------------------ ------------------ --------- --------------------
+33231:9              N/A:N/A      Fo0/3/0/3:i-nul    169110 Cisco               
+Displayed 1 (of 1) heads, 0 (of 0) midpoints, 0 (of 0) tails
+Displayed 1 up, 0 down, 0 recovering, 0 recovered heads
+RP/0/RP0/CPU0:ios#
+</code>
+</pre>
+</div>
+
+Let us add 1Gbps of traffic to fill our reservable 1Gbps worth of bandwidth:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+ios                  Monitor Time: 00:01:46          SysUptime: 482:03:11
+
+Protocol:General
+Interface             In(bps)      Out(bps)     InBytes/Delta  OutBytes/Delta
+Fo0/3/0/3              1000/  0%   979.9M/  2%   231.6M/94         7.5T/245.1M
+Cisco                     0/ --%   216.9M/ --%        0/0         63.6G/0     
+
+Quit='q',     Clear='c',    Freeze='f', Thaw='t',
+Next set='n', Prev set='p', Bytes='y',  Packets='k'
+(General='g', IPv4 Uni='4u', IPv4 Multi='4m', IPv6 Uni='6u', IPv6 Multi='6m')
+</code>
+</pre>
+</div>
+
+And we now check tunnels:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:ios#sh mpls traffic-eng tunnels signame         
+Fri Aug 19 04:17:59.483 UTC
+
+TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name         
+----------- ------------------ ------------------ --------- --------------------
+33231:13             N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco               
+33232:5              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-1             
+33233:4              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-2             
+33234:3              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-3             
+33235:3              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-4  
+
+
+RP/0/RP0/CPU0:ios#sh rsvp reservation                         
+Fri Aug 19 04:19:14.586 UTC
+Destination Add DPort      Source Add SPort Pro   Input IF Sty Serv   Rate Burst
+--------------- ----- --------------- ----- --- ---------- --- ---- ------ -----
+   10.100.100.4 33231    10.100.100.1    13   0  Fo0/3/0/3  SE LOAD   150M    1K
+   10.100.100.4 33232    10.100.100.1     5   0  Fo0/3/0/3  SE LOAD   150M    1K
+   10.100.100.4 33233    10.100.100.1     4   0  Fo0/3/0/3  SE LOAD   150M    1K
+   10.100.100.4 33234    10.100.100.1     3   0  Fo0/3/0/3  SE LOAD   150M    1K
+   10.100.100.4 33235    10.100.100.1     3   0  Fo0/3/0/3  SE LOAD   150M    1K
+   10.100.100.4 33236    10.100.100.1     4   0  Fo0/3/0/3  SE LOAD   150M    1K
+   10.100.100.4 33237    10.100.100.1     3   0  Hu0/3/0/6  SE LOAD   150M    1K
+   10.100.100.4 33238    10.100.100.1     2   0  Hu0/3/0/6  SE LOAD   150M    1K
+   10.100.100.4 33239    10.100.100.1     2   0  Fo0/3/0/0  SE LOAD   150M    1K
+</code>
+</pre>
+</div>
+
+If you quickly do the math 5x150Mbps = 750Mbps as we continue packing this link.
+
+Let us add 3Gbps of traffic to exhaust our present link capacity and start packing the other two links and you will see the following in a few min:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:ios#sh mpls traffic-eng tunnels signame 
+Fri Aug 19 04:39:16.315 UTC
+
+TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name         
+----------- ------------------ ------------------ --------- --------------------
+33231:13             N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco               
+33232:5              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-1             
+33233:4              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-2             
+33234:7              N/A:N/A      Hu0/3/0/6:24118    150000 Cisco-3             
+33235:3              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-4             
+33236:6              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-5             
+33237:7              N/A:N/A      Hu0/3/0/6:24119    150000 Cisco-6             
+33238:3              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-7             
+33239:4              N/A:N/A      Hu0/3/0/6:24123    150000 Cisco-8             
+33240:2              N/A:N/A      Hu0/3/0/6:24117    150000 Cisco-9             
+33241:2              N/A:N/A      Fo0/3/0/0:24010    150000 Cisco-10            
+33242:2              N/A:N/A      Hu0/3/0/6:24121    150000 Cisco-11            
+33243:2              N/A:N/A      Hu0/3/0/6:24122    150000 Cisco-12            
+33244:2              N/A:N/A      Hu0/3/0/6:24124    150000 Cisco-13            
+33245:2              N/A:N/A      Fo0/3/0/0:24013    150000 Cisco-14            
+33246:2              N/A:N/A      Fo0/3/0/0:24014    150000 Cisco-15            
+Displayed 16 (of 16) heads, 0 (of 0) midpoints, 0 (of 0) tails
+Displayed 16 up, 0 down, 0 recovering, 0 recovered heads
+RP/0/RP0/CPU0:ios#
+</code>
+</pre>
+</div>
+
+All 16 tunnels have been constructed and two other links are being used (Fo0/3/0/0 and Hu0/3/0/6).  If you wait, the bandwidth per tunnel will go up.  
+
+Let us lower the traffic to 500Mbps to make sure we can merge the tunnels back.
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:ios#monitor interface for0/3/0/3 tunnel-te Cisco
+Fri Aug 19 05:16:56.585 UTC
+ios                  Monitor Time: 00:00:36          SysUptime: 483:03:10
+Protocol:General
+Interface             In(bps)      Out(bps)     InBytes/Delta  OutBytes/Delta
+Fo0/3/0/3              1000/  0%   490.1M/  1%   232.4M/88         7.8T/122.5M
+Cisco                     0/ --%   223.0M/ --%        0/0         93.1G/0     
+Quit='q',     Clear='c',    Freeze='f', Thaw='t',
+Next set='n', Prev set='p', Bytes='y',  Packets='k'
+(General='g', IPv4 Uni='4u', IPv4 Multi='4m', IPv6 Uni='6u', IPv6 Multi='6m’)q
+</code>
+</pre>
+</div>
+
+Our expectation is that after a few minutes we should be down to 3 tunnels (3x200Mbps since we are sending ~500Mbps into the tunnel):
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:ios#sh mpls traffic-eng tunnels signame 
+Fri Aug 19 05:15:30.784 UTC
+TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name         
+----------- ------------------ ------------------ --------- --------------------
+33231:22             N/A:N/A      Fo0/3/0/3:i-nul    178350 Cisco               
+33254:2              N/A:N/A      Fo0/3/0/3:i-nul    178350 Cisco-1             
+33255:2              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-2             
+Displayed 3 (of 3) heads, 0 (of 0) midpoints, 0 (of 0) tails
+Displayed 3 up, 0 down, 0 recovering, 0 recovered heads
+RP/0/RP0/CPU0:ios#
+</code>
+</pre>
+</div>
+
+If you are interested in running these tests yourself, compare it to an example of a timeline we observed.
+
+|     Time elapsed in min    |     Traffic rate      |     Tunnels    |
+|----------------------------|-----------------------|----------------|
+|     0                      |     1Gbps             |     1          |
+|     +5                     |     1Gbps             |     5          |
+|     +1                     |     3Gbps             |     5          |
+|     +11                    |     3Gbps             |     14         |
+|     +4                     |     3Gbps             |     16         |
+|     +4                     |     0.5Gbps           |     16         |
+|     +1                     |     0.5Gbps           |     14         |
+|     +11                    |     0.5Gbps           |     4          |
+|     +13                    |     0.5Gbps           |     3          |
+
+# Conclusion
+
+Cisco auto-capacity features handles bin-backing automatically without operator intervention. This article covered a practical example which was used for a customer demonstration.  Experiment with the timers that work for your network traffic demands.
+
+# Acknowledgement
+
+This article has been co-written with Thomas Peiyao Wang, Technical Marketing Engineer at Cisco. I'd like to thanks Thomas for his support during the lab tests.
 
