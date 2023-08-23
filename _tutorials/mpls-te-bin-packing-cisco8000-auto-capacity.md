@@ -19,7 +19,7 @@ excerpt: >-
 
 Building point-to-point Traffic Engineering LSPs can lead to inefficient total network bandwidth utilization. Cisco’s TE++ Auto-bandwidth Capacity allows an ingress router to interact with the other routers in the network, locate additional available bandwidth and automatically create parallel LSPs to acquire all the necessary network resources possible until they are no longer needed.  This blog details one of the possible applications of this feature using a Cisco 8000 environment.
 
-This blog details Cisco’s TE++ Auto-bandwidth Capacity feature using a Cisco 8000 environment.
+This blog post details Cisco’s TE++ Auto-bandwidth Capacity feature using a Cisco 8000 environment.
 
 # Problem Description
 
@@ -154,14 +154,14 @@ Let us look at the how many tunnels (should be one, i.e. <200Mbps of nominal/sta
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:ios#sh mpls traffic-eng tunnels signame 
+RP/0/RP0/CPU0:Cisco-8000#sh mpls traffic-eng tunnels signame 
 Fri Aug 19 04:07:15.537 UTC
 TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name         
 ----------- ------------------ ------------------ --------- --------------------
 33231:9              N/A:N/A      Fo0/3/0/3:i-nul    169110 Cisco               
 Displayed 1 (of 1) heads, 0 (of 0) midpoints, 0 (of 0) tails
 Displayed 1 up, 0 down, 0 recovering, 0 recovered heads
-RP/0/RP0/CPU0:ios#
+RP/0/RP0/CPU0:Cisco-8000#
 </code>
 </pre>
 </div>
@@ -171,7 +171,7 @@ Let us add 1Gbps of traffic to fill our reservable 1Gbps worth of bandwidth:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-ios                  Monitor Time: 00:01:46          SysUptime: 482:03:11
+Cisco-8000                  Monitor Time: 00:01:46          SysUptime: 482:03:11
 
 Protocol:General
 Interface             In(bps)      Out(bps)     InBytes/Delta  OutBytes/Delta
@@ -190,7 +190,7 @@ And we now check tunnels:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:ios#sh mpls traffic-eng tunnels signame         
+RP/0/RP0/CPU0:Cisco-8000#sh mpls traffic-eng tunnels signame         
 Fri Aug 19 04:17:59.483 UTC
 
 TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name         
@@ -202,7 +202,7 @@ TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name
 33235:3              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-4  
 
 
-RP/0/RP0/CPU0:ios#sh rsvp reservation                         
+RP/0/RP0/CPU0:Cisco-8000#sh rsvp reservation                         
 Fri Aug 19 04:19:14.586 UTC
 Destination Add DPort      Source Add SPort Pro   Input IF Sty Serv   Rate Burst
 --------------- ----- --------------- ----- --- ---------- --- ---- ------ -----
@@ -226,7 +226,7 @@ Let us add 3Gbps of traffic to exhaust our present link capacity and start packi
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:ios#sh mpls traffic-eng tunnels signame 
+RP/0/RP0/CPU0:Cisco-8000#sh mpls traffic-eng tunnels signame 
 Fri Aug 19 04:39:16.315 UTC
 
 TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name         
@@ -249,7 +249,7 @@ TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name
 33246:2              N/A:N/A      Fo0/3/0/0:24014    150000 Cisco-15            
 Displayed 16 (of 16) heads, 0 (of 0) midpoints, 0 (of 0) tails
 Displayed 16 up, 0 down, 0 recovering, 0 recovered heads
-RP/0/RP0/CPU0:ios#
+RP/0/RP0/CPU0:Cisco-8000#
 </code>
 </pre>
 </div>
@@ -261,9 +261,9 @@ Let us lower the traffic to 500Mbps to make sure we can merge the tunnels back.
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:ios#monitor interface for0/3/0/3 tunnel-te Cisco
+RP/0/RP0/CPU0:Cisco-8000#monitor interface for0/3/0/3 tunnel-te Cisco
 Fri Aug 19 05:16:56.585 UTC
-ios                  Monitor Time: 00:00:36          SysUptime: 483:03:10
+Cisco-8000                  Monitor Time: 00:00:36          SysUptime: 483:03:10
 Protocol:General
 Interface             In(bps)      Out(bps)     InBytes/Delta  OutBytes/Delta
 Fo0/3/0/3              1000/  0%   490.1M/  1%   232.4M/88         7.8T/122.5M
@@ -280,7 +280,7 @@ Our expectation is that after a few minutes we should be down to 3 tunnels (3x20
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:ios#sh mpls traffic-eng tunnels signame 
+RP/0/RP0/CPU0:Cisco-8000#sh mpls traffic-eng tunnels signame 
 Fri Aug 19 05:15:30.784 UTC
 TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name         
 ----------- ------------------ ------------------ --------- --------------------
@@ -289,7 +289,7 @@ TunID:LSPID Ingress Intf:Label  Egress Intf:Label Bandwidth Tunnel Name
 33255:2              N/A:N/A      Fo0/3/0/3:i-nul    150000 Cisco-2             
 Displayed 3 (of 3) heads, 0 (of 0) midpoints, 0 (of 0) tails
 Displayed 3 up, 0 down, 0 recovering, 0 recovered heads
-RP/0/RP0/CPU0:ios#
+RP/0/RP0/CPU0:Cisco-8000#
 </code>
 </pre>
 </div>
