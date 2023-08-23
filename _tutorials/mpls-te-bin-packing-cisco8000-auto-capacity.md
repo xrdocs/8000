@@ -9,7 +9,7 @@ tags:
   - Cisco 80000
   - TE++
   - Auto-bandwidth Capacity
-position: hidden
+position: top
 author: Bradley Riapolov
 excerpt: >-
   This blog details Cisco’s TE++ Auto-bandwidth Capacity feature using a Cisco
