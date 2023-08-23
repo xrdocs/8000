@@ -76,8 +76,7 @@ Table 2. Cisco 8608 Field Replaceable Units
  
 ### IP and Optical Convergence - The Journey Ahead    
 
-![RON2.png]({{site.baseurl}}/images/RON2.png){: .full}  
-
+![RON3.png]({{site.baseurl}}/images/RON3.png){: .full}  
 
 ![new RON.png]({{site.baseurl}}/images/new RON.png){: .full}   
 
