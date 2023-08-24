@@ -1,12 +1,40 @@
 ---
 published: false
 date: '2023-08-22 12:04 +0530'
-title: >-
-  Cisco 8000 Q100/Q200 Hardware resources: Encapsulation DB for label
-  transport
+title: 'Cisco 8000 Q100/Q200 Hardware resources: Encapsulation DB for label transport'
+author: 'Ram Mohan A. M, Deepak Balasubramaniam'
+excerpt: >-
+  This writeup explains label resource allocation details for labelled transport
+  application for Cisco 8000 routers
+tags:
+  - iosxr
+  - cisco
+  - Cisco 8000
+  - LDP
 ---
-## Hardware resources at high level
 
+## Introduction  
+
+With Cisco 8000 routers gaining popularity across various service provider and cloud customers, it’s very important to understand how the system behaves when running labelled transport and services. The reason being the labelled applications are hardware resource intensive in the systems built with single stage forwarding architecture. 
+
+In this article we will focus on the basic label forwarding transport LDP, SR-MPLS (with/without ECMP, Bundles) and look into details on the hardware resource usage. Main focus will be on the Encapsulation Database.  Though there are other hardware databases used by LDP/SR, Encap DB is an important one for all labelled applications. 
+
+Also, in this article we will focus on the Silicon One Q100 and Q200 based systems only. 
+
+Resource utilization for the next generation of Silicon One Asics is different and we will have another XR doc article coming up on that. 
+
+
+## Cisco 8000 PIDs with Q100/Q200 
+
+ This table gives a table view of current Cisco 8000 products mapping to Q100/Q200 
+ 
+ 
+ 
+ 
+ 
+ 
+
+## Hardware resources at high level
 Fundamentally silicon One ASIC is built with 6 slices where each slice is a set of parallelly processing engines for different packet processing functionalities like: IFG- provisions MAC-orts, RxPP – receive packet processor, TxPP- Transmit packet processor and all traffic managing entities (VOQs, schedulers etc..). And number of slices can differ between different ASIC variants keeping fundamental architecture intact. 
 
  
