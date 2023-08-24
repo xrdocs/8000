@@ -13,7 +13,7 @@ tags:
   - Cisco 8200
   - Silicon One
   - QoS
-position: hidden
+position: top
 ---
 {% include toc icon="table" title="MPLS QoS on Cisco 8200 & 8800 series" %}
 
