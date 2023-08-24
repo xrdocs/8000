@@ -15,6 +15,6 @@ excerpt: >-
 # Introduction
 
 RFC 2544 was published in 1999 and has been the main technique used to benchmark router's performance.  
-This second video explores performance in high performance ASICs. It introduces the concept of sawtooth and speedup. It also explains why performance can vary for certain  packet sizes and how it's possible to build artifical pathological lab cases.
+This second video explores performance in high performance ASICs. It introduces the concept of sawtooth and speedup. It also explains why performance can vary for certain  packet sizes and how it's possible to build artificial pathological lab cases.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2RKZ9mAwP7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>{: .align-center}
