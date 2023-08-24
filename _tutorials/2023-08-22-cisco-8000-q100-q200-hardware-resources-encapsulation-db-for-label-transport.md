@@ -79,7 +79,8 @@ This write up is about egress encapsulation management, and monitoring.
 
 Label encap resource consumption can be per slice level , per slice-pair or per device/NPU level based on different label applications implemented in the system. Below table brief on the resources associated with label programming and its scope of programming, 
 
-![Screenshot 2023-08-22 at 12.15.37 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.15.37 PM.png)
+
+![resource-table-1.png]({{site.baseurl}}/images/resource-table-1.png){: .align-center}
 
 
 Lets understand Cisco 8000 slice-pair concept before get into the details of egress large encap resource details.
@@ -90,10 +91,10 @@ For a Fixed or Centralised systems all 6 slices on the NPU is available for netw
 
 Below pictures depict the slices for fixed system and distributed system (here representing 88-LC0-34H14FH line card which has 2 NPUs),
 
-![Screenshot 2023-08-22 at 12.19.29 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.19.29 PM.png)
 
-![Screenshot 2023-08-22 at 12.26.02 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.26.02 PM.png)
+![resource-slicepair-1.png]({{site.baseurl}}/images/resource-slicepair-1.png){: .align-center}
 
+![resource-slicepair-2.png]({{site.baseurl}}/images/resource-slicepair-2.png){: .align-center}
 
 
 Fixed systems will have 3 slice-pairs (6 n/w slices) & Distributed systems will have 2 slice-pairs (3 n/w slices)
@@ -106,7 +107,8 @@ Fixed systems will have 3 slice-pairs (6 n/w slices) & Distributed systems will 
 How to find the interface mapping to NPU/Slice/IFG? See below example which is from a distributed system,
 
 
-![Screenshot 2023-08-22 at 12.27.52 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.27.52 PM.png)
+![resource-voq-output.png]({{site.baseurl}}/images/resource-voq-output.png){: .align-center}
+
 
 ## Understand Encapsulation databases & Label types
 
@@ -138,9 +140,7 @@ Remote labels are managed in egress encapsulation (EM) databases and local label
 **Following illustrations explains how Egress Large encap programming varies for different topologies:**
 
 
-
-
-![Screenshot 2023-08-22 at 12.48.15 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.48.15 PM.png)
+![resource-topo-1.png]({{site.baseurl}}/images/resource-topo-1.png){: .align-center}
 
 
 -	In Topo-1, the egress interface facing the MPLS cloud is hosted on slice2 (slice-pair1)
@@ -150,9 +150,8 @@ Remote labels are managed in egress encapsulation (EM) databases and local label
 -	Local labels associated with each remote labels get programmed in CEM.
 
 
+![resource-topo-2.png]({{site.baseurl}}/images/resource-topo-2.png){: .align-center}
 
-
-![Screenshot 2023-08-22 at 12.49.28 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.49.28 PM.png)
 
 -	In Topo-2, System has received 10k labelled prefixes over 2 ECMP links where both links are hosted on same slice-pair (slice-pair1)
 -	10K prefixes get programmed in LPM database.
@@ -160,8 +159,8 @@ Remote labels are managed in egress encapsulation (EM) databases and local label
 -	Local labels associated with each remote labels get programmed in CEM.
 
 
+![resource-topo-3.png]({{site.baseurl}}/images/resource-topo-3.png){: .align-center}
 
-![Screenshot 2023-08-22 at 12.50.17 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.50.17 PM.png)
 
 -	In Topo-3, System has received 10k labelled prefixes over 2 ECMP links which are spread across 2 different slice-pairs (slice-pair0 & slice-pair2)
 -	10K prefixes get programmed in LPM database.
@@ -169,7 +168,8 @@ Remote labels are managed in egress encapsulation (EM) databases and local label
 -	Local labels associated with each remote labels get programmed in CEM
 
 
-![Screenshot 2023-08-22 at 12.50.47 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.50.47 PM.png)
+![resource-topo-4.png]({{site.baseurl}}/images/resource-topo-4.png){: .align-center}
+
 
 -	In Topo-4, System has received 10k labelled prefixes over a bundle interface which has 2 member links distributed across 2 slice-pairs (slice-pair0 & 1)
 -	10K prefixes get programmed in LPM database.
@@ -177,7 +177,7 @@ Remote labels are managed in egress encapsulation (EM) databases and local label
 -	Local labels associated with each remote labels get programmed in CEM
 
 
-![Screenshot 2023-08-22 at 12.51.23 PM.png]({{site.baseurl}}/images/Screenshot 2023-08-22 at 12.51.23 PM.png)
+![resource-topo-5.png]({{site.baseurl}}/images/resource-topo-5.png){: .align-center}
 
 
 -	In Topo-5, System has received 10k labelled prefixes over a bundle interface which has 2 member links hosted on same slice-pair (slice-pair1)
