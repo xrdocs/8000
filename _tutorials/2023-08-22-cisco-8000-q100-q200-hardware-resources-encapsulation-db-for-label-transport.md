@@ -12,6 +12,8 @@ tags:
   - Cisco 8000
   - LDP
 ---
+{% include toc icon="table" title="Cisco 8000 Q100/Q200 Hardware resources: Encapsulation DB for label transport" %}
+
 
 ## Introduction  
 
