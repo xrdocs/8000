@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 date: '2023-08-22 12:04 +0530'
 title: 'Cisco 8000 Q100/Q200 Hardware resources: Encapsulation DB for label transport'
 author: 'Ram Mohan A. M, Deepak Balasubramaniam'
@@ -11,6 +11,7 @@ tags:
   - cisco
   - Cisco 8000
   - LDP
+position: hidden
 ---
 {% include toc icon="table" title="Cisco 8000 Q100/Q200 Hardware resources: Encapsulation DB for label transport" %}
 
