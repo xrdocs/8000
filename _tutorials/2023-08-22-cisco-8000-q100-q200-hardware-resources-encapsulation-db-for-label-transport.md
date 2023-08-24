@@ -189,6 +189,49 @@ Remote labels are managed in egress encapsulation (EM) databases and local label
 
 
 
+## Monitoring labels and encap resources
+
+
+![resource-3-rtr-topo.png]({{site.baseurl}}/images/resource-3-rtr-topo.png){: .align-center}
+
+In above topology, 
+-	R1, R2 & R3 form OSPF+LDP peering OR OSPF+SR
+-	R3 advertise 10k labelled prefixes to R2 and R2 eventually to R1
+-	R1:R2 link is terminating on slice-pair2 on R1
+
+Lets check the egress encap data base on the UUT (R1) in above topology before R1 received labelled prefixes from R2,
+
+![resource-emlarge-b4-programing.png]({{site.baseurl}}/images/resource-emlarge-b4-programing.png){: .align-center}
+
+What is seen in the resource table above,
+-	OOR summary shows the OOR state and threshold levels. 
+-	Egress encap entries are programmed as ‘lspnh’ entries in OFA table. Its zero as this o/p is before R1 programmed the entries
+-	Hardware usage shows the actual HW programmed entries at slice-pair level.
+-	There are some default entries get programmed in HW as seen above. 
+
+ Let’s advertise 10k labelled prefixes from R3 to R2 over LDP, eventually to R1.
+
+MPLS forwarding database on R2 is seen as below. Outgoing labels are seen as ‘unlabeled’ because R3 is directly connected neighbor for those prefixes and R2 is PHP for those prefixes. And as seen in CEF o/p there are 10k prefixes updated on R2
+
+
+
+![cef-mpls.png]({{site.baseurl}}/images/cef-mpls.png){: .align-center}
+
+
+Let’s analyse Egress Large Encap resource utilization on R1-UUT , 
+
+![resource-aftr-emlarge-programing.png]({{site.baseurl}}/images/resource-aftr-emlarge-programing.png){: .align-center}
+
+-	10k encap entries are programmed in slice-pair2 (egress interface which is pointing the nexthop is hosted on slice-pair2) in hardware.
+-	These 10k entries are for outgoing LDP labels. Hence the resource consumption scope is at slice-pair level.
+
+Same label allocation model applies to SR-MPLS transport scenario as well.
+
+
+
+
+
+
 
 
 
