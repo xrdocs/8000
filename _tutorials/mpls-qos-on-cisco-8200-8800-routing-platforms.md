@@ -114,7 +114,7 @@ There is an enhancement in remarking behaviour for IP to MPLS flows recently and
 
 As seen in above picture, remarked precedence value is not reflected in outgoing packet. But at same time, MPLS-EXP value got derived from the remarked precedence value at ingress.
 
-This behaviour is enhanced in IOS XR 7.5.4 and 7.9.1 releases and the behaviour is now the following: Outgoing labelled packet will have MPLS-EXP derived from the remarked precedence value and at same time remarked precedence value is updated in IP header of the outgoing packet
+**This behaviour is enhanced in IOS XR 7.5.4 and 7.9.1 releases and the behaviour is now the following:** Outgoing labelled packet will have MPLS-EXP derived from the remarked precedence value and at same time remarked precedence value is updated in IP header of the outgoing packet
 
 ![mpls-qos-enhance-2.png]({{site.baseurl}}/images/mpls-qos-enhance-2.png){: .align-center}
 
@@ -138,7 +138,4 @@ Cisco 8000 has taken care majority of MPLS-QoS usecase, some are default behavio
 **PHP**  : Penultimate-Hop-Popping 
 **PHP**  : Per-Hop-Behaviour 
 **MSB**  : Most Significant Bit 
-**CoS**  : Class od Service 
-
-
-
+**CoS**  : Class od Service
