@@ -7,7 +7,7 @@ tags:
   - iosxr
   - Cisco 8000
   - Silicon One
-position: hidden
+position: top
 excerpt: >-
   Discover why high bandwidth routing ASICs deliver leading efficiency by
   reducing the number of devices needed to build network capacity.
