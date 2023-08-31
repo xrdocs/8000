@@ -20,6 +20,8 @@ position: top
 ## Introduction
 DiffServ Tunnelling Modes introduces a new Per-Hop-Behaviour (PHB), which allows differentiated QoS in a provider’s network. The tunnelling mode is defined at the edge of the network, normally in the PE Label Edge Router (LER) (both ingress and egress). You may need to make changes in the P routers; you must also consider what occurs when the topmost label is removed from a packet due to Penultimate-Hop-Popping (PHP). It may be necessary to copy the MPLS EXP value from the top label that is being popped to the newly exposed label; this does not always apply to all tunnelling modes.
 
+This article explain on the MPLS QOS capabilities and implementation methods on Cisco 8000 series routing platforms.
+
 ## PHP vs DiffServ
 In some cases (for example, a plain non-VPN MPLS network), the PHP action on the final P router can expose a plain IP packet when a packet with only one label is received. When this IP packet is received by the egress LSR (PE), it is not possible to classify the packet based on the MPLS EXP bits because there is no label now. In these situations, you must configure the egress PE router to advertise an explicit-null label. When the PHP action is performed on the P router, a label with a value of zero is sent, and with this special label you can mark the EXP bits as normally labelled packets, allowing the correct classification on the egress PE router.
 The MPLS network support of DiffServ specification defines these tunnelling modes:
