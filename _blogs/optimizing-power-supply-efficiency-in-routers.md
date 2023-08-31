@@ -16,6 +16,6 @@ excerpt: >-
 # Introduction
 
 This video will cover different aspects of power in high end routers.
-The first and maybe the most important for network operators is the cost. Power supply efficiency and industry standards is also explained. Then a focus is done to analyze and understand IOS XR <code>show environment power</code> output, along the difference between power allocation and power consumption. Last, some innovations around Cisco 8000 power efficiency are presented.
+Power cost, power supply efficiency and industry standards are first introduced. Then a focus is done to analyze and understand IOS XR <code>show environment power</code> output, along the difference between power allocation and power consumption. Last, some innovations around Cisco 8000 power efficiency are presented.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9bF0Ofo5H7Y?si=SCQfwivPHLASHyYn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
