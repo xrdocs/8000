@@ -126,7 +126,7 @@ As seen in above picture, remarked precedence value is not reflected in outgoing
 
 ## Conclusion
 
-Cisco 8000 has taken care majority of MPLS-QoS usecase, some are default behaviour and some achievable with explicit policy applications. And Short-pipe mode scenario is something not addressable completely where egress QOS is based on inner IP fields for labelled packets terminating on egress PE devices.
+Major MPLS-QoS usecase are well taken care on Cisco 8200/8600/8800 platforms where some are default behaviour and some achievable with explicit policy applications. And Short-pipe mode scenario is something not addressable completely where egress QOS is based on inner IP fields for labelled packets terminating on egress PE devices. And this capability will be addressed soon.
 
 
 ## Glossary
