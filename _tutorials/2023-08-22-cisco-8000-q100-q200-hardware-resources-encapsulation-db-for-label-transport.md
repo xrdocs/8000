@@ -196,6 +196,9 @@ Local labels are looked up from CEM in the ingress termination stage and remote 
 **Following illustrations explains how Egress Large encap programming varies for different topologies:**
 
 
+## MPLS transport label Scenario without ECMP
+
+
 ![resource-topo-1.png]({{site.baseurl}}/images/resource-topo-1.png){: .align-center}
 
 
@@ -205,6 +208,7 @@ Local labels are looked up from CEM in the ingress termination stage and remote 
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pair, which is hosting the egress interface, here slice-pair1
 -	Local labels associated with each remote labels get programmed in CEM.
 
+## MPLS transport label Scenario with ECMP on same Slice-pair
 
 ![resource-topo-2.png]({{site.baseurl}}/images/resource-topo-2.png){: .align-center}
 
@@ -214,6 +218,7 @@ Local labels are looked up from CEM in the ingress termination stage and remote 
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pair which is hosting the egress interfaces. So 20k encap entries get programmed on slice-pair1 since there are 2 ECMPs links on that slice-pair.
 -	Local labels associated with each remote labels get programmed in CEM.
 
+## MPLS transport label Scenario with ECMP across different Slice-pairs
 
 ![resource-topo-3.png]({{site.baseurl}}/images/resource-topo-3.png){: .align-center}
 
@@ -223,6 +228,7 @@ Local labels are looked up from CEM in the ingress termination stage and remote 
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pairs which are hosting the egress interfaces. Here there is 1 link each on slice-pair0 & 2. So 10K encap entries get programmed on slice-pair0 & slice-pair2
 -	Local labels associated with each remote labels get programmed in CEM
 
+## MPLS transport label Scenario with Bundle members across different Slice-pairs
 
 ![resource-topo-4.png]({{site.baseurl}}/images/resource-topo-4.png){: .align-center}
 
@@ -232,6 +238,7 @@ Local labels are looked up from CEM in the ingress termination stage and remote 
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pairs which is hosting the bundle member links. So 10k encap entries get programmed on each slice-pair0 & 1 . 
 -	Local labels associated with each remote labels get programmed in CEM
 
+## MPLS transport label Scenario with Bundle members on same Slice-pair
 
 ![resource-topo-5.png]({{site.baseurl}}/images/resource-topo-5.png){: .align-center}
 
@@ -241,6 +248,10 @@ Local labels are looked up from CEM in the ingress termination stage and remote 
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pair which is hosting the bundle member links. So only 10k encap entries get programmed on slice-pair1. Member links from same slice-pair consume single encap entry for each labelled prefix.
 -	Local labels associated with each remote labels get programmed in CEM
 
+## Deployment Recommendations (with label transport Q100/Q200)
+-Spread the ECMP links accross different slice-pairs
+-Keep the bundle members localized to the same slice pair as much as possible
+This helps with optimized usage of Encapsualtion database for labelled transport.
 
 
 ## Monitoring labels and encap resources
@@ -253,6 +264,7 @@ In above topology,
 -	R3 advertise 10k labelled prefixes to R2 and R2 eventually to R1
 -	R1:R2 link is terminating on slice-pair2 on R1
 
+## Resource check: Before Label advertisements
 Lets check the egress encap data base on the UUT (R1) in above topology before R1 received labelled prefixes from R2,
 
 ![resource-emlarge-b4-programing.png]({{site.baseurl}}/images/resource-emlarge-b4-programing.png){: .align-center}
@@ -262,6 +274,8 @@ What is seen in the resource table above,
 -	Egress encap entries are programmed as ‘lspnh’ entries in OFA table. Its zero as this o/p is before R1 programmed the entries
 -	Hardware usage shows the actual HW programmed entries at slice-pair level.
 -	There are some default entries get programmed in HW as seen above. 
+
+## Resource check: After Label advertisements
 
  Let’s advertise 10k labelled prefixes from R3 to R2 over LDP, eventually to R1.
 
@@ -279,4 +293,8 @@ Let’s analyse Egress Large Encap resource utilization on R1-UUT ,
 -	10k encap entries are programmed in slice-pair2 (egress interface which is pointing the nexthop is hosted on slice-pair2) in hardware.
 -	These 10k entries are for outgoing LDP labels. Hence the resource consumption scope is at slice-pair level.
 
-Same label allocation model applies to SR-MPLS transport scenario as well.
+Same label allocation model applies to SR-MPLS transport scenarios as well.
+
+## Conclusion
+With this we come to the end of this article where we dicussed in details on the harware resource usage on Q100/Q200 for the labelled transport with specific focus on Egress large encapsulation database.
+In the following articles we will deepdive into other hardware resources and different applications.
