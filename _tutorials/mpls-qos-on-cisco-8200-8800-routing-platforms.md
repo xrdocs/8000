@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2023-08-21 12:47 +0530'
-title: MPLS QoS on Cisco 8200/8600/8800 routing platforms
+title: MPLS QoS on Cisco 8000 series routing platforms
 author: Ram Mohan A. M.
 excerpt: >-
   This writeup explains the MPLS-QOS applications on Cisco 8200/8800 routing
@@ -15,7 +15,7 @@ tags:
   - QoS
 position: top
 ---
-{% include toc icon="table" title="MPLS QoS on Cisco 8200/8600/8800 series routing platforms" %}
+{% include toc icon="table" title="MPLS QoS on Cisco 8000 series routing platforms" %}
 
 ## Introduction
 DiffServ Tunnelling Modes introduces a new Per-Hop-Behaviour (PHB), which allows differentiated QoS in a provider’s network. The tunnelling mode is defined at the edge of the network, normally in the PE Label Edge Router (LER) (both ingress and egress). You may need to make changes in the P routers; you must also consider what occurs when the topmost label is removed from a packet due to Penultimate-Hop-Popping (PHP). It may be necessary to copy the MPLS EXP value from the top label that is being popped to the newly exposed label; this does not always apply to all tunnelling modes.
