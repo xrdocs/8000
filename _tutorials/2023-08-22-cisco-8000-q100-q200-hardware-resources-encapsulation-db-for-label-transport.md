@@ -57,10 +57,30 @@ _*No HBM on Q200L based systems._
 Also, there are differences in the hardware resources scale which will bring in scale differences between the two Asics.
 
  
+ ![Q100vsQ200_resource-writeup.png]({{site.baseurl}}/images/Q100vsQ200_resource-writeup.png){: .align-center}
  
+## Single Stage packet Forwarding: Databases view
+
+
+
+### What is Single stage forwarding?
+
+ Forwarding lookup and all the forwarding decisions are done in the ingress of the packet processor (RxPP) and the packets are properly queued to the VOQ of the corresponding egress interface.
+In the RxPP during forwarding lookup and resolution, there will be system headers added which have pointers for the encapsulation action on the egress of packet processor (TxPP).
+Once the packet arrives at the TxPP stage, pointers in the system header will be used to fetch the right encapsulation information (labels, MAC) from the EM database which is used to build the network headers before sending the packets out of the egress interface.
  
- 
- 
+![DB-Fwd-view.png]({{site.baseurl}}/images/DB-Fwd-view.png){: .align-center}
+
+To simplify the flow
+- Packet from network interface (NIF) is received by the RX NPE in the ingress.
+- Forwarding lookup is done on LPM (IP lookup) or CEM (ex, for labels) and we derive the next hop (NH) and ECMP info.
+- LB ECMP group resolution helps to arrive at TM VoQ for the destination port along with egress encap pointers.
+- Packets with system headers (carrying encap pointers) are enqueued into the VoQs
+- Packets are received on the Tx NPE, system headers are referenced to get the encap pointers in the Encapsulation database to derive the label and the MAC information.
+- Packets are reconstructed with proper network headers and send out of the corresponding egress interface.
+
+
+
 
 ## Hardware resources at high level
 Fundamentally silicon One ASIC is built with 6 slices where each slice is a set of parallelly processing engines for different packet processing functionalities like: IFG- provisions MAC-orts, RxPP – receive packet processor, TxPP- Transmit packet processor and all traffic managing entities (VOQs, schedulers etc..). And number of slices can differ between different ASIC variants keeping fundamental architecture intact. 
@@ -77,31 +97,19 @@ And these memories area globally shared across all slices. And there are multipl
 
  
 
-Major data base classification is as below, 
-- Prefixes storage
+Major data base classification is as below,
+
+|**Databases** | **Application**  
+|------------------------|------------------------------------------------------------------|
+| LPM          | Prefixes storage
+| CEM      | Prefixes, MACs, local labels etc
+| Egress EMs (Large encap & small encap)       | Remote labels for different services labels 
+| Stage1lb/Stage2lb: group & members | Next hop groups and ECMP members
 
 
-LPM 
 
-Prefixes, MACs, local labels etc. 
 
-CEM 
-
-Remote labels for different services labels 
-
-Egress EMs (Large encap & small encap) 
-
-Next hop groups and ECMP members 
-
-Stage1lb: group & members 
-
-Stage2lb: group & members 
-
- 
-
- 
-
-This write up is about egress encapsulation management, and monitoring. 
+This write up is about egress large encapsulation resource usage and monitoring. 
 
  
 
