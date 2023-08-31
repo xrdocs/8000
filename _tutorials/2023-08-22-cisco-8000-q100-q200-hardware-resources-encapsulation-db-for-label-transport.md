@@ -100,7 +100,10 @@ Forwarding lookup and all the forwarding decisions are done in the ingress of th
 In the RxPP during forwarding lookup and resolution, there will be system headers added which have pointers for the encapsulation action on the egress of packet processor (TxPP).
 Once the packet arrives at the TxPP stage, pointers in the system header will be used to fetch the right encapsulation information (labels, MAC) from the EM database which is used to build the network headers before sending the packets out of the egress interface.
  
-![Q200-Forwarding-pipeline-resources.png]({{site.baseurl}}/images/Q200-Forwarding-pipeline-resources.png){: .align-center}
+
+
+![Forwarding-pipeline-reources-DB.png]({{site.baseurl}}/images/Forwarding-pipeline-reources-DB.png) {: .align-center}
+
 
 To simplify the flow
 - Packet from network interface (NIF) is received by the RX NPE in the ingress.
