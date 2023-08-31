@@ -28,13 +28,13 @@ With Cisco 8000 routers gaining popularity across various service providers and 
 In this article we will focus on the basic label forwarding transport with & without ECMP along with bundles and look into details on the hardware resource usage. Main focus will be on the Encapsulation Databases.
 
 Also, in this article we will focus on the Silicon One **Q100 and Q200 based 8200/8600/8800** systems only.
-Resource utilization for the next generation of Silicon One Asics is different and we will have another XR docs article coming up on that.
+Resource utilization for the next generation of Silicon One Asics (P100, K100) is different and we will have another XR docs article focusing on that.
 
 
 
 ## Cisco 8000 PIDs with Q100/Q200 
 
- This table gives a table view of current Cisco 8000 products mapping to Q100/Q200 
+ This table gives the view of current Cisco 8000 products mapping to Q100/Q200 
  
  
 |**Forwarding Asics** | **Cisco 8000 PIDs**  
@@ -56,10 +56,39 @@ When we compare the forwarding Asics Q100 & Q200, they are very similar in archi
 _*No HBM on Q200L based systems._
 
 
-Also, there are differences in the hardware resources scale which will bring in scale differences between the two Asics.
+Also, there are differences in the hardware resources which will bring in scale differences between the two Asics.
 
  
- ![Q100vsQ200_resource-writeup.png]({{site.baseurl}}/images/Q100vsQ200_resource-writeup.png){: .align-center}
+![Q100vsQ200_resource-writeup.png]({{site.baseurl}}/images/Q100vsQ200_resource-writeup.png){: .align-center}
+
+## Hardware resources at high level
+Fundamentally, silicon One ASIC is built with 6 slices where each slice has a set of parallel processing engines for different packet processing functionalities like: IFG - provisions MAC-orts, RxPP – receive packet processor, TxPP- Transmit packet processor and Traffic Manager - VOQs, schedulers. 
+
+And number of slices can differ between different ASIC variants keeping fundamental architecture intact.
+
+<<6 slice pic>>
+
+Primarily there are 3 types of hardware memories at a high level, 
+
+  - TCAM 
+  - SRAM 
+  - HBM 
+
+Some of these memories area globally shared across all slices while some are per slice level or slice-pair level. And there are multiple data bases associated with these memories which get accessed at different stages of packet processing.  
+
+ 
+
+Major data base classification is as below,
+
+|**Databases** | **Application**  
+|------------------------|------------------------------------------------------------------|
+| LPM          | Prefixes storage
+| HBM | LPM FIB table expansion
+| CEM      | Prefixes, MACs, local labels etc
+| Egress EMs (Large encap & small encap)       | Remote labels for different services labels 
+| Stage1lb/Stage2lb: group & members | Next hop groups and ECMP members
+| TCAM | Packet classificaion (ACL,QOS,LPTS)
+
  
 ## Single Stage packet Forwarding: Databases view
 
@@ -67,11 +96,11 @@ Also, there are differences in the hardware resources scale which will bring in 
 
 ### What is Single stage forwarding?
 
- Forwarding lookup and all the forwarding decisions are done in the ingress of the packet processor (RxPP) and the packets are properly queued to the VOQ of the corresponding egress interface.
+Forwarding lookup and all the forwarding decisions are done in the ingress of the packet processor (RxPP) and the packets are properly queued to the VOQ of the corresponding egress interface.
 In the RxPP during forwarding lookup and resolution, there will be system headers added which have pointers for the encapsulation action on the egress of packet processor (TxPP).
 Once the packet arrives at the TxPP stage, pointers in the system header will be used to fetch the right encapsulation information (labels, MAC) from the EM database which is used to build the network headers before sending the packets out of the egress interface.
  
-![DB-Fwd-view.png]({{site.baseurl}}/images/DB-Fwd-view.png){: .align-center}
+![Q200-Forwarding-pipeline-resources.png]({{site.baseurl}}/images/Q200-Forwarding-pipeline-resources.png){: .align-center}
 
 To simplify the flow
 - Packet from network interface (NIF) is received by the RX NPE in the ingress.
@@ -83,35 +112,7 @@ To simplify the flow
 
 
 
-
-## Hardware resources at high level
-Fundamentally silicon One ASIC is built with 6 slices where each slice is a set of parallelly processing engines for different packet processing functionalities like: IFG- provisions MAC-orts, RxPP – receive packet processor, TxPP- Transmit packet processor and all traffic managing entities (VOQs, schedulers etc..). And number of slices can differ between different ASIC variants keeping fundamental architecture intact. 
-
- 
-
-Primarily there are 3 types of hardware memories at high level which are below, 
-
-  - TCAM 
-  - SRAM 
-  - HBM 
-
-And these memories area globally shared across all slices. And there are multiple data bases associated with these memories which get accessed at different stages of packet processing.  
-
- 
-
-Major data base classification is as below,
-
-|**Databases** | **Application**  
-|------------------------|------------------------------------------------------------------|
-| LPM          | Prefixes storage
-| CEM      | Prefixes, MACs, local labels etc
-| Egress EMs (Large encap & small encap)       | Remote labels for different services labels 
-| Stage1lb/Stage2lb: group & members | Next hop groups and ECMP members
-
-
-
-
-This write up is about egress large encapsulation resource usage and monitoring. 
+**This write up is about egress large encapsulation resource usage and monitoring**
 
  
 
