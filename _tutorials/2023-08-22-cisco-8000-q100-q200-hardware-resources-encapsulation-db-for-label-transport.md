@@ -15,16 +15,20 @@ position: hidden
 ---
 {% include toc icon="table" title="Cisco 8000 Q100/Q200 Hardware resources: Encapsulation DB for label transport" %}
 
+{% include toc icon="table" title="Table of Contents" %}
+
+|Ram Mohan, Technical Leader, Technical Marketing (raam@cisco.com)|  
+|Deepak Balasubramanian, Technical Leader, Technical Marketing (deebalas@cisco.com)|  
 
 ## Introduction  
 
-With Cisco 8000 routers gaining popularity across various service provider and cloud customers, it’s very important to understand how the system behaves when running labelled transport and services. The reason being the labelled applications are hardware resource intensive in the systems built with single stage forwarding architecture. 
+With Cisco 8000 routers gaining popularity across various service providers and cloud customers, it’s very important to understand how the system behaves when running labelled transport and services. The reason being the labelled applications are hardware resource intensive especially in the systems built with single stage forwarding architecture.
 
-In this article we will focus on the basic label forwarding transport LDP, SR-MPLS (with/without ECMP, Bundles) and look into details on the hardware resource usage. Main focus will be on the Encapsulation Database.  Though there are other hardware databases used by LDP/SR, Encap DB is an important one for all labelled applications. 
+In this article we will focus on the basic label forwarding transport with & without ECMP along with Bundles and look into details on the hardware resource usage. Main focus will be on the Encapsulation Database.  Though there are other hardware databases used for labels, Encap DB is an important one for all labelled applications.
 
-Also, in this article we will focus on the Silicon One Q100 and Q200 based systems only. 
+Also, in this article we will focus on the Silicon One Q100 and Q200 based 8200/8600/8800 systems only.
+Resource utilization for the next generation of Silicon One Asics is different and we will have another XR docs article coming up on that.
 
-Resource utilization for the next generation of Silicon One Asics is different and we will have another XR doc article coming up on that. 
 
 
 ## Cisco 8000 PIDs with Q100/Q200 
@@ -32,10 +36,26 @@ Resource utilization for the next generation of Silicon One Asics is different a
  This table gives a table view of current Cisco 8000 products mapping to Q100/Q200 
  
  
+|**Forwarding Asics** | **Cisco 8000 PIDs**  
+|------------------------|------------------------------------------------------------------|
+| Q100          | **Fixed**: 8201, 8202 ,  															**8800-Line cards:** 8800-LC-36FH, 8800-LC-48H
+| Q200      | **Fixed:** 8201-24H8FH, 8202-32FH(-M), 8608  , 										**8800-Line cards:** 88-LC0-36FH(-M), 88-LC0-36H14FH
+
+
+When we compare the forwarding Asics Q100 & Q200, they are very similar in architecture in terms of hardware components and packet forwarding. But there are differences in terms of the number of 50G serdes links which brings changes in forwarding throughput between the Asics. 
  
- 
- 
- 
+|   **Q100** | **Q200**  
+|------------------------|------------------------------------------------------------------|
+| •	10.8 Tbps                             | •	12.8 Tbps 
+| •	6 Slices with 216 x 50G serdes  | •	6 Slices with 256 x 50G serdes
+| •	2 x IFG per slice with 18 x 50G serdes per IFG            | •	2 x IFG per slice with 16 x 50G (4 IFGs) or 24 x 50G (8 IFGs)
+| •	36MB on-die packet buffer (SMS)            | •	108MB on-die packet buffer (SMS)
+| •	HBM            | •	HBM*
+_*No HBM on Q200L based systems._
+
+
+Also, there are differences in the hardware resources scale which will bring in scale differences between the two Asics.
+
 
 ## Hardware resources at high level
 Fundamentally silicon One ASIC is built with 6 slices where each slice is a set of parallelly processing engines for different packet processing functionalities like: IFG- provisions MAC-orts, RxPP – receive packet processor, TxPP- Transmit packet processor and all traffic managing entities (VOQs, schedulers etc..). And number of slices can differ between different ASIC variants keeping fundamental architecture intact. 
@@ -227,13 +247,3 @@ Let’s analyse Egress Large Encap resource utilization on R1-UUT ,
 -	These 10k entries are for outgoing LDP labels. Hence the resource consumption scope is at slice-pair level.
 
 Same label allocation model applies to SR-MPLS transport scenario as well.
-
-
-
-
-
-
-
-
-
-
