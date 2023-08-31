@@ -128,7 +128,7 @@ As seen in above picture, remarked precedence value is not reflected in outgoing
 
 ## Conclusion
 
-This article has briefed about the MPLS-QoS usecase and implementations on Cisco 8000 series routing devices specifically 8200/8600/8800 series platforms. Among different tunneling modes short-pipe is not completely addressed on Cisco 8000 and will be considererd for new feature set.
+This article has briefed about the MPLS-QoS usecase and implementations on Cisco 8000 series routing devices specifically 8200/8600/8800 series platforms. Among different tunneling modes short-pipe is not completely addressed on Cisco 8000 where egress QOS is based on inner IP fields for labelled packets terminating on egress PE devices. And this capability will be considererd for new feature set.
 
 
 ## Glossary
