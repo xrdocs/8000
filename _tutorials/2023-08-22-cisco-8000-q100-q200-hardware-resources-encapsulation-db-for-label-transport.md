@@ -249,8 +249,9 @@ Local labels are looked up from CEM in the ingress termination stage and remote 
 -	Local labels associated with each remote labels get programmed in CEM
 
 ## Deployment Recommendations (with label transport Q100/Q200)
--Spread the ECMP links accross different slice-pairs
--Keep the bundle members localized to the same slice pair as much as possible
+- Spread the ECMP links accross different slice-pairs
+- Keep the bundle members localized to the same slice pair as much as possible
+
 This helps with optimized usage of Encapsualtion database for labelled transport.
 
 
