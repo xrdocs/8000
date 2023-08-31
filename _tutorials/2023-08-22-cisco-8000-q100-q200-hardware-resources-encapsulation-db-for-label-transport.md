@@ -111,10 +111,13 @@ To simplify the flow
 - Packets are reconstructed with proper network headers and send out of the corresponding egress interface.
 
 
+## Label encap resource usage
 
-**This write up is about egress large encapsulation resource usage and monitoring**
+large & small, resource as seen below
 
- 
+
+some appln programs at slice-pai and some on all slice-pairs
+
 
 Label encap resource consumption can be per slice level , per slice-pair or per device/NPU level based on different label applications implemented in the system. Below table brief on the resources associated with label programming and its scope of programming, 
 
@@ -122,7 +125,12 @@ Label encap resource consumption can be per slice level , per slice-pair or per 
 ![resource-table-1.png]({{site.baseurl}}/images/resource-table-1.png){: .align-center}
 
 
+**This write up is about _egress large encapsulation_ resource usage and monitoring**
+
+ 
 Lets understand Cisco 8000 slice-pair concept before get into the details of egress large encap resource details.
+
+
 
 ### Slices & Slice-pair concepts
 
@@ -133,28 +141,35 @@ Below pictures depict the slices for fixed system and distributed system (here r
 
 ![resource-slicepair-1.png]({{site.baseurl}}/images/resource-slicepair-1.png){: .align-center}
 
+**Illustration**
+
 ![resource-slicepair-2.png]({{site.baseurl}}/images/resource-slicepair-2.png){: .align-center}
 
 
 Fixed systems will have 3 slice-pairs (6 n/w slices) & Distributed systems will have 2 slice-pairs (3 n/w slices)
 
+for fixed systems,
   - If interface belongs to slice # 0,1 then its slice-pair 0
   - If interface belongs to slice # 2,3 then its slice-pair 1
   - If interface belongs to slice # 4,5 then its slice-pair 2
 
-
-How to find the interface mapping to NPU/Slice/IFG? See below example which is from a distributed system,
+for distributed systems,
+  - If interface belongs to slice # 0,1 then its slice-pair 0
+  - If interface belongs to slice # 2 then its slice-pair 1
+  
+How to find the interface mapping to NPU/Slice/IFG ? 
 
 
 ![resource-voq-output.png]({{site.baseurl}}/images/resource-voq-output.png){: .align-center}
 
+Above example is from a distributed system.
 
-## Understand Encapsulation databases & Label types
+## Understanding Encapsulation databases & Label types
 
 There are 2 types of encapsulation database on Q100/Q200 ASIC based Cisco 8000 systems,
 
-  - Large Encap DB: holds MPLS out label which is the remote label received from remote peer nodes
-  - Small Encap DB: holds MPLS remote labels which is recursively resolved for overlay service labels.
+  - **Large Encap DB**: Holds MPLS out labels (transport & services) which is the remote label received from remote peer nodes (LDP/SR/RSVP-TE, L2VPN/L3VPN)
+  - **Small Encap DB**: Holds MPLS remote labels for **underlay transport** with recursive overlay transport (BGP-LU over **LDP**/**RSVP-TE**, LDP over **RSVP-TE**)
 	
 There are 2 types of labels,
 -	**Remote label**: label received from remote peer
@@ -162,9 +177,8 @@ There are 2 types of labels,
       - It can be service labels like L3VPN , L2VPN, BGP-LU etc..
 -	**Local label**: label assigned by the system locally 
 
-Once system receives remote label from peer-device a corresponding local label get assigned for the same forwarding entity. And system advertises the local label further to its peer-devices.
-
-Remote labels are managed in egress encapsulation (EM) databases and local labels are managed in centra exact match (CEM) data bases. Whereas local labels which are looked up at the ingress packet termination stage are programmed in CEM table which is a global table for whole NPU system.
+Remote labels are managed in egress encapsulation (EM) databases and local labels are managed in centra exact match (CEM) data bases. 
+Local labels are looked up from CEM in the ingress termination stage and remote labels are derived from egress encapsulation stage from EM database.
 
 ### Egress Large EM on Q100 & Q200 systems
 
