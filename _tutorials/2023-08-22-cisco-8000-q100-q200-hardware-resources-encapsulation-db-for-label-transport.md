@@ -252,7 +252,7 @@ Local labels are looked up from CEM in the ingress termination stage and remote 
 - Spread the ECMP links accross different slice-pairs
 - Keep the bundle members localized to the same slice pair as much as possible
 
-This helps with optimized usage of Encapsualtion database for labelled transport.
+This helps with optimized usage of Encapsulation database for labelled transport.
 
 
 ## Monitoring labels and encap resources
