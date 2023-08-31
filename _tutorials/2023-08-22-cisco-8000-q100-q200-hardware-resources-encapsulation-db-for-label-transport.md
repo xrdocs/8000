@@ -1,7 +1,9 @@
 ---
 published: false
 date: '2023-08-22 12:04 +0530'
-title: 'Cisco 8000 Q100/Q200 Hardware resources: Encapsulation DB for label transport'
+title: >-
+  Cisco 8000 Q100/Q200 Hardware resources deep dive Part-1: Encapsulation DB for
+  label transport
 author: 'Ram Mohan A. M, Deepak Balasubramaniam'
 excerpt: >-
   This writeup explains label resource allocation details for labelled transport
@@ -21,9 +23,9 @@ position: hidden
 
 ## Introduction  
 
-With Cisco 8000 routers gaining popularity across various service providers and cloud customers, it’s very important to understand how the system behaves when running labelled transport and services. The reason being the labelled applications are hardware resource intensive especially in the systems built with single stage forwarding architecture.
+With Cisco 8000 routers gaining popularity across various service providers and cloud customers, it’s very important to understand how the system behaves when running labelled transport and services. The reason being the labelled applications are hardware resource intensive, especially with the systems built with single stage forwarding architecture.
 
-In this article we will focus on the basic label forwarding transport with & without ECMP along with Bundles and look into details on the hardware resource usage. Main focus will be on the Encapsulation Database.  Though there are other hardware databases used for labels, Encap DB is an important one for all labelled applications.
+In this article we will focus on the basic label forwarding transport with & without ECMP along with bundles and look into details on the hardware resource usage. Main focus will be on the Encapsulation Databases.
 
 Also, in this article we will focus on the Silicon One Q100 and Q200 based 8200/8600/8800 systems only.
 Resource utilization for the next generation of Silicon One Asics is different and we will have another XR docs article coming up on that.
