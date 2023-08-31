@@ -173,8 +173,8 @@ There are 2 types of encapsulation database on Q100/Q200 ASIC based Cisco 8000 s
 	
 There are 2 types of labels,
 -	**Remote label**: label received from remote peer
-      - It can be transport labels like LDP, SR, RSVP-TE etc..
-      - It can be service labels like L3VPN , L2VPN, BGP-LU etc..
+      - It can be transport labels like LDP, SR, RSVP-TE etc.
+      - It can be service labels like L3VPN , L2VPN, BGP-LU etc.
 -	**Local label**: label assigned by the system locally 
 
 Remote labels are managed in egress encapsulation (EM) databases and local labels are managed in centra exact match (CEM) data bases. 
