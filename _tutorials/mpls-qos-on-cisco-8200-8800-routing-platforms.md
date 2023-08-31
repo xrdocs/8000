@@ -22,7 +22,7 @@ DiffServ Tunnelling Modes introduces a new Per-Hop-Behaviour (PHB), which allows
 
 This article explain on the MPLS QOS capabilities and implementation methods on Cisco 8000 series routing platforms.
 
-## PHP vs DiffServ
+## Understanding PHP vs DiffServ
 In some cases (for example, a plain non-VPN MPLS network), the PHP action on the final P router can expose a plain IP packet when a packet with only one label is received. When this IP packet is received by the egress LSR (PE), it is not possible to classify the packet based on the MPLS EXP bits because there is no label now. In these situations, you must configure the egress PE router to advertise an explicit-null label. When the PHP action is performed on the P router, a label with a value of zero is sent, and with this special label you can mark the EXP bits as normally labelled packets, allowing the correct classification on the egress PE router.
 The MPLS network support of DiffServ specification defines these tunnelling modes:
   - Uniform
@@ -79,7 +79,7 @@ Uniform Mode is generally used when the customer and SP share the same DiffServ 
 In Uniform Mode, which is the default mode, the first 3 bits of the IP ToS field (IP Precedence bits) are automatically mapped to the MPLS EXP bits on the ingress PE as labels are pushed onto the packets.
 If policers or any other mechanisms remark the MPLS EXP values within the MPLS core, these marking changes are propagated to lower-level labels and eventually are propagated to the IP DSCP field. (MPLS EXP bits are mapped to IP DSCP values at the egress PE).
  
-### Uniform mode with policy applications
+### Uniform mode on Cisco 8000 with policy applications
 If any remarking operation is executed within the MPLS core then remarked MPLS EXP in top label wont propagate to lower-level labels and corresponding bits to IP DSCP field. So below QoS operations are needed to achieve uniform mode on Cisco 8000:
 
 
@@ -128,7 +128,7 @@ As seen in above picture, remarked precedence value is not reflected in outgoing
 
 ## Conclusion
 
-Major MPLS-QoS usecase are well taken care on Cisco 8200/8600/8800 platforms where some are default behaviour and some achievable with explicit policy applications. And Short-pipe mode scenario is something not addressable completely where egress QOS is based on inner IP fields for labelled packets terminating on egress PE devices. And this capability will be addressed soon.
+This article has briefed about the MPLS-QoS usecase and implementations on Cisco 8000 series routing devices specifically 8200/8600/8800 series platforms. Among different tunneling modes short-pipe is not completely addressed on Cisco 8000 and will be considererd for new feature set.
 
 
 ## Glossary
