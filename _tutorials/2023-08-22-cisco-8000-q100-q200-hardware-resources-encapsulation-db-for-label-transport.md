@@ -139,7 +139,6 @@ Below table brief on the scope of resource consumption and its scale for Q100 & 
 
 ![resource-table-1.png]({{site.baseurl}}/images/resource-table-1.png){: .align-center}
 
-Label encap resource (CEM, EMs) consumption can be per slice-pair or per device/NPU level based on different label applications implemented in the system. 
 
 **This write up is about _egress large encapsulation_ resource usage and monitoring**
 
