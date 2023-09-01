@@ -23,7 +23,7 @@ position: hidden
 
 ## Introduction  
 
-With Cisco 8000 routers gaining popularity across various service providers and cloud customers, it’s very important to understand how the system behaves when running labelled transport and services. The reason being the labelled applications are hardware resource intensive, especially with the systems built with single stage forwarding architecture.
+With Cisco 8000 routers gaining popularity across various service providers and cloud customers, it’s very important to understand how the system behaves when running labelled transport and services. The reason being the labelled applications are hardware resource intensive, especially on the systems built with single stage forwarding architecture.
 
 In this article we will focus on the basic label forwarding transport with & without ECMP along with bundles and look into details on the hardware resource usage. Main focus will be on the Encapsulation Databases.
 
