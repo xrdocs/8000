@@ -154,6 +154,8 @@ Egress large encap entries can be programmed on a specific slice-pair (LDP, SR) 
   - On *fixed system* , this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 64K . And total per NPU is 192K per NPU
   - On *distributed systems*, this table size can go up to 128K per NPU (1.5 slice-pairs).
 
+**NOTE:-** Though Q200 based system can scale egress large encap upto 192k/128K per NPU on fixed & distributed systems respectively there is a scale limiting factor comes into play which is Global Resource ID(GRID) which is consumed by every local labels corresponding to the remote labels learned from peer devices. And that limit is ~52K per system. So in essense **_egress large encap_** scale also limits to 52K per system.
+{: .notice--info}
  
 **Lets understand Cisco 8000 slice-pair concept before get into the details of egress large encap resource consumption details**,
 
@@ -260,7 +262,7 @@ In above topology,
 -	R3 advertise 10k labelled prefixes to R2 and R2 eventually to R1
 -	R1:R2 link is terminating on slice-pair2 on R1
 
-## Resource check: Before Label advertisements
+## Resource check on R1(UUT): Before Label advertisements
 Lets check the egress encap data base on the UUT (R1) in above topology before R1 received labelled prefixes from R2,
 
 ![resource-emlarge-b4-programing.png]({{site.baseurl}}/images/resource-emlarge-b4-programing.png){: .align-center}
@@ -271,12 +273,9 @@ What is seen in the resource table above,
 -	Hardware usage shows the actual HW programmed entries at slice-pair level.
 -	There are some default entries get programmed in HW as seen above. 
 
-## Resource check: After Label advertisements
+## Resource check R1(UUT): After Label advertisements
 
 Let’s advertise 10k labelled prefixes from R3 to R2 over LDP, eventually to R1.
-
-MPLS forwarding database on R2 is seen as below. Outgoing labels are seen as ‘unlabeled’ because R3 is directly connected neighbor for those prefixes and R2 is PHP for those prefixes. And as seen in CEF o/p there are 10k prefixes updated on R2
-
 
 
 ![cef-mpls.png]({{site.baseurl}}/images/cef-mpls.png){: .align-center}
