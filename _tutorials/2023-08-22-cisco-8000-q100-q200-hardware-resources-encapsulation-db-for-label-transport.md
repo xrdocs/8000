@@ -256,7 +256,7 @@ Above example is from a distributed system.
 ![resource-3-rtr-topo.png]({{site.baseurl}}/images/resource-3-rtr-topo.png){: .align-center}
 
 In above topology, 
--	R1, R2 & R3 form OSPF+LDP peering OR OSPF+SR
+-	R1, R2 & R3 from OSPF+LDP or  OSPF+SR
 -	R3 advertise 10k labelled prefixes to R2 and R2 eventually to R1
 -	R1:R2 link is terminating on slice-pair2 on R1
 
