@@ -53,7 +53,6 @@ When we compare the forwarding Asics Q100 & Q200, they are very similar in archi
 | •	36MB on-die packet buffer (SMS)            | •	108MB on-die packet buffer (SMS)
 | •	HBM            | •	HBM*
 
-_*No HBM on Q200L based systems._
 
 
 Also, there are differences in the hardware resources which will bring in scale differences between the two Asics.
@@ -66,7 +65,7 @@ Fundamentally, silicon One ASIC is built with 6 slices where each slice has a se
 
 And number of slices can differ between different ASIC variants keeping fundamental architecture intact.
 
-![6-slice-blocks.png]({{site.baseurl}}/images/6-slice-blocks.png){: .align-center}
+![6-slices-blocks.png]({{site.baseurl}}/images/6-slices-blocks.png){: .align-center}
 
 
 Primarily there are 3 types of hardware memories at a high level, 
