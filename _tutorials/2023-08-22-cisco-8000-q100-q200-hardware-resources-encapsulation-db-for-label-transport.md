@@ -182,6 +182,8 @@ for **fixed** systems,
 for **distributed** systems,
   - If interface belongs to slice # 0,1 then its slice-pair 0
   - If interface belongs to slice # 2 then its slice-pair 1
+  
+  Though there are 2 slice pairs avaialable we represent it 1.5 slice pair as there is only one slice associated for slice-pair 1
                               
 How to find the interface mapping to NPU/Slice/IFG ? 
                               
