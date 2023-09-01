@@ -25,10 +25,10 @@ position: hidden
 
 With Cisco 8000 routers gaining popularity across various service providers and cloud customers, it’s very important to understand how the system behaves when running labelled transport and services. The reason being the labelled applications are hardware resource intensive, especially on the systems built with single stage forwarding architecture.
 
-In this article we will focus on the basic label forwarding transport with & without ECMP along with bundles and look into details on the hardware resource usage. Main focus will be on the Encapsulation Databases.
+In this article we will focus on the basic label forwarding transport with & without ECMP along with bundles and look into details on the hardware resource usage. Main focus for this article will be the Encapsulation Database.
 
 Also, in this article we will focus on the Silicon One **Q100 and Q200 based 8200/8600/8800** systems only.
-Resource utilization for the next generation of Silicon One Asics (P100, K100) is different and we will have another XR docs article focusing on that.
+Resource utilizations for the next generation of Silicon One Asics (P100, K100) are different and we will have another XR docs article focusing on that.
 
 
 
@@ -61,7 +61,7 @@ Also, there are differences in the hardware resources which will bring in scale 
 ![Q100vsQ200_resource-writeup.png]({{site.baseurl}}/images/Q100vsQ200_resource-writeup.png){: .align-center}
 
 ## Hardware resources at high level
-Fundamentally, silicon One ASIC is built with 6 slices where each slice has a set of parallel processing engines for different packet processing functionalities like: IFG - provisions MAC-orts, RxPP – receive packet processor, TxPP- Transmit packet processor and Traffic Manager - VOQs, schedulers. 
+Fundamentally, silicon One ASIC is built with 6 slices where each slice has a set of parallel processing engines for different packet processing functionalities like: IFG - provisions MAC-ports, RxPP – receive packet processor, TxPP- Transmit packet processor and Traffic Manager - VOQs, schedulers. 
 
 And number of slices can differ between different ASIC variants keeping fundamental architecture intact.
 
