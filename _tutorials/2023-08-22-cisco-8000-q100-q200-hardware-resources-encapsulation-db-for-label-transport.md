@@ -262,7 +262,7 @@ In above topology,
 -	R3 advertise 10k labelled prefixes to R2 and R2 eventually to R1
 -	R1:R2 link is terminating on slice-pair2 on R1
 
-### Resource check on R1(UUT): Before Label advertisements
+### Resource check on R1(UUT): Before Label advertisement
 Lets check the egress encap data base on the UUT (R1) in above topology before R1 received labelled prefixes from R2,
 
 
@@ -274,7 +274,7 @@ What is seen in the resource table above,
 -	Hardware usage shows the actual HW programmed entries at slice-pair level.
 -	There are some default entries get programmed in HW as seen above. 
 
-### Resource check R1(UUT): After Label advertisement
+### Resource check on R1(UUT): After Label advertisement
 
 Let’s advertise 10k labelled prefixes from R3 to R2 over LDP, eventually to R1.
 
