@@ -66,7 +66,8 @@ Fundamentally, silicon One ASIC is built with 6 slices where each slice has a se
 
 And number of slices can differ between different ASIC variants keeping fundamental architecture intact.
 
-<<6 slice pic>>
+![6-slice-blocks.png]({{site.baseurl}}/images/6-slice-blocks.png){: .align-center}
+
 
 Primarily there are 3 types of hardware memories at a high level, 
 
@@ -150,11 +151,8 @@ Egress large encap entries can be programmed on a specific slice-pair (LDP, SR) 
   - On *fixed system* , this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 64K . And total per NPU is 192K per NPU
   - On *distributed systems*, this table size can go up to 128K per NPU (1.5 slice-pairs).
 
-There are 2 types of egress encapsulation resources being used for egress label programming on Q100/Q200 systems which are egress large encap & egress small encap resources. And scope of label encap programming is at slice-pair level but some of the labelled applications programs the encap entries only on the d(based on the egress interface pointing towards the next-hop) slice-pair level or on all slice-pairs Regarding some appln programs at slice-pai and some on all slice-pairs.
-
  
-Lets understand Cisco 8000 slice-pair concept before get into the details of egress large encap resource details.
-
+**Lets understand Cisco 8000 slice-pair concept before get into the details of egress large encap resource consumption details**
 
 
 ### Slices & Slice-pair concepts
