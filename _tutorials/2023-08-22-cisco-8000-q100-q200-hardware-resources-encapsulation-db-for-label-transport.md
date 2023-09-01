@@ -262,10 +262,11 @@ In above topology,
 -	R3 advertise 10k labelled prefixes to R2 and R2 eventually to R1
 -	R1:R2 link is terminating on slice-pair2 on R1
 
-## Resource check on R1(UUT): Before Label advertisements
+### Resource check on R1(UUT): Before Label advertisements
 Lets check the egress encap data base on the UUT (R1) in above topology before R1 received labelled prefixes from R2,
 
-![resource-emlarge-b4-programing.png]({{site.baseurl}}/images/resource-emlarge-b4-programing.png){: .align-center}
+
+![em-res-b4.png]({{site.baseurl}}/images/em-res-b4.png){: .align-center}
 
 What is seen in the resource table above,
 -	OOR summary shows the OOR state and threshold levels. 
@@ -273,17 +274,22 @@ What is seen in the resource table above,
 -	Hardware usage shows the actual HW programmed entries at slice-pair level.
 -	There are some default entries get programmed in HW as seen above. 
 
-## Resource check R1(UUT): After Label advertisements
+### Resource check R1(UUT): After Label advertisement
 
 Let’s advertise 10k labelled prefixes from R3 to R2 over LDP, eventually to R1.
 
 
-![cef-mpls.png]({{site.baseurl}}/images/cef-mpls.png){: .align-center}
+Below output is from R1(UUT) where labelled prefixes are updated in mpls forwarding table as seen below. There are unique outgoing labels for each prefix. There outgoing labels will have egress encap IDs programmed. And there IDs get programmed in **egress large encap** database. Similarly, there are local labels for each prefixes which get programmed in CEM databased.
 
+
+![cef-mpls-output.png]({{site.baseurl}}/images/cef-mpls-output.png){: .align-center}
+
+          
 
 Let’s analyse Egress Large Encap resource utilization on R1-UUT , 
 
-![resource-aftr-emlarge-programing.png]({{site.baseurl}}/images/resource-aftr-emlarge-programing.png){: .align-center}
+
+![em-res-after.png]({{site.baseurl}}/images/em-res-after.png){: .align-center}
 
 -	10k encap entries are programmed in slice-pair2 (egress interface which is pointing the nexthop is hosted on slice-pair2) in hardware.
 -	These 10k entries are for outgoing LDP labels. Hence the resource consumption scope is at slice-pair level.
