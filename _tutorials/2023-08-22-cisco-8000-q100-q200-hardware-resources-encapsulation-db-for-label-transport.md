@@ -74,11 +74,11 @@ Primarily there are 3 types of hardware memories at a high level,
   - SRAM 
   - HBM 
 
-Some of these memories area globally shared across all slices while some are per slice level or slice-pair level. And there are multiple data bases associated with these memories which get accessed at different stages of packet processing.  
+Some of these memories are globally shared across all slices while some are per slice level or slice-pair level. And there are multiple data bases associated with these memories which get accessed at different stages of packet processing.  
 
  
 
-Major data base classification is as below,
+Major database classification is as below,
 
 |**Databases** | **Application**  
 |------------------------|------------------------------------------------------------------|
