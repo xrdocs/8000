@@ -289,7 +289,7 @@ Below output is from R1(UUT) where labelled prefixes are updated in mpls forward
 Let’s analyse Egress Large Encap resource utilization on R1-UUT , 
 
 
-![em-res-after.png]({{site.baseurl}}/images/em-res-after.png){: .align-center}
+![em-output-aftr.png]({{site.baseurl}}/images/em-output-aftr.png){: .align-center}
 
 -	10k encap entries are programmed in slice-pair2 (egress interface which is pointing the nexthop is hosted on slice-pair2) in hardware.
 -	These 10k entries are for outgoing LDP labels. Hence the resource consumption scope is at slice-pair level.
@@ -303,7 +303,7 @@ Same label allocation model applies to SR-MPLS transport scenarios as well.
 - LDP allocates label for all prefixes by default so one way to limit lable consumption is by limiting the prefixes itself. So make use of IGP features like 'advertise pasisve-only'(ISIS) , prefix-suppression(OSPF)
 - In case of LDP, allocate labels only for required prefixes  by making use of 'label local advertise' and 'allocate-label' configuration options
 
-This helps with optimized usage of Encapsulation database for labelled transport.
+This helps optimize the usage of Encapsulation database for labelled transport.
 
 
 ## Conclusion
