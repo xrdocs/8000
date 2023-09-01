@@ -114,21 +114,43 @@ To simplify the flow
 - Packets are reconstructed with proper network headers and send out of the corresponding egress interface.
 
 
-## Label encap resource usage
+## Understanding Encapsulation databases & Label types
 
-large & small, resource as seen below
+There are 2 types of egress encapsulation databases on Q100/Q200 ASIC based Cisco 8000 systems,
 
+  - **Large Encap DB**: Holds MPLS out labels (transport & services) which is the remote label received from remote peer nodes (LDP/SR/RSVP-TE, L2VPN/L3VPN)
+  - **Small Encap DB**: Holds MPLS remote labels for **underlay transport** with recursive overlay transport (BGP-LU over **LDP**/**RSVP-TE**, LDP over **RSVP-TE**)
+	
+There are 2 types of labels,
+-	**Remote label**: label received from remote peer
+      - It can be transport labels like LDP, SR, RSVP-TE etc.
+      - It can be service labels like L3VPN , L2VPN, BGP-LU etc.
+-	**Local label**: label assigned by the system locally 
 
-some appln programs at slice-pai and some on all slice-pairs
+Remote labels are managed in **egress encapsulation (EM)** databases and local labels are managed in **centra exact match (CEM)** data bases. 
+Local labels are looked up from CEM in the ingress termination stage and remote labels are derived from egress encapsulation stage from EM database.
 
-
-Label encap resource consumption can be per slice level , per slice-pair or per device/NPU level based on different label applications implemented in the system. Below table brief on the resources associated with label programming and its scope of programming, 
-
+Below table brief on the scope of resource consumption and its scale for Q100 & Q200 based systems,
 
 ![resource-table-1.png]({{site.baseurl}}/images/resource-table-1.png){: .align-center}
 
+Label encap resource (CEM, EMs) consumption can be per slice level , per slice-pair or per device/NPU level based on different label applications implemented in the system. 
 
 **This write up is about _egress large encapsulation_ resource usage and monitoring**
+
+Egress large encap entries can be programmed on a specific slice-pair (LDP, SR) or it can be programmed on all slice-pairs (BGP-LU , L3VPN) of the device depending on the type of labelled applications used.
+
+### Egress Large EM on Q100 & Q200 systems
+
+**Q100 based systems**: The size of large encap table is 32K/slice-pair 
+  -	On *Fixed systems*, this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 32K(Q100). And total per NPU is 96k
+  -	However, on *distributed systems*,  the NPUs in line cards will have only 3 n/w slices (1.5 slice-pairs) so effectively 64K encap entries exist per NPU.
+
+**Q200 based systems**: Large encap table size is 64K/slice pair
+  - On *fixed system* , this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 64K . And total per NPU is 192K per NPU
+  - On *distributed systems*, this table size can go up to 128K per NPU (1.5 slice-pairs).
+
+There are 2 types of egress encapsulation resources being used for egress label programming on Q100/Q200 systems which are egress large encap & egress small encap resources. And scope of label encap programming is at slice-pair level but some of the labelled applications programs the encap entries only on the d(based on the egress interface pointing towards the next-hop) slice-pair level or on all slice-pairs Regarding some appln programs at slice-pai and some on all slice-pairs.
 
  
 Lets understand Cisco 8000 slice-pair concept before get into the details of egress large encap resource details.
@@ -167,31 +189,7 @@ How to find the interface mapping to NPU/Slice/IFG ?
 
 Above example is from a distributed system.
 
-## Understanding Encapsulation databases & Label types
 
-There are 2 types of encapsulation database on Q100/Q200 ASIC based Cisco 8000 systems,
-
-  - **Large Encap DB**: Holds MPLS out labels (transport & services) which is the remote label received from remote peer nodes (LDP/SR/RSVP-TE, L2VPN/L3VPN)
-  - **Small Encap DB**: Holds MPLS remote labels for **underlay transport** with recursive overlay transport (BGP-LU over **LDP**/**RSVP-TE**, LDP over **RSVP-TE**)
-	
-There are 2 types of labels,
--	**Remote label**: label received from remote peer
-      - It can be transport labels like LDP, SR, RSVP-TE etc.
-      - It can be service labels like L3VPN , L2VPN, BGP-LU etc.
--	**Local label**: label assigned by the system locally 
-
-Remote labels are managed in egress encapsulation (EM) databases and local labels are managed in centra exact match (CEM) data bases. 
-Local labels are looked up from CEM in the ingress termination stage and remote labels are derived from egress encapsulation stage from EM database.
-
-### Egress Large EM on Q100 & Q200 systems
-
-**Q100 based systems**: The size of large encap table is 32K/slice-pair 
-  -	On *Fixed systems*, this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 32K(Q100). And total per NPU is 96k
-  -	However, on *distributed systems*,  the NPUs in line cards will have only 3 n/w slices (1.5 slice-pairs) so effectively 64K encap entries exist per NPU.
-
-**Q200 based systems**: Large encap table size is 64K/slice pair
-  - On *fixed system* , this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 64K . And total per NPU is 192K per NPU
-  - On *distributed systems*, this table size can go up to 128K per NPU (1.5 slice-pairs).
   
 **Following illustrations explains how Egress Large encap programming varies for different topologies:**
 
