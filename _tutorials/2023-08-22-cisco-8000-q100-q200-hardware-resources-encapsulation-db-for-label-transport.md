@@ -267,7 +267,7 @@ Lets check the egress encap data base on the UUT (R1) in above topology before R
 
 What is seen in the resource table above,
 -	OOR summary shows the OOR state and threshold levels. 
--	Egress encap entries are programmed as ‘lspnh’ entries in OFA table. Its zero as this o/p is captured before R1 programmed the entries
+-	Egress encap entries for labels are programmed as ‘lspnh’ entries in OFA table. Its zero as this o/p is captured before R1 programmed the entries
 -	Hardware usage shows the actual HW programmed entries at slice-pair level.
 -	There are some default entries get programmed in HW as seen above. 
 
@@ -295,12 +295,12 @@ Same label allocation model applies to SR-MPLS transport scenarios as well.
 ## Deployment Recommendations (with labelled transport on Q100/Q200)
 - Spread the ECMP links accross different slice-pairs
 - Keep the bundle members localized to the same slice pair as much as possible
-- LDP allocates lable for all prefixes by default so one way to limit lable consumption is by limiting the prefixes itself. So make use of IGP features like 'advertise pasisve-only'(ISIS) , prefix-suppression(OSPF)
-- in case of LDP, allocate labels only for required prefixes only by making use of 'label local advertise' and 'allocate-label' configuration options
+- LDP allocates label for all prefixes by default so one way to limit lable consumption is by limiting the prefixes itself. So make use of IGP features like 'advertise pasisve-only'(ISIS) , prefix-suppression(OSPF)
+- In case of LDP, allocate labels only for required prefixes  by making use of 'label local advertise' and 'allocate-label' configuration options
 
 This helps with optimized usage of Encapsulation database for labelled transport.
 
 
 ## Conclusion
-With this we come to the end of this article where we dicussed in details on the harware resource usage on Q100/Q200 for the labelled transport with specific focus on Egress large encapsulation database.
-In the following articles we will deepdive into other hardware resources and different applications.
+With this we come to the end of this article where we dicussed in details on the harware resource usage with Q100/Q200 for the labelled transport with specific focus on Egress large encapsulation database.
+In the upcomming articles we will deepdive into other hardware resources and cover different applications.
