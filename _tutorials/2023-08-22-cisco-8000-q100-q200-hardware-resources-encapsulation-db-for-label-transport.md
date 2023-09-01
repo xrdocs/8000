@@ -18,7 +18,7 @@ position: hidden
 
 {% include toc icon="table" title="Table of Contents" %}
 
-|Ram Mohan, Technical Leader, Technical Marketing (raam@cisco.com)|  
+|Ram Mohan A.M., Technical Leader, Technical Marketing (raam@cisco.com)|  
 |Deepak Balasubramanian, Technical Leader, Technical Marketing (deebalas@cisco.com)|  
 
 ## Introduction  
@@ -248,12 +248,6 @@ Above example is from a distributed system.
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pair which is hosting the bundle member links. So only 10k encap entries get programmed on slice-pair1. Member links from same slice-pair consume single encap entry for each labelled prefix.
 -	Local labels associated with each remote labels get programmed in CEM
 
-## Deployment Recommendations (with label transport Q100/Q200)
-- Spread the ECMP links accross different slice-pairs
-- Keep the bundle members localized to the same slice pair as much as possible
-
-This helps with optimized usage of Encapsulation database for labelled transport.
-
 
 ## Monitoring labels and encap resources
 
@@ -272,13 +266,13 @@ Lets check the egress encap data base on the UUT (R1) in above topology before R
 
 What is seen in the resource table above,
 -	OOR summary shows the OOR state and threshold levels. 
--	Egress encap entries are programmed as ‘lspnh’ entries in OFA table. Its zero as this o/p is before R1 programmed the entries
+-	Egress encap entries are programmed as ‘lspnh’ entries in OFA table. Its zero as this o/p is captured before R1 programmed the entries
 -	Hardware usage shows the actual HW programmed entries at slice-pair level.
 -	There are some default entries get programmed in HW as seen above. 
 
 ## Resource check: After Label advertisements
 
- Let’s advertise 10k labelled prefixes from R3 to R2 over LDP, eventually to R1.
+Let’s advertise 10k labelled prefixes from R3 to R2 over LDP, eventually to R1.
 
 MPLS forwarding database on R2 is seen as below. Outgoing labels are seen as ‘unlabeled’ because R3 is directly connected neighbor for those prefixes and R2 is PHP for those prefixes. And as seen in CEF o/p there are 10k prefixes updated on R2
 
@@ -295,6 +289,16 @@ Let’s analyse Egress Large Encap resource utilization on R1-UUT ,
 -	These 10k entries are for outgoing LDP labels. Hence the resource consumption scope is at slice-pair level.
 
 Same label allocation model applies to SR-MPLS transport scenarios as well.
+
+
+## Deployment Recommendations (with labelled transport on Q100/Q200)
+- Spread the ECMP links accross different slice-pairs
+- Keep the bundle members localized to the same slice pair as much as possible
+- LDP allocates lable for all prefixes by default so one way to limit lable consumption is by limiting the prefixes itself. So make use of IGP features like 'advertise pasisve-only'(ISIS) , prefix-suppression(OSPF)
+- in case of LDP, allocate labels only for required prefixes only by making use of 'label local advertise' and 'allocate-label' configuration options
+
+This helps with optimized usage of Encapsulation database for labelled transport.
+
 
 ## Conclusion
 With this we come to the end of this article where we dicussed in details on the harware resource usage on Q100/Q200 for the labelled transport with specific focus on Egress large encapsulation database.
