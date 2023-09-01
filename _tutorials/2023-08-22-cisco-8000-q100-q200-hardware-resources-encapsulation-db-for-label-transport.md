@@ -124,7 +124,7 @@ There are 2 types of labels,
 -	**Local label**: label assigned by the system locally 
               
 
-Remote labels are managed in **egress encapsulation (EM)** databases and local labels are managed in **centra exact match (CEM)** data bases.
+Remote labels are managed in **egress encapsulation (EM)** databases and local labels are managed in **central exact match (CEM)** data bases.
               
 Local labels are looked up from CEM in the ingress termination stage and remote labels are derived from egress encapsulation stage from EM database.
               
