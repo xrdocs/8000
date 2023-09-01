@@ -114,27 +114,32 @@ To simplify the flow
 - Packets are reconstructed with proper network headers and send out of the corresponding egress interface.
 
 
-## Understanding Encapsulation databases & Label types
+## Understanding Label types & Encapsulation databases
 
-There are 2 types of egress encapsulation databases on Q100/Q200 ASIC based Cisco 8000 systems,
-
-  - **Large Encap DB**: Holds MPLS out labels (transport & services) which is the remote label received from remote peer nodes (LDP/SR/RSVP-TE, L2VPN/L3VPN)
-  - **Small Encap DB**: Holds MPLS remote labels for **underlay transport** with recursive overlay transport (BGP-LU over **LDP**/**RSVP-TE**, LDP over **RSVP-TE**)
 	
 There are 2 types of labels,
 -	**Remote label**: label received from remote peer
       - It can be transport labels like LDP, SR, RSVP-TE etc.
       - It can be service labels like L3VPN , L2VPN, BGP-LU etc.
 -	**Local label**: label assigned by the system locally 
+              
 
-Remote labels are managed in **egress encapsulation (EM)** databases and local labels are managed in **centra exact match (CEM)** data bases. 
+Remote labels are managed in **egress encapsulation (EM)** databases and local labels are managed in **centra exact match (CEM)** data bases.
+              
 Local labels are looked up from CEM in the ingress termination stage and remote labels are derived from egress encapsulation stage from EM database.
+              
+There are 2 types of egress encapsulation databases on Q100/Q200 ASIC based Cisco 8000 systems,
 
+  - **Large Encap DB**: Holds MPLS out labels (transport & services) which is the remote label received from remote peer nodes (LDP/SR/RSVP-TE, L2VPN/L3VPN)
+                              
+  - **Small Encap DB**: Holds MPLS remote labels for **underlay transport** with recursive overlay transport (BGP-LU over **LDP**/**RSVP-TE**, LDP over **RSVP-TE**)
+
+                              
 Below table brief on the scope of resource consumption and its scale for Q100 & Q200 based systems,
 
 ![resource-table-1.png]({{site.baseurl}}/images/resource-table-1.png){: .align-center}
 
-Label encap resource (CEM, EMs) consumption can be per slice level , per slice-pair or per device/NPU level based on different label applications implemented in the system. 
+Label encap resource (CEM, EMs) consumption can be per slice-pair or per device/NPU level based on different label applications implemented in the system. 
 
 **This write up is about _egress large encapsulation_ resource usage and monitoring**
 
@@ -142,22 +147,22 @@ Egress large encap entries can be programmed on a specific slice-pair (LDP, SR) 
 
 ### Egress Large EM on Q100 & Q200 systems
 
-**Q100 based systems**: The size of large encap table is 32K/slice-pair 
+**_Q100 based systems_**: The size of large encap table is 32K/slice-pair 
   -	On *Fixed systems*, this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 32K(Q100). And total per NPU is 96k
   -	However, on *distributed systems*,  the NPUs in line cards will have only 3 n/w slices (1.5 slice-pairs) so effectively 64K encap entries exist per NPU.
 
-**Q200 based systems**: Large encap table size is 64K/slice pair
+**_Q200 based systems_**: Large encap table size is 64K/slice pair
   - On *fixed system* , this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 64K . And total per NPU is 192K per NPU
   - On *distributed systems*, this table size can go up to 128K per NPU (1.5 slice-pairs).
 
  
-**Lets understand Cisco 8000 slice-pair concept before get into the details of egress large encap resource consumption details**
+**Lets understand Cisco 8000 slice-pair concept before get into the details of egress large encap resource consumption details**,
 
 
 ### Slices & Slice-pair concepts
 
 For a Fixed or Centralised systems all 6 slices on the NPU is available for network facing interfaces but same time for a Distributed system only 3 slices are available for network facing interfaces and other 3 slices are used for fabric facing interfaces. 
-
+                              
 Below pictures depict the slices for fixed system and distributed system (here representing 88-LC0-34H14FH line card which has 2 NPUs),
 
 
@@ -167,31 +172,31 @@ Below pictures depict the slices for fixed system and distributed system (here r
 
 ![resource-slicepair-2.png]({{site.baseurl}}/images/resource-slicepair-2.png){: .align-center}
 
-
+                              
 Fixed systems will have 3 slice-pairs (6 n/w slices) & Distributed systems will have 2 slice-pairs (3 n/w slices)
-
-for fixed systems,
+                              
+for **fixed** systems,
   - If interface belongs to slice # 0,1 then its slice-pair 0
   - If interface belongs to slice # 2,3 then its slice-pair 1
   - If interface belongs to slice # 4,5 then its slice-pair 2
-
-for distributed systems,
+                              
+for **distributed** systems,
   - If interface belongs to slice # 0,1 then its slice-pair 0
   - If interface belongs to slice # 2 then its slice-pair 1
-  
+                              
 How to find the interface mapping to NPU/Slice/IFG ? 
-
+                              
 
 ![resource-voq-output.png]({{site.baseurl}}/images/resource-voq-output.png){: .align-center}
 
 Above example is from a distributed system.
 
 
-  
+                              
 **Following illustrations explains how Egress Large encap programming varies for different topologies:**
 
-
-## MPLS transport label Scenario without ECMP
+                              
+### MPLS transport label Scenario without ECMP
 
 
 ![resource-topo-1.png]({{site.baseurl}}/images/resource-topo-1.png){: .align-center}
@@ -203,7 +208,7 @@ Above example is from a distributed system.
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pair, which is hosting the egress interface, here slice-pair1
 -	Local labels associated with each remote labels get programmed in CEM.
 
-## MPLS transport label Scenario with ECMP on same Slice-pair
+### MPLS transport label Scenario with ECMP on same Slice-pair
 
 ![resource-topo-2.png]({{site.baseurl}}/images/resource-topo-2.png){: .align-center}
 
@@ -213,7 +218,7 @@ Above example is from a distributed system.
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pair which is hosting the egress interfaces. So 20k encap entries get programmed on slice-pair1 since there are 2 ECMPs links on that slice-pair.
 -	Local labels associated with each remote labels get programmed in CEM.
 
-## MPLS transport label Scenario with ECMP across different Slice-pairs
+### MPLS transport label Scenario with ECMP across different Slice-pairs
 
 ![resource-topo-3.png]({{site.baseurl}}/images/resource-topo-3.png){: .align-center}
 
@@ -223,7 +228,7 @@ Above example is from a distributed system.
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pairs which are hosting the egress interfaces. Here there is 1 link each on slice-pair0 & 2. So 10K encap entries get programmed on slice-pair0 & slice-pair2
 -	Local labels associated with each remote labels get programmed in CEM
 
-## MPLS transport label Scenario with Bundle members across different Slice-pairs
+### MPLS transport label Scenario with Bundle members across different Slice-pairs
 
 ![resource-topo-4.png]({{site.baseurl}}/images/resource-topo-4.png){: .align-center}
 
@@ -233,7 +238,7 @@ Above example is from a distributed system.
 -	Remote labels associated with the prefixes get programmed in egress-large-encap database on the slice-pairs which is hosting the bundle member links. So 10k encap entries get programmed on each slice-pair0 & 1 . 
 -	Local labels associated with each remote labels get programmed in CEM
 
-## MPLS transport label Scenario with Bundle members on same Slice-pair
+### MPLS transport label Scenario with Bundle members on same Slice-pair
 
 ![resource-topo-5.png]({{site.baseurl}}/images/resource-topo-5.png){: .align-center}
 
