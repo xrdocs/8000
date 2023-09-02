@@ -1,9 +1,7 @@
 ---
 published: true
 date: '2023-08-22 12:04 +0530'
-title: >-
-  Cisco 8000 Hardware resources deep dive Part-1: Encapsulation database for
-  label transport
+title: 'Cisco 8000 Hardware resources deep dive Part-1: '
 author: 'Ram Mohan A. M, Deepak Balasubramaniam'
 excerpt: >-
   This writeup explains label resource allocation details for labelled transport
