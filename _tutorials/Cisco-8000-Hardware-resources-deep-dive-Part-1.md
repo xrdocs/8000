@@ -43,13 +43,13 @@ Resource utilizations for the next generation of Silicon One ASICs (e.g P100) ar
 | Q200      | **Fixed:** 8201-24H8FH, 8202-32FH(-M), **Centralized** 8608  , 										**8800-Line cards:** 88-LC0-36FH(-M), 88-LC0-36H14FH
 
 
-When we compare the forwarding ASICs Q100 & Q200, they are very similar in architecture in terms of hardware components and packet forwarding. But there are differences in terms of the number of 50G serdes links which brings changes in forwarding throughput between the ASICs. 
+When we compare the forwarding ASICs Q100 & Q200, they are very similar in architecture in terms of hardware components and packet forwarding. But there are differences in terms of the number of 50G SerDes links which brings changes in forwarding throughput between the ASICs. 
  
 |   **Q100** | **Q200**  
 |------------------------|------------------------------------------------------------------|
 | •	10.8 Tbps                             | •	12.8 Tbps 
-| •	6 Slices with 216 x 50G serdes  | •	6 Slices with 256 x 50G SerDes
-| •	2 x IFG per slice with 18 x 50G serdes per IFG            | •	2 x IFG per slice with 16 x 50G (4 IFGs) or 24 x 50G (8 IFGs)
+| •	6 Slices with 216 x 50G SerDes  | •	6 Slices with 256 x 50G SerDes
+| •	2 x IFG per slice with 18 x 50G SerDes per IFG            | •	2 x IFG per slice with 16 x 50G (4 IFGs) or 24 x 50G (8 IFGs)
 | •	36MB on-die packet buffer (SMS)            | •	108MB on-die packet buffer (SMS)
 | •	HBM            | •	HBM*
 
