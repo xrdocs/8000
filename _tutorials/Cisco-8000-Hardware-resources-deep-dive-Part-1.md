@@ -16,10 +16,10 @@ tags:
 position: hidden
 ---
 
-{% include toc icon="table" title="Cisco 8000 Hardware resources deep dive Part-1: Encapsulation database for label transport" %}
-
 |Ram Mohan A.M., Technical Leader, Technical Marketing (raam@cisco.com)|  
 |Deepak Balasubramanian, Technical Leader, Technical Marketing (deebalas@cisco.com)|  
+
+{% include toc icon="table" title="Cisco 8000 Hardware resources deep dive Part-1: Encapsulation database for label transport" %}
 
 ## Introduction  
 
