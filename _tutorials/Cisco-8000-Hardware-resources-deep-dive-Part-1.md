@@ -51,7 +51,7 @@ When we compare the forwarding ASICs Q100 & Q200, they are very similar in archi
 | •	6 Slices with 216 x 50G SerDes  | •	6 Slices with 256 x 50G SerDes
 | •	2 x IFG per slice with 18 x 50G SerDes per IFG            | •	2 x IFG per slice with 16 x 50G (4 IFGs) or 24 x 50G (8 IFGs)
 | •	36MB on-die packet buffer (SMS)            | •	108MB on-die packet buffer (SMS)
-| •	HBM            | •	HBM*
+| •	HBM            | •	HBM
 
 
 
