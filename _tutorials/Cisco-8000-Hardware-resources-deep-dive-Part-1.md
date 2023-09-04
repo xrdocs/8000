@@ -28,7 +28,7 @@ With Cisco 8000 routers gaining popularity across various service providers and 
 In this article we will focus on the basic label forwarding transport with & without ECMP along with bundles and look into details on the hardware resource usage. Main focus for this article will be the Encapsulation Database.
 
 Also, in this article we will focus on the Silicon One **Q100 and Q200 based 8200/8600/8800** systems only.
-Resource utilizations for the next generation of Silicon One Asics (P100, K100) are different and we will have another XR docs article focusing on that.
+Resource utilizations for the next generation of Silicon One ASICs (e.g P100) are different and we will have another XR docs article focusing on that.
 
 
 
@@ -37,25 +37,25 @@ Resource utilizations for the next generation of Silicon One Asics (P100, K100) 
  This table gives the view of current Cisco 8000 products mapping to Q100/Q200 
  
  
-|**Forwarding Asics** | **Cisco 8000 PIDs**  
+|**Forwarding ASICs** | **Cisco 8000 PIDs**  
 |------------------------|------------------------------------------------------------------|
 | Q100          | **Fixed**: 8201, 8202 ,  															**8800-Line cards:** 8800-LC-36FH, 8800-LC-48H
-| Q200      | **Fixed:** 8201-24H8FH, 8202-32FH(-M), 8608  , 										**8800-Line cards:** 88-LC0-36FH(-M), 88-LC0-36H14FH
+| Q200      | **Fixed:** 8201-24H8FH, 8202-32FH(-M), **Centralized** 8608  , 										**8800-Line cards:** 88-LC0-36FH(-M), 88-LC0-36H14FH
 
 
-When we compare the forwarding Asics Q100 & Q200, they are very similar in architecture in terms of hardware components and packet forwarding. But there are differences in terms of the number of 50G serdes links which brings changes in forwarding throughput between the Asics. 
+When we compare the forwarding ASICs Q100 & Q200, they are very similar in architecture in terms of hardware components and packet forwarding. But there are differences in terms of the number of 50G serdes links which brings changes in forwarding throughput between the ASICs. 
  
 |   **Q100** | **Q200**  
 |------------------------|------------------------------------------------------------------|
 | •	10.8 Tbps                             | •	12.8 Tbps 
-| •	6 Slices with 216 x 50G serdes  | •	6 Slices with 256 x 50G serdes
+| •	6 Slices with 216 x 50G serdes  | •	6 Slices with 256 x 50G SerDes
 | •	2 x IFG per slice with 18 x 50G serdes per IFG            | •	2 x IFG per slice with 16 x 50G (4 IFGs) or 24 x 50G (8 IFGs)
 | •	36MB on-die packet buffer (SMS)            | •	108MB on-die packet buffer (SMS)
 | •	HBM            | •	HBM*
 
 
 
-Also, there are differences in the hardware resources which will bring in scale differences between the two Asics.
+Also, there are differences in the hardware resources which will bring in scale differences between the two ASICs.
 
  
 ![Q100vsQ200_resource-writeup.png]({{site.baseurl}}/images/Q100vsQ200_resource-writeup.png){: .align-center}
