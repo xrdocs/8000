@@ -162,7 +162,7 @@ Egress large encap entries can be programmed on a specific slice-pair (LDP, SR) 
 
 ### Slices & Slice-pair concepts
 
-For a Fixed or Centralised systems all 6 slices on the NPU is available for network facing interfaces but same time for a Distributed system only 3 slices are available for network facing interfaces and other 3 slices are used for fabric facing interfaces. 
+For a Fixed or Centralized systems all 6 slices on the NPU is available for network facing interfaces but same time for a Distributed system only 3 slices are available for network facing interfaces and other 3 slices are used for fabric facing interfaces. 
                               
 Below pictures depict the slices for Fixed system and distributed system (here representing 88-LC0-34H14FH line card which has 2 NPUs),
 
