@@ -102,7 +102,7 @@ Once the packet arrives at the TxPP stage, pointers in the system header will be
  
 
 
-![Forwarding-pipeline-reources-DB.png]({{site.baseurl}}/images/Forwarding-pipeline-reources-DB.png) {: .align-center}
+![Forwarding-pipeline-reources-DB.png]({{site.baseurl}}/images/Forwarding-pipeline-reources-DB.png){: .align-center}
 
 
 To simplify the flow
