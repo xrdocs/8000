@@ -61,7 +61,7 @@ Also, there are differences in the hardware resources which will bring in scale 
 ![Q100vsQ200_resource-writeup.png]({{site.baseurl}}/images/Q100vsQ200_resource-writeup.png){: .align-center}
 
 ## Hardware resources at high level
-Fundamentally, silicon One ASIC is built with 6 slices where each slice has a set of parallel processing engines for different packet processing functionalities like: IFG - provisions MAC-ports, RxPP – receive packet processor, TxPP- Transmit packet processor and Traffic Manager - VOQs, schedulers. 
+Fundamentally, Silicon One ASIC is built with 6 slices where each slice has a set of parallel processing engines for different packet processing functionalities like: IFG - provisions MAC-ports, RxPP – receive packet processor, TxPP- Transmit packet processor and Traffic Manager - VOQs, schedulers. 
 
 And number of slices can differ between different ASIC variants keeping fundamental architecture intact.
 
@@ -119,9 +119,9 @@ To simplify the flow
 	
 There are 2 types of labels,
 -	**Remote label**: label received from remote peer
-      - It can be transport labels like LDP, SR, RSVP-TE etc.
-      - It can be service labels like L3VPN , L2VPN, BGP-LU etc.
--	**Local label**: label assigned by the system locally 
+      - It can be transport labels like LDP, SR, RSVP-TE, BGP-LU etc.
+      - It can be service labels like L3VPN , L2VPN etc.
+-	**Local label**: label assigned by the system locally (e.g: per-VRF label, locally allocated LDP)
               
 
 Remote labels are managed in **egress encapsulation (EM)** databases and local labels are managed in **central exact match (CEM)** data bases.
@@ -150,7 +150,7 @@ Egress large encap entries can be programmed on a specific slice-pair (LDP, SR) 
   -	On *Fixed systems*, this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 32K(Q100). And total per NPU is 96k
   -	However, on *distributed systems*,  the NPUs in line cards will have only 3 n/w slices (1.5 slice-pairs) so effectively 64K encap entries exist per NPU.
 
-**_Q200 based systems_**: Large encap table size is 64K/slice pair
+**_Q200 based systems_**: The size of large encap table is 64K/slice pair
   - On *fixed system* , this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 64K . And total per NPU is 192K per NPU
   - On *distributed systems*, this table size can go up to 128K per NPU (1.5 slice-pairs).
 
