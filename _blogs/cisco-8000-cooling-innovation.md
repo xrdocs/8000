@@ -8,7 +8,7 @@ tags:
   - Cisco 8000
   - Cooling
   - Sustainability
-position: hidden
+position: top
 excerpt: >-
   This blog explains how Cisco 8000 series was designed for sustainability with
   unique cooling innovation.
