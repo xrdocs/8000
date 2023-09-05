@@ -848,4 +848,4 @@ The Cisco 8608 is a unique platform that combines flexibility & reliability whil
 
 | Version | Data     | Author(s)     | Comments            |
 |---------|----------|---------------|---------------------|
-| 1       | August-22 | Chang Soo Lee | Initial Publication |
+| 1       | September-5 | Chang Soo Lee | Initial Publication |
