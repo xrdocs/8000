@@ -839,8 +839,8 @@ This document discussed the Cisco 8608 architecture.
 The Cisco 8608 is a unique platform that combines flexibility & reliability while offering investment protection. Customers can achieve unmatched reliability with redundant control and data plane via redundant Route Processors and Switch cards. Cisco 8608 Switch Cards are based on Cisco Silicon One™ Q200. A wide variety of Modular Port Adapters (MPAs) allow for high interface diversity.  
     
 ## Reference   
-- [Datasheet](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742571.html) [WIP]   
-- [[Hardware Installation Guide]](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized/modular_series_routers_overview.html)        
+- [Datasheet](https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/8608-router-ds.html)  
+- [Hardware Installation Guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/hardware/hig-centralized-8600/b-8600-hardware-installation-guide-centralized/modular_series_routers_overview.html)        
 - [Cisco 8000 Configuration guide](https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html)        
 - [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/)  
 
