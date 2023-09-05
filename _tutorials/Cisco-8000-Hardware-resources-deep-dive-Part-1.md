@@ -137,7 +137,8 @@ There are 2 types of egress encapsulation databases on Q100/Q200 ASIC based Cisc
                               
 Below table brief on the scope of resource consumption and its scale for Q100 & Q200 based systems,
 
-![resource-table-1.png]({{site.baseurl}}/images/resource-table-1.png)(courtesy CS Lee, Cisco){: .align-center}
+![resource-table-1.png]({{site.baseurl}}/images/resource-table-1.png){: .align-center}
+(courtesy CS Lee, Cisco)
 
 
 **This write up is about _egress large encapsulation_ resource usage and monitoring**
@@ -167,11 +168,13 @@ For a Fixed or Centralized systems all 6 slices on the NPU is available for netw
 Below pictures depict the slices for Fixed system and distributed system (here representing 88-LC0-34H14FH line card which has 2 NPUs),
 
 
-![resource-slicepair-1.png]({{site.baseurl}}/images/resource-slicepair-1.png)(courtesy CS Lee, Cisco){: .align-center}
+![resource-slicepair-1.png]({{site.baseurl}}/images/resource-slicepair-1.png){: .align-center}
+(courtesy CS Lee, Cisco)
 
 **Illustration**
 
-![resource-slicepair-2.png]({{site.baseurl}}/images/resource-slicepair-2.png)(courtesy CS Lee, Cisco){: .align-center}
+![resource-slicepair-2.png]({{site.baseurl}}/images/resource-slicepair-2.png){: .align-center}
+(courtesy CS Lee, Cisco)
 
                               
 Fixed systems will have 3 slice-pairs (6 n/w slices) & Distributed systems will have 2 slice-pairs (3 n/w slices)
