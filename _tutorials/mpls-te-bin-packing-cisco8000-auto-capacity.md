@@ -61,7 +61,7 @@ mpls traffic-eng
  reoptimize 60
  auto-bw collect frequency 1
  named-tunnels
-  tunnel-te tesla
+  tunnel-te MY-TUNNEL
    path-option 10
     preference 200
     computation dynamic
