@@ -61,7 +61,7 @@ mpls traffic-eng
  reoptimize 60
  auto-bw collect frequency 1
  named-tunnels
-  tunnel-te MY-TUNNEL
+  tunnel-te Cisco --------------------------- Name of the tunnel
    path-option 10
     preference 200
     computation dynamic
