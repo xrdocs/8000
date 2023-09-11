@@ -1,6 +1,6 @@
 ---
 published: true
-date: '2023-06-16 00:50 +0200'
+date: '2023-09-08 00:50 +0200'
 title: Cisco 8608 Architecture White Paper
 position: top
 excerpt: >-
