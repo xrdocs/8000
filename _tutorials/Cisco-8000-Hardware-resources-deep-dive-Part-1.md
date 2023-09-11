@@ -206,7 +206,9 @@ Above example is from a distributed system.
 ### MPLS transport label Scenario without ECMP
 
 
-![resource-topo-1.png]({{site.baseurl}}/images/resource-topo-1.png){: .align-center}
+![topo-1.png]({{site.baseurl}}/images/topo-1.png){: .align-center}
+
+
 
 
 -	In Topo-1, the egress interface facing the MPLS cloud is hosted on slice2 (slice-pair1)
@@ -217,7 +219,7 @@ Above example is from a distributed system.
 
 ### MPLS transport label Scenario with ECMP on same Slice-pair
 
-![resource-topo-2.png]({{site.baseurl}}/images/resource-topo-2.png){: .align-center}
+![topo-2.png]({{site.baseurl}}/images/topo-2.png){: .align-center}
 
 
 -	In Topo-2, System has received 10k labelled prefixes over 2 ECMP links where both links are hosted on same slice-pair (slice-pair1)
@@ -227,7 +229,7 @@ Above example is from a distributed system.
 
 ### MPLS transport label Scenario with ECMP across different Slice-pairs
 
-![resource-topo-3.png]({{site.baseurl}}/images/resource-topo-3.png){: .align-center}
+![topo-3.png]({{site.baseurl}}/images/topo-3.png){: .align-center}
 
 
 -	In Topo-3, System has received 10k labelled prefixes over 2 ECMP links which are spread across 2 different slice-pairs (slice-pair0 & slice-pair2)
@@ -237,7 +239,7 @@ Above example is from a distributed system.
 
 ### MPLS transport label Scenario with Bundle members across different Slice-pairs
 
-![resource-topo-4.png]({{site.baseurl}}/images/resource-topo-4.png){: .align-center}
+![topo-4.png]({{site.baseurl}}/images/topo-4.png){: .align-center}
 
 
 -	In Topo-4, System has received 10k labelled prefixes over a bundle interface which has 2 member links distributed across 2 slice-pairs (slice-pair0 & 1)
@@ -247,7 +249,7 @@ Above example is from a distributed system.
 
 ### MPLS transport label Scenario with Bundle members on same Slice-pair
 
-![resource-topo-5.png]({{site.baseurl}}/images/resource-topo-5.png){: .align-center}
+![topo-5.png]({{site.baseurl}}/images/topo-5.png){: .align-center}
 
 
 -	In Topo-5, System has received 10k labelled prefixes over a bundle interface which has 2 member links hosted on same slice-pair (slice-pair1)
