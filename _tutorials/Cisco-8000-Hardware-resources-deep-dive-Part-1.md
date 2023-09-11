@@ -258,7 +258,7 @@ Above example is from a distributed system.
 ## Monitoring labels and encap resources
 
 
-![resource-3-rtr-topo.png]({{site.baseurl}}/images/resource-3-rtr-topo.png){: .align-center}
+![example-topo.png]({{site.baseurl}}/images/example-topo.png){: .align-center}
 
 In above topology, 
 -	R1, R2 & R3 from OSPF+LDP or  OSPF+SR
