@@ -40,7 +40,7 @@ Resource utilizations for the next generation of Silicon One ASICs (e.g P100) ar
 |**Forwarding ASICs** | **Cisco 8000 PIDs**  
 |------------------------|------------------------------------------------------------------|
 | Q100          | **Standalone**: 8201, 8202 ,  															**8800-Line cards:** 8800-LC-36FH, 8800-LC-48H
-| Q200      | **Standalone:** 8201-24H8FH, 8202-32FH(-M), **Centralized** 8608  , 										**8800-Line cards:** 88-LC0-36FH(-M), 88-LC0-36H14FH
+| Q200      | **Standalone:** 8201-24H8FH, 8201-32FH, 8202-32FH-M, **Centralized** 8608  , 										**8800-Line cards:** 88-LC0-36FH(-M), 88-LC0-36H14FH
 
 
 When we compare the forwarding ASICs Q100 & Q200, they are very similar in architecture in terms of hardware components and packet forwarding. But there are differences in terms of the number of 50G SerDes links which brings changes in forwarding throughput between the ASICs. 
@@ -168,8 +168,9 @@ For a Standalone or Centralized systems all 6 slices on the NPU is available for
 Below pictures depict the slices for Standalone system and distributed system (here representing 88-LC0-34H14FH line card which has 2 NPUs),
 
 
-![resource-slicepair-1.png]({{site.baseurl}}/images/resource-slicepair-1.png){: .align-center}
+![slice-pair.png]({{site.baseurl}}/images/slice-pair.png){: .align-center}
 (courtesy CS Lee, Cisco)
+
 
 **Illustration**
 
