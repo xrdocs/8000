@@ -39,8 +39,8 @@ Resource utilizations for the next generation of Silicon One ASICs (e.g P100) ar
  
 |**Forwarding ASICs** | **Cisco 8000 PIDs**  
 |------------------------|------------------------------------------------------------------|
-| Q100          | **Fixed**: 8201, 8202 ,  															**8800-Line cards:** 8800-LC-36FH, 8800-LC-48H
-| Q200      | **Fixed:** 8201-24H8FH, 8202-32FH(-M), **Centralized** 8608  , 										**8800-Line cards:** 88-LC0-36FH(-M), 88-LC0-36H14FH
+| Q100          | **Standalone**: 8201, 8202 ,  															**8800-Line cards:** 8800-LC-36FH, 8800-LC-48H
+| Q200      | **Standalone:** 8201-24H8FH, 8202-32FH(-M), **Centralized** 8608  , 										**8800-Line cards:** 88-LC0-36FH(-M), 88-LC0-36H14FH
 
 
 When we compare the forwarding ASICs Q100 & Q200, they are very similar in architecture in terms of hardware components and packet forwarding. But there are differences in terms of the number of 50G SerDes links which brings changes in forwarding throughput between the ASICs. 
@@ -148,14 +148,14 @@ Egress large encap entries can be programmed on a specific slice-pair (LDP, SR) 
 ### Egress Large EM on Q100 & Q200 systems
 
 **_Q100 based systems_**: The size of large encap table is 32K/slice-pair 
-  -	On *Fixed systems*, this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 32K(Q100). And total per NPU is 96k
+  -	On *Standalone systems*, this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 32K(Q100). And total per NPU is 96k
   -	However, on *distributed systems*,  the NPUs in line cards will have only 3 n/w slices (1.5 slice-pairs) so effectively 64K encap entries exist per NPU.
 
 **_Q200 based systems_**: The size of large encap table is 64K/slice pair
-  - On *Fixed system* , this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 64K . And total per NPU is 192K per NPU
+  - On *Standalone system* , this table is divided into three parts, one for each slice-pair. So, each slice-pair has encap table of size 64K . And total per NPU is 192K per NPU
   - On *distributed systems*, this table size can go up to 128K per NPU (1.5 slice-pairs).
 
-**NOTE:-** Though Q200 based system can scale egress large encap upto 192k/128K per NPU on Fixed & distributed systems respectively there is a scale limiting factor comes into play which is Global Resource ID(GRID) which is consumed by every local labels corresponding to the remote labels learned from peer devices. And that limit is ~52K per system. So in essense **_egress large encap_** scale also limits to 52K per system.
+**NOTE:-** Though Q200 based system can scale egress large encap upto 192k/128K per NPU on Standalone & distributed systems respectively there is a scale limiting factor comes into play which is Global Resource ID(GRID) which is consumed by every local labels corresponding to the remote labels learned from peer devices. And that limit is ~52K per system. So in essense **_egress large encap_** scale also limits to 52K per system.
 {: .notice--info}
  
 **Lets understand Cisco 8000 slice-pair concept before get into the details of egress large encap resource consumption details**,
@@ -163,9 +163,9 @@ Egress large encap entries can be programmed on a specific slice-pair (LDP, SR) 
 
 ### Slices & Slice-pair concepts
 
-For a Fixed or Centralized systems all 6 slices on the NPU is available for network facing interfaces but same time for a Distributed system only 3 slices are available for network facing interfaces and other 3 slices are used for fabric facing interfaces. 
+For a Standalone or Centralized systems all 6 slices on the NPU is available for network facing interfaces but same time for a Distributed system only 3 slices are available for network facing interfaces and other 3 slices are used for fabric facing interfaces. 
                               
-Below pictures depict the slices for Fixed system and distributed system (here representing 88-LC0-34H14FH line card which has 2 NPUs),
+Below pictures depict the slices for Standalone system and distributed system (here representing 88-LC0-34H14FH line card which has 2 NPUs),
 
 
 ![resource-slicepair-1.png]({{site.baseurl}}/images/resource-slicepair-1.png){: .align-center}
@@ -177,9 +177,9 @@ Below pictures depict the slices for Fixed system and distributed system (here r
 (courtesy CS Lee, Cisco)
 
                               
-Fixed systems will have 3 slice-pairs (6 n/w slices) & Distributed systems will have 2 slice-pairs (3 n/w slices)
+Standalone systems will have 3 slice-pairs (6 n/w slices) & Distributed systems will have 2 slice-pairs (3 n/w slices)
                               
-for **Fixed** systems,
+for **Standalone** systems,
   - If interface belongs to slice # 0,1 then its slice-pair 0
   - If interface belongs to slice # 2,3 then its slice-pair 1
   - If interface belongs to slice # 4,5 then its slice-pair 2
