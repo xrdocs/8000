@@ -307,7 +307,8 @@ Cisco 8111-32EH is made of a single G100 NPU.
 
 ### Cisco 8608  
 The Cisco 8608 router is a part of Cisco’s Centralized Architecture based chassis design. Centralized systems have redundant Route Processors (RP w/CPU), redundant Switch cards (SCs w/Cisco Silicon One Q200 NPU) and in-service replaceable modular port adapters (MPA).  
-![]({{site.baseurl}}/)
+
+
 
 
 
