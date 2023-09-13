@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2022-03-01 22:07 +0100'
-title: 'Port Assignments on Cisco 8100/8200, and Cisco 8800 Platforms '
+title: 'Port Assignments on Cisco 8100/8200, Cisco 8608, and Cisco 8800 Platforms '
 position: top
 tags:
   - iosxr
@@ -59,12 +59,47 @@ Hu0/0/0/19   f0001a8   0   2    0    80    640      0 local   100G
 </pre>
 </div>  
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>  
+---------------------------------------------------------------------------
+Node ID: 0/RP0/CPU0
+Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port 
+name         handle    <mark>#    #    #</mark>   Port  base  base       port     speed
+             (hex)                                          type          
+---------------------------------------------------------------------------
+Hu0/1/0/15   f0000dc   0   5    0   320    632      0        local    100G
+Hu0/1/0/14   f0000e4   0   5    0   312    624      0        local    100G
+Hu0/1/0/13   f0000ec   0   5    0   304    616      0        local    100G
+Hu0/1/0/12   f0000f4   0   5    0   296    608      0        local    100G
+Hu0/1/0/11   f0000fc   0   5    0   288    600      0        local    100G
+Hu0/1/0/10   f000104   0   5    0   280    592      0        local    100G
+Hu0/1/0/9    f00010c   0   5    0   272    584      0        local    100G
+Hu0/1/0/8    f000114   0   5    0   264    576      0        local    100G
+Hu0/1/0/7    f00011c   0   4    1   256    568      0        local    100G
+Hu0/1/0/6    f000124   0   4    1   248    560      0        local    100G
+Hu0/1/0/5    f00012c   0   4    1   240    552      0        local    100G
+Hu0/1/0/4    f000134   0   4    1   232    544      0        local    100G
+Hu0/1/0/3    f00013c   0   4    1   224    536      0        local    100G
+Hu0/1/0/2    f000144   0   4    1   216    528      0        local    100G
+Hu0/1/0/1    f00014c   0   4    1   208    520      0        local    100G
+Hu0/1/0/0    f0000d4   0   4    1   200    512      0        local    100G
+FH0/2/0/3    f00017c   0   4    1   416    672      0        local    400G
+FH0/2/0/2    f000184   0   4    0   408    664      0        local    400G
+FH0/2/0/1    f00018c   0   4    0   400    656      0        local    400G
+FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G 
+</code>
+</pre>
+</div>  
+
+
 - NPU #: NPU number  
--- NPU number should be 0 for 8100/8200 (8000 fixed systems)    
+-- NPU number should be 0 for 8100/8200/8608 (8000 fixed & centralized systems)    
 -- NPU number should be 0, 1, or 2 for 88-LC0-36FH line card (not shown above)  
 -- NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown above)  
 - NPU core: Slice number  
--- Slice number should be between 0 and 5 for 8200 (8000 fixed systems)   
+-- Slice number should be between 0 and 5 for 8200/8608 (8000 fixed & centralized systems)   
 -- Slice number should be between 0 and 7 for 8111-32EH (8100 fixed system)   
 -- Slice number shoulbe be 0,1, or 2 for 8800 Line cards (not shown above)   
 - PP port: IFG number, should be 0 or 1 within slice  
@@ -269,6 +304,12 @@ Cisco 8111-32EH is made of a single G100 NPU.
 | FH0/0/0/10/0, FH0/0/0/10/1, FH0/0/0/11/0, FH0/0/0/11/1 | 0/3/6         | FH0/0/0/26/0, FH0/0/0/26/1, FH0/0/0/27/0, FH0/0/0/27/1 | 0/6/13        |
 | FH0/0/0/12/0, FH0/0/0/12/1, FH0/0/0/13/0, FH0/0/0/13/1 | 0/2/4         | FH0/0/0/28/0, FH0/0/0/28/1, FH0/0/0/29/0, FH0/0/0/29/1 | 0/7/15        |
 | FH0/0/0/14/0, FH0/0/0/14/1, FH0/0/0/15/0, FH0/0/0/15/1 | 0/2/5         | FH0/0/0/30/0, FH0/0/0/30/1, FH0/0/0/31/0, FH0/0/0/31/1 | 0/7/14        |  
+
+### Cisco 8608  
+The Cisco 8608 router is a part of Cisco’s Centralized Architecture based chassis design. Centralized systems have redundant Route Processors (RP w/CPU), redundant Switch cards (SCs w/Cisco Silicon One Q200 NPU) and in-service replaceable modular port adapters (MPA).  
+
+
+
 
 ### 8800-LC-36FH
 There are four Q100 NPUs on these line cards.  
