@@ -8,7 +8,7 @@ tags:
   - Cisco 8000
   - Sustainability
   - Power Consumption
-position: hidden
+position: top
 excerpt: >-
   Learn about PSU efficiency and router power allocation with a focus on Cisco's
   8000 Series Routers.
