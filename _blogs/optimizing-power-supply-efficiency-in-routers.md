@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2023-08-29 12:11 +0200'
-title: ' Optimizing Power Supply Efficiency in Routers '
+title: ' Optimizing Power Supply Efficiency in High End Routers '
 author: Lane Wigley
 tags:
   - iosxr
