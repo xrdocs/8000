@@ -13,7 +13,7 @@ excerpt: >-
   This article will demonstrate how Cisco 8000 Series routers can scale up to
   25M BGP paths.
 ---
-{% include toc %}
+{% include toc icon="table" title="Scaling Cisco 8000 BGP table to 25M paths" %}
 
 # Introduction
 It’s common for network operators Internet border routers to receive and process several full routing tables. They can then influence traffic leaving and entering their networks using route policies to manipulate BGP attributes.  
@@ -977,4 +977,3 @@ As usual, the answer is: it depends. Different customers have diverse designs, u
 While BGP table continues to grow, there is still room for margin. If current maximum scale is not high enough, network operators can still rely on [IOS XR BGP Multi-Instance](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/bgp/75x/b-bgp-cg-8k-75x/implementing-bgp.html#concept_qkq_mhc_qjb) feature: up to 4 BGP processes can be spawned, and address families can be spread across them to reach theoretically up to 80M paths.  
 
 Last, recent routers have plenty of RAM available: most current Cisco 8000 have 32GB of RAM and new products now ship with 64GB of RAM. Currently, IOS XR doesn’t keep advantage of all this memory. There is plan in progress to increase BGP process RLIMIT, with a recent prototype IOS XR image demonstrating support of 75M BGP paths on a 8202-32FH-M with 64GB of RAM. This was possible using a 24GB RLIMIT value for the BGP process during a Customer Proof of Concept.
-
