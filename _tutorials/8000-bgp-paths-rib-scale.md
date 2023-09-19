@@ -769,8 +769,94 @@ RP/0/RP0/CPU0:8201-32FH#
 </pre>
 </div>
 
-
 # Multiple Paths impact on RIB and FIB
+
+
 # Going beyond the limits
+
+Cisco 8000 is currently certified for a maximum number of 20M BGP paths. While the test performed earlier shows it’s possible to go higher, the platform will hit limits after a certain scale.  
+
+There are multiple factors limiting this scale:
+- Hardware: the CPU & amount of memory used in the platform
+- But also software: what’s the maximum amount of memory BGP process can allocate?
+
+While 8201-32FH ships with 32GB of RAM, IOS XR will restrict the BGP process to 8GB. This is called the RLIMIT (Resource Limit). 
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH#sh bgp process
+Tue Sep 12 12:49:13.450 UTC
+
+BGP Process Information:
+BGP is operating in STANDALONE mode
+Autonomous System number format: ASPLAIN
+Autonomous System: 65537
+Router ID: 13.37.1.1 (manually configured)
+Default Cluster ID: 13.37.1.1
+Active Cluster IDs:  13.37.1.1
+Fast external fallover enabled
+Platform Loadbalance paths max: 1024
+<mark>Platform RLIMIT max: 8589934592 bytes</mark>
+-- snip --
+</code>
+</pre>
+</div>
+
+**Info:** RLIMIT is platform dependent. It’s possible to observe some IOS XR based platforms with higher values (e.g 80GB for IOS XRv9000 virtual route-reflector platform).
+{: .notice--info}
+
+Adding additional neighbors will ultimately trigger memory allocation failure, causing BGP process errors or crash.
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:Sep 12 07:54:29.477 UTC: bgp[1089]: %ROUTING-BGP-3-NOMEM_RESET : [10420] : Failed to allocate memory for path, resetting neighbor  : bgp : (PID=10384) :  -Traceback= 55f00d13d929 7f67254aedb1 7f67254b8c44 7f6725db87be 55f00d13cfaf
+RP/0/RP0/CPU0:Sep 12 07:54:29.477 UTC: bgp[1089]: %ROUTING-BGP-5-ADJCHANGE : neighbor 20.70.79.79 Down - No memory (VRF: default) (AS: 65020)
+RP/0/RP0/CPU0:Sep 12 07:54:29.477 UTC: bgp[1089]: %ROUTING-BGP-5-ADJCHANGE : neighbor 38.70.79.79 Down - No memory (VRF: default) (AS: 65038)
+RP/0/RP0/CPU0:Sep 12 07:54:33.922 UTC: bgp[1089]: %ROUTING-BGP-3-NOMSGCHUNK : [10418] : Failed to allocate 414 bytes from the memory pool for message of type 2  : bgp : (PID=10384) :  -Traceback= 55f00d188db2 7f67257412aa 7f67254aedb1 7f67254b8c44 7f6725db87be 55f00d18a30e
+</code>
+</pre>
+</div>
+
 # Monitoring
+
+Several YANG models are available to monitor BGP process health, statistics, but also platform memory utilization:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+Cisco-IOS-XR-ipv4-bgp-oper:bgp/bpm-instances-table/bpm-instances
+Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/detail
+Cisco-IOS-XR-procmem-oper:processes-memory/nodes/node/process-ids/process-id
+</code>
+</pre>
+</div>
+
+There are also OpenConfig models available to monitor the number of BGP paths:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+Cisco-IOS-XR-ipv4-bgp-oc-oper:oc-bgp/bgp-rib/afi-safi-table/ipv4-unicast/loc-rib/num-routes/num-routes
+Cisco-IOS-XR-ipv4-bgp-oc-oper:oc-bgp/bgp-rib/afi-safi-table/ipv6-unicast/loc-rib/num-routes/num-routes
+</code>
+</pre>
+</div>
+
+
+Here are sample dashboards which can be used:
+
+
 # Looking ahead: the future of BGP table scale
+
+This article demonstrated how Cisco 8000 could scale up to 25M+ BGP paths. It also went through some IOS XR BGP implementation details.  
+
+Is this number good enough? Are 20M BGP paths sufficient for a peering router? Is it common for network operators to process 20+ full BGP feeds on a single device?  
+
+As usual, the answer is: it depends. Different customers have diverse designs, use different features, and have different scale requirements. So far, only few hyperscaler customers expressed to support more.  
+
+While BGP table continues to grow, there is still room for margin. If current maximum scale is not high enough, network operators can still rely on [IOS XR BGP Multi-Instance](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/bgp/75x/b-bgp-cg-8k-75x/implementing-bgp.html#concept_qkq_mhc_qjb) feature: up to 4 BGP processes can be spawned, and address families can be spread across them to reach theoretically up to 80M paths.  
+
+Last, recent routers have plenty of RAM available: most current Cisco 8000 have 32GB of RAM and new products now ship with 64GB of RAM. Currently, IOS XR doesn’t keep advantage of all this memory. There is plan in progress to increase BGP process RLIMIT, with a recent prototype IOS XR image demonstrating support of 75M BGP paths on a 8202-32FH-M with 64GB of RAM. This was possible using a 24GB RLIMIT value for the BGP process during a Customer Proof of Concept.
+
