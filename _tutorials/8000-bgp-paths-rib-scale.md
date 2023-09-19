@@ -199,7 +199,7 @@ Tue Sep 12 12:16:48.986 UTC
 </div>
 
 **Note:** The default behavior described here can change if BGP multipath or add-path feature is used, or if the device processes Internet table inside different VRFs. This is outside of this article scope.
-{: .notice--primary}
+{: .notice--info}
 
 # Scaling Cisco 8000 BGP table to 25M paths: practical demonstration
 
@@ -209,6 +209,9 @@ To realize this test, a 8201-32FH router running IOS XR 7.9.2 is used as Device 
 
 24 x eBGP sessions are established to receive multiple copies of IPv4 global Internet routing table. 
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh bgp sum
 Wed Sep 13 13:04:40.082 UTC
 BGP router identifier 13.37.1.1, local AS number 65537
@@ -253,9 +256,15 @@ Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
 31.70.79.79       0 65031 5198880    1719 551067265    0    0    1d04h    1010399
 32.70.79.79       0 65032 5192662    1719 551067265    0    0    1d04h    1010399
 33.70.79.79       0 65033 5187821    1719 551067265    0    0    1d04h    1010399
+</code>
+</pre>
+</div>
 
 And similarly for IPv6, 24 x eBGP sessions are setup:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh bgp ipv6 unicast summary
 Tue Sep 12 12:35:46.551 UTC
 BGP router identifier 13.37.1.1, local AS number 65537
@@ -325,26 +334,38 @@ Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
                   0 65033 5600118    1722 497765891    0    0    1d04h     186594
 2001:db8:1337:0:1:63:51:21
                   0 65001       0       0        0    0    0 00:00:00 Active
+</code>
+</pre>
+</div>
 
 This represents a total of ~ 28M BGP paths spread across 48 x eBGP sessions:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh bgp scale
 Wed Sep 13 13:07:29.428 UTC
 
 VRF: default
- Neighbors Configured: 50     Established: 48
+ Neighbors Configured: 50     <mark>Established: 48</mark>
 
  Address-Family   Prefixes Paths    PathElem   Prefix     Path       PathElem
                                                Memory     Memory     Memory
   IPv4 Unicast    1017385  24373748 1017385    143.60MB   2.00GB     103.82MB
   IPv6 Unicast    188244   4486597  188244     28.72MB    376.53MB   19.21MB
   ------------------------------------------------------------------------------
-  Total           1205629  28860345 1205629    172.32MB   2.37GB     123.03MB
+  <mark>Total           1205629  </mark>28860345 1205629    172.32MB   2.37GB     123.03MB
 
 Total VRFs Configured: 0
+</code>
+</pre>
+</div>
 
 Going in details, each IPv4 prefix has 24 paths:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh bgp
 Tue Sep 12 13:29:28.013 UTC
 BGP router identifier 13.37.1.1, local AS number 65537
@@ -410,9 +431,15 @@ Origin codes: i - IGP, e - EGP, ? - incomplete
 *                     32.70.79.79                            0 64537 65032 65000 271253 262691 13335 i
 *                     33.70.79.79                            0 64537 65033 65000 271253 262691 13335 i
 -- snip --
+</code>
+</pre>
+</div>
 
 And the same for IPv6 prefixes:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh bgp ipv6 unicast dfa-regex  _109_
 Tue Sep 12 13:43:11.290 UTC
 BGP router identifier 13.37.1.1, local AS number 65537
@@ -477,9 +504,15 @@ Origin codes: i - IGP, e - EGP, ? - incomplete
                                                              0 64537 65032 65000 199524 6939 109 i
 *                     2001:db8:33:7079::79
                                                              0 64537 65033 65000 199524 6939 109 i
+</code>
+</pre>
+</div>
 
 As described in the introduction, a single path is programmed into RIB:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh route
 Tue Sep 12 13:57:17.681 UTC
 
@@ -517,15 +550,21 @@ connected                        53         1          0           11664
 local                            54         0          0           11664
 application fib_mgr              0          0          0           0
 ospf 1                           0          0          0           0
-bgp 65537                        1001184    0          0           216255744
+<mark>bgp 65537                        1001184</mark>    0          0           216255744
 static                           0          0          0           0
 dagr                             0          0          0           0
 vxlan                            0          0          0           0
 isis CORE                        0          0          0           0
 Total                            1001291    1          0           216279072
+</code>
+</pre>
+</div>
 
 And the same for IPv6:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh route ipv6 unicast
 Tue Sep 12 13:57:53.114 UTC
 
@@ -578,16 +617,23 @@ connected l2tpv3_xconnect        0          0          0           0
 local-srv6 xtc_srv6              0          0          0           0
 local-srv6 bgp-65537             0          0          0           0
 local-srv6 isis-CORE             0          0          0           0
-bgp 65537                        190957     0          0           216614392
+<mark>bgp 65537                        190957</mark>     0          0           216614392
 static                           0          0          0           0
 vxlan                            0          0          0           0
 isis CORE                        0          0          0           0
 Total                            191061     0          0           216636856
+</code>
+</pre>
+</div>
 
-Note: this router processes a real and live BGP feed. Therefore, it’s expected to see churn and the number of routes might slightly differ between outputs.
+**Note:** this router processes a real and live BGP feed. Therefore, it’s expected to see churn and the number of routes might slightly differ between outputs.
+{: .notice--info}
 
 FIB scale is similar to overall number of prefixes:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh cef summary
 Wed Sep 13 13:10:38.537 UTC
 
@@ -598,7 +644,7 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
   Load balancing: L4
   Tableid 0xe0000000 (0x975b57e8), Vrfid 0x60000000, Vrid 0x20000000, Flags 0x1019
   Vrfname default, Refcount 1017634
-  1017271 routes, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 219730536 bytes
+  <mark>1017271 routes</mark>, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 219730536 bytes
     1017090 rib, 0 lsd, 71 aib, 0 internal, 106 interface, 4 special, 1 default routes
     Prefix masklen distribution:
         unicast: 13797 /32, 262 /31, 1330 /30, 1948 /29, 1399 /28, 1060 /27
@@ -617,7 +663,7 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
   Load balancing: L4
   Tableid 0xe0800000 (0x97f85b90), Vrfid 0x60000000, Vrid 0x20000000, Flags 0x1019
   Vrfname default, Refcount 165786
-  165554 routes, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 35759664 bytes
+  <mark>165554 routes</mark>, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 35759664 bytes
     165482 rib, 0 lsd, 65 aib, 0 internal, 0 interface, 6 special, 1 default routes
     Prefix masklen distribution:
         unicast: 323 /128, 250 /127, 135 /126, 6 /125, 8 /123, 9 /112
@@ -637,9 +683,15 @@ IP CEF with switching (Table Version 0) for node0_RP0_CPU0
                  11 /18 , 4 /17 , 2 /15 , 3 /14 , 4 /13 , 2 /12
                  1 /11 , 1 /10 , 1 /9  , 2 /8  , 2 /7  , 1 /6
                  1 /5  , 2 /4  , 1 /0
+</code>
+</pre>
+</div>
 
 All those prefixes are ultimately programmed into Silicon One LPM database:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh controllers npu resources lpmtcam location 0/RP0/CPU0
 Wed Sep 13 13:12:22.068 UTC
 HW Resource Information
@@ -667,45 +719,55 @@ Current Hardware Usage
         Total In-Use                : 38       (38 %)
         OOR State                   : Green
 
-
+<mark>
        Name: v4_lpm
            Total In-Use                : 1017528
 
 
        Name: v6_lpm
            Total In-Use                : 184252
-
-
-
-RP/0/RP0/CPU0:8201-32FH
+</mark>
+</code>
+</pre>
+</div>
 
 Let’s now check impact on memory. Following snapshot shows BGP process uses 6.8GB of RAM with such scale:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh processes memory detail
 Wed Sep 13 15:06:50.245 UTC
 JID         Text       Data       Stack      Dynamic    Dyn-Limit  Shm-Tot    Phy-Tot               Process
 ============================================================================================================
-1089           2M      6820M       132K      6763M      7447M        77M      6817M bgp
+1089           2M      6820M       132K      6763M      7447M        77M      <mark>6817M bgp</mark>
 194          620K      4521M       132K      3452M     22528M      1376M      4332M npu_drvr
 1169           1M       710M       132K       588M      8192M       126M       714M ipv4_rib
 -- snip –
+</code>
+</pre>
+</div>
 
 With overall memory utilization still in acceptable range (56%):
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8201-32FH#sh memory summary
 Wed Sep 13 15:08:34.147 UTC
 
 node:      node0_RP0_CPU0
 ------------------------------------------------------------------
 
- Physical Memory: 31595M total (14122M available)
+ <mark>Physical Memory: 31595M total (14122M available)</mark>
  Application Memory : 31595M (14122M available)
  Image: 4M (bootram: 0M)
  Reserved: 0M, IOMem: 0M, flashfsys: 0M
  Total shared window: 2G
-
 RP/0/RP0/CPU0:8201-32FH#
-
+</code>
+</pre>
+</div>
 
 
 # Multiple Paths impact on RIB and FIB
