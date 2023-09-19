@@ -202,6 +202,512 @@ Tue Sep 12 12:16:48.986 UTC
 {: .notice--primary}
 
 # Scaling Cisco 8000 BGP table to 25M paths: practical demonstration
+
+This section demonstrates Cisco 8000 capability to scale to more than 20M BGP paths.  
+
+To realize this test, a 8201-32FH router running IOS XR 7.9.2 is used as Device Under Test (DUT). 8201-32FH uses Intel Xeon D-1530 CPU @ 2.40GHz along with 32GB of RAM.  
+
+24 x eBGP sessions are established to receive multiple copies of IPv4 global Internet routing table. 
+
+RP/0/RP0/CPU0:8201-32FH#sh bgp sum
+Wed Sep 13 13:04:40.082 UTC
+BGP router identifier 13.37.1.1, local AS number 65537
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 551067265
+BGP main routing table version 551067265
+BGP NSR Initial initsync version 1025263 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker       551067265  551067265  551067265  551067265   551067265           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+1.63.51.21        0 65001       0       0        0    0    0 00:00:00 Active
+10.70.79.79       0 65010 5280369    1719 551067265    0    0    1d04h    1010399
+11.70.79.79       0 65011 5217380    1719 551067265    0    0    1d04h    1010399
+12.70.79.79       0 65012 5205922    1719 551067265    0    0    1d04h    1010399
+13.70.79.79       0 65013 5189440    1719 551067265    0    0    1d04h    1010399
+14.70.79.79       0 65014 5196088    1719 551067265    0    0    1d04h    1010399
+15.70.79.79       0 65015 5184072    1719 551067265    0    0    1d04h    1010399
+16.70.79.79       0 65016 5187155    1719 551067265    0    0    1d04h    1010399
+17.70.79.79       0 65017 5189922    1719 551067265    0    0    1d04h    1010399
+18.70.79.79       0 65018 5197089    1719 551067265    0    0    1d04h    1010399
+19.70.79.79       0 65019 5201890    1719 551067265    0    0    1d04h    1010399
+20.70.79.79       0 65020 5201917    1719 551067265    0    0    1d04h    1010399
+21.70.79.79       0 65021 5194267    1719 551067265    0    0    1d04h    1010399
+22.70.79.79       0 65022 5194232    1719 551067265    0    0    1d04h    1010399
+23.70.79.79       0 65023 5191012    1719 551067265    0    0    1d04h    1010399
+24.70.79.79       0 65024 5193058    1719 551067265    0    0    1d04h    1010399
+25.70.79.79       0 65025 5192615    1719 551067265    0    0    1d04h    1010399
+26.70.79.79       0 65026 5197328    1719 551067265    0    0    1d04h    1010399
+27.70.79.79       0 65027 5209301    1721 551067265    0    0    1d04h    1010399
+28.70.79.79       0 65028 5191256    1719 551067265    0    0    1d04h    1010399
+29.70.79.79       0 65029 5216363    1719 551067265    0    0    1d04h    1010399
+30.70.79.79       0 65030 5192554    1723 551067265    0    0    1d04h    1010399
+31.70.79.79       0 65031 5198880    1719 551067265    0    0    1d04h    1010399
+32.70.79.79       0 65032 5192662    1719 551067265    0    0    1d04h    1010399
+33.70.79.79       0 65033 5187821    1719 551067265    0    0    1d04h    1010399
+
+And similarly for IPv6, 24 x eBGP sessions are setup:
+
+RP/0/RP0/CPU0:8201-32FH#sh bgp ipv6 unicast summary
+Tue Sep 12 12:35:46.551 UTC
+BGP router identifier 13.37.1.1, local AS number 65537
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0800000   RD version: 6546135
+BGP main routing table version 6546135
+BGP NSR Initial initsync version 165973 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker         6546135    6546135    6546135    6546135     6546135           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2001:db8:10:7079::79
+                  0 65010 5597166    1722 497765891    0    0    1d04h     186594
+2001:db8:11:7079::79
+                  0 65011 5597049    1722 497765891    0    0    1d04h     186594
+2001:db8:12:7079::79
+                  0 65012 5597016    1722 497765891    0    0    1d04h     186594
+2001:db8:13:7079::79
+                  0 65013 5601651    1722 497765891    0    0    1d04h     186594
+2001:db8:14:7079::79
+                  0 65014 5599112    1722 497765891    0    0    1d04h     186594
+2001:db8:15:7079::79
+                  0 65015 5588400    1722 497765891    0    0    1d04h     186594
+2001:db8:16:7079::79
+                  0 65016 5598537    1722 497765891    0    0    1d04h     186594
+2001:db8:17:7079::79
+                  0 65017 5601125    1722 497765891    0    0    1d04h     186594
+2001:db8:18:7079::79
+                  0 65018 5576339    1722 497765891    0    0    1d04h     186594
+2001:db8:19:7079::79
+                  0 65019 5601651    1722 497765891    0    0    1d04h     186594
+2001:db8:20:7079::79
+                  0 65020 5582612    1722 497765891    0    0    1d04h     186594
+2001:db8:21:7079::79
+                  0 65021 5591860    1722 497765891    0    0    1d04h     186594
+2001:db8:22:7079::79
+                  0 65022 5581286    1722 497765891    0    0    1d04h     186594
+2001:db8:23:7079::79
+                  0 65023 5598931    1722 497765891    0    0    1d04h     186594
+2001:db8:24:7079::79
+                  0 65024 5582482    1722 497765891    0    0    1d04h     186594
+2001:db8:25:7079::79
+                  0 65025 5584450    1722 497765891    0    0    1d04h     186594
+2001:db8:26:7079::79
+                  0 65026 5598266    1722 497765891    0    0    1d04h     186594
+2001:db8:27:7079::79
+                  0 65027 5600159    1722 497765891    0    0    1d04h     186594
+2001:db8:28:7079::79
+                  0 65028 5592619    1722 497765891    0    0    1d04h     186594
+2001:db8:29:7079::79
+                  0 65029 5596220    1722 497765891    0    0    1d04h     186594
+2001:db8:30:7079::79
+                  0 65030 5581874    1722 497765891    0    0    1d04h     186594
+2001:db8:31:7079::79
+                  0 65031 5600379    1722 497765891    0    0    1d04h     186594
+2001:db8:32:7079::79
+                  0 65032 5590597    1722 497765891    0    0    1d04h     186594
+2001:db8:33:7079::79
+                  0 65033 5600118    1722 497765891    0    0    1d04h     186594
+2001:db8:1337:0:1:63:51:21
+                  0 65001       0       0        0    0    0 00:00:00 Active
+
+This represents a total of ~ 28M BGP paths spread across 48 x eBGP sessions:
+
+RP/0/RP0/CPU0:8201-32FH#sh bgp scale
+Wed Sep 13 13:07:29.428 UTC
+
+VRF: default
+ Neighbors Configured: 50     Established: 48
+
+ Address-Family   Prefixes Paths    PathElem   Prefix     Path       PathElem
+                                               Memory     Memory     Memory
+  IPv4 Unicast    1017385  24373748 1017385    143.60MB   2.00GB     103.82MB
+  IPv6 Unicast    188244   4486597  188244     28.72MB    376.53MB   19.21MB
+  ------------------------------------------------------------------------------
+  Total           1205629  28860345 1205629    172.32MB   2.37GB     123.03MB
+
+Total VRFs Configured: 0
+
+Going in details, each IPv4 prefix has 24 paths:
+
+RP/0/RP0/CPU0:8201-32FH#sh bgp
+Tue Sep 12 13:29:28.013 UTC
+BGP router identifier 13.37.1.1, local AS number 65537
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 18150169
+BGP main routing table version 18150169
+BGP NSR Initial initsync version 1025263 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+*> 0.0.0.0/0          10.70.79.79                            0 64537 65010 65000 48571 12302 i
+*                     11.70.79.79                            0 64537 65011 65000 48571 12302 i
+*                     12.70.79.79                            0 64537 65012 65000 48571 12302 i
+*                     13.70.79.79                            0 64537 65013 65000 48571 12302 i
+*                     14.70.79.79                            0 64537 65014 65000 48571 12302 i
+*                     15.70.79.79                            0 64537 65015 65000 48571 12302 i
+*                     16.70.79.79                            0 64537 65016 65000 48571 12302 i
+*                     17.70.79.79                            0 64537 65017 65000 48571 12302 i
+*                     18.70.79.79                            0 64537 65018 65000 48571 12302 i
+*                     19.70.79.79                            0 64537 65019 65000 48571 12302 i
+*                     20.70.79.79                            0 64537 65020 65000 48571 12302 i
+*                     21.70.79.79                            0 64537 65021 65000 48571 12302 i
+*                     22.70.79.79                            0 64537 65022 65000 48571 12302 i
+*                     23.70.79.79                            0 64537 65023 65000 48571 12302 i
+*                     24.70.79.79                            0 64537 65024 65000 48571 12302 i
+*                     25.70.79.79                            0 64537 65025 65000 48571 12302 i
+*                     26.70.79.79                            0 64537 65026 65000 48571 12302 i
+*                     27.70.79.79                            0 64537 65027 65000 48571 12302 i
+*                     28.70.79.79                            0 64537 65028 65000 48571 12302 i
+*                     29.70.79.79                            0 64537 65029 65000 48571 12302 i
+*                     30.70.79.79                            0 64537 65030 65000 48571 12302 i
+*                     31.70.79.79                            0 64537 65031 65000 48571 12302 i
+*                     32.70.79.79                            0 64537 65032 65000 48571 12302 i
+*                     33.70.79.79                            0 64537 65033 65000 48571 12302 i
+*> 1.0.0.0/24         10.70.79.79                            0 64537 65010 65000 271253 262691 13335 i
+*                     11.70.79.79                            0 64537 65011 65000 271253 262691 13335 i
+*                     12.70.79.79                            0 64537 65012 65000 271253 262691 13335 i
+*                     13.70.79.79                            0 64537 65013 65000 271253 262691 13335 i
+*                     14.70.79.79                            0 64537 65014 65000 271253 262691 13335 i
+*                     15.70.79.79                            0 64537 65015 65000 271253 262691 13335 i
+*                     16.70.79.79                            0 64537 65016 65000 271253 262691 13335 i
+*                     17.70.79.79                            0 64537 65017 65000 271253 262691 13335 i
+*                     18.70.79.79                            0 64537 65018 65000 271253 262691 13335 i
+*                     19.70.79.79                            0 64537 65019 65000 271253 262691 13335 i
+*                     20.70.79.79                            0 64537 65020 65000 271253 262691 13335 i
+*                     21.70.79.79                            0 64537 65021 65000 271253 262691 13335 i
+*                     22.70.79.79                            0 64537 65022 65000 271253 262691 13335 i
+*                     23.70.79.79                            0 64537 65023 65000 271253 262691 13335 i
+*                     24.70.79.79                            0 64537 65024 65000 271253 262691 13335 i
+*                     25.70.79.79                            0 64537 65025 65000 271253 262691 13335 i
+*                     26.70.79.79                            0 64537 65026 65000 271253 262691 13335 i
+*                     27.70.79.79                            0 64537 65027 65000 271253 262691 13335 i
+*                     28.70.79.79                            0 64537 65028 65000 271253 262691 13335 i
+*                     29.70.79.79                            0 64537 65029 65000 271253 262691 13335 i
+*                     30.70.79.79                            0 64537 65030 65000 271253 262691 13335 i
+*                     31.70.79.79                            0 64537 65031 65000 271253 262691 13335 i
+*                     32.70.79.79                            0 64537 65032 65000 271253 262691 13335 i
+*                     33.70.79.79                            0 64537 65033 65000 271253 262691 13335 i
+-- snip --
+
+And the same for IPv6 prefixes:
+
+RP/0/RP0/CPU0:8201-32FH#sh bgp ipv6 unicast dfa-regex  _109_
+Tue Sep 12 13:43:11.290 UTC
+BGP router identifier 13.37.1.1, local AS number 65537
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0800000   RD version: 8656025
+BGP main routing table version 8656025
+BGP NSR Initial initsync version 165973 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+*> 2001:420::/32      2001:db8:10:7079::79
+                                                             0 64537 65010 65000 199524 6939 109 i
+*                     2001:db8:11:7079::79
+                                                             0 64537 65011 65000 199524 6939 109 i
+*                     2001:db8:12:7079::79
+                                                             0 64537 65012 65000 199524 6939 109 i
+*                     2001:db8:13:7079::79
+                                                             0 64537 65013 65000 199524 6939 109 i
+*                     2001:db8:14:7079::79
+                                                             0 64537 65014 65000 199524 6939 109 i
+*                     2001:db8:15:7079::79
+                                                             0 64537 65015 65000 199524 6939 109 i
+*                     2001:db8:16:7079::79
+                                                             0 64537 65016 65000 199524 6939 109 i
+*                     2001:db8:17:7079::79
+                                                             0 64537 65017 65000 199524 6939 109 i
+*                     2001:db8:18:7079::79
+                                                             0 64537 65018 65000 199524 6939 109 i
+*                     2001:db8:19:7079::79
+                                                             0 64537 65019 65000 199524 6939 109 i
+*                     2001:db8:20:7079::79
+                                                             0 64537 65020 65000 199524 6939 109 i
+*                     2001:db8:21:7079::79
+                                                             0 64537 65021 65000 199524 6939 109 i
+*                     2001:db8:22:7079::79
+                                                             0 64537 65022 65000 199524 6939 109 i
+*                     2001:db8:23:7079::79
+                                                             0 64537 65023 65000 199524 6939 109 i
+*                     2001:db8:24:7079::79
+                                                             0 64537 65024 65000 199524 6939 109 i
+*                     2001:db8:25:7079::79
+                                                             0 64537 65025 65000 199524 6939 109 i
+*                     2001:db8:26:7079::79
+                                                             0 64537 65026 65000 199524 6939 109 i
+*                     2001:db8:27:7079::79
+                                                             0 64537 65027 65000 199524 6939 109 i
+*                     2001:db8:28:7079::79
+                                                             0 64537 65028 65000 199524 6939 109 i
+*                     2001:db8:29:7079::79
+                                                             0 64537 65029 65000 199524 6939 109 i
+*                     2001:db8:30:7079::79
+                                                             0 64537 65030 65000 199524 6939 109 i
+*                     2001:db8:31:7079::79
+                                                             0 64537 65031 65000 199524 6939 109 i
+*                     2001:db8:32:7079::79
+                                                             0 64537 65032 65000 199524 6939 109 i
+*                     2001:db8:33:7079::79
+                                                             0 64537 65033 65000 199524 6939 109 i
+
+As described in the introduction, a single path is programmed into RIB:
+
+RP/0/RP0/CPU0:8201-32FH#sh route
+Tue Sep 12 13:57:17.681 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, t - Traffic Engineering, (!) - FRR Backup path
+
+Gateway of last resort is 10.70.79.79 to network 0.0.0.0
+
+B*   0.0.0.0/0 [20/0] via 10.70.79.79, 00:00:02
+B    1.0.0.0/24 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.4.0/22 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.5.0/24 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.16.0/24 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.32.0/24 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.64.0/18 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.128.0/17 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.128.0/18 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.128.0/19 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.128.0/24 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.129.0/24 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.130.0/23 [20/0] via 10.70.79.79, 00:01:06
+B    1.0.132.0/24 [20/0] via 10.70.79.79, 00:01:06
+-- snip --
+RP/0/RP0/CPU0:8201-32FH#sh route ipv4 unicast summary
+Tue Sep 12 13:44:10.178 UTC
+Route Source                     Routes     Backup     Deleted     Memory(bytes)
+connected                        53         1          0           11664
+local                            54         0          0           11664
+application fib_mgr              0          0          0           0
+ospf 1                           0          0          0           0
+bgp 65537                        1001184    0          0           216255744
+static                           0          0          0           0
+dagr                             0          0          0           0
+vxlan                            0          0          0           0
+isis CORE                        0          0          0           0
+Total                            1001291    1          0           216279072
+
+And the same for IPv6:
+
+RP/0/RP0/CPU0:8201-32FH#sh route ipv6 unicast
+Tue Sep 12 13:57:53.114 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, t - Traffic Engineering, (!) - FRR Backup path
+
+Gateway of last resort is fe80::46b6:beff:fe46:22d0 to network ::
+
+B*   ::/0
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:33, HundredGigE0/0/0/5.10
+B    1::1/128
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    2::1/128
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    10:1:2::/64
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    10:1:5::/64
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    11:1:2::/64
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    12::/64
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    12:1:2::/64
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    40::/11
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    60::/14
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    64::/17
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    64:8000::/18
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+B    64:c000::/19
+      [20/0] via fe80::46b6:beff:fe46:22d0, 00:01:43, HundredGigE0/0/0/5.10
+-- snip --
+RP/0/RP0/CPU0:8201-32FH#sh route ipv6 unicast summary
+Wed Sep 13 13:08:27.789 UTC
+Route Source                     Routes     Backup     Deleted     Memory(bytes)
+local-iid sidmgr                 0          0          0           0
+local                            52         0          0           11232
+connected                        52         0          0           11232
+connected l2tpv3_xconnect        0          0          0           0
+local-srv6 xtc_srv6              0          0          0           0
+local-srv6 bgp-65537             0          0          0           0
+local-srv6 isis-CORE             0          0          0           0
+bgp 65537                        190957     0          0           216614392
+static                           0          0          0           0
+vxlan                            0          0          0           0
+isis CORE                        0          0          0           0
+Total                            191061     0          0           216636856
+
+Note: this router processes a real and live BGP feed. Therefore, it’s expected to see churn and the number of routes might slightly differ between outputs.
+
+FIB scale is similar to overall number of prefixes:
+
+RP/0/RP0/CPU0:8201-32FH#sh cef summary
+Wed Sep 13 13:10:38.537 UTC
+
+Router ID is 192.168.0.23
+
+IP CEF with switching (Table Version 0) for node0_RP0_CPU0
+
+  Load balancing: L4
+  Tableid 0xe0000000 (0x975b57e8), Vrfid 0x60000000, Vrid 0x20000000, Flags 0x1019
+  Vrfname default, Refcount 1017634
+  1017271 routes, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 219730536 bytes
+    1017090 rib, 0 lsd, 71 aib, 0 internal, 106 interface, 4 special, 1 default routes
+    Prefix masklen distribution:
+        unicast: 13797 /32, 262 /31, 1330 /30, 1948 /29, 1399 /28, 1060 /27
+                 934 /26, 1169 /25, 604749 /24, 108618 /23, 114766 /22, 54300 /21
+                 45828 /20, 26009 /19, 14331 /18, 8490 /17, 13770 /16, 2143 /15
+                 1211 /14, 576 /13, 297 /12, 103 /11, 40 /10, 14 /9
+                 16 /8 , 1 /0
+
+RP/0/RP0/CPU0:8201-32FH#sh cef ipv6 summary
+Wed Sep 13 13:10:44.048 UTC
+
+Router ID is 192.168.0.23
+
+IP CEF with switching (Table Version 0) for node0_RP0_CPU0
+
+  Load balancing: L4
+  Tableid 0xe0800000 (0x97f85b90), Vrfid 0x60000000, Vrid 0x20000000, Flags 0x1019
+  Vrfname default, Refcount 165786
+  165554 routes, 0 protected, 0 reresolve, 0 unresolved (0 old, 0 new), 35759664 bytes
+    165482 rib, 0 lsd, 65 aib, 0 internal, 0 interface, 6 special, 1 default routes
+    Prefix masklen distribution:
+        unicast: 323 /128, 250 /127, 135 /126, 6 /125, 8 /123, 9 /112
+                 1 /96 , 1 /95 , 1 /94 , 1 /93 , 1 /92 , 1 /91
+                 1 /90 , 1 /89 , 1 /88 , 1 /87 , 1 /86 , 1 /85
+                 1 /84 , 1 /83 , 1 /82 , 1 /81 , 1 /80 , 1 /79
+                 1 /78 , 1 /77 , 1 /76 , 1 /75 , 1 /74 , 1 /73
+                 1 /72 , 1 /71 , 1 /70 , 1 /69 , 1 /68 , 1 /67
+                 1 /66 , 3 /65 , 1199 /64 , 6 /63 , 3 /62 , 5 /61
+                 7 /60 , 4 /59 , 8 /58 , 4 /57 , 682 /56 , 22 /55
+                 162 /54 , 7 /53 , 35 /52 , 165 /51 , 28 /50 , 28 /49
+                 56339 /48 , 4169 /47 , 3979 /46 , 2922 /45 , 14303 /44 , 2451 /43
+                 3597 /42 , 1020 /41 , 12737 /40 , 1765 /39 , 1839 /38 , 1382 /37
+                 5114 /36 , 1148 /35 , 3249 /34 , 3315 /33 , 18188 /32 , 3482 /31
+                 3339 /30 , 5731 /29 , 6122 /28 , 5386 /27 , 582 /26 , 3 /25
+                 96 /24 , 4 /23 , 37 /22 , 2 /21 , 55 /20 , 25 /19
+                 11 /18 , 4 /17 , 2 /15 , 3 /14 , 4 /13 , 2 /12
+                 1 /11 , 1 /10 , 1 /9  , 2 /8  , 2 /7  , 1 /6
+                 1 /5  , 2 /4  , 1 /0
+
+All those prefixes are ultimately programmed into Silicon One LPM database:
+
+RP/0/RP0/CPU0:8201-32FH#sh controllers npu resources lpmtcam location 0/RP0/CPU0
+Wed Sep 13 13:12:22.068 UTC
+HW Resource Information
+    Name                            : lpm_tcam
+    Asic Type                       : Q200
+
+NPU-0
+OOR Summary
+        Estimated Max Entries       : 100
+        Red Threshold               : 95 %
+        Yellow Threshold            : 80 %
+        OOR State                   : Green
+
+
+OFA Table Information
+(May not match HW usage)
+        iprte                       : 1017390
+        ip6rte                      : 184229
+        ip6mcrte                    : 0
+        ipmcrte                     : 0
+
+Current Hardware Usage
+    Name: lpm_tcam
+        Estimated Max Entries       : 100
+        Total In-Use                : 38       (38 %)
+        OOR State                   : Green
+
+
+       Name: v4_lpm
+           Total In-Use                : 1017528
+
+
+       Name: v6_lpm
+           Total In-Use                : 184252
+
+
+
+RP/0/RP0/CPU0:8201-32FH
+
+Let’s now check impact on memory. Following snapshot shows BGP process uses 6.8GB of RAM with such scale:
+
+RP/0/RP0/CPU0:8201-32FH#sh processes memory detail
+Wed Sep 13 15:06:50.245 UTC
+JID         Text       Data       Stack      Dynamic    Dyn-Limit  Shm-Tot    Phy-Tot               Process
+============================================================================================================
+1089           2M      6820M       132K      6763M      7447M        77M      6817M bgp
+194          620K      4521M       132K      3452M     22528M      1376M      4332M npu_drvr
+1169           1M       710M       132K       588M      8192M       126M       714M ipv4_rib
+-- snip –
+
+With overall memory utilization still in acceptable range (56%):
+
+RP/0/RP0/CPU0:8201-32FH#sh memory summary
+Wed Sep 13 15:08:34.147 UTC
+
+node:      node0_RP0_CPU0
+------------------------------------------------------------------
+
+ Physical Memory: 31595M total (14122M available)
+ Application Memory : 31595M (14122M available)
+ Image: 4M (bootram: 0M)
+ Reserved: 0M, IOMem: 0M, flashfsys: 0M
+ Total shared window: 2G
+
+RP/0/RP0/CPU0:8201-32FH#
+
+
+
 # Multiple Paths impact on RIB and FIB
 # Going beyond the limits
 # Monitoring
