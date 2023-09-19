@@ -13,6 +13,8 @@ excerpt: >-
   This article will demonstrate how Cisco 8000 Series routers can scale up to
   25M BGP paths.
 ---
+{% include toc %}
+
 # Introduction
 It’s common for network operators Internet border routers to receive and process several full routing tables. They can then influence traffic leaving and entering their networks using route policies to manipulate BGP attributes.  
 
