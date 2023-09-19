@@ -773,6 +773,119 @@ RP/0/RP0/CPU0:8201-32FH#
 
 # Multiple Paths impact on RIB and FIB
 
+To continue this experience, <code>maximum-paths ebgp 64</code> is configured for both address families, along with <code>bgp bestpath as-path multipath-relax</code> knob. This will allow to leverage all existing paths and install them into RIB, and ultimately into FIB. 
+
+The 24 x paths are installed for both IPv4 and IPv6:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH#sh route 1.0.0.0/24
+Tue Sep 12 14:08:15.619 UTC
+
+Routing entry for 1.0.0.0/24
+  Known via "bgp 65537", distance 20, metric 0
+  Tag 64537, type external
+  Installed Sep 12 14:04:32.413 for 00:03:43
+  Routing Descriptor Blocks
+    10.70.79.79, from 10.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    11.70.79.79, from 11.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    12.70.79.79, from 12.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    13.70.79.79, from 13.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    14.70.79.79, from 14.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    15.70.79.79, from 15.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    16.70.79.79, from 16.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    17.70.79.79, from 17.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    18.70.79.79, from 18.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    19.70.79.79, from 19.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    20.70.79.79, from 20.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    21.70.79.79, from 21.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    22.70.79.79, from 22.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    23.70.79.79, from 23.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    24.70.79.79, from 24.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    25.70.79.79, from 25.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    26.70.79.79, from 26.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    27.70.79.79, from 27.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    28.70.79.79, from 28.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    29.70.79.79, from 29.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    30.70.79.79, from 30.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    31.70.79.79, from 31.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    32.70.79.79, from 32.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+    33.70.79.79, from 33.70.79.79, BGP external, BGP multi path
+      Route metric is 0
+  No advertising protos.
+</code>
+</pre>
+</div>
+
+It's often wrongly assumed increasing number of paths will also increase RIB and FIB scale. As it can be observed below, this is not the case.  
+
+RIB still contains same number of prefixes:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8201-32FH#sh route ipv4 unicast summary
+Wed Sep 13 13:14:07.372 UTC
+Route Source                     Routes     Backup     Deleted     Memory(bytes)
+connected                        53         1          0           11664
+local                            54         0          0           11664
+application fib_mgr              0          0          0           0
+ospf 1                           0          0          0           0
+bgp 65537                        1017831    0          0           1149232896
+static                           0          0          0           0
+dagr                             0          0          0           0
+vxlan                            0          0          0           0
+isis CORE                        0          0          0           0
+<mark>Total                            1017938</mark>    1          0           1149256224
+
+RP/0/RP0/CPU0:8201-32FH#sh route ipv6 unicast summary
+Wed Sep 13 13:14:34.996 UTC
+Route Source                     Routes     Backup     Deleted     Memory(bytes)
+local-iid sidmgr                 0          0          0           0
+local                            52         0          0           11232
+connected                        52         0          0           11232
+connected l2tpv3_xconnect        0          0          0           0
+local-srv6 xtc_srv6              0          0          0           0
+local-srv6 bgp-65537             0          0          0           0
+local-srv6 isis-CORE             0          0          0           0
+bgp 65537                        184864     0          729         210133808
+static                           0          0          0           0
+vxlan                            0          0          0           0
+isis CORE                        0          0          0           0
+<mark>Total                            184968</mark>     0          729         210156272
+RP/0/RP0/CPU0:8201-32FH#
+</code>
+</pre>
+</div>
+
+As for FIB.
+
+Instead, a recursive forwarding chain is built: IP route > next-hop group > IP next-hop > interface
+
 
 # Going beyond the limits
 
