@@ -36,7 +36,7 @@ Versions:
   Process           bRIB/RIB  SendTblVer
   Speaker                   3            3
 Last Modified: Sep 12 08:28:58.425 for 00:13:13
-Paths: (1 available, best #1)
+<mark>Paths: (1 available</mark>, best #1)
   Not advertised to any peer
   Path #1: Received by speaker 0
   Not advertised to any peer
@@ -61,7 +61,7 @@ Versions:
   Process           bRIB/RIB  SendTblVer
   Speaker                   3            3
 Last Modified: Sep 12 08:28:58.425 for 00:13:13
-Paths: (2 available, best #1)
+<mark>Paths: (2 available</mark>, best #1)
   Not advertised to any peer
   Path #1: Received by speaker 0
   Not advertised to any peer
@@ -95,9 +95,9 @@ Versions:
   Process           bRIB/RIB  SendTblVer
   Speaker                   3            3
 Last Modified: Sep 12 08:28:58.425 for 00:13:13
-Paths: (2 available, best #1)
+<mark>Paths: (2 available, <b>best #1</b>)</mark>
   Not advertised to any peer
-  Path #1: Received by speaker 0
+  <mark>Path #1:</mark> Received by speaker 0
   Not advertised to any peer
   64537 65010 65000 264479 13335, (aggregated by 13335 10.34.36.100)
     10.70.79.79 from 10.70.79.79 (13.37.79.79)
@@ -114,7 +114,7 @@ Paths: (2 available, best #1)
   Path #3: Received by speaker 0
   Not advertised to any peer
 
-RP/0/RP0/CPU0:8201-32FH#sh bgp 1.0.0.0/24 bestpath-compare
+RP/0/RP0/CPU0:8201-32FH#sh bgp 1.0.0.0/24 <mark>bestpath-compare</mark>
 Tue Sep 12 13:13:02.458 UTC
 BGP routing table entry for 1.0.0.0/24
 Versions:
@@ -122,7 +122,7 @@ Versions:
   Speaker            16342698     16342698
     Flags: 0x00003001+0x20010000;
 Last Modified: Sep 12 12:49:20.425 for 00:23:42
-Paths: (24 available, best #1)
+<mark>Paths: (24 available, best #1)</mark>
   Not advertised to any peer
   Path #1: Received by speaker 0
   Flags: 0x3000000001060001+0x00, import: 0x020
@@ -132,7 +132,7 @@ Paths: (24 available, best #1)
       Origin IGP, localpref 100, valid, external, best, group-best
       Received Path ID 0, Local Path ID 1, version 16342698
       Origin-AS validity: (disabled)
-      best of AS 64537, Overall best
+      <mark>best of AS 64537, Overall best</mark>
   Path #2: Received by speaker 0
   Flags: 0x3000000000020001+0x00, import: 0x020
   Not advertised to any peer
@@ -141,7 +141,7 @@ Paths: (24 available, best #1)
       Origin IGP, localpref 100, valid, external
       Received Path ID 0, Local Path ID 0, version 0
       Origin-AS validity: (disabled)
-      Higher neighbor address than best path (path #1)
+      <mark>Higher neighbor address than best path (path #1)</mark>
 -- snip ---
 </code>
 </pre>
@@ -156,7 +156,7 @@ RP/0/RP0/CPU0:8201-32FH#sh route 1.0.0.0/24
 Tue Sep 12 08:47:13.672 UTC
 
 Routing entry for 1.0.0.0/24
-  Known via "bgp 65537", distance 20, metric 0
+  <mark>Known via "bgp 65537", distance 20, metric 0</mark>
   Tag 64537, type external
   Installed Sep 12 08:46:38.354 for 00:00:35
   Routing Descriptor Blocks
@@ -186,14 +186,14 @@ Tue Sep 12 12:16:48.986 UTC
   Level 1 - Load distribution: 0
   [0] via 10.70.79.79/32, recursive
 
-   via 10.70.79.79/32, 5 dependencies, recursive, bgp-ext [flags 0x6020]
+   <mark>via 10.70.79.79/32, 5 dependencies, recursive, bgp-ext [flags 0x6020]
     path-idx 0 NHID 0x0 [0x986d42a8 0x0], Internal 0xae0120a0
     next hop 10.70.79.79/32 via 10.70.79.79/32
 
     Load distribution: 0 (refcount 1)
 
     Hash  OK  Interface                 Address
-    0     Y   HundredGigE0/0/0/5.10     10.70.79.79
+    0     Y   HundredGigE0/0/0/5.10     10.70.79.79</mark>
 </code>
 </pre>
 </div>
