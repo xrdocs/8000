@@ -847,6 +847,9 @@ Cisco-IOS-XR-ipv4-bgp-oc-oper:oc-bgp/bgp-rib/afi-safi-table/ipv6-unicast/loc-rib
 
 Here are sample dashboards which can be used:
 
+![8000-bgp-memory.png]({{site.baseurl}}/images/8000-bgp-memory.png)
+
+![8000-bgp-paths.png]({{site.baseurl}}/images/8000-bgp-paths.png)
 
 # Looking ahead: the future of BGP table scale
 
