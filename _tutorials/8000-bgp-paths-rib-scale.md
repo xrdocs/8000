@@ -207,7 +207,7 @@ Tue Sep 12 12:16:48.986 UTC
 
 This section demonstrates Cisco 8000 capability to scale to more than 20M BGP paths.  
 
-To realize this test, a 8201-32FH router running IOS XR 7.9.2 is used as Device Under Test (DUT). 8201-32FH uses Intel Xeon D-1530 CPU @ 2.40GHz along with 32GB of RAM. This router has multiple sub interfaces configured with a shadow router. This shadow router contains both IPv4 BGP table and IPv6 BGP table as shown in following topology:
+To realize this test, a 8201-32FH router running IOS XR 7.9.2 is used as Device Under Test (DUT). 8201-32FH uses Intel Xeon D-1530 CPU @ 2.40GHz along with 32GB of RAM. This router has multiple sub interfaces configured with a shadow router. This shadow router contains both IPv4 BGP table and IPv6 BGP table which process [RIPE Routing Information Service (RIS) Live](https://ris-live.ripe.net/) updates. Testbed is shown in below topology:
 
 ![8000-bgp-lab.png]({{site.baseurl}}/images/8000-bgp-lab.png){: .align-center}
 
