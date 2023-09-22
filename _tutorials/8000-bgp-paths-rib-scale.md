@@ -31,22 +31,24 @@ Here is a quick refresh on the basics:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:8201-32FH#sh bgp 1.0.0.0/24
-Tue Sep 12 08:42:11.636 UTC
-BGP routing table entry for 1.0.0.0/24
+
+RP/0/RP0/CPU0:8201-32FH#sh bgp 173.37.145.0/24
+Fri Sep 22 09:30:28.130 UTC
+BGP routing table entry for 173.37.145.0/24
 Versions:
   Process           bRIB/RIB  SendTblVer
-  Speaker                   3            3
-Last Modified: Sep 12 08:28:58.425 for 00:13:13
+  Speaker          1663360696   1663360696
+Last Modified: Sep 22 09:17:58.867 for 00:12:29
 <mark>Paths: (1 available</mark>, best #1)
   Not advertised to any peer
   Path #1: Received by speaker 0
   Not advertised to any peer
-  64537 65010 65000 264479 13335, (aggregated by 13335 10.34.36.100)
+  64537 65010 65000 207564 6939 109, (received & used)
     10.70.79.79 from 10.70.79.79 (13.37.79.79)
       Origin IGP, localpref 100, valid, external, best, group-best
-      Received Path ID 0, Local Path ID 1, version 3
+      Received Path ID 0, Local Path ID 1, version 1663360696
       Origin-AS validity: (disabled)
+RP/0/RP0/CPU0:8201-32FH#
 </code>
 </pre>
 </div>
@@ -56,31 +58,30 @@ Last Modified: Sep 12 08:28:58.425 for 00:13:13
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:8201-32FH#sh bgp 1.0.0.0/24
-Tue Sep 12 08:42:11.636 UTC
-BGP routing table entry for 1.0.0.0/24
+RP/0/RP0/CPU0:8201-32FH#sh bgp 173.37.145.0/24
+Fri Sep 22 09:33:32.621 UTC
+BGP routing table entry for 173.37.145.0/24
 Versions:
   Process           bRIB/RIB  SendTblVer
-  Speaker                   3            3
-Last Modified: Sep 12 08:28:58.425 for 00:13:13
+  Speaker          1663360696   1663360696
+Last Modified: Sep 22 09:17:58.867 for 00:15:33
 <mark>Paths: (2 available</mark>, best #1)
   Not advertised to any peer
   Path #1: Received by speaker 0
   Not advertised to any peer
-  64537 65010 65000 264479 13335, (aggregated by 13335 10.34.36.100)
+  64537 65010 65000 207564 6939 109, (received & used)
     10.70.79.79 from 10.70.79.79 (13.37.79.79)
       Origin IGP, localpref 100, valid, external, best, group-best
-      Received Path ID 0, Local Path ID 1, version 3
+      Received Path ID 0, Local Path ID 1, version 1663360696
       Origin-AS validity: (disabled)
   Path #2: Received by speaker 0
   Not advertised to any peer
-  64537 65011 65000 264479 13335, (aggregated by 13335 10.34.36.100)
+  64537 65011 65000 207564 6939 109, (received & used)
     11.70.79.79 from 11.70.79.79 (13.37.79.79)
       Origin IGP, localpref 100, valid, external
       Received Path ID 0, Local Path ID 0, version 0
       Origin-AS validity: (disabled)
-  Path #3: Received by speaker 0
-  Not advertised to any peer
+RP/0/RP0/CPU0:8201-32FH#
 </code>
 </pre>
 </div>
@@ -90,61 +91,60 @@ Last Modified: Sep 12 08:28:58.425 for 00:13:13
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:8201-32FH#sh bgp 1.0.0.0/24
-Tue Sep 12 08:42:11.636 UTC
-BGP routing table entry for 1.0.0.0/24
+RP/0/RP0/CPU0:8201-32FH#sh bgp 173.37.145.0/24
+Fri Sep 22 09:33:32.621 UTC
+BGP routing table entry for 173.37.145.0/24
 Versions:
   Process           bRIB/RIB  SendTblVer
-  Speaker                   3            3
-Last Modified: Sep 12 08:28:58.425 for 00:13:13
-<mark>Paths: (2 available, <b>best #1</b>)</mark>
+  Speaker          1663360696   1663360696
+Last Modified: Sep 22 09:17:58.867 for 00:15:33
+<mark>Paths: (2 available, best #1</mark>)
   Not advertised to any peer
-  <mark>Path #1:</mark> Received by speaker 0
+  <mark>Path #1</mark>: Received by speaker 0
   Not advertised to any peer
-  64537 65010 65000 264479 13335, (aggregated by 13335 10.34.36.100)
+  64537 65010 65000 207564 6939 109, (received & used)
     10.70.79.79 from 10.70.79.79 (13.37.79.79)
-      Origin IGP, localpref 100, valid, external, best, group-best
-      Received Path ID 0, Local Path ID 1, version 3
+      Origin IGP, localpref 100, valid, external, <mark>best, group-best</mark>
+      Received Path ID 0, Local Path ID 1, version 1663360696
       Origin-AS validity: (disabled)
   Path #2: Received by speaker 0
   Not advertised to any peer
-  64537 65011 65000 264479 13335, (aggregated by 13335 10.34.36.100)
+  64537 65011 65000 207564 6939 109, (received & used)
     11.70.79.79 from 11.70.79.79 (13.37.79.79)
       Origin IGP, localpref 100, valid, external
       Received Path ID 0, Local Path ID 0, version 0
       Origin-AS validity: (disabled)
-  Path #3: Received by speaker 0
-  Not advertised to any peer
+RP/0/RP0/CPU0:8201-32FH#
 
-RP/0/RP0/CPU0:8201-32FH#sh bgp 1.0.0.0/24 <mark>bestpath-compare</mark>
-Tue Sep 12 13:13:02.458 UTC
-BGP routing table entry for 1.0.0.0/24
+RP/0/RP0/CPU0:8201-32FH#sh bgp 173.37.145.0/24 <mark>bestpath-compare</mark>
+Fri Sep 22 09:39:59.671 UTC
+BGP routing table entry for 173.37.145.0/24
 Versions:
   Process           bRIB/RIB  SendTblVer
-  Speaker            16342698     16342698
-    Flags: 0x00003001+0x20010000;
-Last Modified: Sep 12 12:49:20.425 for 00:23:42
-<mark>Paths: (24 available, best #1)</mark>
+  Speaker          1663360696   1663360696
+    Flags: 0x00023001+0x28010000;
+Last Modified: Sep 22 09:17:58.867 for 00:22:00
+Paths: (16 available, best #1)
   Not advertised to any peer
   Path #1: Received by speaker 0
-  Flags: 0x3000000001060001+0x00, import: 0x020
+  Flags: 0x3000000001068001+0x00, import: 0x020
   Not advertised to any peer
-  64537 65010 65000 271253 3356 6762 13335, (aggregated by 13335 10.34.36.100)
+  64537 65010 65000 207564 6939 109, (received & used)
     10.70.79.79 from 10.70.79.79 (13.37.79.79), if-handle 0x00000000
       Origin IGP, localpref 100, valid, external, best, group-best
-      Received Path ID 0, Local Path ID 1, version 16342698
+      Received Path ID 0, Local Path ID 1, version 1663360696
       Origin-AS validity: (disabled)
       <mark>best of AS 64537, Overall best</mark>
   Path #2: Received by speaker 0
-  Flags: 0x3000000000020001+0x00, import: 0x020
+  Flags: 0x3000000000028001+0x00, import: 0x020
   Not advertised to any peer
-  64537 65011 65000 271253 3356 6762 13335, (aggregated by 13335 10.34.36.100)
+  64537 65011 65000 207564 6939 109, (received & used)
     11.70.79.79 from 11.70.79.79 (13.37.79.79), if-handle 0x00000000
       Origin IGP, localpref 100, valid, external
       Received Path ID 0, Local Path ID 0, version 0
       Origin-AS validity: (disabled)
       <mark>Higher neighbor address than best path (path #1)</mark>
--- snip ---
+-- snip --
 </code>
 </pre>
 </div>
@@ -154,17 +154,18 @@ Last Modified: Sep 12 12:49:20.425 for 00:23:42
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:8201-32FH#sh route 1.0.0.0/24
-Tue Sep 12 08:47:13.672 UTC
+RP/0/RP0/CPU0:8201-32FH#sh route 173.37.145.0/24
+Fri Sep 22 09:43:26.021 UTC
 
-Routing entry for 1.0.0.0/24
+Routing entry for 173.37.145.0/24
   <mark>Known via "bgp 65537", distance 20, metric 0</mark>
   Tag 64537, type external
-  Installed Sep 12 08:46:38.354 for 00:00:35
+  Installed Sep 22 09:18:34.535 for 00:24:51
   Routing Descriptor Blocks
     10.70.79.79, from 10.70.79.79, BGP external
       Route metric is 0
   No advertising protos.
+RP/0/RP0/CPU0:8201-32FH#
 </code>
 </pre>
 </div>
@@ -174,28 +175,30 @@ Routing entry for 1.0.0.0/24
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:8201-32FH#sh cef 1.0.0.0/24
-Tue Sep 12 12:16:48.986 UTC
-1.0.0.0/24, version 589974355, internal 0x5000001 0x40 (ptr 0xdb5a2ba8) [1], 0x0 (0x0), 0x0 (0x0)
- Updated Sep 12 11:55:26.418
+RP/0/RP0/CPU0:8201-32FH#sh cef 173.37.145.0/24
+Fri Sep 22 09:43:52.319 UTC
+173.37.145.0/24, version 3162068783, internal 0x5000001 0x40 (ptr 0xedca25a8) [1], 0x0 (0x0), 0x0 (0x0)
+ Updated Sep 22 09:18:35.153
  Prefix Len 24, traffic index 0, precedence n/a, priority 4
-  gateway array (0x976e97b8) reference count 997247, flags 0x2010, source rib (7), 0 backups
-                [1 type 3 flags 0x48441 (0x6242e98) ext 0x0 (0x0)]
+  gateway array (0x9a80a1e8) reference count 1023547, flags 0x2010, source rib (7), 0 backups
+                [1 type 3 flags 0x48441 (0xf782e658) ext 0x0 (0x0)]
   LW-LDI[type=0, refc=0, ptr=0x0, sh-ldi=0x0]
-  gateway array update type-time 1 Sep 12 08:29:06.295
- LDI Update time Sep 12 08:29:06.301
+  gateway array update type-time 1 Sep 22 09:17:37.734
+ LDI Update time Sep 22 09:17:37.734
 
   Level 1 - Load distribution: 0
   [0] via 10.70.79.79/32, recursive
 
-   <mark>via 10.70.79.79/32, 5 dependencies, recursive, bgp-ext [flags 0x6020]
-    path-idx 0 NHID 0x0 [0x986d42a8 0x0], Internal 0xae0120a0
+   <mark>via 10.70.79.79/32, 3 dependencies, recursive, bgp-ext [flags 0x6020]
+    path-idx 0 NHID 0x0 [0x9b7be8a8 0x0]
     next hop 10.70.79.79/32 via 10.70.79.79/32
 
     Load distribution: 0 (refcount 1)
 
     Hash  OK  Interface                 Address
     0     Y   HundredGigE0/0/0/5.10     10.70.79.79</mark>
+
+RP/0/RP0/CPU0:8201-32FH#
 </code>
 </pre>
 </div>
@@ -979,3 +982,10 @@ As usual, the answer is: it depends. Different customers have diverse designs, u
 While BGP table continues to grow, there is still room for margin. If current maximum scale is not high enough, network operators can still rely on [IOS XR BGP Multi-Instance](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/bgp/75x/b-bgp-cg-8k-75x/implementing-bgp.html#concept_qkq_mhc_qjb) feature: up to 4 BGP processes can be spawned, and address families can be spread across them to reach theoretically up to 80M paths.  
 
 Last, recent routers have plenty of RAM available: most current Cisco 8000 have 32GB of RAM and new products now ship with 64GB of RAM. Currently, IOS XR doesn’t keep advantage of all this memory. There is plan in progress to increase BGP process RLIMIT, with a recent prototype IOS XR image demonstrating support of 75M BGP paths on a 8202-32FH-M with 64GB of RAM. This was possible using a 24GB RLIMIT value for the BGP process during a Customer Proof of Concept.
+
+# Acknowledgement
+
+I'd like to thanks Serge Krier, BGP software engineer & Technical Leader at Cisco
+
+
+
