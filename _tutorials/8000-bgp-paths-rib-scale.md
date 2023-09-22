@@ -962,7 +962,7 @@ Last, recent routers have plenty of RAM available: most current Cisco 8000 have 
 
 # Acknowledgement
 
-I'd like to thanks Serge Krier, BGP software engineer & Technical Leader at Cisco
+I'd like to thanks Serge Krier, BGP software engineer & Technical Leader at Cisco for providing lab support and review.
 
 
 
