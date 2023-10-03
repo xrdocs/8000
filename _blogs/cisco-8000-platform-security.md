@@ -176,7 +176,7 @@ Many of the threats listed above have been seen in network devices including Cis
 
 The Cisco IP Secure JTAG monitor and strobe function is a specialized logic block designed to prevent the use of JTAG debuggers to probe and modify CPU memory contents. Secure JTAG both monitors the JTAG bus for activity and also periodically checks the continuity of the JTAG chain during run time operation. When unauthorized activity is detected or the JTAG chain integrity is compromised, the host system is notified, and corrective action is taken by the host.
 
-Cisco Chip Protection
+## Cisco Chip Protection
 
 Attacks on supply chain may replace CPUs, ASICs with CPUs/ASICs containing Trojan/malware while the products are en route to the customers. Some have theorized that agencies are able to influence vendors of CPUs/ASICs to get them to put Trojans onto chips while others have theorized a Trojan in the form of an added silicon on board assembly. Cisco Chip Protection helps mitigate this threat with the use of unique identifiers stored inside the TAm device as a way to identify and track components through the lifecycle of products.
 
