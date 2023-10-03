@@ -92,9 +92,9 @@ As networks continue to evolve so does the cyber-security landscape. Cisco has b
 
 - What type security measures need to be provisioned for example pre-boot, post- boot, runtime and supply chain security?
 
-A critical step in designing secure and resilient networking solutions is to design hardware from the outset with embedded security features. The Cisco Trust Anchor module (TAm) is a chip that implements a number of security features in a standards-based way. The Trust Anchor module and other trustworthy technologies are used to enable following security features in the Cisco 8000 platform.
+A critical step in designing secure and resilient networking solutions is to design hardware from the outset with embedded security features. The Cisco Trust Anchor Module (TAm) is a chip that implements a number of security features in a standards-based way. The Trust Anchor Module and other trustworthy technologies are used to enable following security features in the Cisco 8000 platform.
 
-The Trust Anchor module is used to enable following security features in Cisco 8000 platform:
+The Trust Anchor Module is used to enable following security features in Cisco 8000 platform:
 
 - Secure boot
 
@@ -104,6 +104,8 @@ The Trust Anchor module is used to enable following security features in Cisco 8
 
 - Supply chain security (Cisco Chip Protection)
 
+### Cisco Trust Anchor Module (TAm)
+
 Platform identity is the first step in establishing platform security, it is done using Cisco Trust Anchor Module (TAm). TAm is a passive silicon module that connects to the CPU in a device. TAm is similar to Trusted Platform Module (TPM) by the Trusted Computing Group (TCG) which was accepted as a standard by ISO and IEC in 2009. TAm / TPM capabilities and common features are highlighted in Fig 4.
 
 ![cisco 8000 platform security 4.1.jpg]({{site.baseurl}}/images/cisco 8000 platform security 4.1.jpg)
@@ -112,13 +114,13 @@ Platform identity is the first step in establishing platform security, it is don
 _Figure 4 Cisco Trust Anchor Module and Trusted Platform Module_
 {: .text-center}
 
-Originally developed to protect against counterfeiting and supply chain attacks, the Trust Anchor module is a tamper-resistant chip that provides secure onchip storage, random number generation (RNG) for encryption, and a secure unique device identity for authentication.
+Originally developed to protect against counterfeiting and supply chain attacks, the Trust Anchor Module is a tamper-resistant chip that provides secure onchip storage, random number generation (RNG) for encryption, and a secure unique device identity for authentication.
 
-During manufacturing phase, device identification is programmed into the TAm module. This is done with Secure Unique Device Identification (SUDI) certificate. SUDI is an extension of device identity as defined by IEEE 802.1 working group. 802.1 AR standard defines a secure device identifier (DevID) as a cryptographic identity that is bound to a device and used to assert device identity. SUDI is permanently programmed into the TAm and logged by Cisco manufacturing server during system manufacturing and it is used for device authentication purposes. SUDI is an X.509 certificate which is globally unique per device. Cisco has a secure business-to-business network with its silicon, software and manufacturing partners. During manufacturing, critical system information such as SUDI is exchanged between suppliers and the Cisco back end process.
+During manufacturing phase, device identification is programmed into the TAm. This is done with Secure Unique Device Identification (SUDI) certificate. SUDI is an extension of device identity as defined by IEEE 802.1 working group. 802.1 AR standard defines a secure device identifier (DevID) as a cryptographic identity that is bound to a device and used to assert device identity. SUDI is permanently programmed into the TAm and logged by Cisco manufacturing server during system manufacturing and it is used for device authentication purposes. SUDI is an X.509 certificate which is globally unique per device. Cisco has a secure business-to-business network with its silicon, software and manufacturing partners. During manufacturing, critical system information such as SUDI is exchanged between suppliers and the Cisco back end process.
 
 ## Cisco Secure Boot and UEFI Secure Boot
 
-The hardware-anchored Secure Boot process is designed to ensure that only genuine, unmodified code is allowed to boot on the Cisco 8000 platform. It is anchored in hardware via TAm module, thus providing a very robust security framework as shown in Fig.5. With the establishment of root of trust, secure boot monitors all stages of the boot process.
+The hardware-anchored Secure Boot process is designed to ensure that only genuine, unmodified code is allowed to boot on the Cisco 8000 platform. It is anchored in hardware via TAm, thus providing a very robust security framework as shown in Fig.5. With the establishment of root of trust, secure boot monitors all stages of the boot process.
 
 ![cisco 8000 platform security 5.jpg]({{site.baseurl}}/images/cisco 8000 platform security 5.jpg)
 {: .align-center}
@@ -128,7 +130,7 @@ _Figure 5 Cisco Secure Boot Process_
 
 It first authenticates a micro-loader, which is encrypted and signed by Cisco private keys, and stored in TAm. When the device boots, the micro-loader authenticates boot loader by validating its Cisco digital signature. Next, the bootloader authenticates the operating system (OS) by checking its digital signature.
 
-This process creates a “chain of trust” from micro-loader through bootloader to the operating system, establishing the software authenticity and integrity. All these signatures are verified using keys that are securely stored in TAm module at manufacturing time. This insures that software and hardware authenticity is verified during boot time leaving no room for hardware and / or software counterfeiting. If any digital signature checks fail, the Cisco device will not allow the software to boot.
+This process creates a “chain of trust” from micro-loader through bootloader to the operating system, establishing the software authenticity and integrity. All these signatures are verified using keys that are securely stored in TAm at manufacturing time. This insures that software and hardware authenticity is verified during boot time leaving no room for hardware and / or software counterfeiting. If any digital signature checks fail, the Cisco device will not allow the software to boot.
 
 ## Extending the Trust to run time application
 
