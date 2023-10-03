@@ -43,6 +43,7 @@ With current advances in IoT and availability of network infrastructure, more de
 
 ![]({{site.baseurl}}/images/cisco%208000%20platform%20security%202.1.jpg)
 {: .align-center}
+
 _Figure 2 Global Internet Growths and Trends_
 {: .text-center}
 
@@ -103,8 +104,10 @@ The Trust Anchor module is used to enable following security features in Cisco 8
 Platform identity is the first step in establishing platform security, it is done using Cisco Trust Anchor Module (TAm). TAm is a passive silicon module that connects to the CPU in a device. TAm is similar to Trusted Platform Module (TPM) by the Trusted Computing Group (TCG) which was accepted as a standard by ISO and IEC in 2009. TAm / TPM capabilities and common features are highlighted in Fig 4.
 
 Photo 4
+{: .align-center}
 
-Figure 4 Cisco Trust Anchor Module and Trusted Platform Module
+_Figure 4 Cisco Trust Anchor Module and Trusted Platform Module_
+{: .text-center}
 
 Originally developed to protect against counterfeiting and supply chain attacks, the Trust Anchor module is a tamper-resistant chip that provides secure onchip storage, random number generation (RNG) for encryption, and a secure unique device identity for authentication.
 
@@ -114,9 +117,11 @@ During manufacturing phase, device identification is programmed into the TAm mod
 
 The hardware-anchored Secure Boot process is designed to ensure that only genuine, unmodified code is allowed to boot on the Cisco 8000 platform. It is anchored in hardware via TAm module, thus providing a very robust security framework as shown in Fig.5. With the establishment of root of trust, secure boot monitors all stages of the boot process.
 
-Photo 5
+![cisco 8000 platform security 5.jpg]({{site.baseurl}}/images/cisco 8000 platform security 5.jpg)
+{: .align-center}
 
-Figure 5 Cisco Secure Boot Process
+_Figure 5 Cisco Secure Boot Process_
+{: .text-center}
 
 It first authenticates a micro-loader, which is encrypted and signed by Cisco private keys, and stored in TAm. When the device boots, the micro-loader authenticates boot loader by validating its Cisco digital signature. Next, the bootloader authenticates the operating system (OS) by checking its digital signature.
 
