@@ -40,7 +40,7 @@ _Figure 1 Cyber-attack damages (Source: Cisco 2018 Security Capabilities Benchma
 
 With current advances in IoT and availability of network infrastructure, more devices are going online. As per Cisco’s Visual Network Index (VNI) forecast, by the year 2022 there will be 4.8 Billion global internet users. There will be around 26 Billion network devices connected with 82% of video traffic over the network [1].
 
-![]({{site.baseurl}}/images/cisco%208000%20platform%20security%202.jpg)![cisco 8000 platform security 2.jpg]({{site.baseurl}}/images/cisco 8000 platform security 2.jpg)
+![]({{site.baseurl}}/images/cisco%208000%20platform%20security%202.jpg)![cisco 8000 platform security 2.jpg]
 
 _Figure 2 Global Internet Growths and Trends_
 
