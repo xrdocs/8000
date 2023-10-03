@@ -34,6 +34,7 @@ of more than US$500,000. Furthermore, the extent of damages is far beyond financ
 
 ![cisco 8000 platform security 1.1.jpg]({{site.baseurl}}/images/cisco 8000 platform security 1.1.jpg)
 {: .align-center}
+
 _Figure 1 Cyber-attack damages (Source: Cisco 2018 Security Capabilities Benchmark Sturdy)_
 {: .text-center}
 
@@ -67,9 +68,11 @@ Trust features are built in to every stage of product development at Cisco right
 
 Cisco has a long history of offering industry leading security offerings and it is the **biggest cybersecurity vendor in the world based on revenue** – and the second fastest growing. Canalys Research recently _ranked the top 5 vendors_, with Cisco leading the pack at just under 10 percent market share (as of Q4 2018) [8].
 
-photo 3
+![]({{site.baseurl}}/images/cisco%208000%20platform%20security%203.jpg)
+{: .align-center}
 
-Figure 3 Top Five Cybersecurity Vendors
+_Figure 3 Top Five Cybersecurity Vendors_
+{: .text-center}
 
 Cisco products provide uncompromised network security which is designed to protect the usability and integrity of network and data; it includes both hardware and software technologies. Effective network security manages access to the network and it targets a variety of threats and stops them from entering or spreading on the network.
 
