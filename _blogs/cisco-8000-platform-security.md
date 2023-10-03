@@ -89,5 +89,74 @@ A critical step in designing secure and resilient networking solutions is to des
 
 The Trust Anchor module is used to enable following security features in Cisco 8000 platform:
 
+- Secure boot
 
+- Image signing
 
+- Runtime defenses
+
+- Supply chain security (Cisco Chip Protection)
+
+Platform identity is the first step in establishing platform security, it is done using Cisco Trust Anchor Module (TAm). TAm is a passive silicon module that connects to the CPU in a device. TAm is similar to Trusted Platform Module (TPM) by the Trusted Computing Group (TCG) which was accepted as a standard by ISO and IEC in 2009. TAm / TPM capabilities and common features are highlighted in Fig 4.
+
+Photo 4
+
+Figure 4 Cisco Trust Anchor Module and Trusted Platform Module
+
+Originally developed to protect against counterfeiting and supply chain attacks, the Trust Anchor module is a tamper-resistant chip that provides secure onchip storage, random number generation (RNG) for encryption, and a secure unique device identity for authentication.
+
+During manufacturing phase, device identification is programmed into the TAm module. This is done with Secure Unique Device Identification (SUDI) certificate. SUDI is an extension of device identity as defined by IEEE 802.1 working group. 802.1 AR standard defines a secure device identifier (DevID) as a cryptographic identity that is bound to a device and used to assert device identity. SUDI is permanently programmed into the TAm and logged by Cisco manufacturing server during system manufacturing and it is used for device authentication purposes. SUDI is an X.509 certificate which is globally unique per device. Cisco has a secure business-to-business network with its silicon, software and manufacturing partners. During manufacturing, critical system information such as SUDI is exchanged between suppliers and the Cisco back end process.
+
+## Cisco Secure Boot and UEFI Secure Boot
+
+The hardware-anchored Secure Boot process is designed to ensure that only genuine, unmodified code is allowed to boot on the Cisco 8000 platform. It is anchored in hardware via TAm module, thus providing a very robust security framework as shown in Fig.5. With the establishment of root of trust, secure boot monitors all stages of the boot process.
+
+Photo 5
+
+Figure 5 Cisco Secure Boot Process
+
+It first authenticates a micro-loader, which is encrypted and signed by Cisco private keys, and stored in TAm. When the device boots, the micro-loader authenticates boot loader by validating its Cisco digital signature. Next, the bootloader authenticates the operating system (OS) by checking its digital signature.
+
+This process creates a “chain of trust” from micro-loader through bootloader to the operating system, establishing the software authenticity and integrity. All these signatures are verified using keys that are securely stored in TAm module at manufacturing time. This insures that software and hardware authenticity is verified during boot time leaving no room for hardware and / or software counterfeiting. If any digital signature checks fail, the Cisco device will not allow the software to boot.
+
+## Extending the Trust to run time application
+
+After the verification of all the steps in the boot sequence, it is crucial to extend the integrity verification to run time application, Integrity Measurement Architecture (IMA) is intended to provide assurance that executables preparing to load have not been modified from their original form. IMA maintains a runtime measurement list and anchored in the TAm, an aggregate integrity value over this list. The benefit of anchoring the aggregate integrity value in the TAm is that the measurement list cannot be compromised by any software attack, without being detectable. Hence, on a trusted boot system, IMA can be used to attest to the system's runtime integrity. The IMA- appraisal extension adds local integrity validation and enforcement of the measurement against a "good" value stored as an extended attribute. The method for validating the extended attributes provides file data integrity and authenticity.
+
+IMA can work in 2 modes:
+
+- Logging mode – In this mode, the system will log a message if the appraisal failed.
+- Appraisal mode – In this mode the system will block applications if the appraisal failed.
+
+The IMA signatures for all applications will be included in the RPM XR packages.
+
+## Secure JTAG
+
+JTAG refers to IEEE 1149.1, Standard Test Access Port and Boundary Scan Architecture. IEEE 1149.1 compliant silicon devices may be connected together on a PCB to form a scan chain which is typically driven by external test equipment or debugger. The original application for JTAG was to be used by manufacturing to detect both structural and functional faults in the PCBA (Printed Circuit Board Assembly) to improve quality.
+
+Photo 6
+
+Figure 6 Board Level JTAG Chain
+
+Most embedded devices provide a JTAG interface for debugging purposes. However, if left unprotected, this interface can become an important attack vector on the system. JTAG has also been adopted to program FPGAs and provide a CPU debug access port. Most CPU vendors including Intel, Freescale, Marvell, and AMD, allow for a debugger to be connected to the CPU’s JTAG port to assist with code debugging. It is the use of JTAG to provide a CPU debug access port that presents a security risk.
+
+A laptop and a JTAG debugger is often all that is required to provide access to an embedded CPU allowing for retrieval of firmware images, dumping memory, and monitoring software execution. Small size coupled with a sophisticated tool set gives attackers a portable and yet powerful means to exploit a system. Potentially malicious uses of JTAG include:
+
+- Intellectual Property Theft
+	- It is easier to reverse engineer than perform static binary analysis
+    
+- Counterfeiting
+	- Reverse engineering of anti-counterfeit mitigations and licensing schemes
+    - Modification of firmware to circumvent licensing
+    
+- Embed Malware
+	- Can be performed statically or dynamically
+    - Dynamic can evade image signing
+    
+- Theft of Secrets
+	- Private or symmetric cryptographic keys can be retrieved from memory
+    - Passwords retrieved from memory
+    
+Many of the threats listed above have been seen in network devices including Cisco products. CounterfeitCiscoproductshavebeenexaminedandfoundtocontainmodifiedsoftware images designed to circumvent protections. While the exact tools and techniques of real-world attacks are often unknown, JTAG makes it significantly easier to reverse engineer, modify and test software. Further confirming JTAG as desirable attack surface, a proof-of-concept attack was demonstrated by a German university team who used the JTAG interface on Cisco routers to monitor memory during run-time operation to extract private information.
+
+The Cisco IP Secure JTAG monitor and strobe function is a specialized logic block designed to prevent the use of JTAG debuggers to probe and modify CPU memory contents. Secure JTAG both monitors the JTAG bus for activity and also periodically checks the continuity of the JTAG chain during run time operation. When unauthorized activity is detected or the JTAG chain integrity is compromised, the host system is notified, and corrective action is taken by the host.
