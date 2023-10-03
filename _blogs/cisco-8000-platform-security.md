@@ -143,8 +143,10 @@ The IMA signatures for all applications will be included in the RPM XR packages.
 JTAG refers to IEEE 1149.1, Standard Test Access Port and Boundary Scan Architecture. IEEE 1149.1 compliant silicon devices may be connected together on a PCB to form a scan chain which is typically driven by external test equipment or debugger. The original application for JTAG was to be used by manufacturing to detect both structural and functional faults in the PCBA (Printed Circuit Board Assembly) to improve quality.
 
 Photo 6
+{: .align-center}
 
-Figure 6 Board Level JTAG Chain
+_Figure 6 Board Level JTAG Chain_
+{: .text-center}
 
 Most embedded devices provide a JTAG interface for debugging purposes. However, if left unprotected, this interface can become an important attack vector on the system. JTAG has also been adopted to program FPGAs and provide a CPU debug access port. Most CPU vendors including Intel, Freescale, Marvell, and AMD, allow for a debugger to be connected to the CPU’s JTAG port to assist with code debugging. It is the use of JTAG to provide a CPU debug access port that presents a security risk.
 
