@@ -23,14 +23,14 @@ This white paper outlines the platform security features that are built into Cis
 
 ## Networks & Cyberattacks
 
-For years Cisco has been warning of increased cybercriminal activity at the global level. In its 2018 Annual Cybersecurity Report Cisco states that cyberattacks are more sophisticated in nature exerting bigger business and financial impact. Technologies used for normal business operations such as the internet and the cloud are being increasingly targeted by cybercriminals. Their most significant target is exploitation of gaps created by network expansion. Furthermore, the report points out that the supply chain attacks are on the rise as well with increasing complexity. Their impact can be quite massive and remain undetected for a long period of time. To curb supply chain attacks, it is recommended to work with vendors who issue Common Vulnerabilities and Exposures (CVE) reports, have a comprehensive supply/value chain security program to protect their systems from compromise, and are capable of quickly addressing any system level vulnerabilities[2].
+For years Cisco has been warning of increased cybercriminal activity at the global level. In its 2018 Annual Cybersecurity Report Cisco states that cyberattacks are more sophisticated in nature exerting bigger business and financial impact. Technologies used for normal business operations such as the internet and the cloud are being increasingly targeted by cybercriminals. Their most significant target is exploitation of gaps created by network expansion. Furthermore, the report points out that the supply chain attacks are on the rise as well with increasing complexity. Their impact can be quite massive and remain undetected for a long period of time. To curb supply chain attacks, it is recommended to work with vendors who issue Common Vulnerabilities and Exposures (CVE) reports, have a comprehensive supply/value chain security program to protect their systems from compromise, and are capable of quickly addressing any system level vulnerabilities[1].
 
 There are many notable recent incidences of cyber breaches resulting in enormous damages. Hackers exploited software vulnerabilities and were able to steal millions of dollars, permanently erase computer data and maliciously hack into corporate networks to steal valuable consumer information [7]. Cybercriminals have exploited supply chain vulnerabilities to replace hardware or software. Attackers are reported to have successfully attacked the supply chains of different companies altering hardware during the manufacturing process gaining access to valuable data [10, 11]. These articles underscore a key point that supply chain attacks are more likely and more frequently to happen given the global nature of product development.
 
 ## Cisco's Report
 
-According to Cisco’s Annual Cybersecurity Report, economic losses as a result of cyberattacks are real. Attacks take months or years to detect and resolve. Cisco’s 2018 Security Capabilities Benchmark study revealed that more than half (53 %) of all attacks resulted in financial damages
-of more than US$500,000. Furthermore, the extent of damages is far beyond financial; businesses have lost their revenue, customers, partners, ability to capture new opportunities, incurred avoidable operational cost, etc. [2].
+According to Cisco’s Annual Cybersecurity Report, economic losses as a result of cyberattacks are real. Attacks take months or years to detect and resolve. Cisco’s 2018 Security Capabilities Benchmark study revealed that more than half (53%) of all attacks resulted in financial damages
+of more than $500,000. Furthermore, the extent of damages is far beyond financial; businesses have lost their revenue, customers, partners, ability to capture new opportunities, incurred avoidable operational cost, etc. [1].
 
 ![cisco 8000 platform security 1.1.jpg]({{site.baseurl}}/images/cisco 8000 platform security 1.1.jpg)
 {: .align-center}
@@ -40,7 +40,7 @@ _Figure 1 Cyber-attack damages (Source: Cisco 2018 Security Capabilities Benchma
 
 ## Global Trends
 
-With current advances in IoT and availability of network infrastructure, more devices are going online. As per Cisco’s Visual Network Index (VNI) forecast, by the year 2022 there will be 4.8 Billion global internet users. There will be around 26 Billion network devices connected with 82% of video traffic over the network [1].
+With current advances in IoT and availability of network infrastructure, more devices are going online. As per Cisco’s Visual Network Index (VNI) forecast, by the year 2022 there will be 4.8 Billion global internet users. There will be around 26 Billion network devices connected with 82% of video traffic over the network [2].
 
 ![]({{site.baseurl}}/images/cisco%208000%20platform%20security%202.1.jpg)
 {: .align-center}
@@ -50,7 +50,7 @@ _Figure 2 Global Internet Growths and Trends_
 
 In addition, there will be 2 Billion BYOD (Bring Your Own Device) in the workplace by the year 2020 as per Mindcommerce. As networks continue to expand, it is becoming increasingly difficult to detect the security attacks and take timely corrective measures. The average industry breach time-to-detection is 191 days.
 
-By 2020, more than half of all devices and connections will be machine-to-machine, up from 34 percent in 2017. That’s 14.6 billion connections from smart speakers, fixtures, devices and everything else, up from 6.1 billion. Video, gaming and multimedia will make up more than 85 % of all traffic [3].
+By 2020, more than half of all devices and connections will be machine-to-machine, up from 34% in 2017. That’s 14.6 billion connections from smart speakers, fixtures, devices and everything else, up from 6.1 billion. Video, gaming and multimedia will make up more than 85% of all traffic [3].
 
 - IP video traffic will quadruple by 2022. As a result, it will make up an even larger percentage of total IP traffic than before—up to 82% from 75%.
 
@@ -66,7 +66,9 @@ Trustworthy networks are built with devices that have security embedded througho
 
 Trust features are built in to every stage of product development at Cisco right from component ordering through a trusted supply chain network to downloading the boot image, shipping the final product to the customer and customer deployment or field deployment.
 
-Cisco has a long history of offering industry leading security offerings and it is the **biggest cybersecurity vendor in the world based on revenue** – and the second fastest growing. Canalys Research recently _ranked the top 5 vendors_, with Cisco leading the pack at just under 10 percent market share (as of Q4 2018) [8].
+### Uncompromised Network Security
+
+Cisco has a long history of offering industry leading security offerings and it is the **biggest cybersecurity vendor in the world based on revenue** – and the second fastest growing. Canalys Research recently _ranked the top 5 vendors_, with Cisco leading the pack at just under 10% market share (as of Q4 2018) [8].
 
 ![]({{site.baseurl}}/images/cisco%208000%20platform%20security%203.jpg)
 {: .align-center}
@@ -190,11 +192,13 @@ Some of the components measured are:
 
 Observed DB is collected by firmware every time the board is booted and extended to the TAm device. If some measurements are not available through firmware, those needs to be collected immediately after those measurements are available from operating system drivers. It is an indication of a breach, if the observed DB does not match the imprint DB. This breach will result in an RMA.
 
+# Conclusion
+
 Cybersecurity is a growing and sustaining challenge for Service Providers across the globe. Cisco has taken unprecedented steps to address this challenge using its trustworthy framework. Platform security is the cornerstone of Cisco’s security strategy. Cisco 8000 feature portfolio includes all the security features presented in this white paper. With these Built-in-Security features, Cisco 8000 family is ready to circumvent security threats keeping the network safe and secure.
 
 ### References
-1. Cisco VNI Forecast
-2. Cisco 2018 Annual Cybersecurity Report
+1. Cisco 2018 Annual Cybersecurity Report
+2. Cisco VNI Forecast
 3. Mindcommerce
 4. 2017 Cost of Data Breach Study Benchmark research sponsored by IBM Security
 Independently conducted by Ponemon Institute LLCJune 2017
