@@ -32,15 +32,15 @@ There are many notable recent incidences of cyber breaches resulting in enormous
 According to Cisco’s Annual Cybersecurity Report, economic losses as a result of cyberattacks are real. Attacks take months or years to detect and resolve. Cisco’s 2018 Security Capabilities Benchmark study revealed that more than half (53 %) of all attacks resulted in financial damages
 of more than US$500,000. Furthermore, the extent of damages is far beyond financial; businesses have lost their revenue, customers, partners, ability to capture new opportunities, incurred avoidable operational cost, etc. [2].
 
-![cisco 8000 platform security 1.jpg]({{site.baseurl}}/images/cisco 8000 platform security 1.jpg)
+![cisco 8000 platform security 1.1.jpg]({{site.baseurl}}/images/cisco 8000 platform security 1.1.jpg)
+
 _Figure 1 Cyber-attack damages (Source: Cisco 2018 Security Capabilities Benchmark Sturdy)_
 
 ## Global Trends
 
 With current advances in IoT and availability of network infrastructure, more devices are going online. As per Cisco’s Visual Network Index (VNI) forecast, by the year 2022 there will be 4.8 Billion global internet users. There will be around 26 Billion network devices connected with 82% of video traffic over the network [1].
 
-![cisco 8000 platform security 2.jpg]({{site.baseurl}}/images/cisco 8000 platform security 2.jpg)
-
+![]({{site.baseurl}}/images/cisco%208000%20platform%20security%202.1.jpg)
 _Figure 2 Global Internet Growths and Trends_
 
 In addition, there will be 2 Billion BYOD (Bring Your Own Device) in the workplace by the year 2020 as per Mindcommerce. As networks continue to expand, it is becoming increasingly difficult to detect the security attacks and take timely corrective measures. The average industry breach time-to-detection is 191 days.
@@ -53,10 +53,11 @@ By 2020, more than half of all devices and connections will be machine-to-machin
 
 - Virtual and augmented reality traffic will skyrocket as more consumers and businesses use the technologies. By 2022, virtual and augmented reality traffic will reach 4.02 Exabyte / month, up from 0.33 Exabyte / month in 2017.
 
+## Trustworthy Networks
+
 For the above scale of data, it will be challenging to build secure and trustworthy network unless the platform hardware is built to handle and circumvent the threats and attacks. Trust is a new dimension in security that focuses on maintaining the hardware and software integrity in the network.
 
 Trustworthy networks are built with devices that have security embedded throughout their product lifecycle and are resilient against today’s sophisticated attacks. Trustworthy networks are designed with foundational security capabilities that verify devices for authenticity and integrity which provides evidence that network devices are operating as intended. Similar to Design For Testability (DFT) and Design For Manufacturability (DFM), Cisco platform products are designed from concept to production based on Cisco trustworthy framework. Cisco has led the industry in this development approach for many years using Cisco Secure Development Lifecycle and the 8000 series is leveraging the same best practices using this proven methodology.
-
 
 Trust features are built in to every stage of product development at Cisco right from component ordering through a trusted supply chain network to downloading the boot image, shipping the final product to the customer and customer deployment or field deployment.
 
