@@ -160,3 +160,36 @@ A laptop and a JTAG debugger is often all that is required to provide access to 
 Many of the threats listed above have been seen in network devices including Cisco products. CounterfeitCiscoproductshavebeenexaminedandfoundtocontainmodifiedsoftware images designed to circumvent protections. While the exact tools and techniques of real-world attacks are often unknown, JTAG makes it significantly easier to reverse engineer, modify and test software. Further confirming JTAG as desirable attack surface, a proof-of-concept attack was demonstrated by a German university team who used the JTAG interface on Cisco routers to monitor memory during run-time operation to extract private information.
 
 The Cisco IP Secure JTAG monitor and strobe function is a specialized logic block designed to prevent the use of JTAG debuggers to probe and modify CPU memory contents. Secure JTAG both monitors the JTAG bus for activity and also periodically checks the continuity of the JTAG chain during run time operation. When unauthorized activity is detected or the JTAG chain integrity is compromised, the host system is notified, and corrective action is taken by the host.
+
+Cisco Chip Protection
+
+Attacks on supply chain may replace CPUs, ASICs with CPUs/ASICs containing Trojan/malware while the products are en route to the customers. Some have theorized that agencies are able to influence vendors of CPUs/ASICs to get them to put Trojans onto chips while others have theorized a Trojan in the form of an added silicon on board assembly. Cisco Chip Protection helps mitigate this threat with the use of unique identifiers stored inside the TAm device as a way to identify and track components through the lifecycle of products.
+
+Cisco Chip Protection is applicable to all field replaceable units (FRUs). There is no “chassis level” chip validation feature. Imprint DB is a master copy in the TAm that stores the unique IDs of Cisco ASICs, CPUs/SOCs and other devices with their device types specific to a board. In most cases, unique ID is device serial number or appropriate value of that device. Imprint DB is a known good values database specific to a board. This is programmed on to a TAm device during the manufacturing process.
+
+Some of the components measured are:
+
+- CPUs
+- ASICs
+- SOCs
+
+Observed DB is collected by firmware every time the board is booted and extended to the TAm device. If some measurements are not available through firmware, those needs to be collected immediately after those measurements are available from operating system drivers. It is an indication of a breach, if the observed DB does not match the imprint DB. This breach will result in an RMA.
+
+Cybersecurity is a growing and sustaining challenge for Service Providers across the globe. Cisco has taken unprecedented steps to address this challenge using its trustworthy framework. Platform security is the cornerstone of Cisco’s security strategy. Cisco 8000 feature portfolio includes all the security features presented in this white paper. With these Built-in-Security features, Cisco 8000 family is ready to circumvent security threats keeping the network safe and secure.
+
+### References
+1. Cisco VNI Forecast
+2. Cisco 2018 Annual Cybersecurity Report
+3. Mindcommerce
+4. 2017 Cost of Data Breach Study Benchmark research sponsored by IBM Security
+Independently conducted by Ponemon Institute LLCJune 2017
+5. Cisco News Release Nov 27, 2018
+6. Cisco Built-in-Trust
+7. South China Morning Post: https://www.scmp.com/news/asia/east-
+asia/article/2163130/us-charge-north-korean-hackers-over-wannacry-sony-cyberattacks
+8. Cisco named a “Champion” in Canalys Cybersecurity Leadership Matrix 2019” White Paper
+9. White Paper: Open platforms and the impact of Security Technologies, Initiatives, and Deployment Practices – Bill Jacob and Vincent Zimmer
+10. https://www.bloomberg.com/news/features/2018-10-04/the-big-hack-how-china-used-a- tiny-chip-to-infiltrate-america-s-top-companies
+11. https://krebsonsecurity.com/2019/06/tracing-the-supply-chain-attack-on-android-2/
+12. Secure Boot: An Effective, Low Risk Alternative to Commercial Solutions 13. Cisco Trustworthy Solutions
+14. Cisco Trust Anchor Technologies: Cisco Data sheet
