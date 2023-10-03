@@ -106,7 +106,7 @@ The Trust Anchor module is used to enable following security features in Cisco 8
 
 Platform identity is the first step in establishing platform security, it is done using Cisco Trust Anchor Module (TAm). TAm is a passive silicon module that connects to the CPU in a device. TAm is similar to Trusted Platform Module (TPM) by the Trusted Computing Group (TCG) which was accepted as a standard by ISO and IEC in 2009. TAm / TPM capabilities and common features are highlighted in Fig 4.
 
-Photo 4
+![cisco 8000 platform security 4.1.jpg]({{site.baseurl}}/images/cisco 8000 platform security 4.1.jpg)
 {: .align-center}
 
 _Figure 4 Cisco Trust Anchor Module and Trusted Platform Module_
@@ -145,7 +145,7 @@ The IMA signatures for all applications will be included in the RPM XR packages.
 
 JTAG refers to IEEE 1149.1, Standard Test Access Port and Boundary Scan Architecture. IEEE 1149.1 compliant silicon devices may be connected together on a PCB to form a scan chain which is typically driven by external test equipment or debugger. The original application for JTAG was to be used by manufacturing to detect both structural and functional faults in the PCBA (Printed Circuit Board Assembly) to improve quality.
 
-Photo 6
+![]({{site.baseurl}}/images/cisco%208000%20platform%20security%206.jpg)
 {: .align-center}
 
 _Figure 6 Board Level JTAG Chain_
