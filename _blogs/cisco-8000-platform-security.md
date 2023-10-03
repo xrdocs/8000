@@ -34,14 +34,14 @@ of more than US$500,000. Furthermore, the extent of damages is far beyond financ
 
 ![cisco 8000 platform security 1.1.jpg]({{site.baseurl}}/images/cisco 8000 platform security 1.1.jpg){: .align-center}
 
-_Figure 1 Cyber-attack damages (Source: Cisco 2018 Security Capabilities Benchmark Sturdy)_{: .align-center}
+_Figure 1 Cyber-attack damages (Source: Cisco 2018 Security Capabilities Benchmark Sturdy)_{: .text-center}
 
 ## Global Trends
 
 With current advances in IoT and availability of network infrastructure, more devices are going online. As per Cisco’s Visual Network Index (VNI) forecast, by the year 2022 there will be 4.8 Billion global internet users. There will be around 26 Billion network devices connected with 82% of video traffic over the network [1].
 
-![]({{site.baseurl}}/images/cisco%208000%20platform%20security%202.1.jpg){: .align-center}
-_Figure 2 Global Internet Growths and Trends_{: .align-center}
+![]({{site.baseurl}}/images/cisco%208000%20platform%20security%202.1.jpg){: .align-right}
+_Figure 2 Global Internet Growths and Trends_{: .text-center}
 
 In addition, there will be 2 Billion BYOD (Bring Your Own Device) in the workplace by the year 2020 as per Mindcommerce. As networks continue to expand, it is becoming increasingly difficult to detect the security attacks and take timely corrective measures. The average industry breach time-to-detection is 191 days.
 
