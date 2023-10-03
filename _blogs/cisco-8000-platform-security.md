@@ -32,17 +32,17 @@ There are many notable recent incidences of cyber breaches resulting in enormous
 According to Cisco’s Annual Cybersecurity Report, economic losses as a result of cyberattacks are real. Attacks take months or years to detect and resolve. Cisco’s 2018 Security Capabilities Benchmark study revealed that more than half (53 %) of all attacks resulted in financial damages
 of more than US$500,000. Furthermore, the extent of damages is far beyond financial; businesses have lost their revenue, customers, partners, ability to capture new opportunities, incurred avoidable operational cost, etc. [2].
 
-photo 1
+![cisco 8000 platform security 1.jpg]({{site.baseurl}}/images/cisco 8000 platform security 1.jpg)
 
-Figure 1 Cyber-attack damages (Source: Cisco 2018 Security Capabilities Benchmark Sturdy)
+_Figure 1 Cyber-attack damages (Source: Cisco 2018 Security Capabilities Benchmark Sturdy)_
 
 ## Global Trends
 
 With current advances in IoT and availability of network infrastructure, more devices are going online. As per Cisco’s Visual Network Index (VNI) forecast, by the year 2022 there will be 4.8 Billion global internet users. There will be around 26 Billion network devices connected with 82% of video traffic over the network [1].
 
-photo 2
+![]({{site.baseurl}}/images/cisco%208000%20platform%20security%202.jpg)![cisco 8000 platform security 2.jpg]({{site.baseurl}}/images/cisco 8000 platform security 2.jpg)
 
-Figure 2 Global Internet Growths and Trends
+_Figure 2 Global Internet Growths and Trends_
 
 In addition, there will be 2 Billion BYOD (Bring Your Own Device) in the workplace by the year 2020 as per Mindcommerce. As networks continue to expand, it is becoming increasingly difficult to detect the security attacks and take timely corrective measures. The average industry breach time-to-detection is 191 days.
 
