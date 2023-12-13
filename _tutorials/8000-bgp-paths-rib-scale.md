@@ -3,7 +3,7 @@ published: true
 date: '2023-09-19 15:54 +0200'
 title: Scaling Cisco 8000 BGP table to 25M paths
 author: Frederic Cuiller
-position: hidden
+position: top
 tags:
   - iosxr
   - Cisco 8000
@@ -963,6 +963,3 @@ Last, recent routers have plenty of RAM available: most current Cisco 8000 have 
 # Acknowledgement
 
 I'd like to thanks Serge Krier, BGP software engineer & Technical Leader at Cisco for providing lab support and review.
-
-
-
