@@ -833,6 +833,20 @@ Figure 27. Data path flow after old active pair (RP0/SC0) shutdown
 4.	Q200 on SC1 forwards packets towards the MPA that has the destination port    
 5.	In the egress path, PHY will forward the packets from active SC1    
 
+### Fan Tray redundancy
+
+8608 provides N+2 Fan Tray redundancy. The system can operate in following conditions:
+- 6+2 per system
+- 3+1 per Switching Card (SC) or Fan Spinner (FS) for non-redundant systems
+
+In details:
+1. If active SC has 1 x faulty Fan Tray, system will continue to operate and fan speed will be set to maximum.
+2. If standby SC has 1 x faulty Fan Tray, system will continue to operate and fan speed will be set to maximum.
+3. If both active and standby SCs each have 1 x faulty Fan Tray (total of 2 faulty Fan Trays), system will continue to operate and fan speed will be set to maximum.
+
+In the rare case of several Fan Trays failure:
+1. If active SC0 has 2 x faulty Fan Trays (over 4), the system will perform a switchover to standby SC1. It will also gracefully shutdown the previously active SC0.
+2. If standby SC1 has 2 x faulty Fan Trays (over 4), the system will gracefully shutdown standby SC1. Same applies if 3 or 4 Fan Trays fail.
 
 ## Conclusion  
 This document discussed the Cisco 8608 architecture.   
@@ -849,3 +863,4 @@ The Cisco 8608 is a unique platform that combines flexibility & reliability whil
 | Version | Data     | Author(s)     | Comments            |
 |---------|----------|---------------|---------------------|
 | 1       | September-8 | Chang Soo Lee | Initial Publication |
+| 2       | December-21 | Fred Cuiller | Added Fan Tray redundancy section |
