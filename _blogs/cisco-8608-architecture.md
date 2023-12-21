@@ -836,17 +836,18 @@ Figure 27. Data path flow after old active pair (RP0/SC0) shutdown
 ### Fan Tray redundancy
 
 8608 provides N+2 Fan Tray redundancy. The system can operate in following conditions:
-- 6+2 per system
+- 6+2 per redundant system
 - 3+1 per Switching Card (SC) or Fan Spinner (FS) for non-redundant systems
 
 In details:
 1. If active SC has 1 x faulty Fan Tray, system will continue to operate and fan speed will be set to maximum.
 2. If standby SC has 1 x faulty Fan Tray, system will continue to operate and fan speed will be set to maximum.
-3. If both active and standby SCs each have 1 x faulty Fan Tray (total of 2 faulty Fan Trays), system will continue to operate and fan speed will be set to maximum.
+3. If both active and standby SCs each have 1 x faulty Fan Tray (total of 2 faulty Fan Trays over 8), system will continue to operate and fan speed will be set to maximum.
 
 In the rare case of several Fan Trays failure:
 1. If active SC0 has 2 x faulty Fan Trays (over 4), the system will perform a switchover to standby SC1. It will also gracefully shutdown the previously active SC0.
-2. If standby SC1 has 2 x faulty Fan Trays (over 4), the system will gracefully shutdown standby SC1. Same applies if 3 or 4 Fan Trays fail.
+2. If standby SC1 has 2 x faulty Fan Trays (over 4), the system will gracefully shutdown standby SC1. Same applies if 3 Fan Trays fail.
+3. If a SC enters in the worst case of 4 x Fan Trays failure, the whole system will gracefully shutdown.
 
 ## Conclusion  
 This document discussed the Cisco 8608 architecture.   
