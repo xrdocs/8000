@@ -33,14 +33,14 @@ This page consolidates all Cisco Live sessions relevant to Cisco 8000 Series rou
 - Name: Cisco 8000 Technical Update: Powered by Silicon One, IOS XR7 & SONiC – BRKSPG-3003
 - Technical Level: Advanced
 - Speaker: Fred Cuiller
-[Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1686177807779001VGjJ)
+- [Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1686177807779001VGjJ)
 
 
 ## 2023 Melbourne
 - Name: Cisco 8000 Forwarding and QoS Deep Dive - BRKSPG-2208
 - Technical Level: Intermediate
 - Speaker: Shinya Horiuchi & Beck Lyu
-[Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1701824108215001ncHu)
+- [Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1701824108215001ncHu)
 
 # Cisco Live 2022
 ## 2022 Las Vegas
