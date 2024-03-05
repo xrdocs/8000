@@ -8,7 +8,7 @@ tags:
   - Cisco 8000
   - Cisco Live
   - Breakout
-position: hidden
+position: top
 ---
 {% include toc icon="table" title="Cisco 8000 Cisco Live sessions" %}
 
