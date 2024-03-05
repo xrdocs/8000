@@ -13,7 +13,7 @@ position: hidden
 {% include toc icon="table" title="Cisco 8000 Cisco Live sessions" %}
 
 # Introduction
-This page consolidates all Cisco Live sessions relevant to Cisco 8000 Series routers. Cisco Live breakout presentations can be accessed on Cisco Live [On-Demand Library](https://www.ciscolive.com/on-demand/on-demand-library.html). Breakout PDF files are available and session video can be replayed.
+This page consolidates all Cisco Live sessions relevant to Cisco 8000 Series routers. Cisco Live breakout presentations can be accessed on Cisco Live [On-Demand Library](https://www.ciscolive.com/on-demand/on-demand-library.html). Breakout PDF files are available for download and session video can be replayed.
 
 # Cisco Live 2024
 ## 2024 Amsterdam
