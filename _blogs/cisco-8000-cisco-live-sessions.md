@@ -17,51 +17,51 @@ This page is an inventory to consolidate all Cisco Live sessions relevant to Cis
 
 # Cisco Live 2024
 ## Event: 2024 Amsterdam
-Name: Cisco 8000 Technical Update: Powered by Silicon One and IOS XR - BRKSPG-2944
-Technical Level: Intermediate
-Speaker: Fred Cuiller & Chang Soo Lee
-[Link to the Library]https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1707505566278001pn3j
+- Name: Cisco 8000 Technical Update: Powered by Silicon One and IOS XR - BRKSPG-2944  
+- Technical Level: Intermediate  
+- Speaker: Fred Cuiller & Chang Soo Lee  
+- [Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1707505566278001pn3j)
 
 # Cisco Live 2023
 ## Event: 2023 Amsterdam
-Name: Cisco 8000 Technical Update: Powered by Silicon One & IOS XR7 – BRKSPG-2944
-Technical Level: Intermediate
-Speaker: Fred Cuiller
-[Link to the Library]https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1675722398519001tQ7h
+- Name: Cisco 8000 Technical Update: Powered by Silicon One & IOS XR7 – BRKSPG-2944  
+- Technical Level: Intermediate  
+- Speaker: Fred Cuiller  
+- [Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1675722398519001tQ7h)
 
 ## Event: 2023 Las Vegas
-Name: Cisco 8000 Technical Update: Powered by Silicon One, IOS XR7 & SONiC – BRKSPG-3003
-Technical Level: Advanced
-Speaker: Fred Cuiller
-[Link to the Library]https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1686177807779001VGjJ
+- Name: Cisco 8000 Technical Update: Powered by Silicon One, IOS XR7 & SONiC – BRKSPG-3003
+- Technical Level: Advanced
+- Speaker: Fred Cuiller
+[Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1686177807779001VGjJ)
 
 
 ## Event: 2023 Melbourne
-Name: Cisco 8000 Forwarding and QoS Deep Dive - BRKSPG-2208
-Technical Level: Intermediate
-Speaker: Shinya Horiuchi & Beck Lyu
+- Name: Cisco 8000 Forwarding and QoS Deep Dive - BRKSPG-2208
+- Technical Level: Intermediate
+- Speaker: Shinya Horiuchi & Beck Lyu
 [Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1701824108215001ncHu)
 
 # Cisco Live 2022
 ## Event: 2022 Las Vegas
-Name: Learn How to Build a Webscaler Network: One Silicon, One Architecture, Any Software - Cisco 8000 - BRKSPG-1020
-Technical Level: General
-Speaker: Rob Murphy
-[Link to the Library]https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1655424184177001QsBH
+- Name: Learn How to Build a Webscaler Network: One Silicon, One Architecture, Any Software - Cisco 8000 - BRKSPG-1020
+- Technical Level: General
+- Speaker: Rob Murphy
+- [Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1655424184177001QsBH)
 
 
 # Cisco Live 2021
 ## Event: 2021 Digital
-Name: 8000 Series Architecture - BRKSPG-2033
-Technical Level: Intermediate
-Speaker: Lane Wigley
-[Link to the Library]https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/16360602368290017vat
+- Name: 8000 Series Architecture - BRKSPG-2033
+- Technical Level: Intermediate
+- Speaker: Lane Wigley
+- [Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/16360602368290017vat)
 
 # Cisco Live 2020
 ## Event: 2020 Barcelona
-Name: Cisco 8000 Series and Silicon One ASIC Architecture - BRKSPG-2280
-Technical Level: Intermediate
-Speaker: Lane Wigley
-[Link to the Library]https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/16360599875380017tX4
+- Name: Cisco 8000 Series and Silicon One ASIC Architecture - BRKSPG-2280
+- Technical Level: Intermediate
+- Speaker: Lane Wigley
+[Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/16360599875380017tX4)
 
 
