@@ -65,6 +65,6 @@ This page consolidates all Cisco Live sessions relevant to Cisco 8000 Series rou
 - Name: Cisco 8000 Series and Silicon One ASIC Architecture - BRKSPG-2280
 - Technical Level: Intermediate
 - Speaker: Lane Wigley
-[Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/16360599875380017tX4)
+- [Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/16360599875380017tX4)
 
 
