@@ -22,6 +22,13 @@ This page consolidates all Cisco Live sessions relevant to Cisco 8000 Series rou
 - Speaker: Fred Cuiller & Chang Soo Lee  
 - [Link to the Library](https://www.ciscolive.com/on-demand/on-demand-library.html?search=undefined&search=undefined#/session/1707505566278001pn3j)
 
+<object data="https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2022/pdf/BRKSPG-1020.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2022/pdf/BRKSPG-1020.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www.ciscolive.com/c/dam/r/ciscolive/global-event/docs/2022/pdf/BRKSPG-1020.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+
 # Cisco Live 2023
 ## 2023 Amsterdam
 - Name: Cisco 8000 Technical Update: Powered by Silicon One & IOS XR7 – BRKSPG-2944  
