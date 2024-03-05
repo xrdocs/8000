@@ -2,7 +2,7 @@
 published: true
 date: '2024-03-05 14:59 +0100'
 title: Cisco 8000 Cisco Live sessions
-author: Fred Cuiller
+author: Frederic Cuiller
 excerpt: Archive of Cisco Live breakout presentations about Cisco 8000
 tags:
   - Cisco 8000
