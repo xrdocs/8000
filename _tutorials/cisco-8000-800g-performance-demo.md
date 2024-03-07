@@ -23,4 +23,7 @@ This video first introduces the reason why industry needs 800G. It then covers t
 
 # Video
 
+This silent/audio-less video was recorded for Cisco Live Melbourne 2023 and was the support of a World of Solutions demo.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YJGFu-Xkfxs?si=TcEdAZR9X-G_L1Qw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
