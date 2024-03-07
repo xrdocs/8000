@@ -31,7 +31,7 @@ To demonstrate the line card performance, a common technique is to use a 'snake 
 
 Multiple QDD-2X400G-FR4 modules are used and create individual FourHundreGigabitEthernet interfaces in IOS XR, for a total of 72 x 400GbE interfaces. Two of those ports are connected to a traffic generator.
 
-Traffic generator is configured to send a simple stream of IPv4, IPv6, or MPLS traffic. Purpose of the test is to demonstrate raw performance. Streams are configured to send 100% line rate traffic with a fixed packet size to demonstrate the line card Non Drop Rate (NDR). In this test, the NDR is the same for IPv4, IPv6 and MPLS and is 296B. 
+Traffic generator is configured to send a simple stream of IPv4, IPv6, or MPLS traffic. Purpose of the test is to demonstrate raw performance. Streams are configured to send 100% line rate traffic with a fixed packet size to demonstrate the line card Non Drop Rate (NDR). In this test, the NDR is achieved with a packet size of 296B. It is the same for IPv4, IPv6 and MPLS. 
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YJGFu-Xkfxs?si=TcEdAZR9X-G_L1Qw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
