@@ -40,3 +40,7 @@ Traffic generator is configured to send a simple stream of IPv4, IPv6, or MPLS t
 # Conclusion
 
 800G is real and Cisco 8000 is ready. Beware of confusion with 800GbE. Remember it's a whole ecosystem which is needed to have mass adoption. History repeats, as 400GbE few years back.
+
+# Acknowledgement
+
+I'd like to thank Saurabh Maheshwari for the support provided during this demo.
