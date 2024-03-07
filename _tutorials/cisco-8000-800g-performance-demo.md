@@ -21,7 +21,7 @@ excerpt: >-
 
 This video first introduces the reason why industry needs 800G. It then covers the key ingredients needed to build dense 800G systems: SerDes, ASICs, optics and standards. It also explains the differences between 800G and 800GbE, with focus on IEEE 800GbE development and deployment timeline. Last, this video shows a live demo of a 36x800G line card delivering 28.8Tbps full duplex traffic, on all ports, linerate, inside a 8808 distributed system.
 
-# Video
+# Demo Details
 
 This silent/audio-less video was recorded for Cisco Live Melbourne 2023 and was the support of a World of Solutions demo.
 
@@ -33,6 +33,7 @@ Multiple QDD-2X400G-FR4 modules are used and create individual FourHundredGigabi
 
 Traffic generator is configured to send a simple stream of IPv4, IPv6, or MPLS traffic. Purpose of the test is to demonstrate raw performance. Streams are configured to send 100% line rate traffic with a fixed packet size to demonstrate the line card Non Drop Rate (NDR). In this test, the NDR is achieved with a packet size of 296B. It is the same for IPv4, IPv6 and MPLS. 
 
+# Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YJGFu-Xkfxs?si=TcEdAZR9X-G_L1Qw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
