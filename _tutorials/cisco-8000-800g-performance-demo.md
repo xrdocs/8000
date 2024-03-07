@@ -19,13 +19,14 @@ excerpt: >-
 ---
 # Introduction
 
-This video first introduces the reason why industry needs 800G. It then covers the key ingredients needed to build dense 800G systems: SerDes, ASICs, optics and standards. It also explains the differences between 800G and 800GbE and 800GbE development and deployment timeline. Last, this video shows a live demo of a 36x800G line card delivering 28.8Tbps full duplex traffic, on all ports, linerate, inside a 8808 distributed system.
+This video first introduces the reason why industry needs 800G. It then covers the key ingredients needed to build dense 800G systems: SerDes, ASICs, optics and standards. It also explains the differences between 800G and 800GbE, with focus on IEEE 800GbE development and deployment timeline. Last, this video shows a live demo of a 36x800G line card delivering 28.8Tbps full duplex traffic, on all ports, linerate, inside a 8808 distributed system.
 
 # Video
 
 This silent/audio-less video was recorded for Cisco Live Melbourne 2023 and was the support of a World of Solutions demo.
 
 The test is done on a Cisco 8808 chassis. It contains latest RP2 route processor, 8808-FC1 fabric cards and a 88-LC1-36EH line card.  
+
 To demonstrate the line card performance, a common technique is to use a 'snake topology' where ports are wired together. Cabling is done in a way to perform inter-NPU forwarding and thus send traffic over the fabric.  
 
 Multiple QDD-2X400G-FR4 modules are used and create individual FourHundreGigabitEthernet interfaces in IOS XR, for a total of 72 x 400GbE interfaces. Two of those ports are connected to a traffic generator.
