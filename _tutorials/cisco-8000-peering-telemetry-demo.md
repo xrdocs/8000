@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 date: '2024-03-07 14:46 +0100'
 title: Cisco Live Melbourne 2023 – Cisco 8000 Peering Telemetry Demo
 author: Frederic Cuiller
