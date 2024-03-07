@@ -29,7 +29,7 @@ The test is done on a Cisco 8808 chassis. It contains latest RP2 route processor
 
 To demonstrate the line card performance, a common technique is to use a 'snake topology' where ports are wired together. Cabling is done in a way to perform inter-NPU forwarding and thus send traffic over the fabric.  
 
-Multiple QDD-2X400G-FR4 modules are used and create individual FourHundreGigabitEthernet interfaces in IOS XR, for a total of 72 x 400GbE interfaces. Two of those ports are connected to a traffic generator.
+Multiple QDD-2X400G-FR4 modules are used and create individual FourHundredGigabitEthernet interfaces in IOS XR, for a total of 72 x 400GbE interfaces. Two of those ports are connected to a traffic generator.
 
 Traffic generator is configured to send a simple stream of IPv4, IPv6, or MPLS traffic. Purpose of the test is to demonstrate raw performance. Streams are configured to send 100% line rate traffic with a fixed packet size to demonstrate the line card Non Drop Rate (NDR). In this test, the NDR is achieved with a packet size of 296B. It is the same for IPv4, IPv6 and MPLS. 
 
