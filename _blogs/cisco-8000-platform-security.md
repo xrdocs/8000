@@ -3,7 +3,9 @@ published: true
 date: '2023-10-03 08:22 +0300'
 title: Cisco 8000 - Platform Security
 author: Ammar Khan
-excerpt: to add here
+excerpt: >-
+  This white paper outlines the platform security features that are built into
+  Cisco 8000 platform.
 tags:
   - iosxr
   - cisco
