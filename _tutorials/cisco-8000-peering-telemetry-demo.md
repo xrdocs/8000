@@ -110,7 +110,21 @@ telemetry model-driven
 
 # Telegraf Configuration
 
+Here is the relevant part of telegraf.conf file, containing the embedded_tags:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+[[inputs.cisco_telemetry_mdt]]
+   transport = "grpc"
+   service_address = ":57500"
+
+#  ## Define (for certain nested telemetry measurements with embedded tags) which fields are tags
+
+   embedded_tags = ["Cisco-IOS-XR-lpts-pre-ifib-oper:lpts-pifib/nodes/node/pifib-hw-flow-policer-stats/police-info/flow-name","Cisco-IOS-XR-lpts-pre-ifib-oper:lpts-pifib/nodes/node/pifib-hw-flow-policer-stats/police-info/npu-id", "Cisco-IOS-XR-fib-common-oper:fib/nodes/node/protocols/protocol/fib-summaries/fib-summary/prefix-masklen-distribution/unicast-prefix/mask-length", "Cisco-IOS-XR-platforms-ofa-oper:ofa/stats/nodes/node/Cisco-IOS-XR-8000-platforms-npu-resources-oper:hw-resources-datas/hw-resources-data/npu-hwr/npu-id", "Cisco-IOS-XR-platforms-ofa-oper:ofa/stats/nodes/node/Cisco-IOS-XR-8000-platforms-npu-resources-oper:hw-resources-datas/hw-resources-data/npu-hwr/bank/bank-name", "Cisco-IOS-XR-platforms-ofa-oper:ofa/stats/nodes/node/Cisco-IOS-XR-8000-platforms-npu-resources-oper:hw-resources-datas/hw-resources-data/npu-hwr/bank/lt-hwr/name", "Cisco-IOS-XR-ipv4-bgp-oper:bgp/instances/instance/instance-active/default-vrf/neighbors/neighbor/af-data/af-name", "Cisco-IOS-XR-ip-rib-ipv4-oper:rib/rib-table-ids/rib-table-id/summary-protos/summary-proto/name", "Cisco-IOS-XR-procmem-oper:processes-memory/nodes/node/process-ids/name", "Cisco-IOS-XR-qos-ma-oper:qos/interface-table/interface/input/service-policy-names/service-policy-instance/statistics/class-stats/class-name"]
+</code>
+</pre>
+</div>
 
 # Grafana Dashboard
 
