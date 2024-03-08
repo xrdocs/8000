@@ -117,3 +117,7 @@ telemetry model-driven
 The Grafana dashboard used for the demo is attached in the github as a JSON file. It can be imported into your own environment. Following parameters must be adapted:
 - datasource: you must put your own TSDB, configured in Grafana
 - source: you must put your exact device hostname
+
+# Conclusion
+
+Cisco 8000 is a great fit for peering role. It offers multiple form factors to cover all the capacity needs. With more than 20 year of field exposure in carrier-class environment, IOS XR BGP stack is fast, scalable, reliable and secure.  Cisco Silicon One feature-set and associated scale is complete for this network function. Last, as demonstrated in the video, IOS XR YANG modules can provide full visibility on multiple critical components used for this role.
