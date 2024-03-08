@@ -1,6 +1,6 @@
 ---
 published: true
-date: '2023-10-03 08:22 +0300'
+date: '2024-06-03 08:22 +0300'
 title: Cisco 8000 - Platform Security
 author: Ammar Khan
 excerpt: >-
@@ -11,7 +11,7 @@ tags:
   - cisco
   - '8000'
   - Security
-position: hidden
+position: top
 ---
 {% include toc icon="table" title="Cisco 8000 - Platform Security" %}
 
