@@ -138,7 +138,7 @@ Here is the relevant part of telegraf.conf file, containing the embedded_tags:
 
 # Grafana Dashboard
 
-The Grafana dashboard used for the demo is attached in the github as a JSON file. It can be imported into your own environment. Following parameters must be adapted:
+The Grafana dashboard used for the demo has been exported in JSON and uploaded into the [xrdocs.io GitHub repo](https://raw.githubusercontent.com/xrdocs/8000/gh-pages/8000%20Peering%20Telemetry%20Dashboard.json). It can be imported in your own environment. Following parameters must be adapted:
 - datasource: you must put your own TSDB, configured in Grafana
 - source: you must put your exact device hostname
 
