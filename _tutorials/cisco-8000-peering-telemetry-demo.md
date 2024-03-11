@@ -7,7 +7,7 @@ tags:
   - Cisco 8000
   - Peering
   - Telemetry
-position: hidden
+position: top
 excerpt: >-
   This video aims to list the requirements of an Internet peering router. It
   demonstrates how Cisco 8000 series routers, powered by Silicon One and IOS XR
@@ -24,7 +24,7 @@ The video shows live examples of telemetry collection: RPKI, FIB, Netflow, BGP, 
 This silent/audio-less video was recorded for Cisco Live Melbourne 2023 and was the support of a World of Solutions demo.  
 
 The test is done on a Cisco 8201-32FH fixed system running IOS XR 7.10.1. It aims to represent a realistic Internet peering router, including:
-- multiple BGP sessions to simulate PNI and Transit, dual-stack
+- multiple BGP sessions to simulate PNI and Transit, all dual-stack
 - typical Internet peeering router feature-set and scale
 - industry BCOP (Best Current Operational Practices) configured and deployed
 - a DDoS mitigation platform (emulated with a BGP daemon to craft BGP and BGP-FS updates)
