@@ -1,6 +1,6 @@
 ---
 published: true
-date: '2024-06-03 08:22 +0300'
+date: '2024-03-06 08:22 +0300'
 title: Cisco 8000 - Platform Security
 author: Ammar Khan
 excerpt: >-
