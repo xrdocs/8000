@@ -98,6 +98,8 @@ FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G
 -- NPU number should be 0 for 8100/8200/8608 (8000 fixed & centralized systems)    
 -- NPU number should be 0, 1, or 2 for 88-LC0-36FH line card (not shown above)  
 -- NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown above)  
+-- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH line card (not shown above)  
+
 - NPU core: Slice number  
 -- Slice number should be between 0 and 5 for 8200/8608 (8000 fixed & centralized systems)   
 -- Slice number should be between 0 and 7 for 8111-32EH (8100 fixed system)   
@@ -370,6 +372,11 @@ There are three Q200 NPUs on these line cards.
 | FH0/x/0/13 | 1/2/5         | FH0/x/0/27 | 2/2/4         |            |               |
 
 **Note**: x is slot number in Cisco 8800 router  
+
+### 88-LC1-36EH  
+The Cisco 88-LC1-36EH P100 based transport optimized line card provides 36 ports of 800G (high dense 400 GbE), aggregating to a total bandwidth of 28.8 Tbps. There are four P100 NPUs on this line card. Allow Flexible combination of 800G/400G/200G/100G/40G/10G Optics and port based Breakout options. This line card doesn't support MACsec.  
+
+
 
 ### 8800-LC-48H 
 There are two Q100 NPUs on these line cards.
