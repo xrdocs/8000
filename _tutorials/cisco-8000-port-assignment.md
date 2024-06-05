@@ -376,6 +376,9 @@ There are three Q200 NPUs on these line cards.
 ### 88-LC1-36EH  
 The Cisco 88-LC1-36EH P100 based transport optimized line card provides 36 ports of 800G (high dense 400 GbE), aggregating to a total bandwidth of 28.8 Tbps. There are four P100 NPUs on this line card. Allow Flexible combination of 800G/400G/200G/100G/40G/10G Optics and port based Breakout options. This line card doesn't support MACsec.  
 
+![Fury2.png]({{site.baseurl}}/images/Fury2.png)   
+<b>88-LC1-36EH</b>  
+{: .text-center}  
 
 | Interface                              | NPU/Slice/IFG | Interface                                | NPU/Slice/IFG | Interface                                | NPU/Slice/IFG | Interface                                | NPU/Slice/IFG |
 |----------------------------------------|---------------|------------------------------------------|---------------|------------------------------------------|---------------|------------------------------------------|---------------|
@@ -444,4 +447,5 @@ There are two Q200 NPUs on these line cards.
 | 3       | July-22  | Chang Soo Lee | Added 8201-24H8FH   |
 | 4       | April-23 | Chang Soo Lee | Added 8111-32EH     |
 | 5       | July-23  | Chang Soo Lee | Upgraded to high resolution     |  
-| 6       | September-13  | Chang Soo Lee | Added 8608     |
+| 6       | September-13  | Chang Soo Lee | Added 8608     |  
+| 7       | June-4  | Chang Soo Lee | Added 88-LC1-36EH     |
