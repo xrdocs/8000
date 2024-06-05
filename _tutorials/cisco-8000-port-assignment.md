@@ -96,7 +96,7 @@ FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G
 
 - NPU #: NPU number  
 -- NPU number should be 0 for 8100/8200/8608 (8000 fixed & centralized systems)    
--- NPU number should be 0, 1, or 2 for 88-LC0-36FH line card (not shown above)  
+-- NPU number should be 0, 1, 2 for 88-LC0-36FH line card (not shown above)  
 -- NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown above)  
 -- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH line card (not shown above)  
 
