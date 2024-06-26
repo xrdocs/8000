@@ -392,4 +392,4 @@ The whole process can be observed in this 5min video clip
 
 # Conclusion
 
-Cisco 8000 routers can now be safely erased before being returned to the depot as part of RMA procedure using factory reset procedure. The system will keep running the same IOS XR release (version, packages, SMU) but is purged from any sensitive data.
+Cisco 8000 routers can now be safely erased before being returned to the depot as part of RMA procedure using factory reset feature. The system will keep running the same IOS XR release (version, packages, SMU) but is purged from any sensitive data.
