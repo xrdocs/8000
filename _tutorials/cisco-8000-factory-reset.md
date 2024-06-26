@@ -139,7 +139,8 @@ RP/0/RP0/CPU0:8212-48FH-M_P4C-006#factory-reset reload location ?
 </pre>
 </div>
 
-Note: In case of Cisco 8800 distributed systems, it’s possible to wipe a specific line card or the standby RP for instead. Another option is to shutdown the system once the reset is done. This can help field engineers identifying the unit which must be replaced in case of RMA.
+**Note:** In case of Cisco 8800 distributed systems, it’s possible to wipe a specific line card or the standby RP for instead. Another option is to shutdown the system once the reset is done. This can help field engineers identifying the unit which must be replaced in case of RMA.
+{: .notice--primary}
 
 Once the procedure is launched:
 
