@@ -386,7 +386,7 @@ Directory of harddisk:
 
 # Video
 
-The whole demo can be observed in below clip
+The whole demo can be observed in this 5min video clip
 ![8000 factory reset.gif]({{site.baseurl}}/images/8000 factory reset.gif)
 
 
