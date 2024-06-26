@@ -384,6 +384,12 @@ Directory of harddisk:
 </pre>
 </div>
 
+# Video
+
+The whole demo can be observed in below clip
+![8000 factory reset.gif]({{site.baseurl}}/images/8000 factory reset.gif)
+
+
 # Conclusion
 
 Cisco 8000 routers can now be safely erased before being returned to the depot as part of RMA procedure using factory reset procedure. The system will keep running the same IOS XR release (version, packages, SMU) but is purged from any sensitive data.
