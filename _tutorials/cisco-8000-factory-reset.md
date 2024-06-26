@@ -32,7 +32,10 @@ Factory reset feature complies with NIST SP 800-88 guidelines for Media Sanitiza
 The system used for this demo is a Cisco 8200 fixed system running IOS XR 24.2.1.
 It already contains configuration and a couple of user’s files are present on the harddisk (ISO, configuration backup, packet capture, etc.):
 
-RP/0/RP0/CPU0:8212-48FH-M_P4C-006#sh run
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8212-48FH-M_P4C-006#<mark>sh run</mark>
 Mon Jun 24 20:14:50.522 UTC
 !! Building configuration...
 !! IOS XR Configuration 24.2.1
@@ -59,7 +62,6 @@ arp vrf default 10.10.8.2 0001.0000.0008 ARPA
 arp vrf default 10.10.9.2 0001.0000.0009 ARPA
 RP/0/RP0/CPU0:8212-48FH-M_P4C-006#
 RP/0/RP0/CPU0:8212-48FH-M_P4C-006#
-RP/0/RP0/CPU0:8212-48FH-M_P4C-006#
 RP/0/RP0/CPU0:8212-48FH-M_P4C-006#dir harddisk:
 Mon Jun 24 20:15:01.818 UTC
 
@@ -76,7 +78,7 @@ Directory of harddisk:
      31 -rw-r--r--. 1     379524 May 31 18:08 npu_drvr_5014.by.11.20240531-180744.node0_RP0_CPU0.5a1e7.core.txt
 1835009 drwxrwxrwx. 2       4096 Feb  7 19:41 .sppdc_new
      11 drwx------. 2      16384 Feb  7 19:29 lost+found
-     21 -rw-r--r--. 1  492187234 Feb 21 19:34 8000-x86_64-24.2.1.23I-CSCwj06962-deenayak-2024-02-20-1935.tgz
+     21 -rw-r--r--. 1  492187234 Feb 21 19:34 <mark>8000-x86_64-24.2.1.23I-CSCwj06962-deenayak-2024-02-20-1935.tgz</mark>
  786433 drwxrwxrwx. 3       4096 Feb  7 19:45 var
  393217 drwxrwxrwx. 2      20480 Jun 14 16:43 showtech
      35 -rw-rw-rw-. 1          0 Mar 19 00:02 show_drops_error.txt
@@ -93,13 +95,13 @@ Directory of harddisk:
      28 -rw-r--r--. 1  191145143 May 31 18:08 npu_drvr_5014.by.11.20240531-180744.node0_RP0_CPU0.5a1e7.core.gz
 3145729 drwxrwxrwx. 2       4096 Jun 24 18:14 npu_sdk_logs
      29 -rw-rw-rw-. 1      32290 Mar  8 23:02 slugger_1_bo_macsec.txt
-     20 -r-xr-xr-x. 1 1839591167 Feb 20 23:40 8000-x64-usb-24.2.1.23I.zip
+     20 -r-xr-xr-x. 1 1839591167 Feb 20 23:40 <mark>8000-x64-usb-24.2.1.23I.zip</mark>
      26 -rw-r--r--. 1      33964 May 16 02:32 tmgctrl_core_show_ctrl_2224.by.6.20240516-023216.node0_RP0_CPU0.d741a.core.txt
      41 -rw-rw-rw-. 1         65 Apr 12 16:48 utc_offset.json
 2097153 drwxr-xr-x. 2       4096 May 21 22:19 smu
      17 -rw-r--r--. 1   14463964 Jun 13 18:13 var_log_pre_reimage.tgz
      14 -rw-rw-rw-. 1         32 Jun 24 18:15 auto-fpd-upgrade-config.bin
-     22 -rw-rw-rw-. 1      22769 Feb 21 23:32 slugger_2.conf
+     22 -rw-rw-rw-. 1      22769 Feb 21 23:32 <mark>slugger_2.conf</mark>
      45 -rw-rw-rw-. 1       3431 Jun 13 17:44 fcm_data
  262145 drwxrwxrwx. 5       4096 Feb  9 19:17 shutdown
 1310721 drwxrwxrwx. 5       4096 Jun 24 18:20 cisco_support
@@ -113,9 +115,15 @@ Directory of harddisk:
 
 53330272 kbytes total (44088536 kbytes free)
 RP/0/RP0/CPU0:8212-48FH-M_P4C-006#
+</code>
+</pre>
+</div>
 
 Factory reset procedure is invoked with “factory-reset” command. It contains a couple of options:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8212-48FH-M_P4C-006#factory-reset ?
   reload    Reload the location after performing factory-reset
   shutdown  Shutdown the location after performing factory-reset
@@ -125,6 +133,9 @@ RP/0/RP0/CPU0:8212-48FH-M_P4C-006#factory-reset reload location ?
   0/RP0/CPU0  Fully qualified location specification
   WORD        Fully qualified location specification
   all         Show all locations
+</code>
+</pre>
+</div>
 
 Note: In case of Cisco 8800 distributed systems, it’s possible to wipe a specific line card or the standby RP for instead. Another option is to shutdown the system once the reset is done. This can help field engineers identifying the unit which must be replaced in case of RMA.
 
@@ -135,6 +146,9 @@ Once the procedure is launched:
 3. IOS XR processes are stopped
 4. Full disk erasure starts
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:8212-48FH-M_P4C-006#factory-reset reload location 0/RP0/CPU0
 Mon Jun 24 20:18:32.935 UTC
 Performing factory-reset may affect the stability of the system. Re-imaging maybe required to recover. Continue?
@@ -162,10 +176,16 @@ snip
          Stopping Service for factory reset...
 [  OK  ] Stopped OpenSSH Key Generation.
 [ 7519.819442] factory_reset_stop.sh[39073]: Mon Jun 24 20:18:55 UTC 2024 Factory reset requested
+</code>
+</pre>
+</div>
 
 5.	watchdog is temporarily disabled to let enough time to complete the procedure. It prevents system from reloading automatically after some time.
 6.	Cleanup starts
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 [ 7521.654435] factory_reset_stop.sh[39073]: Mon Jun 24 20:18:57 UTC 2024 Started punching watchdog
 [ 7522.762247] factory_reset_stop.sh[39073]: Mon Jun 24 20:18:58 UTC 2024 Started cleaning up mount point: /misc/scratch
 [ 7550.347910] factory_reset_stop.sh[39073]: Mon Jun 24 20:19:26 UTC 2024 Started syncing folder: /misc/scratch
@@ -197,9 +217,15 @@ snip
 [ 8095.224131] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:30 UTC 2024 Finished cleaning up folder: /mnt/rootfs/misc/config
 [ 8096.228311] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:31 UTC 2024 +++++++++++++++++++++++++++++++++++++++++++++++
 [ 8097.233317] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:32 UTC 2024 Encrypted logical volume does not exist. Nothing to remove.
+</code>
+</pre>
+</div>
 
 7. watchdog is restored and system reloads (or performs shutdown depending option used)
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 [ 8099.290130] factory_reset_stop.sh[39073]: 2024-06-24 20:28:34.972 UTC: Stopped punching watchdog
 [ 8100.347121] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:36 UTC 2024 Stopped punching watchdog
 snip
@@ -214,9 +240,15 @@ snip
 [ 8103.038574] systemd-shutdown[1]: Failed to finalize  DM devices, ignoring
 [ 8103.414279] pm-fpga: Turning Status LED to amber, Active, Alarm, Board and Chassis Attention LED to OFF ...
 [ 8103.436109] pm-fpga: Power cycling local CPU power zone
+</code>
+</pre>
+</div>
 
 8. In this demo, system performs a fresh boot like it was out of factory
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 Cisco 8000(R) Series BIOS Ver 1.09 Primary
 Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz
 Board Type 0x10D PID 8212-48FH-M Serial FLM274203G9
@@ -278,9 +310,15 @@ If you require further assistance please contact us by sending email to
 export@cisco.com.
 
 RP/0/RP0/CPU0:Jun 24 20:32:43.041 UTC: pyztp2[125]: %INFRA-ZTP-4-START : ZTP has started. Interfaces might be brought up if they are shutdown
+</code>
+</pre>
+</div>
 
 9. Like any fresh install, the first thing to do is to configure a local administrator account. Once logged in, we can see there is no configuration anymore and the files previously located on the harddisk are no longer present
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 !!!!!!!!!!!!!!!!!!!! NO root-system username is configured. Need to configure root-system username. !!!!!!!!!!!!!!!!!!!!
 
          --- Administrative User Dialog ---
@@ -343,18 +381,10 @@ Directory of harddisk:
      13 -rw-rw-rw-. 1 59716 Jun 24 20:33 nvgen_bkup.log
 
 53330272 kbytes total (50538020 kbytes free)
+</code>
+</pre>
+</div>
 
 ## Conclusion
 
 Cisco 8000 routers can now be safely erased before being returned to the depot as part of RMA procedure using factory reset procedure. The system will keep running the same IOS XR release (version, packages, SMU) but is purged from any sensitive data.
-
-
-
-
-
-
-
-
-
-
-
