@@ -144,10 +144,10 @@ RP/0/RP0/CPU0:8212-48FH-M_P4C-006#factory-reset reload location ?
 
 Once the procedure is launched:
 
-1. Encryption keys are first deleted
-2. shelfmgr process reloads the system/line card
-3. IOS XR processes are stopped
-4. Full disk erasure starts
+- Encryption keys are first deleted
+- shelfmgr process reloads the system/line card
+- IOS XR processes are stopped
+- Full disk erasure starts
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -183,8 +183,8 @@ snip
 </pre>
 </div>
 
-5. watchdog is temporarily disabled to let enough time to complete the procedure. It prevents system from reloading automatically after some time.
-6. Cleanup starts
+- watchdog is temporarily disabled to let enough time to complete the procedure. It prevents system from reloading automatically after some time.
+- Cleanup starts
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -224,7 +224,7 @@ snip
 </pre>
 </div>
 
-7. watchdog is restored and system reloads (or performs shutdown depending option used)
+- watchdog is restored and system reloads (or performs shutdown depending option used)
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -247,7 +247,7 @@ snip
 </pre>
 </div>
 
-8. In this demo, system performs a fresh boot like it was out of factory
+In this demo, system performs a fresh boot like it was out of factory
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -292,10 +292,6 @@ snip
 
 RP/0/RP0/CPU0:Jun 24 20:31:13.204 UTC: ssd_enc_server[385]: %OS-SSD_ENC-1-ENCRYPTED_LV_RECOVERED : Encrypted logical volume failure seen during boot. Recovered by recreating LV and encryption keys. Check /misc/disk1 for error logs.
 
-
-
-
-
 This product contains cryptographic features and is subject to United
 States and local country laws governing import, export, transfer and
 use. Delivery of Cisco cryptographic products does not imply third-party
@@ -317,7 +313,7 @@ RP/0/RP0/CPU0:Jun 24 20:32:43.041 UTC: pyztp2[125]: %INFRA-ZTP-4-START : ZTP has
 </pre>
 </div>
 
-9. Like any fresh install, the first thing to do is to configure a local administrator account. Once logged in, we can see there is no configuration anymore and the files previously located on the harddisk are no longer present
+Like any fresh install, the first thing to do is to configure a local administrator account. Once logged in, we can see there is no configuration anymore and the files previously located on the harddisk are no longer present
 
 <div class="highlighter-rouge">
 <pre class="highlight">
