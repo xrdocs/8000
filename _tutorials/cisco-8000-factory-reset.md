@@ -183,8 +183,8 @@ snip
 </pre>
 </div>
 
-5.	watchdog is temporarily disabled to let enough time to complete the procedure. It prevents system from reloading automatically after some time.
-6.	Cleanup starts
+5. watchdog is temporarily disabled to let enough time to complete the procedure. It prevents system from reloading automatically after some time.
+6. Cleanup starts
 
 <div class="highlighter-rouge">
 <pre class="highlight">
