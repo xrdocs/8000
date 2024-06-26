@@ -29,7 +29,7 @@ The whole procedure takes approximately 15min.
 
 Factory reset feature complies with NIST SP 800-88 guidelines for Media Sanitization. This is achieved by removing all files from the partition and then fill it up with random data using dd utility.
 
-# Factory Reset in Action
+# Factory Reset steps
 
 The system used for this demo is a Cisco 8200 fixed system running IOS XR 24.2.1.
 It already contains configuration and a couple of user’s files are present on the harddisk (ISO, configuration backup, packet capture, etc.):
@@ -384,9 +384,9 @@ Directory of harddisk:
 </pre>
 </div>
 
-# Video
+# Factory Reset in Action
 
-The whole demo can be observed in this 5min video clip
+The whole process can be observed in this 5min video clip
 ![8000 factory reset.gif]({{site.baseurl}}/images/8000 factory reset.gif)
 
 
