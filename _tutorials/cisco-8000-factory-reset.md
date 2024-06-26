@@ -149,11 +149,11 @@ Once the procedure is launched:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:8212-48FH-M_P4C-006#factory-reset reload location 0/RP0/CPU0
+RP/0/RP0/CPU0:8212-48FH-M_P4C-006#<mark>factory-reset reload location 0/RP0/CPU0</mark>
 Mon Jun 24 20:18:32.935 UTC
 Performing factory-reset may affect the stability of the system. Re-imaging maybe required to recover. Continue?
 [confirm]
-RP/0/RP0/CPU0:Jun 24 20:18:41.523 UTC: ssd_enc_server[385]: %OS-SSD_ENC-1-FACTORY_RESET : Factory reset: Deleted SSD encryption keys successfully
+<mark>RP/0/RP0/CPU0:Jun 24 20:18:41.523 UTC: ssd_enc_server[385]: %OS-SSD_ENC-1-FACTORY_RESET : Factory reset: Deleted SSD encryption keys successfully</mark>
 	Status report: node0_RP0_CPU0: START TO BACKUP
 
 Preparing system for backup. This may take a few minutes especially for large configurations.
@@ -168,14 +168,14 @@ snip
 [  OK  ] Stopped Load/Save Random Seed.
 [  OK  ] Removed slice system-lvm2\x2dpvscan.slice.
 [  OK  ] Removed slice system-serial\x2dgetty.slice.
-RP/0/RP0/CPU0:Jun 24 20:18:46.421 UTC: shelfmgr[444]: %PLATFORM-SHELFMGR-4-CARD_RELOAD : Reloading 0/RP0/CPU0: Factory reset initiated card reload
+<mark>RP/0/RP0/CPU0:Jun 24 20:18:46.421 UTC: shelfmgr[444]: %PLATFORM-SHELFMGR-4-CARD_RELOAD : Reloading 0/RP0/CPU0: Factory reset initiated card reload</mark>
          Stopping Permit User Sessions...
 [  OK  ] Stopped Redis In-Memory Data Store.
 snip
 [  OK  ] Stopped IOS-XR ISO Installation including sshd.
          Stopping Service for factory reset...
 [  OK  ] Stopped OpenSSH Key Generation.
-[ 7519.819442] factory_reset_stop.sh[39073]: Mon Jun 24 20:18:55 UTC 2024 Factory reset requested
+<mark>[ 7519.819442] factory_reset_stop.sh[39073]: Mon Jun 24 20:18:55 UTC 2024 Factory reset requested</mark>
 </code>
 </pre>
 </div>
@@ -186,8 +186,8 @@ snip
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-[ 7521.654435] factory_reset_stop.sh[39073]: Mon Jun 24 20:18:57 UTC 2024 Started punching watchdog
-[ 7522.762247] factory_reset_stop.sh[39073]: Mon Jun 24 20:18:58 UTC 2024 Started cleaning up mount point: /misc/scratch
+<mark>[ 7521.654435] factory_reset_stop.sh[39073]: Mon Jun 24 20:18:57 UTC 2024 Started punching watchdog</mark>
+[ 7522.762247] factory_reset_stop.sh[39073]: Mon Jun 24 20:18:58 UTC 2024 <mark>Started cleaning up mount point: /misc/scratch</mark>
 [ 7550.347910] factory_reset_stop.sh[39073]: Mon Jun 24 20:19:26 UTC 2024 Started syncing folder: /misc/scratch
 [ 7556.500349] factory_reset_stop.sh[39073]: Mon Jun 24 20:19:32 UTC 2024 Finished syncing folder: /misc/scratch
 [ 7557.504424] factory_reset_stop.sh[39073]: Mon Jun 24 20:19:33 UTC 2024 Finished cleaning up mount point: /misc/scratch
@@ -214,7 +214,7 @@ snip
 [ 8092.211971] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:27 UTC 2024 +++++++++++++++++++++++++++++++++++++++++++++++
 [ 8093.215952] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:28 UTC 2024 Started cleaning up folder: /mnt/rootfs/misc/config
 [ 8094.219960] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:29 UTC 2024 /mnt/rootfs/misc/config not present
-[ 8095.224131] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:30 UTC 2024 Finished cleaning up folder: /mnt/rootfs/misc/config
+[ 8095.224131] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:30 UTC 2024 <mark>Finished cleaning up folder: /mnt/rootfs/misc/config</mark>
 [ 8096.228311] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:31 UTC 2024 +++++++++++++++++++++++++++++++++++++++++++++++
 [ 8097.233317] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:32 UTC 2024 Encrypted logical volume does not exist. Nothing to remove.
 </code>
@@ -226,20 +226,20 @@ snip
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-[ 8099.290130] factory_reset_stop.sh[39073]: 2024-06-24 20:28:34.972 UTC: Stopped punching watchdog
+[ 8099.290130] factory_reset_stop.sh[39073]: 2024-06-24 20:28:34.972 UTC: <mark>Stopped punching watchdog</mark>
 [ 8100.347121] factory_reset_stop.sh[39073]: Mon Jun 24 20:28:36 UTC 2024 Stopped punching watchdog
 snip
 [  OK  ] Stopped Monitoring of LVM2… dmeventd or progress polling.
 [  OK  ] Reached target Shutdown.
 [  OK  ] Reached target Final Step.
-[  OK  ] Started Reboot.
-[  OK  ] Reached target Reboot.
+<mark>[  OK  ] Started Reboot.</mark>
+<mark>[  OK  ] Reached target Reboot.</mark>
 [ 8102.987301] systemd-shutdown[1]: Could not detach DM /dev/dm-9: Device or resource busy
 [ 8102.997085] systemd-shutdown[1]: Could not detach DM /dev/dm-8: Device or resource busy
 [ 8103.006835] systemd-shutdown[1]: Could not detach DM /dev/dm-7: Device or resource busy
 [ 8103.038574] systemd-shutdown[1]: Failed to finalize  DM devices, ignoring
 [ 8103.414279] pm-fpga: Turning Status LED to amber, Active, Alarm, Board and Chassis Attention LED to OFF ...
-[ 8103.436109] pm-fpga: Power cycling local CPU power zone
+<mark>[ 8103.436109] pm-fpga: Power cycling local CPU power zone</mark>
 </code>
 </pre>
 </div>
@@ -256,7 +256,7 @@ X86FPGA 1.7.0 TamLib 5.01.01
 Booting from Disk
   Booting `IOS-XR-latest'
 
-Booting latest from Disk..
+<mark>Booting latest from Disk..</mark>
 Loading Kernel..
 Verifying /bzImage...
 /bzImage verified using attached signature.
@@ -284,8 +284,8 @@ snip
 [   60.789294] xrnginstall[2550]: 2024-06-24 20:30:50.383 UTC: xrinstall: Finished rollback cleanup stage
 [   60.795784] xrnginstall[2556]: 2024-06-24 20:30:50.389 UTC: xrinstall: Single node: starting XR
 [   60.929697] xrnginstall[2648]: 2024-06-24 20:30:50.523 UTC: xrinstall: xrnginstall completed successfully
-ios con0/RP0/CPU0 is now available
-Press RETURN to get started.
+<mark>ios con0/RP0/CPU0 is now available</mark>
+<mark>Press RETURN to get started.</mark>
 
 RP/0/RP0/CPU0:Jun 24 20:31:13.204 UTC: ssd_enc_server[385]: %OS-SSD_ENC-1-ENCRYPTED_LV_RECOVERED : Encrypted logical volume failure seen during boot. Recovered by recreating LV and encryption keys. Check /misc/disk1 for error logs.
 
@@ -339,7 +339,7 @@ Password:
 RP/0/RP0/CPU0:ios#
 RP/0/RP0/CPU0:ios#
 RP/0/RP0/CPU0:ios#
-RP/0/RP0/CPU0:ios#sh run
+RP/0/RP0/CPU0:ios#<mark>sh run</mark>
 Mon Jun 24 20:33:14.406 UTC
 !! Building configuration...
 !! IOS XR Configuration 24.2.1
@@ -359,7 +359,7 @@ interface FourHundredGigE0/0/0/47
 !
 end
 
-RP/0/RP0/CPU0:ios#dir harddisk:
+RP/0/RP0/CPU0:ios#<mark>dir harddisk:</mark>
 Mon Jun 24 20:33:21.665 UTC
 
 Directory of harddisk:
