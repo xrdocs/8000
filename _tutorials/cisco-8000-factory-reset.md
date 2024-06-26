@@ -12,7 +12,9 @@ excerpt: >-
   This article introduces factory reset functionnality which safely erases any
   sensitive data stored on the system.
 ---
-## Introduction
+{% include toc icon="table" title="Cisco 8000 Factory Reset" %}
+
+# Introduction
 
 Factory reset functionality was released in IOS XR 7.3.4. This feature aims to erase and overwrite any sensitive data, configuration, or keys present in the Cisco 8000 route processor or line card. It ensures media sanitization and prevents unauthorized data retrieval from 3rd parties.  
 
@@ -27,7 +29,7 @@ The whole procedure takes approximately 15min.
 
 Factory reset feature complies with NIST SP 800-88 guidelines for Media Sanitization. This is achieved by removing all files from the partition and then fill it up with random data using dd utility.
 
-## Factory Reset in Action
+# Factory Reset in Action
 
 The system used for this demo is a Cisco 8200 fixed system running IOS XR 24.2.1.
 It already contains configuration and a couple of user’s files are present on the harddisk (ISO, configuration backup, packet capture, etc.):
@@ -385,6 +387,6 @@ Directory of harddisk:
 </pre>
 </div>
 
-## Conclusion
+# Conclusion
 
 Cisco 8000 routers can now be safely erased before being returned to the depot as part of RMA procedure using factory reset procedure. The system will keep running the same IOS XR release (version, packages, SMU) but is purged from any sensitive data.
