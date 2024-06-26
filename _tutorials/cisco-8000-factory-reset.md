@@ -7,7 +7,7 @@ tags:
   - iosxr
   - Cisco 8000
   - factory reset
-position: hidden
+position: top
 excerpt: >-
   This article introduces factory reset functionnality which safely erases any
   sensitive data stored on the system.
