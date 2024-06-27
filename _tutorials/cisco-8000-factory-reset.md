@@ -386,7 +386,7 @@ Directory of harddisk:
 
 # Factory Reset in Action
 
-The whole process can be observed in this 5min video clip
+The whole process can be observed in this 5min [video clip]({{site.baseurl}}/images/8000 factory reset.gif)
 ![8000 factory reset.gif]({{site.baseurl}}/images/8000 factory reset.gif)
 
 
