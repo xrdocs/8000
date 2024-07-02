@@ -15,7 +15,7 @@ excerpt: >-
 ---
 {% include toc icon="table" title="Cisco 8000 Optics Firmware Management" %}
 
-![]({{site.baseurl}}images/8000-dco-upgrade.png)
+![8000-dco-upgrade.png]({{site.baseurl}}/images/8000-dco-upgrade.png)
 
 # Introduction
 
