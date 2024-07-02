@@ -29,7 +29,7 @@ The following command helps to identify which firmware a module is currently run
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:CISCO-82000#sh controllers Optics0/0/0/1
+RP/0/RP0/CPU0:CISCO-8200#sh controllers Optics0/0/0/1
 Thu Jun 27 22:36:14.025 JST
  Controller State: Up
  Transport Admin State: In Service
@@ -237,7 +237,7 @@ RP/0/RP0/CPU0:CISCO-8200(config-Optics)#RP/0/RP0/CPU0:2024 Jun 27 23:14:49.825 J
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.833 JST: bfd_agent[376]: %L2-BFD-6-SESSION_STATE_DOWN : BFD session to neighbor fe80::2 on interface FourHundredGigE0/0/0/1 has gone down. Reason: Control timer expired
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: BM-DISTRIB[1188]: %L2-BM-5-MBR_BFD_SESSION_DOWN : The BFD session on link FourHundredGigE0/0/0/1 in Bundle-Ether1001 is down due to the receipt of a Down SCN. The member will be removed from the active members of the bundle.
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: BM-DISTRIB[1188]: %L2-BM-6-ACTIVE : FourHundredGigE0/0/0/1 is no longer Active as part of Bundle-Ether1001 (BFD state of this link is Down)
-RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: isis[1005]: %ROUTING-ISIS-5-ADJCHANGE : ISIS (100): Adjacency to CISCO-82000 (Bundle-Ether1001) (L2) Down, Interface state down
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: isis[1005]: %ROUTING-ISIS-5-ADJCHANGE : ISIS (100): Adjacency to CISCO-8200 (Bundle-Ether1001) (L2) Down, Interface state down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface Bundle-Ether1001, changed state to Down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface Bundle-Ether1001, changed state to Down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.839 JST: bfd[1189]: %L2-BFD-6-SESSION_STATE_DOWN : BFD session to neighbor fe80::2 on interface Bundle-Ether1001 has gone down. Reason: Control timer expired
@@ -473,7 +473,7 @@ RP/0/RP0/CPU0:2024 Jun 28 00:25:16.292 JST: BM-DISTRIB[1188]: %L2-BM-6-ACTIVE : 
 RP/0/RP0/CPU0:2024 Jun 28 00:25:16.292 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface Bundle-Ether1001, changed state to Up
 RP/0/RP0/CPU0:2024 Jun 28 00:25:16.295 JST: bfd[1189]: %L2-BFD-6-SESSION_STATE_UP : BFD session to neighbor fe80::2 on interface Bundle-Ether1001 is up
 RP/0/RP0/CPU0:2024 Jun 28 00:25:16.295 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface Bundle-Ether1001, changed state to Up
-RP/0/RP0/CPU0:2024 Jun 28 00:25:16.317 JST: isis[1005]: %ROUTING-ISIS-5-ADJCHANGE : ISIS (100): Adjacency to CISCO-82000 (Bundle-Ether1001) (L2) Up, New adjacency
+RP/0/RP0/CPU0:2024 Jun 28 00:25:16.317 JST: isis[1005]: %ROUTING-ISIS-5-ADJCHANGE : ISIS (100): Adjacency to CISCO-8200 (Bundle-Ether1001) (L2) Up, New adjacency
 </code>
 </pre>
 </div>
