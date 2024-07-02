@@ -250,9 +250,235 @@ RP/0/RP0/CPU0:2024 Jun 27 23:14:50.028 JST: BM-DISTRIB[1188]: %L2-BM-5-MBR_BFD_N
 
 # Firmware upgrade
 
+In Cisco 8000, optics firmwares have been decoupled from the Network Operating System (NOS) which is IOS XR. Benefits of decoupling optics firmwares from the NOS include faster firmware delivery, 3rd party optics support (including firmware management) and no IOS XR SMU/FPD overhead. This means the Field Programmable Device (FPD) process is not used here. Instead, a new ‘upgrade optics port’ command is used:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:CISCO-8200#<mark>upgrade optics port ?</mark>
+  WORD  Port number
+        List of comma separated port numbers
+        Port range, first-last
+        all: All ports
+</code>
+</pre>
+</div>
+
+The command can upgrade one specific port, a group of ports or all ports from a system or a given line card.
+
+Note: if a range of ports or ‘all’ keyword is used, ports will be upgraded sequencially (one by one)
+
+In this case Optics0/0/0/1 firmware is upgraded. The MD5 hash is provided as argument to verify file integrity after the transfer. The filename source is the absolute location of the firmware file. A syslog indicates the beginning of the procedure:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:CISCO-8200#<mark>upgrade optics port 1 filename /harddisk:/gl2qsdd_gl2sfp8_70_130_21.ackit md5sum 614a66be053114134fc92e3be301a02a location 0/rp0/CPU0</mark>
+Thu Jun 27 23:55:20.816 JST
+
+Ctrl: 0 Port 1
+==================
+FW Upgrade Trigger Success
+
+RP/0/RP0/CPU0:CISCO-8200#RP/0/RP0/CPU0:2024 Jun 27 23:55:50.895 JST: optics_driver[283]: %L2-OPTICS-6-QDD_FW_UPGRADE_STARTED : <mark>QDD Firmware upgrade started on Optics0/0/0/1</mark>
+</code>
+</pre>
+</div>
+
+The upgrade process can be monitored with following CLI:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:CISCO-8200#show optics firmware upgrade port 1 location 0/RP0/CPU0
+Thu Jun 27 23:55:56.975 JST
+Ctrl: 0 Port 1
+==================
+download::[1], commit::[0]
+
+RP/0/RP0/CPU0:CISCO-8200#show optics firmware upgrade port 1 location 0/RP0/CPU0
+Fri Jun 28 00:14:26.354 JST
+Ctrl: 0 Port 1
+==================
+download::[90], commit::[0]
+</code>
+</pre>
+</div>
+
+Firmware is first downloaded from the router to the module through I2C interface and then applied/commited:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:CISCO-8200#show optics firmware upgrade port 1 location 0/RP0/CPU0
+Fri Jun 28 00:16:52.818 JST
+Ctrl: 0 Port 1
+==================
+download::[100], commit::[16]
+</code>
+</pre>
+</div>
+
+Once the upgrade is succesfull, following syslog appears:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:CISCO-8200#RP/0/RP0/CPU0:2024 Jun 28 00:17:12.035 JST: optics_driver[283]: %L2-OPTICS-2-QDD_FW_UPGRADE_DONE : <mark>QDD Firmware upgrade completed successfully on Optics0/0/0/1</mark>
+</code>
+</pre>
+</div>
+
+The process takes ~20 min per module (tested on IOS XR 24.2.1).
+
+The new firmware version can be verified:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:CISCO-8200#sh controllers optics 0/0/0/1
+Fri Jun 28 00:18:27.148 JST
+ Controller State: Administratively Down
+ Transport Admin State: Out Of Service
+ Laser State: Off
+ Host Squelch Status: Enable
+ LED State: Off
+ FEC State: FEC ENABLED
+ Power Mode: Low
+ Dom Data Status: Ready
+
+ Optics Status
+
+         Optics Type:  QDD 400G BRT ZRP
+         DWDM carrier Info: C BAND, MSA ITU Channel=67, Frequency=192.80THz,
+         Wavelength=1554.940nm
+         Loopback Host : None
+         Loopback Media : None
+
+         Alarm Status:
+         -------------
+         Detected Alarms: None
+
+
+         LOS/LOL/Fault Status:
+
+         Alarm Statistics:
+
+         -------------
+         HIGH-RX-PWR = 0            LOW-RX-PWR = 0
+         HIGH-TX-PWR = 0            LOW-TX-PWR = 0
+         HIGH-LBC = 0               HIGH-DGD = 0
+         OOR-CD = 0                 OSNR = 2
+         WVL-OOL = 0                MEA  = 0
+         IMPROPER-REM = 0
+         TX-POWER-PROV-MISMATCH = 0
+         Laser Bias Current = 0.0 mA
+         Actual TX Power = -40.00 dBm
+         Actual TX Power(mW) = 0.00 mW
+         RX Power = -40.00 dBm
+         RX Power(mW) = 0.00 mW
+         RX Signal Power = -40.00 dBm
+         Frequency Offset = 0 MHz
+         Laser Temperature = 0.00 Celsius
+         Laser Age = 0 %
+         DAC Rate = 1x1.25
+
+         Performance Monitoring: Enable
+
+         THRESHOLD VALUES
+         ----------------
+
+         Parameter                 High Alarm  Low Alarm  High Warning  Low Warning
+         ------------------------  ----------  ---------  ------------  -----------
+         Rx Power Threshold(dBm)         13.0      -24.0          10.0        -21.0
+         Rx Power Threshold(mW)          19.9        0.0          10.0          0.0
+         Tx Power Threshold(dBm)          6.0      -18.0           4.0        -16.0
+         Tx Power Threshold(mW)           3.9        0.0           2.5          0.0
+         LBC Threshold(mA)               0.00       0.00          0.00         0.00
+         Temp. Threshold(celsius)       83.00      -5.00         78.00        15.00
+         Voltage Threshold(volt)         3.46       3.13          3.43         3.16
+
+         LBC High Threshold = 98 %
+         Configured Tx Power = 0.00 dBm
+         Configured Tx Power(mW) = 1.00 mW
+         Configured CD High Threshold = 160000 ps/nm
+         Configured CD lower Threshold = -160000 ps/nm
+         Configured OSNR lower Threshold = 9.00 dB
+         Configured DGD Higher Threshold = 80.00 ps
+         Baud Rate =  60.1385459900 GBd
+         Modulation Type: 16QAM
+         Chromatic Dispersion 0 ps/nm
+         Configured CD-MIN -13000 ps/nm  CD-MAX 13000 ps/nm
+         Second Order Polarization Mode Dispersion = 0.00 ps^2
+         Optical Signal to Noise Ratio = 0.00 dB
+         SNR = 0.00 dB
+         Polarization Dependent Loss = 0.00 dB
+         Polarization Change Rate = 0.00 rad/s
+         Differential Group Delay = 0.00 ps
+
+         Temperature = 32.00 Celsius
+         Voltage = 3.35 V
+
+ Transceiver Vendor Details
+
+         Form Factor            : QSFP-DD
+         Optics type            : QDD 400G BRT ZRP
+         Name                   : CISCO-ACACIA
+         OUI Number             : 7c.ffffffb2.5c
+         Part Number            : DP04QSDD-HE0-190
+         Rev Number             : A
+         Serial Number          : ACA2740002Y
+         PID                    : DP04QSDD-HE0
+         VID                    : V01
+         <mark>Firmware Version       : Major.Minor.Build</mark>
+                 <mark>Active         : 70.130.21</mark>
+                 Inactive       : 70.120.14
+         Date Code(yy/mm/dd)    : 23/09/16
+         Fiber Connector Type: LC
+         Otn Application Code: Undefined
+         Sonet Application Code: Undefined
+</code>
+</pre>
+</div>
+
 # Post-upgrade tasks
 
-# Rollback
+Once the upgrade is succesfull, the optics controller can be restored. The link will be brought up and the final sanity check can be performed.
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:CISCO-8200(config)#controller optics 0/0/0/1
+RP/0/RP0/CPU0:CISCO-8200(config-Optics)#<mark>no shutdown</mark>
+RP/0/RP0/CPU0:CISCO-8200(config-Optics)#commit
+Fri Jun 28 00:21:26.266 JST
+RP/0/RP0/CPU0:2024 Jun 28 00:21:26.304 JST: ifmgr[337]: %PKT_INFRA-LINK-5-CHANGED : Interface Optics0/0/0/1, changed state to Down
+RP/0/RP0/CPU0:2024 Jun 28 00:21:26.335 JST: config[66220]: %MGBL-CONFIG-6-DB_COMMIT : Configuration committed by user 'cisco'. Use 'show configuration commit changes 1000000262' to view the changes.
+RP/0/RP0/CPU0:CISCO-8200(config-Optics)#RP/0/RP0/CPU0:2024 Jun 28 00:21:28.408 JST: ifmgr[337]: %PKT_INFRA-LINK-5-CHANGED : Interface Optics0/0/0/1, changed state to Up
+RP/0/RP0/CPU0:2024 Jun 28 00:21:29.795 JST: optics_driver[283]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :OSNR :DECLARE :Optics0/0/0/1:
+RP/0/RP0/CPU0:2024 Jun 28 00:22:57.795 JST: optics_driver[283]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :OPTICS HOST PCS TX REMOTE FAULT ALARM LANE0 :DECLARE :0/RP0/CPU0:  Optics0/0/0/1
+RP/0/RP0/CPU0:2024 Jun 28 00:22:57.795 JST: optics_driver[283]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :OPTICS HOST PCS RX REMOTE FAULT ALARM LANE0 :DECLARE :0/RP0/CPU0:  Optics0/0/0/1
+RP/0/RP0/CPU0:2024 Jun 28 00:23:08.298 JST: optics_driver[283]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :OPTICS HOST PCS RX REMOTE FAULT ALARM LANE0 :CLEAR :0/RP0/CPU0:  Optics0/0/0/1
+RP/0/RP0/CPU0:2024 Jun 28 00:23:09.295 JST: optics_driver[283]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :OPTICS HOST PCS TX REMOTE FAULT ALARM LANE0 :CLEAR :0/RP0/CPU0:  Optics0/0/0/1
+RP/0/RP0/CPU0:2024 Jun 28 00:23:11.295 JST: optics_driver[283]: %PKT_INFRA-FM-4-FAULT_MINOR : ALARM_MINOR :OSNR :CLEAR :Optics0/0/0/1:
+
+RP/0/RP0/CPU0:CISCO-8200(config-Optics)#RP/0/RP0/CPU0:2024 Jun 28 00:24:58.110 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface FourHundredGigE0/0/0/1, changed state to Up
+RP/0/RP0/CPU0:2024 Jun 28 00:24:58.111 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface FourHundredGigE0/0/0/1, changed state to Up
+RP/0/RP0/CPU0:2024 Jun 28 00:25:00.128 JST: bfd_agent[376]: %L2-BFD-6-SESSION_DAMPENING_ON : Session to neighbor fe80::2 on interface FourHundredGigE0/0/0/1 entered Dampened state (initial: 16000 ms,secondary: 20000 ms,maximum: 600000 ms).
+RP/0/RP0/CPU0:2024 Jun 28 00:25:00.130 JST: BM-DISTRIB[1188]: %L2-BM-6-MBR_BFD_STARTING : The BFD session on link FourHundredGigE0/0/0/1 in Bundle-Ether1001 is starting. Waiting indefinitely for peer to establish session.
+RP/0/RP0/CPU0:2024 Jun 28 00:25:15.187 JST: bfd_agent[376]: %L2-BFD-6-SESSION_DAMPENING_OFF : Session to neighbor fe80::2 on interface FourHundredGigE0/0/0/1 moved out of Dampened state.
+RP/0/RP0/CPU0:2024 Jun 28 00:25:16.290 JST: bfd_agent[376]: %L2-BFD-6-SESSION_STATE_UP : BFD session to neighbor fe80::2 on interface FourHundredGigE0/0/0/1 is up
+RP/0/RP0/CPU0:2024 Jun 28 00:25:16.292 JST: BM-DISTRIB[1188]: %L2-BM-6-MBR_BFD_SESSION_UP : The BFD session on link FourHundredGigE0/0/0/1 in Bundle-Ether1001 has gone UP.
+RP/0/RP0/CPU0:2024 Jun 28 00:25:16.292 JST: BM-DISTRIB[1188]: %L2-BM-6-ACTIVE : FourHundredGigE0/0/0/1 is Active as part of Bundle-Ether1001
+RP/0/RP0/CPU0:2024 Jun 28 00:25:16.292 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface Bundle-Ether1001, changed state to Up
+RP/0/RP0/CPU0:2024 Jun 28 00:25:16.295 JST: bfd[1189]: %L2-BFD-6-SESSION_STATE_UP : BFD session to neighbor fe80::2 on interface Bundle-Ether1001 is up
+RP/0/RP0/CPU0:2024 Jun 28 00:25:16.295 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface Bundle-Ether1001, changed state to Up
+RP/0/RP0/CPU0:2024 Jun 28 00:25:16.317 JST: isis[1005]: %ROUTING-ISIS-5-ADJCHANGE : ISIS (100): Adjacency to CISCO-82000 (Bundle-Ether1001) (L2) Up, New adjacency
+</code>
+</pre>
+</div>
+
+Once KPIs are confirmed to be compliant, traffic can be finally restored.
 
 # Acknowledgement
 I’d like to thanks Phil Bedard, Sreenivasa Rao Bandlamudi, Takumi Takiguchi & Marco Liri.
