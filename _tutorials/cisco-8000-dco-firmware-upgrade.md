@@ -19,7 +19,7 @@ excerpt: >-
 
 # Introduction
 
-This Method of Procedure (MOP) document aims at documenting QSFP-DD optical modules software upgrade on Cisco 8000 routers.  
+This Method of Procedure (MOP) aims at documenting QSFP-DD optical modules software upgrade on Cisco 8000 routers.  
 Like any Cisco 8000 systems’ components such route processor, line card, or even power supplies, optics also run embedded software. This software is used to configure, control and monitor the optic module. For Digital Coherent Optics (DCO), the Common Management Interface Specification (CMIS) interface is responsible for communication between the host (Cisco 8000 router) and the managed module (e.g Bright ZR+ DP04QSDD-HE0).  
 While optics usually ships with a specific & stable firmware version from manufacturing, there are cases where it’s required to upgrade them. Such conditions include new functionality, software defect or interoperability fix.
 
