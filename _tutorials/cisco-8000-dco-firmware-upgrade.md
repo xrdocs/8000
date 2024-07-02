@@ -199,7 +199,7 @@ sh interfaces fourHundredGigE 0/0/0/1
 </pre>
 </div>
 
-In addition, Phil Bedard published a list of KPI to monitor in [this article]({{site.baseurl}}/design/blogs/xr-dco-monitoring).
+In addition, Phil Bedard published a list of KPI to monitor in [this article](https://xrdocs.io/design/blogs/xr-dco-monitoring).
 
 Following CLI will provide a quick consolidated view:
 
