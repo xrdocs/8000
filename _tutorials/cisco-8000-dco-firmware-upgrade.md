@@ -13,6 +13,8 @@ excerpt: >-
   This article aims at documenting QSFP-DD optical modules firmware upgrade on
   Cisco 8000 routers.
 ---
+{% include toc icon="table" title="Cisco 8000 Optics Firmware Management" %}
+
 
 # Introduction
 
@@ -183,7 +185,7 @@ RP/0/RP0/CPU0:CISCO-8200#
 </div>
 
 
-# Pre-upgrade tasks
+# Pre-upgrade Tasks
 
 It’s recommended to perform a sanity check before performing the firmware upgrade. While the list of KPI is customer dependent, the following information must be captured on both link ends:
 
@@ -248,7 +250,7 @@ RP/0/RP0/CPU0:2024 Jun 27 23:14:50.028 JST: BM-DISTRIB[1188]: %L2-BM-5-MBR_BFD_N
 </pre>
 </div>
 
-# Firmware upgrade
+# Firmware Upgrade
 
 In Cisco 8000, optics firmwares have been decoupled from the Network Operating System (NOS) which is IOS XR. Benefits of decoupling optics firmwares from the NOS include faster firmware delivery, 3rd party optics support (including firmware management) and no IOS XR SMU/FPD overhead. This means the Field Programmable Device (FPD) process is not used here. Instead, a new ‘upgrade optics port’ command is used:
 
@@ -442,7 +444,7 @@ Fri Jun 28 00:18:27.148 JST
 </pre>
 </div>
 
-# Post-upgrade tasks
+# Post-upgrade Tasks
 
 Once the upgrade is succesfull, the optics controller can be restored. The link will be brought up and the final sanity check can be performed.
 
