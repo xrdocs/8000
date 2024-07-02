@@ -123,9 +123,9 @@ Thu Jun 27 22:36:14.025 JST
          Serial Number          : ACA2740002C
          PID                    : DP04QSDD-HE0
          VID                    : V01
-         Firmware Version       : Major.Minor.Build
-                 Active         : 70.120.14
-                 Inactive       : 70.120.14
+         <mark>Firmware Version       : Major.Minor.Build</mark>
+                 <mark>Active         : 70.120.14</mark>
+                 <mark>Inactive       : 70.120.14</mark>
          Date Code(yy/mm/dd)    : 23/09/14
          Fiber Connector Type: LC
          Otn Application Code: Undefined
