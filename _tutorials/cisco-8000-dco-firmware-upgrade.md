@@ -269,7 +269,7 @@ The command can upgrade one specific port, a group of ports or all ports from a 
 **Note:** if a range of ports or ‘all’ keyword is used, ports will be upgraded sequencially (one by one)
 {: .notice--info}
 
-In this case Optics0/0/0/1 firmware is upgraded. The MD5 hash is provided as argument to verify file integrity after the transfer. The filename source is the absolute location of the firmware file. A syslog indicates the beginning of the procedure:
+In this case Optics0/0/0/1 firmware is upgraded. The MD5 hash is provided as an argument to verify file integrity after the transfer. The filename source is the absolute location of the firmware file. A syslog indicates the beginning of the procedure:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -480,6 +480,10 @@ RP/0/RP0/CPU0:2024 Jun 28 00:25:16.317 JST: isis[1005]: %ROUTING-ISIS-5-ADJCHANG
 </div>
 
 Once KPIs are confirmed to be compliant, traffic can be finally restored.
+
+# Conclusion
+
+This tutorial demonstrated how to upgrade an Acacia Bright 400ZR+ QSFP-DD Coherent Pluggable Module on a Cisco 8000 router. The same procedure can be used for other modules (ZR, ZR+) and vendors (e.g Marvell).
 
 # Acknowledgement
 I’d like to thanks Phil Bedard, Sreenivasa Rao Bandlamudi, Takumi Takiguchi & Marco Liri.
