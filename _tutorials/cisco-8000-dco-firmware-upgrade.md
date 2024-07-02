@@ -130,6 +130,9 @@ Thu Jun 27 22:36:14.025 JST
          Fiber Connector Type: LC
          Otn Application Code: Undefined
          Sonet Application Code: Undefined
+</code>
+</pre>
+</div>
 
 # Prerequisistes
 
@@ -149,6 +152,9 @@ rw-r--r--. 1 mliri     eng 1929216 May 15 09:11 gl2qsdd_gl2sfp8_70_130_21.ackit 
 
 [deaccess@asj ~]$ md5sum gl2qsdd_gl2sfp8_70_130_21.ackit
 614a66be053114134fc92e3be301a02a  gl2qsdd_gl2sfp8_70_130_21.ackit
+</code>
+</pre>
+</div>
 
 Firmware must be copied to the Cisco 8000 router harddisk:
 
@@ -159,6 +165,9 @@ Firmware must be copied to the Cisco 8000 router harddisk:
 Password:
 gl2qsdd_gl2sfp8_70_130_21.ackit                                                                                                                                                                                                       100% 1884KB   1.8MB/s   00:00
 [deaccess@asj ~]$
+</code>
+</pre>
+</div>
 
 File integrity is verified one more time from the router to make sure it’s not been corrupted in transit:
 
@@ -169,6 +178,9 @@ RP/0/RP0/CPU0:CISCO-8200#sh md5 file /harddisk:/gl2qsdd_gl2sfp8_70_130_21.ackit
 Thu Jun 27 22:55:59.491 JST
 614a66be053114134fc92e3be301a02a
 RP/0/RP0/CPU0:CISCO-8200#
+</code>
+</pre>
+</div>
 
 
 # Pre-upgrade tasks
@@ -183,6 +195,9 @@ sh controllers optics 0/0/0/1 pm
 sh controllers  coherentDSP 0/0/0/1
 sh controllers fourhundredGigE0/0/0/1 all
 sh interfaces fourHundredGigE 0/0/0/1
+</code>
+</pre>
+</div>
 
 In addition, Phil Bedard published a list of KPI to monitor in [this article]({{site.baseurl}}/design/blogs/xr-dco-monitoring).
 
@@ -199,6 +214,9 @@ Port                Controller State        Admin State            LED State    
 ------------------  ----------------------  ---------------------  ----------------  -----  ------------ -----------  ----------   -----------    --------------    -----------
 Optics 0/0/0/1      Up                      In Service             Green             1      246.2mA      0.00         -2.60        1554.940       QSFP-DD-400G-BRIGHT-ZRP
 RP/0/RP0/CPU0:CISCO-8200#
+</code>
+</pre>
+</div>
 
 The idea of this sanity check is capture current optic state and compare it after the firmware upgrade.  
 
@@ -226,9 +244,9 @@ RP/0/RP0/CPU0:2024 Jun 27 23:14:49.839 JST: bfd[1189]: %L2-BFD-6-SESSION_STATE_D
 RP/0/RP0/CPU0:2024 Jun 27 23:14:50.026 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface FourHundredGigE0/0/0/1, changed state to Down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:50.026 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface FourHundredGigE0/0/0/1, changed state to Down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:50.028 JST: BM-DISTRIB[1188]: %L2-BM-5-MBR_BFD_NOT_RUNNING : The BFD session on link FourHundredGigE0/0/0/1 in Bundle-Ether1001 is no longer required.
-</div>
-</pre>
 </code>
+</pre>
+</div>
 
 # Firmware upgrade
 
