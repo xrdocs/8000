@@ -169,7 +169,43 @@ sh controllers  coherentDSP 0/0/0/1
 sh controllers fourhundredGigE0/0/0/1 all
 sh interfaces fourHundredGigE 0/0/0/1
 
-Phil Bedard published a list of KPI to monitor in this article.
+In addition, Phil Bedard published a list of KPI to monitor in [this article]({{site.baseurl}}/design/blogs/xr-dco-monitoring).
+
+Following CLI will provide a quick consolidated view:
+
+RP/0/RP0/CPU0:CISCO-8200#sh controllers optics 0/0/0/1 summary
+Thu Jun 27 23:02:54.260 JST
+
+Port                Controller State        Admin State            LED State         Lane   Laser Bias   TX Power     RX Power     Wavelength     Optics Type       Description
+                                                                                                          (dBm)        (dBm)        (nm)
+------------------  ----------------------  ---------------------  ----------------  -----  ------------ -----------  ----------   -----------    --------------    -----------
+Optics 0/0/0/1      Up                      In Service             Green             1      246.2mA      0.00         -2.60        1554.940       QSFP-DD-400G-BRIGHT-ZRP
+RP/0/RP0/CPU0:CISCO-8200#
+
+The idea of this sanity check is capture current optic state and compare it after the firmware upgrade.  
+
+Once the sanity check is done, it’s recommended to drain/isolate the link. This can be achieved using regular routing techniques (ISIS overload bit, OSPF max metric, MPLS traffic engineering, BGP attributes, etc.).  
+
+Optic module can be then administratively shutdown. This brings down associated ethernet ports and routing protocols:
+
+RP/0/RP0/CPU0:CISCO-8200(config)#controller optics 0/0/0/1
+RP/0/RP0/CPU0:CISCO-8200(config-Optics)#   shutdown
+RP/0/RP0/CPU0:CISCO-8200(config-Optics)#commit
+Thu Jun 27 23:14:49.640 JST
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.678 JST: ifmgr[337]: %PKT_INFRA-LINK-5-CHANGED : Interface Optics0/0/0/1, changed state to Administratively Down
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.708 JST: config[66279]: %MGBL-CONFIG-6-DB_COMMIT : Configuration committed by user 'cisco'. Use 'show configuration commit changes 1000000261' to view the changes.
+RP/0/RP0/CPU0:CISCO-8200(config-Optics)#RP/0/RP0/CPU0:2024 Jun 27 23:14:49.825 JST: npu_drvr[265]: %PLATFORM-VETH_PD-2-RX_FAULT : Interface FourHundredGigE0/0/0/1, Detected Local Fault
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.833 JST: bfd_agent[376]: %L2-BFD-6-SESSION_STATE_DOWN : BFD session to neighbor fe80::2 on interface FourHundredGigE0/0/0/1 has gone down. Reason: Control timer expired
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: BM-DISTRIB[1188]: %L2-BM-5-MBR_BFD_SESSION_DOWN : The BFD session on link FourHundredGigE0/0/0/1 in Bundle-Ether1001 is down due to the receipt of a Down SCN. The member will be removed from the active members of the bundle.
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: BM-DISTRIB[1188]: %L2-BM-6-ACTIVE : FourHundredGigE0/0/0/1 is no longer Active as part of Bundle-Ether1001 (BFD state of this link is Down)
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: isis[1005]: %ROUTING-ISIS-5-ADJCHANGE : ISIS (100): Adjacency to CISCO-82000 (Bundle-Ether1001) (L2) Down, Interface state down
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface Bundle-Ether1001, changed state to Down
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface Bundle-Ether1001, changed state to Down
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.839 JST: bfd[1189]: %L2-BFD-6-SESSION_STATE_DOWN : BFD session to neighbor fe80::2 on interface Bundle-Ether1001 has gone down. Reason: Control timer expired
+RP/0/RP0/CPU0:2024 Jun 27 23:14:50.026 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface FourHundredGigE0/0/0/1, changed state to Down
+RP/0/RP0/CPU0:2024 Jun 27 23:14:50.026 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface FourHundredGigE0/0/0/1, changed state to Down
+RP/0/RP0/CPU0:2024 Jun 27 23:14:50.028 JST: BM-DISTRIB[1188]: %L2-BM-5-MBR_BFD_NOT_RUNNING : The BFD session on link FourHundredGigE0/0/0/1 in Bundle-Ether1001 is no longer required.
+
 
 # Firmware upgrade
 
