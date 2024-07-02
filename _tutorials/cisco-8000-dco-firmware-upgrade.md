@@ -26,6 +26,9 @@ In this example, we’ll upgrade a [Cisco 400G QSFP-DD Bright ZR+ module](https:
 
 The following command helps to identify which firmware a module is currently running:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:CISCO-82000#sh controllers Optics0/0/0/1
 Thu Jun 27 22:36:14.025 JST
  Controller State: Up
@@ -134,6 +137,9 @@ The very first step is to get the new firmware. Contact your Cisco representativ
 
 Every firmware is provided with its own MD5 signature to verify file integrity:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 rw-r--r--. 1 mliri     eng 1929216 May 15 09:11 gl2qsdd_gl2sfp8_70_130_21.ackit     <<< firmware file
 -rw-r--r--. 1 mliri    eng      66 May 15 09:12 gl2qsdd_gl2sfp8_70_130_21.ackit.md5 <<< firmware signature
 
@@ -146,6 +152,9 @@ rw-r--r--. 1 mliri     eng 1929216 May 15 09:11 gl2qsdd_gl2sfp8_70_130_21.ackit 
 
 Firmware must be copied to the Cisco 8000 router harddisk:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 [deaccess@asj ~]$ scp gl2qsdd_gl2sfp8_70_130_21.ackit cisco@10.71.242.15:/harddisk:/
 Password:
 gl2qsdd_gl2sfp8_70_130_21.ackit                                                                                                                                                                                                       100% 1884KB   1.8MB/s   00:00
@@ -153,6 +162,9 @@ gl2qsdd_gl2sfp8_70_130_21.ackit                                                 
 
 File integrity is verified one more time from the router to make sure it’s not been corrupted in transit:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:CISCO-8200#sh md5 file /harddisk:/gl2qsdd_gl2sfp8_70_130_21.ackit
 Thu Jun 27 22:55:59.491 JST
 614a66be053114134fc92e3be301a02a
@@ -163,6 +175,9 @@ RP/0/RP0/CPU0:CISCO-8200#
 
 It’s recommended to perform a sanity check before performing the firmware upgrade. While the list of KPI is customer dependent, the following information must be captured on both link ends:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 sh controllers optics 0/0/0/1
 sh controllers optics 0/0/0/1 pm
 sh controllers  coherentDSP 0/0/0/1
@@ -173,6 +188,9 @@ In addition, Phil Bedard published a list of KPI to monitor in [this article]({{
 
 Following CLI will provide a quick consolidated view:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:CISCO-8200#sh controllers optics 0/0/0/1 summary
 Thu Jun 27 23:02:54.260 JST
 
@@ -188,6 +206,9 @@ Once the sanity check is done, it’s recommended to drain/isolate the link. Thi
 
 Optic module can be then administratively shutdown. This brings down associated ethernet ports and routing protocols:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
 RP/0/RP0/CPU0:CISCO-8200(config)#controller optics 0/0/0/1
 RP/0/RP0/CPU0:CISCO-8200(config-Optics)#   shutdown
 RP/0/RP0/CPU0:CISCO-8200(config-Optics)#commit
@@ -205,7 +226,9 @@ RP/0/RP0/CPU0:2024 Jun 27 23:14:49.839 JST: bfd[1189]: %L2-BFD-6-SESSION_STATE_D
 RP/0/RP0/CPU0:2024 Jun 27 23:14:50.026 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface FourHundredGigE0/0/0/1, changed state to Down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:50.026 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface FourHundredGigE0/0/0/1, changed state to Down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:50.028 JST: BM-DISTRIB[1188]: %L2-BM-5-MBR_BFD_NOT_RUNNING : The BFD session on link FourHundredGigE0/0/0/1 in Bundle-Ether1001 is no longer required.
-
+</div>
+</pre>
+</code>
 
 # Firmware upgrade
 
