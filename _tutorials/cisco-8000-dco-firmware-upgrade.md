@@ -8,7 +8,7 @@ tags:
   - firmware
   - DCO
   - Bright ZR+
-position: hidden
+position: top
 excerpt: >-
   This article aims at documenting QSFP-DD optical modules firmware upgrade on
   Cisco 8000 routers.
