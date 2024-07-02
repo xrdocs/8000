@@ -143,8 +143,8 @@ Every firmware is provided with its own MD5 signature to verify file integrity:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-rw-r--r--. 1 mliri     eng 1929216 May 15 09:11 gl2qsdd_gl2sfp8_70_130_21.ackit     --- firmware file
--rw-r--r--. 1 mliri    eng      66 May 15 09:12 gl2qsdd_gl2sfp8_70_130_21.ackit.md5 --- firmware signature
+eng 1929216 May 15 09:11 gl2qsdd_gl2sfp8_70_130_21.ackit     --- firmware file
+eng      66 May 15 09:12 gl2qsdd_gl2sfp8_70_130_21.ackit.md5 --- firmware signature
 
 [06:49:42 fcuiller@people-new /auto/otbu-fpga/release_pending/flexcoh/QDD_400G_BRIGHT/firmware]$ cat gl2qsdd_gl2sfp8_70_130_21.ackit.md5
 <mark>614a66be053114134fc92e3be301a02a  gl2qsdd_gl2sfp8_70_130_21.ackit</mark>
