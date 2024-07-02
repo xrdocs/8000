@@ -143,11 +143,11 @@ Every firmware is provided with its own MD5 signature to verify file integrity:
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-rw-r--r--. 1 mliri     eng 1929216 May 15 09:11 gl2qsdd_gl2sfp8_70_130_21.ackit     <<< firmware file
--rw-r--r--. 1 mliri    eng      66 May 15 09:12 gl2qsdd_gl2sfp8_70_130_21.ackit.md5 <<< firmware signature
+rw-r--r--. 1 mliri     eng 1929216 May 15 09:11 gl2qsdd_gl2sfp8_70_130_21.ackit     --- firmware file
+-rw-r--r--. 1 mliri    eng      66 May 15 09:12 gl2qsdd_gl2sfp8_70_130_21.ackit.md5 --- firmware signature
 
 [06:49:42 fcuiller@people-new /auto/otbu-fpga/release_pending/flexcoh/QDD_400G_BRIGHT/firmware]$ cat gl2qsdd_gl2sfp8_70_130_21.ackit.md5
-614a66be053114134fc92e3be301a02a  gl2qsdd_gl2sfp8_70_130_21.ackit
+<mark>614a66be053114134fc92e3be301a02a  gl2qsdd_gl2sfp8_70_130_21.ackit</mark>
 
 
 [deaccess@asj ~]$ md5sum gl2qsdd_gl2sfp8_70_130_21.ackit
@@ -176,7 +176,7 @@ File integrity is verified one more time from the router to make sure it’s not
 <code>
 RP/0/RP0/CPU0:CISCO-8200#sh md5 file /harddisk:/gl2qsdd_gl2sfp8_70_130_21.ackit
 Thu Jun 27 22:55:59.491 JST
-614a66be053114134fc92e3be301a02a
+<mark>614a66be053114134fc92e3be301a02a</mark>
 RP/0/RP0/CPU0:CISCO-8200#
 </code>
 </pre>
@@ -231,7 +231,7 @@ RP/0/RP0/CPU0:CISCO-8200(config)#controller optics 0/0/0/1
 RP/0/RP0/CPU0:CISCO-8200(config-Optics)#   shutdown
 RP/0/RP0/CPU0:CISCO-8200(config-Optics)#commit
 Thu Jun 27 23:14:49.640 JST
-RP/0/RP0/CPU0:2024 Jun 27 23:14:49.678 JST: ifmgr[337]: %PKT_INFRA-LINK-5-CHANGED : Interface Optics0/0/0/1, changed state to Administratively Down
+RP/0/RP0/CPU0:2024 Jun 27 23:14:49.678 JST: ifmgr[337]: %PKT_INFRA-LINK-5-CHANGED : <mark>Interface Optics0/0/0/1, changed state to Administratively Down</mark>
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.708 JST: config[66279]: %MGBL-CONFIG-6-DB_COMMIT : Configuration committed by user 'cisco'. Use 'show configuration commit changes 1000000261' to view the changes.
 RP/0/RP0/CPU0:CISCO-8200(config-Optics)#RP/0/RP0/CPU0:2024 Jun 27 23:14:49.825 JST: npu_drvr[265]: %PLATFORM-VETH_PD-2-RX_FAULT : Interface FourHundredGigE0/0/0/1, Detected Local Fault
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.833 JST: bfd_agent[376]: %L2-BFD-6-SESSION_STATE_DOWN : BFD session to neighbor fe80::2 on interface FourHundredGigE0/0/0/1 has gone down. Reason: Control timer expired
@@ -241,7 +241,7 @@ RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: isis[1005]: %ROUTING-ISIS-5-ADJCHANG
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface Bundle-Ether1001, changed state to Down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.836 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface Bundle-Ether1001, changed state to Down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:49.839 JST: bfd[1189]: %L2-BFD-6-SESSION_STATE_DOWN : BFD session to neighbor fe80::2 on interface Bundle-Ether1001 has gone down. Reason: Control timer expired
-RP/0/RP0/CPU0:2024 Jun 27 23:14:50.026 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : Interface FourHundredGigE0/0/0/1, changed state to Down
+RP/0/RP0/CPU0:2024 Jun 27 23:14:50.026 JST: ifmgr[337]: %PKT_INFRA-LINK-3-UPDOWN : <mark>Interface FourHundredGigE0/0/0/1, changed state to Down</mark>
 RP/0/RP0/CPU0:2024 Jun 27 23:14:50.026 JST: ifmgr[337]: %PKT_INFRA-LINEPROTO-5-UPDOWN : Line protocol on Interface FourHundredGigE0/0/0/1, changed state to Down
 RP/0/RP0/CPU0:2024 Jun 27 23:14:50.028 JST: BM-DISTRIB[1188]: %L2-BM-5-MBR_BFD_NOT_RUNNING : The BFD session on link FourHundredGigE0/0/0/1 in Bundle-Ether1001 is no longer required.
 </code>
