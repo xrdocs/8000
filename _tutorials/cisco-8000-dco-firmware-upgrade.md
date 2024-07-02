@@ -266,7 +266,8 @@ RP/0/RP0/CPU0:CISCO-8200#<mark>upgrade optics port ?</mark>
 
 The command can upgrade one specific port, a group of ports or all ports from a system or a given line card.
 
-Note: if a range of ports or ‘all’ keyword is used, ports will be upgraded sequencially (one by one)
+**Note:** if a range of ports or ‘all’ keyword is used, ports will be upgraded sequencially (one by one)
+{: .notice--info}
 
 In this case Optics0/0/0/1 firmware is upgraded. The MD5 hash is provided as argument to verify file integrity after the transfer. The filename source is the absolute location of the firmware file. A syslog indicates the beginning of the procedure:
 
