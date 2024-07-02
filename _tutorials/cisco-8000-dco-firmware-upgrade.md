@@ -150,8 +150,8 @@ eng      66 May 15 09:12 gl2qsdd_gl2sfp8_70_130_21.ackit.md5 --- firmware signat
 <mark>614a66be053114134fc92e3be301a02a  gl2qsdd_gl2sfp8_70_130_21.ackit</mark>
 
 
-[deaccess@asj ~]$ md5sum gl2qsdd_gl2sfp8_70_130_21.ackit
-614a66be053114134fc92e3be301a02a  gl2qsdd_gl2sfp8_70_130_21.ackit
+[06:49:42 fcuiller@server /QDD_400G_BRIGHT/firmware]$ <mark>md5sum gl2qsdd_gl2sfp8_70_130_21.ackit</mark>
+<mark>614a66be053114134fc92e3be301a02a</mark>  gl2qsdd_gl2sfp8_70_130_21.ackit
 </code>
 </pre>
 </div>
