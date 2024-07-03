@@ -416,7 +416,7 @@ Once the sanity check is done, it’s recommended to drain/isolate the router. T
 Software upgrade can be launched using ‘install replace’ command. install replace comes with several options:
 - commit will commit software configuration after system reload. This means there is no way to rollback to previous release by doing a system reload.
 - iso-config option can be used to replace the current system configuration by the configuration present in the Golden ISO. This option can be interesting for system staging and load a vanilla config
-- while install replace always makes the smallest possible change, it’s possible to tell the system to reload
+- reload: while install replace always makes the smallest possible change, it’s possible to tell the system to reload
 
 <div class="highlighter-rouge">
 <pre class="highlight">
