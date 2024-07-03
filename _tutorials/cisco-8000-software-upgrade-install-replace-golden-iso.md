@@ -412,3 +412,26 @@ copy running-config hardisk:backup-pre.conf
 Once the sanity check is done, it’s recommended to drain/isolate the router. This can be achieved using regular routing techniques (ISIS overload bit, OSPF max metric, MPLS traffic engineering, BGP attributes, etc.).
 
 # IOS XR Upgrade using install replace
+
+Software upgrade can be launched using ‘install replace’ command. install replace comes with several options:
+- commit will commit software configuration after system reload. This means there is no way to rollback to previous release by doing a system reload.
+- iso-config option can be used to replace the current system configuration by the configuration present in the Golden ISO. This option can be interesting for system staging and load a vanilla config
+- while install replace always makes the smallest possible change, it’s possible to tell the system to reload
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#install replace /harddisk:/8000-golden-x86_64-24.1.2-1337.iso ?
+  asynchronous                Install operation will proceed asynchronously with output to console
+  commit                      Additionally commit the software
+  force                       Ignore non-critical errors
+  iso-config                  Specify handling of ISO config
+  noprompt                    Install operation will proceed with no prompting
+  reload                      Install apply will proceed via a reload (even if not necessary)
+  skip-upgrade-matrix-checks  Skip upgrade matrix checks when moving between XR versions. Note: skipping the check risks performing an un-certified upgrade, which is not guaranteed to succeed
+  synchronous                 Install operation will proceed synchronously
+                              Install operation will proceed with no output to console
+</code>
+</pre>
+</div>
+
