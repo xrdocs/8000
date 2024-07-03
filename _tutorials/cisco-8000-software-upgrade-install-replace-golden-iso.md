@@ -208,11 +208,11 @@ RP/0/RP0/CPU0:Saturn-8711-32FH-M(config)#fpd auto-upgrade enable
 </pre>
 </div>
 
-**Note:** there is no optional FPD package anymore on Cisco 8000. Both xr-fpd, xr-8000-fpd are natively part of the ISO/GISO.
+**Note:** There is no optional FPD package anymore on Cisco 8000. Both xr-fpd, xr-8000-fpd are natively part of the ISO/GISO.
 {: .notice--info}
 
 
-**Note:** some FPD are not covered by FPD auto-upgrade feature. Always check FPD versions after system upgrade and reload.
+**Note:** Some FPD are not covered by FPD auto-upgrade feature. Always check FPD versions after system upgrade and reload.
 {: .notice--info}
 
 FPD versions can be checked with following command:
