@@ -435,3 +435,12 @@ RP/0/RP0/CPU0:8202-32FH-M_27#install replace /harddisk:/8000-golden-x86_64-24.1.
 </pre>
 </div>
 
+# install replace in action
+
+The whole process can be observed in the 6min [video clip below]({{site.baseurl}}/images/8000%20install%20replace.gif):
+![8000 install replace.gif]({{site.baseurl}}/images/8000%20install%20replace.gif)
+
+
+# Conclusion
+A Cisco IOS XR PhD is not required anymore to perform a software upgrade. Both install replace and Golden ISO can be leveraged to ease the process of staging, patching or upgrading the software running on Cisco 8000 routers. 
+
