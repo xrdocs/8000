@@ -160,7 +160,7 @@ RP/0/RP0/CPU0:8202-32FH-M_27#
 </pre>
 </div>
 
-In nominal state, the active and committed software configuration must be identical. This can be quicky confirmed checking the software hash value which must match on both outputs:
+In nominal state, the active and committed software configuration must be identical. This can be quickly confirmed checking the software hash value which must match on both outputs:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
