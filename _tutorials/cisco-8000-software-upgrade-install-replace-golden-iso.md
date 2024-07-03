@@ -12,7 +12,7 @@ tags:
   - install replace
   - Golden ISO
   - Software Upgrade
-position: top
+position: hidden
 ---
 {% include toc icon="table" title="Cisco 8000 Software Upgrade using install replace & Golden ISO" %}
 
@@ -1127,6 +1127,62 @@ Location   Card type             HWver FPD device       ATR <mark>Status</mark> 
 **Note:** It’s expected to see some FPD reporting ‘NEED UPGD’. Those are usually golden images used for disaster recovery. If you try to upgrade them, the system will prompt following log: fpd_client[318]: %PLATFORM-FPD_CLIENT-1-UPGRADE_SKIPPED : FPD upgrade skipped for BiosGolden@0/RP0/CPU0: Image not upgradable. It’s possible to force golden FPD upgrade using the ‘force’ keyword if advised by Cisco TAC.
 {: .notice--info}
 
+# Programmability & Telemetry
+
+While the demo leveraged traditional CLI, several YANG model exist and can achieve similar actions:
+
+- Cisco-IOS-XR-install-oper
+
+Can be used to retrieve XR version or Golden ISO label for instead:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+{
+  "node_id_str": "8201-32FH",
+  "subscription_id_str": "app_TEST_200000001",
+  "encoding_path": "Cisco-IOS-XR-install-oper:install/version",
+  "collection_id": "66498873",
+  "collection_start_time": "1720020171948",
+  "msg_timestamp": "1720020171971",
+  "data_json": [
+    {
+      "timestamp": "1720020171970",
+      "content": {
+        "package": [
+          {
+            "name": "IOS-XR",
+            <mark>"version": "7.10.2",</mark>
+            "built-by": "sajshah",
+            "built-on": "Mon Dec 04 16:45:26 UTC 2023",
+            "workspace": "/auto/ioxdepot6/GISO/giso_build_lindt/giso_release_create/sapitta_2023-12-05_00-42-33_UTC",
+            "build-host": "iox-ucs-075"
+          }
+        ],
+        <mark>"label": "7.10.2-7102_cco",</mark>
+        "copyright-info": "Copyright (c) 2013-2023 by Cisco Systems, Inc.",
+        "hardware-info": "8000",
+        "uptime": "4 weeks, 6 days, 10 hours",
+        "processor": "Intel(R) Xeon(R) CPU D-1530 @ 2.40GHz",
+        "chassis-pid": "8201-32FH",
+        "chassis-description": "Cisco 8000 Series 32x400G QSFPDD 1RU Fixed System w/HBM",
+        "xr-host-name": "8201-32FH",
+        "total-ram": "32"
+      }
+    }
+  ],
+  "collection_end_time": "1720020171971"
+} 
+</code>
+</pre>
+</div>
+
+-  Cisco-IOS-XR-install-act: explore the model on [Cisco Feature Navigator YANG explorer](https://cfnng.cisco.com/ios-xr/yang-explorer/view-data-model?platform=8000&release=7.10.1&modelName=Cisco-IOS-XR-install-act)
+
+Can be used to launch install replace operation.
+
+
+
 
 # install replace in action
 
@@ -1135,5 +1191,4 @@ The whole process can be observed in the 6min [video clip below]({{site.baseurl}
 
 
 # Conclusion
-A Cisco IOS XR PhD is not required anymore to perform a software upgrade. Both install replace and Golden ISO can be leveraged to ease the process of staging, patching or upgrading the software running on Cisco 8000 routers. 
-
+A Cisco IOS XR PhD is not required anymore to perform a software upgrade. Both install replace and Golden ISO can be leveraged to ease the process of staging, patching or upgrading the software running on Cisco 8000 routers.
