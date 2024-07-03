@@ -949,7 +949,183 @@ Press RETURN to get started.
 </pre>
 </div>
 
+# Post-upgrade Tasks
 
+After system reload, the new software release can be confirmed:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#show version
+Wed Jul  3 13:43:44.552 UTC
+Cisco IOS XR Software, Version 24.1.2 LNT
+Copyright (c) 2013-2024 by Cisco Systems, Inc.
+
+Build Information:
+ Built By     : sajshah
+ Built On     : Thu Jun 27 08:07:23 UTC 2024
+ Build Host   : iox-ucs-054
+ Workspace    : /auto/ioxdepot6/GISO/giso_build_lindt/giso_release_create/fcuiller_2024-06-27_15-04-41_UTC
+ <mark>Version      : 24.1.2</mark>
+ Label        : 24.1.2-1337
+
+cisco 8000 (Intel(R) Xeon(R) CPU D-1530 @ 2.40GHz)
+cisco 8202-32FH-M (Intel(R) Xeon(R) CPU D-1530 @ 2.40GHz) processor with 32GB of memory
+8202-32FH-M_27 uptime is 2 days, 1 hour, 53 minutes
+Cisco 8200 2RU 32x400G QSFP56-DD w/IOS XR HBM MACsec
+</code>
+</pre>
+</div>
+
+The current active software configuration can be verified:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#sh install active summary
+Mon Jul  1 11:59:03.806 UTC
+Active Packages:    XR: 211    All: 1561
+<mark>Label:              24.1.2-1337</mark>
+Software Hash:      df7dbf1b438fec9acfb21d9d1bc10edc171f4283bbf67bd196d9bfe9331a59fb
+
+Optional Packages                                                        Version
+---------------------------------------------------- ---------------------------
+xr-8000-l2mcast                                                   24.1.2v1.0.0-1
+xr-8000-mcast                                                     24.1.2v1.0.0-1
+xr-8000-netflow                                                   24.1.2v1.0.0-1
+xr-bgp                                                            24.1.2v1.0.0-1
+xr-ipsla                                                          24.1.2v1.0.0-1
+xr-is-is                                                          24.1.2v1.0.0-1
+xr-k9sec                                                          24.1.2v1.0.0-1
+xr-lldp                                                           24.1.2v1.0.0-1
+xr-mcast                                                          24.1.2v1.0.0-1
+xr-mpls-oam                                                       24.1.2v1.0.0-1
+xr-netflow                                                        24.1.2v1.0.0-1
+xr-ops-script-repo                                                24.1.2v1.0.0-1
+xr-ospf                                                           24.1.2v1.0.0-1
+xr-perf-meas                                                      24.1.2v1.0.0-1
+xr-perfmgmt                                                       24.1.2v1.0.0-1
+xr-track                                                          24.1.2v1.0.0-1
+</code>
+</pre>
+</div>
+
+The Golden ISO label can also be used to verify the right file was used.
+
+At this point, the software configuration is not committed, meaning it’s possible to rollback to IOS XR 7.10.1 by reloading the system:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#sh install committed summary
+Mon Jul  1 11:59:51.743 UTC
+Committed Packages: XR: 206    All: 1537
+<mark>Label:              7.10.1</mark>
+Software Hash:      0a617ec67042adfba74f04f893e7fa0c30b1f355de4837f5cd52439d15100605
+
+Optional Packages                                                        Version
+---------------------------------------------------- ---------------------------
+xr-8000-l2mcast                                                   7.10.1v1.0.0-1
+xr-8000-mcast                                                     7.10.1v1.0.0-1
+xr-8000-netflow                                                   7.10.1v1.0.0-1
+xr-bgp                                                            7.10.1v1.0.0-1
+xr-ipsla                                                          7.10.1v1.0.0-1
+xr-is-is                                                          7.10.1v1.0.0-1
+xr-lldp                                                           7.10.1v1.0.0-1
+xr-mcast                                                          7.10.1v1.0.0-1
+xr-mpls-oam                                                       7.10.1v1.0.0-1
+xr-netflow                                                        7.10.1v1.0.0-1
+xr-ops-script-repo                                                7.10.1v1.0.0-1
+xr-ospf                                                           7.10.1v1.0.0-1
+xr-perf-meas                                                      7.10.1v1.0.0-1
+xr-perfmgmt                                                       7.10.1v1.0.0-1
+xr-track                                                          7.10.1v1.0.0-1
+</code>
+</pre>
+</div>
+
+The same sanity check is performed and once it’s confirmed system is stable and healthy, software configuration can be committed:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#<mark>install commit synchronous</mark>
+Mon Jul  1 12:00:08.881 UTC
+Starting:
+  install commit
+Transaction 2
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+Current activity: Commit transaction ...
+
+Transaction 2: 'install commit' completed without error
+RP/0/RP0/CPU0:8202-32FH-M_27#<mark>sh install committed summary</mark>
+Mon Jul  1 12:00:36.425 UTC
+Committed Packages: XR: 211    All: 1561
+<mark>Label:              24.1.2-1337</mark>
+Software Hash:      df7dbf1b438fec9acfb21d9d1bc10edc171f4283bbf67bd196d9bfe9331a59fb
+
+Optional Packages                                                        <mark>Version</mark>
+---------------------------------------------------- ---------------------------
+xr-8000-l2mcast                                                   <mark>24.1.2v1.0.0-1</mark>
+xr-8000-mcast                                                     24.1.2v1.0.0-1
+xr-8000-netflow                                                   24.1.2v1.0.0-1
+xr-bgp                                                            24.1.2v1.0.0-1
+xr-ipsla                                                          24.1.2v1.0.0-1
+xr-is-is                                                          24.1.2v1.0.0-1
+xr-k9sec                                                          24.1.2v1.0.0-1
+xr-lldp                                                           24.1.2v1.0.0-1
+xr-mcast                                                          24.1.2v1.0.0-1
+xr-mpls-oam                                                       24.1.2v1.0.0-1
+xr-netflow                                                        24.1.2v1.0.0-1
+xr-ops-script-repo                                                24.1.2v1.0.0-1
+xr-ospf                                                           24.1.2v1.0.0-1
+xr-perf-meas                                                      24.1.2v1.0.0-1
+xr-perfmgmt                                                       24.1.2v1.0.0-1
+xr-track                                                          24.1.2v1.0.0-1
+RP/0/RP0/CPU0:8202-32FH-M_27#
+</code>
+</pre>
+</div>
+
+The last step is to check FPD versions and see if some still need a manual upgrade or not. Status should be ‘CURRENT’ or ‘NOT REQ’.
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#sh hw-module fpd
+Mon Jul  1 12:00:51.011 UTC
+
+Auto-upgrade:Enabled
+Attribute codes: B golden, P protect, S secure, A Anti Theft aware
+                                                                         FPD Versions
+                                                                        ==============
+Location   Card type             HWver FPD device       ATR <mark>Status</mark>   Running Programd  Reload Loc
+-------------------------------------------------------------------------------------------------
+0/RP0/CPU0 8202-32FH-M           1.0   Bios             S   CURRENT    1.09    1.09    0/RP0/CPU0
+0/RP0/CPU0 8202-32FH-M           1.0   BiosGolden       BS  CURRENT            1.01    0/RP0/CPU0
+0/RP0/CPU0 8202-32FH-M           1.0   DbIoFpga1            CURRENT    1.06    1.06         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   DbIoFpgaGolden1  B   CURRENT            1.03         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   IoFpga1              CURRENT    1.06    1.06         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   IoFpgaGolden1    B   CURRENT            1.03         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   SsdMicron5300    S   CURRENT    0.01    0.01         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   x86Fpga          S   CURRENT    1.07    1.07         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   x86FpgaGolden    BS  CURRENT            1.03         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   x86TamFw         S   CURRENT    7.12    7.12         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   x86TamFwGolden   BS  CURRENT            7.10         0/RP0
+0/PM0      PSU2KW-ACPI           0.0   PO-PrimMCU           CURRENT    1.03    1.03       NOT REQ
+0/PM0      PSU2KW-ACPI           0.0   PO-SecMCU            CURRENT    1.08    1.08       NOT REQ
+0/PM1      PSU2KW-ACPI           0.0   PO-PrimMCU           NOT READY                         N/A
+0/PM1      PSU2KW-ACPI           0.0   PO-SecMCU            CURRENT    1.08    1.08       NOT REQ
+0/FB0      8202-32FH-M[FB]       1.0   IoFpga               CURRENT    1.10    1.10       NOT REQ
+0/FB0      8202-32FH-M[FB]       1.0   IoFpgaGolden     B   CURRENT            1.00       NOT REQ
+</code>
+</pre>
+</div>
+
+**Note:** It’s expected to see some FPD reporting ‘NEED UPGD’. Those are usually golden images used for disaster recovery. If you try to upgrade them, the system will prompt following log: fpd_client[318]: %PLATFORM-FPD_CLIENT-1-UPGRADE_SKIPPED : FPD upgrade skipped for BiosGolden@0/RP0/CPU0: Image not upgradable. It’s possible to force golden FPD upgrade using the ‘force’ keyword if advised by Cisco TAC.
+{: .notice--info}
 
 
 # install replace in action
