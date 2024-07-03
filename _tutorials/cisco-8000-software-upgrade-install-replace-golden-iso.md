@@ -44,7 +44,7 @@ The picture above shows the target software configuration is the same as the con
 - Upgrades the AIB package
 - Adds the BGP and OSPF packages
 
-**Note:** In case of a software upgrade (or downgrade), the system is still reloaded to boot on the target software release.
+**Note:** In case of software upgrade (or downgrade), the system is still reloaded to boot on the target software release.
 {: .notice--info}
 
 # Prerequisite
