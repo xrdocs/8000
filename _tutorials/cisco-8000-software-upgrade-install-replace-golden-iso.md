@@ -19,7 +19,7 @@ position: hidden
 # Introduction
 
 This article describes how install replace procedure & Golden ISO file can be used to stage, patch, or upgrade the Cisco IOS XR Network Operation System (NOS) running on a Cisco 8000.  
-The Golden ISO concept & creation process is covered in [this article](foobar.com). Once created, the Golden ISO file can be used to perform USB boot, iPXE boot, software staging, SMU installation, or software upgrade.
+The Golden ISO concept & creation process is covered in [this article]({{site.baseurl}}/tutorials/8000-software-xr7-giso). Once created, the Golden ISO file can be used to perform USB boot, iPXE boot, software staging, SMU installation, or software upgrade.
 
 # install replace Concept
 
