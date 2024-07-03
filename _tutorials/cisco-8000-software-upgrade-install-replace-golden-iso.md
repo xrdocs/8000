@@ -435,6 +435,523 @@ RP/0/RP0/CPU0:8202-32FH-M_27#install replace /harddisk:/8000-golden-x86_64-24.1.
 </pre>
 </div>
 
+In details, the process takes:
+
+- 12min to extract the GISO and add the packages in the local repository
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#<mark>install replace /harddisk:/8000-golden-x86_64-24.1.2-1337.iso synchronous</mark>
+Mon Jul  1 11:36:41.803 UTC
+Once the packaging dependencies have been determined, the install operation may have to reload the system.
+If you want to control the timing of system reload, you must not continue, but use the 'install package replace' command instead, followed by 'install apply'.
+Continue? [yes/no]:[yes] yes
+Starting:
+  install replace /harddisk:/8000-golden-x86_64-24.1.2-1337.iso
+Atomic change 2.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing ..
+Current activity: Verify input and download ISO .........
+Current activity: Extract main ISO contents to internal repository if needed ...........^@.
+Current activity: Veto check ....
+Current activity: Package add or other package operation ....^@...........^@............^@............^@...........^@............^@...........^@............^@...........^@.........
+Current activity: Apply by reload
+
+<mark>Atomic change 2.1: Pre-reload steps completed without error, reloading</mark>
+</code>
+</pre>
+</div>
+
+- 6min to reload on the target release
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+<mark>RP/0/RP0/CPU0:Jul  1 11:48:37.826 UTC: instorch[147]: %INFRA-INSTALL-2-SYSTEM_RELOAD : As part of an install operation, a full system reload will take place in order to apply the installed software.</mark>
+.
+Preparing system for backup. This may take a few minutes especially for large configurations.
+	Status report: node0_RP0_CPU0: START TO BACKUP
+	Status report: node0_RP0_CPU0: BACKUP HAS COMPLETED SUCCESSFULLY
+[Done]
+.^@.......RP/0/RP0/CPU0:Jul  1 11:49:22.262 UTC: shelfmgr[232]: %PLATFORM-CPA_INTF_SHELFMGR-3-CARD_RELOAD_FAILED : Failed to perform card reload operation on card: node0_RP0_CPU0, err: 0
+[  OK  ] Stopped IOS-XR Reaperd and Process Manager.
+         Stopping Cisco Directory Services...
+[  OK  ] Stopped NOS Bootup FPD Upgrade Service.
+         Stopping Lightning Fast We…h Light System Requirements...
+[  OK  ] Stopped Lightning Fast Web…ith Light System Requirements.
+[  OK  ] Stopped Cisco Directory Services.
+[  OK  ] Stopped Setup Network OS Bootstrap.
+         Stopping CPA Setup...
+[  OK  ] Stopped NPU SDK Setup.
+         Stopping IOS-XR ISO Installation including sshd...
+[  OK  ] Stopped CPA Setup.
+         Stopping FPGA Setup...
+[  OK  ] Stopped FPGA Setup.
+[  OK  ] Stopped IOS-XR ISO Installation including sshd.
+         Stopping Service for factory reset...
+[  OK  ] Stopped OpenSSH Key Generation.
+[  OK  ] Stopped Service for factory reset.
+[  OK  ] Stopped target Basic System.
+[  OK  ] Stopped target Paths.
+[  OK  ] Stopped target Slices.
+[  OK  ] Removed slice User and Session Slice.
+[  OK  ] Stopped target Sockets.
+[  OK  ] Closed D-Bus System Message Bus Socket.
+[  OK  ] Closed sshd.socket.
+[  OK  ] Stopped target System Initialization.
+[  OK  ] Closed Syslog Socket.
+         Stopping Board Setup...
+[  OK  ] Stopped Apply Kernel Variables.
+[  OK  ] Stopped Load Kernel Modules.
+         Stopping Update UTMP about System Boot/Shutdown...
+[  OK  ] Stopped Update UTMP about System Boot/Shutdown.
+         Stopping Security Auditing Service...
+[  OK  ] Stopped Security Auditing Service.
+[  OK  ] Stopped Create Volatile Files and Directories.
+[  OK  ] Stopped target Local File Systems.
+         Unmounting /boot/efi...
+         Unmounting /mnt/dr_part...
+         Unmounting /mnt/fuse/ftp...
+         Unmounting /mnt/fuse/nvgen_server...
+         Unmounting /mnt/fuse/parser_server...
+         Unmounting /mnt/fuse/tftp...
+         Unmounting /mnt/pdtmpfs...
+         Unmounting /qsm...
+         Unmounting /run/netns/default...
+         Unmounting /run/netns/global-vrf...
+         Unmounting /run/netns/vrf-default...
+         Unmounting /run/netns/xrnns...
+         Unmounting /selinux...
+         Unmounting Temporary Directory (/tmp)...
+         Unmounting /var/lib/docker...
+         Unmounting /var/volatile...
+         Unmounting /var/xr/disk1...
+         Unmounting /var/xr/scratch...
+         Stopping Flush Journal to Persistent Storage...
+[  OK  ] Stopped Board Setup.
+[  OK  ] Unmounted /boot/efi.
+[  OK  ] Unmounted /mnt/dr_part.
+[  OK  ] Unmounted /mnt/fuse/ftp.
+[  OK  ] Unmounted /mnt/fuse/nvgen_server.
+[  OK  ] Unmounted /mnt/fuse/parser_server.
+[  OK  ] Unmounted /mnt/fuse/tftp.
+[  OK  ] Unmounted /mnt/pdtmpfs.
+[  OK  ] Unmounted /qsm.
+[  OK  ] Unmounted /run/netns/default.
+[  OK  ] Unmounted /run/netns/global-vrf.
+[  OK  ] Unmounted /run/netns/vrf-default.
+[  OK  ] Unmounted /run/netns/xrnns.
+[  OK  ] Unmounted /selinux.
+[  OK  ] Unmounted Temporary Directory (/tmp).
+[  OK  ] Unmounted /var/lib/docker.
+[  OK  ] Unmounted /var/volatile.
+[  OK  ] Unmounted /var/xr/scratch.
+[  OK  ] Stopped Flush Journal to Persistent Storage.
+         Unmounting /boot...
+         Unmounting /mnt...
+         Unmounting /run/netns...
+         Unmounting /var/log...
+[  OK  ] Stopped File System Check …ain-xr-vg/install-data-docker.
+[  OK  ] Stopped File System Check …in-xr-vg/install-data-scratch.
+[  OK  ] Stopped File System Check on /dev/sda1.
+[  OK  ] Stopped File System Check on /dev/sda2.
+[  OK  ] Unmounted /var/xr/disk1.
+[  OK  ] Unmounted /boot.
+[  OK  ] Unmounted /mnt.
+[  OK  ] Unmounted /run/netns.
+[FAILED] Failed unmounting /var/log.
+[  OK  ] Stopped target Swap.
+[  OK  ] Reached target Unmount All Filesystems.
+[  OK  ] Stopped File System Check on /dev/main-xr-vg/boot-lv.
+[  OK  ] Stopped File System Check …main-xr-vg/install-data-disk1.
+[  OK  ] Stopped target Local File Systems (Pre).
+         Stopping Monitoring of LVM…meventd or progress polling...
+[  OK  ] Stopped Remount Root and Kernel File Systems.
+[  OK  ] Stopped Create Static Device Nodes in /dev.
+[  OK  ] Stopped Monitoring of LVM2… dmeventd or progress polling.
+         Stopping Device-mapper event daemon...
+[  OK  ] Stopped Device-mapper event daemon.
+[  OK  ] Reached target Shutdown.
+[  OK  ] Reached target Final Step.
+[  OK  ] Started Reboot.
+[  OK  ] Reached target Reboot.
+[319664.699919] systemd-shutdown[1]: Could not detach DM /dev/dm-9: Device or resource busy
+[319664.709780] systemd-shutdown[1]: Could not detach DM /dev/dm-8: Device or resource busy
+[319664.719635] systemd-shutdown[1]: Could not detach DM /dev/dm-7: Device or resource busy
+[319664.744445] systemd-shutdown[1]: Failed to finalize  DM devices, ignoring
+[319664.845458] Unsupported TPM Send Cmd! tpm_tag=8001,tpm_ordinal=0145
+[319664.853194] tpm tpm0: tpm_try_transmit: send(): error -11
+[319665.190333] pm-fpga: Turning Status LED to amber, Active, Alarm, Board and Chassis Attention LED to OFF ...
+<mark>[319665.212037] pm-fpga: Power cycling the card via FPGA</mark>
+
+
+
+Cisco 8000(R) Series BIOS Ver 1.09 Primary
+Intel(R) Xeon(R) CPU D-1530 @ 2.40GHz
+Board Type 0x111 PID 8202-32FH-M Serial FLM260902HU
+X86FPGA 1.7.0 TamLib 5.01.01
+<mark>Booting from Disk
+  Booting `IOS-XR-latest'
+
+Booting latest from Disk..</mark>
+Loading Kernel..
+Verifying /bzImage...
+/bzImage verified using attached signature.
+Verifying /bzImage...
+/bzImage verified using attached signature.
+Loading initrd..
+Verifying /initrd.img...
+/initrd.img verified using Pkcs7 signature.
+[   11.389573] Created proc for bigphysarea
+Starting version 244.5+
+Located disaster recovery partition /dev/sda2
+  Found volume group "main-xr-vg" using metadata type lvm2
+  9 logical volume(s) in volume group "main-xr-vg" now active
+  9 logical volume(s) in volume group "main-xr-vg" now active
+  9 logical volume(s) in volume group "main-xr-vg" now active
+fsck from util-linux 2.35.1
+e2fsck 1.45.7 (28-Jan-2021)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Boot: 34/61184 files (8.8% non-contiguous), 34986/244736 blocks
+fsck from util-linux 2.35.1
+e2fsck 1.45.7 (28-Jan-2021)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Disk1: 281/3407872 files (5.7% non-contiguous), 2197946/13612032 blocks
+fsck from util-linux 2.35.1
+e2fsck 1.45.7 (28-Jan-2021)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Docker: 47/378256 files (8.5% non-contiguous), 59648/1512448 blocks
+fsck from util-linux 2.35.1
+fsck from util-linux 2.35.1
+e2fsck 1.45.7 (28-Jan-2021)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Log: 14454/303104 files (0.7% non-contiguous), 142168/1210368 blocks
+fsck from util-linux 2.35.1
+e2fsck 1.45.7 (28-Jan-2021)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Scratch: 72/218160 files (6.9% non-contiguous), 33788/871424 blocks
+fsck from util-linux 2.35.1
+e2fsck 1.45.7 (28-Jan-2021)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+RootFS: 102303/1515520 files (0.5% non-contiguous), 4473288/12099584 blocks
+fsck from util-linux 2.35.1
+e2fsck 1.45.7 (28-Jan-2021)
+fsck.ext2: No such file or directory while trying to open /dev/main-xr-vg/install-rootfs-snapshot-1719833805
+Possibly non-existent device?
+Starting kdump:
+
+kernel.panic_on_oops = 1
+fstab modified mount options for 1 partitions
+Setup encrypted LV...
+Execute: cryptsetup luksOpen /dev/main-xr-vg/install-data-encrypted_in encrypted -d '-'
+Invoke selinux initialization...
+Enable selinux to relabel filesystem from initramfs
+Loading custom SELinux policy modules...
+iosxr policy module loaded
+Checking SELinux security contexts:
+ * First booting, filesystem will be relabeled...
+ * No need reboot the system.
+SELinux relabel complete
+Setting up IMA...
+Searching for IMA trusted keyring
+->IMA trusted keyring found
+Importing IMA x509 certificate into the IMA trusted keyring
+->IMA certificate found: /etc/keys/dbCisco-4.der (RELEASE)
+->Certificate imported into IMA keyring
+Loading IMA policy
+IMA policy for production
+IMA policy loaded successfully!
+->Secure Boot CA certificate found: /etc/keys/dbCisco-1.der (RELEASE)
+->Certificate imported into LNT user keyring
+Generate audit rules from component rules
+/sbin/augenrules: No change
+Switch to new root and run init
+
+Welcome to Linux Distro for XR 11.1.2 (dunfell)!
+
+[  OK  ] Created slice system-serial\x2dgetty.slice.
+[  OK  ] Created slice system-systemd\x2dfsck.slice.
+[  OK  ] Created slice User and Session Slice.
+[  OK  ] Reached target Paths.
+[  OK  ] Reached target Remote File Systems.
+[  OK  ] Reached target Slices.
+[  OK  ] Reached target Swap.
+[  OK  ] Listening on Device-mapper event daemon FIFOs.
+[  OK  ] Listening on RPCbind Server Activation Socket.
+[  OK  ] Reached target RPC Port Mapper.
+[  OK  ] Listening on Syslog Socket.
+[  OK  ] Listening on Journal Audit Socket.
+[  OK  ] Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket.
+[  OK  ] Listening on Network Service Netlink Socket.
+[  OK  ] Listening on udev Control Socket.
+[  OK  ] Listening on udev Kernel Socket.
+         Mounting Huge Pages File System...
+         Mounting POSIX Message Queue File System...
+         Mounting Temporary Directory (/tmp)...
+         Starting Availability of block devices...
+         Starting Create list of st…odes for the current kernel...
+         Starting Monitoring of LVM…meventd or progress polling...
+         Starting RPC Bind...
+         Starting SELinux init for /dev service loading...
+         Starting Board Setup...
+         Starting Journal Service...
+         Starting Load Kernel Modules...
+         Starting Remount Root and Kernel File Systems...
+         Starting udev Coldplug all Devices...
+[  OK  ] Started RPC Bind.
+[  OK  ] Mounted Huge Pages File System.
+[  OK  ] Mounted POSIX Message Queue File System.
+[  OK  ] Mounted Temporary Directory (/tmp).
+[  OK  ] Started Availability of block devices.
+[  OK  ] Started Create list of sta… nodes for the current kernel.
+[  OK  ] Started Monitoring of LVM2… dmeventd or progress polling.
+[  OK  ] Started SELinux init for /dev service loading.
+[  OK  ] Started Board Setup.
+[  OK  ] Started Journal Service.
+[  OK  ] Started Load Kernel Modules.
+[  OK  ] Started Remount Root and Kernel File Systems.
+         Mounting FUSE Control File System...
+         Starting Rebuild Hardware Database...
+         Starting Apply Kernel Variables...
+         Starting Create System Users...
+[  OK  ] Mounted FUSE Control File System.
+[  OK  ] Started Apply Kernel Variables.
+[  OK  ] Started udev Coldplug all Devices.
+[  OK  ] Started Create System Users.
+         Starting Create Static Device Nodes in /dev...
+[  OK  ] Started Create Static Device Nodes in /dev.
+[  OK  ] Reached target Local File Systems (Pre).
+         Mounting /mnt...
+[  OK  ] Reached target Containers.
+         Mounting /var/volatile...
+[  OK  ] Mounted /mnt.
+[  OK  ] Mounted /var/volatile.
+         Starting Load/Save Random Seed...
+[  OK  ] Started Load/Save Random Seed.
+[  OK  ] Started Rebuild Hardware Database.
+         Starting udev Kernel Device Manager...
+[  OK  ] Started udev Kernel Device Manager.
+[  OK  ] Found device /dev/ttyS1.
+[   59.265111] ixgbe 0000:0b:00.0: HW Init failed: -17
+[  OK  ] Found device Micron_5300_MTFDDAV480TDS partition01.
+[  OK  ] Found device Micron_5300_MTFDDAV480TDS DR-Part.
+[  OK  ] Found device /dev/main-xr-vg/install-data-docker.
+[  OK  ] Found device /dev/main-xr-vg/install-data-scratch.
+[  OK  ] Found device /dev/main-xr-vg/install-data-disk1.
+[  OK  ] Found device /dev/main-xr-vg/install-data-log.
+[  OK  ] Found device /dev/main-xr-vg/boot-lv.
+[  OK  ] Created slice system-lvm2\x2dpvscan.slice.
+         Starting LVM event activation on device 8:3...
+         Starting File System Check on /dev/main-xr-vg/boot-lv...
+         Starting File System Check…in-xr-vg/install-data-disk1...
+         Starting File System Check…n-xr-vg/install-data-docker...
+         Starting File System Check…main-xr-vg/install-data-log...
+         Starting File System Check…-xr-vg/install-data-scratch...
+         Starting File System Check on /dev/sda1...
+         Starting File System Check on /dev/sda2...
+[  OK  ] Started LVM event activation on device 8:3.
+[  OK  ] Started File System Check on /dev/sda1.
+[  OK  ] Started File System Check on /dev/sda2.
+         Mounting /mnt/dr_part...
+[  OK  ] Started File System Check on /dev/main-xr-vg/boot-lv.
+         Mounting /boot...
+[  OK  ] Started File System Check …ain-xr-vg/install-data-docker.
+         Mounting /var/lib/docker...
+[  OK  ] Started File System Check …in-xr-vg/install-data-scratch.
+[  OK  ] Mounted /boot.
+         Mounting /boot/efi...
+         Mounting /var/xr/scratch...
+[  OK  ] Mounted /mnt/dr_part.
+[  OK  ] Mounted /var/lib/docker.
+[  OK  ] Mounted /var/xr/scratch.
+[  OK  ] Mounted /boot/efi.
+[  OK  ] Started File System Check …main-xr-vg/install-data-disk1.
+         Mounting /var/xr/disk1...
+[  OK  ] Mounted /var/xr/disk1.
+[  OK  ] Started File System Check …v/main-xr-vg/install-data-log.
+         Mounting /var/log...
+[  OK  ] Mounted /var/log.
+[  OK  ] Reached target Local File Systems.
+         Starting SELinux init service loading...
+         Starting Flush Journal to Persistent Storage...
+         Starting Copy selected logs to var/log/old directories...
+[  OK  ] Started SELinux init service loading.
+[  OK  ] Started Copy selected logs to var/log/old directories.
+[  OK  ] Started Flush Journal to Persistent Storage.
+         Starting Create Volatile Files and Directories...
+[  OK  ] Started Create Volatile Files and Directories.
+         Starting Security Auditing Service...
+         Starting Rebuild Journal Catalog...
+[  OK  ] Started Security Auditing Service.
+         Starting Update UTMP about System Boot/Shutdown...
+[  OK  ] Started Rebuild Journal Catalog.
+[  OK  ] Started Update UTMP about System Boot/Shutdown.
+         Starting Update is Completed...
+[  OK  ] Started Update is Completed.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started Discard unused blocks.
+[  OK  ] Started Periodic rotation of log files.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target Timers.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+         Starting sshd.socket.
+[  OK  ] Listening on sshd.socket.
+[  OK  ] Reached target Sockets.
+[  OK  ] Reached target Basic System.
+[  OK  ] Started Job spooling tools.
+[  OK  ] Started Periodic Command Scheduler.
+[  OK  ] Started D-Bus System Message Bus.
+         Starting Ethernet Bridge Filtering Tables...
+[  OK  ] Started Service for factory reset.
+[  OK  ] Started HWID Rescan/Remove Client.
+         Starting IPv6 Packet Filtering Framework...
+         Starting IPv4 Packet Filtering Framework...
+[  OK  ] Started Machine Check Exception Logging Daemon.
+[  OK  ] Started Cisco Process Monitor Service.
+         Starting Rollback uncommit… config change transactions...
+[  OK  ] Started PCIE Link Monitor.
+         Starting FPGA Setup...
+[  OK  ] Started Self Monitoring an…ing Technology (SMART) Daemon.
+[  OK  ] Started System Logging Service.
+         Starting Login Service...
+         Starting Thermal Daemon Service...
+         Starting IOS-XR Setup Non-Root related tasks...
+         Starting OpenSSH Key Generation...
+         Starting Rotate log files...
+[  OK  ] Started Ethernet Bridge Filtering Tables.
+[  OK  ] Started IPv6 Packet Filtering Framework.
+[  OK  ] Started IPv4 Packet Filtering Framework.
+[  OK  ] Started Rollback uncommitt…rk config change transactions.
+[  OK  ] Reached target Network (Pre).
+         Starting Network Service...
+[  OK  ] Started OpenSSH Key Generation.
+         Starting IOS-XR ISO Installation including sshd...
+[  OK  ] Started IOS-XR Setup Non-Root related tasks.
+[  OK  ] Started Login Service.
+[  OK  ] Started Network Service.
+         Starting Network Name Resolution...
+[  OK  ] Started Rotate log files.
+[  OK  ] Started Thermal Daemon Service.
+[  OK  ] Started Network Name Resolution.
+[  OK  ] Reached target Network.
+[  OK  ] Reached target Host and Network Name Lookups.
+         Starting containerd container runtime...
+[  OK  ] Started Respond to IPv6 Node Information Queries.
+[  OK  ] Started Network Router Discovery Daemon.
+         Starting Permit User Sessions...
+[  OK  ] Started Xinetd A Powerful Replacement For Inetd.
+[  OK  ] Started Permit User Sessions.
+[  OK  ] Started Serial Getty on ttyS1.
+[  OK  ] Reached target Login Prompts.
+[  OK  ] Started containerd container runtime.
+[  OK  ] Started FPGA Setup.
+         Starting FPGA Shutdown...
+         Starting msixd start...
+         Starting Marvell Switch Setup...
+         Starting CPA Setup...
+[  OK  ] Started Marvell Switch Setup.
+[  OK  ] Started msixd start.
+[  OK  ] Started FPGA Shutdown.
+[  OK  ] Started CPA Setup.
+[   62.946593] xrnginstall[1570]: 2024-07-01 11:51:47.421 UTC: xrinstall: Setting up dumper and build info files
+[   63.237449] xrnginstall[1800]: 2024-07-01 11:51:47.711 UTC: xrinstall: XR Lineup:  r241x.lu%EFR-00000459055
+<mark>[   63.240508] xrnginstall[1804]: 2024-07-01 11:51:47.715 UTC: xrinstall: XR Version: 24.1.2</mark>
+[   63.243965] xrnginstall[1808]: 2024-07-01 11:51:47.718 UTC: xrinstall: Completed set up of dumper and build info files
+[   63.247333] xrnginstall[1812]: 2024-07-01 11:51:47.722 UTC: xrinstall: Preparing IOS-XR
+[   63.254233] xrnginstall[1820]: 2024-07-01 11:51:47.728 UTC: xrinstall: Switching to latest FS
+[   69.759903] xrnginstall[1831]: 2024-07-01 11:51:54.234 UTC: xrinstall: Completed switch to latest FS
+[   70.353305] xrnginstall[2160]: 2024-07-01 11:51:54.828 UTC: xrinstall: Load platform kernel modules
+[   70.467690] xrnginstall[2212]: 2024-07-01 11:51:54.942 UTC: xrinstall: Succeeded loading platform kernel modules
+[   70.472330] xrnginstall[2217]: 2024-07-01 11:51:54.947 UTC: xrinstall: Enable hardware
+[   71.299312] xrnginstall[2343]: 2024-07-01 11:51:55.773 UTC: xrinstall: Succeeded enabling hardware
+[   71.307606] xrnginstall[2352]: 2024-07-01 11:51:55.782 UTC: xrinstall: Setting up owner and partner RPM symlinks
+[   71.320853] xrnginstall[2362]: 2024-07-01 11:51:55.795 UTC: xrinstall: Checking if rollback cleanup is required
+[   71.324907] xrnginstall[2367]: 2024-07-01 11:51:55.799 UTC: xrinstall: Finished rollback cleanup stage
+[   71.332113] xrnginstall[2373]: 2024-07-01 11:51:55.806 UTC: xrinstall: Single node: starting XR
+[   71.460094] xrnginstall[2465]: 2024-07-01 11:51:55.934 UTC: xrinstall: xrnginstall completed successfully
+RP/0/RP0/CPU0:Jul  1 11:52:22.483 UTC: fpd_client[392]: %PLATFORM-CPA_INTF_FPD-3-ACCESS_ERROR : Node 0/PM1 FPD PrimMCU ACCESS failure ''
+RP/0/RP0/CPU0:Jul  1 11:52:32.723 UTC: envmon[327]: %PKT_INFRA-FM-3-FAULT_MAJOR : ALARM_MAJOR :Power Module Error (PM_VIN_VOLT_OOR) :DECLARE :0/PM1: PM1 is under HW_VIN_OUT_OF_RANGE condition(input voltage is out of low line range 90V-140V
+RP/0/RP0/CPU0:Jul  1 11:52:32.723 UTC: envmon[327]: %PKT_INFRA-FM-3-FAULT_MAJOR : ALARM_MAJOR :Power Module Output Disabled (PM_OUTPUT_DISABLED) :DECLARE :0/PM1: PM1 is under HW_OUTPUT_DISABLED condition.
+RP/0/RP0/CPU0:Jul  1 11:52:32.724 UTC: envmon[327]: %PKT_INFRA-FM-3-FAULT_MAJOR : ALARM_MAJOR :Power Module Error (PM_NO_INPUT_DETECTED) :DECLARE :0/PM1: PM1 is under HW_NO_INPUT_DETECTED condition.
+RP/0/RP0/CPU0:Jul  1 11:52:32.725 UTC: envmon[327]: %PKT_INFRA-FM-3-FAULT_MAJOR : ALARM_MAJOR :Power Group Redundancy lost :DECLARE :0:
+
+
+ios con0/RP0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+RP/0/RP0/CPU0:Jul  1 11:52:41.730 UTC: fpd_client[392]: %PLATFORM-CPA_INTF_FPD-3-ACCESS_ERROR : Node 0/PM1 FPD PrimMCU ACCESS failure ''
+RP/0/RP0/CPU0:Jul  1 11:52:41.738 UTC: fpd_client[392]: %PLATFORM-CPA_INTF_FPD-3-ACCESS_ERROR : Node 0/PM1 FPD PrimMCU ACCESS failure ''
+RP/0/RP0/CPU0:Jul  1 11:53:14.905 UTC: tmgctrl[419]: %PLATFORM-CLKCTRL_MAIN-4-TIMING_PLL_NEED_FW_UPG : Timing PLL device needs firmware upgrade. Running ver:0x07d8 Packaged ver: :0x07da
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply third-party
+authority to import, export, distribute or use encryption. Importers,
+exporters, distributors and users are responsible for compliance with
+U.S. and local country laws. By using this product you agree to comply
+with applicable laws and regulations. If you are unable to comply with
+U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be
+found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+
+
+RP/0/RP0/CPU0:Jul  1 11:53:34.460 UTC: pyztp2[424]: %INFRA-ZTP-4-START : ZTP has started. Interfaces might be brought up if they are shutdown
+RP/0/RP0/CPU0:Jul  1 11:53:36.869 UTC: ifmgr[245]: %PKT_INFRA-LINK-3-UPDOWN : Interface MgmtEth0/RP0/CPU0/0, changed state to Down
+RP/0/RP0/CPU0:Jul  1 11:53:36.907 UTC: ifmgr[245]: %PKT_INFRA-LINK-3-UPDOWN : Interface FourHundredGigE0/0/0/31, changed state to Down
+RP/0/RP0/CPU0:Jul  1 11:53:39.336 UTC: ifmgr[245]: %PKT_INFRA-LINK-3-UPDOWN : Interface MgmtEth0/RP0/CPU0/0, changed state to Up
+RP/0/RP0/CPU0:Jul  1 11:53:58.601 UTC: smartlicserver[397]: %LICENSE-SMART_LIC-3-COMM_FAILED : Communications failure with the Cisco Smart License Utility (CSLU) : Unable to resolve server hostname/domain name
+RP/0/RP0/CPU0:Jul  1 11:54:06.827 UTC: pyztp2[424]: %INFRA-ZTP-4-EXITED : ZTP exited
+
+User Access Verification
+Username:
+
+8202-32FH-M_27 con0/RP0/CPU0 is now available
+
+Press RETURN to get started.
+</code>
+</pre>
+</div>
+
+
+
+
 # install replace in action
 
 The whole process can be observed in the 6min [video clip below]({{site.baseurl}}/images/8000%20install%20replace.gif):
