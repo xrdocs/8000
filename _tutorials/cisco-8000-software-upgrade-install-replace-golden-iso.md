@@ -12,7 +12,7 @@ tags:
   - install replace
   - Golden ISO
   - Software Upgrade
-position: hidden
+position: top
 ---
 {% include toc icon="table" title="Cisco 8000 Software Upgrade using install replace & Golden ISO" %}
 
