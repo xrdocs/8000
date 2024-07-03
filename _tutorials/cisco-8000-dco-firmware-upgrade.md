@@ -221,7 +221,7 @@ RP/0/RP0/CPU0:CISCO-8200#
 </pre>
 </div>
 
-The purpose of this sanity check is capture current optic state and compare it after the firmware upgrade.  
+The purpose of this sanity check is to capture current optic state and compare it after the firmware upgrade is complete.  
 
 Once the sanity check is done, it’s recommended to drain/isolate the link. This can be achieved using regular routing techniques (ISIS overload bit, OSPF max metric, MPLS traffic engineering, BGP attributes, etc.).  
 
