@@ -193,7 +193,7 @@ RP/0/RP0/CPU0:8202-32FH-M_27#
 </pre>
 </div>
 
-Like any software upgrade, both IOS XR and Field Programmable Device (FPD) are upgraded. While FPD auto-upgrade is enabled by default on Cisco 8000, having it the configuration allows self-documentation:
+Like any software upgrade, both IOS XR and Field Programmable Device (FPD) are upgraded. While FPD auto-upgrade is enabled by default on Cisco 8000, having it in the configuration allows self-documentation:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
