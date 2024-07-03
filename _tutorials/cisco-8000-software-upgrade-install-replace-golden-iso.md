@@ -118,5 +118,297 @@ RP/0/RP0/CPU0:8202-32FH-M_27#
 </pre>
 </div>
 
+It’s strongly recommended to read the documentation available on cisco.com. Each IOS XR software release is shipped with a System Upgrade Procedure. This document is available in the 8000-x64-release.docs.tar file as shown below
+  
+![cisco-8000-rtfm.png]({{site.baseurl}}/images/cisco-8000-rtfm.png)
+
+The document provides useful information on supported upgrade/downgrade paths, if some prerequisite SMU are needed or not, list of caveats, etc.
+
+# Initial State
+
+For this article, a Cisco 8200 is upgraded from IOS XR 7.10.1 to 24.2.1.  
+The initial software configuration can be captured using ‘show install active summary’ command. It lists all active packages and SMU:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#sh install active summary
+Mon Jul  1 11:24:11.903 UTC
+Active Packages:    XR: 206    All: 1537
+<mark>Label:              7.10.1</mark>
+Software Hash:      0a617ec67042adfba74f04f893e7fa0c30b1f355de4837f5cd52439d15100605
+
+Optional Packages                                                        <mark>Version</mark>
+---------------------------------------------------- ---------------------------
+xr-8000-l2mcast                                                   <mark>7.10.1v1.0.0-1</mark>
+xr-8000-mcast                                                     7.10.1v1.0.0-1
+xr-8000-netflow                                                   7.10.1v1.0.0-1
+xr-bgp                                                            7.10.1v1.0.0-1
+xr-ipsla                                                          7.10.1v1.0.0-1
+xr-is-is                                                          7.10.1v1.0.0-1
+xr-lldp                                                           7.10.1v1.0.0-1
+xr-mcast                                                          7.10.1v1.0.0-1
+xr-mpls-oam                                                       7.10.1v1.0.0-1
+xr-netflow                                                        7.10.1v1.0.0-1
+xr-ops-script-repo                                                7.10.1v1.0.0-1
+xr-ospf                                                           7.10.1v1.0.0-1
+xr-perf-meas                                                      7.10.1v1.0.0-1
+xr-perfmgmt                                                       7.10.1v1.0.0-1
+xr-track                                                          7.10.1v1.0.0-1
+RP/0/RP0/CPU0:8202-32FH-M_27#
+</code>
+</pre>
+</div>
+
+In nominal state, the active and committed software configuration must be identical. This can be quicky confirmed checking the software hash value which must match on both outputs:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#sh install committed summary
+Mon Jul  1 11:24:30.949 UTC
+Committed Packages: XR: 206    All: 1537
+Label:              7.10.1
+<mark>Software Hash:      0a617ec67042adfba74f04f893e7fa0c30b1f355de4837f5cd52439d15100605</mark>
+
+Optional Packages                                                        Version
+---------------------------------------------------- ---------------------------
+xr-8000-l2mcast                                                   7.10.1v1.0.0-1
+xr-8000-mcast                                                     7.10.1v1.0.0-1
+xr-8000-netflow                                                   7.10.1v1.0.0-1
+xr-bgp                                                            7.10.1v1.0.0-1
+xr-ipsla                                                          7.10.1v1.0.0-1
+xr-is-is                                                          7.10.1v1.0.0-1
+xr-lldp                                                           7.10.1v1.0.0-1
+xr-mcast                                                          7.10.1v1.0.0-1
+xr-mpls-oam                                                       7.10.1v1.0.0-1
+xr-netflow                                                        7.10.1v1.0.0-1
+xr-ops-script-repo                                                7.10.1v1.0.0-1
+xr-ospf                                                           7.10.1v1.0.0-1
+xr-perf-meas                                                      7.10.1v1.0.0-1
+xr-perfmgmt                                                       7.10.1v1.0.0-1
+xr-track                                                          7.10.1v1.0.0-1
+RP/0/RP0/CPU0:8202-32FH-M_27#
+</code>
+</pre>
+</div>
+
+Like any software upgrade, both IOS XR and Field Programmable Device (FPD) are upgraded. While FPD auto-upgrade is enabled by default on Cisco 8000, having it the configuration allows self-documentation:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:Saturn-8711-32FH-M(config)#fpd auto-upgrade ?
+  disable  Disable fpd auto upgrade
+  enable   Enable fpd auto upgrade
+  exclude  FPD auto-upgrade exclude configuration
+  include  FPD auto-upgrade exclude configuration
+RP/0/RP0/CPU0:Saturn-8711-32FH-M(config)#fpd auto-upgrade enable
+</code>
+</pre>
+</div>
+
+**Note:** there is no optional FPD package anymore on Cisco 8000. Both xr-fpd, xr-8000-fpd are natively part of the ISO/GISO.
+{: .notice--info}
 
 
+**Note:** some FPD are not covered by FPD auto-upgrade feature. Always check FPD versions after system upgrade and reload.
+{: .notice--info}
+
+FPD versions can be checked with following command:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#sh hw-module fpd
+Mon Jul  1 11:24:45.284 UTC
+
+<mark>Auto-upgrade:Enabled</mark>
+Attribute codes: B golden, P protect, S secure, A Anti Theft aware
+                                                                         FPD Versions
+                                                                        ==============
+Location   Card type             HWver FPD device       ATR Status   Running Programd  Reload Loc
+-------------------------------------------------------------------------------------------------
+0/RP0/CPU0 8202-32FH-M           1.0   Bios             S   CURRENT    1.09    1.09    0/RP0/CPU0
+0/RP0/CPU0 8202-32FH-M           1.0   BiosGolden       BS  CURRENT            1.01    0/RP0/CPU0
+0/RP0/CPU0 8202-32FH-M           1.0   DbIoFpga1            CURRENT    1.06    1.06         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   DbIoFpgaGolden1  B   CURRENT            1.03         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   IoFpga1              CURRENT    1.06    1.06         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   IoFpgaGolden1    B   CURRENT            1.03         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   SsdMicron5300    S   CURRENT    0.01    0.01         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   x86Fpga          S   CURRENT    1.07    1.07         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   x86FpgaGolden    BS  CURRENT            1.03         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   x86TamFw         S   CURRENT    7.12    7.12         0/RP0
+0/RP0/CPU0 8202-32FH-M           1.0   x86TamFwGolden   BS  CURRENT            7.10         0/RP0
+0/PM0      PSU2KW-ACPI           0.0   PO-PrimMCU           CURRENT    1.03    1.03       NOT REQ
+0/PM0      PSU2KW-ACPI           0.0   PO-SecMCU            CURRENT    1.08    1.08       NOT REQ
+0/PM1      PSU2KW-ACPI           0.0   PO-SecMCU            CURRENT    1.08    1.08       NOT REQ
+0/PM1      PSU2KW-ACPI           0.0   PrimMCU              NOT READY                         N/A
+0/FB0      8202-32FH-M[FB]       1.0   IoFpga               CURRENT    1.10    1.10       NOT REQ
+0/FB0      8202-32FH-M[FB]       1.0   IoFpgaGolden     B   CURRENT            1.00       NOT REQ
+RP/0/RP0/CPU0:8202-32FH-M_27#
+</code>
+</pre>
+</div>
+
+# Pre-upgrade Tasks
+
+The first step is to copy the Golden ISO file on the router. Having the GISO available locally could be useful for certain situations (e.g copy the file to a USB stick to perform USB boot on another router, iPXE boot, disaster recovery).  
+
+Once copied, file integrity must be checked:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#sh md5 file /harddisk:/8000-golden-x86_64-24.1.2-$
+Mon Jul  1 11:21:05.352 UTC
+ad8cc593ab4cba2f854b4dcf732d0547
+</code>
+</pre>
+</div>
+
+To double check software upgrade pre-requisites, it’s possible to leverage the upgrade matrix. This feature introduced in IOS XR 7.5.2 helps to determine supported upgrade or downgrade paths.  
+
+In this example, target GISO is provided as an argument. The system will check current software configuration and verify if the upgrade path to the target GISO release is supported, or if it requires SMU installation for instead:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#show install upgrade-matrix iso /harddisk:/8000-golden-x86_64-24.1.2-1337.iso
+Mon Jul  1 11:21:52.195 UTC
+-------------------------------------------------------------
+Upgrade matrix information for system upgrade: <mark>7.10.1->24.1.2</mark>
+-------------------------------------------------------------
+
+<mark>XR system upgrade is supported with no additional restrictions</mark>
+</code>
+</pre>
+</div>
+
+When used with the ‘all’ keyword, upgrade matrix will display all upgrade and downgrade configurations:  
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#show install upgrade-matrix iso /harddisk:/8000-golden-x86_64-24.1.2-1337.iso all
+Mon Jul  1 11:23:00.596 UTC
+Matrix: XR version: 24.1.2, File version: 1.0, Version: N/A
+
+The upgrade matrix indicates that the following system upgrades are supported:
+
+From       To         Restrictions
+---------- ---------- ----------------------------------------------------
+24.1.1     24.1.2     -
+24.1.2     24.1.1     -
+24.1.2     7.10.1     -
+24.1.2     7.10.2     -
+24.1.2     7.11.1     -
+24.1.2     7.11.2     -
+24.1.2     7.5.3      Target fixes; Caveats; Replace performed via reimage
+24.1.2     7.5.4      Target fixes; Caveats; Replace performed via reimage
+24.1.2     7.5.5      Caveats; Replace performed via reimage
+24.1.2     7.7.1      Target fixes; Caveats; Replace performed via reimage
+24.1.2     7.7.2      Target fixes; Caveats; Replace performed via reimage
+24.1.2     7.8.1      Target fixes; Caveats; Replace performed via reimage
+24.1.2     7.8.2      Target fixes; Caveats; Replace performed via reimage
+24.1.2     7.9.1      Caveats; Replace performed via reimage
+24.1.2     7.9.2      Caveats; Replace performed via reimage
+7.10.1     24.1.2     -
+7.10.2     24.1.2     -
+7.11.1     24.1.2     -
+7.11.2     24.1.2     -
+7.3.3      24.1.2     Bridging fixes; Caveats
+7.3.4      24.1.2     Bridging fixes; Caveats
+7.5.3      24.1.2     Caveats
+7.5.4      24.1.2     Caveats
+7.5.5      24.1.2     Caveats
+7.7.1      24.1.2     Caveats
+7.7.2      24.1.2     Caveats
+7.8.1      24.1.2     Caveats
+7.8.2      24.1.2     Caveats
+7.9.1      24.1.2     Caveats
+7.9.2      24.1.2     Caveats
+
+Add the from and to versions to the end of the CLI command, for data on versions with additional restrictions
+
+For example, to display restrictions for the 24.1.1->24.1.2 upgrade, use
+        'show install upgrade-matrix iso /harddisk:/8000-golden-x86_64-24.1.2-1337.iso 24.1.1 24.1.2'
+</code>
+</pre>
+</div>
+
+The next step of the preparation is to ensure system is stable & healthy before the upgrade. A sample list is given as an example below but should be customized for each customer and deployment (e.g if the router runs multicast or SRv6, extra health check should be performed):
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+terminal length 0
+terminal width 0
+
+show install active summary
+show install committed summary
+show install available
+show platform
+show led
+show inventory
+show configuration commit list
+show environment all
+show media location all
+show filesystem location 0/rp0/CPU0
+show filesystem location 0/rp1/CPU0	
+show processes blocked
+show processes blocked
+show redundancy
+show hw-module fpd
+
+show process cpu | ex 0%      0%       0%
+sh drops all location all
+sh cef drop
+
+show run
+show run formal | utility sort
+show logging
+show interfaces description | ex admin-down
+show interfaces description | inc "up          up" | utility wc
+show interfaces
+show ipv4 interface brief
+show ipv6 interface brief
+
+show interface description | inc BE[0-9]+
+show bundle
+show bundle brief
+show lacp counters
+
+show ospf neighbor
+show ospf neighbor detail
+show ospf neighbor | inc FULL | utility wc
+
+sh isis neighbors
+sh isis neighbors detail
+sh isis neighbors | i Total neighbor
+       
+show mpls interfaces
+show mpls ldp neighbor
+show mpls ldp neighbor brief
+show mpls ldp neighbor brief | utility wc
+
+show bfd all session
+show bfd all session | inc UP | utility wc
+
+show route vrf all summary
+sh bgp instance all ipv4 unicast summary
+sh bgp instance all vpnv4 unicast summary
+
+sh bgp instance all ipv4 unicast neighbor
+sh bgp instance all vpnv4 unicast neighbor
+
+show route vrf all
+
+copy running-config hardisk:backup-pre.conf
+</code>
+</pre>
+</div>
+
+Once the sanity check is done, it’s recommended to drain/isolate the router. This can be achieved using regular routing techniques (ISIS overload bit, OSPF max metric, MPLS traffic engineering, BGP attributes, etc.).
+
+# IOS XR Upgrade using install replace
