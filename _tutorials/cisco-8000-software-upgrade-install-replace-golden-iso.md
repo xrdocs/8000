@@ -949,6 +949,53 @@ Press RETURN to get started.
 </pre>
 </div>
 
+# Monitoring install replace operation
+
+show install request can be used to monitor the current state:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8808-1#sh install request
+Thu Jul  4 08:21:15.448 UTC
+
+User request: install replace /harddisk:/8000-golden-x86_64-7.10.2-7102_cco.iso
+Operation ID: 5.1
+<mark>State:        In progress since 2024-07-04 08:20:39 UTC</mark>
+
+Current activity:    Extract main ISO contents to internal repository if needed
+Next activity:       Veto check
+Time started:        2024-07-04 08:20:39 UTC
+
+No per-location information.
+RP/0/RP0/CPU0:8808-1#
+</code>
+</pre>
+</div>
+
+Ctrl + C can be used to return to exec prompt if 'asynchronous' option was used. To resume progress monitoring, install attach can be executed:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8808-1#install attach
+Thu Jul  4 08:22:02.168 UTC
+Attached to:
+  install replace /harddisk:/8000-golden-x86_64-7.10.2-7102_cco.iso
+Atomic change 5.1
+<mark>Press Ctrl-C to return to the exec prompt. This will not cancel the install operation</mark>
+
+Current activity: Package add or other package operationRP/0/RP0/CPU0:Jul  4 08:22:04.554 UTC: instorch[432]: %INFRA-INSTALL-6-NO_CHANGES_MADE : Packaging operation 5.1.1 resulted in no action being taken on any packages
+RP/0/RP0/CPU0:Jul  4 08:22:05.483 UTC: instorch[432]: %INFRA-INSTALL-6-ACTION_COMPLETE : Packaging operation 5.1.1 complete. More packaging operations can be performed, or any current changes can be applied by restart
+RP/0/RP0/CPU0:Jul  4 08:22:05.517 UTC: instorch[432]: %INFRA-INSTALL-6-ACTION_BEGIN : Apply by restart 5.1 started
+
+Current activity: Apply by restarting processes
+Current activity: Post-apply operation cleanup ........
+</code>
+</pre>
+</div>
+
+
 # Post-upgrade Tasks
 
 After system reload, the new software release can be confirmed:
