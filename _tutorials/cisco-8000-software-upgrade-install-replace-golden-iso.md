@@ -1230,7 +1230,7 @@ Can be used to launch install replace operation. For example, following netconf 
 
 ```
 <install-replace xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-install-act">
- \<source-type>local</source-type>
+ <source-type>local</source-type>
  <source>/harddisk:/</source>
  <file>8000-golden-x86_64-7.10.2-7102_cco.iso</file>
  <activation-type>reload</activation-type>
