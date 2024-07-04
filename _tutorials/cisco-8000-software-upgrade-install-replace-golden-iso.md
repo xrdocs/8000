@@ -1228,6 +1228,8 @@ Can be used to retrieve XR version or Golden ISO label for instead:
 
 Can be used to launch install replace operation. For example, following netconf RPC triggers install replace operation using '8000-golden-x86_64-7.10.2-7102_cco.iso' Golden ISO file located on router's harddisk and forces a system reload:
 
+<div class="highlighter-rouge">
+<pre class="highlight">
 <code>
 <install-replace xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-install-act">
  <source-type>local</source-type>
@@ -1236,6 +1238,8 @@ Can be used to launch install replace operation. For example, following netconf 
  <activation-type>reload</activation-type>
 </install-replace>
 </code>
+</pre>
+</div>
 
 It returns the op-id which can be used in the associated oper YANG model to monitor the progress.
 
