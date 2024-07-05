@@ -18,26 +18,26 @@ position: hidden
 
 # Introduction
 
-This article describes how install replace procedure & Golden ISO file can be used to stage, patch, or upgrade the Cisco IOS XR Network Operation System (NOS) running on a Cisco 8000.  
+This article describes how _install replace_ procedure & Golden ISO file can be used to stage, patch, or upgrade the Cisco IOS XR Network Operation System (NOS) running on Cisco 8000 routers.  
 The Golden ISO concept & creation process is covered in [this article]({{site.baseurl}}/tutorials/8000-software-xr7-giso). Once created, the Golden ISO file can be used to perform USB boot, iPXE boot, software staging, SMU installation, or software upgrade.
 
 # install replace Concept
 
-install replace functionality was initially introduced on ASR9000 with IOS XR 64bit 6.5.1. As the name says, it replaces all packages with the given ISO and applies the operation.  
+_install replace_ functionality was initially introduced on ASR9000 with IOS XR 64bit 6.5.1. As the name says, it replaces all packages with the given ISO and applies the operation.  
 
 Often described as complex, IOS XR software upgrade involves the following:
 
-- Use multiple steps (install add, activate and commit) for IOS XR 32bit, with a long list of packages arguments
+- Use multiple steps (install add/activate/commit for IOS XR 32bit & 64bit, install package add/apply/commit for XR7), with a long list of packages arguments
 - If a package is present in version N, the same package must be present in version N+1
 - Golden ISO upgrade always triggers a system reload on IOS XR 64bit, even if the only thing to do is to add the CDP package.
 
-install replace was since improved on IOS XR7 architecture which Cisco 8000 runs. It aims at making software staging, patching (SMU installation), and upgrade easier: 1 CLI to rule them all.  
+_install replace_ was since improved on IOS XR7 architecture which Cisco 8000 runs. It aims at making software staging, patching (SMU installation), and upgrade easier: 1 CLI to rule them all.  
 
-A Golden ISO install replace operation will always perform the smallest change possible. For example, if the install replace operation detects a single SMU must be added and activated and this SMU requires to perform a process restart, this is what will happen. The whole system will not be reloaded.
+A Golden ISO install replace operation will always perform the smallest change possible. For example, if the _install replace_ operation detects a single SMU must be added and activated and this SMU requires to perform a process restart, this is what will happen. The whole system will not be reloaded.
 
 ![cisco-8000-giso-replace.png]({{site.baseurl}}/images/cisco-8000-giso-replace.png)
 
-The picture above shows the target software configuration is the same as the content of the GISO. To achieve the desired state, install replace:
+The picture above shows the target software configuration is the same as the content of the GISO. To achieve the desired state, _install replace_:
 
 - Removes the ISIS package
 - Downgrades the PFI package
@@ -51,7 +51,7 @@ The picture above shows the target software configuration is the same as the con
 
 Before upgrading, the system must be in SIA compliant state. Software Innovation Access (SIA) subscription is required to access to the latest Feature Releases. SMU installation is still possible for a given release if the system is non-compliant.  
 
-The following command allow to check compliancy:
+The following command allows to check compliancy:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -72,7 +72,7 @@ FCM 2 Core/E 8000 and 8000E Type C Device SIA FCM 2.0               2    2
 </pre>
 </div>
 
-If the system is not compliant, install replace procedure will fail as illustrated below:
+If the system is not compliant, _install replace_ procedure will fail as illustrated below:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -285,7 +285,7 @@ Upgrade matrix information for system upgrade: <mark>7.10.1->24.1.2</mark>
 </pre>
 </div>
 
-When used with the ‘all’ keyword, upgrade matrix will display all upgrade and downgrade configurations:  
+When used with the ‘all’ keyword, upgrade matrix will display all upgrade and downgrade scenarios:  
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -337,7 +337,7 @@ For example, to display restrictions for the 24.1.1->24.1.2 upgrade, use
 </pre>
 </div>
 
-The next step of the preparation is to ensure system is stable & healthy before the upgrade. A sample list is given as an example below but should be customized for each customer and deployment (e.g if the router runs multicast or SRv6, extra health check should be performed):
+The next step of the preparation is to ensure system is stable & healthy before the upgrade. A sample list is given as an example below. It should be customized for each customer and deployment (e.g if the router runs multicast or SRv6, extra health check should be performed):
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -413,10 +413,10 @@ Once the sanity check is done, it’s recommended to drain/isolate the router. T
 
 # IOS XR Upgrade using install replace
 
-Software upgrade can be launched using ‘install replace’ command. install replace comes with several options:
-- commit will commit software configuration after system reload. This means there is no way to rollback to previous release by doing a system reload.
-- iso-config option can be used to replace the current system configuration by the configuration present in the Golden ISO. This option can be interesting for system staging and load a vanilla config
-- reload: while install replace always makes the smallest possible change, it’s possible to tell the system to reload
+Software upgrade can be launched using <code>install replace</code> command. _install replace_ comes with several options:
+- commit: will commit software configuration after system reload. This means there is no way to rollback to previous release by doing a system reload.
+- iso-config: can be used to replace the current system configuration by the configuration present in the Golden ISO. This option can be interesting for system staging and load a vanilla config
+- reload: while install replace always makes the smallest possible change, it’s possible to tell the system to reload anyway
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -951,7 +951,7 @@ Press RETURN to get started.
 
 # Monitoring install replace operation
 
-show install request can be used to monitor the current state:
+<code>show install request</code> can be used to monitor the current state:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -973,7 +973,7 @@ RP/0/RP0/CPU0:8808-1#
 </pre>
 </div>
 
-Ctrl + C can be used to return to exec prompt if 'asynchronous' option was used. To resume progress monitoring, install attach can be executed:
+Ctrl + C can be used to return to exec prompt if 'asynchronous' option was used. To resume progress monitoring, <code>install attach</code> can be executed:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -1226,7 +1226,7 @@ Can be used to retrieve XR version or Golden ISO label for instead:
 
 -  Cisco-IOS-XR-install-act: explore the model on [Cisco Feature Navigator YANG explorer](https://cfnng.cisco.com/ios-xr/yang-explorer/view-data-model?platform=8000&release=7.10.1&modelName=Cisco-IOS-XR-install-act)
 
-Can be used to launch install replace operation. For example, following netconf RPC triggers install replace operation using '8000-golden-x86_64-7.10.2-7102_cco.iso' Golden ISO file located on router's harddisk and forces a system reload:
+Can be used to launch _install replace_ operation. For example, following netconf RPC triggers install replace operation using '8000-golden-x86_64-7.10.2-7102_cco.iso' Golden ISO file located on router's harddisk and forces a system reload:
 
 ```
 <install-replace xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-install-act">
@@ -1248,4 +1248,4 @@ The whole process can be observed in the 6min [video clip below]({{site.baseurl}
 
 
 # Conclusion
-A Cisco IOS XR PhD is not required anymore to perform a software upgrade. Both install replace and Golden ISO can be leveraged to ease the process of staging, patching or upgrading the software running on Cisco 8000 routers.
+A Cisco IOS XR PhD is not required anymore to perform a software upgrade. Both _install replace_ and Golden ISO can be leveraged to ease the process of staging, patching or upgrading the software running on Cisco 8000 routers.
