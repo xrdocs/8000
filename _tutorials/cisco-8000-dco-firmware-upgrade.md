@@ -137,7 +137,7 @@ Thu Jun 27 22:36:14.025 JST
 </pre>
 </div>
 
-Similar information can be retrieved using Cisco-IOS-XR-controller-optics-oper:optics-oper/optics-ports/optics-port/optics-info YANG path.
+Similar information can be retrieved using Cisco-IOS-XR-controller-optics-oper:optics-oper/optics-ports/optics-port/optics-info YANG path with transceiver-info/vendor-info leaf.
 
 # Prerequisistes
 
