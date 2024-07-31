@@ -389,6 +389,9 @@ Directory of harddisk:
 The whole process can be observed in this 5min [video clip]({{site.baseurl}}/images/8000 factory reset.gif)
 ![8000 factory reset.gif]({{site.baseurl}}/images/8000 factory reset.gif)
 
+# Programmability
+
+Cisco 8000 factory reset can also be triggered using Netconf or gNMI using Cisco-IOS-XR-linux-security-factory-reset-act YANG model.
 
 # Conclusion
 
