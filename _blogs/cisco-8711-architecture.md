@@ -11,6 +11,8 @@ tags:
   - Silicon One P100
 position: hidden
 ---
+{% include toc icon="table" title="Cisco 8711 Architecture White Paper" %}
+
 # Introduction
 
 # Cisco 8711 Overview
