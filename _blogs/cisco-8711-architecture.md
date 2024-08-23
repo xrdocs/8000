@@ -9,6 +9,7 @@ excerpt: >-
 tags:
   - Cisco 8000
   - Silicon One P100
+  - Fixed System
 position: hidden
 ---
 {% include toc icon="table" title="Cisco 8711 Architecture White Paper" %}
