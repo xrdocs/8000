@@ -14,7 +14,7 @@ excerpt: >-
   This article will highlight how ports are allocated to IFG/Slice/NPU for each
   Cisco 8000 line card and systems.
 ---
-{% include toc icon="table" title="Port Assignments on Cisco 8100/8200, Cisco 8600, and Cisco 8800 Platforms"%} 
+{% include toc icon="table" title="Port Assignments on Cisco 8100/8200, Cisco 8700, Cisco 8600, and Cisco 8800 Platforms"%} 
 
 
 ## Introduction 
