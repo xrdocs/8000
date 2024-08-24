@@ -473,3 +473,4 @@ There are two Q200 NPUs on these line cards.
 | 5       | July-23  | Chang Soo Lee | Upgraded to high resolution     |  
 | 6       | September-13  | Chang Soo Lee | Added 8608     |  
 | 7       | June-4  | Chang Soo Lee | Added 88-LC1-36EH     |
+| 8       | August-23  | Chang Soo Lee | Added 8711-32FH-M     |  
