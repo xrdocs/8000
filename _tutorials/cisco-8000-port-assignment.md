@@ -1,7 +1,9 @@
 ---
 published: true
 date: '2022-03-01 22:07 +0100'
-title: 'Port Assignments on Cisco 8100/8200, Cisco 8608, and Cisco 8800 Platforms '
+title: >-
+  Port Assignments on Cisco 8100/8200, Cisco 8700, Cisco 8608, and Cisco 8800
+  Platforms 
 position: top
 tags:
   - iosxr
