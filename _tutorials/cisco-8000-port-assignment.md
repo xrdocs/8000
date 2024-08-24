@@ -178,7 +178,7 @@ Cisco 8201-32FH is made of a single Q200 NPU.
 | FH0/0/0/15 | 0/3/6         | FH0/0/0/31 | 0/1/2         |
 
 ### Cisco 8202-32FH-M
-Cisco 8202-32FH-M is made of a single Q200 NPU. It supports MACSec on all ports.  
+Cisco 8202-32FH-M is made of a single Q200 NPU. It supports MACsec on all ports.  
 ![8202-32FH-M.png]({{site.baseurl}}/images/8202-32FH-M.png){: .full}  
 
 | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
@@ -224,6 +224,30 @@ Cisco 8201-24H8FH is made of a single Q200 NPU. This system can support 24 ports
 | Hu0/0/0/11 | 0/5/10        | Hu0/0/0/25 | 0/0/0         |            |               |
 | FH0/0/0/12 | 0/3/6         | Hu0/0/0/26 | 0/2/4         |            |               |
 | Hu0/0/0/13 | 0/3/7         | Hu0/0/0/27 | 0/1/3         |            |               |  
+
+### Cisco 8212-48FH-M  
+Cisco 8212-48FH-M is made of a single P100 NPU.It supports MACsec on all ports.  
+
+![8212-48FH-M.png]({{site.baseurl}}/images/8212-48FH-M.png){: .full}  
+
+| Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
+|------------|---------------|------------|---------------|------------|---------------|
+| FH0/0/0/0  | 0/5/1         | FH0/0/0/16 | 0/4/1         | FH0/0/0/32 | 0/3/1         |
+| FH0/0/0/1  | 0/0/1         | FH0/0/0/17 | 0/1/1         | FH0/0/0/33 | 0/3/1         |
+| FH0/0/0/2  | 0/5/1         | FH0/0/0/18 | 0/4/1         | FH0/0/0/34 | 0/3/1         |
+| FH0/0/0/3  | 0/0/1         | FH0/0/0/19 | 0/1/1         | FH0/0/0/35 | 0/3/1         |
+| FH0/0/0/4  | 0/5/1         | FH0/0/0/20 | 0/4/1         | FH0/0/0/36 | 0/3/0         |
+| FH0/0/0/5  | 0/0/1         | FH0/0/0/21 | 0/1/1         | FH0/0/0/37 | 0/3/0         |
+| FH0/0/0/6  | 0/5/1         | FH0/0/0/22 | 0/4/1         | FH0/0/0/38 | 0/3/0         |
+| FH0/0/0/7  | 0/0/1         | FH0/0/0/23 | 0/1/1         | FH0/0/0/39 | 0/3/0         |
+| FH0/0/0/8  | 0/4/0         | FH0/0/0/24 | 0/5/0         | FH0/0/0/40 | 0/2/1         |
+| FH0/0/0/9  | 0/1/0         | FH0/0/0/25 | 0/0/0         | FH0/0/0/41 | 0/2/1         |
+| FH0/0/0/10 | 0/4/0         | FH0/0/0/26 | 0/5/0         | FH0/0/0/42 | 0/2/1         |
+| FH0/0/0/11 | 0/1/0         | FH0/0/0/27 | 0/0/0         | FH0/0/0/43 | 0/2/1         |
+| FH0/0/0/12 | 0/4/0         | FH0/0/0/28 | 0/5/0         | FH0/0/0/44 | 0/2/0         |
+| FH0/0/0/13 | 0/1/0         | FH0/0/0/29 | 0/0/0         | FH0/0/0/45 | 0/2/0         |
+| FH0/0/0/14 | 0/4/0         | FH0/0/0/30 | 0/5/0         | FH0/0/0/46 | 0/2/0         |
+| FH0/0/0/15 | 0/1/0         | FH0/0/0/31 | 0/0/0         | FH0/0/0/47 | 0/2/0         |  
 
 ### Cisco 8711-32FH-M
 Cisco 8711-32FH-M is made of a single P100 NPU. This system has 16 ports of QSFP-DD800 and 16 ports of QSFPDD-400.  
@@ -473,4 +497,4 @@ There are two Q200 NPUs on these line cards.
 | 5       | July-23  | Chang Soo Lee | Upgraded to high resolution     |  
 | 6       | September-13  | Chang Soo Lee | Added 8608     |  
 | 7       | June-4  | Chang Soo Lee | Added 88-LC1-36EH     |
-| 8       | August-23  | Chang Soo Lee | Added 8711-32FH-M     |  
+| 8       | August-23  | Chang Soo Lee | Added 8212-48FH-M, 8711-32FH-M     |  
