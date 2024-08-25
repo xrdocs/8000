@@ -103,7 +103,7 @@ FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G
 -- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH line card (not shown above)  
 
 - NPU core: Slice number  
--- Slice number should be between 0 and 5 for 8200/8608 (8000 fixed & centralized systems)   
+-- Slice number should be between 0 and 5 for 8200/8700/8608 (8000 fixed & centralized systems)   
 -- Slice number should be between 0 and 7 for 8111-32EH (8100 fixed system)   
 -- Slice number shoulbe be 0,1, 2 for 8800 Line cards (not shown above)   
 - PP port: IFG number, should be 0 or 1 within slice  
