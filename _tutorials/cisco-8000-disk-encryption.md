@@ -124,8 +124,8 @@ Booting latest from Disk..
 Loading Kernel..
 snip
 fstab modified mount options for 1 partitions
-Setup encrypted LV...
-Execute: cryptsetup luksOpen /dev/main-xr-vg/install-data-encrypted encrypted -d '-'
+<mark>Setup encrypted LV...</mark>
+<mark>Execute: cryptsetup luksOpen /dev/main-xr-vg/install-data-encrypted encrypted -d '-'</mark>
 snip
 [  OK  ] Found device Micron_5300_MTFDDAV480TDS partition01.
 [  OK  ] Found device Micron_5300_MTFDDAV480TDS DR-Part.
@@ -142,14 +142,14 @@ snip
          Starting File System Check…n-xr-vg/install-data-docker...
          Starting File System Check…main-xr-vg/install-data-log...
          Starting File System Check…-xr-vg/install-data-scratch...
-         Starting File System Check on /dev/mapper/encrypted...
+<mark>         Starting File System Check on /dev/mapper/encrypted...</mark>
          Starting File System Check on /dev/sda1...
          Starting File System Check on /dev/sda2...
 [  OK  ] Started LVM event activation on device 8:3.
 [  OK  ] Started File System Check on /dev/sda1.
 [  OK  ] Started File System Check on /dev/sda2.
          Mounting /mnt/dr_part...
-[  OK  ] Started File System Check on /dev/mapper/encrypted.
+<mark>[  OK  ] Started File System Check on /dev/mapper/encrypted.</mark>
          Mounting /var/xr/enc...
 [  OK  ] Started File System Check on /dev/main-xr-vg/boot-lv.
          Mounting /boot...
@@ -158,7 +158,7 @@ snip
          Mounting /var/lib/docker...
          Mounting /var/xr/scratch...
 [  OK  ] Mounted /mnt/dr_part.
-<mark>[  OK  ] Mounted /var/xr/enc.<mark>
+<mark>[  OK  ] Mounted /var/xr/enc.</mark>
 [  OK  ] Mounted /boot.
          Mounting /boot/efi...
 [  OK  ] Mounted /var/lib/docker.
@@ -170,5 +170,88 @@ SYSTEM CONFIGURATION COMPLETED
 </pre>
 </div>
 
+# Disk Encryption Verification
+
+Once the router has rebooted, disk encryption status can be seen as active:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#sh disk-encryption status
+Sat Aug 17 00 :44 :25.502 UTC
+Node :     node0_RP0_CPU0
+Mountpoint             Enc status             Mnt status             Prep status
+<mark>/var/xr/enc            Encrypted              Mounted                NA</mark>
+</code>
+</pre>
+</div>
+
+The new encrypted partition is also present:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP0/CPU0:8202-32FH-M_27#sh media
+Sat Aug 17 00:44:44.968 UTC
+Media Info for Location: node0_RP0_CPU0
+Partition                            Size     Used  Percent    Avail
+--------------------------------------------------------------------
+rootfs:                             46.2G    10.3G      22%      36G
+data:                               65.6G     9.3G      14%    56.4G
+<mark>/var/xr/enc                          134M     3.8M       4%     120M</mark>
+disk0:                               3.3G      15M       1%     3.1G
+/var/lib/docker                      5.6G      13M       1%     5.3G
+harddisk:                             51G     7.6G      16%      41G
+log:                                 4.5G     463M      11%     3.8G
+</code>
+</pre>
+</div>
+
+# The case of Cisco 8600 & 8800
+The disk encryption feature must be enabled on a node-by-node basis. This means both Route Processor (RP) must be encrypted for Cisco 8800 distributed systems or 8600 centralized systems running with redundant RPs.  
+
+When using the ‘all’ keyword, both RP will be encrypted and reload, trigerring a chassis reboot:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+RP/0/RP1/CPU0:8812-2#disk-encryption activate location all
+Mon Aug 26 14:21:45.614 UTC
+RP/0/RP0/CPU0:Aug 26 14:21:45.622280 UTC: ssd_enc_server[153]: %OS-SSD_ENC-1-PREPARE_STARTED : Encryption activation prepare is in progress. Once it completes successfully, system will reload. Check encryption status by executing 'show disk-encryption status' CLI
+RP/0/RP1/CPU0:Aug 26 14:21:45.637364 UTC: ssd_enc_server[231]: %OS-SSD_ENC-1-PREPARE_STARTED : Encryption activation prepare is in progress. Once it completes successfully, system will reload. Check encryption status by executing 'show disk-encryption status' CLI
+</code>
+</pre>
+</div>
+
+Disk encryption can also be done on a per-RP basis. The active RP reload will then trigger a switchover to the standby RP:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+
+RP/0/<mark>RP1</mark>/CPU0:8812-2#sh disk-encryption status location 0/rp1/CPU0
+Mon Aug 26 14:12:22.167 UTC
+<mark>Node:     node0_RP1_CPU0</mark>
+--------------------------------------------------------------------------------
+Mountpoint             Enc status             Mnt status             Prep status
+--------------------------------------------------------------------------------
+/var/xr/enc            <mark>Not Encrypted</mark>          Not Mounted            NA
+
+
+RP/0/RP1/CPU0:8812-2#sh disk-encryption status location 0/rp0/CPU0
+Mon Aug 26 14:12:33.819 UTC
+<mark>Node:     node0_RP0_CPU0</mark>
+--------------------------------------------------------------------------------
+Mountpoint             Enc status             Mnt status             Prep status
+--------------------------------------------------------------------------------
+/var/xr/enc            <mark>Encrypted</mark>              Mounted                NA
+
+RP/0/RP1/CPU0:8812-2#
+</code>
+</pre>
+</div>
+
+**Note:** In case of RP RMA, disk encryption must be launched again on the newly inserted RP.
+{: .notice--primary}
 
 # Conclusion
