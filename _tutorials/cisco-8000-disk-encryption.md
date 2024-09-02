@@ -14,6 +14,8 @@ tags:
   - TAm
 position: hidden
 ---
+{% include toc icon="table" title="Cisco 8000 Disk Encryption" %}
+
 # Introduction
 This article aims to describe the disk encryption feature on Cisco 8000 routers.  
 This functionality creates an encrypted partition where sensitive data such configuration, certificates and keys are stored. This secured partition is only accessible using a specific key which is stored inside Cisco 8000 Trust Anchor module (TAm) chip.
