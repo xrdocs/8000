@@ -209,7 +209,7 @@ log:                                 4.5G     463M      11%     3.8G
 </pre>
 </div>
 
-# The case of Cisco 8600 & 8800
+# The Case of dual RP
 The disk encryption feature must be enabled on a node-by-node basis. This means both Route Processor (RP) must be encrypted for Cisco 8800 distributed systems or 8600 centralized systems running with redundant RPs.  
 
 When using the ‘all’ keyword, both RP will be encrypted and reload, trigerring a chassis reboot:
