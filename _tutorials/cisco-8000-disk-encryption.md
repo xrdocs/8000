@@ -292,3 +292,6 @@ RP/0/RP1/CPU0:8812-2#
 
 # Conclusion
 This article demonstrated how to activate disk encryption feature on Cisco 8000 routers. This functionality helps operating Cisco 8000 routers with the highest level of security. A future evolution of this feature is planned to provide full disk encryption.
+
+# Acknowledgement
+I’d like to thanks Rakesh Kandula for his review and feedback.
