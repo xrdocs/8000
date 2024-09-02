@@ -40,7 +40,7 @@ Node:     node0_RP0_CPU0
 --------------------------------------------------------------------------------
 Mountpoint             Enc status             Mnt status             Prep status
 --------------------------------------------------------------------------------
-/var/xr/enc            Not Encrypted          Not Mounted            NA
+<mark>/var/xr/enc            Not Encrypted          Not Mounted</mark>            NA
 </code>
 </pre>
 </div>
