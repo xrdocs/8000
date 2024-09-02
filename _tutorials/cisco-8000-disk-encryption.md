@@ -77,7 +77,7 @@ RP/0/RP0/CPU0:8202-32FH-M_27#disk-encryption ?
 </pre>
 </div>
 
-**Note:** Once CLI is entered, the secured partition will be created and the system automatically reloads. System does not prompt for confirmation.
+**Note:** Once CLI is entered, the secured partition will be created/deleted and the router automatically reloads. System does not prompt for user confirmation.
 {: .notice--info}
 
 On Cisco 8100/8200/8700 fixed systems, <code>disk-encryption activate</code> must be executed in XR exec mode:
