@@ -228,7 +228,6 @@ Disk encryption can also be done on a per-RP basis. The active RP reload will th
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-
 RP/0/<mark>RP1</mark>/CPU0:8812-2#sh disk-encryption status location 0/rp1/CPU0
 Mon Aug 26 14:12:22.167 UTC
 <mark>Node:     node0_RP1_CPU0</mark>
@@ -254,4 +253,40 @@ RP/0/RP1/CPU0:8812-2#
 **Note:** In case of RP RMA, disk encryption must be launched again on the newly inserted RP.
 {: .notice--primary}
 
+## Programmability
+<code>Cisco-IOS-XR-linux-security-showenc-oper:disk-encryption</code> YANG path can be used to monitor encryption status:
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>
+{
+  "node_id_str": "Saturn-8711-32FH-M",
+  "subscription_id_str": "app_TEST_200000001",
+  "encoding_path": "Cisco-IOS-XR-linux-security-showenc-oper:disk-encryption/node",
+  "collection_id": "759774",
+  "collection_start_time": "1725279408203",
+  "msg_timestamp": "1725279408205",
+  "data_json": [
+    {
+      "timestamp": "1725279408204",
+      "keys": [
+        {
+          "node-name": "0/RP0/CPU0"
+        }
+      ],
+<mark>      "content": {
+        "lv-mnt-pt": "/var/xr/enc",
+        "enc-status": "Not Encrypted",
+        "mnt-status": "Not Mounted",
+        "prep-status": "NA"
+      }</mark>
+    }
+  ],
+  "collection_end_time": "1725279408205"
+}
+</code>
+</pre>
+</div>
+
 # Conclusion
+This article demonstrated how to activate disk encryption feature on Cisco 8000 routers. This functionality helps operating Cisco 8000 routers with the highest level of security. A future evolution of this feature is planned to provide full disk encryption.
