@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 date: '2024-09-02 15:48 +0200'
 title: Cisco 8000 Disk Encryption
 author: Frederic Cuiller
