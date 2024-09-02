@@ -255,7 +255,7 @@ RP/0/RP1/CPU0:8812-2#
 **Note:** In case of RP RMA, disk encryption must be launched again on the newly inserted RP.
 {: .notice--primary}
 
-## Programmability
+# Programmability
 <code>Cisco-IOS-XR-linux-security-showenc-oper:disk-encryption</code> YANG path can be used to monitor encryption status:
 
 <div class="highlighter-rouge">
