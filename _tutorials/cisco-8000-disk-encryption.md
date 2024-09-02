@@ -45,7 +45,7 @@ Mountpoint             Enc status             Mnt status             Prep status
 </pre>
 </div>
 
-Additional, there is no secured partition mounted:
+Additionaly, there is no secured partition mounted:
 
 <div class="highlighter-rouge">
 <pre class="highlight">
