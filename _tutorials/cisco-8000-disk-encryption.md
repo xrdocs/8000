@@ -18,7 +18,7 @@ position: top
 
 # Introduction
 This article aims to describe the disk encryption feature on Cisco 8000 routers.  
-This functionality creates an encrypted partition where sensitive data such configuration, certificates and keys are stored. This secured partition is only accessible using a specific key which is stored inside Cisco 8000 Trust Anchor module (TAm) chip.
+This functionality creates an encrypted partition where sensitive data such as configuration, certificates and keys are stored. This encrypted partition can be decrypted only using a specific key which is stored inside the Cisco 8000 Trust Anchor module (TAm) chip.
 
 # How Does it Work?
 Based on a Linux kernel, Cisco IOS XR leverages Linux dm-crypt infrastructure and additional components such Logical Volume Manager (LVM), Device-Mapper (DM), cryptsetup, Linux Unified Key Setup (LUKS); to transparently encrypt and decrypt data stored on the hard disk.
