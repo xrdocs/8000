@@ -466,7 +466,7 @@ The Cisco 88-LC1-12TH24FH-E  P100 based collapsed core, peering and aggregation 
 The Cisco 88-LC1-52Y8H-EM P100 based collapsed core, peering and aggregation optimized line card provides 4 ports of 400G, 8 ports of 100G, and 52 ports of 10G/25G, aggregating to a total bandwidth of 3.7 Tbps. There are two P100 NPUs on this line card. Allow Flexible combination of 400G/100G/40G/25G/10G/1G Optics and port based Breakout options. This line card supports MACsec on port speed at line rate.  
 
 ![K2-2.png]({{site.baseurl}}/images/K2-2.png)  
-<b>88-LC1-52Y12H-EM</b>  
+<b>88-LC1-52Y8H-EM</b>  
 {: .text-center}  
 
 | Interface                                                                                        | NPU/Slice/IFG | Interface                                                                                                           | NPU/Slice/IFG | Interface                                                                                                              | NPU/Slice/IFG | Interface                                                                                      | NPU/Slice/IFG |
