@@ -459,7 +459,18 @@ The Cisco 88-LC1-12TH24FH-E  P100 based collapsed core, peering and aggregation 
 
 **Note**: x is slot number in Cisco 8800 router  
 
+### 88-LC1-52Y12H-EM  
+The Cisco 88-LC1-52Y12H-EM P100 based collapsed core, peering and aggregation optimized line card provides 4 ports of 400G, 8 ports of 100G, and 52 ports of 10G/25G, aggregating to a total bandwidth of 3.7 Tbps. There are two P100 NPUs on this line card. Allow Flexible combination of 400G/100G/40G/25G/10G/1G Optics and port based Breakout options. This line card supports MACsec on port speed at line rate.  
 
+
+
+| Interface                                                                                        | NPU/Slice/IFG | Interface                                                                                                           | NPU/Slice/IFG | Interface                                                                                                              | NPU/Slice/IFG | Interface                                                                                      | NPU/Slice/IFG |
+|--------------------------------------------------------------------------------------------------|---------------|---------------------------------------------------------------------------------------------------------------------|---------------|------------------------------------------------------------------------------------------------------------------------|---------------|------------------------------------------------------------------------------------------------|---------------|
+| FH0/x/0/31                                                                                       | 0/0/0         | TF0/x/0/7, TF0/x/0/8, TF0/x/0/10, TF0/x/0/11, TF0/x/0/13, TF0/x/0/14, TF0/x/0/16, TF0/x/0/17                        | 0/1/1         | TF0/x/0/61, TF0/x/0/58, TF0/x/0/55, TF0/x/0/52, TF0/x/0/49, TF0/x/0/34, TF0/x/0/37, TF0/x/0/40, TF0/x/0/43, TF0/x/0/46 | 1/0/0         | TF0/x/0/35, TF0/x/0/36, TF0/x/0/38, TF0/x/0/39, TF0/x/0/41, TF0/x/0/42, TF0/x/0/44, TF0/x/0/45 | 1/1/1        |
+| FH0/x/0/30                                                                                       | 0/0/1         | Hu0/x/0/5, Hu0/x/0/4, Hu0/x/0/2, Hu0/x/0/1                                                                          | 0/2/0         | Hu0/x/0/63, Hu0/x/0/59, Hu0/x/0/60, Hu0/x/0/62                                                                         | 1/0/1         | FH0/x/0/33                                                                                     | 1/2/0        |
+| TF0/x/0/19, TF0/x/0/20, TF0/x/0/22, TF0/x/0/23, TF0/x/0/25, TF0/x/0/26, TF0/x/0/28, TF0/x/0/29   | 0/1/0         | TF0/x/0/0, TF0/x/0/3, TF0/x/0/6, TF0/x/0/9, TF0/x/0/12, TF0/x/0/15, TF0/x/0/18, TF0/x/0/21, TF0/x/0/24, TF0/x/0/27  | 0/2/1         | TF0/x/0/57, TF0/x/0/56, TF0/x/0/54, TF0/x/0/53, TF0/x/0/51, TF0/x/0/50, TF0/x/0/48, TF0/x/0/47                         | 1/1/0        | FH0/x/0/32                                                                                     | 1/2/1        |  
+
+**Note**: x is slot number in Cisco 8800 router  
 
 ### 8800-LC-48H 
 There are two Q100 NPUs on these line cards.
