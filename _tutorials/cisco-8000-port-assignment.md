@@ -95,6 +95,113 @@ FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G
 </pre>
 </div>  
 
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+RP/0/RP0/CPU0:Cisco8808#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all location 0/7/CPU0</span>
+
+----------------------------------------------------------------------------------------
+Node ID: 0/7/CPU0
+Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
+name         handle    <mark>#    #    #</mark>   Port  base  base       port     speed      IFG #
+             (hex)                                          type                
+----------------------------------------------------------------------------------------
+Hu0/7/0/0/0  1c0001f0   0   2    0     4  40064      0    etm_local    100G      4
+Hu0/7/0/0/0  1c0001f0   0   2    0     4  33344      0   etm_global    100G      4
+Hu0/7/0/0/1  1c0001f8   0   2    1     5  52816      0    etm_local    100G      5
+Hu0/7/0/0/1  1c0001f8   0   2    1     5  33360      0   etm_global    100G      5
+Hu0/7/0/4/0  1c000200   0   1    1     6  52800      0    etm_local    100G      3
+Hu0/7/0/4/0  1c000200   0   1    1     6  33376      0   etm_global    100G      3
+Hu0/7/0/4/1  1c000208   0   1    0     7  40080      0    etm_local    100G      2
+Hu0/7/0/4/1  1c000208   0   1    0     7  33392      0   etm_global    100G      2
+Hu0/7/0/12/0 1c000230   1   1    1    12  52800      0    etm_local    100G      3
+Hu0/7/0/12/0 1c000230   1   1    1    12  33472      0   etm_global    100G      3
+Hu0/7/0/12/1 1c000238   1   1    0    13  40080      0    etm_local    100G      2
+Hu0/7/0/12/1 1c000238   1   1    0    13  33488      0   etm_global    100G      2
+Hu0/7/0/16/0 1c000240   1   0    1    14  52800      0    etm_local    100G      1
+Hu0/7/0/16/0 1c000240   1   0    1    14  33504      0   etm_global    100G      1
+Hu0/7/0/16/1 1c000248   1   0    0    15  40080      0    etm_local    100G      0
+Hu0/7/0/16/1 1c000248   1   0    0    15  33520      0   etm_global    100G      0
+Hu0/7/0/18/0 1c000250   2   2    1    16  52800      0    etm_local    100G      5
+Hu0/7/0/18/0 1c000250   2   2    1    16  33536      0   etm_global    100G      5
+Hu0/7/0/18/1 1c000258   2   2    0    17  40080      0    etm_local    100G      4
+Hu0/7/0/18/1 1c000258   2   2    0    17  33552      0   etm_global    100G      4
+Hu0/7/0/22/0 1c000260   3   2    0    18  40064      0    etm_local    100G      4
+Hu0/7/0/22/0 1c000260   3   2    0    18  33568      0   etm_global    100G      4
+Hu0/7/0/22/1 1c000268   3   2    1    19  52816      0    etm_local    100G      5
+Hu0/7/0/22/1 1c000268   3   2    1    19  33584      0   etm_global    100G      5
+Hu0/7/0/24/0 1c000270   3   1    1    20  52800      0    etm_local    100G      3
+Hu0/7/0/24/0 1c000270   3   1    1    20  33600      0   etm_global    100G      3
+Hu0/7/0/24/1 1c000278   3   1    0    21  40080      0    etm_local    100G      2
+Hu0/7/0/24/1 1c000278   3   1    0    21  33616      0   etm_global    100G      2
+Hu0/7/0/28/0 1c000280   3   0    1    22  52800      0    etm_local    100G      1
+Hu0/7/0/28/0 1c000280   3   0    1    22  33632      0   etm_global    100G      1
+Hu0/7/0/28/1 1c000288   3   0    0    23  40080      0    etm_local    100G      0
+Hu0/7/0/28/1 1c000288   3   0    0    23  33648      0   etm_global    100G      0
+Hu0/7/0/30/0 1c000290   2   1    1    24  52800      0    etm_local    100G      3
+Hu0/7/0/30/0 1c000290   2   1    1    24  33664      0   etm_global    100G      3
+Hu0/7/0/30/1 1c000298   2   1    0    25  40080      0    etm_local    100G      2
+Hu0/7/0/30/1 1c000298   2   1    0    25  33680      0   etm_global    100G      2
+Hu0/7/0/34/0 1c0002a0   2   0    1    26  52800      0    etm_local    100G      1
+Hu0/7/0/34/0 1c0002a0   2   0    1    26  33696      0   etm_global    100G      1
+Hu0/7/0/34/1 1c0002a8   2   0    0    27  40080      0    etm_local    100G      0
+Hu0/7/0/34/1 1c0002a8   2   0    0    27  33712      0   etm_global    100G      0
+FH0/7/0/35   1c0002b0   2   0    0    28  40088      0    etm_local    400G      0
+FH0/7/0/35   1c0002b0   2   0    0    28  33720      0   etm_global    400G      0
+FH0/7/0/1    1c0002b8   0   2    0    29  40072      0    etm_local    400G      4
+FH0/7/0/1    1c0002b8   0   2    0    29  33352      0   etm_global    400G      4
+FH0/7/0/2    1c0002c0   0   2    1    30  52824      0    etm_local    400G      5
+FH0/7/0/2    1c0002c0   0   2    1    30  33368      0   etm_global    400G      5
+FH0/7/0/3    1c0002c8   0   1    1    31  52808      0    etm_local    400G      3
+FH0/7/0/3    1c0002c8   0   1    1    31  33384      0   etm_global    400G      3
+FH0/7/0/5    1c0002d0   0   1    0    32  40088      0    etm_local    400G      2
+FH0/7/0/5    1c0002d0   0   1    0    32  33400      0   etm_global    400G      2
+FH0/7/0/7    1c0002d8   0   0    1    33  52808      0    etm_local    400G      1
+FH0/7/0/7    1c0002d8   0   0    1    33  33416      0   etm_global    400G      1
+FH0/7/0/11   1c0002f0   1   2    0    36  40088      0    etm_local    400G      4
+FH0/7/0/11   1c0002f0   1   2    0    36  33464      0   etm_global    400G      4
+FH0/7/0/13   1c0002f8   1   1    1    37  52808      0    etm_local    400G      3
+FH0/7/0/13   1c0002f8   1   1    1    37  33480      0   etm_global    400G      3
+FH0/7/0/14   1c000300   1   0    0    38  40088      0    etm_local    400G      0
+FH0/7/0/14   1c000300   1   0    0    38  33528      0   etm_global    400G      0
+FH0/7/0/15   1c000308   1   1    0    39  40088      0    etm_local    400G      2
+FH0/7/0/15   1c000308   1   1    0    39  33496      0   etm_global    400G      2
+FH0/7/0/17   1c000310   1   0    1    40  52808      0    etm_local    400G      1
+FH0/7/0/17   1c000310   1   0    1    40  33512      0   etm_global    400G      1
+FH0/7/0/19   1c000318   2   2    1    41  52808      0    etm_local    400G      5
+FH0/7/0/19   1c000318   2   2    1    41  33544      0   etm_global    400G      5
+FH0/7/0/20   1c000320   3   2    1    42  52824      0    etm_local    400G      5
+FH0/7/0/20   1c000320   3   2    1    42  33592      0   etm_global    400G      5
+FH0/7/0/21   1c000328   2   2    0    43  40088      0    etm_local    400G      4
+FH0/7/0/21   1c000328   2   2    0    43  33560      0   etm_global    400G      4
+FH0/7/0/23   1c000330   3   2    0    44  40072      0    etm_local    400G      4
+FH0/7/0/23   1c000330   3   2    0    44  33576      0   etm_global    400G      4
+FH0/7/0/25   1c000338   3   1    1    45  52808      0    etm_local    400G      3
+FH0/7/0/25   1c000338   3   1    1    45  33608      0   etm_global    400G      3
+FH0/7/0/26   1c000340   3   1    0    46  40088      0    etm_local    400G      2
+FH0/7/0/26   1c000340   3   1    0    46  33624      0   etm_global    400G      2
+FH0/7/0/27   1c000348   3   0    1    47  52808      0    etm_local    400G      1
+FH0/7/0/27   1c000348   3   0    1    47  33640      0   etm_global    400G      1
+FH0/7/0/29   1c000350   3   0    0   117  40088      0    etm_local    400G      0
+FH0/7/0/29   1c000350   3   0    0   117  33656      0   etm_global    400G      0
+FH0/7/0/31   1c000358   2   1    1   118  52808      0    etm_local    400G      3
+FH0/7/0/31   1c000358   2   1    1   118  33672      0   etm_global    400G      3
+FH0/7/0/32   1c000360   2   1    0   119  40088      0    etm_local    400G      2
+FH0/7/0/32   1c000360   2   1    0   119  33688      0   etm_global    400G      2
+FH0/7/0/33   1c000368   2   0    1   120  52808      0    etm_local    400G      1
+FH0/7/0/33   1c000368   2   0    1   120  33704      0   etm_global    400G      1
+Hu0/7/0/6    1c000378   0   0    1   121  52800      0    etm_local    100G      1
+Hu0/7/0/6    1c000378   0   0    1   121  33408      0   etm_global    100G      1
+Hu0/7/0/10   1c000410   1   2    1   122  52800      0    etm_local    100G      5
+Hu0/7/0/10   1c000410   1   2    1   122  33440      0   etm_global    100G      5
+Hu0/7/0/8    1c0007a8   1   2    1    34  52808      0    etm_local    100G      5
+Hu0/7/0/8    1c0007a8   1   2    1    34  33448      0   etm_global    100G      5
+Hu0/7/0/9    1c0007b8   0   0    0    35  40080      0    etm_local    100G      0
+Hu0/7/0/9    1c0007b8   0   0    0    35  33424      0   etm_global    100G      0  
+</code>
+</pre>
+</div>  
+
 
 - NPU #: NPU number  
 -- NPU number should be 0 for 8100/8200/8700/8608 (8000 fixed & centralized systems)    
