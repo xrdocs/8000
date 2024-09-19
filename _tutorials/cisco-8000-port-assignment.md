@@ -105,8 +105,8 @@ Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ    
 name         handle    <mark>#    #    #</mark>   Port  base  base       port     speed      IFG #
              (hex)                                          type                
 ----------------------------------------------------------------------------------------
-Hu0/7/0/0/0  1c0001f0   0   2    0     4  40064      0    etm_local    100G      4
-Hu0/7/0/0/0  1c0001f0   0   2    0     4  33344      0   etm_global    100G      4
+Hu0/7/0/0/0  1c0001f0   0   2    0     4  40064      0    <mark>etm_local</mark>    100G      4
+Hu0/7/0/0/0  1c0001f0   0   2    0     4  33344      0   <mark>etm_global</mark>    100G      4
 Hu0/7/0/0/1  1c0001f8   0   2    1     5  52816      0    etm_local    100G      5
 Hu0/7/0/0/1  1c0001f8   0   2    1     5  33360      0   etm_global    100G      5
 Hu0/7/0/4/0  1c000200   0   1    1     6  52800      0    etm_local    100G      3
