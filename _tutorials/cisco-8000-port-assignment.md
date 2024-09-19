@@ -99,8 +99,8 @@ FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G
 - NPU #: NPU number  
 -- NPU number should be 0 for 8100/8200/8700/8608 (8000 fixed & centralized systems)    
 -- NPU number should be 0, 1, 2 for 88-LC0-36FH line card (not shown above)  
--- NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown above)  
--- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH line card (not shown above)  
+-- NPU number should be should be 0, 1 for 88-LC0-34H14FH/88-LC1-52Y12H-EM line card (not shown above)  
+-- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH/88-LC1-12TH24FH-E line card (not shown above)  
 
 - NPU core: Slice number  
 -- Slice number should be between 0 and 5 for 8200/8700/8608 (8000 fixed & centralized systems)   
@@ -500,4 +500,4 @@ There are two Q200 NPUs on these line cards.
 | 5       | July-23  | Chang Soo Lee | Upgraded to high resolution     |  
 | 6       | September-13  | Chang Soo Lee | Added 8608     |  
 | 7       | June-4  | Chang Soo Lee | Added 88-LC1-36EH     |
-| 8       | August-23  | Chang Soo Lee | Added 8212-48FH-M, 8711-32FH-M     |  
+| 8       | August-23  | Chang Soo Lee | Added 8212-48FH-M, 8711-32FH-M     |
