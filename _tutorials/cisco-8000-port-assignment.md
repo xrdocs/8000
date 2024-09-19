@@ -205,7 +205,7 @@ Hu0/7/0/9    1c0007b8   0   0    0    35  33424      0   etm_global    100G     
 - NPU #: NPU number  
 -- NPU number should be 0 for 8100/8200/8700/8608 (8000 fixed & centralized systems)    
 -- NPU number should be 0, 1, 2 for 88-LC0-36FH line card (not shown above)  
--- NPU number should be should be 0, 1 for 88-LC0-34H14FH/88-LC1-52Y12H-EM line card (not shown above)  
+-- NPU number should be should be 0, 1 for 88-LC0-34H14FH/88-LC1-52Y8H-EM line card (not shown above)  
 -- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH/88-LC1-12TH24FH-E line card    
 
 - NPU core: Slice number  
