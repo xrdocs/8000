@@ -98,7 +98,7 @@ FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
-RP/0/RP0/CPU0:Cisco8808#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all location 0/7/CPU0</span>
+RP/0/RP0/CPU0:Cisco8808-88-LC1-12TH24FH-E#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all location 0/7/CPU0</span>
 ----------------------------------------------------------------------------------------
 Node ID: 0/7/CPU0
 Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
@@ -206,7 +206,7 @@ Hu0/7/0/9    1c0007b8   0   0    0    35  33424      0   etm_global    100G     
 -- NPU number should be 0 for 8100/8200/8700/8608 (8000 fixed & centralized systems)    
 -- NPU number should be 0, 1, 2 for 88-LC0-36FH line card (not shown above)  
 -- NPU number should be should be 0, 1 for 88-LC0-34H14FH/88-LC1-52Y8H-EM line card (not shown above)  
--- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH/88-LC1-12TH24FH-E line card    
+-- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH (not shown above)/ 88-LC1-12TH24FH-E line card    
 
 - NPU core: Slice number  
 -- Slice number should be between 0 and 5 for 8200/8700/8608 (8000 fixed & centralized systems)   
