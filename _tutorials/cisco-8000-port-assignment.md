@@ -446,6 +446,19 @@ The Cisco 88-LC1-36EH P100 based transport optimized line card provides 36 ports
 The Cisco 88-LC1-12TH24FH-E  P100 based collapsed core, peering and aggregation optimized line card provides 24 ports of 400G, 12 ports of 200G, aggregating to a total bandwidth of 12 Tbps. There are four P100 NPUs on this line card. Allow Flexible combination of 400G/100G/40G/25G/10G Optics and port based Breakout options. This line card supports MACsec on port speed at line rate.  
 
 
+| Interface                 | NPU/Slice/IFG | Interface                | NPU/Slice/IFG | Interface                | NPU/Slice/IFG |
+|---------------------------|---------------|--------------------------|---------------|--------------------------|---------------|
+| Hu0/x/0/6/1, FH0/x/0/9    | 0/0/0         | FH0/x/0/15, Hu0/x/0/12/1 | 1/1/0        | FH0/x/0/21, Hu0/x/0/18/1 | 2/2/00        |
+| FH0/x/0/7, Hu0/x/0/6/0    | 0/0/1         | FH0/x/0/13, Hu0/x/0/12/0 | 1/1/1        | FH0/x/0/19, Hu0/x/0/18/0 | 2/2/01        |
+| FH0/x/0/5, Hu0/x/0/4/1    | 0/1/0         | FH0/x/0/11, Hu0/x/0/10/1 | 1/2/0        | FH0/x/0/29, Hu0/x/0/28/1 | 3/0/0         |
+| FH0/x/0/3, Hu0/x/0/4/0    | 0/1/1         | FH0/x/0/8, Hu0/x/0/10/0  | 1/2/1        | FH0/x/0/27, Hu0/x/0/28/0 | 3/0/1         |
+| FH0/x/0/1, Hu0/x/0/0/0    | 0/2/0         | FH0/x/0/35, Hu0/x/0/34/1 | 2/0/0         | FH0/x/0/26, Hu0/x/0/24/1 | 3/1/0        |
+| FH0/x/0/2, Hu0/x/0/0/1    | 0/2/1         | FH0/x/0/33, Hu0/x/0/34/0 | 2/0/1         | FH0/x/0/25, Hu0/x/0/24/0 | 3/1/1        |
+| FH0/x/0/14, Hu0/x/0/16/1  | 1/0/0         | FH0/x/0/32, Hu0/x/0/30/1 | 2/1/0        | FH0/x/0/23, Hu0/x/0/22/0 | 3/2/0        |
+| FH0/x/0/17, Hu0/x/0/16/0  | 1/0/1         | FH0/x/0/31, Hu0/x/0/30/0 | 2/1/1        | FH0/x/0/20, Hu0/x/0/22/1 | 3/2/1        |  
+
+**Note**: x is slot number in Cisco 8800 router  
+
 
 
 ### 8800-LC-48H 
