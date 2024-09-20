@@ -564,7 +564,7 @@ The Cisco 88-LC1-36EH P100 based transport optimized line card provides 36 ports
 ### 88-LC1-12TH24FH-E  
 The Cisco 88-LC1-12TH24FH-E  P100 based collapsed core, peering and aggregation optimized line card provides 24 ports of 400G, 12 ports of 200G, aggregating to a total bandwidth of 12 Tbps. There are four P100 NPUs on this line card.  Allow Flexible combination of 400G/100G/40G/25G/10G Optics and port based Breakout options. This line card doesn't support MACsec.    
 
-![Everest-photo2.png]({{site.baseurl}}/images/Everest-photo2.png)   
+![Everest-photo5.png]({{site.baseurl}}/images/Everest-photo5.png)    
 
 ![Everest-2.png]({{site.baseurl}}/images/Everest-2.png)  
 
