@@ -393,7 +393,7 @@ Cisco 8201-24H8FH is made of a single Q200 NPU. This system can support 24 ports
 | Hu0/0/0/13 | 0/3/7         | Hu0/0/0/27 | 0/1/3         |            |               |  
 
 ### Cisco 8212-48FH-M  
-Cisco 8212-48FH-M is made of a single P100 NPU. This system has 24 ports of QSFP-DD800 and 24 ports of QSFP56-DD. It supports MACsec on all ports.  
+Cisco 8212-48FH-M is made of a single P100 NPU. This system has 24 ports of QSFP-DD800 and 24 ports of QSFP56-DD. It supports MACsec on all ports. All ports support PTP timing at Class C performance.    
 
 ![Slugger-photo.png]({{site.baseurl}}/images/Slugger-photo.png){: .full}    
 
@@ -420,7 +420,7 @@ Cisco 8212-48FH-M is made of a single P100 NPU. This system has 24 ports of QSFP
 
 ### Cisco 8711-32FH-M
 Cisco 8711-32FH-M is made of a single P100 NPU. This system has 16 ports of QSFP-DD800 and 16 ports of QSFP56-DD. It supports MACsec on all ports.    
-Cisco 8700 products embody this cutting-edge innovation of the 8000 portfolio, offering advanced features engineered for seamless integration and scalability.  
+Cisco 8700 products embody this cutting-edge innovation of the 8000 portfolio, offering advanced features engineered for seamless integration and scalability. All ports support PTP timing at Class C performance.    
 
 ![Saturn photo7.png]({{site.baseurl}}/images/Saturn photo7.png){: .full}  
 
@@ -587,7 +587,7 @@ There are three Q200 NPUs on these line cards.
 **Note**: x is slot number in Cisco 8800 router  
 
 ### 88-LC1-36EH  
-The Cisco 88-LC1-36EH P100 based transport optimized line card provides 36 ports of 800G (high dense 400 GbE), aggregating to a total bandwidth of 28.8 Tbps.There are four P100 NPUs on this line card. Allow Flexible combination of 800G/400G/200G/100G/40G/10G Optics and port based Breakout options. This line card doesn't support MACsec.  
+The Cisco 88-LC1-36EH P100 based transport optimized line card provides 36 ports of 800G (high dense 400 GbE), aggregating to a total bandwidth of 28.8 Tbps.There are four P100 NPUs on this line card. Allow Flexible combination of 800G/400G/200G/100G/40G/10G Optics and port based Breakout options. This line card doesn't support MACsec. All ports support PTP timing at Class C performance.    
 
 ![Fury photo.png]({{site.baseurl}}/images/Fury photo.png)  
 
@@ -611,7 +611,7 @@ The Cisco 88-LC1-36EH P100 based transport optimized line card provides 36 ports
 **Note**: x is slot number in Cisco 8800 router  
 
 ### 88-LC1-12TH24FH-E  
-The Cisco 88-LC1-12TH24FH-E  P100 based collapsed core, peering and aggregation optimized line card provides 24 ports of 400G, 12 ports of 200G, aggregating to a total bandwidth of 12 Tbps. There are four P100 NPUs on this line card.  Allow Flexible combination of 400G/100G/40G/25G/10G Optics and port based Breakout options. This line card doesn't support MACsec.  
+The Cisco 88-LC1-12TH24FH-E  P100 based collapsed core, peering, aggregation and WAN Internet Gateway optimized line card provides 24 ports of 400G, 12 ports of 200G, aggregating to a total bandwidth of 12 Tbps. There are four P100 NPUs on this line card.  Allow Flexible combination of 400G/100G/40G/25G/10G Optics and port based Breakout options. This line card doesn't support MACsec. All ports support PTP timing at Class C performance.    
 
 ![Screenshot 2024-09-20 at 11.50.51 AM.png]({{site.baseurl}}/images/Screenshot 2024-09-20 at 11.50.51 AM.png)  
 
@@ -632,7 +632,7 @@ The Cisco 88-LC1-12TH24FH-E  P100 based collapsed core, peering and aggregation 
 **Note**: x is slot number in Cisco 8800 router  
 
 ### 88-LC1-52Y8H-EM  
-The Cisco 88-LC1-52Y8H-EM P100 based collapsed core, peering and aggregation optimized line card provides 4 ports of 400G, 8 ports of 100G, and 52 ports of 10G/25G, aggregating to a total bandwidth of 3.7 Tbps. There are two P100 NPUs on this line card. Allow Flexible combination of 400G/100G/40G/25G/10G/1G Optics and port based Breakout options. This line card supports MACsec on port speed at line rate.  
+The Cisco 88-LC1-52Y8H-EM P100 based collapsed core, peering, aggregation and WAN Internet Gateway optimized line card provides 4 ports of 400G, 8 ports of 100G, and 52 ports of 10G/25G, aggregating to a total bandwidth of 3.7 Tbps. There are two P100 NPUs on this line card. Allow Flexible combination of 400G/100G/40G/25G/10G/1G Optics and port based Breakout options. This line card supports MACsec on port speed at line rate. All ports support PTP timing at Class C performance.    
 
 ![K2-photo5.png]({{site.baseurl}}/images/K2-photo5.png)  
 
