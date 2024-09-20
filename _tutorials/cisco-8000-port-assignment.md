@@ -29,34 +29,44 @@ The following CLI command can be used on any Cisco 8000 system to display the as
 <pre class="highlight">
 <code>
 RP/0/RP0/CPU0:Cisco8201-32FH#<span style="background-color: #A0CFEC">sh controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>
--------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 Node ID: 0/RP0/CPU0
-Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow   VOQ    Port
-name         handle    <mark>#    #    #</mark>   Port  base  base   port   speed
-             (hex)                                      type
-----------------------------------------------------------------------
-Hu0/0/0/0    f000110   0   4    1     4    448      0 local   100G
-Hu0/0/0/1    f000118   0   4    1     8    456      0 local   100G
-Hu0/0/0/2    f000120   0   4    1    12    464      0 local   100G
-Hu0/0/0/3    f000128   0   4    0    16    480      0 local   100G
-Hu0/0/0/4    f000130   0   3    1    20    496      0 local   100G
-Hu0/0/0/5    f000138   0   4    0    24    488      0 local   100G
-Hu0/0/0/6    f000140   0   5    0    28    512      0 local   100G
-Hu0/0/0/7    f000148   0   5    1    32    528      0 local   100G
-Hu0/0/0/8    f000150   0   5    1    36    536      0 local   100G
-Hu0/0/0/9    f000158   0   5    1    40    544      0 local   100G
-Hu0/0/0/10   f000160   0   5    0    44    520      0 local   100G
-Hu0/0/0/11   f000168   0   5    0    48    560      0 local   100G
-Hu0/0/0/12   f000170   0   3    0    52    576      0 local   100G
-Hu0/0/0/13   f000178   0   3    1    56    504      0 local   100G
-Hu0/0/0/14   f000180   0   3    0    60    584      0 local   100G
-Hu0/0/0/15   f000188   0   3    0    64    592      0 local   100G
-Hu0/0/0/16   f000190   0   2    1    68    608      0 local   100G
-Hu0/0/0/17   f000198   0   2    1    72    616      0 local   100G
-Hu0/0/0/18   f0001a0   0   2    1    76    624      0 local   100G
-Hu0/0/0/19   f0001a8   0   2    0    80    640      0 local   100G
-~ snip ~
-
+Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
+name         handle    <mark>#    #    #</mark>   Port  base  base       port     speed      IFG #
+             (hex)                                          type                
+----------------------------------------------------------------------------------------  
+Hu0/0/0/0    78000118   0   4    1     4    704      0        local    100G      9
+FH0/0/0/1    78000210   0   4    1    35   1008      0        local    400G      9
+Hu0/0/0/2    78000140   0   4    1     9    712      0        local    100G      9
+FH0/0/0/3    78000208   0   4    0    34   1000      0        local    400G      8
+FH0/0/0/4    78000148   0   3    1    10    784      0        local    400G      7
+FH0/0/0/5    78000200   0   4    0    33    992      0        local    400G      8
+FH0/0/0/6    780001f8   0   5    0    32    976      0        local    400G     10
+FH0/0/0/7    780001f0   0   5    1    31    960      0        local    400G     11
+Hu0/0/0/8    78000138   0   5    1     8    768      0        local    100G     11
+FH0/0/0/9    78000150   0   5    1    11    776      0        local    400G     11
+FH0/0/0/10   78000158   0   5    0    12    800      0        local    400G     10
+FH0/0/0/11   78000160   0   5    0    13    808      0        local    400G     10
+Hu0/0/0/12   78000130   0   3    0     7    752      0        local    100G      6
+FH0/0/0/13   78000168   0   3    1    14    792      0        local    400G      7
+FH0/0/0/14   78000170   0   3    0    15    760      0        local    400G      6
+FH0/0/0/15   78000178   0   3    0    16    816      0        local    400G      6
+FH0/0/0/16   78000180   0   2    1    17    832      0        local    400G      5
+FH0/0/0/17   78000188   0   2    1    18    840      0        local    400G      5
+FH0/0/0/18   78000190   0   2    1    19    848      0        local    400G      5
+FH0/0/0/19   78000198   0   2    0    20    864      0        local    400G      4
+FH0/0/0/20   780001a0   0   0    1    21    744      0        local    400G      1
+FH0/0/0/21   780001a8   0   0    1    22    880      0        local    400G      1
+FH0/0/0/22   780001b0   0   0    0    23    896      0        local    400G      0
+FH0/0/0/23   780001b8   0   0    0    24    904      0        local    400G      0
+Hu0/0/0/24   78000128   0   0    1     6    736      0        local    100G      1
+FH0/0/0/25   780001c0   0   0    0    25    912      0        local    400G      0
+FH0/0/0/26   780001c8   0   2    0    26    872      0        local    400G      4
+Hu0/0/0/27   78000120   0   1    1     5    720      0        local    100G      3
+FH0/0/0/28   780001d0   0   1    0    27    928      0        local    400G      2
+FH0/0/0/29   780001d8   0   1    1    28    728      0        local    400G      3
+FH0/0/0/30   780001e0   0   1    0    29    936      0        local    400G      2
+FH0/0/0/31   780001e8   0   1    0    30    944      0        local    400G      2  
 </code>
 </pre>
 </div>  
