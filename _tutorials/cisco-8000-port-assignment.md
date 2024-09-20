@@ -373,7 +373,7 @@ Cisco 8212-48FH-M is made of a single P100 NPU. This system has 24 ports of QSFP
 Cisco 8711-32FH-M is made of a single P100 NPU. This system has 16 ports of QSFP-DD800 and 16 ports of QSFP56-DD. It supports MACsec on all ports.    
 Cisco 8700 products embody this cutting-edge innovation of the 8000 portfolio, offering advanced features engineered for seamless integration and scalability.  
 
-![Saturn photo3.png]({{site.baseurl}}/images/Saturn photo3.png){: .full}   
+![Saturn photo7.png]({{site.baseurl}}/images/Saturn photo7.png){: .full}  
 
 ![8711-32FH-M-2.png]({{site.baseurl}}/images/8711-32FH-M-2.png){: .full}  
 
