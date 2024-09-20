@@ -73,6 +73,55 @@ FH0/0/0/31   780001e8   0   1    0    30    944      0        local    400G     
 
 <div class="highlighter-rouge">
 <pre class="highlight">
+<code>  
+
+RP/0/RP0/CPU0:8711-32FH-M#<span style="background-color: #A0CFEC">sh controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>
+----------------------------------------------------------------------------------------
+Node ID: 0/RP0/CPU0
+Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
+name         handle    <mark>#    #    #</mark>   Port  base  base       port     speed      IFG #
+             (hex)                                          type                
+----------------------------------------------------------------------------------------
+Hu0/0/0/0    78000138   0   3    1     4    576      0        local    100G      7
+Hu0/0/0/30   78000140   0   0    0     5    592      0        local    100G      0
+Hu0/0/0/24   78000148   0   0    1     6    608      0        local    100G      1
+Hu0/0/0/19   78000150   0   1    1     7    624      0        local    100G      3
+Hu0/0/0/18   78000158   0   1    1     8    632      0        local    100G      3
+Hu0/0/0/16   78000160   0   1    1     9    640      0        local    100G      3
+Hu0/0/0/14/1 78000168   0   2    0    10    656      0        local    100G      4
+Hu0/0/0/14/0 78000170   0   2    0    11    664      0        local    100G      4
+Hu0/0/0/12   78000178   0   2    0    12    672      0        local    100G      4
+Hu0/0/0/1    78000180   0   3    1    13    584      0        local    100G      7
+FH0/0/0/6    78000188   0   3    0    14    688      0        local    400G      6
+FH0/0/0/13   78000190   0   2    0    15    680      0        local    400G      4
+FH0/0/0/15   78000198   0   2    0    16    704      0        local    400G      4
+FH0/0/0/17   780001a0   0   1    1    17    648      0        local    400G      3
+FH0/0/0/20/0 780001a8   0   1    0    18    720      0        local    400G      2
+FH0/0/0/20/1 780001b0   0   1    0    19    728      0        local    400G      2
+FH0/0/0/22   780001b8   0   1    0    20    736      0        local    400G      2
+FH0/0/0/23   780001c0   0   1    0    21    744      0        local    400G      2
+FH0/0/0/25   780001c8   0   0    1    22    616      0        local    400G      1
+FH0/0/0/26   780001d0   0   0    1    23    752      0        local    400G      1
+FH0/0/0/27   780001d8   0   0    1    24    760      0        local    400G      1
+FH0/0/0/28   780001e0   0   0    0    25    600      0        local    400G      0
+FH0/0/0/29   780001e8   0   0    0    26    768      0        local    400G      0
+FH0/0/0/31   780001f0   0   0    0    27    776      0        local    400G      0
+FH0/0/0/11   780001f8   0   2    1    28    784      0        local    400G      5
+FH0/0/0/10   78000200   0   2    1    29    792      0        local    400G      5
+FH0/0/0/9    78000208   0   2    1    30    800      0        local    400G      5
+FH0/0/0/8    78000210   0   2    1    31    808      0        local    400G      5
+FH0/0/0/7    78000218   0   3    0    32    696      0        local    400G      6
+FH0/0/0/5    78000220   0   3    0    33    816      0        local    400G      6
+FH0/0/0/4    78000228   0   3    0    34    824      0        local    400G      6
+FH0/0/0/3    78000230   0   3    1    35    832      0        local    400G      7
+FH0/0/0/2    78000238   0   3    1    36    840      0        local    400G      7  
+</code>
+</pre>
+</div>  
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
 <code>
 RP/0/RP0/CPU0:Cisco8608#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>  
 ---------------------------------------------------------------------------
