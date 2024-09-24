@@ -29,7 +29,7 @@ Operation is a 2-part process:
 ## USB Drive Preparation
 A bootable USB drive is created by copying a compressed boot file into a USB drive. The USB drive becomes bootable once the content of the compressed file is extracted.
 
-The first step is to download the compressed USB boot image from CCO:
+The first step is to download the compressed USB boot image from CCO. The same IOS-XR image is used for Cisco 8100, 8200, 8600, 8700 and 8800 series.
 ![boot-image.png]({{site.baseurl}}/images/boot-image.png)
 
 
