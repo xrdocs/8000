@@ -465,7 +465,7 @@ Also you can find the first part of this post here:
 
 | Version | Data     | Author(s)     | Comments            |
 |---------|----------|---------------|---------------------|
-| 1       | September-26 | Chang Soo Lee | Initial Publication for P100 based platform |  
+| 1       | September-26 | Chang Soo Lee | Initial Publication for P100 based platforms |  
 
 
 
