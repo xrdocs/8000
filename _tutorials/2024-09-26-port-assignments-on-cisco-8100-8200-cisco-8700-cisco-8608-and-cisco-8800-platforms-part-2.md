@@ -301,6 +301,9 @@ The Cisco 88-LC1-52Y8H-EM P100 based collapsed core, peering, aggregation and WA
 **Note**: x is slot number in Cisco 8800 router  
 
 
+Also you can find the first part of this post here:
+[Cisco 8000 Port assignment (Part 1)](https://xrdocs.io/8000/tutorials/cisco-8000-port-assignment/)
+
 ## Modification History  
 
 | Version | Data     | Author(s)     | Comments            |
