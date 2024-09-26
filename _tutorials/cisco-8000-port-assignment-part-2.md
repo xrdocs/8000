@@ -151,6 +151,85 @@ FH0/0/0/2    78000238   0   3    1    36    840      0        local    400G     
 </pre>
 </div>  
 
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+
+RP/0/RP0/CPU0:r1-tb4-pod#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all location 0/5/CPU0</span>  
+----------------------------------------------------------------------------------------
+Node ID: 0/5/CPU0
+Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
+name         handle    <mark>#    #    #</mark>   Port  base  base       port     speed      IFG #
+             (hex)                                          type                
+----------------------------------------------------------------------------------------
+FH0/5/0/35/1 140002e0   2   0    0     4  24064      0        local    400G      0
+FH0/5/0/35/0 140002e8   2   0    0     5  24072      0        local    400G      0
+FH0/5/0/34/1 140002f0   2   0    0     6  24080      0        local    400G      0
+FH0/5/0/34/0 140002f8   2   0    1     7  24096      0        local    400G      1
+FH0/5/0/32/1 14000300   2   1    0     8  24112      0        local    400G      2
+FH0/5/0/32/0 14000308   2   1    0     9  24120      0        local    400G      2
+FH0/5/0/31/1 14000310   2   1    1    10  24128      0        local    400G      3
+FH0/5/0/31/0 14000318   2   1    1    11  24136      0        local    400G      3
+FH0/5/0/30/1 14000320   2   1    0    12  24144      0        local    400G      2
+FH0/5/0/30/0 14000328   2   1    1    13  24160      0        local    400G      3
+FH0/5/0/0/0  14000330   0   2    0    14  24176      0        local    400G      4
+FH0/5/0/0/1  14000338   0   2    1    15  24192      0        local    400G      5
+FH0/5/0/1/0  14000340   0   2    0    16  24184      0        local    400G      4
+FH0/5/0/1/1  14000348   0   2    0    17  24208      0        local    400G      4
+FH0/5/0/2/0  14000350   0   2    1    18  24200      0        local    400G      5
+FH0/5/0/2/1  14000358   0   2    1    19  24224      0        local    400G      5
+FH0/5/0/4/0  14000360   0   1    1    20  24240      0        local    400G      3
+FH0/5/0/4/1  14000368   0   1    0    21  24256      0        local    400G      2
+FH0/5/0/8/0  14000370   1   2    1    22  24272      0        local    400G      5
+FH0/5/0/8/1  14000378   1   2    1    23  24280      0        local    400G      5
+FH0/5/0/9/0  14000380   0   0    0    24  24288      0        local    400G      0
+FH0/5/0/9/1  14000388   0   0    0    25  24296      0        local    400G      0
+FH0/5/0/11/0 14000390   1   2    0    26  24304      0        local    400G      4
+FH0/5/0/11/1 14000398   1   2    0    27  24312      0        local    400G      4
+FH0/5/0/12/0 140003a0   1   1    1    28  24320      0        local    400G      3
+FH0/5/0/12/1 140003a8   1   1    0    29  24336      0        local    400G      2
+FH0/5/0/15/0 140003b0   1   1    0    30  24344      0        local    400G      2
+FH0/5/0/15/1 140003b8   1   1    0    31  24352      0        local    400G      2
+FH0/5/0/16/0 140003c0   1   0    1    32  24368      0        local    400G      1
+FH0/5/0/16/1 140003c8   1   0    0    33  24384      0        local    400G      0
+FH0/5/0/17/0 140003d0   1   0    1    34  24376      0        local    400G      1
+FH0/5/0/17/1 140003d8   1   0    1    35  24400      0        local    400G      1
+FH0/5/0/19/0 140003e0   2   2    1    36  24416      0        local    400G      5
+FH0/5/0/19/1 140003e8   2   2    1    37  24424      0        local    400G      5
+FH0/5/0/20/0 140003f0   3   2    1    38  24432      0        local    400G      5
+FH0/5/0/20/1 140003f8   3   2    1    39  24440      0        local    400G      5
+FH0/5/0/21/0 14000400   2   2    0    40  24448      0        local    400G      4
+FH0/5/0/21/1 14000408   2   2    0    41  24456      0        local    400G      4
+FH0/5/0/22/0 14000410   3   2    0    42  24464      0        local    400G      4
+FH0/5/0/22/1 14000418   3   2    1    43  24480      0        local    400G      5
+FH0/5/0/23/0 14000420   3   2    0    44  24472      0        local    400G      4
+FH0/5/0/23/1 14000428   3   2    0    45  24496      0        local    400G      4
+FH0/5/0/24/0 14000430   3   1    1    46  24512      0        local    400G      3
+FH0/5/0/24/1 14000438   3   1    0    47  24528      0        local    400G      2
+FH0/5/0/25/0 14000440   3   1    1    48  24520      0        local    400G      3
+FH0/5/0/25/1 14000448   3   1    1    49  24544      0        local    400G      3
+FH0/5/0/26/0 14000450   3   1    0    50  24536      0        local    400G      2
+FH0/5/0/26/1 14000458   3   1    0    51  24560      0        local    400G      2
+FH0/5/0/27/0 14000460   3   0    1    52  24576      0        local    400G      1
+FH0/5/0/27/1 14000468   3   0    1    53  24584      0        local    400G      1
+FH0/5/0/28/0 14000470   3   0    1    54  24592      0        local    400G      1
+FH0/5/0/28/1 14000478   3   0    0    55  24608      0        local    400G      0
+FH0/5/0/29/0 14000480   3   0    0    56  24616      0        local    400G      0
+FH0/5/0/29/1 14000488   3   0    0    57  24624      0        local    400G      0
+Hu0/5/0/3    14000490   0   1    1    58  24248      0        local    100G      3
+Hu0/5/0/33   14000498   2   0    1    59  24104      0        local    100G      1
+Hu0/5/0/18   140004a0   2   2    1    60  24640      0        local    100G      5
+Hu0/5/0/14   140004a8   1   0    0    61  24392      0        local    100G      0
+Hu0/5/0/13   140004b0   1   1    1    62  24328      0        local    100G      3
+Hu0/5/0/10   140004b8   1   2    1    63  24656      0        local    100G      5
+Hu0/5/0/7    140004c0   0   0    1    64  24672      0        local    100G      1
+Hu0/5/0/6    140004c8   0   0    1    65  24680      0        local    100G      1
+Hu0/5/0/5    140004d0   0   1    0    66  24264      0        local    100G      2  
+</code>
+</pre>
+</div>    
+
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>  
@@ -258,10 +337,9 @@ Hu0/7/0/9    1c0007b8   0   0    0    35  33424      0   etm_global    100G     
 </div>  
 
 - NPU #: NPU number  
--- NPU number should be 0 for 8100/8200/8700/8608 (8000 fixed & centralized systems)      
--- NPU number should be should be 0, 1 for 88-LC0-34H14FH/88-LC1-52Y8H-EM line card (not shown above)  
--- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH (not shown above)/ 88-LC1-12TH24FH-E line card  
-
+-- NPU number should be 0 for 8200/8700 (8000 fixed & centralized systems)      
+-- NPU number should be should be 0, 1 for 88-LC1-52Y8H-EM line card (not shown above)  
+-- NPU number should be should be 0, 1, 2, 3 for 88-LC1-36EH/88-LC1-12TH24FH-E line card  
 
 - NPU core: Slice number  
 -- Slice number should be between 0 and 5 for 8212-48FH-M (8000 fixed systems)  
