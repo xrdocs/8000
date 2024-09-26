@@ -156,7 +156,7 @@ FH0/0/0/2    78000238   0   3    1    36    840      0        local    400G     
 <pre class="highlight">
 <code>  
 
-RP/0/RP0/CPU0:r1-tb4-pod#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all location 0/5/CPU0</span>  
+RP/0/RP0/CPU0:Cisco8808-88-LC1-36EH#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all location 0/5/CPU0</span>  
 ----------------------------------------------------------------------------------------
 Node ID: 0/5/CPU0
 Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
