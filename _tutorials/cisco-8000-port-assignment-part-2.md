@@ -31,8 +31,7 @@ The following CLI command can be used on any Cisco 8000 system to display the as
 <pre class="highlight">
 <code>  
 
-RP/0/RP0/CPU0:8212-48FH-M#<span style="background-color: #A0CFEC">sh controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>
-
+RP/0/RP0/CPU0:8212-48FH-M#<span style="background-color: #A0CFEC">sh controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>  
 ----------------------------------------------------------------------------------------
 Node ID: 0/RP0/CPU0
 Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
@@ -108,7 +107,7 @@ FH0/0/0/18   78016210   0   4    1    22    840      0        local    400G     
 <pre class="highlight">
 <code>  
 
-RP/0/RP0/CPU0:8711-32FH-M#<span style="background-color: #A0CFEC">sh controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>
+RP/0/RP0/CPU0:8711-32FH-M#<span style="background-color: #A0CFEC">sh controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>  
 ----------------------------------------------------------------------------------------
 Node ID: 0/RP0/CPU0
 Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
