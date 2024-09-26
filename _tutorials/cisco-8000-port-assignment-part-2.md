@@ -31,6 +31,83 @@ The following CLI command can be used on any Cisco 8000 system to display the as
 <pre class="highlight">
 <code>  
 
+RP/0/RP0/CPU0:8212-48FH-M#<span style="background-color: #A0CFEC">sh controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>
+
+----------------------------------------------------------------------------------------
+Node ID: 0/RP0/CPU0
+Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
+name         handle    <mark>#    #    #</mark>   Port  base  base       port     speed      IFG #
+             (hex)                                          type                
+----------------------------------------------------------------------------------------
+FH0/0/0/1    780001b0   0   0    1     5    720      0        local    400G      1
+FH0/0/0/2    780001b8   0   5    1     6    712      0        local    400G     11
+FH0/0/0/3    780001c0   0   0    1     7    728      0        local    400G      1
+FH0/0/0/4    780001c8   0   5    1     8    736      0        local    400G     11
+FH0/0/0/5    780001d0   0   0    1     9    752      0        local    400G      1
+FH0/0/0/6    780001d8   0   5    1    10    744      0        local    400G     11
+FH0/0/0/7    780001e0   0   0    1    11    760      0        local    400G      1
+FH0/0/0/9    780001f8   0   1    0    14    784      0        local    400G      2
+FH0/0/0/11   78000200   0   1    0    15    792      0        local    400G      2
+FH0/0/0/12   78000208   0   4    0    16    800      0        local    400G      8
+FH0/0/0/13   78000210   0   1    0    17    816      0        local    400G      2
+FH0/0/0/14   78000218   0   4    0    18    808      0        local    400G      8
+FH0/0/0/15   78000220   0   1    0    19    824      0        local    400G      2
+FH0/0/0/16   78000228   0   4    1    20    832      0        local    400G      9
+FH0/0/0/17   78000230   0   1    1    21    848      0        local    400G      3
+FH0/0/0/19   78000240   0   1    1    23    856      0        local    400G      3
+FH0/0/0/20   78000248   0   4    1    24    864      0        local    400G      9
+FH0/0/0/21   78000250   0   1    1    25    880      0        local    400G      3
+FH0/0/0/22   78000258   0   4    1    26    872      0        local    400G      9
+FH0/0/0/24   78000268   0   5    0    28    896      0        local    400G     10
+FH0/0/0/25   78000270   0   0    0    29    912      0        local    400G      0
+FH0/0/0/26   78000278   0   5    0    30    904      0        local    400G     10
+FH0/0/0/27   78000280   0   0    0    31    920      0        local    400G      0
+FH0/0/0/29   78000290   0   0    0    33    944      0        local    400G      0
+FH0/0/0/31   780002a0   0   0    0    35    952      0        local    400G      0
+FH0/0/0/34   780002b8   0   3    1    38    976      0        local    400G      7
+FH0/0/0/35   780002c0   0   3    1    39    984      0        local    400G      7
+FH0/0/0/36   780002c8   0   3    0    40    992      0        local    400G      6
+FH0/0/0/37   780002d0   0   3    0    41   1000      0        local    400G      6
+FH0/0/0/38   780002d8   0   3    0    42   1008      0        local    400G      6
+FH0/0/0/39   780002e0   0   3    0    43   1016      0        local    400G      6
+FH0/0/0/41   780002f0   0   2    1    45   1032      0        local    400G      5
+FH0/0/0/42   780002f8   0   2    1    46   1040      0        local    400G      5
+FH0/0/0/43   78000300   0   2    1    47   1048      0        local    400G      5
+FH0/0/0/47   78000320   0   2    0    51   1080      0        local    400G      4
+Hu0/0/0/0/0  78000388   0   5    1    52    704      0        local    100G     11
+Hu0/0/0/46/1 78000390   0   2    0    53   1072      0        local    100G      4
+Hu0/0/0/46/2 78000398   0   2    0    54   1088      0        local    100G      4
+Hu0/0/0/46/3 780003a0   0   2    0    55   1096      0        local    100G      4
+Hu0/0/0/46/0 780003c8   0   2    0    60   1104      0        local    100G      4
+Hu0/0/0/0/1  780003d0   0   5    1    61   1120      0        local    100G     11
+Hu0/0/0/0/2  780003d8   0   5    1    62   1128      0        local    100G     11
+Hu0/0/0/0/3  780003e0   0   5    1    63   1136      0        local    100G     11
+FH0/0/0/32/0 78000640   0   3    1    64    960      0        local    400G      7
+FH0/0/0/32/1 78000648   0   3    1    65    968      0        local    400G      7
+FH0/0/0/45   78000798   0   2    0    66   1112      0        local    400G      4
+FH0/0/0/44   780007a8   0   2    0    67   1056      0        local    400G      4
+FH0/0/0/8    78000920   0   4    0    68    768      0        local    400G      8
+FH0/0/0/10   78000928   0   4    0    69    776      0        local    400G      8
+<mark>Hu0/0/0/28/0</mark> 780010d8   0   5    0    70   1192      0        local    100G     10
+<mark>Hu0/0/0/28/1</mark> 780010a0   0   5    0    71    928      0        local    100G     10
+<mark>Hu0/0/0/28/2</mark> 780010a8   0   5    0    72    936      0        local    100G     10
+<mark>Hu0/0/0/28/3</mark> 780010b0   0   5    0    73   1152      0        local    100G     10
+<mark>Hu0/0/0/28/4</mark> 780010b8   0   5    0    74   1160      0        local    100G     10
+<mark>Hu0/0/0/28/5</mark> 780010c0   0   5    0    75   1168      0        local    100G     10
+<mark>Hu0/0/0/28/6</mark> 780010c8   0   5    0    76   1176      0        local    100G     10
+<mark>Hu0/0/0/28/7</mark> 780010d0   0   5    0    77   1184      0        local    100G     10
+FH0/0/0/40   78015510   0   2    1    44   1024      0        local    400G      5
+Hu0/0/0/23   78015870   0   1    1    27    888      0        local    100G      3
+FH0/0/0/18   78016210   0   4    1    22    840      0        local    400G      9  
+</code>
+</pre>
+</div>   
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+
 RP/0/RP0/CPU0:8711-32FH-M#<span style="background-color: #A0CFEC">sh controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>
 ----------------------------------------------------------------------------------------
 Node ID: 0/RP0/CPU0
