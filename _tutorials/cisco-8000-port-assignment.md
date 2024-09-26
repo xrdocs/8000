@@ -108,10 +108,83 @@ FH0/2/0/0    f000174   0   3    1   392    640      0        local    400G
 </pre>
 </div>  
 
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>  
+
+RP/0/RP0/CPU0:88-LC0-34H14FH#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all location 0/6/cpu0</span>    
+-------------------------------------------------------------------
+Node ID: 0/6/CPU0
+Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow   VOQ    Port 
+name         handle    <mark>#    #    #</mark>   Port  base  base   port   speed
+             (hex)                                      type        
+----------------------------------------------------------------------
+Hu0/6/0/0    3000190   0   2    1  1156  28480      0 local   100G
+Hu0/6/0/47   3000198   1   0    0  1344  28496      0 local   100G
+Hu0/6/0/46   30001a0   1   0    1  1340  28512      0 local   100G
+Hu0/6/0/45   30001a8   1   0    0  1336  28504      0 local   100G
+Hu0/6/0/43   30001b0   1   0    1  1328  28520      0 local   100G
+Hu0/6/0/42   30001b8   1   0    0  1324  28528      0 local   100G
+Hu0/6/0/40   30001c0   1   1    0  1316  28544      0 local   100G
+Hu0/6/0/39   30001c8   1   1    1  1312  28560      0 local   100G
+Hu0/6/0/37   30001d0   1   1    0  1304  28552      0 local   100G
+Hu0/6/0/36   30001d8   1   1    1  1300  28568      0 local   100G
+Hu0/6/0/34   30001e0   1   2    0  1292  28576      0 local   100G
+Hu0/6/0/33   30001e8   1   1    1  1288  28592      0 local   100G
+Hu0/6/0/31   30001f0   1   2    0  1280  28584      0 local   100G
+Hu0/6/0/30   30001f8   1   1    1  1276  28600      0 local   100G
+Hu0/6/0/28   3000200   1   2    0  1268  28608      0 local   100G
+Hu0/6/0/27   3000208   1   2    1  1264  28624      0 local   100G
+Hu0/6/0/1    3000210   0   2    0  1160  28640      0 local   100G
+Hu0/6/0/3    3000218   0   2    1  1168  28488      0 local   100G
+Hu0/6/0/4    3000220   0   2    0  1172  28648      0 local   100G
+Hu0/6/0/6    3000228   0   1    1  1180  28656      0 local   100G
+Hu0/6/0/7    3000230   0   2    0  1184  28672      0 local   100G
+Hu0/6/0/9    3000238   0   1    1  1192  28664      0 local   100G
+Hu0/6/0/10   3000240   0   2    0  1196  28680      0 local   100G
+Hu0/6/0/12   3000248   0   1    1  1204  28688      0 local   100G
+Hu0/6/0/13   3000250   0   1    0  1208  28704      0 local   100G
+Hu0/6/0/15   3000258   0   1    1  1216  28696      0 local   100G
+Hu0/6/0/16   3000260   0   1    0  1220  28712      0 local   100G
+Hu0/6/0/18   3000268   0   0    0  1228  28720      0 local   100G
+Hu0/6/0/19   3000270   0   0    1  1232  28736      0 local   100G
+Hu0/6/0/21   3000278   0   0    0  1240  28728      0 local   100G
+Hu0/6/0/23   3000280   0   0    0  1248  28752      0 local   100G
+Hu0/6/0/24   3000288   1   2    1  1252  28632      0 local   100G
+Hu0/6/0/25   3000290   1   2    0  1256  28616      0 local   100G
+Fo0/6/0/22   3000298   0   0    1  1244  28744      0 local    40G
+FH0/6/0/44   30002a0   1   0    0  1332  28536      0 local   400G
+FH0/6/0/41   30002a8   1   0    1  1320  28768      0 local   400G
+FH0/6/0/38   30002b0   1   0    1  1308  28776      0 local   400G
+FH0/6/0/35   30002b8   1   1    0  1296  28784      0 local   400G
+FH0/6/0/32   30002c0   1   1    0  1284  28792      0 local   400G
+FH0/6/0/29   30002c8   1   2    1  1272  28800      0 local   400G
+FH0/6/0/26   30002d0   1   2    1  1260  28808      0 local   400G
+FH0/6/0/20   30002d8   0   0    0  1236  28760      0 local   400G
+FH0/6/0/17   30002e0   0   0    1  1224  28816      0 local   400G
+FH0/6/0/14   30002e8   0   0    1  1212  28824      0 local   400G
+FH0/6/0/11   30002f0   0   1    0  1200  28832      0 local   400G
+FH0/6/0/8    30002f8   0   1    0  1188  28840      0 local   400G
+FH0/6/0/5    3000300   0   2    1  1176  28848      0 local   400G
+FH0/6/0/2    3000308   0   2    1  1164  28856      0 local   400G
+FH0/6/0/2    3000308   0   0    0     0  28920      0 local   400G
+FH0/6/0/2    3000308   0   0    0     0  28912      0 local   400G
+FH0/6/0/2    3000308   0   0    0     0  28904      0 local   400G
+FH0/6/0/2    3000308   0   0    0     0  28896      0 local   400G
+FH0/6/0/2    3000308   0   0    0     0  28888      0 local   400G
+FH0/6/0/2    3000308   0   0    0     0  28880      0 local   400G
+FH0/6/0/2    3000308   0   0    0     0  28872      0 local   400G
+FH0/6/0/2    3000308   0   0    0     0  28864      0 local   400G  
+</code>
+</pre>
+</div>  
+
+
 - NPU #: NPU number  
 -- NPU number should be 0 for 8100/8200/8608 (8000 fixed & centralized systems)    
 -- NPU number should be 0, 1, 2 for 88-LC0-36FH line card (not shown above)  
--- NPU number should be should be 0, 1 for 88-LC0-34H14FH line card (not shown above)      
+-- NPU number should be should be 0, 1 for 88-LC0-34H14FH line card        
 
 - NPU core: Slice number  
 -- Slice number should be between 0 and 5 for 8200/8608 (8000 fixed & centralized systems)   
@@ -446,4 +519,4 @@ Also you can find the second part of this post here: [Cisco 8000 Port assignment
 | 3       | July-22  | Chang Soo Lee | Added 8201-24H8FH   |
 | 4       | April-23 | Chang Soo Lee | Added 8111-32EH     |
 | 5       | July-23  | Chang Soo Lee | Upgraded to high resolution     |  
-| 6       | September-13  | Chang Soo Lee | Added 8608     |  
+| 6       | September-13  | Chang Soo Lee | Added 8608     |
