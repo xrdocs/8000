@@ -29,7 +29,8 @@ The following CLI command can be used on any Cisco 8000 system to display the as
 
 <div class="highlighter-rouge">
 <pre class="highlight">
-<code>
+<code>  
+
 RP/0/RP0/CPU0:Cisco8201-32FH#<span style="background-color: #A0CFEC">sh controllers npu voq-usage interface all instance all loc 0/rp0/cpu0</span>
 ----------------------------------------------------------------------------------------
 Node ID: 0/RP0/CPU0
