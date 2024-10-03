@@ -12,7 +12,7 @@ tags:
   - iosxr
   - Cisco 8000
   - Port
-position: hidden
+position: top
 ---
 {% include toc icon="table" title="Port Assignments on Cisco 8100/8200, Cisco 8700, Cisco 8600, and Cisco 8800 Platforms (Part 2)"%}  
 
@@ -464,8 +464,4 @@ Also you can find the first part of this post here: [Cisco 8000 Port assignment 
 
 | Version | Data     | Author(s)     | Comments            |
 |---------|----------|---------------|---------------------|
-| 1       | September-26 | Chang Soo Lee | Initial Publication for P100 based platforms |  
-
-
-
-
+| 1       | September-26 | Chang Soo Lee | Initial Publication for P100 based platforms |
