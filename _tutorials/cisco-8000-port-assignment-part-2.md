@@ -7,7 +7,7 @@ title: >-
 author: Chang Soo Lee
 excerpt: >-
   This article will highlight how ports are allocated to IFG/Slice/NPU for each
-  Cisco 8000 line card and systems.
+  Cisco 8000 line card and systems (Part 2).
 tags:
   - iosxr
   - Cisco 8000
