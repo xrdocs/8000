@@ -8,7 +8,7 @@ tags:
   - 800G
   - Performance
   - Demo
-position: hidden
+position: top
 excerpt: >-
   This video first introduces the reason why industry needs 800G. It then covers
   the key ingredients needed to build dense 800G systems: SerDes, ASICs, optics
