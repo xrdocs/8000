@@ -634,7 +634,7 @@ The following table represents the maximum number of ports the Cisco 8711-32FH-M
 
 
 - 10 GbE  
-  - As Native 10G Optic with CVR-QSFP-SFP10G (QSA), fully populated into all 32 ports in roadmap  
+  - As Native 10G Optic with CVR-QSFP-SFP10G (QSA), fully populated into 24 ports except port 4 through 11 in roadmap  
   - As Breakout, populated into 24 ports except port 4 through 11. 24 ports x (4x10 GbE) = 96 10 GbE total  
   
 - 25 GbE
