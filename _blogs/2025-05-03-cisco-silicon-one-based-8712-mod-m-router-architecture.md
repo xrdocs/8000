@@ -145,7 +145,7 @@ Figure 3. Front panel ports of Cisco 8712-MOD-M
 
 
 ## Modular Port Adaptors (MPAs)
-Cisco 8712-MOD-M system has 4 slots to provision MPAs. There are 4 MPA variants supported on this system and any combination of MPA varinats can be plugged into the MPA 4 slots. And these MPAs are Online Insertion & Removal capable and user has the flexibility to choose the MPA varinats and number of MPAs based on the capacity provisioning of the network.
+Cisco 8712-MOD-M system has 4 bays to provision MPAs. There are 4 MPA variants supported on this system and any combination of MPA varinats can be plugged into the MPA 4 slots. And these MPAs are Online Insertion & Removal capable and user has the flexibility to choose the MPA varinats and number of MPAs based on the capacity provisioning of the network.
 
 ![mpa-bay-view.png]({{site.baseurl}}/images/mpa-bay-view.png){: .full}
 Figure 4. MPA bay view of Cisco 8712-MOD-M  
@@ -164,6 +164,7 @@ This MPA can power uplink capacity provisioning for edge/aggregation network seg
 - This MPA host four QSFPDD ports
 - All four ports can be operated in breakout mode
 - All four ports supports 4x10G or 4x25G or 4x100G breakout mode
+- All four ports can be populated with DCO optics
 
 ### 8K-MPA-16H
 ![16h-screen.png]({{site.baseurl}}/images/16h-screen.png){: .align-center}
@@ -172,6 +173,9 @@ This MPA can power uplink capacity provisioning for edge/aggregation network seg
 ![16h-a.png]({{site.baseurl}}/images/16h-a.png){: .align-center}
 
 
+- This MPA serves dense 100G fan outs
+- 4x 10G / 4x 25G breakout is supported on even numbered ports: 0,2,4,6,8,10,12,14 
+- Odd numbered ports get disabled after even numbered ports are configured with breakout
 
 
 
@@ -187,5 +191,3 @@ This MPA can power uplink capacity provisioning for edge/aggregation network seg
 
 ![18z-arch.png]({{site.baseurl}}/images/18z-arch.png)
 {: .align-center}
-
-
