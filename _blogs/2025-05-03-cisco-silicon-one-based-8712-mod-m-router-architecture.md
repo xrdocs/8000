@@ -16,7 +16,7 @@ The Cisco 8700 series is an addition to [the Cisco 8000 Series Routers](https://
 ## Cisco 8712-MOD-M Overview  
 Cisco 8712-MOD-M is a 2RU 6.4Tbps fixed system based on a single Cisco Silicon One™ K100 Network Processing Unkit (NPU). This system offers 4 bays of Modular Port Adaptors (MPAs) with each slot having 1.6Tbps capacity. 4 types of MPAs are supported which offers diverse port speed combinations supported by SFP56, QSF28, QSFPDD optical form factors: 1G, 10G, 25G, 50G, 100G, 400G.
 
-## Video  
+### Product Video  
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=2ckU9oAP9hI&t=17s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
   
@@ -24,7 +24,7 @@ The key features of the Cisco 8712-MOD-M are summarized below.
 
 ![product-specs.png]({{site.baseurl}}/images/product-specs.png)
 
-## Service Provider(SP) networking Architecture shift
+### Service Provider(SP) networking Architecture shift
 
 
 Lets look at traditional SP network architecture and the how it is transitioning to nextGen network driven by Agile Services Networking architecture.
