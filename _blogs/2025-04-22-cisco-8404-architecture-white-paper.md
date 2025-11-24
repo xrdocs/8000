@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 date: '2025-04-22 12:28 +0530'
 title: Cisco 8404 Architecture White Paper
 author: Paban Sarma
@@ -20,10 +20,11 @@ The Cisco® 8000 Series combines the revolutionary Cisco Silicon One™, IOS XR�
 The Cisco 8404 is a unique platform that combines flexibility and reliability while offering investment protection. Customers can achieve unmatched reliability with redundant control and data plane via redundant route switch processors. Unlike distributed architecture, the forwarding decisions on centralized platforms are centrally performed. Cisco 8404 can also be operated in a non-redundant mode as per the appropriate customer required use case. Cisco 8404 first generation route switch processor cards are powered by Cisco SiOne K100 NPUs. A wide variety of modular port adapters allow for high interface diversity.  
 
 This detailed white paper is specifically meant for the Cisco 8404 router. In addition to the centralized router architecture in the Cisco 8404 (as well as Cisco 8608), the Cisco 8000 Series includes two other distinct router architectures that utilize the Cisco Silicon One NPU:  
-  - **Distributed**: The Cisco 8800 Series provides the highest bandwidth via distributed chassis with a redundant control plane and switch fabric. The 8800 Series includes the Cisco 8804, 8808, 8812, and 8818. These chassis deliver up to 28.8 Tbps per line card via 100, 400, and 800G ports.  
+  - **Distributed**: The Cisco 8800 Series provides the highest bandwidth via distributed chassis with a redundant control plane and switch fabric. The 8800 Series includes the Cisco 8804, 8808, 8812, and 8818. These chassis deliver up to 28.8 Tbps per line card via 100, 400, and 800G ports.
+Learn more about [Cisco 8000 distributed](https://www.cisco.com/site/us/en/products/networking/sdwan-routers/8000-series/index.html#accordion-68bac828a9-item-ffa3339b33)
+
   - **Fixed**: The Cisco 8010, 8100 and 8200, 8700 utilize Cisco’s standalone architecture to deliver full routing functionality with a single NPU per router. Both support the full routing feature set.
-  
-Learn more about [Cisco 8000 distributed](https://www.cisco.com/site/us/en/products/networking/sdwan-routers/8000-series/index.html#accordion-68bac828a9-item-ffa3339b33) and [Cisco 8000 fixed portfolio](https://www.cisco.com/site/us/en/products/networking/sdwan-routers/8000-series/index.html#accordion-68bac828a9-item-a3433fccdd) in Cisco Website. 
+Learn More about [Cisco 8000 fixed portfolio](https://www.cisco.com/site/us/en/products/networking/sdwan-routers/8000-series/index.html#accordion-68bac828a9-item-a3433fccdd) in Cisco Website. 
 
 ## Cisco 8408 Overview   
 Large, distributed chassis have traditionally been designed to cater to the market requirement for total system bandwidth, port diversity, and redundancy. The requirements far exceeded what could be accomplished with a single NPU. The fabrics that weave together multi-NPU systems had to be provisioned to the highest bandwidth use case and deployed 100% upfront, consuming power and capital regardless of the number of installed line cards. That wisdom held true for multiple generations of core, edge, and aggregation distributed systems.  
