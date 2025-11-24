@@ -21,10 +21,10 @@ The Cisco 8404 is a unique platform that combines flexibility and reliability wh
 
 This detailed white paper is specifically meant for the Cisco 8404 router. In addition to the centralized router architecture in the Cisco 8404 (as well as Cisco 8608), the Cisco 8000 Series includes two other distinct router architectures that utilize the Cisco Silicon One NPU:  
   - **Distributed**: The Cisco 8800 Series provides the highest bandwidth via distributed chassis with a redundant control plane and switch fabric. The 8800 Series includes the Cisco 8804, 8808, 8812, and 8818. These chassis deliver up to 28.8 Tbps per line card via 100, 400, and 800G ports.
-Learn more about [Cisco 8000 distributed](https://www.cisco.com/site/us/en/products/networking/sdwan-routers/8000-series/index.html#accordion-68bac828a9-item-ffa3339b33)
+Learn more about [Cisco 8000 distributed] (https://www.cisco.com/site/us/en/products/networking/sdwan-routers/8000-series/index.html#accordion-68bac828a9-item-ffa3339b33) portfolio.
 
   - **Fixed**: The Cisco 8010, 8100 and 8200, 8700 utilize Cisco’s standalone architecture to deliver full routing functionality with a single NPU per router. Both support the full routing feature set.
-Learn More about [Cisco 8000 fixed portfolio](https://www.cisco.com/site/us/en/products/networking/sdwan-routers/8000-series/index.html#accordion-68bac828a9-item-a3433fccdd) in Cisco Website. 
+Learn More about [Cisco 8000 fixed](https://www.cisco.com/site/us/en/products/networking/sdwan-routers/8000-series/index.html#accordion-68bac828a9-item-a3433fccdd) portfolio. 
 
 ## Cisco 8408 Overview   
 Large, distributed chassis have traditionally been designed to cater to the market requirement for total system bandwidth, port diversity, and redundancy. The requirements far exceeded what could be accomplished with a single NPU. The fabrics that weave together multi-NPU systems had to be provisioned to the highest bandwidth use case and deployed 100% upfront, consuming power and capital regardless of the number of installed line cards. That wisdom held true for multiple generations of core, edge, and aggregation distributed systems.  
@@ -41,18 +41,23 @@ The Cisco 8404 router is 4 RU in height and less than 300mm in depth with 4 slot
 
 
    
-Table 1. Cisco 8608 key components      
+Table 1. Cisco 8404 key components      
 {: .text-center}  
 
-### Cisco 8608 value proposition  
+### Cisco 8404 value proposition  
 
-- **Redundancy**: Cisco 8608 introduces a new forwarding paradigm via a redundant control plane (route processor [RP] redundancy) and redundant data plane (switch card [SC] redundancy). A redundant 8608 requires two RPs and two SCs, while a nonredundant 8608 is comprised of a single RP & SC.  
+- **Redundancy**: Cisco 8404 introduces a new forwarding paradigm via a redundant control & data plane (route switch processor [RSP]  redundancy) in a very compact form factor . A redundant 8404 requires two RSPs, while a nonredundant 8404 is comprised of a single RSP.  
 
 - **Investment Protection**: The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor and Modular Port Adaptors). Cisco is investing in the future of the platform for customers to be able to upgrade to the next generation.  
 
-- **Flexibility**: Flexibility via MPA modularity and interface diversity. Native port speed support from 10 GbE upto 400 GbE. Wide variety of optics support for multiple customer use cases.   
+- **Flexibility**: Flexibility via MPA modularity and interface diversity. Native port speed support from 1 GbE upto 400 GbE. Wide variety of optics support for multiple customer use cases. Based on speed and feed requirements the chassis can be configured with MPA combinations.
+
+- **Innovation**: The 8404 RSP comes with built in integrated port adapter , that utilizes the chassis real estates to the fullest and provides customer dense 100/400 GbE ports inbuilt without additional MPA inserted to the chassis. 
+
+- **Secure**: Apart from the Cisco's trusted IOS XR architecture, the 8404 RSP has in built crypto engine within the NPU , thus systme is available to support MACsec/IPSec on all varity of Ports and MPAs. 
+
 ![new-table2.png]({{site.baseurl}}/images/new-table2.png){: .align-center}   
-Table 2. Cisco 8608 Field Replaceable Units            
+Table 2. Cisco 8404 Field Replaceable Units            
 {: .text-center}    
 
 ## Cisco 8608 PIN(Place In Network) Use cases  
@@ -86,43 +91,42 @@ As shown in Figure 3, user needs to insert the followings:
 -DC PEM
 
       
-Figure 4. front view of Cisco 8408 chassis with cards
+Figure 4. front view of Cisco 8404 chassis with cards
  
-Figure 5. Side view of Cisco 8608 chassis    
+Figure 5. Side view of Cisco 8404 chassis    
 {: .text-center}  
   
 
 ### RSP Integrated Port Adpater (iPA)
 
 ### Modular Port Adapter (MPA)   
-The Cisco 8608 router centralized platform supports three different Redundant Modular Port Adapters(MPAs) to insert into slots 0 to 7.     
+The Cisco 8404 router centralized platform supports two different types Modular Port Adapters(MPAs) to insert into slots 2 to 5. The MPA to slot mapping is any to any which means all MPA goes into any slot in the system.    
 
  
 
-**Cisco 8608  port adapters**  
-The Cisco 8608 supports three different modular port adapters (MPAs). The details are captured in table below:  
+**Cisco 8404  port adapters**  
+The Cisco 8404 supported port adapters are summerized in the below table
 
-| Port Adapter | Bandwidth | 10/25/50 GbE<br> Physical Ports | 100 GbE<br> Physical Ports | 400 GbE<br> Physical Ports | MACsec | PTP Timing     |
-|----------------------|-----------|-----------------------------|------------------------|------------------------|--------|------------------|
-| 86-MPA-14H2FH-M      | 1.6 Tbps  | -                           | 14                     | 2                      | Yes    | Class C        |
-| 86-MPA-24Z-M         | 1.2 Tbps  | 24                          | -                      | -                      | Yes    | Class C        |
-| 86-MPA-4FH-M         | 1.6 Tbps  | -                           | -                      | 4                      | Yes    | Class C        |  
+| Port Adapter | Bandwidth | Port Combination| MACsec/IPSec | Timing |
+| :---: | :---: | :---:| :---: | :---: |
 
-**86-MPA-14H2FH-M**   
-86-MPA-14H2FH-M can be inserted into any slot (slot 0 to slot 7) of the chassis without any restriction. This MPA is a pluggable card that provides 16 interface ports for a maximum total bandwidth of 1.6 Tbps that can support up to:  
 
-- 16 ports of QSFP 100 GbE modules (Default), or
-- 2 ports of QSFP-DD 400 GbE modules and 14 ports of QSFP
-When port 0 has a 400G QSFP-DD, then the other three ports (2, 3, 4) cannot be used. Similarly, when port 1 has a 400G QSFP-DD, then the other three ports (5, 6, 7) cannot be used.  
 
-**Note**: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
-{: .notice}  
 
-![figure7.png]({{site.baseurl}}/images/figure7.png){: .full}    
-Figure 7. 86-MPA-14H2FH-M  
+**84-MPA-2H12Z-M**   
+This MPA is a pluggable card that provides 14 interface ports for a maximum total bandwidth of 800 Gbps that can support up to:  
+
+- 12 ports of SFP56 GbE modules and
+	- Support 1/10/25/50GbE
+- 2 ports of QSFP-28 100 GbE modules
+	- Support 40/100 GbE
+    - Breakout Support  4x10/4x25GbE
+
+  
+Figure 7. 84-MPA-2H12Z-M 
 {: .text-center}  
 
-**86-MPA-4FH-M**  
+**84-MPA-2FH/6H-M**  
 86-MPA-4FH-M can be inserted into any slot (slots 0 to 7) of the chassis without any restriction. This MPA is a pluggable card that provides 4 interface ports for a maximum total bandwidth of 1.6 Tbps and can support up to:    
 - 4 ports of QSFP-DD 400 GbE modules  
 
@@ -133,13 +137,7 @@ Figure 7. 86-MPA-14H2FH-M
 Figure 8. 86-MPA-4FH-M  
 {: .text-center}  
 
-**86-MPA-24Z-M**  
-86-MPA-24Z-M can be inserted into any slot (slot 0 to 7) of the chassis without any restriction. This MPA is a pluggable card that provides 24 interface ports for a maximum total bandwidth of 1.2 Tbps and can support up to:  
-- 24 ports of SFP56 1/10/25/50 GbE modules
 
-![figure9.png]({{site.baseurl}}/images/figure9.png){: .full}    
-Figure 9. 86-MPA-24Z-M  
-{: .text-center}  
 
 ### RP (Route Processor)  
 
