@@ -32,6 +32,8 @@ Large, distributed chassis have traditionally been designed to cater to the mark
 Now with the advent of dense Cisco Silicon One NPU, we can address these roles with a new breed of centralized architectures that combine the best aspects of distributed and fixed systems.  Cisco 8404 has combined the redundancy and I/O diversity of distributed systems with the economics and simple elegance of fixed platforms in a very compact 4RU, <300 mm depth form factor. It also offers extended temperature range of operation making it suitable for ruggadized environment deploymnet in the Service Provider netwroks. 
   
      
+
+
 Figure 1. Front view of the Cisco 8408  
    
 
@@ -65,10 +67,8 @@ Table 2. Cisco 8404 Field Replaceable Units
 ### Pre-aggregation & Aggregation
 
 ### Provider Edge Lite 
-
-  
  
-### IP and Optical Convergence - The Journey Ahead    
+### IP and Optical Convergence    
 
  
 
@@ -97,28 +97,28 @@ Figure 5. Side view of Cisco 8404 chassis
 {: .text-center}  
   
 
-### RSP Integrated Port Adpater (iPA)
 
 ### Modular Port Adapter (MPA)   
-The Cisco 8404 router centralized platform supports two different types Modular Port Adapters(MPAs) to insert into slots 2 to 5. The MPA to slot mapping is any to any which means all MPA goes into any slot in the system.    
+The Cisco 8404 router centralized platform supports two different types Modular Port Adapters(MPAs) that can be inserted into the four slots numbered 2 to 5. The MPA to slot mapping is any-to-any, means all MPA goes into any MPA slot in the system.    
 
- 
 
 **Cisco 8404  port adapters**  
 The Cisco 8404 supported port adapters are summerized in the below table
 
 | Port Adapter | Bandwidth | Port Combination| MACsec/IPSec | Timing |
 | :---: | :---: | :---:| :---: | :---: |
+|84-MPA-2H12Z-M| 800 G | 2x100G + 12x1/10/25/50 G | Yes | Class C |
+|84-MPA-2FH/6H-M| 800 G | 2x400G or 6x100 G | Yes | Class C |
 
 
 
 
 **84-MPA-2H12Z-M**   
-This MPA is a pluggable card that provides 14 interface ports for a maximum total bandwidth of 800 Gbps that can support up to:  
+This MPA is aimed at providing dense low speed(1/10/25) ports with a balanced 100G density. There are total 14 interface ports in the faceplate for a maximum total bandwidth of 800 Gbps that can support up to:  
 
-- 12 ports of SFP56 GbE modules and
+- 12 ports of SFP56  modules and
 	- Support 1/10/25/50GbE
-- 2 ports of QSFP-28 100 GbE modules
+- 2 ports of QSFP-28  modules
 	- Support 40/100 GbE
     - Breakout Support  4x10/4x25GbE
 
@@ -127,8 +127,21 @@ Figure 7. 84-MPA-2H12Z-M
 {: .text-center}  
 
 **84-MPA-2FH/6H-M**  
-86-MPA-4FH-M can be inserted into any slot (slots 0 to 7) of the chassis without any restriction. This MPA is a pluggable card that provides 4 interface ports for a maximum total bandwidth of 1.6 Tbps and can support up to:    
-- 4 ports of QSFP-DD 400 GbE modules  
+This MPA is designed to provide dense 100G/400G density andcan be inserted into any slot (slots 0 to 7) of the chassis without any restriction. There are 6 QSFP cage in the faceplate to provide a maximum total bandwidth of 800 Gbps and it can support
+
+Either, 
+- 2 ports of QSFP-DD 400 GbE modules
+	- Support 4x100G, 2x100G BO
+Or,
+- 6 Ports each used at 100G Ports
+	- Support Breakout 4x10/4x25
+The 6 front panel ports are organized in group of 3 ports (P0-P2 and P3-P5) that can individully support multiple combinations of speed and breakout options such as:
+- 1x400G/4x100G + Disabled + Disabled
+- 100G + 100G + 100G
+- 4x25G + 100G + 100G
+- 4x25G + 4x25G + Disabled
+- 100G + 4x25G + Disabled
+The above list is not exhaustive, detailed port speed and breakout options are discussed in later sections. 
 
 **Note**: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
 {: .notice}  
@@ -137,7 +150,7 @@ Figure 7. 84-MPA-2H12Z-M
 Figure 8. 86-MPA-4FH-M  
 {: .text-center}  
 
-
+### RSP Integrated Port Adpater (iPA)
 
 ### RP (Route Processor)  
 
