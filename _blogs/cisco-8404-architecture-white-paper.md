@@ -41,7 +41,13 @@ Figure 1. Front view of the Cisco 8408
 The Cisco 8404 router is 4 RU in height and less than 300mm in depth with 4 slots for two types of MPAs (Modular Port Adapters) at the FCS. There is also an integrated port adpter built into the Route Switch Processor (RSP) card which acts like the modular port adapters in terms of forwarding and redundancy behaviour.   
 
 
-
+| Items |         Details       |
+|:---:| :------------:|
+| Base Chassis | The base Chassis is equiped with slots for all FRU and the backplane to interconnect them |
+| Route Switch Processor (RSP)| The RSP card is heart of the ssytem that does all the control plane and data plane functionality as well as houses an inbuilt port adapter|
+| Power Entry Modules (PEM) | The DC only PEMs inputs and supplies power to the RSPs and the entire system|
+| Fan Tray | The Fan Tray houses redundnat FANs responsible for system colling|
+| Modular Port Adpater (MPA)|Apart from the ports at the RSP there are four slots for Modular port adapters enabling the system to offer flexible speed/feed combination|
    
 Table 1. Cisco 8404 key components      
 {: .text-center}  
@@ -58,7 +64,7 @@ Table 1. Cisco 8404 key components
 
 - **Secure**: Apart from the Cisco's trusted IOS XR architecture, the 8404 RSP has in built crypto engine within the NPU , thus systme is available to support MACsec/IPSec on all varity of Ports and MPAs. 
 
-![new-table2.png]({{site.baseurl}}/images/new-table2.png){: .align-center}   
+
 Table 2. Cisco 8404 Field Replaceable Units            
 {: .text-center}    
 
