@@ -24,7 +24,7 @@ The key features of the Cisco 8712-MOD-M are summarized below.
 
 ![product-specs.png]({{site.baseurl}}/images/product-specs.png)
 
-### Service Provider(SP) networking Architecture shift
+## Service Provider(SP) networking Architecture shift
 
 
 Lets look at traditional SP network architecture and the how it is transitioning to nextGen network driven by Agile Services Networking architecture.
@@ -35,6 +35,29 @@ Common view of traditional service provider network is as following, different s
 
 
 ## Cisco 8712-MOD-M Use Cases  
+The Cisco 8712-MOD-M powered by Cisco Silicon One™ K100 NPU is a well architected platform to address diversified deployment usecases across various network domains and segments. List of usecases are categoriesed as below,
+
+Cisco 8712-MOD-M is powered to address below roles in service providers, 
+
+    Internet gateway and exchange (Peering) roles
+    CDN Peering role (SP DC)
+    Datacenter Interconnect Gateway role
+    Metro edge and aggregation service role
+    Small & Medium Mobile service PE role
+    Enterprise Business to Business service PE role
+    Heavy Access termination role
+    Route Reflector
+
+### Enterprise
+
+Cisco 8712-MOD-M is powered to address below roles in enterprise networking segments,
+
+    Enterprise WAN service Edge
+    Enterprise Internet Gateway (Peering)
+    Enterprise CPE
+    Enterprise IP Backbone (Core)
+    Data Center Gateway (DC-GW) and DC Edge
+    
 ### Aggregation, Core, Peering and DC Core with RON(Routed Optical Networking)       
 ![use-case.png]({{site.baseurl}}/images/use-case.png)  
 
@@ -91,7 +114,7 @@ Cisco Silicon One™ K100 NPU features:
 - Multiple embedded ARC processors for CPU offloading
 - 128K VoQ (Virtual Output Queue)
 - 1M counters to facilitate statistics punching for different feature applications and built-in counters in HCAM(Hash-based TCAM)
-- 6M IPv4 or 6M IPv6 FIB scaling capacity
+- 6M IPv4 or 4M IPv6 FIB scaling capacity
 
 
 ### 8712-MOD-M System Block Diagram
