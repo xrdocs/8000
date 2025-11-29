@@ -55,21 +55,16 @@ Backhauling remote branch sites is critical to the success of many commercial, e
 | PIDs             | Product Description                                           |
 |------------------|---------------------------------------------------------------|
 | 8712-MOD-M       | Cisco 8712 2RU 6.4T KR100 System with 4 MPA bays              |
-| 8000-QSFP-DCAP   | QSFP Dust CAP                                                 |
-| 8700-1RU-4P-KIT  | Rack Mount Kit for Cisco 8700 1RU Chassis 19” and 23”, 4 POST |
-| 8700-1RU-2P-KIT  | Rack Mount Kit for Cisco 8700 1RU Chassis 19” and 23”, 2 POST |
-| FAN-1RU-PI-V2    | 1RU Fan with Port-side Air Intake                             |
-| FAN-1RU-PE-V2    | 1RU Fan with Port-side Air Exhaust                            |
-| PSU2KW-ACPI      | 2000W AC Power Module with Port-side Air Intake               |
-| PSU2KW-ACPE      | 2000W AC Power Module with Port-side Air Exhaust              |
-| PSU2KW-DCPI      | 2000W DC Power Module with Port-side Air Intake               |
-| PSU2KW-DCPE      | 2000W DC Power Module with Port-side Air Exhaust              |
-| PWR-2KW-DC-CBL   | 2000W DC Power Cable                                          |
-| ESS-8KE-100G-RTU | Essential Right-to-Use 100G for Cisco 8000E Series            |
-| ADN-8KE-100G-RTU | Advantage Right-to-Use 100G for Cisco 8000E Series            |
-| PRM-8KE-100G-RTU | Premium Right-to-Use 100G for Cisco 8000E Series              |
-| 8KSW-B-SIA-3     | 8000 Type B Device SIA for 3-year term FCM 2.0                |
-| 8KSW-B-SIA-5     | 8000 Type B Device SIA for 5-year term FCM 2.0                |
+| 8K-MPA-16H       | Cisco 8000 16 x 100G MPA                                      |
+| 8K-MPA-4D        | Cisco 8000 4 x 400G MPA                                       |
+| 8K-MPA-16Z2D     | Cisco 8000 16x50G + 2x400G MPA                                |
+| FAN-PI-V3        | Cisco 8000 FAN - port-side intake                             |
+| FAN-PE-V3        | Cisco 8000 FAN - port-side Exhaust                            |
+| PSU2KW-ACPI      | 2KW AC Power Module with Port-side Air Intake                 |
+| PSU2KW-ACPE      | 2KW AC Power Module with Port-side Air Exhaust                |
+| PSU2KW-DCPI      | 2KW 48V DC Power Module with Port-side Air Intake             |
+| PSU2KW-DCPE      | 2KW 48V DC Power Module with Port-side Air Exhaust            |
+| PSU2KW-HVPI      | 2KW AC/HVAC/HVDC Power Supply with Port-side Air Intake       |
 
 
 
