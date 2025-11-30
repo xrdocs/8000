@@ -262,7 +262,7 @@ The following table represents the maximum number of ports the Cisco 8712-MOD-M 
 |          | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
 |----------|---------|---------|--------|---------|---------|---------|---------|
 | Native   | 72      | 72      | 24     | 32      | 72      | 64      | 16      |
-| Breakout | NA      | 128     | 128    | NA      | NA.     | 64      | NA      |
+| Breakout | NA      | 128     | 128    | NA      | NA      | 64      | NA      |
 
 **Notes** : Maximum number of ports mentioned in each categories in above table is by considering that the system is loaded with maximum number of respective MPA variants. Like, system has to be loaded with 4x 8K-MPA-18Z1D to get 72 ports of 1GbE or 10GbE or 25GbE or 50GbE port configuration.
 
