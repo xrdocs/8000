@@ -35,10 +35,10 @@ Common view of traditional service provider network is as following, different s
 
 
 ## Cisco 8712-MOD-M Use Cases  
-As user applications become more dynamic differentiated user experiences , with assured low latency and high bandwidth without any compromise in keeping the real estate and energy in green are required. And Cisco's Agile Services Networking architecture is shaping these demands well by simplifying the network by unifying the network capabilities across different network segment isalands into single architecture with uniform capabilities  agile services nedemand for service handoff anywhere and network resources need to be optimized in terms of power and real estate. 
-The Cisco 8712-MOD-M powered by Cisco Silicon One™ K100 NPU is a well architected platform to address diversified deployment usecases across various network domains and segments. The flexible fron panel provisioniong capability makes it very versatile in deployments: high speed bandwidth pipe to towards upstream peering , low speed service aggregation towards downstream peering, flexible enough for dense 100G aggregation and out-of-band route reflector role where system can be provisioned with minimal port connectivity by keeping only single MPA bay loaded and rest filled with MPA blanks. 
+As user applications become more dynamic network is demanding differentiated user experiences, assurance of low latency and high availability without any compromise in keeping the real estate and energy in green at its best promising levels. And Cisco's Agile Services Networking (ASN)architecture is shaping these demands well by simplifying the network by unifying the network capabilities across different network segment islands into single architecture.
+The Cisco 8712-MOD-M powered by Cisco Silicon One™ K100 NPU is a well architected platform to empower ASN architecture to cater diversified deployment usecases across various network domains and segments. The highly flexible front panel provisioniong capability makes it very versatile in deployments: high speed bandwidth pipe to towards upstream peering , low speed service aggregation towards downstream peering, dense 100G aggregation and out-of-band route reflector role where system can be provisioned with minimal port connectivity by keeping only single MPA bay loaded and rest filled with MPA blanks and so on... Cisco 8712-MOD-M also looking at other networking segments, securing the connections of multiple data centers and cloud environments, WAN MACsec sometimes called data center interconnect (DCI), backhauling remote branch sites is critical to the success of many commercial, enterprise, and government organizations. In the consumer space, backhauling is important for remote stores and point-of-sale kiosks. In the government space, it is crucial for the operation of remote agencies and offices.  
 
-List of usecases are categoriesed as below,
+Detailed list of usecases are categoriesed as below,
 
 Cisco 8712-MOD-M is powered to address below roles in service providers:
 - Internet gateway and exchange (Peering) roles
@@ -70,9 +70,7 @@ Moreover, Cisco’s [Converged SDN Transport Solution](https://blogs.cisco.com/s
 ### Secure High-speed Data Center/Cloud interconnect and large Regional Hub/Branch router    
 ![Screenshot 2024-12-24 at 5.08.50 PM.png]({{site.baseurl}}/images/Screenshot 2024-12-24 at 5.08.50 PM.png)  
 
-Securing the connections of multiple data centers and cloud environments typically involves meeting the highest levels of bandwidth requirements on a smaller number of links. WAN MACsec, sometimes called data center interconnect (DCI), is the ideal encryption solution for such settings.    
-
-Backhauling remote branch sites is critical to the success of many commercial, enterprise, and government organizations. In the consumer space, backhauling is important for remote stores and point-of-sale kiosks. In the government space, it is crucial for the operation of remote agencies and offices.    
+  
 
 
 *Understand Cisco 8712-MOD-M’s modules and associated PIDs
