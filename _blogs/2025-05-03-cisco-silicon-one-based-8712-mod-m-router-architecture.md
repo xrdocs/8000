@@ -35,27 +35,30 @@ Common view of traditional service provider network is as following, different s
 
 
 ## Cisco 8712-MOD-M Use Cases  
+As user applications become more dynamic differentiated user experiences , with assured low latency and high bandwidth without any compromise in keeping the real estate and energy in green are required. And Cisco's Agile Services Networking architecture is shaping these demands well by simplifying the network by unifying the network capabilities across different network segment isalands into single architecture with uniform capabilities  agile services nedemand for service handoff anywhere and network resources need to be optimized in terms of power and real estate. 
 The Cisco 8712-MOD-M powered by Cisco Silicon One™ K100 NPU is a well architected platform to address diversified deployment usecases across various network domains and segments. The flexible fron panel provisioniong capability makes it very versatile in deployments: high speed bandwidth pipe to towards upstream peering , low speed service aggregation towards downstream peering, flexible enough for dense 100G aggregation and out-of-band route reflector role where system can be provisioned with minimal port connectivity by keeping only single MPA bay loaded and rest filled with MPA blanks. 
 
 List of usecases are categoriesed as below,
 
 Cisco 8712-MOD-M is powered to address below roles in service providers:
-- Internet gateway and exchange (Peering) roles\
+- Internet gateway and exchange (Peering) roles
 - CDN Peering role (SP DC)
 - Datacenter Interconnect Gateway role
 - Metro edge and aggregation service role
 - Small & Medium Mobile service PE role
 - Enterprise Business to Business service PE role
+- Routed Optical Netwroking role
 - Heavy Access termination role
 - Route Reflector
 
-Cisco 8712-MOD-M is also powered to address some of the enterrpise and data center roles as well:
+Cisco 8712-MOD-M is also powered to address some of the enterrpise and data center/Cloud segments:
 - Enterprise WAN service Edge
 - Enterprise Internet Gateway (Peering)
 - Enterprise CPE
 - Enterprise IP Backbone (Core)
 - Data Center Gateway (DC-GW) 
-- Data Centernd Interconnect
+- Data Center Interconnect
+- Cloud Interconnect
     
 ### Aggregation, Core, Peering and DC Core with RON(Routed Optical Networking)       
 ![use-case.png]({{site.baseurl}}/images/use-case.png)  
