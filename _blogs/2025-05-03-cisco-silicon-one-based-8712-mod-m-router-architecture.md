@@ -162,9 +162,31 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 
 - This MPA serves dense 100G fan outs
+
+|               | 40 GbE  | 100     |
+|---------------|---------|---------|
+| Native Ports  | 8       | 16      |
+
 - 4x 10G / 4x 25G breakout is supported on even numbered ports: 0,2,4,6,8,10,12,14 
 - Odd numbered ports get disabled after even numbered ports are configured with breakout
 
+### Breakout port configurations through Retimer / Gear box 
+
+![retimer-16h.png]({{site.baseurl}}/images/retimer-16h.png)
+
+Each Retimer/Gearbox has 8x 50Gbps serdes lines towards the NPU side which limits maximum number of individual port configuration on it to 8 as each port need atleast one serdes line. So enabling breakout configuration on even numbered port will disable the immediate odd numbered port. ie, breakout configuration on port-4 will disable port-5.
+
+
+|                | 10 GbE  | 25 GbE |
+|----------------|---------|--------|
+| Breakout Ports | 32      | 32     |
+
+### How to enable breakout
+
+- Configure the port intended to breakout in mode 40
+- Configure the optical breakout 4x10 or 4x25
+
+![16h-bo.png]({{site.baseurl}}/images/16h-bo.png)
 
 
 ## 8K-MPA-16Z4D
@@ -183,7 +205,18 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 
 
+### Maximum port scale and support on Cisco 8712-MOD-M  
 
+The following table represents the maximum number of ports the Cisco 8712-MOD-M router can support.  
+
+|          | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
+|----------|---------|---------|--------|---------|---------|---------|---------|
+| Native   | 72      | 72      | 24     | 32      | 72      | 64      | 16      |
+| Breakout | NA      | 128     | 128    | NA      | NA.     | 64      | NA      |
+
+**Notes** : Maximum number of ports mentioned in each categories in above table is by considering that the system is loaded with maximum number of respective MPA variants. Like, system has to be loaded with 4x 8K-MPA-18Z1D to get 72 ports of 1GbE or 10GbE or 25GbE or 50GbE port configuration.
+
+Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by using four 8K-MPA-16H  MPA variant with 8 ports are configured with 4x 10GbE or 25GbE breakout on all 4 MPAs.
 
 
 *Understand Cisco 8712-MOD-M’s modules and associated PIDs
