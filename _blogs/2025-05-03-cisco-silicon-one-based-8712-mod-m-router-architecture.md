@@ -154,6 +154,28 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 - All four ports supports 4x10G or 4x25G or 4x100G breakout mode
 - All four ports can be populated with DCO optics
 
+|               | 40 GbE  | 400     |
+|---------------|---------|---------|
+| Native Ports  | 4       | 4       |
+
+
+### Breakout port configurations through Retimer / Gear box 
+
+
+![4d-bo-2.png]({{site.baseurl}}/images/4d-bo-2.png){: .align-center}
+
+
+|                | 10 GbE  | 25 GbE | 100 GbE |
+|----------------|---------|--------|---------|
+| Breakout Ports | 16      | 16     | 16      |
+
+
+### How to enable breakout
+
+- Configure the port intended to breakout in mode 40
+- Configure the optical breakout 4x10 or 4x25
+
+
 ## 8K-MPA-16H
 ![16h-screen.png]({{site.baseurl}}/images/16h-screen.png){: .align-center}
 
@@ -172,7 +194,7 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 ### Breakout port configurations through Retimer / Gear box 
 
-![retimer-16h.png]({{site.baseurl}}/images/retimer-16h.png)
+![16h-bo-2.png]({{site.baseurl}}/images/16h-bo-2.png)
 
 Each Retimer/Gearbox has 8x 50Gbps serdes lines towards the NPU side which limits maximum number of individual port configuration on it to 8 as each port need atleast one serdes line. So enabling breakout configuration on even numbered port will disable the immediate odd numbered port. ie, breakout configuration on port-4 will disable port-5.
 
@@ -186,22 +208,27 @@ Each Retimer/Gearbox has 8x 50Gbps serdes lines towards the NPU side which limit
 - Configure the port intended to breakout in mode 40
 - Configure the optical breakout 4x10 or 4x25
 
-![16h-bo.png]({{site.baseurl}}/images/16h-bo.png)
+![16h-bo.png]({{site.baseurl}}/images/16h-bo.png){: .align-center}
 
 
 ## 8K-MPA-16Z4D
 
 ![16z-screen.png]({{site.baseurl}}/images/16z-screen.png){: .align-center}
 
-![16z-arch.png]({{site.baseurl}}/images/16z-arch.png)
+![16z-arch.png]({{site.baseurl}}/images/16z-arch.png){: .align-center}
 
+
+### Breakout port configurations through Retimer / Gear box 
+
+![comb-bo.png]({{site.baseurl}}/images/comb-bo.png){: .align-center}
 
 
 ## 8K-MPA-18Z1D
 
-![18z-arch.png]({{site.baseurl}}/images/18z-arch.png)
-{: .align-center}
+![18z-arch.png]({{site.baseurl}}/images/18z-arch.png){: .align-center}
 
+
+### Breakout port configurations through Retimer / Gear box 
 
 
 
