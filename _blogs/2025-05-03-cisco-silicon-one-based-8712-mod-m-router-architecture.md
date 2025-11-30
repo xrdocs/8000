@@ -211,13 +211,39 @@ Below is 4x10g breakout configuration example captured on the system,
 
 
 ## 8K-MPA-16Z4D
+This MPA suites for deployments having combination of low speed and high speed port connectivity.
 
 ![16z-screen.png]({{site.baseurl}}/images/16z-screen.png){: .align-center}
 
 ![16z-arch.png]({{site.baseurl}}/images/16z-arch.png){: .align-center}
 
 
+|          | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
+|----------|---------|---------|--------|---------|---------|---------|---------|
+| Native   | 16      | 16      | 16     | 2       | 16      | 4       | 2       |
+
+
+- 4x 10G / 4x 25G / 4x 100G breakout is supported on port-16 & 18
+- Odd numbered ports get disabled after even numbered ports are configured with breakout
+
 ### Breakout port configurations through Retimer / Gear box 
+
+This MPA has three Retimer/Gearbox modules where 2 are hosting QSFP-DD form factor optics and each has 8x 50Gbps serdes lines towards the NPU side. But breakout is supported only on 2 QSFDD ports (Port-16 & 18) out 4 ports (Port16-19).So enabling breakout configuration on even numbered port will disable the immediate odd numbered port. ie, breakout configuration on port-16 will disable port-17.
+
+
+|                | 10 GbE  | 25 GbE | 100 GbE |
+|----------------|---------|--------|---------|
+| Breakout Ports | 8       | 8      | 8       |
+
+
+### How to enable breakout
+
+- Configure the port intended to breakout in mode 400
+- Configure the optical breakout 4x10 or 4x25 or 4x100
+
+Below is 4x100g breakout configuration example captured on the system,
+
+![combo-100BO.png]({{site.baseurl}}/images/combo-100BO.png)
 
 
 ## 8K-MPA-18Z1D
