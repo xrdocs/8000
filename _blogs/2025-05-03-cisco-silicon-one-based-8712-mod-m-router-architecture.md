@@ -125,11 +125,9 @@ Separate PID for PI & PE Air flows
 FAN-PI-V3 / FAN-PE-V3
 
 
-
 ![fron-panel-mgmnt-ports.png]({{site.baseurl}}/images/fron-panel-mgmnt-ports.png)
 Figure 3. Front panel ports of Cisco 8712-MOD-M  
 {: .text-center} 
-
 
 
 # Modular Port Adaptors (MPAs)
@@ -161,9 +159,7 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 ### Breakout port configurations through Retimer / Gear box 
 
-
-![4d-bo-2.png]({{site.baseurl}}/images/4d-bo-2.png){: .align-center}
-
+This MPA has two Retimer/Gearbox and each has 16x 50Gbps serdes lines towards the NPU side which facilitate the creation of 16 individual port configurations on it.
 
 |                | 10 GbE  | 25 GbE | 100 GbE |
 |----------------|---------|--------|---------|
@@ -172,18 +168,21 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 ### How to enable breakout
 
-- Configure the port intended to breakout in mode 40
-- Configure the optical breakout 4x10 or 4x25
+- Configure the optical breakout 4x10 or 4x25 or 4x100
+
+Below is 4x10g breakout configuration example captured on the system,
+
+![4d-bo-cfg.png]({{site.baseurl}}/images/4d-bo-cfg.png)
 
 
 ## 8K-MPA-16H
+This MPA suites for dense 100G fan outs and also supports 4x10G or 4x25G breakout configurations
+
 ![16h-screen.png]({{site.baseurl}}/images/16h-screen.png){: .align-center}
 
 
 ![16h-a.png]({{site.baseurl}}/images/16h-a.png){: .align-center}
 
-
-- This MPA serves dense 100G fan outs
 
 |               | 40 GbE  | 100     |
 |---------------|---------|---------|
@@ -194,9 +193,7 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 ### Breakout port configurations through Retimer / Gear box 
 
-![16h-bo-2.png]({{site.baseurl}}/images/16h-bo-2.png)
-
-Each Retimer/Gearbox has 8x 50Gbps serdes lines towards the NPU side which limits maximum number of individual port configuration on it to 8 as each port need atleast one serdes line. So enabling breakout configuration on even numbered port will disable the immediate odd numbered port. ie, breakout configuration on port-4 will disable port-5.
+This MPA has four Retimer/Gearbox modules and each has 8x 50Gbps serdes lines towards the NPU side which limits maximum number of individual port configuration on it to 8 as each port need atleast one serdes line. So enabling breakout configuration on even numbered port will disable the immediate odd numbered port. ie, breakout configuration on port-4 will disable port-5.
 
 
 |                | 10 GbE  | 25 GbE |
@@ -207,6 +204,8 @@ Each Retimer/Gearbox has 8x 50Gbps serdes lines towards the NPU side which limit
 
 - Configure the port intended to breakout in mode 40
 - Configure the optical breakout 4x10 or 4x25
+
+Below is 4x10g breakout configuration example captured on the system,
 
 ![16h-bo.png]({{site.baseurl}}/images/16h-bo.png){: .align-center}
 
@@ -219,8 +218,6 @@ Each Retimer/Gearbox has 8x 50Gbps serdes lines towards the NPU side which limit
 
 
 ### Breakout port configurations through Retimer / Gear box 
-
-![comb-bo.png]({{site.baseurl}}/images/comb-bo.png){: .align-center}
 
 
 ## 8K-MPA-18Z1D
