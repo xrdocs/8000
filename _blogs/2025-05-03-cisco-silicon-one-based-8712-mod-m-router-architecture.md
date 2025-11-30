@@ -14,7 +14,7 @@ High-performance networking systems have historically been divided into routing 
 The Cisco 8700 series is an addition to [the Cisco 8000 Series Routers](https://www.cisco.com/site/us/en/products/networking/routers/8000-series/index.html) powered by [Cisco Silicon One](https://www.cisco.com/site/us/en/products/networking/silicon-one/index.html)™  ASICs.  8700 products embody this cutting-edge innovation of the 8000 portfolio, offering advanced features engineered for seamless integration and scalability. Whether enhancing existing infrastructure or enabling new capabilities, the 8700 series products empower organizations to achieve their goals with unmatched efficiency and effectiveness. 
 
 ## Cisco 8712-MOD-M Overview  
-Cisco 8712-MOD-M is a 2RU 6.4Tbps fixed system based on a single Cisco Silicon One™ K100 Network Processing Unkit (NPU). This system offers 4 bays of Modular Port Adaptors (MPAs) with each slot having 1.6Tbps capacity. 4 types of MPAs are supported which offers diverse port speed combinations supported by SFP56, QSF28, QSFPDD optical form factors: 1G, 10G, 25G, 50G, 100G, 400G.
+Cisco 8712-MOD-M is a 2RU 6.4Tbps fixed system based on a single Cisco Silicon One™ K100 Network Processing Unit (NPU). This system offers 4 bays of Modular Port Adaptors (MPAs) with each slot having 1.6Tbps capacity totalling 6.4Tbps at system level. 4 types of MPAs are supported which offers diverse port speed combinations supported by SFP56, QSF28, QSFPDD optical form factors: 1G, 10G, 25G, 50G, 100G, 400G.
 
 ### Product Video  
 
@@ -35,28 +35,27 @@ Common view of traditional service provider network is as following, different s
 
 
 ## Cisco 8712-MOD-M Use Cases  
-The Cisco 8712-MOD-M powered by Cisco Silicon One™ K100 NPU is a well architected platform to address diversified deployment usecases across various network domains and segments. List of usecases are categoriesed as below,
+The Cisco 8712-MOD-M powered by Cisco Silicon One™ K100 NPU is a well architected platform to address diversified deployment usecases across various network domains and segments. The flexible fron panel provisioniong capability makes it very versatile in deployments: high speed bandwidth pipe to towards upstream peering , low speed service aggregation towards downstream peering, flexible enough for dense 100G aggregation and out-of-band route reflector role where system can be provisioned with minimal port connectivity by keeping only single MPA bay loaded and rest filled with MPA blanks. 
 
-Cisco 8712-MOD-M is powered to address below roles in service providers, 
+List of usecases are categoriesed as below,
 
-    Internet gateway and exchange (Peering) roles
-    CDN Peering role (SP DC)
-    Datacenter Interconnect Gateway role
-    Metro edge and aggregation service role
-    Small & Medium Mobile service PE role
-    Enterprise Business to Business service PE role
-    Heavy Access termination role
-    Route Reflector
+Cisco 8712-MOD-M is powered to address below roles in service providers:
+- Internet gateway and exchange (Peering) roles\
+- CDN Peering role (SP DC)
+- Datacenter Interconnect Gateway role
+- Metro edge and aggregation service role
+- Small & Medium Mobile service PE role
+- Enterprise Business to Business service PE role
+- Heavy Access termination role
+- Route Reflector
 
-### Enterprise
-
-Cisco 8712-MOD-M is powered to address below roles in enterprise networking segments,
-
-    Enterprise WAN service Edge
-    Enterprise Internet Gateway (Peering)
-    Enterprise CPE
-    Enterprise IP Backbone (Core)
-    Data Center Gateway (DC-GW) and DC Edge
+Cisco 8712-MOD-M is also powered to address some of the enterrpise and data center roles as well:
+- Enterprise WAN service Edge
+- Enterprise Internet Gateway (Peering)
+- Enterprise CPE
+- Enterprise IP Backbone (Core)
+- Data Center Gateway (DC-GW) 
+- Data Centernd Interconnect
     
 ### Aggregation, Core, Peering and DC Core with RON(Routed Optical Networking)       
 ![use-case.png]({{site.baseurl}}/images/use-case.png)  
