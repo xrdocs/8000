@@ -52,7 +52,7 @@ Cisco 8712-MOD-M is powered to address below roles in service providers:
 - Route Reflector
 
 Cisco 8712-MOD-M is also powered to address some of the enterrpise and data center/Cloud segments:
-- Enterprise WAN service Edge
+- Enterprise WAN core & service Edge
 - Enterprise Internet Gateway (Peering)
 - Enterprise CPE
 - Enterprise IP Backbone (Core)
@@ -103,13 +103,13 @@ Let us check how 8712-MOD-M system is architected with K100 Silicon One™ NPU,
 ## Platform Description
 Cisco 8712-MOD-M is a Cisco Silicon One™ based 2RU fixed router belonging to Cisco 8700 family of products, a first in class device to play intelligent Edge roles across Service Provider, Enterprise WAN , Data Center Interconnect, DC gateway network applications.
 
-![fron-view.png]({{site.baseurl}}/images/fron-view.png)
+![fron-view.png]({{site.baseurl}}/images/fron-view.png){: .align-center}
 Figure 1. Front view of the Cisco 8712-MOD-M  
 {: .text-center}  
 
 MPA bays can be populated with any combination of MPA types
 
-![fron-rear-full-chassi-view.png]({{site.baseurl}}/images/fron-rear-full-chassi-view.png)
+![fron-rear-full-chassi-view.png]({{site.baseurl}}/images/fron-rear-full-chassi-view.png){: .align-center}
 Figure 2. Front & Rear view of Cisco 8712-MOD-M  
 {: .text-center} 
 
@@ -125,7 +125,7 @@ Separate PID for PI & PE Air flows
 FAN-PI-V3 / FAN-PE-V3
 
 
-![fron-panel-mgmnt-ports.png]({{site.baseurl}}/images/fron-panel-mgmnt-ports.png)
+![fron-panel-mgmnt-ports.png]({{site.baseurl}}/images/fron-panel-mgmnt-ports.png){: .align-center}
 Figure 3. Front panel ports of Cisco 8712-MOD-M  
 {: .text-center} 
 
@@ -133,7 +133,7 @@ Figure 3. Front panel ports of Cisco 8712-MOD-M
 # Modular Port Adaptors (MPAs)
 Cisco 8712-MOD-M system has 4 bays to provision MPAs. There are 4 MPA variants supported on this system and any combination of MPA varinats can be plugged into the MPA 4 slots. And these MPAs are Online Insertion & Removal capable and user has the flexibility to choose the MPA varinats and number of MPAs based on the capacity provisioning of the network.
 
-![mpa-bay-view.png]({{site.baseurl}}/images/mpa-bay-view.png){: .full}
+![mpa-bay-view.png]({{site.baseurl}}/images/mpa-bay-view.png){: .full}{: .align-center}
 Figure 4. MPA bay view of Cisco 8712-MOD-M  
 {: .text-center}
 
@@ -144,8 +144,7 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 ![4d.png]({{site.baseurl}}/images/4d.png){: .align-center}
 
-![4d-a.png]({{site.baseurl}}/images/4d-a.png)
-{: .align-center}
+![4d-a.png]({{site.baseurl}}/images/4d-a.png){: .align-center}
 
 - This MPA host four QSFPDD ports
 - All four ports can be operated in breakout mode
@@ -172,7 +171,7 @@ This MPA has two Retimer/Gearbox and each has 16x 50Gbps serdes lines towards th
 
 Below is 4x10g breakout configuration example captured on the system,
 
-![4d-bo-cfg.png]({{site.baseurl}}/images/4d-bo-cfg.png)
+![4d-bo-cfg.png]({{site.baseurl}}/images/4d-bo-cfg.png){: .align-center}
 
 
 ## 8K-MPA-16H
@@ -212,6 +211,9 @@ Below is 4x10g breakout configuration example captured on the system,
 
 ## 8K-MPA-16Z4D
 This MPA suites for deployments having combination of low speed and high speed port connectivity.
+It has 16x SFP56 low speed ports which supports 1GbE, 10GbE, 25GbE & 50GbE. And it also has 4x QSFPDD high speed connectivity which can support 4x 100GbE or 2x 400GbE.
+
+Default port speed of low speed ports (Ports 0 - 15) is 50GbE and 100GbE for high speed ports (Port 16 - 19)
 
 ![16z-screen.png]({{site.baseurl}}/images/16z-screen.png){: .align-center}
 
@@ -241,12 +243,19 @@ This MPA has three Retimer/Gearbox modules where 2 are hosting QSFP-DD form fact
 - Configure the port intended to breakout in mode 400
 - Configure the optical breakout 4x10 or 4x25 or 4x100
 
-Below is 4x100g breakout configuration example captured on the system,
+Below is 4x100g & 4x10g breakout configuration example captured on the system,
 
-![combo-100BO.png]({{site.baseurl}}/images/combo-100BO.png)
+![combo-100BO.png]({{site.baseurl}}/images/combo-100BO.png){: .align-center}
+
+![10g-bo-combo.png]({{site.baseurl}}/images/10g-bo-combo.png){: .align-center}
+
 
 
 ## 8K-MPA-18Z1D
+
+![lotus-new.png]({{site.baseurl}}/images/lotus-new.png){: .align-center}
+
+
 
 ![18z-arch.png]({{site.baseurl}}/images/18z-arch.png){: .align-center}
 
@@ -277,6 +286,7 @@ Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by usin
 | 8K-MPA-16H       | Cisco 8000 16 x 100G MPA                                      |
 | 8K-MPA-4D        | Cisco 8000 4 x 400G MPA                                       |
 | 8K-MPA-16Z2D     | Cisco 8000 16x50G + 2x400G MPA                                |
+| 8K-MPA-18Z1D     | Cisco 8000 18x50G + 1x400G MPA                                |
 | FAN-PI-V3        | Cisco 8000 FAN - port-side intake                             |
 | FAN-PE-V3        | Cisco 8000 FAN - port-side Exhaust                            |
 | PSU2KW-ACPI      | 2KW AC Power Module with Port-side Air Intake                 |
@@ -284,5 +294,3 @@ Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by usin
 | PSU2KW-DCPI      | 2KW 48V DC Power Module with Port-side Air Intake             |
 | PSU2KW-DCPE      | 2KW 48V DC Power Module with Port-side Air Exhaust            |
 | PSU2KW-HVPI      | 2KW AC/HVAC/HVDC Power Supply with Port-side Air Intake       |
-
-
