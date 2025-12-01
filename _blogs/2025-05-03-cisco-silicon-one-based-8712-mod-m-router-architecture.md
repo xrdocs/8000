@@ -85,7 +85,7 @@ Cisco Silicon One™ K100 NPU features:
 - 6M IPv4 or 4M IPv6 FIB scaling capacity
 
 
-## Internal Block Diagram
+# 8712-MOD-M System Internal Block Diagram
 
 Let us check how 8712-MOD-M system is architected with K100 Silicon One™ NPU,
 
@@ -97,7 +97,7 @@ Let us check how 8712-MOD-M system is architected with K100 Silicon One™ NPU,
 - Each MPA is serviced by one IFG
 - Any variant of MPA can be plugged into any of the 4 bays
 
-## Chassis design
+# 8712-MOD-M Chassis design
 Cisco 8712-MOD-M is a Cisco Silicon One™ based 2RU fixed router belonging to Cisco 8700 family of products, a first in class device to play multiple roles across Service Provider, Enterprise WAN , Data Center Interconnect, DC gateway network applications.
 
 ![fron-view.png]({{site.baseurl}}/images/fron-view.png){: .align-center}
@@ -121,7 +121,7 @@ Figure 2. Front & Rear view of Cisco 8712-MOD-M
 Separate PID for PI & PE Air flows
 FAN-PI-V3 / FAN-PE-V3
 
-### Front panel management and timing port provisions
+## Front Panel Management and Timing Provisions
 Let us have a telescopic view of the front panel deatils,
 
 ![fron-panel-mgmnt-ports.png]({{site.baseurl}}/images/fron-panel-mgmnt-ports.png){: .align-center}
@@ -169,7 +169,7 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 | Native Ports  | 4       | 4       |
 
 
-### Breakout port configurations through Retimer / Gear box 
+### Breakout Port configurations through Retimer / Gear box 
 
 This MPA has two Retimer/Gearbox and each has 16x 50Gbps serdes lines towards the NPU side which facilitate the creation of 16 individual port configurations on it.
 
@@ -178,7 +178,7 @@ This MPA has two Retimer/Gearbox and each has 16x 50Gbps serdes lines towards th
 | Breakout Ports | 16      | 16     | 16      |
 
 
-### How to enable breakout
+### How to enable Breakout
 
 - Configure the optical breakout 4x10 or 4x25 or 4x100
 
@@ -203,7 +203,7 @@ This MPA suites for dense 100G fan outs and also supports 4x10G or 4x25G breakou
 - 4x 10G / 4x 25G breakout is supported on even numbered ports: 0,2,4,6,8,10,12,14 
 - Odd numbered ports get disabled after even numbered ports are configured with breakout
 
-### Breakout port configurations through Retimer / Gear box 
+### Breakout Port configurations through Retimer / Gear box 
 
 This MPA has four Retimer/Gearbox modules and each has 8x 50Gbps serdes lines towards the NPU side which limits maximum number of individual port configuration on it to 8 as each port need atleast one serdes line. So enabling breakout configuration on even numbered port will disable the immediate odd numbered port. ie, breakout configuration on port-4 will disable port-5.
 
@@ -212,7 +212,7 @@ This MPA has four Retimer/Gearbox modules and each has 8x 50Gbps serdes lines to
 |----------------|---------|--------|
 | Breakout Ports | 32      | 32     |
 
-### How to enable breakout
+### How to enable Breakout
 
 - Configure the port intended to breakout in mode 40
 - Configure the optical breakout 4x10 or 4x25
@@ -241,7 +241,7 @@ Default port speed of low speed ports (Ports 0 - 15) is 50GbE and 100GbE for hig
 - 4x 10G / 4x 25G / 4x 100G breakout is supported on port-16 & 18
 - Odd numbered ports get disabled after even numbered ports are configured with breakout
 
-### Breakout port configurations through Retimer / Gear box 
+### Breakout Port configurations through Retimer / Gear box 
 
 This MPA has three Retimer/Gearbox modules where 2 are hosting QSFP-DD form factor optics and each has 8x 50Gbps serdes lines towards the NPU side. But breakout is supported only on 2 QSFDD ports (Port-16 & 18) out 4 ports (Port16-19).So enabling breakout configuration on even numbered port will disable the immediate odd numbered port. ie, breakout configuration on port-16 will disable port-17.
 
@@ -251,7 +251,7 @@ This MPA has three Retimer/Gearbox modules where 2 are hosting QSFP-DD form fact
 | Breakout Ports | 8       | 8      | 8       |
 
 
-### How to enable breakout
+### How to enable Breakout
 
 - Configure the port intended to breakout in mode 400
 - Configure the optical breakout 4x10 or 4x25 or 4x100
@@ -284,9 +284,9 @@ Default port speed of low speed ports (Ports 0 - 7 & 9 - 18) is 50GbE and 400GbE
 
 - 4x 10G / 4x 25G / 4x 100G breakout is supported on port-8
 
-### Breakout port configurations through Retimer / Gear box 
+### Breakout Port configurations through Retimer / Gear box 
 
-This MPA has 2 PHY modules and 4x10 or 4x25 or 4x100 breakout configuration is supported on Port-8 without any restriction.
+This MPA has 2 PHY modules and 4x10 or 4x25 or 4x100 breakout configuration is supported only on Port-8 without any restriction.
 
 
 |                | 10 GbE  | 25 GbE | 100 GbE |
@@ -294,7 +294,7 @@ This MPA has 2 PHY modules and 4x10 or 4x25 or 4x100 breakout configuration is s
 | Breakout Ports | 4       | 4      | 4       |
 
 
-### How to enable breakout
+### How to enable Breakout
 - Configure the optical breakout 4x10 or 4x25 or 4x100
 
 Below is 4x100g & 4x10g breakout configuration example captured on the system,
@@ -303,7 +303,7 @@ Below is 4x100g & 4x10g breakout configuration example captured on the system,
 ![lotus-bo-2.png]({{site.baseurl}}/images/lotus-bo-2.png)
 
 
-## Maximum port scale possible in a fully loaded System
+## Maximum Port scale possible in a fully loaded System
 
 The following table represents the maximum number of ports the Cisco 8712-MOD-M router can support.  
 
@@ -316,10 +316,11 @@ The following table represents the maximum number of ports the Cisco 8712-MOD-M 
 
 Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by using four 8K-MPA-16H  MPA variant with 8 ports are configured with 4x 10GbE or 25GbE breakout on all 4 MPAs.
 
-# 8712-MOD-M system interface nomenclature
+## 8712-MOD-M system interface nomenclature
 Let us look at the interface naming criteria for this system. This system is categoriese under fixed form factor with a front panel modularity. Because of its modular nature each Modular Port Adaptor (MPA) bay need to be numbered as per the slot number and correcponsing ports will get numbered rooted from the slot number accordingly. Nomenclature is detailed as below,
 
-![nomen.png]({{site.baseurl}}/images/nomen.png)
+![nomen-new.png]({{site.baseurl}}/images/nomen-new.png)
+
 
 *Understand Cisco 8712-MOD-M’s modules and associated PIDs
 
@@ -339,13 +340,11 @@ Let us look at the interface naming criteria for this system. This system is cat
 | PSU2KW-HVPI      | 2KW AC/HVAC/HVDC Power Supply with Port-side Air Intake       |
 
 
-
-
-## Conclusion  
+# Conclusion  
 
 This document discussed the Cisco 8712-MOD-M architecture and its use cases. Cisco 8712.MOD-M is a Cisco Silicon One™ K100 based 2RU fixed router with front panel port modularity. Modularity is achieved by 4 different types of Modular Port Adaptors(MPAs) which offers diverse port speed : 1G, 10G, 25G, 40G, 50G, 100G, and 400G. 8712-MOD-M system addresses wide range of use cases which are detailed in above sections.
 
-## References  
+# References  
 [Cisco 8000 Cisco Silicon One™ Architecture & QOS](https://xrdocs.io/8000/blogs/Cisco-8000-QOS-architecture/)      
 [Cisco 8712-MOD-M Datasheet](https://www.cisco.com/c/en/us/products/se/2024/8/Collateral/8700-series-routers-ds.html#8712MODMrouter)                 
 [Cisco 8712-MOD-M Hardware Installation Guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/hardware/hig-fixed-8700/b-8700-hardware-installation-guide/routers_overview.html)       
@@ -354,7 +353,7 @@ This document discussed the Cisco 8712-MOD-M architecture and its use cases. Cis
 [Cisco 8000 Power Calculator](https://8000-power.cisco.com/)    
 
 
-## Modification History  
+# Modification History  
 
 | Version | Data     | Author(s)     | Comments            |
 |---------|----------|---------------|---------------------|
