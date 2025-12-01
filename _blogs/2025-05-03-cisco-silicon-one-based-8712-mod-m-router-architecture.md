@@ -254,7 +254,7 @@ Below is 4x100g & 4x10g breakout configuration example captured on the system,
 ## 8K-MPA-18Z1D
 This MPA is similar to 8K-MPA-16Z2D but it has 18x SFP56 low speed ports which supports 1GbE, 10GbE, 25GbE & 50GbE and 1x QSFPDD high speed connectivity which can support one 100GbE or 400GbE optics.
 
-Default port speed of low speed ports (Ports 0 - 15) is 50GbE and 100GbE for high speed port(Port 19)
+Default port speed of low speed ports (Ports 0 - 7 & 9 - 18) is 50GbE and 400GbE for high speed port(Port 8)
 
 ![lotus-new.png]({{site.baseurl}}/images/lotus-new.png){: .align-center}
 
@@ -263,8 +263,31 @@ Default port speed of low speed ports (Ports 0 - 15) is 50GbE and 100GbE for hig
 ![18z-arch.png]({{site.baseurl}}/images/18z-arch.png){: .align-center}
 
 
+
+|          | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
+|----------|---------|---------|--------|---------|---------|---------|---------|
+| Native   | 18      | 18      | 18     | 1       | 18      | 1       | 1       |
+
+
+- 4x 10G / 4x 25G / 4x 100G breakout is supported on port-8
+
 ### Breakout port configurations through Retimer / Gear box 
 
+This MPA has 2 PHY modules and 4x10 or 4x25 or 4x100 breakout configuration is supported on Port-8 without any restriction.
+
+
+|                | 10 GbE  | 25 GbE | 100 GbE |
+|----------------|---------|--------|---------|
+| Breakout Ports | 4       | 4      | 4       |
+
+
+### How to enable breakout
+- Configure the optical breakout 4x10 or 4x25 or 4x100
+
+Below is 4x100g & 4x10g breakout configuration example captured on the system,
+![lotus-bo-1.png]({{site.baseurl}}/images/lotus-bo-1.png)
+
+![lotus-bo-2.png]({{site.baseurl}}/images/lotus-bo-2.png)
 
 
 ### Maximum port scale and support on Cisco 8712-MOD-M  
