@@ -323,7 +323,7 @@ Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by usin
 
 ## Conclusion  
 
-This document discussed the Cisco 8711-32FH-M architecture. Cisco 8711-32FH-M is a Silicon One P100 based fixed router. It offers a very high 10G, 25G, 100G, and 400G port density with MACsec and RON while compact size (1RU). Cisco 8711-32FH-M is intended to be the primary routing solution for next generation Core, Aggregation, Peering, and DC Core networks.   
+This document discussed the Cisco 8712-MOD-M architecture and its use cases. Cisco 8712.MOD-M is a Cisco Silicon One™ K100 based 2RU fixed router with front panel port modularity. Modularity is achieved by 4 different types of Modular Port Adaptors(MPAs) which offers diverse port speed : 1G, 10G, 25G, 40G, 50G, 100G, and 400G. 8712-MOD-M system addresses wide range of use cases which are detailed in above sections.
 
 ## References  
 [Cisco 8000 Cisco Silicon One™ Architecture & QOS](https://xrdocs.io/8000/blogs/Cisco-8000-QOS-architecture/)      
@@ -331,7 +331,7 @@ This document discussed the Cisco 8711-32FH-M architecture. Cisco 8711-32FH-M is
 [Cisco 8712-MOD-M Hardware Installation Guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/hardware/hig-fixed-8700/b-8700-hardware-installation-guide/routers_overview.html)       
 [Cisco 8000 Configuration guide](https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html)           
 [Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/)    
- [Cisco 8000 Power Calculator](https://8000-power.cisco.com/)    
+[Cisco 8000 Power Calculator](https://8000-power.cisco.com/)    
 
 
 ## Modification History  
