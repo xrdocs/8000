@@ -16,13 +16,15 @@ The Cisco 8700 series is an addition to [the Cisco 8000 Series Routers](https://
 # Cisco 8712-MOD-M Overview  
 Cisco 8712-MOD-M is a 2RU 6.4Tbps fixed system based on a single Cisco Silicon One™ K100 Network Processing Unit (NPU). This system offers 4 bays of Modular Port Adaptors (MPAs) with each slot having 1.6Tbps capacity totalling 6.4Tbps at system level. 4 types of MPAs are supported which offers diverse port speed combinations supported by SFP56, QSF28, QSFPDD optical form factors: 1G, 10G, 25G, 50G, 100G, 400G.
 
-## Product Video  
-
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=2ckU9oAP9hI&t=17s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
   
-The key features of the Cisco 8712-MOD-M are summarized below.     
+The key characteristics of the Cisco 8712-MOD-M are summarized below.     
 
 ![product-specs.png]({{site.baseurl}}/images/product-specs.png)
+
+## Product Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=2ckU9oAP9hI&t=17s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+
 
 ## Service Provider(SP) networking Architecture shift
 
@@ -61,16 +63,12 @@ Cisco 8712-MOD-M is also powered to address some of the enterrpise and data cent
 - Cloud Interconnect
     
 
-# System Architecture
-Cisco 8712-MOD-M system is powered by Cisco Silicon One™ K100 Network Processing Unit(NPU), a first in class to deliver intelligent Edge services. Get a kick start with: [Cisco-8000-architecture](https://xrdocs.io/8000/blogs/Cisco-8000-QOS-architecture/)To understand the fundamentals of Cisco Silicon One™. 
+# 8712-MOD-M System Network Processing Unit(NPU) Architecture
+Cisco 8712-MOD-M system is powered by Cisco Silicon One™ K100 Network Processing Unit(NPU), a first in class to deliver intelligent Agregation/Edge services. Get a kick start with: [Cisco-8000-architecture](https://xrdocs.io/8000/blogs/Cisco-8000-QOS-architecture/) to understand the fundamentals of Cisco Silicon One™ Network Processing Unit (NPU). 
 
+![k100.png]({{site.baseurl}}/images/k100.png){: .align-center}
 
-
-![k100-blocks.png]({{site.baseurl}}/images/k100-blocks.png){: .align-center}    
-Figure 14. Cisco Silicon One K100 Details  
-{: .text-center}
-
-
+Figure 1. Cisco Silicon One K100 NPU building blocks{: .text-center}
 
 Cisco Silicon One™ K100 NPU features:
 - 6.4Tbps full duplex forwarding capacity @2.6Bpps
@@ -87,12 +85,11 @@ Cisco Silicon One™ K100 NPU features:
 - 6M IPv4 or 4M IPv6 FIB scaling capacity
 
 
-## 8712-MOD-M System Block Diagram
+## Internal Block Diagram
 
 Let us check how 8712-MOD-M system is architected with K100 Silicon One™ NPU,
 
 ![sys-blocks.png]({{site.baseurl}}/images/sys-blocks.png){: .align-center}
-{: .text-center}
 
 - 2 network slices with 2 IFGs per slice 
 - Each IFG has 32x 56G raw bandwidth throughput
@@ -100,8 +97,8 @@ Let us check how 8712-MOD-M system is architected with K100 Silicon One™ NPU,
 - Each MPA is serviced by one IFG
 - Any variant of MPA can be plugged into any of the 4 bays
 
-## Platform Description
-Cisco 8712-MOD-M is a Cisco Silicon One™ based 2RU fixed router belonging to Cisco 8700 family of products, a first in class device to play intelligent Edge roles across Service Provider, Enterprise WAN , Data Center Interconnect, DC gateway network applications.
+## Chassis design
+Cisco 8712-MOD-M is a Cisco Silicon One™ based 2RU fixed router belonging to Cisco 8700 family of products, a first in class device to play multiple roles across Service Provider, Enterprise WAN , Data Center Interconnect, DC gateway network applications.
 
 ![fron-view.png]({{site.baseurl}}/images/fron-view.png){: .align-center}
 Figure 1. Front view of the Cisco 8712-MOD-M  
@@ -133,7 +130,7 @@ Figure 3. Front panel ports of Cisco 8712-MOD-M
 # Modular Port Adaptors (MPAs)
 Cisco 8712-MOD-M system has 4 bays to provision MPAs. There are 4 MPA variants supported on this system and any combination of MPA varinats can be plugged into the MPA 4 slots. And these MPAs are Online Insertion & Removal capable and user has the flexibility to choose the MPA varinats and number of MPAs based on the capacity provisioning of the network.
 
-![mpa-bay-view.png]({{site.baseurl}}/images/mpa-bay-view.png){: .full}{: .align-center}
+![mpa-bay-view.png]({{site.baseurl}}/images/mpa-bay-view.png){: .align-center}
 Figure 4. MPA bay view of Cisco 8712-MOD-M  
 {: .text-center}
 
@@ -146,7 +143,7 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 ![4d-a.png]({{site.baseurl}}/images/4d-a.png){: .align-center}
 
-- This MPA host four QSFPDD ports
+- This MPA has four QSFPDD ports
 - All four ports can be operated in breakout mode
 - All four ports supports 4x10G or 4x25G or 4x100G breakout mode
 - All four ports can be populated with DCO optics
@@ -290,7 +287,7 @@ Below is 4x100g & 4x10g breakout configuration example captured on the system,
 ![lotus-bo-2.png]({{site.baseurl}}/images/lotus-bo-2.png)
 
 
-### Maximum port scale and support on Cisco 8712-MOD-M  
+## Maximum port scale possible in a fully loaded System
 
 The following table represents the maximum number of ports the Cisco 8712-MOD-M router can support.  
 
@@ -320,3 +317,25 @@ Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by usin
 | PSU2KW-DCPI      | 2KW 48V DC Power Module with Port-side Air Intake             |
 | PSU2KW-DCPE      | 2KW 48V DC Power Module with Port-side Air Exhaust            |
 | PSU2KW-HVPI      | 2KW AC/HVAC/HVDC Power Supply with Port-side Air Intake       |
+
+
+
+
+## Conclusion  
+
+This document discussed the Cisco 8711-32FH-M architecture. Cisco 8711-32FH-M is a Silicon One P100 based fixed router. It offers a very high 10G, 25G, 100G, and 400G port density with MACsec and RON while compact size (1RU). Cisco 8711-32FH-M is intended to be the primary routing solution for next generation Core, Aggregation, Peering, and DC Core networks.   
+
+## References  
+[Cisco 8000 Cisco Silicon One™ Architecture & QOS](https://xrdocs.io/8000/blogs/Cisco-8000-QOS-architecture/)      
+[Cisco 8712-MOD-M Datasheet](https://www.cisco.com/c/en/us/products/se/2024/8/Collateral/8700-series-routers-ds.html#8712MODMrouter)                 
+[Cisco 8712-MOD-M Hardware Installation Guide](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/hardware/hig-fixed-8700/b-8700-hardware-installation-guide/routers_overview.html)       
+[Cisco 8000 Configuration guide](https://www.cisco.com/c/en/us/support/routers/8000-series-routers/products-installation-and-configuration-guides-list.html)           
+[Cisco Optics-to-Device Compatibility Matrix tool](https://tmgmatrix.cisco.com/)    
+ [Cisco 8000 Power Calculator](https://8000-power.cisco.com/)    
+
+
+## Modification History  
+
+| Version | Data     | Author(s)     | Comments            |
+|---------|----------|---------------|---------------------|
+| 1       | Dec, 2025 | Ram Mohan A M | Initial Publication |
