@@ -121,11 +121,27 @@ Figure 2. Front & Rear view of Cisco 8712-MOD-M
 Separate PID for PI & PE Air flows
 FAN-PI-V3 / FAN-PE-V3
 
+### Front panel management and timing port provisions
+Let us have a telescopic view of the front panel deatils,
 
 ![fron-panel-mgmnt-ports.png]({{site.baseurl}}/images/fron-panel-mgmnt-ports.png){: .align-center}
 Figure 3. Front panel ports of Cisco 8712-MOD-M  
 {: .text-center} 
 
+Front panel ports include management and timing interfaces:
+- Management interfaces  
+  - 1x 10/100/1000 Mbps Management Ethernet port  
+  - 1x USB 3.0 (Type A)  
+  - RJ45 console port directly to CPU  
+  - 1x 10 GbE Control plane Expansion Ethernet port (Not used)  
+- Timing interfaces  
+8712-MOD-M is capable of frequency, time, and phase synchronization. These can be sourced from dedicated GPS port or from timestamped 1588 packets received on a normal data port in the system. The time, phase and frequency are distributed through the system with a frequency and PPS signal to devices near the physical port where timestamps are applied on ingress and egress packets.  
+In 8712-MOD-M, network synchronization clock can be sourced from any of the ports on any of the MPAs and from GPS (ToD, 10MHz, 1PPS ports).  
+- 1x GPS interface  
+  - ToD (Time of Day) with RJ45 port  
+  - 1 PPS coax port  
+  - 10 MHz coax port  
+- 1x GNSS (Global Navigation Satellite System) receiver
 
 # Modular Port Adaptors (MPAs)
 Cisco 8712-MOD-M system has 4 bays to provision MPAs. There are 4 MPA variants supported on this system and any combination of MPA varinats can be plugged into the MPA 4 slots. And these MPAs are Online Insertion & Removal capable and user has the flexibility to choose the MPA varinats and number of MPAs based on the capacity provisioning of the network.
