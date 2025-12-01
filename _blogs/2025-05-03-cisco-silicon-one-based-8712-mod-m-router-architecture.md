@@ -252,6 +252,9 @@ Below is 4x100g & 4x10g breakout configuration example captured on the system,
 
 
 ## 8K-MPA-18Z1D
+This MPA is similar to 8K-MPA-16Z2D but it has 18x SFP56 low speed ports which supports 1GbE, 10GbE, 25GbE & 50GbE and 1x QSFPDD high speed connectivity which can support one 100GbE or 400GbE optics.
+
+Default port speed of low speed ports (Ports 0 - 15) is 50GbE and 100GbE for high speed port(Port 19)
 
 ![lotus-new.png]({{site.baseurl}}/images/lotus-new.png){: .align-center}
 
