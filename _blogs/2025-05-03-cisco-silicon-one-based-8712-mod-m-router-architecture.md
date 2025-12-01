@@ -300,6 +300,10 @@ The following table represents the maximum number of ports the Cisco 8712-MOD-M 
 
 Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by using four 8K-MPA-16H  MPA variant with 8 ports are configured with 4x 10GbE or 25GbE breakout on all 4 MPAs.
 
+# 8712-MOD-M system interface nomenclature
+Let us look at the interface naming criteria for this system. This system is categoriese under fixed form factor with a front panel modularity. Because of its modular nature each Modular Port Adaptor (MPA) bay need to be numbered as per the slot number and correcponsing ports will get numbered rooted from the slot number accordingly. Nomenclature is detailed as below,
+
+![nomen.png]({{site.baseurl}}/images/nomen.png)
 
 *Understand Cisco 8712-MOD-M’s modules and associated PIDs
 
