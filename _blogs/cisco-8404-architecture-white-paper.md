@@ -32,7 +32,8 @@ Large, distributed chassis have traditionally been designed to cater to the mark
 Now with the advent of dense Cisco Silicon One NPU, we can address these roles with a new breed of centralized architectures that combine the best aspects of distributed and fixed systems.  Cisco 8404 has combined the redundancy and I/O diversity of distributed systems with the economics and simple elegance of fixed platforms in a very compact 4RU, <300 mm depth form factor. It also offers extended temperature range of operation making it suitable for ruggadized environment deploymnet in the Service Provider netwroks. 
   
      
-![8404 full front View]({{site.baseurl}}/images/8404-front.png)
+![8404-front.png]({{site.baseurl}}/images/8404-front.png)
+
 
 
 Figure 1. Front view of the Cisco 8408  
@@ -55,7 +56,7 @@ Table 1. Cisco 8404 key components
 
 ### Cisco 8404 value proposition  
 
-- **Redundancy**: Cisco 8404 introduces a new forwarding paradigm via a redundant control & data plane (route switch processor [RSP]  redundancy) in a very compact form factor . A redundant 8404 requires two RSPs, while a nonredundant 8404 is comprised of a single RSP.  
+- **Redundancy**: Cisco 8404 introduces a new forwarding paradigm via a redundant control & data plane (route switch processor [RSP]  redundancy) in a very compact form factor. A redundant 8404 requires two RSPs, while a nonredundant 8404 is comprised of a single RSP. This redundant architecure allows control and data plane to converge with minimal loss (<50ms) during failover scenario.  
 
 - **Investment Protection**: The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor and Modular Port Adaptors). Cisco is investing in the future of the platform for customers to be able to upgrade to the next generation.  
 
@@ -77,35 +78,58 @@ Table 2. Cisco 8404 Field Replaceable Units
  
 ### IP and Optical Convergence    
 
- 
-
-
-**Understanding the Cisco 8608 Naming Logic** 
-
 
 
 ## Platform Description  
 ### Chassis  
 
-        
-Figure 3. Front view of an empty Cisco 8408 chassis  
+![8404-comp.png]({{site.baseurl}}/images/8404-comp.png)
+
+Figure 3. 8404 Chassis & all Components
 {: .text-center}  
 
-As shown in Figure 3, user needs to insert the followings:  
-- Modular Port Adapter(MPA) 
-- Route Switch Processor(RSP) 
-- Fan Tray
--DC PEM
+As shown in Figure 3, above The 8404 Chassis comprise of the following Modular Components
+- 2x Route Switch Processor(RSP)  slots
+- 4x Modular Port Adpater slots
+- 2x DC Power Entry Modules
+- 1x Fan Tray containg 6 FANs
 
-      
-Figure 4. front view of Cisco 8404 chassis with cards
- 
-Figure 5. Side view of Cisco 8404 chassis    
+All of these Field replacable components are inserted into the chassis from front side and interconnected through chassis back plane
+
+![8404-front-side.png]({{site.baseurl}}/images/8404-front-side.png)
+
+Figure 4. Front to Side view of Cisco 8404 chassis   
+
+![8404-back.png]({{site.baseurl}}/images/8404-back.png)
+
+Figure 5. Back  view of Cisco 8404 chassis    
 {: .text-center}  
   
+### RSP (Route Switch Processor)  
 
+The Cisco 8608 route processor (RP) sits vertically in the front of the chassis handling control plane and management plane operations. In addition to other ports, the RP has the timing ports on it.  The RP is not SerDes connected to the Switch Card.    
 
-### Modular Port Adapter (MPA)   
+- Redundant 8608 : There will be two RPs in the system which work in Active-standby mode.   
+- Non-Redundant 8608 : There will be a single RP in the system . This kind of a system does not offer any control plane redundancy.   
+
+RPs manage all routing operations on the Cisco 8608 Routers.  
+
+![new RP1.png]({{site.baseurl}}/images/new RP1.png){: .full}  
+Figure 10. 8608-RP    
+{: .text-center}    
+
+Front panel ports include management and Timing interfaces:  
+- RJ45 console port directly connected to CPU  
+- 10/100/1000 Mbps Management Ethernet Port  
+- USB 3.0 (Type A)  
+- Timing ports: 1588 PTP SFP, SyncE, BITS, GNSS PRTC-A, and GPS(ToD with RJ45 port, 1PPS and 10MHz coax input)  
+
+RP contains an Intel 6-core @ 2.5 GHz, 64GB DDR4 DRAM, and 256 GB M.2 SSD Flash Drive.  
+This RPs are connected to the midplane and communicate with their devices via PCIE etc. 
+
+### RSP Integrated Port Adpater (iPA)
+
+### Modular Port Adapters (MPA)   
 The Cisco 8404 router centralized platform supports two different types Modular Port Adapters(MPAs) that can be inserted into the four slots numbered 2 to 5. The MPA to slot mapping is any-to-any, means all MPA goes into any MPA slot in the system.    
 
 
@@ -157,65 +181,10 @@ The above list is not exhaustive, detailed port speed and breakout options are d
 Figure 8. 86-MPA-4FH-M  
 {: .text-center}  
 
-### RSP Integrated Port Adpater (iPA)
 
-### RP (Route Processor)  
+ 
 
-The Cisco 8608 route processor (RP) sits vertically in the front of the chassis handling control plane and management plane operations. In addition to other ports, the RP has the timing ports on it.  The RP is not SerDes connected to the Switch Card.    
-
-- Redundant 8608 : There will be two RPs in the system which work in Active-standby mode.   
-- Non-Redundant 8608 : There will be a single RP in the system . This kind of a system does not offer any control plane redundancy.   
-
-RPs manage all routing operations on the Cisco 8608 Routers.  
-
-![new RP1.png]({{site.baseurl}}/images/new RP1.png){: .full}  
-Figure 10. 8608-RP    
-{: .text-center}    
-
-Front panel ports include management and Timing interfaces:  
-- RJ45 console port directly connected to CPU  
-- 10/100/1000 Mbps Management Ethernet Port  
-- USB 3.0 (Type A)  
-- Timing ports: 1588 PTP SFP, SyncE, BITS, GNSS PRTC-A, and GPS(ToD with RJ45 port, 1PPS and 10MHz coax input)  
-
-RP contains an Intel 6-core @ 2.5 GHz, 64GB DDR4 DRAM, and 256 GB M.2 SSD Flash Drive.  
-This RPs are connected to the midplane and communicate with their devices via PCIE etc.  
-  
-### SC (Switch Card)  
-
-The Cisco 8608 router Switch Card sits behind the Fan Trays. Cisco 8608 router has two Fan Trays with a total of eight Fan Modules. The Cisco Silicon One Q200 sits within the Switch Card and all the packet process and forwarding decisions are driven by the Switch Card.    
-
-![SC front rear.png]({{site.baseurl}}/images/SC front rear.png){: .full}   
-Figure 11. 8608-SC0-128  
-{: .text-center}  
-
-Cisco 8608 can operate with up to 2 Switch Cards(SCs) between MPA and Fan Trays.  
-
-![2 SC rear.png]({{site.baseurl}}/images/2 SC rear.png){: .full}    
-Figure 12. Redundant SCs in the back of the Cisco 8608  
-{: .text-center}  
-
-The RP & SC operate in pairs RP0-SC0 and RP1-SC1 to deliver redundancy without bandwidth loss.    
-The two SCs are CPU-less connected to both the RPs via PCIE, P2PM, EOBC links and each SC has one Cisco Silicon One Q200 providing the data path for packet processing and forwarding.    
-
-![redun system.png]({{site.baseurl}}/images/redun system.png){: .full}   
-Figure 13. Redundant System  
-{: .text-center}  
-
-The SC is installed in the rear of the chassis. The 8 Fan Modules are installed into the SCs. If you need to remove or replace the SC, we recommend that you remove the Fan Modules.    
-
-**Note**: To avoid over-heating the system, the service time between when a Switch Card or Fan Spinner  is removed and re-inserted must be under 3 minutes.  
-{: .notice}  
-
-If there is only one SC card plugged in, a Fan Spinner card will be required which is essentially a SC blank slot with a Fan Controller and Fan Modules.
-
-![nonRedund.png]({{site.baseurl}}/images/nonRedund.png){: .full}  
-Figure 14. Non-Redundant System  
-{: .text-center}  
-
-Fan Spinner does not provide any data or control plane functionality.  It is a passive card used to connect the midplane to the Fans.  
-
-### Power Modules    
+### Power Entry Modules (PEMs)   
 
 Cisco 8608 can be installed with up to four 3200W AC or 3200W DC power supplies in the chassis. Ensure that all power connection wiring conforms to the rules and regulations in the National Electrical Code (NEC) and local codes.    
 
@@ -352,6 +321,8 @@ Location      FRU Type                        FAN_0    FAN_1
 </code>
 </pre>
 </div>  
+
+### Fan Trays (FTs)
 
 ### IOS XR Software  
 The Cisco 8608 is launched with IOS XR 7.10.1.    
