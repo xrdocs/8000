@@ -33,11 +33,8 @@ Now with the advent of dense Cisco Silicon One NPU, we can address these roles w
   
      
 ![8404-front.png]({{site.baseurl}}/images/8404-front.png)
-
-
-
 Figure 1. Front view of the Cisco 8408  
-   
+{: .text-center} 
 
 
 The Cisco 8404 router is 4 RU in height and less than 300mm in depth with 4 slots for two types of MPAs (Modular Port Adapters) at the FCS. There is also an integrated port adpter built into the Route Switch Processor (RSP) card which acts like the modular port adapters in terms of forwarding and redundancy behaviour.   
@@ -65,10 +62,7 @@ Table 1. Cisco 8404 key components
 - **Innovation**: The 8404 RSP comes with built in integrated port adapter , that utilizes the chassis real estates to the fullest and provides customer dense 100/400 GbE ports inbuilt without additional MPA inserted to the chassis. 
 
 - **Secure**: Apart from the Cisco's trusted IOS XR architecture, the 8404 RSP has in built crypto engine within the NPU , thus systme is available to support MACsec/IPSec on all varity of Ports and MPAs. 
-
-
-Table 2. Cisco 8404 Field Replaceable Units            
-{: .text-center}    
+  
 
 ## Cisco 8608 PIN(Place In Network) Use cases  
 
@@ -84,7 +78,6 @@ Table 2. Cisco 8404 Field Replaceable Units
 ### Chassis  
 
 ![8404-comp.png]({{site.baseurl}}/images/8404-comp.png)
-
 Figure 3. 8404 Chassis & all Components
 {: .text-center}  
 
@@ -97,11 +90,10 @@ As shown in Figure 3, above The 8404 Chassis comprise of the following Modular C
 All of these Field replacable components are inserted into the chassis from front side and interconnected through chassis back plane
 
 ![8404-front-side.png]({{site.baseurl}}/images/8404-front-side.png)
-
-Figure 4. Front to Side view of Cisco 8404 chassis   
+Figure 4. Front to Side view of Cisco 8404 chassis
+{: .text-center} 
 
 ![8404-back.png]({{site.baseurl}}/images/8404-back.png)
-
 Figure 5. Back  view of Cisco 8404 chassis    
 {: .text-center}  
   
