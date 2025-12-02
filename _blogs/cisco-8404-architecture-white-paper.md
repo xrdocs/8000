@@ -32,6 +32,7 @@ Large, distributed chassis have traditionally been designed to cater to the mark
 Now with the advent of dense Cisco Silicon One NPU, we can address these roles with a new breed of centralized architectures that combine the best aspects of distributed and fixed systems.  Cisco 8404 has combined the redundancy and I/O diversity of distributed systems with the economics and simple elegance of fixed platforms in a very compact 4RU, <300 mm depth form factor. It also offers extended temperature range of operation making it suitable for ruggadized environment deploymnet in the Service Provider netwroks. 
   
      
+![8404 full front View]({{site.baseurl}}/images/8404-front.png)
 
 
 Figure 1. Front view of the Cisco 8408  
