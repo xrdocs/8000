@@ -173,9 +173,6 @@ The above list is not exhaustive, detailed port speed and breakout options are d
 Figure 8. 86-MPA-4FH-M  
 {: .text-center}  
 
-
- 
-
 ### Power Entry Modules (PEMs)   
 
 Cisco 8608 can be installed with up to four 3200W AC or 3200W DC power supplies in the chassis. Ensure that all power connection wiring conforms to the rules and regulations in the National Electrical Code (NEC) and local codes.    
