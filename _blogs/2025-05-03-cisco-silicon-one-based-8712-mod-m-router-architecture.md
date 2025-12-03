@@ -51,7 +51,7 @@ Cisco 8712-MOD-M is powered to address below roles in service providers:
 - Enterprise Business to Business service PE role
 - Routed Optical Netwroking role
 - Heavy Access termination role
-- Route Reflector
+- Route Reflector role
 
 Cisco 8712-MOD-M is also powered to address some of the enterrpise and data center/Cloud segments:
 - Enterprise WAN core & service Edge
@@ -129,9 +129,10 @@ Figure 3. Front panel ports of Cisco 8712-MOD-M
 {: .text-center} 
 
 Front panel ports include management and timing interfaces:
+
 - Management interfaces  
   - 1x 10/100/1000 Mbps Management Ethernet port  
-  - 1x USB 3.0 (Type A)  
+  - 1x USB 3.0  
   - RJ45 console port directly to CPU  
   - 1x 10 GbE Control plane Expansion Ethernet port (Not used)  
 - Timing interfaces  
@@ -171,7 +172,7 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 ### Breakout Port configurations through Retimer / Gear box 
 
-This MPA has two Retimer/Gearbox and each has 16x 50Gbps serdes lines towards the NPU side which facilitate the creation of 16 individual port configurations on it.
+This MPA has two Retimer/Gearbox and each has 16x 50Gbps serdes lines towards the NPU side which facilitate it to support 16 individual port configurations on it.
 
 |                | 10 GbE  | 25 GbE | 100 GbE |
 |----------------|---------|--------|---------|
