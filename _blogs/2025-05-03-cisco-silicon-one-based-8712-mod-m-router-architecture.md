@@ -180,6 +180,7 @@ This MPA has two Retimer/Gearbox and each has 16x 50Gbps serdes lines towards th
 
 
 ### How to enable Breakout
+Default port mode of all 4 ports is 400G. So no need to change the port mode before breakout configuration
 
 - Configure the optical breakout 4x10 or 4x25 or 4x100
 
@@ -214,6 +215,8 @@ This MPA has four Retimer/Gearbox modules and each has 8x 50Gbps serdes lines to
 | Breakout Ports | 32      | 32     |
 
 ### How to enable Breakout
+
+Change port mode to 40 as default port mode of port 0 - 15 is 100G.
 
 - Configure the port intended to breakout in mode 40
 - Configure the optical breakout 4x10 or 4x25
@@ -253,6 +256,7 @@ This MPA has three Retimer/Gearbox modules where 2 are hosting QSFP-DD form fact
 
 
 ### How to enable Breakout
+Default port mode of Port 16 - 19 is 100G. So no need to change the port mode before breakout configuration
 
 - Configure the port intended to breakout in mode 400
 - Configure the optical breakout 4x10 or 4x25 or 4x100
@@ -296,6 +300,8 @@ This MPA has 2 PHY modules and 4x10 or 4x25 or 4x100 breakout configuration is s
 
 
 ### How to enable Breakout
+Default port mode of port-8 is 400G. So no need to change the port mode before breakout configuration
+
 - Configure the optical breakout 4x10 or 4x25 or 4x100
 
 Below is 4x100g & 4x10g breakout configuration example captured on the system,
@@ -317,7 +323,7 @@ The following table represents the maximum number of ports the Cisco 8712-MOD-M 
 
 Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by using four 8K-MPA-16H  MPA variant with 8 ports are configured with 4x 10GbE or 25GbE breakout on all 4 MPAs.
 
-## 8712-MOD-M system interface nomenclature
+## 8712-MOD-M system Interface Nomenclature
 Let us look at the interface naming criteria for this system. This system is categoriese under fixed form factor with a front panel modularity. Because of its modular nature each Modular Port Adaptor (MPA) bay need to be numbered as per the slot number and correcponsing ports will get numbered rooted from the slot number accordingly. Nomenclature is detailed as below,
 
 ![nomen-new.png]({{site.baseurl}}/images/nomen-new.png)
