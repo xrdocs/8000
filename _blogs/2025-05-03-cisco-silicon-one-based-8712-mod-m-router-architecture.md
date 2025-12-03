@@ -23,18 +23,7 @@ The key characteristics of the Cisco 8712-MOD-M are summarized below.
 
 ## Product Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=2ckU9oAP9hI&t=17s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
-
-
-## Service Provider(SP) networking Architecture shift
-
-
-Lets look at traditional SP network architecture and the how it is transitioning to nextGen network driven by Agile Services Networking architecture.
-
-Network roles are strictly defined and deployed in networks. Devices must be groomed specifically to address different roles in network. And feature capability , scale and bandwidth requirements are differently fitted to address different needs in the network.
-
-Common view of traditional service provider network is as following, different services like business, wireless, mobile etc. are terminated into the transport aggregation which includes further nailing down to access, preaggregation and aggregation network segments etc.. Aggregated transport networks talk to Edge then merge into the  Core segment. Edge can segregated to cater to different use cases as per the specific need of each categories like, Business edge, Mobile edge, Wireless edge etc..or all types of edge services can be centrally placed and provisioned.
-
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=2ckU9oAP9hI&t=17s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # Cisco 8712-MOD-M Use Cases  
 As user applications become more dynamic network is demanding differentiated user experiences, assurance of low latency and high availability without any compromise in keeping the real estate and energy in green at its best promising levels. And Cisco's Agile Services Networking (ASN)architecture is shaping these demands well by simplifying the network by unifying the network capabilities across different network segment islands into single architecture.
@@ -349,7 +338,7 @@ Let us look at the interface naming criteria for this system. This system is cat
 
 # Conclusion  
 
-This document discussed the Cisco 8712-MOD-M architecture and its use cases. Cisco 8712.MOD-M is a Cisco Silicon One™ K100 based 2RU fixed router with front panel port modularity. Modularity is achieved by 4 different types of Modular Port Adaptors(MPAs) which offers diverse port speed : 1G, 10G, 25G, 40G, 50G, 100G, and 400G. 8712-MOD-M system addresses wide range of use cases which are detailed in above sections.
+This document discussed the Cisco 8712-MOD-M architecture and its use cases. Cisco 8712.MOD-M is a Cisco Silicon One™ K100 based 2RU fixed routing platform with front panel port modularity. Modularity is achieved by 4 different types of Modular Port Adaptors(MPAs) which offers diverse port speed : 1G, 10G, 25G, 40G, 50G, 100G, and 400G. 8712-MOD-M system addresses wide range of use cases which are detailed in above sections.
 
 # References  
 [Cisco 8000 Cisco Silicon One™ Architecture & QOS](https://xrdocs.io/8000/blogs/Cisco-8000-QOS-architecture/)      
