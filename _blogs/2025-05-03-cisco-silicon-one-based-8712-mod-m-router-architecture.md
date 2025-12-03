@@ -267,6 +267,7 @@ Default port speed of low speed ports (Ports 0 - 7 & 9 - 18) is 50GbE and 400GbE
 
 
 
+
 ![18z-arch.png]({{site.baseurl}}/images/18z-arch.png){: .align-center}
 
 
@@ -294,9 +295,9 @@ Default port mode of port-8 is 400G. So no need to change the port mode before b
 - Configure the optical breakout 4x10 or 4x25 or 4x100
 
 Below is 4x100g & 4x10g breakout configuration example captured on the system,
-![lotus-bo-1.png]({{site.baseurl}}/images/lotus-bo-1.png)
+![lotus-bo-1.png]({{site.baseurl}}/images/lotus-bo-1.png){: .align-center}
 
-![lotus-bo-2.png]({{site.baseurl}}/images/lotus-bo-2.png)
+![lotus-bo-2.png]({{site.baseurl}}/images/lotus-bo-2.png){: .align-center}
 
 
 ## Maximum Port scale possible in a fully loaded System
@@ -315,7 +316,7 @@ Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by usin
 ## 8712-MOD-M system Interface Nomenclature
 Let us look at the interface naming criteria for this system. This system is categoriese under fixed form factor with a front panel modularity. Because of its modular nature each Modular Port Adaptor (MPA) bay need to be numbered as per the slot number and correcponsing ports will get numbered rooted from the slot number accordingly. Nomenclature is detailed as below,
 
-![nomen-new.png]({{site.baseurl}}/images/nomen-new.png)
+![nomen-latest.png]({{site.baseurl}}/images/nomen-latest.png){: .align-center}
 
 
 *Understand Cisco 8712-MOD-M’s modules and associated PIDs
