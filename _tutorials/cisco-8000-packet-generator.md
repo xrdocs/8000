@@ -30,7 +30,7 @@ It provides true hardware assisted packet generation without involving device CP
 
 - It supports a rate of 13.7 Mpps and a maximum bandwidth of 66.4 Gbps per NPU
 - On Silicon One Q100 and Q200, maximum supported packet size is 608B
-- On Silicon One K100 nd P100, maximum supported packet size is 4000B
+- On Silicon One K100 and P100, maximum supported packet size is 4000B
 
 # Configuration and Verification
 The CCO [configuration](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/system-monitoring/25xx/configuration/guide/b-system-monitoring-cg-cisco8k-25xx/m-configuring-built-in-traffic-generator.html) and [command reference](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/system-monitoring/b-system-monitoring-cr-cisco8k/tgen-commands.html#diagnostic-packet-generator-create) guides list the multiple options available and how to configure them.
@@ -259,5 +259,4 @@ RP/0/RP0/CPU0:8000#
 {: .notice--info}
 
 # Conclusion & Use cases
-This feature has been recently used inside one customer network during Early Field Trial. This customer was testing 800G ZR+ optics and wanted to validate the long-distance link between 2 x Cisco 8000 routers. It was not possible to reroute customer traffic nor interconnecting a regular traffic generator. Cisco 8000 embedded traffic generator functionality was leveraged to validate correct long distance transmission across the 2 endpoints. Other customers are using this feature during their provisionning routine to validate massive ECMP fabrics and make sure all links are error-free before going into production. Another use case is to craft specific packets to test Segment Routing policies. Unlimited possibilities! 
-
+This feature has been recently used inside one customer network during Early Field Trial. This customer was testing 800G ZR+ optics and wanted to validate the long-distance link between 2 x Cisco 8000 routers. It was not possible to reroute customer traffic nor interconnecting a regular traffic generator. Cisco 8000 embedded traffic generator functionality was leveraged to validate correct long distance transmission across the 2 endpoints. Other customers are using this feature during their provisionning routine to validate massive ECMP fabrics and make sure all links are error-free before going into production. Another use case is to craft specific packets to test Segment Routing policies. Unlimited possibilities!
