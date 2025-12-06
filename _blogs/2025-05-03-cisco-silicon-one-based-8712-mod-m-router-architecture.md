@@ -213,7 +213,8 @@ Change port mode to 40 as default port mode of port 0 - 15 is 100G.
 
 Below is 4x10g breakout configuration example captured on the system,
 
-![16h-bo.png]({{site.baseurl}}/images/16h-bo.png){: .align-center}
+![16h-b0-example.png]({{site.baseurl}}/images/16h-b0-example.png)
+
 
 
 ## 8K-MPA-16Z4D
