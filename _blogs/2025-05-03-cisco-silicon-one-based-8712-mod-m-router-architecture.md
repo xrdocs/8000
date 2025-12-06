@@ -89,13 +89,13 @@ Let us check how 8712-MOD-M system is architected with K100 Silicon One™ NPU,
 # 8712-MOD-M Chassis design
 Cisco 8712-MOD-M is a Cisco Silicon One™ based 2RU fixed router belonging to Cisco 8700 family of products, a first in class device to play multiple roles across Service Provider, Enterprise WAN , Data Center Interconnect, DC gateway network applications.
 
-![fron-view.png]({{site.baseurl}}/images/fron-view.png){: .align-center}
+![fron-view.png]({{site.baseurl}}/images/fron-view.png)
 Figure 1. Front view of the Cisco 8712-MOD-M  
 {: .text-center}  
 
 MPA bays can be populated with any combination of MPA types
 
-![fron-rear-full-chassi-view.png]({{site.baseurl}}/images/fron-rear-full-chassi-view.png){: .align-center}
+![fron-rear-full-chassi-view.png]({{site.baseurl}}/images/fron-rear-full-chassi-view.png)
 Figure 2. Front & Rear view of Cisco 8712-MOD-M  
 {: .text-center} 
 
@@ -136,18 +136,18 @@ In 8712-MOD-M, network synchronization clock can be sourced from any of the port
 # Modular Port Adaptors (MPAs)
 Cisco 8712-MOD-M system has 4 bays to provision MPAs. There are 4 MPA variants supported on this system and any combination of MPA varinats can be plugged into the MPA 4 slots. And these MPAs are Online Insertion & Removal capable and user has the flexibility to choose the MPA varinats and number of MPAs based on the capacity provisioning of the network.
 
-![mpa-bay-view.png]({{site.baseurl}}/images/mpa-bay-view.png){: .align-center}
-Figure 4. MPA bay view of Cisco 8712-MOD-M  
+![mpa-bay-view.png]({{site.baseurl}}/images/mpa-bay-view.png)
+Figure 4. MPA bay view of Cisco 8712-MOD-M
 {: .text-center}
 
 
 ## 8K-MPA-4D
 
-This MPA can power high bandwidth uplink capacity provisioning and also does its best with digital coherent optics (DCO) in Routed Optical networking.
+This MPA can power high bandwidth uplink capacity provisioning and also does its best with digital coherent optics (DCO) in Routed Optical networking. All ports supports inline MACSec and Class C timing
 
-![4d.png]({{site.baseurl}}/images/4d.png){: .align-center}
+![4d.png]({{site.baseurl}}/images/4d.png)
 
-![4d-a.png]({{site.baseurl}}/images/4d-a.png){: .align-center}
+![4d-a.png]({{site.baseurl}}/images/4d-a.png)
 
 - This MPA has four QSFPDD ports
 - All four ports can be operated in breakout mode
