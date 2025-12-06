@@ -143,7 +143,7 @@ Figure 4. MPA bay view of Cisco 8712-MOD-M
 
 ## 8K-MPA-4D
 
-This MPA can power high bandwidth uplink capacity provisioning and also does its best with digital coherent optics (DCO) in Routed Optical networking. All ports supports inline MACSec and Class C timing
+This MPA can power high bandwidth uplink capacity provisioning and also does its best with digital coherent optics (DCO) in Routed Optical networking. All ports supports inline MACSec and Class C timing on native ports.
 
 ![4d.png]({{site.baseurl}}/images/4d.png)
 
@@ -180,6 +180,7 @@ Below is 4x10g breakout configuration example captured on the system,
 
 ## 8K-MPA-16H
 This MPA suites for dense 100G fan outs and also supports 4x10G or 4x25G breakout configurations
+All ports supports inline MACSec and Class C timing on native ports.
 
 ![16h-screen.png]({{site.baseurl}}/images/16h-screen.png){: .align-center}
 
@@ -217,7 +218,7 @@ Below is 4x10g breakout configuration example captured on the system,
 
 ## 8K-MPA-16Z4D
 This MPA suites for deployments having combination of low speed and high speed port connectivity.
-It has 16x SFP56 low speed ports which supports 1GbE, 10GbE, 25GbE & 50GbE. And it also has 4x QSFPDD high speed connectivity which can support 4x 100GbE or 2x 400GbE.
+It has 16x SFP56 low speed ports which supports 1GbE, 10GbE, 25GbE & 50GbE. And it also has 4x QSFPDD high speed connectivity which can support 4x 100GbE or 2x 400GbE. All ports supports inline MACSec and Class C timing only on QSFPDD ports.
 
 Default port speed of low speed ports (Ports 0 - 15) is 50GbE and 100GbE for high speed ports (Port 16 - 19)
 
@@ -259,7 +260,7 @@ Below is 4x100g & 4x10g breakout configuration example captured on the system,
 
 
 ## 8K-MPA-18Z1D
-This MPA is similar to 8K-MPA-16Z2D but it has 18x SFP56 low speed ports which supports 1GbE, 10GbE, 25GbE & 50GbE and 1x QSFPDD high speed connectivity which can support one 100GbE or 400GbE optics.
+This MPA is similar to 8K-MPA-16Z2D but it has 18x SFP56 low speed ports which supports 1GbE, 10GbE, 25GbE & 50GbE and 1x QSFPDD high speed connectivity which can support one 100GbE or 400GbE optics. All ports supports inline MACSec and Class C timing.
 
 Default port speed of low speed ports (Ports 0 - 7 & 9 - 18) is 50GbE and 400GbE for high speed port(Port 8)
 
@@ -317,6 +318,16 @@ Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by usin
 Let us look at the interface naming criteria for this system. This system is categoriese under fixed form factor with a front panel modularity. Because of its modular nature each Modular Port Adaptor (MPA) bay need to be numbered as per the slot number and correcponsing ports will get numbered rooted from the slot number accordingly. Nomenclature is detailed as below,
 
 ![nomen-latest.png]({{site.baseurl}}/images/nomen-latest.png){: .align-center}
+
+
+### Understand the interface naming from below example
+Below output is captured from 8712-MOD-M system and system is loaded with all 4 types of MPAs in this case. MPA slots are identified as 0/0, 0/1, 0/2, 0/3 as seen below.
+
+![show-plat.png]({{site.baseurl}}/images/show-plat.png)
+
+Below output helps to understand the interface naming briefed in the nomenclature section above. Interfaces are colored according to the color used for each MPA slots in above output. And this output also helps to understnad the IFG/Slice mapping of each interfaces and the VOQ IDs of each.
+
+![port-table.png]({{site.baseurl}}/images/port-table.png)
 
 
 *Understand Cisco 8712-MOD-M’s modules and associated PIDs
