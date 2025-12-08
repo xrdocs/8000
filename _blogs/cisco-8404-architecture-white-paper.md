@@ -64,7 +64,7 @@ Table 1. Cisco 8404 key components
 - **Secure**: Apart from the Cisco's trusted IOS XR architecture, the 8404 RSP has in built crypto engine within the NPU , thus systme is available to support MACsec/IPSec on all varity of Ports and MPAs. 
   
 
-## Cisco 8608 PIN(Place In Network) Use cases  
+## Cisco 8404 PIN(Place In Network) Use cases  
 
 ### Pre-aggregation & Aggregation
 
@@ -98,6 +98,11 @@ Figure 5. Back  view of Cisco 8404 chassis
   
 ### RSP (Route Switch Processor)  
 
+The 8404-RSP1-48-EM RSP card is the 
+
+![8404-RSP.png]({{site.baseurl}}/images/8404-RSP.png)
+Figure 6. Cisco 8404 RSP Card: 8404-RSP1-48-EM
+{: .text-center} 
 ### RSP Integrated Port Adpater (iPA)
 
 ### Modular Port Adapters (MPA)   
@@ -123,7 +128,7 @@ This MPA is aimed at providing dense low speed(1/10/25) ports with a balanced 10
 	- Support 40/100 GbE
     - Breakout Support  4x10/4x25GbE
 
-  
+![MPA2H12Z.png]({{site.baseurl}}/images/MPA2H12Z.png)
 Figure 7. 84-MPA-2H12Z-M 
 {: .text-center}  
 
@@ -144,10 +149,8 @@ The 6 front panel ports are organized in group of 3 ports (P0-P2 and P3-P5) that
 - 100G + 4x25G + Disabled
 The above list is not exhaustive, detailed port speed and breakout options are discussed in later sections. 
 
-**Note**: No restriction in term of power or cooling for 400G ZR/ZR+/Bright ZR+    
-{: .notice}  
+![MPA2FH:6H.png]({{site.baseurl}}/images/MPA2FH:6H.png)
 
-![figure8.png]({{site.baseurl}}/images/figure8.png){: .full}   
 Figure 8. 86-MPA-4FH-M  
 {: .text-center}  
 
