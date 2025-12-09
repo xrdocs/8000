@@ -154,7 +154,7 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 - All four ports supports 4x10G or 4x25G or 4x100G breakout mode
 - All four ports can be populated with DCO optics
 
-|               | 40 GbE  | 400     |
+|     Speed     | 40 GbE  | 400     |
 |---------------|---------|---------|
 | Native Ports  | 4       | 4       |
 
@@ -163,7 +163,7 @@ This MPA can power high bandwidth uplink capacity provisioning and also does its
 
 This MPA has two Retimer/Gearbox and each has 16x 50Gbps serdes lines towards the NPU side which facilitate it to support 16 individual port configurations on it.
 
-|                | 10 GbE  | 25 GbE | 100 GbE |
+|      Speed     | 10 GbE  | 25 GbE | 100 GbE |
 |----------------|---------|--------|---------|
 | Breakout Ports | 16      | 16     | 16      |
 
@@ -188,7 +188,7 @@ All ports supports inline MACSec and Class C timing on native ports.
 ![16h-a.png]({{site.baseurl}}/images/16h-a.png){: .align-center}
 
 
-|               | 40 GbE  | 100     |
+|     Speed     | 40 GbE  | 100     |
 |---------------|---------|---------|
 | Native Ports  | 8       | 16      |
 
@@ -200,7 +200,7 @@ All ports supports inline MACSec and Class C timing on native ports.
 This MPA has four Retimer/Gearbox modules and each has 8x 50Gbps serdes lines towards the NPU side which limits maximum number of individual port configuration on it to 8 as each port need atleast one serdes line. So enabling breakout configuration on even numbered port will disable the immediate odd numbered port. ie, breakout configuration on port-4 will disable port-5.
 
 
-|                | 10 GbE  | 25 GbE |
+|     Speed      | 10 GbE  | 25 GbE |
 |----------------|---------|--------|
 | Breakout Ports | 32      | 32     |
 
@@ -228,7 +228,7 @@ Default port speed of low speed ports (Ports 0 - 15) is 50GbE and 100GbE for hig
 ![16z-arch.png]({{site.baseurl}}/images/16z-arch.png){: .align-center}
 
 
-|          | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
+|  Speed   | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
 |----------|---------|---------|--------|---------|---------|---------|---------|
 | Native   | 16      | 16      | 16     | 2       | 16      | 4       | 2       |
 
@@ -241,7 +241,7 @@ Default port speed of low speed ports (Ports 0 - 15) is 50GbE and 100GbE for hig
 This MPA has three Retimer/Gearbox modules where 2 are hosting QSFP-DD form factor optics and each has 8x 50Gbps serdes lines towards the NPU side. But breakout is supported only on 2 QSFDD ports (Port-16 & 18) out 4 ports (Port16-19).So enabling breakout configuration on even numbered port will disable the immediate odd numbered port. ie, breakout configuration on port-16 will disable port-17.
 
 
-|                | 10 GbE  | 25 GbE | 100 GbE |
+|     Speed      | 10 GbE  | 25 GbE | 100 GbE |
 |----------------|---------|--------|---------|
 | Breakout Ports | 8       | 8      | 8       |
 
@@ -274,7 +274,7 @@ Default port speed of low speed ports (Ports 0 - 7 & 9 - 18) is 50GbE and 400GbE
 
 
 
-|          | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
+|  Speed   | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
 |----------|---------|---------|--------|---------|---------|---------|---------|
 | Native   | 18      | 18      | 18     | 1       | 18      | 1       | 1       |
 
@@ -286,7 +286,7 @@ Default port speed of low speed ports (Ports 0 - 7 & 9 - 18) is 50GbE and 400GbE
 This MPA has 2 PHY modules and 4x10 or 4x25 or 4x100 breakout configuration is supported only on Port-8 without any restriction.
 
 
-|                | 10 GbE  | 25 GbE | 100 GbE |
+|     Speed      | 10 GbE  | 25 GbE | 100 GbE |
 |----------------|---------|--------|---------|
 | Breakout Ports | 4       | 4      | 4       |
 
@@ -306,7 +306,7 @@ Below is 4x100g & 4x10g breakout configuration example captured on the system,
 
 The following table represents the maximum number of ports the Cisco 8712-MOD-M router can support.  
 
-|          | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
+|  Speed   | 1 GbE   | 10 GbE  | 25 GbE | 40 GbE  | 50 GbE  | 100     | 400 GbE |
 |----------|---------|---------|--------|---------|---------|---------|---------|
 | Native   | 72      | 72      | 24     | 32      | 72      | 64      | 16      |
 | Breakout | NA      | 128     | 128    | NA      | NA      | 64      | NA      |
