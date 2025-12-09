@@ -318,7 +318,7 @@ Similarly, system can get a configuration of 128 ports of 10GbE or 25GbE by usin
 ## 8712-MOD-M system Interface Nomenclature
 Let us look at the interface naming criteria for this system. This system is categoriese under fixed form factor with a front panel modularity. Because of its modular nature each Modular Port Adaptor (MPA) bay need to be numbered as per the slot number and correcponsing ports will get numbered rooted from the slot number accordingly. Nomenclature is detailed as below,
 
-![nomen-latest.png]({{site.baseurl}}/images/nomen-latest.png){: .align-center}
+![intf-nomen.png]({{site.baseurl}}/images/intf-nomen.png){: .align-center}
 
 
 ### Understand the interface naming from below example
