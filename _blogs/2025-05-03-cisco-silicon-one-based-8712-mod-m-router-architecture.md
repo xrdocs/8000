@@ -100,7 +100,7 @@ Figure 2. Front & Rear view of Cisco 8712-MOD-M
 {: .text-center} 
 
 ## Power Supply Units
-8712-MOD-M system has two 2KW Power Distribution Units with 1+1 redundancy support.
+8712-MOD-M system has two 2KW Power Distribution Units: one on the left side and one on the right side as highlighted in below picture. And offers 1+1 redundancy.
 
 ![psu-view.png]({{site.baseurl}}/images/psu-view.png){: .align-center}
 
@@ -108,10 +108,10 @@ Figure 2. Front & Rear view of Cisco 8712-MOD-M
 - Separate power unit models for Port-side air intake(PI) & Port-side air exhaust(PE) air flows
 
 ![psu-config.png]({{site.baseurl}}/images/psu-config.png){: .align-center}
-Figure 2. Power Supply Unit Configurations{: .text-center}  
+Figure 3. Power Supply Unit Configurations{: .text-center}  
 
 ## FAN Units
-8712-MOD-M system has 4 FAN units with 3+1 Redundancy support.
+8712-MOD-M system has 4 FAN units as highlighted in below picture and system offers 3+1 Redundancy.
 
 ![fan-view.png]({{site.baseurl}}/images/fan-view.png)
 
