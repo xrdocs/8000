@@ -53,7 +53,8 @@ Table 1. Cisco 8404 key components
 
 ### Cisco 8404 value proposition  
 
-- **Redundancy**: Cisco 8404 introduces a new forwarding paradigm via a redundant control & data plane (route switch processor [RSP]  redundancy) in a very compact form factor. A redundant 8404 requires two RSPs, while a nonredundant 8404 is comprised of a single RSP. This redundant architecure allows control and data plane to converge with minimal loss (<50ms) during failover scenario.  
+- **Redundancy**: Cisco 8404 introduces a new forwarding paradigm via a redundant control & data plane (route switch processor [RSP]  redundancy) in a very compact form factor. A redundant 8404 requires two RSPs, while a nonredundant 8404 is comprised of a single RSP. This redundant architecure allows control and data plane to converge with minimal loss (<50ms) during failover scenario. 
+_Note: Software Support for CP/DP redundnacy with dual RSP on 8404 will be at a later release_
 
 - **Investment Protection**: The design of the system keeps in mind the ability to upgrade all the major components of the Chassis (Switch Card, Route Processor and Modular Port Adaptors). Cisco is investing in the future of the platform for customers to be able to upgrade to the next generation.  
 
@@ -98,11 +99,13 @@ Figure 5. Back  view of Cisco 8404 chassis
   
 ### RSP (Route Switch Processor)  
 
-The 8404-RSP1-48-EM RSP card is the 
+The 8404-RSP1-48-EM RSP card is where both control and data plane for the 8404 System are hosted. There are two slots for RSP card to offer full Data Plane and Control Plane redundnacy for the system. The current 8404 RSP card data plane is  based on Cisco SiOne K100 series of NPU while an ARM CPU complex builds the Control Plane. The RSP card is also responsible for taking the power input from the Power Entry Modules and supply it to remaining components of the system , e.g. all MPAs. 
 
 ![8404-RSP.png]({{site.baseurl}}/images/8404-RSP.png)
 Figure 6. Cisco 8404 RSP Card: 8404-RSP1-48-EM
 {: .text-center} 
+
+The Figure above shows the front facing view of the 8404-RSP1-48-EM card. 
 ### RSP Integrated Port Adpater (iPA)
 
 ### Modular Port Adapters (MPA)   
@@ -196,4 +199,3 @@ The Cisco 8608 is a unique platform that combines flexibility & reliability whil
 | Version | Data     | Author(s)     | Comments            |
 |---------|----------|---------------|---------------------|
 | 1       | December-2025 | Paban Sarma | Initial Publication |
-
