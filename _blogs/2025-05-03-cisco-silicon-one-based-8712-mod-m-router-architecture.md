@@ -7,7 +7,6 @@ title: Cisco Silicon One™ based 8712-MOD-M Router Architecture
 {% include toc icon="table" title="Cisco Silicon One™ based 8712-MOD-M Router Architecture White Paper" %}
 
 
-
 # Introduction
 The Cisco 8000 Series combines the revolutionary Cisco Silicon One™, IOS XR® software, and a set of clean sheet chassis to deliver a breakthrough in high-performance routers. 
 High-performance networking systems have historically been divided into routing or switching classes, with distinct hardware and software. But, as the necessity for reliable networks proliferates, it is imperative that traditional networks shift to a new architecture to address exponential bandwidth needs, ubiquitous connectivity, security, better quality of service, low latency coupled with high reliability, availability, and serviceability of the infrastructure. The Cisco® 8000 Series portfolio is getting enhanced continously by addressing various network segments across service providers, webscalers, hyperscalers, data center and enterprise domains. 
