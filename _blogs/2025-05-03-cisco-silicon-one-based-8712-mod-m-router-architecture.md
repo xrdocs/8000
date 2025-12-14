@@ -111,16 +111,23 @@ Figure 2. Front & Rear view of Cisco 8712-MOD-M
 Figure 3. Power Supply Unit Configurations{: .text-center}  
 
 ## FAN Units
-All Cisco 8000 routing devices are equipped with intelligent FAN control systems. What is intelligent FAN control mean: Cisco 8000 IOS XR software algorithms are well architectued to ensure the FAN modules to keep the RPM at optimum level but sufficient for cooling all the components in the system at any given point of time. Why optimum FAN speed is important?, FAN modules are power hungry components in the system and it is critical to keep the FAN speed at its minimum required level to keep the total system power at its best optimum level. And Cisco 8000 device is architected with many number of sensors across the chassis, printed circuit boards and within the NPU to report accurate temperature of different components on it. And software algorithm will function based on the input temperature value gathered from multiple sensors and FAN module speed will be adjusted accordingly.
+All Cisco 8000 routing devices are equipped with intelligent FAN control systems. Cisco 8000 IOS XR software algorithms are well architectued to ensure the FAN modules to keep the RPM at optimum level but sufficient for cooling all the components in the system at any given point of time. Why optimum FAN speed is important?, FAN modules power consumption is depended on the speed and it is kept at best optimum level. And Cisco 8000 device is architected with many number of sensors across the chassis, printed circuit boards, CPUs and within the NPU to report accurate temperature of different components. And software algorithm will function based on the input temperature value gathered from multiple sensors and FAN module speed will be adjusted accordingly.
 
 8712-MOD-M system has 4 FAN units as highlighted in below picture and system offers 3+1 Redundancy.
 
-![fan-view.png]({{site.baseurl}}/images/fan-view.png)
+![fan-view.png]({{site.baseurl}}/images/fan-view.png){: .align-center}
 
 - Separate PID for Port-side air intake(PI) & Port-side air exhaust(PE) air flows
 - FAN-PI-V3 / FAN-PE-V3
 
 ### FAN failure scenarios
+What happens if one of the FAN module out of 4 modules fails? System will continue functioning as per 3+1 redundancy design. But it is not recommended to run the system for long with 3 FANs running and failed FAN must be replaced asap. All 3 FANs will run at maximum speed after the failure of one module to keep up the system environment at the expected state.
+
+What happens if more than one FAN modules fail on the system?, system will be shutdown in 120 seconds. Below log is an example which is captured on the system after more than one FAN modules failure is simulated on the syste,
+
+![fan-fail.png]({{site.baseurl}}/images/fan-fail.png)
+
+Why can't system operate even after multiple FAN failures?, to safe guard the precious hardware from damages. Becauseas temperature variations become very abrupt and thresholds can be crossed in very short time and system software can't gracefully act on it as the temperature rise can happen with in very short time.
 
 ## Front Panel Management and Timing Provisions
 Let us have a telescopic view of the front panel deatils,
