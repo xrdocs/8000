@@ -111,7 +111,9 @@ Figure 2. Front & Rear view of Cisco 8712-MOD-M
 Figure 3. Power Supply Unit Configurations{: .text-center}  
 
 ## FAN Units
-All Cisco 8000 routing devices are equipped with intelligent FAN control systems. What is intelligent FAN control mean: Cisco 8000 IOS XR software algorithms are well architectued to ensure the FAN modules to keep the RPM at optimum level at any given point of time. Why optimum FAN speed is important??, FAN modules are power hungry components in the system and it is critical to keep the FAN speed at its minimum required level to keep the total system power at its best performance. And Cisco 8000 device is architected with many number of sensors across the chassis to report the instantaneous temperature of different components on it. And FAN modules speed will be adjusted based on the temperature record received from different components on the system. 8712-MOD-M system has 4 FAN units as highlighted in below picture and system offers 3+1 Redundancy.
+All Cisco 8000 routing devices are equipped with intelligent FAN control systems. What is intelligent FAN control mean: Cisco 8000 IOS XR software algorithms are well architectued to ensure the FAN modules to keep the RPM at optimum level but sufficient for cooling all the components in the system at any given point of time. Why optimum FAN speed is important?, FAN modules are power hungry components in the system and it is critical to keep the FAN speed at its minimum required level to keep the total system power at its best optimum level. And Cisco 8000 device is architected with many number of sensors across the chassis, printed circuit boards and within the NPU to report accurate temperature of different components on it. And software algorithm will function based on the input temperature value gathered from multiple sensors and FAN module speed will be adjusted accordingly.
+
+8712-MOD-M system has 4 FAN units as highlighted in below picture and system offers 3+1 Redundancy.
 
 ![fan-view.png]({{site.baseurl}}/images/fan-view.png)
 
