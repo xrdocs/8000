@@ -606,3 +606,5 @@ Also you can find the first part of this post here: [Cisco 8000 Port assignment 
 | 1       | September 26, 2024 | Chang Soo Lee | Initial Publication for P100 based platforms |  
 | 2       | December 20, 2024 | Chang Soo Lee | Updated Cisco 8712-MOD-M |  
 | 3       | May 22, 2025 | Chang Soo Lee | Updated Cisco 8011-4G24Y4H-I |
+| 4       | December 23, 2025 | Chang Soo Lee | Updated Cisco 8711-48Z-M |
+
