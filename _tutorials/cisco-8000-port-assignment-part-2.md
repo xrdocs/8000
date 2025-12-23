@@ -481,8 +481,38 @@ Cisco 8712-MOD-M chassis with 4 Modular Port Adapter(8K-MPA-16H on top left and 
 ### 8711-48Z-M  
 The Cisco 8711-48Z-M is made of a single K100 NPU. This system has 6 ports of QSFP56-DD, 4 ports of QSFP56, and 48 ports SFP56 with breakout capabilities Interface combinations: (Up to 6 ports of 400G interfaces and 4 ports of 200G and 48 ports of 50G/25G/10G/1G , Up to 28 100G interfaces (with BO) and up to 48 50G/25G/10G/1G interfaces).   
 
+![Screenshot 2025-12-23 at 3.16.05 PM.png]({{site.baseurl}}/images/Screenshot 2025-12-23 at 3.16.05 PM.png)  
 
+![Screenshot 2025-12-23 at 3.21.11 PM.png]({{site.baseurl}}/images/Screenshot 2025-12-23 at 3.21.11 PM.png)   
 
+| Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG | Interface  | NPU/Slice/IFG |
+|------------|:-------------:|------------|:-------------:|------------|:-------------:|------------|:-------------:|
+| Fi0/0/0/0  |     0/0/0     | FH0/0/0/26 |     0/0/1     | Fi0/0/0/34 |     0/1/0     | FH0/0/0/29 |     0/1/1     |
+| Fi0/0/0/1  |               | FH0/0/0/27 |               | Fi0/0/0/35 |               | FH0/0/0/30 |               |
+| Fi0/0/0/2  |               | FH0/0/0/28 |               | Fi0/0/0/36 |               | FH0/0/0/31 |               |
+| Fi0/0/0/3  |               |            |               | Fi0/0/0/37 |               |            |               |
+| Fi0/0/0/4  |               |            |               | Fi0/0/0/38 |               |            |               |
+| Fi0/0/0/5  |               |            |               | Fi0/0/0/39 |               |            |               |
+| Fi0/0/0/6  |               |            |               | Fi0/0/0/40 |               |            |               |
+| Fi0/0/0/7  |               |            |               | Fi0/0/0/41 |               |            |               |
+| Fi0/0/0/8  |               |            |               | Fi0/0/0/42 |               |            |               |
+| Fi0/0/0/9  |               |            |               | Fi0/0/0/43 |               |            |               |
+| Fi0/0/0/10 |               |            |               | Fi0/0/0/44 |               |            |               |
+| Fi0/0/0/11 |               |            |               | Fi0/0/0/45 |               |            |               |
+| Fi0/0/0/12 |               |            |               | Fi0/0/0/46 |               |            |               |
+| Fi0/0/0/13 |               |            |               | Fi0/0/0/47 |               |            |               |
+| Fi0/0/0/14 |               |            |               | Fi0/0/0/48 |               |            |               |
+| Fi0/0/0/15 |               |            |               | Fi0/0/0/49 |               |            |               |
+| Fi0/0/0/16 |               |            |               | Fi0/0/0/50 |               |            |               |
+| Fi0/0/0/17 |               |            |               | Fi0/0/0/51 |               |            |               |
+| Fi0/0/0/18 |               |            |               | Fi0/0/0/52 |               |            |               |
+| Fi0/0/0/19 |               |            |               | Fi0/0/0/53 |               |            |               |
+| Fi0/0/0/20 |               |            |               | Fi0/0/0/54 |               |            |               |
+| Fi0/0/0/21 |               |            |               | Fi0/0/0/55 |               |            |               |
+| Fi0/0/0/22 |               |            |               | Fi0/0/0/56 |               |            |               |
+| Fi0/0/0/23 |               |            |               | Fi0/0/0/57 |               |            |               |
+| Hu0/0/0/24 |               |            |               | Hu0/0/0/32 |               |            |               |
+| Hu0/0/0/25 |               |            |               | Hu0/0/0/33 |               |            |               |   
 
 
 ### Cisco 8011-4G24Y4H-I    
