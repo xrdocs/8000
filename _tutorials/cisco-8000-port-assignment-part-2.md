@@ -478,6 +478,12 @@ Cisco 8712-MOD-M chassis with 4 Modular Port Adapter(8K-MPA-16H on top left and 
 
 ![8712-MOD-M IFG.png]({{site.baseurl}}/images/8712-MOD-M IFG.png)  
 
+### 8711-48Z-M  
+The Cisco 8711-48Z-M is made of a single K100 NPU. This system has 6 ports of QSFP56-DD, 4 ports of QSFP56, and 48 ports SFP56 with breakout capabilities Interface combinations: (Up to 6 ports of 400G interfaces and 4 ports of 200G and 48 ports of 50G/25G/10G/1G , Up to 28 100G interfaces (with BO) and up to 48 50G/25G/10G/1G interfaces).   
+
+
+
+
 
 ### Cisco 8011-4G24Y4H-I    
 The Cisco 8011-4G24Y4H-I is made of a single A100 NPU. This system can support 4x QSFP28 40/100GE, 24x SFP28 1/10/25GE, and 4x 1GE RJ45 10/100/1000ME. It supports MACsec on all ports. All ports support PTP timing at Class C performance.  
@@ -569,5 +575,4 @@ Also you can find the first part of this post here: [Cisco 8000 Port assignment 
 |---------|----------|---------------|---------------------|
 | 1       | September 26, 2024 | Chang Soo Lee | Initial Publication for P100 based platforms |  
 | 2       | December 20, 2024 | Chang Soo Lee | Updated Cisco 8712-MOD-M |  
-| 3       | May 22, 2025 | Chang Soo Lee | Updated Cisco 8011-4G24Y4H-I |  
-
+| 3       | May 22, 2025 | Chang Soo Lee | Updated Cisco 8011-4G24Y4H-I |
