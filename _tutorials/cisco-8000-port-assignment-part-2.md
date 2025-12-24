@@ -175,9 +175,85 @@ Hu0/0/0/3    780000ec   0   0    0    11    600      0        local    100G     
 </pre>
 </div>
 
+ 
 <div class="highlighter-rouge">
 <pre class="highlight">
-<code>  
+<code>   
+
+RP/0/RP0/CPU0:8711-48Z-M#<span style="background-color: #A0CFEC">show controller npu voq-usage interface all instance all loc 0/RP0/CPU0</span>  
+
+----------------------------------------------------------------------------------------
+Node ID: 0/RP0/CPU0
+Intf         Intf     <mark>NPU Slice IFG</mark>  Sys   VOQ   Flow       VOQ      Port       Global 
+name         handle    <mark>#    #    #</mark>   Port  base  base       port     speed      IFG #
+             (hex)                                          type                
+----------------------------------------------------------------------------------------
+<mark>Fi0/0/0/0</mark>    780001e8   0   0    0     4    544      0        local     50G      0
+Fi0/0/0/57   780001f0   0   1    0     5    560      0        local     50G      2
+Fi0/0/0/56   780001f8   0   1    0     6    568      0        local     50G      2
+Fi0/0/0/55   78000200   0   1    0     7    576      0        local     50G      2
+Fi0/0/0/54   78000208   0   1    0     8    584      0        local     50G      2
+Fi0/0/0/53   78000210   0   1    0     9    592      0        local     50G      2
+Fi0/0/0/52   78000218   0   1    0    10    600      0        local     50G      2
+Fi0/0/0/51   78000220   0   1    0    11    608      0        local     50G      2
+Fi0/0/0/50   78000228   0   1    0    12    616      0        local     50G      2
+Fi0/0/0/49   78000230   0   1    0    13    624      0        local     50G      2
+Fi0/0/0/48   78000238   0   1    0    14    632      0        local     50G      2
+Fi0/0/0/1    78000240   0   0    0    15    552      0        local     50G      0
+Fi0/0/0/2    78000248   0   0    0    16    640      0        local     50G      0
+Fi0/0/0/3    78000250   0   0    0    17    648      0        local     50G      0
+Fi0/0/0/4    78000258   0   0    0    18    656      0        local     50G      0
+Fi0/0/0/5    78000260   0   0    0    19    664      0        local     50G      0
+Fi0/0/0/6    78000268   0   0    0    20    672      0        local     50G      0
+Fi0/0/0/7    78000270   0   0    0    21    680      0        local     50G      0
+Fi0/0/0/8    78000278   0   0    0    22    688      0        local     50G      0
+Fi0/0/0/9    78000280   0   0    0    23    696      0        local     50G      0
+Fi0/0/0/10   78000288   0   0    0    24    704      0        local     50G      0
+Fi0/0/0/11   78000290   0   0    0    25    712      0        local     50G      0
+Fi0/0/0/12   78000298   0   0    0    26    720      0        local     50G      0
+Fi0/0/0/13   780002a0   0   0    0    27    728      0        local     50G      0
+Fi0/0/0/14   780002a8   0   0    0    28    736      0        local     50G      0
+Fi0/0/0/15   780002b0   0   0    0    29    744      0        local     50G      0
+Fi0/0/0/16   780002b8   0   0    0    30    752      0        local     50G      0
+Fi0/0/0/17   780002c0   0   0    0    31    760      0        local     50G      0
+Fi0/0/0/18   780002c8   0   0    0    32    768      0        local     50G      0
+Fi0/0/0/19   780002d0   0   0    0    33    776      0        local     50G      0
+Fi0/0/0/20   780002d8   0   0    0    34    784      0        local     50G      0
+Fi0/0/0/21   780002e0   0   0    0    35    792      0        local     50G      0
+Fi0/0/0/22   780002e8   0   0    0    36    800      0        local     50G      0
+Fi0/0/0/23   780002f0   0   0    0    37    808      0        local     50G      0
+Fi0/0/0/34   780002f8   0   1    0    38    816      0        local     50G      2
+Fi0/0/0/35   78000300   0   1    0    39    824      0        local     50G      2
+Fi0/0/0/36   78000308   0   1    0    40    832      0        local     50G      2
+Fi0/0/0/37   78000310   0   1    0    41    840      0        local     50G      2
+Fi0/0/0/38   78000318   0   1    0    42    848      0        local     50G      2
+Fi0/0/0/39   78000320   0   1    0    43    856      0        local     50G      2
+Fi0/0/0/40   78000328   0   1    0    44    864      0        local     50G      2
+Fi0/0/0/41   78000330   0   1    0    45    872      0        local     50G      2
+Fi0/0/0/42   78000338   0   1    0    46    880      0        local     50G      2
+Fi0/0/0/43   78000340   0   1    0    47    888      0        local     50G      2
+Fi0/0/0/44   78000348   0   1    0    48    896      0        local     50G      2
+Fi0/0/0/45   78000350   0   1    0    49    904      0        local     50G      2
+Fi0/0/0/46   78000358   0   1    0    50    912      0        local     50G      2
+Fi0/0/0/47   78000360   0   1    0    51    920      0        local     50G      2
+<mark>FH0/0/0/26</mark>   78000368   0   0    1    52    928      0        local    400G      1
+FH0/0/0/27   78000370   0   0    1    53    936      0        local    400G      1
+FH0/0/0/28   78000378   0   0    1    54    944      0        local    400G      1
+FH0/0/0/29   78000380   0   1    1    55    960      0        local    400G      3
+FH0/0/0/30   78000388   0   1    1    56    968      0        local    400G      3
+FH0/0/0/31   78000390   0   1    1    57    976      0        local    400G      3
+<mark>Hu0/0/0/33</mark>   78000398   0   1    0    58    992      0        local    100G      2
+Hu0/0/0/24   780003a0   0   0    0    59   1008      0        local    100G      0
+Hu0/0/0/25   780003a8   0   0    0    60   1016      0        local    100G      0
+Hu0/0/0/32   780003b0   0   1    0    61   1000      0        local    100G      2     
+</code>
+</pre>
+</div>  
+
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>   
 
 RP/0/RP0/CPU0:8011-4G24Y4H-I#<span style="background-color: #A0CFEC">show controllers npu voq-usage interface all instance all location 0/rp0/cpu0</span>   
 
@@ -581,4 +657,3 @@ Also you can find the first part of this post here: [Cisco 8000 Port assignment 
 | 2       | December 20, 2024 | Chang Soo Lee | Updated Cisco 8712-MOD-M |  
 | 3       | May 22, 2025 | Chang Soo Lee | Added Cisco 8011-4G24Y4H-I |
 | 4       | December 23, 2025 | Chang Soo Lee | Added Cisco 8711-48Z-M |
-
