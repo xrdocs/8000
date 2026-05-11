@@ -49,7 +49,7 @@ Table 1. Cisco 88-LC1-12TH24FH-E key characteristics
 ### 88-LC1-52Y8H-EM
 Cisco 88-LC1-52Y8H-EM 3.7 Tbps line card is built based on 2 P100 ASICs. With 4 ports of QSFP56-DD, 8 ports of QSFP28, and 52 ports of SFP28 on the faceplate, and support of MACsec on all ports, Cisco 88-LC1-12TH24FH-E line card addresses scaled and capacity requirements for Collapsed core, Aggregation, Peering, DC Core, 3rd party colocation, and RON use cases. 
 
-![Figure2.png]({{site.baseurl}}/images/Figure2.png)
+![88-LC1-Figure2.png]({{site.baseurl}}/images/88-LC1-Figure2.png)
 Figure 2. Front panel view of the 88-LC1-52Y8H-EM line card
 {: .text-center}
 
@@ -74,14 +74,14 @@ Table 2. Cisco 88-LC1-52Y8H-EM key characteristics
 ### Aggregation, Core, Peering, and DC Core with RON (Routed Optical Networking)
 As user applications become increasingly dynamic and demand differentiated experiences, optimizing network resources in terms of power, scale, and flexibility is crucial. The Cisco 8000 line cards, 88-LC1-52Y8H-EM and 88-LC1-12TH24FH-E, are designed to meet market demands for high system bandwidth, port diversity, and security. The 88-LC1-52Y8H-EM line card supports MACsec encryption, while both line cards provide enhanced scalability and advanced functionalities such as egress policing, queuing, flowspec, and support for a variety of other features for service providers, data centers, and enterprise customers. These features empower the Cisco 8000 to be utilized in various scenarios, including collapsed core, L3 gateway, aggregation and peering, and enterprise WAN edge. 
 
-![Figure3.png]({{site.baseurl}}/images/Figure3.png)
+![88-LC1-Figure3.png]({{site.baseurl}}/images/88-LC1-Figure3.png)
 Figure 3. Aggregation, Core, Peering and DC Core with RON Use Case
 {: .text-center}
 
 Cisco’s [Converged SDN Transport Solution](https://blogs.cisco.com/sp/routed-optical-networking-its-about-the-architecture), is an architecture that delivers efficient network utilization, Simplified single layer, reduced network complexity, faster time to market, automation empowerment, and differentiated service offering. The solution works by merging IP and Optical onto a single layer where all the switching is done at Layer 3. Routers are connected with standardized [400G ZR/ZR+/Bright(0dBm) ZR+ coherent pluggable optics](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/Interfaces/24xx/configuration/guide/b-interfaces-config-guide-cisco8k-r24xx/m-zr-zrp-cisco-8000.html). With a single service layer based upon IP, flexible management tools can leverage [telemetry](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/telemetry/24xx/configuration/guide/b-telemetry-cg-8000-24xx.html) and [model-driven programmability](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/programmability/24xx/configuration/guide/b-programmability-cg-8000-24xx.html) to streamline lifecycle operations. 
 
 ### Secure High-speed Data Center/Cloud interconnect
-![Figure4.png]({{site.baseurl}}/images/Figure4.png)
+![88-LC1-Figure4.png]({{site.baseurl}}/images/88-LC1-Figure4.png)
 Figure 4. Secure High-speed Data Center/Cloud Interconnect Use Case 
 {: .text-center}
 
@@ -92,17 +92,17 @@ The backhauling of remote branch sites for government, enterprise, or commercial
 ### Collapsed Core Use Case
 In contemporary networks, numerous customers opt to integrate multiple functionalities within a single location and device. The collapsed core design facilitates the coexistence of traditional core/peering features alongside aggregation/edge functionality, with improved L2/L3 service termination. The Cisco 88-LC1-52Y8H-EM and 88-LC1-12TH24FH-E line cards support popular core and edge features such as MPLS, SR, SRTE, SRv6, L3VPN, L2VPN, QoS, OAM, and EVPN. 
 
-![Figure5.png]({{site.baseurl}}/images/Figure5.png)
+![88-LC1-Figure5.png]({{site.baseurl}}/images/88-LC1-Figure5.png)
 Figure 5. Collapsed Core Use Case
 {: .text-center}
 
 ## Understanding the Cisco 88-LC1-52Y8H-EM and 88-LC1-12TH24FH-E Naming Logic 
 
-![Figure6.png]({{site.baseurl}}/images/Figure6.png)
+![88-LC1-Figure6.png]({{site.baseurl}}/images/88-LC1-Figure6.png)
 Figure 6. Cisco 88-LC1-52Y8H-EM Naming 
 {: .text-center} 
 
-![Figure7.png]({{site.baseurl}}/images/Figure7.png)
+![88-LC1-Figure7.png]({{site.baseurl}}/images/88-LC1-Figure7.png)
 Figure 7. Cisco 88-LC1-52Y8H-EM Naming
 {: .text-center} 
 
@@ -134,18 +134,18 @@ Table 4. Cisco 88-LC1-52Y8H-EM
 
 ## Cisco 88-LC1-12TH24FH-E and 88-LC1-52Y8H-EM Faceplate Design and Port Numbering
 
-![Figure8.png]({{site.baseurl}}/images/Figure8.png)
+![88-LC1-Figure8.png]({{site.baseurl}}/images/88-LC1-Figure8.png)
 Figure 8. Cisco 88-LC1-12TH24FH-E port numbering
 {: .text-center} 
 
 
-![Figure9.png]({{site.baseurl}}/images/Figure9.png)
+![88-LC1-Figure9.png]({{site.baseurl}}/images/88-LC1-Figure9.png)
 Figure 9. Cisco 88-LC1-52Y8H-EM port numbering
 {: .text-center} 
 
 Cisco 88-LC1-12TH24FH-E and 88-LC1-52Y8H-EM port numbering in the system is denoted as {Type}{R/S/I/P} or {Type}{R/S/I/P/B}
 
-![Figure-port-numbering.png]({{site.baseurl}}/images/Figure-port-numbering.png)
+![88-LC1-Figure-port-numbering.png]({{site.baseurl}}/images/88-LC1-Figure-port-numbering.png)
 
 
 Native 400GbE Interface (Cisco 88-LC1-12TH24FH-E as an example) 
@@ -185,7 +185,7 @@ HundredGigE0/7/0/33/3          unassigned      Shutdown        Down     default
 
 The Cisco 88-LC1-12TH24FH-E line card is built based on four P100 NPU processors with aggregated bandwidth of 12 Tbps. The line card has two types of faceplate ports on the network side – QSFP56-DD 400G (native) or QSFP28-DD 200G (2x100G breakout) ports. Other supported interface options are – 100G (native), 40G (native), 4x10G (breakout), 4x25G (breakout). Fabric interfaces connect the line card with the fabric cards of the chassis. The block diagram of Cisco 88-LC1-12TH24FH-E is presented in Figure 10.  
 
-![Figure10.png]({{site.baseurl}}/images/Figure10.png)
+![88-LC1-Figure10.png]({{site.baseurl}}/images/88-LC1-Figure10.png)
 Figure 10. Cisco 88-LC1-12TH24FH-E Block Diagram
 {: .text-center} 
 
@@ -193,7 +193,7 @@ The Cisco 88-LC1-52Y8H-EM line card shares a similar design approach with the Ci
 
 The block diagram of Cisco 88-LC1-52Y8H-EM is presented in Figure 11.  
 
-![Figure11_2.png]({{site.baseurl}}/images/Figure11_2.png)
+![88-LC1-Figure11_2.png]({{site.baseurl}}/images/88-LC1-Figure11_2.png)
 Figure 11. Cisco 88-LC1-52Y8H-EM Block Diagram
 {: .text-center}
 
@@ -213,14 +213,14 @@ Cisco Silicon One P100 features:
 - Dedicated 132 Counters banks (1M counters) and built-in counters in HCAM 
 - 6M IPv4 or 3M IPv6 FIB qualified scale without compression (Hardware capable much more)
 
-![Figure12.png]({{site.baseurl}}/images/Figure12.png){: .align-center} 
+![88-LC1-Figure12.png]({{site.baseurl}}/images/88-LC1-Figure12.png){: .align-center} 
 
 Figure 12. Cisco Silicon One P100
 {: .text-center}
 
 Cisco 8000 P100-based line cards use 3 slices of each P100 ASIC as network-facing interfaces and 3 slices as fabric-facing, optimizing for high feature scale and high capacity when it’s used in the distributed system. 
 
-![Figure13.png]({{site.baseurl}}/images/Figure13.png){: .align-center} 
+![88-LC1-Figure13.png]({{site.baseurl}}/images/88-LC1-Figure13.png){: .align-center} 
 
 Figure 13. Cisco Silicon One P100 architecture used in Cisco 88-LC1-52Y8H-EM and 88-LC1-12TH24FH-E line cards
 {: .text-center}
@@ -351,7 +351,7 @@ Cisco 88-LC1-52Y8H-EM can support the following features to interoperate with th
 
 Cisco 88-LC1-52Y8H-EM can support the following MACsec Use Cases.
 
-![Figure-macsec.png]({{site.baseurl}}/images/Figure-macsec.png)
+![88-LC1-Figure-macsec.png]({{site.baseurl}}/images/88-LC1-Figure-macsec.png)
 
 For more information on MACsec configuration and features supported on Cisco 8000 products, refer to [MACsec configurations on Cisco 88-LC1-52Y8H-EM](https://www.cisco.com/c/en/us/td/docs/iosxr/cisco8000/security/24xx/configuration/guide/b-system-security-cg-cisco8000-24xx/configuring-macsec.html).
 
