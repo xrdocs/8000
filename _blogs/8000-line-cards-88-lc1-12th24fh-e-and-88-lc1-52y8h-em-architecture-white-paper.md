@@ -26,7 +26,7 @@ The Cisco 88-LC1-12TH24FH-E 12 Tbps line card is a recent addition to the Cisco 
 
 Cisco 88-LC1-12TH24FH-E line card addresses scaled and capacity requirements for Collapsed core, Aggregation, Peering, DC Core, 3rd party colocation, and RON use cases.
 
-![Figure1.png]({{site.baseurl}}/images/88-LC1-Figure1.png)
+![88-LC1-Figure1.png]({{site.baseurl}}/images/88-LC1-Figure1.png)
 Figure 1. Front panel view of the 88-LC1-12TH24FH-E line card 
 {: .text-center}
 
